@@ -1,9 +1,11 @@
-# Mega-Engine
+# Mega-Engine-Fork
 **Mega Engine - Open-source Classic Megaman engine for Game Maker 8.1 and Studio!**
 
 Original source code by [WreckingPrograms](https://twitter.com/WreckingProg) - Original forum post: http://sprites-inc.co.uk/showthread.php?tid=1648
 
 ![Mega Engine](http://i.imgur.com/Tzy8LkV.png)
+
+This is a fork of Mega Engine 1.3, intended to incorporate contributions from users.
 
 From the original post:
 
