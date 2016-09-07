@@ -54,8 +54,8 @@ Tutorial series on how to use the engine: http://bit.ly/2bc7HQE
 
 **Q**: I ran into a bug! How do I report it?
 
-**A**: Use the built-in Github [issue tracker](https://github.com/rafaelcp/Mega-Engine-Fork/issues).
+**A**: Use the built-in GitHub [issue tracker](https://github.com/rafaelcp/Mega-Engine-Fork/issues).
 
 **Q**: I have an idea or suggestion for the engine, where do I post it?
 
-**A**: Again, use the built-in Github [issue tracker](https://github.com/rafaelcp/Mega-Engine-Fork/issues). Better yet, implement your ideas and send a [pull request](https://github.com/rafaelcp/Mega-Engine-Fork/pulls).
+**A**: Again, use the built-in GitHub [issue tracker](https://github.com/rafaelcp/Mega-Engine-Fork/issues). Better yet, implement your ideas and send a [pull request](https://github.com/rafaelcp/Mega-Engine-Fork/pulls).
