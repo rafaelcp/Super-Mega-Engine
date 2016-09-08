@@ -44,9 +44,9 @@ Tutorial series on how to use the engine: http://bit.ly/2bc7HQE
 
 **A**: The engine runs at 60 frames per second (assuming your PC can handle it, of course)
 
-**Q**: I don’t want sliding and/or buster charging in my game. How do I disable them?
+**Q**: I don’t want sliding and/or buster charging and/or screws/bolts in my game. How do I disable them?
 
-**A**: Go to Objects > Player > objGlobalControl and open the Create event code. Upon scrolling down, you will encounter a section called “Option variables”. Here you will see the variables global.enableCharge and global.enableSlide. Set either of them to false to disable the ability.
+**A**: Go to Objects > Player > objGlobalControl and open the Create event code. Upon scrolling down, you will encounter a section called “Option variables”. Here you will see the variables global.enableCharge, global.enableSlide and global.enableScrews. Set any of them to false to disable the feature.
 
 **Q**: Where can I view the credits of the game?
 
