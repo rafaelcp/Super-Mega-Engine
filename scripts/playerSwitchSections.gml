@@ -67,7 +67,7 @@ else if sprite_get_ycenter() > sectionBottom-6 && place_meeting(x, sprite_get_yc
     alarm[1] = 1; //In GM Studio, the code in alarm 1 needs to be executed one frame later, else an error message will pop up
 }
 else if sprite_get_ycenter() < sectionTop+6 && place_meeting(x, sprite_get_ycenter()-global.yspeed-6, objSectionArrowUp) //Up
-&& climbing == true && !collision_rectangle(bbox_left+4, sectionTop-1, bbox_right-4, sectionTop-2, objSolid, false, false)
+&& (climbing == true || ground == true) && !collision_rectangle(bbox_left+4, sectionTop-1, bbox_right-4, sectionTop-2, objSolid, false, false)
 {
     instance_activate_object(objSectionBorderLeft);
     instance_activate_object(objSectionBorderRight);

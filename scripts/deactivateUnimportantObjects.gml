@@ -32,3 +32,6 @@ if !instance_exists(objSectionSwitcher)
     instance_activate_object(prtGimmick);
     instance_activate_object(objBossControl);
 }
+
+instance_activate_object(prtMovingPlatformSolid);   //Moving platforms should be kept visibile and moving
+

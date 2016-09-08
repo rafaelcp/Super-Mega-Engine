@@ -31,6 +31,7 @@ xspeed = 0;
 yspeed = 0;
 
 prevPlayer = false;
+neverDespawn = true;
 </string>
           </argument>
         </arguments>
@@ -54,6 +55,13 @@ prevPlayer = false;
           <argument>
             <kind>1</kind>
             <string>event_inherited();
+
+//If transitioning on top of a moving platform, move the platform at the same speed as Mega Man
+//Bug: there is a small hop when transitioning upwards
+if global.frozen &amp;&amp; !dead &amp;&amp; instance_exists(objSectionSwitcher) &amp;&amp; instance_exists(objMegaman) &amp;&amp; place_meeting(x, y-1, objMegaman) {
+    x += objSectionSwitcher.playerSpeedHor * sign(xspeed);
+    y += objSectionSwitcher.playerSpeedVert * sign(yspeed);
+}
 
 if global.frozen == false &amp;&amp; dead == false
 {

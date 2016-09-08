@@ -201,6 +201,8 @@ else if newSectionXOffset &lt; 0 //Switching to the left
             <kind>1</kind>
             <string>//Initialize switching sections
 
+var plt = instance_place(x, y+1, prtMovingPlatformSolid);   //Moving platform below Mega Man?
+
 if newSectionXOffset &gt; 0 //Switching to the right
 {
     x = sectionRight-6;
@@ -225,6 +227,12 @@ else if newSectionYOffset &lt; 0 //Switching up
     playerCameraInit();
     with instance_create(x, y, objSectionSwitcher) dir = "up";
 }
+
+//If there was a moving platform below Mega Man, adjust it to remain below him
+if ground == true &amp;&amp; plt &gt;= 0 {
+    plt.y = bbox_bottom + plt.sprite_yoffset + 1;
+}
+
 </string>
           </argument>
         </arguments>
