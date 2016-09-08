@@ -1,9 +1,9 @@
-# Mega-Engine-Fork
-**Mega Engine - Open-source Classic Megaman engine for Game Maker Studio!**
+# Open Mega Engine
+**Open Mega Engine - Open-source Classic Megaman engine for Game Maker Studio!**
 
-Original source code by [WreckingPrograms](https://twitter.com/WreckingProg) - Original forum post: http://sprites-inc.co.uk/showthread.php?tid=1648
+Original source code from 'Mega Engine' by [WreckingPrograms](https://twitter.com/WreckingProg) - Original forum post: http://sprites-inc.co.uk/showthread.php?tid=1648
 
-![Mega Engine](http://i.imgur.com/Tzy8LkV.png)
+![Open Mega Engine](http://i.imgur.com/Tzy8LkV.png)
 
 This is a fork of Mega Engine 1.3 for GM Studio, intended to incorporate contributions from users.
 
@@ -54,11 +54,11 @@ Tutorial series on how to use the engine: http://bit.ly/2bc7HQE
 
 **Q**: I ran into a bug! How do I report it?
 
-**A**: Use the built-in GitHub [issue tracker](https://github.com/rafaelcp/Mega-Engine-Fork/issues).
+**A**: Use the built-in GitHub [issue tracker](https://github.com/rafaelcp/Open-Mega-Engine/issues).
 
 **Q**: I have an idea or suggestion for the engine, where do I post it?
 
-**A**: Again, use the built-in GitHub [issue tracker](https://github.com/rafaelcp/Mega-Engine-Fork/issues). Better yet, implement your ideas and send a [pull request](https://github.com/rafaelcp/Mega-Engine-Fork/pulls).
+**A**: Again, use the built-in GitHub [issue tracker](https://github.com/rafaelcp/Open-Mega-Engine/issues). Better yet, implement your ideas and send a [pull request](https://github.com/rafaelcp/Open-Mega-Engine/pulls).
 
 # Guidelines for Contribution
 - Everything that can be found in MM 1-10 is welcome (mechanics, weapons, bosses, 8-bit resources, etc.)
