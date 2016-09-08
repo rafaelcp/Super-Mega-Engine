@@ -601,6 +601,7 @@
       <script>scripts\FMODInstanceGetVolume.gml</script>
       <script>scripts\FMODSoundSetLoopPoints.gml</script>
     </scripts>
+    <script>scripts\split.gml</script>
   </scripts>
   <objects name="objects">
     <objects name="Collision">

@@ -224,14 +224,36 @@ for(i = 0; i &lt;= 8; i += 1)
 //Draw the selected panel
 draw_sprite(sprStageSelectPanel, floor(imgIndex), xx[option], yy[option]);
 
+draw_set_color(c_white);
+draw_set_font(global.MM3font);
 
-//Draw the boss icons
+var words, word;
+
+//Draw the boss icons and names
 for(i = 0; i &lt;= 7; i += 1)
 {
     if global.bossDefeated[i] == false
         draw_sprite(sprStageSelectIcons, i, xx[i]+8, yy[i]+8);
+
+    //Boss name
+    words = split(global.bossNames[i], " ");
+    word = ds_queue_dequeue(words);
+    if string_length(word) &lt;= 6 {
+        draw_set_halign(fa_left);
+        draw_text(xx[i], yy[i] + 48, word);
+    }
+    else {
+        draw_set_halign(fa_right);        
+        draw_text(xx[i] + 48, yy[i] + 48, word);
+    }
+    if (ds_queue_size(words) &gt; 0) {
+        draw_set_halign(fa_right);
+        word = ds_queue_dequeue(words);
+        draw_text(xx[i] + 48, yy[i] + 56, word);
+    }
 }
 
+ds_queue_destroy(words);
 
 //Draw MM's head in the middle
 draw_sprite(sprMMStageSelect, option, xx[8]+8, yy[8]+8);

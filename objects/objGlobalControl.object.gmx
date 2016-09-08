@@ -156,6 +156,15 @@ if room == rmInit
     
     global.weaponAmmo[silvertomahawk] = 1;
     global.weaponAmmo[windstorm] = 1;
+    
+    global.bossNames[0] = "HEAT MAN";
+    global.bossNames[1] = "BLIZZARD MAN";
+    global.bossNames[2] = "SPLASH WOMAN";
+    global.bossNames[3] = "AIR MAN";
+    global.bossNames[4] = "STRIKE MAN";
+    global.bossNames[5] = "CONCRETE MAN";
+    global.bossNames[6] = "SHADOW MAN";
+    global.bossNames[7] = "PHARAOH MAN";
 }
 
 
