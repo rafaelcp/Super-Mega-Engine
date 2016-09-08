@@ -54,8 +54,17 @@ Tutorial series on how to use the engine: http://bit.ly/2bc7HQE
 
 **Q**: I ran into a bug! How do I report it?
 
-**A**: Use the built-in Github [issue tracker](https://github.com/rafaelcp/Mega-Engine-Fork/issues).
+**A**: Use the built-in GitHub [issue tracker](https://github.com/rafaelcp/Mega-Engine-Fork/issues).
 
 **Q**: I have an idea or suggestion for the engine, where do I post it?
 
-**A**: Again, use the built-in Github [issue tracker](https://github.com/rafaelcp/Mega-Engine-Fork/issues). Better yet, implement your ideas and send a [pull request](https://github.com/rafaelcp/Mega-Engine-Fork/pulls).
+**A**: Again, use the built-in GitHub [issue tracker](https://github.com/rafaelcp/Mega-Engine-Fork/issues). Better yet, implement your ideas and send a [pull request](https://github.com/rafaelcp/Mega-Engine-Fork/pulls).
+
+# Guidelines for Contribution
+- Everything that can be found in MM 1-10 is welcome (mechanics, weapons, bosses, 8-bit resources, etc.)
+- Features not present in *every* game should be made optional (include a boolean variable set to false by default) (e.g., start charging while sliding, shop, initial stage, etc.)
+- Features not present in *any* game will be discussed by the contributors, but should be optional anyway
+
+# Goals
+- Ideally, the engine should be an empty game, and levels, weapons and bosses (from examples or created by the user) should be added by the user according to his individual game 
+- It should be possible to replicate any of the 8-bit MM games with the engine
