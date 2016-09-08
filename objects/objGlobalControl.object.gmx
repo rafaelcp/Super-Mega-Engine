@@ -69,6 +69,7 @@ if room == rmInit
     global.eTanks = 0;
     global.mTanks = 0;
     global._lives = 2;
+    global.screws = 0;
        
     var i;
     for(i = 0; i &lt;= 1000; i += 1) //If you somehow have over 1000 pickups in one room, increase this number
@@ -95,6 +96,7 @@ if room == rmInit
     //Option variables
     global.enableCharge = true; //Can we charge the buster?
     global.enableSlide = true; //Can we slide?
+    global.enableScrews = true; //Do screws exist in this game?
     
     //Weapon inventory
     global.totalWeapons = 7; //8 weapons in total including the buster, but since 0 is also a valid weapon ID, the value becomes 7

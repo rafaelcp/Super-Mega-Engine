@@ -206,6 +206,7 @@
       <sound>sound\sfxEnergyRestore</sound>
       <sound>sound\sfxSplash</sound>
       <sound>sound\sfxWeaponSwitch</sound>
+      <sound>sound\sfxBoltCollect</sound>
     </sounds>
     <sounds name="Shooting">
       <sound>sound\sfxBuster</sound>
@@ -430,6 +431,8 @@
         <sprite>sprites\sprMTankPrimary</sprite>
         <sprite>sprites\sprMTankSecondary</sprite>
         <sprite>sprites\sprMTankOutline</sprite>
+        <sprite>sprites\sprScrewSmall</sprite>
+        <sprite>sprites\sprScrewBig</sprite>
       </sprites>
       <sprites name="Gimmicks">
         <sprites name="General">
@@ -701,6 +704,8 @@
         <object>objects\objETank</object>
         <object>objects\objMTank</object>
         <object>objects\objLife</object>
+        <object>objects\objScrewSmall</object>
+        <object>objects\objScrewBig</object>
       </objects>
       <objects name="Gimmicks">
         <objects name="Parents">

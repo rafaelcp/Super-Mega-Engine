@@ -454,14 +454,22 @@ if (phase &gt;= 1 &amp;&amp; phase &lt;= 3) || phase == 5 || phase == 6
     
     //Life
     var xx, yy, bgCol, i;
-    xx = view_xview[0]+208;
+    xx = view_xview[0]+200;
     yy = view_yview[0]+183;
     bgCol = make_color_rgb(5, 5, 5);
     draw_sprite_ext(sprLife, 0, xx, yy, 1, 1, 0, c_white, 1);
     draw_sprite_ext(sprLifePrimary, 0, xx, yy, 1, 1, 0, global.primaryCol, 1);
     draw_sprite_ext(sprLifeSecondary, 0, xx, yy, 1, 1, 0, global.secondaryCol, 1);
     draw_sprite_ext(sprLifeOutline, 0, xx, yy, 1, 1, 0, bgCol, 1);
-    draw_text(xx + (41-25), yy + (201-183), "0" + string(global._lives));
+    draw_text(xx + (41-20), yy + (201-195), "0" + string(global._lives));
+    
+    //Screws
+    if global.enableScrews {
+        xx = view_xview[0]+200;
+        yy = view_yview[0]+199;
+        draw_sprite(sprScrewBig, 0, xx, yy);
+        draw_text(xx + (41-24), yy + (201-194), string_replace_all(string_format(global.screws, 3, 0), " ", "0"));
+    }
     
     //Megaman
     xx = view_xview[0]+155;
