@@ -17,4 +17,4 @@
 //FMODinit(100,true);
 //Password encription is no longer supperted if you use the web music option
 
-return external_call(global.dll_FMODinit,argument0, argument1);
+if (global.FMOD) return external_call(global.dll_FMODinit,argument0, argument1);

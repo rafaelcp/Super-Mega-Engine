@@ -16,7 +16,7 @@
 //or if the sound is short, you may never have time to use it other that right
 //after you make the PlaySound Call... The instance will become invalid 
 //when the sound is done playing
-var t;
-t =  external_call(global.dll_FMODSoundPlay,argument0,argument1);
+var t = -1;
+if (global.FMOD) t =  external_call(global.dll_FMODSoundPlay,argument0,argument1);
 //FMODUpdate();
 return t;

@@ -20,4 +20,4 @@
 //FMODAllStop()
 
 
-return external_call(global.dll_FMODSoundFree,argument0);
+if (global.FMOD) return external_call(global.dll_FMODSoundFree,argument0);

@@ -8,4 +8,4 @@
 //this set the loop point from 40% to 60% so only that part is looped
 //FMODSoundSetLoopPoints(global.musicsound,.4,.6);
 //Call before playing the sound
-return external_call(global.dll_FMODSoundSetLoopPoints,argument0,argument1,argument2);
+if (global.FMOD) return external_call(global.dll_FMODSoundSetLoopPoints,argument0,argument1,argument2);

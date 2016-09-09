@@ -13,4 +13,4 @@
 //FMODSoundFree()
 //UnloadFMOD()
 
-return external_call(global.dll_FMODfree);
+if (global.FMOD) return external_call(global.dll_FMODfree);

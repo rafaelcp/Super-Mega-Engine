@@ -5,4 +5,4 @@
 //When game ends
 //UnloadFMOD();
 
-external_free("GMFMODSimple.dll");
+if (global.FMOD) external_free("GMFMODSimple.dll");

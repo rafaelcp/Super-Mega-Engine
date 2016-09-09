@@ -604,6 +604,10 @@
     <scripts name="Strings">
       <script>scripts\split.gml</script>
     </scripts>
+    <scripts name="Saving">
+      <script>scripts\saveGame.gml</script>
+      <script>scripts\loadGame.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <objects name="Collision">
