@@ -67,6 +67,7 @@ Tutorial series on how to use the engine: http://bit.ly/2bc7HQE
 - Everything that can be found in MM 1-10 is welcome (mechanics, weapons, bosses, 8-bit resources, etc.)
 - Features not present in *every* game should be made optional (include a boolean variable set to false by default) (e.g., start charging while sliding, shop, initial stage, etc.)
 - Features not present in *any* game will be discussed by the contributors, but should be optional anyway
+- Original content won't be added. This is left for individual games.
 
 # Goals
 - Ideally, the engine should be an empty game, and levels, weapons and bosses (from examples or created by the user) should be added by the user according to his individual game 
