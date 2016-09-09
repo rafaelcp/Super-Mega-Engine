@@ -27,8 +27,9 @@ The engine has several features, including:
 - Three example gimmicks included in the engine, and flexibility in adding your own
 - An example Robot Master with full AI, and flexibility to add your own bosses
 - A customizable title screen, stage select, boss introduction screen, weapon get screen, game over screen and pause screen
-- E-Tanks, M-Tanks, health drops, weapon drops and extra lives
+- E-Tanks, M-Tanks, health drops, weapon drops, screws and extra lives
 - Fully functional checkpoints
+- Experimental HTML5 support
 
 Tutorial series on how to use the engine: http://bit.ly/2bc7HQE
 
