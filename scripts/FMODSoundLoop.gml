@@ -16,7 +16,7 @@
 //The instance will be valid for as long as you dont stop it or stop the group
 // or stop the entire system
 //See also FMODInstanceSetLoopCount()
-var t;
-t =  external_call(global.dll_FMODSoundLoop,argument0,argument1);
+var t = -1;
+if (global.FMOD) t =  external_call(global.dll_FMODSoundLoop,argument0,argument1);
 //FMODUpdate();
 return t;
