@@ -31,6 +31,22 @@ beenOutsideView = false;
 canHit = true;
 
 respawn = true; //Should we respawn after leaving the screen and entering it again?
+
+//Default damage
+damageBuster = 1;
+damageBusterCharged = 2;
+
+damageMetalBlade = 1;
+
+damagePharaohShot = 1;
+damagePharaohShotCharged = 2;
+
+damageStarCrash = 1;
+
+damageSilverTomahawk = 1;
+damageWindStorm = 1;
+
+damageCentaurFlash = 10;
 </string>
           </argument>
         </arguments>

@@ -216,6 +216,7 @@
       <sound>sound\sfxPharaohShot</sound>
       <sound>sound\sfxPharaohShotCharged</sound>
       <sound>sound\sfxReflect</sound>
+      <sound>sound\sfxCentaurFlash</sound>
     </sounds>
     <sounds name="Enemy">
       <sound>sound\sfxEnemyHit</sound>
@@ -603,6 +604,7 @@
     </scripts>
     <scripts name="Strings">
       <script>scripts\split.gml</script>
+      <script>scripts\string_lpad.gml</script>
     </scripts>
     <scripts name="Saving">
       <script>scripts\saveGame.gml</script>
@@ -647,6 +649,7 @@
         <objects name="MM6">
           <object>objects\objSilverTomahawk</object>
           <object>objects\objWindStorm</object>
+          <object>objects\objCentaurFlash</object>
         </objects>
       </objects>
       <objects name="Effects">
@@ -787,7 +790,7 @@
       <room>rooms\rmPass</room>
     </rooms>
   </rooms>
-  <constants number="8">
+  <constants number="9">
     <constant name="megabuster">0</constant>
     <constant name="silvertomahawk">1</constant>
     <constant name="windstorm">2</constant>
@@ -796,6 +799,7 @@
     <constant name="rushcoil">5</constant>
     <constant name="starcrash">6</constant>
     <constant name="rushjet">7</constant>
+    <constant name="centaurflash">8</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

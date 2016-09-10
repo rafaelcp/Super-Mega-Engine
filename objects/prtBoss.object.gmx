@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>startIntro = false;
+            <string>event_inherited();
+
+startIntro = false;
 isIntro = false;
 startFight = false;
 isFight = false;
@@ -50,6 +52,8 @@ reflectProjectiles = false;
 reflectProjectilesLeft = false;
 reflectProjectilesRight = false;
 dead = false;
+
+damageCentaurFlash = 0;
 </string>
           </argument>
         </arguments>

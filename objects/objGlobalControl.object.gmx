@@ -99,7 +99,7 @@ if room == rmInit
     global.enableScrews = true; //Do screws exist in this game?
     
     //Weapon inventory
-    global.totalWeapons = 7; //8 weapons in total including the buster, but since 0 is also a valid weapon ID, the value becomes 7
+    global.totalWeapons = 8; //9 weapons in total including the buster, but since 0 is also a valid weapon ID, the value becomes 7
     
     for(i = 0; i &lt;= global.totalWeapons; i += 1)
     {
@@ -122,6 +122,8 @@ if room == rmInit
     global.weaponUnlocked[6] = true; //Usually, Rush Coil is available from the beginning as well
     global.weaponSlot[7] = rushjet;
     global.weaponUnlocked[7] = true; //We have no RM that unlocks Rush Jet yet
+    global.weaponSlot[8] = centaurflash;
+    global.weaponUnlocked[8] = true; //Unlocked because there's no RM for it yet
     
     global.weaponUnlocked[global.totalWeapons+1] = true; //E-tank
     global.weaponUnlocked[global.totalWeapons+2] = true; //M-tank
@@ -141,6 +143,7 @@ if room == rmInit
     global.weaponName[silvertomahawk] = "SILVER.T";
     global.weaponName[windstorm] = "W.STORM";
     
+    global.weaponName[centaurflash] = "C.FLASH";
     
     //Ammo
     global.weaponAmmo[megabuster] = 0;
@@ -156,6 +159,8 @@ if room == rmInit
     
     global.weaponAmmo[silvertomahawk] = 1;
     global.weaponAmmo[windstorm] = 1;
+    
+    global.weaponAmmo[centaurflash] = 4;
     
     global.bossNames[0] = "HEAT MAN";
     global.bossNames[1] = "BLIZZARD MAN";
@@ -286,6 +291,10 @@ if keyboard_check_pressed(vk_f4)
     
 if keyboard_check_pressed(vk_escape)
     game_end();
+    
+if keyboard_check_pressed(vk_f7) saveGame(0);
+if keyboard_check_pressed(vk_f8) loadGame(0);
+
 </string>
           </argument>
         </arguments>

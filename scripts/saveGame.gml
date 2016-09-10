@@ -5,6 +5,6 @@ map[? "screws"] = global.screws;
 map[? "eTanks"] = global.eTanks;
 map[? "mTanks"] = global.mTanks;
 for(i = 0; i < 8; i++) {
-    map[? "bossDefeated" + i] = global.bossDefeated[i];
+    map[? ("bossDefeated" + string(i))] = global.bossDefeated[i];
 }
-ds_map_secure_save(map, "save" + argument0 + ".dat");
+ds_map_secure_save(map, "save" + string(argument0) + ".dat");

@@ -285,6 +285,15 @@ if global.keyShootPressed && canShoot == true && (canMove == true || climbing ==
                 }
             }
         break;
+        
+        case centaurflash:
+            if instance_number(objCentaurFlash) < 1 {
+                attackID = instance_create(x, sprite_get_ycenter(), objCentaurFlash);
+                global.ammo[global.currentWeapon] -= global.weaponAmmo[global.weaponSlot[global.currentWeapon]];
+                if global.ammo[global.currentWeapon] <= 0
+                    global.ammo[global.currentWeapon] = 0;
+            }
+        break;
     }
 }
 
