@@ -27,112 +27,10 @@
             <kind>1</kind>
             <string>event_inherited();
 
-scrw = 20;
-flash = false;
-flashTimer = 0;
-xspeed = 0;
-yspeed = 0;
+amount = 20;
 
 if !global.enableScrews {
     instance_destroy();
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="1">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>instance_destroy();
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>flash = true;
-alarm[1] = 60;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if global.frozen == false
-{
-    
-    if flash == true
-    {
-        flashTimer += 1;
-        if flashTimer &gt;= 2
-        {
-            visible = !visible;
-            flashTimer = 0;
-        }
-    }
-    
-    if insideView()
-    {
-        checkGround();
-        gravityCheckGround();
-        generalCollision();
-        
-        y += yspeed;
-    }
-}
-else
-{
-    if alarm[0] != -1
-        alarm[0] += 1;
-    if alarm[1] != -1
-        alarm[1] += 1;
 }
 </string>
           </argument>
@@ -156,67 +54,14 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_destroy();
+            <string>event_inherited();
 
 if global.screws &lt; 999 {
     
-    global.screws += scrw;   
+    global.screws += amount;   
     
     playSFX(sfxBoltCollect);
 }
-
-if pickupID != -15
-{
-    global.pickupCollected[pickupID] = true;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="40">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if alarm[0] != -1 || alarm[1] != -1 //This means it's dropped by an enemy
-    instance_destroy();
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if alarm[0] != -1 || alarm[1] != -1 //This means it's dropped by an enemy
-    instance_destroy();
 </string>
           </argument>
         </arguments>

@@ -232,6 +232,9 @@ else if newSectionYOffset &lt; 0 //Switching up
 if ground == true &amp;&amp; plt &gt;= 0 {
     plt.y = bbox_bottom + plt.sprite_yoffset + 1;
 }
+if (instance_exists(objSectionSwitcher)) {
+    objSectionSwitcher.plt = plt;
+}
 
 </string>
           </argument>

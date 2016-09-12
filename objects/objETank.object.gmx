@@ -50,7 +50,9 @@ image_speed = 0.1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.frozen == false
+            <string>event_inherited();
+
+if global.frozen == false
 {
     image_speed = 0.1;
 }
@@ -80,17 +82,12 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_destroy();
+            <string>event_inherited();
 
 if global.eTanks &lt; 9
     global.eTanks += 1;
     
 playSFX(sfxImportantItem);
-
-if pickupID != -15
-{
-    global.pickupCollected[pickupID] = true;
-}
 </string>
           </argument>
         </arguments>

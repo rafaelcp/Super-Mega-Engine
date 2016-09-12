@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>event_inherited();
 
-scrw = 2;
+amount = 2;
 </string>
           </argument>
         </arguments>

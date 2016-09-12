@@ -65,7 +65,7 @@ if room == rmInit
     
     display_reset(0, true); //Enables V-synch to make everything look nicer (without V-sync, GM Studio games tend to look pretty bad)
     
-    room_goto_next();
+    room_goto(initialRoom); //initialRoom is defined in Macros
     global.eTanks = 0;
     global.mTanks = 0;
     global._lives = 2;
@@ -294,6 +294,7 @@ if keyboard_check_pressed(vk_escape)
     
 if keyboard_check_pressed(vk_f7) saveGame(0);
 if keyboard_check_pressed(vk_f8) loadGame(0);
+if keyboard_check_pressed(vk_f12) game_restart();
 
 </string>
           </argument>

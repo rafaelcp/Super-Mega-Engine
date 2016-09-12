@@ -29,6 +29,8 @@
 canInitDeath = true;
 beenOutsideView = false;
 canHit = true;
+xspeed = 0;
+yspeed = 0;
 
 respawn = true; //Should we respawn after leaving the screen and entering it again?
 
@@ -141,6 +143,7 @@ if !insideView()
     visible = false;
     xspeed = 0;
     yspeed = 0;
+
 }
     
     
@@ -691,7 +694,7 @@ else
         }
     }
 }
-else
+else if !dead
 {
     event_user(0); //Reflect the projectiles
 }
@@ -746,7 +749,7 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if other.object_index != objPharaohShotCharging
+            <string>if !dead &amp;&amp; other.object_index != objPharaohShotCharging
 {
     with other
     {

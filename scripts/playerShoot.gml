@@ -37,7 +37,7 @@ if global.keyShootPressed && canShoot == true && (canMove == true || climbing ==
     switch global.weapon
     {
         case megabuster:
-            if instance_number(objBusterShot) + instance_number(objBusterShotHalfCharged) < 3
+            if instance_number(objBusterShot) + instance_number(objBusterShotHalfCharged) + instance_number(objReflectedProjectile) < 3
             {
                 attackID = instance_create(box+image_xscale*4, yy, objBusterShot);
                     attackID.xspeed = image_xscale * 5;
@@ -48,7 +48,7 @@ if global.keyShootPressed && canShoot == true && (canMove == true || climbing ==
         break;
         
         case silvertomahawk:
-            if instance_number(objSilverTomahawk) < 2
+            if instance_number(objSilverTomahawk) + instance_number(objReflectedProjectile) < 2
             {
                 attackID = instance_create(box+image_xscale*12, yy, objSilverTomahawk);
                     attackID.xspeed = image_xscale * 3.5;
@@ -63,7 +63,7 @@ if global.keyShootPressed && canShoot == true && (canMove == true || climbing ==
         break;
         
         case windstorm:
-            if instance_number(objWindStorm) < 3
+            if instance_number(objWindStorm) + instance_number(objReflectedProjectile) < 3
             {
                 attackID = instance_create(box+image_xscale*9, yy, objWindStorm);
                     attackID.xspeed = image_xscale * 3;
@@ -79,7 +79,7 @@ if global.keyShootPressed && canShoot == true && (canMove == true || climbing ==
         break;
         
         case pharaohshot:
-            if instance_number(objPharaohShot) < 3
+            if instance_number(objPharaohShot) + instance_number(objReflectedProjectile) < 3
             {
                 attackID = instance_create(box+image_xscale*4, yy, objPharaohShot);
                     attackID.xspeed = image_xscale * 4.5;
@@ -102,7 +102,7 @@ if global.keyShootPressed && canShoot == true && (canMove == true || climbing ==
         break;
         
         case metalblade:
-            if instance_number(objMetalBlade) < 3
+            if instance_number(objMetalBlade) + instance_number(objReflectedProjectile) < 3
             {
                 attackID = instance_create(x+image_xscale*3, yy, objMetalBlade);
                     
@@ -137,7 +137,7 @@ if global.keyShootPressed && canShoot == true && (canMove == true || climbing ==
         break;
         
         case starcrash:
-            if instance_number(objStarCrash) < 1
+            if instance_number(objStarCrash) + instance_number(objReflectedProjectile) < 1
             {
                 attackID = instance_create(x, sprite_get_ycenter(), objStarCrash);
             }
@@ -256,7 +256,7 @@ if global.keyShootPressed && canShoot == true && (canMove == true || climbing ==
             }
             else
             {
-                if instance_number(objBusterShot) + instance_number(objBusterShotHalfCharged) < 3
+                if instance_number(objBusterShot) + instance_number(objBusterShotHalfCharged) + instance_number(objReflectedProjectile) < 3
                 {
                     attackID = instance_create(box+image_xscale*4, yy, objBusterShot);
                         attackID.xspeed = image_xscale * 5;
@@ -275,7 +275,7 @@ if global.keyShootPressed && canShoot == true && (canMove == true || climbing ==
             }
             else
             {
-                if instance_number(objBusterShot) + instance_number(objBusterShotHalfCharged) < 3
+                if instance_number(objBusterShot) + instance_number(objBusterShotHalfCharged) + instance_number(objReflectedProjectile) < 3
                 {
                     attackID = instance_create(box+image_xscale*4, yy, objBusterShot);
                         attackID.xspeed = image_xscale * 5;

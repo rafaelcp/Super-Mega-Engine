@@ -48,17 +48,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_destroy();
+            <string>event_inherited();
 
 if global._lives &lt; 9
     global._lives += 1;
     
 playSFX(sfxImportantItem);
-
-if pickupID != -15
-{
-    global.pickupCollected[pickupID] = true;
-}
 </string>
           </argument>
         </arguments>

@@ -728,6 +728,7 @@
         </objects>
         <objects name="MM2">
           <object>objects\objMM2Conveyor</object>
+          <object>objects\objWind</object>
         </objects>
         <objects name="MM3">
           <object>objects\objSparkmanPlatform</object>
@@ -790,7 +791,7 @@
       <room>rooms\rmPass</room>
     </rooms>
   </rooms>
-  <constants number="9">
+  <constants number="10">
     <constant name="megabuster">0</constant>
     <constant name="silvertomahawk">1</constant>
     <constant name="windstorm">2</constant>
@@ -800,6 +801,7 @@
     <constant name="starcrash">6</constant>
     <constant name="rushjet">7</constant>
     <constant name="centaurflash">8</constant>
+    <constant name="initialRoom">rmDisclaimer</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

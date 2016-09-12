@@ -144,6 +144,9 @@ if global.frozen == false &amp;&amp; dead == false
         reflectProjectiles = true;
     else
         reflectProjectiles = false;
+        
+    x += xspeed;
+    y += yspeed;
 }
 else
 {
@@ -154,6 +157,8 @@ else
         image_index = 0;
     }
 }
+
+
 </string>
           </argument>
         </arguments>
