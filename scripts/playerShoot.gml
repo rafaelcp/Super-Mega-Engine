@@ -61,7 +61,20 @@ if global.keyShootPressed && canShoot == true && (canMove == true || climbing ==
                     global.ammo[global.currentWeapon] = 0;
             }
         break;
-        
+        case hyperbomb:
+            if instance_number(objHyperBomb) < 3
+            {
+                attackID = instance_create(box+image_xscale*7, yy, objHyperBomb);
+                    attackID.xspeed = image_xscale * 3.5;
+                playSFX(sfxBuster);
+                isThrow = true;
+                shootTimer = 0;
+                
+                global.ammo[global.currentWeapon] -= global.weaponAmmo[global.weaponSlot[global.currentWeapon]];
+                if global.ammo[global.currentWeapon] <= 0
+                    global.ammo[global.currentWeapon] = 0;
+            }
+        break;
         case windstorm:
             if instance_number(objWindStorm) < 3
             {
