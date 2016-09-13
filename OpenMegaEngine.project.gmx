@@ -725,6 +725,7 @@
         </objects>
         <objects name="General">
           <object>objects\objYokuBlock</object>
+          <object>objects\objShake</object>
         </objects>
         <objects name="MM2">
           <object>objects\objMM2Conveyor</object>
