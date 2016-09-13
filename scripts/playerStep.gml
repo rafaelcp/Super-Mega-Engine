@@ -574,10 +574,10 @@ if global.enableSlide == true
 
 //Climbing
 var ladder, ladderDown;
-ladder = collision_rectangle(sprite_get_xcenter()-3, bbox_top, sprite_get_xcenter()+3, bbox_bottom-1, objLadder, false, false);
+ladder = collision_rectangle(sprite_get_xcenter()-3, bbox_top+4, sprite_get_xcenter()+3, bbox_bottom-1, objLadder, false, false);
 ladderDown = collision_rectangle(sprite_get_xcenter()-3, bbox_bottom+1, sprite_get_xcenter()+3, bbox_bottom+2, objLadder, false, false);
 if ((ladder >= 0 && global.keyUp && !global.keyDown)
-|| (ladderDown >= 0 && ground == true && global.keyDown && !global.keyUp && !place_meeting(x, y, objLadder)))
+|| (ladderDown >= 0 && ground == true && !isSlide && global.keyDown && !global.keyUp && !place_meeting(x, y, objLadder)))
 && (canMove == true || isSlide == true)
 {
     isSlide = false;
