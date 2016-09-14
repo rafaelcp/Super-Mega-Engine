@@ -33,13 +33,14 @@ The engine has several features, including:
 - Friendly to multiple keyboard layouts (multiple keys assigned to shoot and jump)
 - Experimental HTML5 support
 
-[Open Mega Engine playthrough video](https://www.youtube.com/watch?v=cGZtF46oGJ8)
+<a href="https://www.youtube.com/watch?v=cGZtF46oGJ8" target="_blank">Open Mega Engine playthrough video<br><img src="https://img.youtube.com/vi/cGZtF46oGJ8/0.jpg" 
+alt="Open Mega Engine playthrough video" title="Open Mega Engine playthrough video" width="240" height="180" border="10" /></a>
 
-[Mega Engine 1.0 playthrough video](https://www.youtube.com/watch?v=LmcvNggdHew)
+<a href="https://www.youtube.com/watch?v=LmcvNggdHew" target="_blank">Mega Engine 1.0 playthrough video<br><img src="https://img.youtube.com/vi/LmcvNggdHew/0.jpg" 
+alt="Mega Engine 1.0 playthrough video" title="Mega Engine 1.0 playthrough video" width="240" height="180" border="10" /></a>
 
-Tutorial: 
-
-[![Tutorial](https://img.youtube.com/vi/LmcvNggdHew/0.jpg)](http://bit.ly/2bc7HQE)
+<a href="https://www.youtube.com/playlist?list=PLZWFosEIaQq13eVkura_XwdqkgZtLEr2D" target="_blank">Tutorial<br><img src="https://img.youtube.com/vi/LT12qZz1PpM/0.jpg" 
+alt="Tutorial" title="Tutorial" width="240" height="180" border="10" /></a>
 
 # F.A.Q.
 
