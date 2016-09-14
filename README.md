@@ -33,11 +33,13 @@ The engine has several features, including:
 - Friendly to multiple keyboard layouts (multiple keys assigned to shoot and jump)
 - Experimental HTML5 support
 
-Tutorial series on how to use the engine: http://bit.ly/2bc7HQE
+[Open Mega Engine playthrough video](https://www.youtube.com/watch?v=cGZtF46oGJ8)
 
-[Engine playthrough](https://www.youtube.com/watch?v=LmcvNggdHew):
+[Mega Engine 1.0 playthrough video](https://www.youtube.com/watch?v=LmcvNggdHew)
 
-[![Tutorial](https://img.youtube.com/vi/LmcvNggdHew/0.jpg)](https://www.youtube.com/watch?v=LmcvNggdHew)
+Tutorial: 
+
+[![Tutorial](https://img.youtube.com/vi/LmcvNggdHew/0.jpg)](http://bit.ly/2bc7HQE)
 
 # F.A.Q.
 
