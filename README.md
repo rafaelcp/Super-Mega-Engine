@@ -29,6 +29,8 @@ The engine has several features, including:
 - A customizable title screen, stage select, boss introduction screen, weapon get screen, game over screen and pause screen
 - E-Tanks, M-Tanks, health drops, weapon drops, screws and extra lives
 - Fully functional checkpoints
+- Gamepad support
+- Friendly to multiple keyboard layouts (multiple keys assigned to shoot and jump)
 - Experimental HTML5 support
 
 Tutorial series on how to use the engine: http://bit.ly/2bc7HQE
