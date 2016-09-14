@@ -5,7 +5,7 @@ Run the [DEMO](https://cdn.rawgit.com/rafaelcp/Open-Mega-Engine/master/demo/inde
 
 Original source code from 'Mega Engine' by [WreckingPrograms](https://twitter.com/WreckingProg) - Original forum post: http://sprites-inc.co.uk/showthread.php?tid=1648
 
-![Open Mega Engine](http://i.imgur.com/dXmNvoH.png)
+![Open Mega Engine](https://i.imgur.com/hOlZCn7.png)
 
 This is a fork of Mega Engine 1.3 for GM Studio, intended to incorporate contributions from users.
 
