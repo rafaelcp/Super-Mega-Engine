@@ -177,6 +177,24 @@ else if newSectionXOffset &lt; 0 //Switching to the left
         door = true;
     }
 }
+else if newSectionYOffset &gt; 0 //Switching to the bottom
+{
+    playerCameraInit();
+    with instance_create(x, y, objSectionSwitcher) 
+    {
+        dir = "down";
+        door = true;
+    }
+}
+else if newSectionYOffset &lt; 0 //Switching to the top
+{
+    playerCameraInit();
+    with instance_create(x, y, objSectionSwitcher)
+    {
+        dir = "up";
+        door = true;
+    }
+}
 </string>
           </argument>
         </arguments>

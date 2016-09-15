@@ -292,6 +292,8 @@ if global.keyShootPressed && canShoot == true && (canMove == true || climbing ==
                 global.ammo[global.currentWeapon] -= global.weaponAmmo[global.weaponSlot[global.currentWeapon]];
                 if global.ammo[global.currentWeapon] <= 0
                     global.ammo[global.currentWeapon] = 0;
+                isShoot = true;
+                shootTimer = 0;                    
             }
         break;
     }
@@ -389,7 +391,7 @@ if global.enableCharge == true
                 {
                     if chargeTimer == chargeTime
                     {
-                        sound_stop(sfxCharging);
+                        stopSFX(sfxCharging);
                         playSFX(sfxCharged);
                     }
                     
@@ -451,8 +453,8 @@ if global.enableCharge == true
             
             chargeTimer = 0;
             initChargeTimer = 0;
-            sound_stop(sfxCharged);
-            sound_stop(sfxCharging);
+            stopSFX(sfxCharged);
+            stopSFX(sfxCharging);
             event_user(0); //Reset the colors
         } 
     }

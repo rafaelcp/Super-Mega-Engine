@@ -109,9 +109,10 @@ musicLoopPointEnd = -1;
             healthBarTimer = 0;
             canFillHealthBar = false;
             fillingHealthBar = true;
-            sound_stop(sfxEnergyRestore);
-            sound_loop(sfxEnergyRestore);
+            stopSFX(sfxEnergyRestore);
+            loopSFX(sfxEnergyRestore);
             drawHealthBar = true;
+            
         }
     }
     
@@ -129,7 +130,7 @@ musicLoopPointEnd = -1;
         if global.bossHealth &gt;= 28
         {
             global.bossHealth = 28;
-            sound_stop(sfxEnergyRestore);
+            stopSFX(sfxEnergyRestore);
             playerFreeMovement();
             myBoss.startFight = true;
             fillingHealthBar = false;

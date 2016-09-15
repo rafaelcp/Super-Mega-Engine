@@ -833,8 +833,7 @@ if global._health <= 0
     instance_create(x, y, objMegamanDeathTimer); //Because the Mega Man object is destoyed upon death, we need to make a different object execute the room restarting code
     instance_destroy();
     
-    FMODAllStop();
-    sound_stop_all();
+    stopAllSFX();
     playSFX(sfxDeath);
 }
 

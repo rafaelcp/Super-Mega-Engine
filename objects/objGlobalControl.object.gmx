@@ -61,17 +61,17 @@ global.currentPickupID = 0; //Each pickup (health, weapon energy, life, tanks) h
                             //This way, we can make it despawn when the room starts if the pickup has already been collected in that level
 
 
-
 //Go to the next room if this is the initializing room
 //Also, initialize some variables
 if room == rmInit {
 
-    LoadFMOD();
-    FMODInit(200, false); //If you somehow have over 200 pieces of music, increase this number
-    global.msc = -2;
+    global.bgm = -1;
+    global.loopStart = -1;
+    global.loopEnd = -1;
     
     display_reset(0, true); //Enables V-synch to make everything look nicer (without V-sync, GM Studio games tend to look pretty bad)
-
+    stopAllSFX();
+    
     global.GP = -1  //Gamepad
 
         
@@ -268,6 +268,15 @@ global.keyWeaponSwitchRightReleased = keyboard_check_released(weaponSwitchRightK
     x = objMegaman.x;
     y = objMegaman.y;
 }
+
+if global.loopEnd &gt; -1 &amp;&amp; global.loopStart &gt; -1 &amp;&amp; global.bgm &gt; -1 {    //Loop point
+    var currPos = audio_sound_get_track_position(global.bgm);
+    if currPos &gt;= global.loopEnd * 0.999 {
+        var diff = global.loopEnd - global.loopStart;
+        var newPos = currPos - diff;
+        audio_sound_set_track_position(global.bgm, newPos);
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -292,7 +301,6 @@ global.keyWeaponSwitchRightReleased = keyboard_check_released(weaponSwitchRightK
 if keyboard_check_pressed(vk_f2)
 {
     sound_stop_all();
-    FMODAllStop();
     game_restart();
 }
     
