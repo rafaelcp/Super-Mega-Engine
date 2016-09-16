@@ -66,6 +66,7 @@ damageSilverTomahawk = 2;
 damageWindStorm = 5;
 
 damageCentaurFlash = 4;
+damageFlashBomb = 6;
 </string>
           </argument>
         </arguments>

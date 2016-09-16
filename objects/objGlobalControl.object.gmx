@@ -109,7 +109,7 @@ if room == rmInit {
     global.enableScrews = true; //Do screws exist in this game?
     
     //Weapon inventory
-    global.totalWeapons = 8; //9 weapons in total including the buster, but since 0 is also a valid weapon ID, the value becomes 7
+    global.totalWeapons = 9; //10 weapons in total including the buster, but since 0 is also a valid weapon ID, the value becomes 9
     
     for(i = 0; i &lt;= global.totalWeapons; i += 1)
     {
@@ -134,6 +134,8 @@ if room == rmInit {
     global.weaponUnlocked[7] = true; //We have no RM that unlocks Rush Jet yet
     global.weaponSlot[8] = centaurflash;
     global.weaponUnlocked[8] = true; //Unlocked because there's no RM for it yet
+    global.weaponSlot[9] = flashbomb;
+    global.weaponUnlocked[9] = true; //Unlocked because there's no RM for it yet
     
     global.weaponUnlocked[global.totalWeapons+1] = true; //E-tank
     global.weaponUnlocked[global.totalWeapons+2] = true; //M-tank
@@ -154,6 +156,7 @@ if room == rmInit {
     global.weaponName[windstorm] = "W.STORM";
     
     global.weaponName[centaurflash] = "C.FLASH";
+    global.weaponName[flashbomb] = "FLASH.B";
     
     //Ammo
     global.weaponAmmo[megabuster] = 0;
@@ -171,6 +174,7 @@ if room == rmInit {
     global.weaponAmmo[windstorm] = 1;
     
     global.weaponAmmo[centaurflash] = 4;
+    global.weaponAmmo[flashbomb] = 1.06;
     
     global.bossNames[0] = "HEAT MAN";
     global.bossNames[1] = "BLIZZARD MAN";

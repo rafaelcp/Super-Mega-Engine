@@ -414,7 +414,10 @@ switch global.weapon
         global.secondaryCol = make_color_rgb(248, 248, 248);
     break;
         
-    
+    case flashbomb:
+        global.primaryCol = make_color_rgb(48, 80, 128);
+        global.secondaryCol = make_color_rgb(247, 181, 0);
+    break;
 }
 
 global.outlineCol = c_black;
