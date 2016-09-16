@@ -1,11 +1,13 @@
 # Open Mega Engine
 **Open Mega Engine - Open-source Classic Megaman engine for Game Maker Studio!**
 
-Run the [DEMO](https://cdn.rawgit.com/rafaelcp/Open-Mega-Engine/master/demo/index.html) inside your browser!
+Run the [HTML5 DEMO](https://cdn.rawgit.com/rafaelcp/Open-Mega-Engine/master/demo/index.html) inside your browser!
+
+Download the [Windows DEMO (EXE)](https://www.dropbox.com/s/kxaypg7ex8lloi9/OpenMegaEngine.zip?dl=0).
 
 Original source code from 'Mega Engine' by [WreckingPrograms](https://twitter.com/WreckingProg) - Original forum post: http://sprites-inc.co.uk/showthread.php?tid=1648
 
-![Open Mega Engine](http://i.imgur.com/Tzy8LkV.png)
+<img src="https://i.imgur.com/hOlZCn7.png" width="358" alt="Open Mega Engine" title="Open Mega Engine">
 
 This is a fork of Mega Engine 1.3 for GM Studio, intended to incorporate contributions from users.
 
@@ -29,13 +31,18 @@ The engine has several features, including:
 - A customizable title screen, stage select, boss introduction screen, weapon get screen, game over screen and pause screen
 - E-Tanks, M-Tanks, health drops, weapon drops, screws and extra lives
 - Fully functional checkpoints
+- Gamepad support
+- Friendly to multiple keyboard layouts (multiple keys assigned to shoot and jump)
 - Experimental HTML5 support
 
-Tutorial series on how to use the engine: http://bit.ly/2bc7HQE
+<a href="https://www.youtube.com/watch?v=cGZtF46oGJ8" target="_blank">Open Mega Engine playthrough video<br><img src="https://img.youtube.com/vi/cGZtF46oGJ8/0.jpg" 
+alt="Open Mega Engine playthrough video" title="Open Mega Engine playthrough video" width="240" height="180" border="10" /></a>
 
-[Engine playthrough](https://www.youtube.com/watch?v=LmcvNggdHew):
+<a href="https://www.youtube.com/watch?v=LmcvNggdHew" target="_blank">Mega Engine 1.0 playthrough video<br><img src="https://img.youtube.com/vi/LmcvNggdHew/0.jpg" 
+alt="Mega Engine 1.0 playthrough video" title="Mega Engine 1.0 playthrough video" width="240" height="180" border="10" /></a>
 
-[![Tutorial](https://img.youtube.com/vi/LmcvNggdHew/0.jpg)](https://www.youtube.com/watch?v=LmcvNggdHew)
+<a href="https://www.youtube.com/playlist?list=PLZWFosEIaQq13eVkura_XwdqkgZtLEr2D" target="_blank">Tutorial<br><img src="https://img.youtube.com/vi/LT12qZz1PpM/0.jpg" 
+alt="Tutorial" title="Tutorial" width="240" height="180" border="10" /></a>
 
 # F.A.Q.
 
@@ -68,6 +75,8 @@ Tutorial series on how to use the engine: http://bit.ly/2bc7HQE
 - Features not present in *every* game should be made optional (include a boolean variable set to false by default) (e.g., start charging while sliding, shop, initial stage, etc.)
 - Features not present in *any* game will be discussed by the contributors, but should be optional anyway
 - Original content won't be added. This is left for individual games.
+- Submit pull requests only to the 'test' branch
+- Solve any merge conflicts
 
 # Goals
 - Ideally, the engine should be an empty game, and levels, weapons and bosses (from examples or created by the user) should be added by the user according to his individual game 
