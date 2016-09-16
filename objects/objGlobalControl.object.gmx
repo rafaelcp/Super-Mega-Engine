@@ -36,6 +36,14 @@ pauseKey = vk_space;
 weaponSwitchLeftKey = ord('A');
 weaponSwitchRightKey = ord('S');
 
+keyboard_set_map(vk_enter, vk_space);
+keyboard_set_map(ord('W'), ord('Z'));   //For AZERTY
+keyboard_set_map(ord('Q'), ord('S'));   //For AZERTY
+keyboard_set_map(ord('Y'), ord('Z'));   //For QWERTZ
+keyboard_set_map(ord('R'), ord('S'));   //For COLEMAK
+keyboard_set_map(ord('K'), ord('Z'));   //For DVORAK
+
+
 event_perform(ev_step_begin, 0); //Registers the key inputs
 
 
@@ -47,24 +55,26 @@ global.currentWeapon = 0;   //Only the weapons used in the level; only those tha
 global.font = font_add_sprite(sprFont, ord('!'), true, 0);
 global.MM3font = font_add_sprite(sprMM3Font, ord('!'), true, 0);
 
-
 global.frozen = false;
 global.switchingSection = false;
 global.currentPickupID = 0; //Each pickup (health, weapon energy, life, tanks) has an ID
                             //This way, we can make it despawn when the room starts if the pickup has already been collected in that level
 
 
-
 //Go to the next room if this is the initializing room
 //Also, initialize some variables
-if room == rmInit
-{
-    LoadFMOD();
-    FMODInit(200, false); //If you somehow have over 200 pieces of music, increase this number
-    global.msc = -2;
+if room == rmInit {
+
+    global.bgm = -1;
+    global.loopStart = -1;
+    global.loopEnd = -1;
     
     display_reset(0, true); //Enables V-synch to make everything look nicer (without V-sync, GM Studio games tend to look pretty bad)
+    stopAllSFX();
     
+    global.GP = -1  //Gamepad
+
+        
     room_goto(initialRoom); //initialRoom is defined in Macros
     global.eTanks = 0;
     global.mTanks = 0;
@@ -99,7 +109,7 @@ if room == rmInit
     global.enableScrews = true; //Do screws exist in this game?
     
     //Weapon inventory
-    global.totalWeapons = 8; //9 weapons in total including the buster, but since 0 is also a valid weapon ID, the value becomes 7
+    global.totalWeapons = 9; //10 weapons in total including the buster, but since 0 is also a valid weapon ID, the value becomes 9
     
     for(i = 0; i &lt;= global.totalWeapons; i += 1)
     {
@@ -124,6 +134,8 @@ if room == rmInit
     global.weaponUnlocked[7] = true; //We have no RM that unlocks Rush Jet yet
     global.weaponSlot[8] = centaurflash;
     global.weaponUnlocked[8] = true; //Unlocked because there's no RM for it yet
+    global.weaponSlot[9] = flashbomb;
+    global.weaponUnlocked[9] = true; //Unlocked because there's no RM for it yet
     
     global.weaponUnlocked[global.totalWeapons+1] = true; //E-tank
     global.weaponUnlocked[global.totalWeapons+2] = true; //M-tank
@@ -144,6 +156,7 @@ if room == rmInit
     global.weaponName[windstorm] = "W.STORM";
     
     global.weaponName[centaurflash] = "C.FLASH";
+    global.weaponName[flashbomb] = "FLASH.B";
     
     //Ammo
     global.weaponAmmo[megabuster] = 0;
@@ -161,6 +174,7 @@ if room == rmInit
     global.weaponAmmo[windstorm] = 1;
     
     global.weaponAmmo[centaurflash] = 4;
+    global.weaponAmmo[flashbomb] = 1.06;
     
     global.bossNames[0] = "HEAT MAN";
     global.bossNames[1] = "BLIZZARD MAN";
@@ -202,35 +216,35 @@ if global.levelStart == true
           <argument>
             <kind>1</kind>
             <string>///Keys
-global.keyLeft = keyboard_check(leftKey);
-global.keyRight = keyboard_check(rightKey);
-global.keyUp = keyboard_check(upKey);
-global.keyDown = keyboard_check(downKey);
-global.keyJump = keyboard_check(jumpKey);
-global.keyShoot = keyboard_check(shootKey);
-global.keyPause = keyboard_check(pauseKey);
-global.keyWeaponSwitchLeft = keyboard_check(weaponSwitchLeftKey);
-global.keyWeaponSwitchRight = keyboard_check(weaponSwitchRightKey);
+global.keyLeft = keyboard_check(leftKey) || gamepad_axis_value(global.GP, gp_axislh) &lt; -0.1 || gamepad_button_check(global.GP, gp_padl);
+global.keyRight = keyboard_check(rightKey) || gamepad_axis_value(global.GP, gp_axislh) &gt; 0.1 || gamepad_button_check(global.GP, gp_padr);
+global.keyUp = keyboard_check(upKey) || gamepad_axis_value(global.GP, gp_axislv) &lt; -0.1 || gamepad_button_check(global.GP, gp_padu);
+global.keyDown = keyboard_check(downKey) || gamepad_axis_value(global.GP, gp_axislv) &gt; 0.1 || gamepad_button_check(global.GP, gp_padd);
+global.keyJump = keyboard_check(jumpKey) || gamepad_button_check(global.GP, gp_face1) || gamepad_button_check(global.GP, gp_face3);
+global.keyShoot = keyboard_check(shootKey) || gamepad_button_check(global.GP, gp_face2) || gamepad_button_check(global.GP, gp_face4);
+global.keyPause = keyboard_check(pauseKey) || gamepad_button_check(global.GP, gp_start);
+global.keyWeaponSwitchLeft = keyboard_check(weaponSwitchLeftKey) || gamepad_button_check(global.GP, gp_shoulderl) || gamepad_button_check(global.GP, gp_shoulderlb);
+global.keyWeaponSwitchRight = keyboard_check(weaponSwitchRightKey) || gamepad_button_check(global.GP, gp_shoulderr) || gamepad_button_check(global.GP, gp_shoulderrb);
 
-global.keyLeftPressed = keyboard_check_pressed(leftKey);
-global.keyRightPressed = keyboard_check_pressed(rightKey);
-global.keyUpPressed = keyboard_check_pressed(upKey);
-global.keyDownPressed = keyboard_check_pressed(downKey);
-global.keyJumpPressed = keyboard_check_pressed(jumpKey);
-global.keyShootPressed = keyboard_check_pressed(shootKey);
-global.keyPausePressed = keyboard_check_pressed(pauseKey);
-global.keyWeaponSwitchLeftPressed = keyboard_check_pressed(weaponSwitchLeftKey);
-global.keyWeaponSwitchRightPressed = keyboard_check_pressed(weaponSwitchRightKey);
+global.keyLeftPressed = keyboard_check_pressed(leftKey) || gamepad_button_check_pressed(global.GP, gp_padl);
+global.keyRightPressed = keyboard_check_pressed(rightKey) || gamepad_button_check_pressed(global.GP, gp_padr);
+global.keyUpPressed = keyboard_check_pressed(upKey) || gamepad_button_check_pressed(global.GP, gp_padu);
+global.keyDownPressed = keyboard_check_pressed(downKey) || gamepad_button_check_pressed(global.GP, gp_padd);
+global.keyJumpPressed = keyboard_check_pressed(jumpKey) || gamepad_button_check_pressed(global.GP, gp_face1) || gamepad_button_check_pressed(global.GP, gp_face3);
+global.keyShootPressed = keyboard_check_pressed(shootKey) || gamepad_button_check_pressed(global.GP, gp_face2) || gamepad_button_check_pressed(global.GP, gp_face4);
+global.keyPausePressed = keyboard_check_pressed(pauseKey) || gamepad_button_check_pressed(global.GP, gp_start);
+global.keyWeaponSwitchLeftPressed = keyboard_check_pressed(weaponSwitchLeftKey) || gamepad_button_check_pressed(global.GP, gp_shoulderl) || gamepad_button_check_pressed(global.GP, gp_shoulderlb);
+global.keyWeaponSwitchRightPressed = keyboard_check_pressed(weaponSwitchRightKey) || gamepad_button_check_pressed(global.GP, gp_shoulderr) || gamepad_button_check_pressed(global.GP, gp_shoulderrb);
 
-global.keyLeftReleased = keyboard_check_released(leftKey);
-global.keyRightReleased = keyboard_check_released(rightKey);
-global.keyUpReleased = keyboard_check_released(upKey);
-global.keyDownReleased = keyboard_check_released(downKey);
-global.keyJumpReleased = keyboard_check_released(jumpKey);
-global.keyShootReleased = keyboard_check_released(shootKey);
-global.keyPauseReleased = keyboard_check_released(pauseKey);
-global.keyWeaponSwitchLeftReleased = keyboard_check_released(weaponSwitchLeftKey);
-global.keyWeaponSwitchRightReleased = keyboard_check_released(weaponSwitchRightKey);
+global.keyLeftReleased = keyboard_check_released(leftKey) || gamepad_button_check_released(global.GP, gp_padl);
+global.keyRightReleased = keyboard_check_released(rightKey || gamepad_button_check_released(global.GP, gp_padr));
+global.keyUpReleased = keyboard_check_released(upKey) || gamepad_button_check_released(global.GP, gp_padu);
+global.keyDownReleased = keyboard_check_released(downKey) || gamepad_button_check_released(global.GP, gp_padd);
+global.keyJumpReleased = keyboard_check_released(jumpKey) || gamepad_button_check_released(global.GP, gp_face1);
+global.keyShootReleased = keyboard_check_released(shootKey) || gamepad_button_check_released(global.GP, gp_face2) || gamepad_button_check_released(global.GP, gp_face3);
+global.keyPauseReleased = keyboard_check_released(pauseKey) || gamepad_button_check_released(global.GP, gp_start) || gamepad_button_check_released(global.GP, gp_face4);
+global.keyWeaponSwitchLeftReleased = keyboard_check_released(weaponSwitchLeftKey) || gamepad_button_check_released(global.GP, gp_shoulderl) || gamepad_button_check_released(global.GP, gp_shoulderlb);
+global.keyWeaponSwitchRightReleased = keyboard_check_released(weaponSwitchRightKey) || gamepad_button_check_released(global.GP, gp_shoulderr) || gamepad_button_check_released(global.GP, gp_shoulderrb);
 </string>
           </argument>
         </arguments>
@@ -258,6 +272,15 @@ global.keyWeaponSwitchRightReleased = keyboard_check_released(weaponSwitchRightK
     x = objMegaman.x;
     y = objMegaman.y;
 }
+
+if global.loopEnd &gt; -1 &amp;&amp; global.loopStart &gt; -1 &amp;&amp; global.bgm &gt; -1 {    //Loop point
+    var currPos = audio_sound_get_track_position(global.bgm);
+    if currPos &gt;= global.loopEnd * 0.999 {
+        var diff = global.loopEnd - global.loopStart;
+        var newPos = currPos - diff;
+        audio_sound_set_track_position(global.bgm, newPos);
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -282,7 +305,6 @@ global.keyWeaponSwitchRightReleased = keyboard_check_released(weaponSwitchRightK
 if keyboard_check_pressed(vk_f2)
 {
     sound_stop_all();
-    FMODAllStop();
     game_restart();
 }
     
@@ -295,7 +317,37 @@ if keyboard_check_pressed(vk_escape)
 if keyboard_check_pressed(vk_f7) saveGame(0);
 if keyboard_check_pressed(vk_f8) loadGame(0);
 if keyboard_check_pressed(vk_f12) game_restart();
+if keyboard_check_pressed(vk_f11) with objMegaman grav *= -1;
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="75">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>show_debug_message("Event = " + async_load[? "event_type"]);        // Debug cocde so you can see which event has been
+show_debug_message("Pad = " + string(async_load[? "pad_index"]));   // triggered and the pad associated with it.
+
+if async_load[? "event_type"] == "gamepad discovered" {
+    global.GP = async_load[? "pad_index"];
+    show_debug_message("Default gamepad set to " + string(global.GP));
+}
 </string>
           </argument>
         </arguments>

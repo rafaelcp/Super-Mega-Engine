@@ -3,195 +3,7 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="34" name="datafiles">
-    <datafile>
-      <name>fmodex.dll</name>
-      <exists>-1</exists>
-      <size>370688</size>
-      <exportAction>2</exportAction>
-      <exportDir></exportDir>
-      <overwrite>0</overwrite>
-      <freeData>-1</freeData>
-      <removeEnd>0</removeEnd>
-      <store>0</store>
-      <ConfigOptions>
-        <Config name="Default">
-          <CopyToMask>9223372036854775807</CopyToMask>
-        </Config>
-      </ConfigOptions>
-      <filename>fmodex.dll</filename>
-    </datafile>
-    <datafile>
-      <name>GMFMODSimple.dll</name>
-      <exists>-1</exists>
-      <size>495104</size>
-      <exportAction>2</exportAction>
-      <exportDir></exportDir>
-      <overwrite>0</overwrite>
-      <freeData>-1</freeData>
-      <removeEnd>0</removeEnd>
-      <store>0</store>
-      <ConfigOptions>
-        <Config name="Default">
-          <CopyToMask>9223372036854775807</CopyToMask>
-        </Config>
-      </ConfigOptions>
-      <filename>GMFMODSimple.dll</filename>
-    </datafile>
-    <datafile>
-      <name>Boss.ogg</name>
-      <exists>-1</exists>
-      <size>252520</size>
-      <exportAction>2</exportAction>
-      <exportDir></exportDir>
-      <overwrite>0</overwrite>
-      <freeData>-1</freeData>
-      <removeEnd>0</removeEnd>
-      <store>0</store>
-      <ConfigOptions>
-        <Config name="Default">
-          <CopyToMask>9223372036854775807</CopyToMask>
-        </Config>
-      </ConfigOptions>
-      <filename>Boss.ogg</filename>
-    </datafile>
-    <datafile>
-      <name>GameOver.ogg</name>
-      <exists>-1</exists>
-      <size>30398</size>
-      <exportAction>2</exportAction>
-      <exportDir></exportDir>
-      <overwrite>0</overwrite>
-      <freeData>-1</freeData>
-      <removeEnd>0</removeEnd>
-      <store>0</store>
-      <ConfigOptions>
-        <Config name="Default">
-          <CopyToMask>9223372036854775807</CopyToMask>
-        </Config>
-      </ConfigOptions>
-      <filename>GameOver.ogg</filename>
-    </datafile>
-    <datafile>
-      <name>Introduction.ogg</name>
-      <exists>-1</exists>
-      <size>133646</size>
-      <exportAction>2</exportAction>
-      <exportDir></exportDir>
-      <overwrite>0</overwrite>
-      <freeData>-1</freeData>
-      <removeEnd>0</removeEnd>
-      <store>0</store>
-      <ConfigOptions>
-        <Config name="Default">
-          <CopyToMask>9223372036854775807</CopyToMask>
-        </Config>
-      </ConfigOptions>
-      <filename>Introduction.ogg</filename>
-    </datafile>
-    <datafile>
-      <name>PassScreen.ogg</name>
-      <exists>-1</exists>
-      <size>221106</size>
-      <exportAction>2</exportAction>
-      <exportDir></exportDir>
-      <overwrite>0</overwrite>
-      <freeData>-1</freeData>
-      <removeEnd>0</removeEnd>
-      <store>0</store>
-      <ConfigOptions>
-        <Config name="Default">
-          <CopyToMask>9223372036854775807</CopyToMask>
-        </Config>
-      </ConfigOptions>
-      <filename>PassScreen.ogg</filename>
-    </datafile>
-    <datafile>
-      <name>StageSelect.ogg</name>
-      <exists>-1</exists>
-      <size>205617</size>
-      <exportAction>2</exportAction>
-      <exportDir></exportDir>
-      <overwrite>0</overwrite>
-      <freeData>-1</freeData>
-      <removeEnd>0</removeEnd>
-      <store>0</store>
-      <ConfigOptions>
-        <Config name="Default">
-          <CopyToMask>9223372036854775807</CopyToMask>
-        </Config>
-      </ConfigOptions>
-      <filename>StageSelect.ogg</filename>
-    </datafile>
-    <datafile>
-      <name>TestMusic.ogg</name>
-      <exists>-1</exists>
-      <size>863270</size>
-      <exportAction>2</exportAction>
-      <exportDir></exportDir>
-      <overwrite>0</overwrite>
-      <freeData>-1</freeData>
-      <removeEnd>0</removeEnd>
-      <store>0</store>
-      <ConfigOptions>
-        <Config name="Default">
-          <CopyToMask>9223372036854775807</CopyToMask>
-        </Config>
-      </ConfigOptions>
-      <filename>TestMusic.ogg</filename>
-    </datafile>
-    <datafile>
-      <name>TitleScreen.ogg</name>
-      <exists>-1</exists>
-      <size>421488</size>
-      <exportAction>2</exportAction>
-      <exportDir></exportDir>
-      <overwrite>0</overwrite>
-      <freeData>-1</freeData>
-      <removeEnd>0</removeEnd>
-      <store>0</store>
-      <ConfigOptions>
-        <Config name="Default">
-          <CopyToMask>9223372036854775807</CopyToMask>
-        </Config>
-      </ConfigOptions>
-      <filename>TitleScreen.ogg</filename>
-    </datafile>
-    <datafile>
-      <name>Victory.ogg</name>
-      <exists>-1</exists>
-      <size>43611</size>
-      <exportAction>2</exportAction>
-      <exportDir></exportDir>
-      <overwrite>0</overwrite>
-      <freeData>-1</freeData>
-      <removeEnd>0</removeEnd>
-      <store>0</store>
-      <ConfigOptions>
-        <Config name="Default">
-          <CopyToMask>9223372036854775807</CopyToMask>
-        </Config>
-      </ConfigOptions>
-      <filename>Victory.ogg</filename>
-    </datafile>
-    <datafile>
-      <name>WeaponGet.ogg</name>
-      <exists>-1</exists>
-      <size>471574</size>
-      <exportAction>2</exportAction>
-      <exportDir></exportDir>
-      <overwrite>0</overwrite>
-      <freeData>-1</freeData>
-      <removeEnd>0</removeEnd>
-      <store>0</store>
-      <ConfigOptions>
-        <Config name="Default">
-          <CopyToMask>9223372036854775807</CopyToMask>
-        </Config>
-      </ConfigOptions>
-      <filename>WeaponGet.ogg</filename>
-    </datafile>
-  </datafiles>
+  <datafiles number="34" name="datafiles"/>
   <NewExtensions/>
   <sounds name="sound">
     <sounds name="Player">
@@ -235,6 +47,17 @@
       <sound>sound\sfxDoor</sound>
       <sound>sound\sfxAbsorb</sound>
       <sound>sound\sfxYokuBlock</sound>
+    </sounds>
+    <sounds name="Music">
+      <sound>sound\bgmIntroduction</sound>
+      <sound>sound\bgmTestMusic</sound>
+      <sound>sound\bgmTitleScreen</sound>
+      <sound>sound\bgmStageSelect</sound>
+      <sound>sound\bgmBoss</sound>
+      <sound>sound\bgmGameOver</sound>
+      <sound>sound\bgmPassScreen</sound>
+      <sound>sound\bgmVictory</sound>
+      <sound>sound\bgmWeaponGet</sound>
     </sounds>
   </sounds>
   <sprites name="sprites">
@@ -585,22 +408,9 @@
       <script>scripts\playMusicVolumeLoopPoint.gml</script>
       <script>scripts\playMusicNoLoop.gml</script>
       <script>scripts\playMusicNoLoopVolume.gml</script>
-    </scripts>
-    <scripts name="FMOD">
-      <script>scripts\LoadFMOD.gml</script>
-      <script>scripts\UnloadFMOD.gml</script>
-      <script>scripts\FMODUpdate.gml</script>
-      <script>scripts\FMODInit.gml</script>
-      <script>scripts\FMODFree.gml</script>
-      <script>scripts\FMODSoundAdd.gml</script>
-      <script>scripts\FMODSoundFree.gml</script>
-      <script>scripts\FMODSoundPlay.gml</script>
-      <script>scripts\FMODSoundLoop.gml</script>
-      <script>scripts\FMODInstanceStop.gml</script>
-      <script>scripts\FMODAllStop.gml</script>
-      <script>scripts\FMODInstanceSetVolume.gml</script>
-      <script>scripts\FMODInstanceGetVolume.gml</script>
-      <script>scripts\FMODSoundSetLoopPoints.gml</script>
+      <script>scripts\stopSFX.gml</script>
+      <script>scripts\loopSFX.gml</script>
+      <script>scripts\stopAllSFX.gml</script>
     </scripts>
     <scripts name="Strings">
       <script>scripts\split.gml</script>
@@ -725,6 +535,7 @@
         </objects>
         <objects name="General">
           <object>objects\objYokuBlock</object>
+          <object>objects\objShake</object>
         </objects>
         <objects name="MM2">
           <object>objects\objMM2Conveyor</object>
@@ -782,7 +593,6 @@
     <room>rooms\rmInit</room>
     <room>rooms\rmDisclaimer</room>
     <room>rooms\rmBeta</room>
-    <room>rooms\rmExampleRoom</room>
     <rooms name="Menu">
       <room>rooms\rmTitleScreen</room>
       <room>rooms\rmStageSelect</room>

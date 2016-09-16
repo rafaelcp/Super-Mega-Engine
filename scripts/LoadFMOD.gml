@@ -7,11 +7,10 @@
 //When the game starts
 //LoadFMOD();
 if os_browser != browser_not_a_browser {
-    show_message("FMOD is not supported on the HTML5 target. Music won't play.");
     global.FMOD = false;
 }
 else if !file_exists('GMFMODSimple.dll') || !file_exists('fmodex.dll') {
-    show_message("File not found: GMFMODSimple.dll#In directory: " + working_directory);
+    show_debug_message("File not found: GMFMODSimple.dll#In directory: " + working_directory);
     global.FMOD = false;
 }
 else {
@@ -597,3 +596,4 @@ else {
     global.dll_FMODInstanceGet3DPanLevel=external_define("GMFMODSimple.dll","FMODInstanceGet3DPanLevel",dll_stdcall,ty_real,1,ty_real);
     if(WTF) show_message("Defined: FMODInstanceGet3DPanLevel")
 }
+global.FMOD = false;

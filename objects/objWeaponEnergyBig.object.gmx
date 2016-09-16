@@ -61,8 +61,8 @@ if global.ammo[global.currentWeapon] &lt; 28
         increaseAmmoAmount = other.amount;
     }
     
-    sound_stop(sfxEnergyRestore);
-    sound_loop(sfxEnergyRestore);
+    stopSFX(sfxEnergyRestore);
+    loopSFX(sfxEnergyRestore);
 }
 </string>
           </argument>

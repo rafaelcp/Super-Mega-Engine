@@ -177,6 +177,24 @@ else if newSectionXOffset &lt; 0 //Switching to the left
         door = true;
     }
 }
+else if newSectionYOffset &gt; 0 //Switching to the bottom
+{
+    playerCameraInit();
+    with instance_create(x, y, objSectionSwitcher) 
+    {
+        dir = "down";
+        door = true;
+    }
+}
+else if newSectionYOffset &lt; 0 //Switching to the top
+{
+    playerCameraInit();
+    with instance_create(x, y, objSectionSwitcher)
+    {
+        dir = "up";
+        door = true;
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -396,7 +414,10 @@ switch global.weapon
         global.secondaryCol = make_color_rgb(248, 248, 248);
     break;
         
-    
+    case flashbomb:
+        global.primaryCol = make_color_rgb(48, 80, 128);
+        global.secondaryCol = make_color_rgb(247, 181, 0);
+    break;
 }
 
 global.outlineCol = c_black;
