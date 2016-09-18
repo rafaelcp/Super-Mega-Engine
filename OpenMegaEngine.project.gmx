@@ -216,6 +216,7 @@
     </sprites>
     <sprites name="Boss">
       <sprite>sprites\sprBossDoor</sprite>
+      <sprite>sprites\sprBossDoorH</sprite>
       <sprites name="Pharaoh">
         <sprite>sprites\sprPharaohmask</sprite>
         <sprite>sprites\sprPharaohPose</sprite>
@@ -503,6 +504,7 @@
     <objects name="Boss">
       <object>objects\objBossControl</object>
       <object>objects\objBossDoor</object>
+      <object>objects\objBossDoorH</object>
       <objects name="Pharaoh">
         <object>objects\objPharaoh</object>
         <object>objects\objPharaohManShot</object>

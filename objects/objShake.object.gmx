@@ -29,7 +29,6 @@
 total_shake_y = 0;
 shake_amount = 5;
 shake_duration = 1;
-alarm[0] = shake_duration * room_speed;
 </string>
           </argument>
         </arguments>
@@ -78,6 +77,9 @@ instance_destroy();
           <argument>
             <kind>1</kind>
             <string>if insideView() {
+    if total_shake_x == 0 || total_shake_y == 0 {
+        alarm[0] = shake_duration * room_speed;
+    }
     shake_x = random_range(-shake_amount, shake_amount);
     shake_y = random_range(-shake_amount, shake_amount);
     total_shake_x += shake_x;

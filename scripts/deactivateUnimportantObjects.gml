@@ -9,6 +9,7 @@ instance_activate_object(objGlobalControl);
 instance_activate_object(objHealthWeaponBar);
 
 instance_activate_object(objBossDoor);
+instance_activate_object(objBossDoorH);
 
 
 //Objects that should remain activated, but without animation (disabled animation code is in the object itself)

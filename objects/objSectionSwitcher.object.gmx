@@ -61,6 +61,7 @@ screenSpeedVert = 4; //Same as above but if travelling vertically
 playerSpeedVert = 0.4; //Same as above but if travelling vertically
 
 playerSpeedHorDoor = 0.7; //The speed that Mega Man will move at if travelling horizontally through a door
+playerSpeedVertDoor = 0.9; //The speed that Mega Man will move at if travelling vertically through a door
 
 
 //Variables that cannot be modified
@@ -146,7 +147,7 @@ canStep = true;
             <kind>1</kind>
             <string>//Moving the screen and player (or rather, both the player and the clone of the player. See create event for more information on that)
 
-if canStep == true &amp;&amp; playerSpeedHorDoor != 0 //When the door is closing, we should not move
+if canStep == true &amp;&amp; (playerSpeedHorDoor != 0 &amp;&amp; playerSpeedVertDoor != 0) //When the door is closing, we should not move
 {
     if !(door == true &amp;&amp; canProgressDoor == false)
     {
@@ -256,38 +257,108 @@ if canStep == true &amp;&amp; playerSpeedHorDoor != 0 //When the door is closing
         else if dir == "down"
         {
             view_yview[0] += screenSpeedVert;
-            y += playerSpeedVert;
-            objMegaman.y += playerSpeedVert;
+            
+            if door == false
+            {
+                y += playerSpeedVert;
+                objMegaman.y += playerSpeedVert;
+            }
+            else
+            {
+                y += playerSpeedVertDoor;
+                objMegaman.y += playerSpeedVertDoor;
+            }            
             
             if view_yview[0] &gt;= objMegaman.sectionTop
             {
                 view_yview[0] = objMegaman.sectionTop;
-                global.frozen = false;
-                objMegaman.visible = true;
-                instance_destroy();
-                with objMegaman playerDeactivateObjects();
-                instance_activate_object(prtEnemy); //To not make it invisible for 1 frame after re-entering the section
+                
+                if door == false
+                {
+                    global.frozen = false;
+                    objMegaman.visible = true;
+                    instance_destroy();
+                    with objMegaman playerDeactivateObjects();
+                    instance_activate_object(prtEnemy); //To not make it invisible for 1 frame after re-entering the section
+                }
+                else
+                {
+                    var bossdr;
+                    bossdr = instance_place(x, objMegaman.sectionTop, objBossDoorH);
+                    if bossdr &gt;= 0
+                    {
+                        bossdr.opening = false;
+                        bossdr.closing = true;
+                        image_speed = 0;
+                        playSFX(sfxDoor);
+                        
+                        playerSpeedVertDoor = 0;
+                    }
+                    else
+                    {
+                        global.frozen = false;
+                        objMegaman.visible = true;
+                        instance_destroy();
+                        with objMegaman playerDeactivateObjects();
+                    }
+                }                
             }
+            
+                        
         }
         
         //Up
         else if dir == "up"
         {
-            view_yview[0] -= screenSpeedVert;
-            y -= playerSpeedVert;
-            objMegaman.y -= playerSpeedVert;
+            view_yview[0] -= screenSpeedVert;            
             
+            if door == false
+            {
+                y -= playerSpeedVert;
+                objMegaman.y -= playerSpeedVert;
+            }
+            else
+            {
+                y -= playerSpeedVertDoor;
+                objMegaman.y -= playerSpeedVertDoor;
+            }            
+
             if view_yview[0] &lt;= objMegaman.sectionBottom - view_hview[0]
             {
                 view_yview[0] = objMegaman.sectionBottom - view_hview[0];
-                global.frozen = false;
-                objMegaman.visible = true;
-                instance_destroy();
-                with objMegaman playerDeactivateObjects();
+
+                if door == false
+                {
+                    global.frozen = false;
+                    objMegaman.visible = true;
+                    instance_destroy();
+                    with objMegaman playerDeactivateObjects();
+                }
+                else
+                {
+                    var bossdr;
+                    bossdr = instance_place(x, objMegaman.sectionBottom, objBossDoorH);
+                    if bossdr &gt;= 0
+                    {
+                        bossdr.opening = false;
+                        bossdr.closing = true;
+                        image_speed = 0;
+                        playSFX(sfxDoor);
+                        
+                        playerSpeedVertDoor = 0;
+                    }
+                    else
+                    {
+                        global.frozen = false;
+                        objMegaman.visible = true;
+                        instance_destroy();
+                        with objMegaman playerDeactivateObjects();
+                    }
+                }                                        
             }
+            
+            
         }
-        
-        
         
         //Climbing animation
         if sprite_index == sprMegamanClimb
