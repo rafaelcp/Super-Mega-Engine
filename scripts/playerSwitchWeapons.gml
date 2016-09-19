@@ -12,7 +12,7 @@ if global.keyWeaponSwitchLeftPressed
     {
         global.currentWeapon -= 1;
         if global.currentWeapon < 0
-            global.currentWeapon = global.totalWeapons;
+            global.currentWeapon = global.totalWeapons-1;
             
         loops += 1;
     }
@@ -43,7 +43,7 @@ if global.keyWeaponSwitchRightPressed
     while global.weaponUnlocked[global.currentWeapon] == false || loops == 0
     {
         global.currentWeapon += 1;
-        if global.currentWeapon > global.totalWeapons
+        if global.currentWeapon > global.totalWeapons-1
             global.currentWeapon = 0;
             
         loops += 1;

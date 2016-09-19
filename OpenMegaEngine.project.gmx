@@ -297,6 +297,8 @@
       <sprites name="Pass">
         <sprite>sprites\sprPassArrow</sprite>
         <sprite>sprites\sprPassText</sprite>
+        <sprite>sprites\bluedot</sprite>
+        <sprite>sprites\reddot</sprite>
       </sprites>
       <sprites name="WeaponGet">
         <sprite>sprites\sprMegamanWeaponGetTeleport</sprite>
@@ -420,6 +422,22 @@
     <scripts name="Saving">
       <script>scripts\saveGame.gml</script>
       <script>scripts\loadGame.gml</script>
+      <script>scripts\make_password.gml</script>
+      <script>scripts\draw_password.gml</script>
+    </scripts>
+    <scripts name="Numbers">
+      <script>scripts\base_convert.gml</script>
+      <script>scripts\dec_to_bin.gml</script>
+    </scripts>
+    <scripts name="Arrays">
+      <script>scripts\implode.gml</script>
+      <script>scripts\implode_real.gml</script>
+    </scripts>
+    <scripts name="Logic">
+      <script>scripts\iif.gml</script>
+    </scripts>
+    <scripts name="Enemies">
+      <script>scripts\check_enemy_death.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">
@@ -603,17 +621,19 @@
       <room>rooms\rmPass</room>
     </rooms>
   </rooms>
-  <constants number="10">
+  <constants number="12">
     <constant name="megabuster">0</constant>
     <constant name="silvertomahawk">1</constant>
     <constant name="windstorm">2</constant>
     <constant name="pharaohshot">3</constant>
     <constant name="metalblade">4</constant>
-    <constant name="rushcoil">5</constant>
-    <constant name="starcrash">6</constant>
-    <constant name="rushjet">7</constant>
-    <constant name="centaurflash">8</constant>
-    <constant name="initialRoom">rmDisclaimer</constant>
+    <constant name="rushcoil">7</constant>
+    <constant name="starcrash">5</constant>
+    <constant name="rushjet">8</constant>
+    <constant name="centaurflash">6</constant>
+    <constant name="initialRoom">rmBeta</constant>
+    <constant name="weapons_per_col">7</constant>
+    <constant name="total_weapons">9</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

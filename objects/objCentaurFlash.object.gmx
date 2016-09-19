@@ -31,9 +31,8 @@ playSFX(sfxCentaurFlash);
 with prtEnemy {
     if !dead &amp;&amp; canHit &amp;&amp; !reflectProjectiles &amp;&amp; insideView() {
         healthpoints -= damageCentaurFlash;
-        if healthpoints &lt;= 0 &amp;&amp; object_get_parent(object_index) != prtBoss {
-            instance_create(sprite_get_xcenter(), sprite_get_ycenter(), objItemExplosion);
-        }
+        playSFX(sfxEnemyHit);
+        check_enemy_death();
     }    
 }
 </string>

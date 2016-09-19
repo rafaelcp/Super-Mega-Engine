@@ -25,7 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>option = 0;
+            <string>pass = make_password();
+show_debug_message(pass);
+
+option = 0;
 selectedOption = false;
 global.checkpoint = false;
 global.levelStart = true;
@@ -160,6 +163,9 @@ if canSelectOption == true
     else
         draw_sprite(sprPassArrow, 0, xx, yy2);
 }
+
+draw_password(pass);
+
 </string>
           </argument>
         </arguments>

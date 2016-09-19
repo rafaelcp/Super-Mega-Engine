@@ -188,7 +188,7 @@ if dead == true
         }
         alarm[11] = 2;
         
-        sound_stop(sfxBuster);
+        stopSFX(sfxBuster);
         playSFX(sfxEnemyHit);
         
         if healthpoints &lt;= 0 &amp;&amp; object_get_parent(object_index) != prtBoss
@@ -252,13 +252,10 @@ else
         if healthpoints &gt;= 0
             with other instance_destroy();
             
-        sound_stop(sfxBuster);
+        stopSFX(sfxBuster);
         playSFX(sfxEnemyHit);
             
-        if healthpoints &lt;= 0 &amp;&amp; object_get_parent(object_index) != prtBoss
-        {
-            instance_create(sprite_get_xcenter(), sprite_get_ycenter(), objItemExplosion);
-        }
+        check_enemy_death();
     }
 }
 else
@@ -310,10 +307,7 @@ else
         
         playSFX(sfxEnemyHit);
         
-        if healthpoints &lt;= 0 &amp;&amp; object_get_parent(object_index) != prtBoss
-        {
-            instance_create(sprite_get_xcenter(), sprite_get_ycenter(), objItemExplosion);
-        }
+        check_enemy_death();
     }
 }
 else
@@ -358,13 +352,10 @@ else
         if healthpoints &gt;= 0
             with other instance_destroy();
             
-        sound_stop(sfxPharaohShotCharged);
+        stopSFX(sfxPharaohShotCharged);
         playSFX(sfxEnemyHit);
             
-        if healthpoints &lt;= 0 &amp;&amp; object_get_parent(object_index) != prtBoss
-        {
-            instance_create(sprite_get_xcenter(), sprite_get_ycenter(), objItemExplosion);
-        }
+        check_enemy_death();
     }
 }
 else
@@ -407,13 +398,10 @@ else
         alarm[11] = 2;
         with other instance_destroy();
         
-        sound_stop(sfxPharaohShot);
+        stopSFX(sfxPharaohShot);
         playSFX(sfxEnemyHit);
         
-        if healthpoints &lt;= 0 &amp;&amp; object_get_parent(object_index) != prtBoss
-        {
-            instance_create(sprite_get_xcenter(), sprite_get_ycenter(), objItemExplosion);
-        }
+        check_enemy_death();
     }
 }
 else
@@ -462,10 +450,7 @@ else
                 
             playSFX(sfxEnemyHit);
                 
-            if healthpoints &lt;= 0 &amp;&amp; object_get_parent(object_index) != prtBoss
-            {
-                instance_create(sprite_get_xcenter(), sprite_get_ycenter(), objItemExplosion);
-            }
+            check_enemy_death();
             
             //No ammo was taken in MM4, so I removed it from here as well
             //global.ammo[global.currentWeapon] -= global.weaponAmmo[global.weaponSlot[global.currentWeapon]];
@@ -484,10 +469,7 @@ else
                 
             playSFX(sfxEnemyHit);
                 
-            if healthpoints &lt;= 0 &amp;&amp; object_get_parent(object_index) != prtBoss
-            {
-                instance_create(sprite_get_xcenter(), sprite_get_ycenter(), objExplosion);
-            }
+            check_enemy_death();
             
             //global.ammo[global.currentWeapon] -= 2;
         }
@@ -535,13 +517,10 @@ else
         if healthpoints &gt; 0
             with other instance_destroy();
             
-        sound_stop(sfxMetalBlade);
+        stopSFX(sfxMetalBlade);
         playSFX(sfxEnemyHit);
             
-        if healthpoints &lt;= 0 &amp;&amp; object_get_parent(object_index) != prtBoss
-        {
-            instance_create(sprite_get_xcenter(), sprite_get_ycenter(), objItemExplosion);
-        }
+        check_enemy_death();
     }
 }
 else
@@ -586,13 +565,10 @@ else
         if healthpoints &gt; 0
             with other instance_destroy();
             
-        sound_stop(sfxBusterCharged);
+        stopSFX(sfxBusterCharged);
         playSFX(sfxEnemyHit);
             
-        if healthpoints &lt;= 0 &amp;&amp; object_get_parent(object_index) != prtBoss
-        {
-            instance_create(sprite_get_xcenter(), sprite_get_ycenter(), objItemExplosion);
-        }
+        check_enemy_death();
     }
 }
 else
@@ -635,13 +611,10 @@ else
         alarm[11] = 2;
         with other instance_destroy();
         
-        sound_stop(sfxBusterHalfCharged);
+        stopSFX(sfxBusterHalfCharged);
         playSFX(sfxEnemyHit);
         
-        if healthpoints &lt;= 0 &amp;&amp; object_get_parent(object_index) != prtBoss
-        {
-            instance_create(sprite_get_xcenter(), sprite_get_ycenter(), objItemExplosion);
-        }
+        check_enemy_death();
     }
 }
 else
@@ -685,13 +658,10 @@ else
         alarm[11] = 2;
         with other instance_destroy();
         
-        sound_stop(sfxBuster);
+        stopSFX(sfxBuster);
         playSFX(sfxEnemyHit);
         
-        if healthpoints &lt;= 0 &amp;&amp; object_get_parent(object_index) != prtBoss
-        {
-            instance_create(sprite_get_xcenter(), sprite_get_ycenter(), objItemExplosion);
-        }
+        check_enemy_death();
     }
 }
 else if !dead
