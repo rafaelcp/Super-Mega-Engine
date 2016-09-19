@@ -1,7 +1,7 @@
 # Open Mega Engine
 **Open Mega Engine - Open-source Classic Megaman engine for Game Maker Studio!**
 
-Run the [HTML5 DEMO](https://cdn.rawgit.com/rafaelcp/Open-Mega-Engine/master/demo/index.html) inside your browser!
+Run the [HTML5 DEMO](https://rawgit.com/rafaelcp/Open-Mega-Engine/master/demo/index.html) inside your browser!
 
 Download the [Windows DEMO (EXE)](https://www.dropbox.com/s/kxaypg7ex8lloi9/OpenMegaEngine.zip?dl=0).
 
