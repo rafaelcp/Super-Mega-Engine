@@ -32,6 +32,7 @@ upKey = vk_up;
 downKey = vk_down;
 jumpKey = ord('Z');
 shootKey = ord('X');
+slideKey = ord('C');
 pauseKey = vk_space;
 weaponSwitchLeftKey = ord('A');
 weaponSwitchRightKey = ord('S');
@@ -42,13 +43,13 @@ keyboard_set_map(ord('Q'), ord('S'));   //For AZERTY
 keyboard_set_map(ord('Y'), ord('Z'));   //For QWERTZ
 keyboard_set_map(ord('R'), ord('S'));   //For COLEMAK
 keyboard_set_map(ord('K'), ord('Z'));   //For DVORAK
-
+keyboard_set_map(ord('B'), ord('C'));   //For DVORAK
 
 event_perform(ev_step_begin, 0); //Registers the key inputs
 
 
 //Variables
-global._health = 28;
+global._health = global._maxHealth;
 global.weapon = 0;  //Can have values like megabuster, silvertomahawk etc for all weapons in the game, even those that are not on the pause menu
 global.currentWeapon = 0;   //Only the weapons used in the level; only those that are on the pause menu
 
@@ -59,7 +60,6 @@ global.frozen = false;
 global.switchingSection = false;
 global.currentPickupID = 0; //Each pickup (health, weapon energy, life, tanks) has an ID
                             //This way, we can make it despawn when the room starts if the pickup has already been collected in that level
-
 
 //Go to the next room if this is the initializing room
 //Also, initialize some variables
@@ -73,10 +73,19 @@ if room == rmInit {
     stopAllSFX();
     
     global.GP = -1  //Gamepad
-
+    
+    // Max values for several vitals.
+    global._maxHealth = 28;
+    global.maxAmmo = 28;
+    global.maxETanks = 9;
+    global.maxWTanks = 9;
+    global.maxMTanks = 1;
+    global.maxScrews = 999;
+    global.maxUpgrades = 10;
         
     room_goto(initialRoom); //initialRoom is defined in Macros
     global.eTanks = 0;
+    global.wTanks = 0;
     global.mTanks = 0;
     global._lives = 2;
     global.screws = 0;
@@ -85,6 +94,11 @@ if room == rmInit {
     for(i = 0; i &lt;= 1000; i += 1) //If you somehow have over 1000 pickups in one room, increase this number
     {
         global.pickupCollected[i] = false;
+    }
+    
+    for(i = 0; i &lt;= 100; i += 1) //If you somehow have over 1000 upgrades in the game, increase this number
+    {
+        global.upgradeCollected[i] = false;
     }
     
     for(i = 0; i &lt;= 7; i += 1)
@@ -102,11 +116,18 @@ if room == rmInit {
     global.secondaryCol = c_white;
     global.outlineCol = c_black;
     
+    //Input key variables.
+    global.enableSlideKey = false // Do we have an extra key dedicted to sliding?
     
     //Option variables
+    global.enableDamageNumbers = false; //Show damage numbers.
     global.enableCharge = true; //Can we charge the buster?
     global.enableSlide = true; //Can we slide?
     global.enableScrews = true; //Do screws exist in this game?
+    global.maxNumberOfBusterShots = 3;
+    
+    // Extra options.    
+    global.enableEnergyBalancer = false // NOT IMPLEMNTED.
     
     //Weapon inventory
     global.totalWeapons = total_weapons;
@@ -241,6 +262,17 @@ global.keyShootReleased = keyboard_check_released(shootKey) || gamepad_button_ch
 global.keyPauseReleased = keyboard_check_released(pauseKey) || gamepad_button_check_released(global.GP, gp_start) || gamepad_button_check_released(global.GP, gp_face4);
 global.keyWeaponSwitchLeftReleased = keyboard_check_released(weaponSwitchLeftKey) || gamepad_button_check_released(global.GP, gp_shoulderl) || gamepad_button_check_released(global.GP, gp_shoulderlb);
 global.keyWeaponSwitchRightReleased = keyboard_check_released(weaponSwitchRightKey) || gamepad_button_check_released(global.GP, gp_shoulderr) || gamepad_button_check_released(global.GP, gp_shoulderrb);
+
+// If the slide key is enabled.
+if (global.enableSlideKey) {
+    global.keyShoot = keyboard_check(shootKey) || gamepad_button_check(global.GP, gp_face4);
+    global.keyShootPressed = keyboard_check_pressed(shootKey) || gamepad_button_check_pressed(global.GP, gp_face4);
+    global.keyShootReleased = keyboard_check_released(shootKey) || gamepad_button_check_released(global.GP, gp_face3);
+    
+    global.keySlide = keyboard_check(slideKey) || gamepad_button_check(global.GP, gp_face2);
+    global.keySlidePressed = keyboard_check_pressed(slideKey) || gamepad_button_check_pressed(global.GP, gp_face2);
+    global.keySlideReleased = keyboard_check_released(slideKey) || gamepad_button_check_released(global.GP, gp_face2);
+}
 </string>
           </argument>
         </arguments>
@@ -302,6 +334,12 @@ if keyboard_check_pressed(vk_f2)
 {
     sound_stop_all();
     game_restart();
+}
+
+// Suicide.
+if keyboard_check_pressed(vk_f3)
+{
+    global._health = 0;
 }
     
 if keyboard_check_pressed(vk_f4)

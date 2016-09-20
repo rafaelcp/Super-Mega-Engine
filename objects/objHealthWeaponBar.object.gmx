@@ -62,7 +62,7 @@ increaseTimer = 0;
 
 if increaseHealth == true
 {
-    if increaseHealthAmount &gt; 0 &amp;&amp; global._health &lt; 28
+    if increaseHealthAmount &gt; 0 &amp;&amp; global._health &lt; global._maxHealth
     {
         increaseTimer += 1;
         if increaseTimer &gt;= 3
@@ -75,8 +75,8 @@ if increaseHealth == true
     else
     {
         increaseHealth = false;
-        if global._health &gt; 28
-            global._health = 28;
+        if global._health &gt; global._maxHealth
+            global._health = global._maxHealth;
         global.frozen = false;
         increaseTimer = 0;
         stopSFX(sfxEnergyRestore);
@@ -84,7 +84,7 @@ if increaseHealth == true
 }
 else if increaseAmmo == true
 {
-    if increaseAmmoAmount &gt; 0 &amp;&amp; global.ammo[global.currentWeapon] &lt; 28
+    if increaseAmmoAmount &gt; 0 &amp;&amp; global.ammo[global.currentWeapon] &lt; global.maxAmmo
     {
         increaseTimer += 1;
         if increaseTimer &gt;= 3
@@ -97,8 +97,8 @@ else if increaseAmmo == true
     else
     {
         increaseAmmo = false;
-        if global.ammo[global.currentWeapon] &gt; 28
-            global.ammo[global.currentWeapon] = 28;
+        if global.ammo[global.currentWeapon] &gt; global.maxAmmo
+            global.ammo[global.currentWeapon] = global.maxAmmo;
         global.frozen = false;
         increaseTimer = 0;
         stopSFX(sfxEnergyRestore);
@@ -127,12 +127,33 @@ else if increaseAmmo == true
           <argument>
             <kind>1</kind>
             <string>//Health
-draw_sprite(sprHealthbarBackground, 0, view_xview[0]+7+8+5, view_yview[0]+17);
 
-for(i = 1; i &lt;= global._health; i += 1)
+// If Mega's max health is set to the classic 28.
+if (global._maxHealth == 28)
 {
-    draw_sprite_ext(sprHealthbarPrimary, 0, view_xview[0]+7+8+1+5, view_yview[0]+17+(sprite_get_height(sprHealthbarBackground)-i*2), 1, 1, 0, make_color_rgb(252, 228, 160), 1);
-    draw_sprite_ext(sprHealthbarSecondary, 0, view_xview[0]+7+8+1+5, view_yview[0]+17+(sprite_get_height(sprHealthbarBackground)-i*2), 1, 1, 0, make_color_rgb(248, 248, 248), 1);
+    draw_sprite(sprHealthbarBackground, 0, view_xview[0]+7+8+5, view_yview[0]+17);
+    
+    for(i = 1; i &lt;= global._health; i += 1)
+    {
+        draw_sprite_ext(sprHealthbarPrimary, 0, view_xview[0]+7+8+1+5, view_yview[0]+17+(sprite_get_height(sprHealthbarBackground)-i*2), 1, 1, 0, make_color_rgb(252, 228, 160), 1);
+        draw_sprite_ext(sprHealthbarSecondary, 0, view_xview[0]+7+8+1+5, view_yview[0]+17+(sprite_get_height(sprHealthbarBackground)-i*2), 1, 1, 0, make_color_rgb(248, 248, 248), 1);
+    }
+}
+else
+{
+    for (i = 1; i &lt;= global._maxHealth; i += 1)
+    {
+        if (i &lt; global._maxHealth)
+            draw_rectangle_color(view_xview[0]+7+8+5-0.5, view_yview[0]+17+(sprite_get_height(sprHealthbarBackground)-i*2), view_xview[0]+7+8+5+8-0.5, view_yview[0]+17-3+(sprite_get_height(sprHealthbarBackground)-i*2), c_black, c_black, c_black, c_black, false);
+        else
+            draw_rectangle_color(view_xview[0]+7+8+5-0.5, view_yview[0]+17+(sprite_get_height(sprHealthbarBackground)-i*2), view_xview[0]+7+8+5+8-0.5, view_yview[0]+17-1+(sprite_get_height(sprHealthbarBackground)-i*2), c_black, c_black, c_black, c_black, false);
+             
+        if (i &lt;= global._health)
+        {
+           draw_sprite_ext(sprHealthbarPrimary, 0, view_xview[0]+7+8+1+5, view_yview[0]+17+(sprite_get_height(sprHealthbarBackground)-i*2), 1, 1, 0, make_color_rgb(252, 228, 160), 1);
+           draw_sprite_ext(sprHealthbarSecondary, 0, view_xview[0]+7+8+1+5, view_yview[0]+17+(sprite_get_height(sprHealthbarBackground)-i*2), 1, 1, 0, make_color_rgb(248, 248, 248), 1);
+        }
+    }
 }
 
 

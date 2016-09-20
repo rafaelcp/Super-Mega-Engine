@@ -36,6 +36,7 @@
       <sound>sound\sfxEnemyShootClassic</sound>
       <sound>sound\sfxColtonShoot</sound>
       <sound>sound\sfxBigEye</sound>
+      <sound>sound\sfxTaban</sound>
     </sounds>
     <sounds name="Menu">
       <sound>sound\sfxError</sound>
@@ -209,6 +210,10 @@
           <sprite>sprites\sprPicket</sprite>
         </sprites>
       </sprites>
+      <sprites name="MM2">
+        <sprite>sprites\sprBaton</sprite>
+        <sprite>sprites\sprTelly</sprite>
+      </sprites>
       <sprites name="MM6">
         <sprite>sprites\sprColton</sprite>
         <sprite>sprites\sprColtonBullet</sprite>
@@ -256,6 +261,10 @@
         <sprite>sprites\sprMTankPrimary</sprite>
         <sprite>sprites\sprMTankSecondary</sprite>
         <sprite>sprites\sprMTankOutline</sprite>
+        <sprite>sprites\sprWTank</sprite>
+        <sprite>sprites\sprWTankOutline</sprite>
+        <sprite>sprites\sprWTankPrimary</sprite>
+        <sprite>sprites\sprWTankSecondary</sprite>
         <sprite>sprites\sprScrewSmall</sprite>
         <sprite>sprites\sprScrewBig</sprite>
       </sprites>
@@ -277,6 +286,9 @@
       </sprites>
       <sprites name="Checkpoint">
         <sprite>sprites\sprCheckpoint</sprite>
+      </sprites>
+      <sprites name="Upgrades">
+        <sprite>sprites\sprEnergyBalancer</sprite>
       </sprites>
     </sprites>
     <sprites name="Effects">
@@ -439,6 +451,9 @@
     <scripts name="Enemies">
       <script>scripts\check_enemy_death.gml</script>
     </scripts>
+    <scripts name="Misc">
+      <script>scripts\drawDamageNumber.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <objects name="Collision">
@@ -451,6 +466,7 @@
     </objects>
     <objects name="Player">
       <object>objects\objGlobalControl</object>
+      <object>objects\objGlobalInit</object>
       <object>objects\objMegaman</object>
       <objects name="Weapons">
         <object>objects\prtPlayerProjectile</object>
@@ -507,6 +523,10 @@
           <object>objects\objPicket</object>
         </objects>
       </objects>
+      <objects name="MM2">
+        <object>objects\objBaton</object>
+        <object>objects\objTelly</object>
+      </objects>
       <objects name="MM6">
         <object>objects\objColton</object>
         <objects name="Projectiles">
@@ -542,6 +562,7 @@
         <object>objects\objWeaponEnergySmall</object>
         <object>objects\objWeaponEnergyBig</object>
         <object>objects\objETank</object>
+        <object>objects\objWTank</object>
         <object>objects\objMTank</object>
         <object>objects\objLife</object>
         <object>objects\objScrewSmall</object>
@@ -573,6 +594,9 @@
       <objects name="Checkpoint">
         <object>objects\objCheckpoint</object>
       </objects>
+      <objects name="Upgrades">
+        <object>objects\objEnergyBalancer</object>
+      </objects>
     </objects>
     <objects name="Effects">
       <object>objects\prtEffect</object>
@@ -581,6 +605,7 @@
       <object>objects\objSlideDust</object>
       <object>objects\objSplash</object>
       <object>objects\objAirBubble</object>
+      <object>objects\objDmgText</object>
     </objects>
     <objects name="Menu">
       <object>objects\objPauseMenu</object>

@@ -4,6 +4,7 @@
 
 if canHit == true
 {
+    drawDamageNumber(objMegaman.x, objMegaman.y, argument0);
     global._health -= argument0;
     
     canHit = false;

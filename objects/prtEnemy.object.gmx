@@ -183,6 +183,7 @@ if dead == true
     {
         if canHit == true
         {
+            drawDamageNumber(x, y, damageWindStorm);
             healthpoints -= damageWindStorm;
             visible = false;
         }
@@ -244,6 +245,7 @@ else
     {
         if canHit == true
         {
+            drawDamageNumber(x, y, damageSilverTomahawk);
             healthpoints -= damageSilverTomahawk;
             visible = false;
         }
@@ -292,6 +294,7 @@ else
     {
         if canHit == true
         {
+            drawDamageNumber(x, y, damageStarCrash);
             healthpoints -= damageStarCrash;
             visible = false;
         }
@@ -344,6 +347,7 @@ else
     {
         if canHit == true
         {
+            drawDamageNumber(x, y, damagePharaohShotCharged);
             healthpoints -= damagePharaohShotCharged;
             visible = false;
         }
@@ -392,6 +396,7 @@ else
     {
         if canHit == true
         {
+            drawDamageNumber(x, y, damagePharaohShot);
             healthpoints -= damagePharaohShot;
             visible = false;
         }
@@ -440,6 +445,7 @@ else
         {
             if canHit == true
             {
+                drawDamageNumber(x, y, damagePharaohShot);
                 healthpoints -= damagePharaohShot;
                 visible = false;
             }
@@ -509,6 +515,7 @@ else
     {
         if canHit == true
         {
+            drawDamageNumber(x, y, damageMetalBlade);
             healthpoints -= damageMetalBlade;
             visible = false;
         }
@@ -557,6 +564,7 @@ else
     {
         if canHit == true
         {
+            drawDamageNumber(x, y, damageBusterCharged);
             healthpoints -= damageBusterCharged;
             visible = false;
         }
@@ -605,6 +613,7 @@ else
     {
         if canHit == true
         {
+            drawDamageNumber(x, y, damageBuster);
             healthpoints -= damageBuster;
             visible = false;
         }
@@ -651,6 +660,7 @@ else
     {
         if canHit == true
         {
+            drawDamageNumber(x, y, damageBuster);
             healthpoints -= damageBuster;
             visible = false;
         }
