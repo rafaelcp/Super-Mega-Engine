@@ -466,6 +466,7 @@
     </objects>
     <objects name="Player">
       <object>objects\objGlobalControl</object>
+      <object>objects\objGlobalInit</object>
       <object>objects\objMegaman</object>
       <objects name="Weapons">
         <object>objects\prtPlayerProjectile</object>

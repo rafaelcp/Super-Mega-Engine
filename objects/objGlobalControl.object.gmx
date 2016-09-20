@@ -49,7 +49,7 @@ event_perform(ev_step_begin, 0); //Registers the key inputs
 
 
 //Variables
-global._health = 28;
+global._health = global._maxHealth;
 global.weapon = 0;  //Can have values like megabuster, silvertomahawk etc for all weapons in the game, even those that are not on the pause menu
 global.currentWeapon = 0;   //Only the weapons used in the level; only those that are on the pause menu
 
@@ -60,7 +60,6 @@ global.frozen = false;
 global.switchingSection = false;
 global.currentPickupID = 0; //Each pickup (health, weapon energy, life, tanks) has an ID
                             //This way, we can make it despawn when the room starts if the pickup has already been collected in that level
-
 
 //Go to the next room if this is the initializing room
 //Also, initialize some variables
@@ -265,7 +264,7 @@ global.keyWeaponSwitchLeftReleased = keyboard_check_released(weaponSwitchLeftKey
 global.keyWeaponSwitchRightReleased = keyboard_check_released(weaponSwitchRightKey) || gamepad_button_check_released(global.GP, gp_shoulderr) || gamepad_button_check_released(global.GP, gp_shoulderrb);
 
 // If the slide key is enabled.
-if (global.slideKeyEnabled) {
+if (global.enableSlideKey) {
     global.keyShoot = keyboard_check(shootKey) || gamepad_button_check(global.GP, gp_face4);
     global.keyShootPressed = keyboard_check_pressed(shootKey) || gamepad_button_check_pressed(global.GP, gp_face4);
     global.keyShootReleased = keyboard_check_released(shootKey) || gamepad_button_check_released(global.GP, gp_face3);
