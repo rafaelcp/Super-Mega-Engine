@@ -233,7 +233,8 @@ if startIntro == true
         else
         {
             global.bossHealth = 0;
-            stopAllSFX();
+            FMODAllStop();
+            sound_stop_all();
             playSFX(sfxDeath);
             
             var i, explosionID;

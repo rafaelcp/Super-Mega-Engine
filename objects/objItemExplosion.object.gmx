@@ -56,11 +56,9 @@ alarm[0] = ((1/image_speed) * image_number) - 1;
 //Random drop rates (credit to Blyka)
 
 randomize(); //Restart the RNG with a random seed
-random_set_seed(random_get_seed() + self);  //To avoid getting the same seed when enemies are destroyed at the same time
 
 var randitem;
 randitem = floor(random(400));
-
 
 var nitem, item = -1;
 

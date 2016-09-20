@@ -7,6 +7,3 @@ global.mTanks = map[? "mTanks"];
 for(i = 0; i < 8; i++) {
      global.bossDefeated[i] = map[? ("bossDefeated" + string(i))];
 }
-for (var i = 0; i <= global.totalWeapons; i++) {
-    global.weaponUnlocked[i] = map[? ("weaponUnlocked" + string(i))];
-}

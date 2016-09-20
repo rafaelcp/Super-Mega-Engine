@@ -61,8 +61,8 @@ if global._health &lt; 28
         increaseHealthAmount = other.amount;
     }
     
-    stopSFX(sfxEnergyRestore);
-    loopSFX(sfxEnergyRestore);
+    sound_stop(sfxEnergyRestore);
+    sound_loop(sfxEnergyRestore);
 }
 </string>
           </argument>

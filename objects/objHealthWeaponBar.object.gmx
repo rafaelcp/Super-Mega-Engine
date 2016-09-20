@@ -79,7 +79,7 @@ if increaseHealth == true
             global._health = 28;
         global.frozen = false;
         increaseTimer = 0;
-        stopSFX(sfxEnergyRestore);
+        sound_stop(sfxEnergyRestore);
     }
 }
 else if increaseAmmo == true
@@ -101,7 +101,7 @@ else if increaseAmmo == true
             global.ammo[global.currentWeapon] = 28;
         global.frozen = false;
         increaseTimer = 0;
-        stopSFX(sfxEnergyRestore);
+        sound_stop(sfxEnergyRestore);
     }
 }
 </string>
