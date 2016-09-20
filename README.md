@@ -75,7 +75,6 @@ alt="Tutorial" title="Tutorial" width="240" height="180" border="10" /></a>
 - Features not present in *every* game should be made optional (include a boolean variable set to false by default) (e.g., start charging while sliding, shop, initial stage, etc.)
 - Features not present in *any* game will be discussed by the contributors, but should be optional anyway
 - Original content won't be added. This is left for individual games.
-- Submit pull requests only to the 'test' branch
 - Solve any merge conflicts
 
 # Goals
