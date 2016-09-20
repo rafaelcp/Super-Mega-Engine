@@ -56,9 +56,13 @@ if !global.enableScrews {
             <kind>1</kind>
             <string>event_inherited();
 
-if global.screws &lt; 999 {
+if global.screws &lt; global.maxScrews {
     
-    global.screws += amount;   
+    global.screws += amount;
+    
+    if global.screws &gt; global.maxScrews {
+        global.screws = global.maxScrews;
+    }
     
     playSFX(sfxBoltCollect);
 }
