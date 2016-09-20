@@ -98,7 +98,7 @@ if global.keyPausePressed &amp;&amp; canProceed == true
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite(sprLogo, 0, round(room_width/2), round(room_height/2)-55);
+            <string>draw_sprite(sprLogo, 0, round(room_width/2), round(room_height/2)-35);
 
 
 var oldCol;
@@ -111,7 +111,7 @@ draw_text(round(room_width/2), room_height-30, "OPEN SOURCE SOFTWARE#MAINTAINED 
 
 if drawText == true
 {
-    draw_text(round(room_width/2), 125, "PRESS START");
+    draw_text(round(room_width/2), 125, "PRESS THE SPACE BAR");
 }
 
 

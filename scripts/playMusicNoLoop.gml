@@ -1,9 +1,16 @@
 ///playMusicNoLoop(filename)
 //Plays music without looping it
+//We're using the FMOD sound system, which means all music must be stored externally
+//Preferably, use the .ogg format, since this takes much less disk space than .mp3 or .wav
+
 //Example: playMusicNoLoop("CutMan.ogg")
 
-audio_stop_all();
-var parts = split(argument0, ".");
-var name = ds_queue_dequeue(parts);
-audio_play_sound(asset_get_index("bgm" + name), 1, false);
+FMODAllStop();
 
+if global.msc != -2
+    FMODSoundFree(global.msc);
+
+var mscPlay;
+
+global.msc = FMODSoundAdd(argument0, false, true);
+mscPlay = FMODSoundPlay(global.msc, false);

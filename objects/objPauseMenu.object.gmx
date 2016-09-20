@@ -118,7 +118,7 @@ with objMegaman event_user(0);
                     phase = 5;
                     global.eTanks -= 1;
                     eTankTimer = 0;
-                    loopSFX(sfxEnergyRestore);
+                    sound_loop(sfxEnergyRestore);
                 }
                 else
                 {
@@ -146,7 +146,7 @@ with objMegaman event_user(0);
                         phase = 6;
                         global.mTanks -= 1;
                         eTankTimer = 0;
-                        loopSFX(sfxEnergyRestore);
+                        sound_loop(sfxEnergyRestore);
                     }
                     else
                     {
@@ -212,7 +212,7 @@ with objMegaman event_user(0);
             option = oldWeapon;
             global.weapon = oldWeapon;
             with objMegaman event_user(0);
-            stopSFX(sfxEnergyRestore);
+            sound_stop(sfxEnergyRestore);
         }
     break;
     
@@ -252,7 +252,7 @@ with objMegaman event_user(0);
                 option = oldWeapon;
                 global.weapon = oldWeapon;
                 with objMegaman event_user(0);
-                stopSFX(sfxEnergyRestore);
+                sound_stop(sfxEnergyRestore);
             }
         }              
     break;

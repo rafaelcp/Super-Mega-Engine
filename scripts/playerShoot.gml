@@ -61,20 +61,6 @@ if global.keyShootPressed && canShoot == true && (canMove == true || climbing ==
                     global.ammo[global.currentWeapon] = 0;
             }
         break;
-        case flashbomb:
-            if instance_number(objFlashBomb) + instance_number(objReflectedProjectile) + instance_number(objFlashExplosion)< 2
-            {
-                attackID = instance_create(box+image_xscale*7, yy, objFlashBomb);
-                    attackID.xspeed = image_xscale * 3;
-                playSFX(sfxBuster);
-                isShoot = true;
-                shootTimer = 0;
-                
-                global.ammo[global.currentWeapon] -= global.weaponAmmo[global.weaponSlot[global.currentWeapon]];
-                if global.ammo[global.currentWeapon] <= 0
-                    global.ammo[global.currentWeapon] = 0;
-            }
-        break;
         
         case windstorm:
             if instance_number(objWindStorm) + instance_number(objReflectedProjectile) < 3
@@ -306,8 +292,6 @@ if global.keyShootPressed && canShoot == true && (canMove == true || climbing ==
                 global.ammo[global.currentWeapon] -= global.weaponAmmo[global.weaponSlot[global.currentWeapon]];
                 if global.ammo[global.currentWeapon] <= 0
                     global.ammo[global.currentWeapon] = 0;
-                isShoot = true;
-                shootTimer = 0;                    
             }
         break;
     }
@@ -405,7 +389,7 @@ if global.enableCharge == true
                 {
                     if chargeTimer == chargeTime
                     {
-                        stopSFX(sfxCharging);
+                        sound_stop(sfxCharging);
                         playSFX(sfxCharged);
                     }
                     
@@ -467,8 +451,8 @@ if global.enableCharge == true
             
             chargeTimer = 0;
             initChargeTimer = 0;
-            stopSFX(sfxCharged);
-            stopSFX(sfxCharging);
+            sound_stop(sfxCharged);
+            sound_stop(sfxCharging);
             event_user(0); //Reset the colors
         } 
     }
