@@ -117,10 +117,10 @@ if room == rmInit {
     global.outlineCol = c_black;
     
     //Input key variables.
-    global.enableSlideKey = true // Do we have an extra key dedicted to sliding?
+    global.enableSlideKey = false // Do we have an extra key dedicted to sliding?
     
     //Option variables
-    global.enableDamageNumbers = true; //Show damage numbers.
+    global.enableDamageNumbers = false; //Show damage numbers.
     global.enableCharge = true; //Can we charge the buster?
     global.enableSlide = true; //Can we slide?
     global.enableScrews = true; //Do screws exist in this game?
