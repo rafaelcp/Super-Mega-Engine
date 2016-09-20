@@ -646,7 +646,7 @@
       <room>rooms\rmPass</room>
     </rooms>
   </rooms>
-  <constants number="12">
+  <constants number="20">
     <constant name="megabuster">0</constant>
     <constant name="silvertomahawk">1</constant>
     <constant name="windstorm">2</constant>
@@ -656,9 +656,17 @@
     <constant name="starcrash">5</constant>
     <constant name="rushjet">8</constant>
     <constant name="centaurflash">6</constant>
-    <constant name="initialRoom">rmDisclaimer</constant>
-    <constant name="weapons_per_col">7</constant>
     <constant name="total_weapons">9</constant>
+    <constant name="initialRoom">rmDisclaimer</constant>
+    <constant name="cfgWeaponsPerCol">7</constant>
+    <constant name="cfgEnableSlideKey">false</constant>
+    <constant name="cfgEnableDamageNumbers">false</constant>
+    <constant name="cfgEnableCharge">true</constant>
+    <constant name="cfgEnableSlide">true</constant>
+    <constant name="cfgEnableScrews">true</constant>
+    <constant name="cfgEnableEnergyBalancer">false</constant>
+    <constant name="cfgMaxNumberOfBusterShots">3</constant>
+    <constant name="cfgMaxHealth">28</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

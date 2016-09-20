@@ -481,8 +481,8 @@ if (phase &gt;= 1 &amp;&amp; phase &lt;= 3) || phase == 5 || phase == 6
     
     //Icons, ammo bars and names
     var maxI;
-    if global.totalWeapons &gt; weapons_per_col
-        maxI = weapons_per_col;
+    if global.totalWeapons &gt; cfgWeaponsPerCol
+        maxI = cfgWeaponsPerCol;
     else
         maxI = global.totalWeapons;
         
@@ -530,23 +530,23 @@ if (phase &gt;= 1 &amp;&amp; phase &lt;= 3) || phase == 5 || phase == 6
     }
     
     //Right column
-    if global.totalWeapons &gt;= weapons_per_col
+    if global.totalWeapons &gt;= cfgWeaponsPerCol
     {
-        for(i = 0; i &lt; global.totalWeapons-weapons_per_col; i++)
+        for(i = 0; i &lt; global.totalWeapons-cfgWeaponsPerCol; i++)
         {
-            if global.weaponUnlocked[i+weapons_per_col] == true
+            if global.weaponUnlocked[i+cfgWeaponsPerCol] == true
             {
                 //Icon
-                if option == i+weapons_per_col
-                    draw_sprite_ext(sprWeaponIcons, global.weaponSlot[i+weapons_per_col], view_xview[0]+144, view_yview[0]+24+i*19, 1, 1, 0, c_white, 1);
+                if option == i+cfgWeaponsPerCol
+                    draw_sprite_ext(sprWeaponIcons, global.weaponSlot[i+cfgWeaponsPerCol], view_xview[0]+144, view_yview[0]+24+i*19, 1, 1, 0, c_white, 1);
                 else
-                    draw_sprite_ext(sprWeaponIconsGray, global.weaponSlot[i+weapons_per_col], view_xview[0]+144, view_yview[0]+24+i*19, 1, 1, 0, c_white, 1);
+                    draw_sprite_ext(sprWeaponIconsGray, global.weaponSlot[i+cfgWeaponsPerCol], view_xview[0]+144, view_yview[0]+24+i*19, 1, 1, 0, c_white, 1);
                     
                 //Ammo bar
                 var ammo;
-                ammo = ceil(global.ammo[i+weapons_per_col]);
+                ammo = ceil(global.ammo[i+cfgWeaponsPerCol]);
                     
-                if option == i+weapons_per_col
+                if option == i+cfgWeaponsPerCol
                     draw_sprite_ext(sprPauseMenuBar, ammo, view_xview[0]+144+32, view_yview[0]+24+i*19+8, 1, 1, 0, c_white, 1);
                 else
                     draw_sprite_ext(sprPauseMenuBarGray, ammo, view_xview[0]+144+32, view_yview[0]+24+i*19+8, 1, 1, 0, c_white, 1);
@@ -556,14 +556,14 @@ if (phase &gt;= 1 &amp;&amp; phase &lt;= 3) || phase == 5 || phase == 6
                 draw_set_halign(fa_left);
                 draw_set_valign(fa_top);
                 
-                if option == i+weapons_per_col
+                if option == i+cfgWeaponsPerCol
                 {
                     draw_set_color(make_color_rgb(255, 217, 162)); //Light yellow-ish
-                    draw_text(view_xview[0]+144+16+10, view_yview[0]+24+i*19+1, global.weaponName[ global.weaponSlot[i+weapons_per_col] ]);
+                    draw_text(view_xview[0]+144+16+10, view_yview[0]+24+i*19+1, global.weaponName[ global.weaponSlot[i+cfgWeaponsPerCol] ]);
                     draw_set_color(c_white);
                 }
                 else
-                    draw_text(view_xview[0]+144+16+10, view_yview[0]+24+i*19+1, global.weaponName[ global.weaponSlot[i+weapons_per_col] ]);
+                    draw_text(view_xview[0]+144+16+10, view_yview[0]+24+i*19+1, global.weaponName[ global.weaponSlot[i+cfgWeaponsPerCol] ]);
             }
         }
     }

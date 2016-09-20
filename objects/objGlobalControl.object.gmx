@@ -116,21 +116,7 @@ if room == rmInit {
     global.secondaryCol = c_white;
     global.outlineCol = c_black;
     
-    //Input key variables.
-    global.enableSlideKey = false // Do we have an extra key dedicted to sliding?
-    
-    //Option variables
-    global.enableDamageNumbers = false; //Show damage numbers.
-    global.enableCharge = true; //Can we charge the buster?
-    global.enableSlide = true; //Can we slide?
-    global.enableScrews = true; //Do screws exist in this game?
-    global.maxNumberOfBusterShots = 3;
-    
-    // Extra options.    
-    global.enableEnergyBalancer = false // NOT IMPLEMNTED.
-    
-    //Weapon inventory
-    global.totalWeapons = total_weapons;
+
     
     for(i = 0; i &lt; global.totalWeapons; i++)
     {

@@ -391,7 +391,7 @@ else
     
 if global.enableSlide == true
 {
-    if ground == true && isSlide == false && ((global.keyJumpPressed && global.keyDown) || (global.keySlidePressed && global.enableSlideKey)) 
+    if ground == true && isSlide == false && ((global.keyJumpPressed && global.keyDown) || (global.enableSlideKey && global.keySlidePressed)) 
         && (canMove == true || isThrow == true) && !position_meeting(box+image_xscale*5, bbox_bottom-8, objSolid)
     {
         var canSld;

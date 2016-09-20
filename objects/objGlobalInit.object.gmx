@@ -28,7 +28,24 @@
             <string>// FOR GLOBAL VALUES THAT NEED TO BE INITIALIZED BEFORE objGLobalControl IS MADE.
 // USE ONLY IN rmINIT.
 
-global._maxHealth = 28;
+global._maxHealth = cfgMaxHealth;
+
+//Input key variables.
+global.enableSlideKey = cfgEnableSlideKey // Do we have an extra key dedicted to sliding?
+
+//Option variables
+global.enableDamageNumbers = cfgEnableDamageNumbers; //Show damage numbers.
+global.enableCharge = cfgEnableCharge; //Can we charge the buster?
+global.enableSlide = cfgEnableSlide; //Can we slide?
+global.enableScrews = cfgEnableScrews; //Do screws exist in this game?
+global.maxNumberOfBusterShots = cfgMaxNumberOfBusterShots;
+
+// Extra options.    
+global.enableEnergyBalancer = cfgEnableEnergyBalancer // NOT IMPLEMNTED.
+
+//Weapon inventory
+global.totalWeapons = total_weapons;
+    
 instance_create(0, 0, objGlobalControl);
 instance_destroy();
 </string>
