@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed = 1/12;
+            <string>event_inherited();
+
+image_speed = 1/12;
 xspeed = 0;
 yspeed = 0;
 </string>
