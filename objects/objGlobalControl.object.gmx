@@ -75,8 +75,6 @@ if room == rmInit {
     global.GP = -1  //Gamepad
     
     // Max values for several vitals.
-    global._maxHealth = 28;
-    global.maxAmmo = 28;
     global.maxETanks = 9;
     global.maxWTanks = 9;
     global.maxMTanks = 1;
@@ -91,12 +89,12 @@ if room == rmInit {
     global.screws = 0;
        
     var i;
-    for(i = 0; i &lt;= 1000; i += 1) //If you somehow have over 1000 pickups in one room, increase this number
+    for(i = 0; i &lt; 1000; i++) //If you somehow have over 1000 pickups in one room, increase this number
     {
         global.pickupCollected[i] = false;
     }
     
-    for(i = 0; i &lt;= 100; i += 1) //If you somehow have over 1000 upgrades in the game, increase this number
+    for(i = 0; i &lt; global.maxUpgrades; i++) //If you somehow have over 1000 upgrades in the game, increase this number
     {
         global.upgradeCollected[i] = false;
     }
