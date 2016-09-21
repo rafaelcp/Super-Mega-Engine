@@ -29,6 +29,7 @@
 blackAlphaIncrease = 0.2;
 blackAlphaTimer = 0;
 blackAlphaTimerMax = 2;
+weapons_per_col = cfgWeaponsPerCol;
 
 phase = 0;  //0: increasing the black rectangle's alpha
 option = global.currentWeapon;
@@ -112,7 +113,7 @@ with objMegaman event_user(0);
             }
             else if option == global.totalWeapons
             {
-                if global.eTanks &gt; 0 &amp;&amp; global._health &lt; 28
+                if global.eTanks &gt; 0 &amp;&amp; global._health &lt; global.maxHealth
                 {
                     option = 99; //Nothing selected
                     phase = 5;
@@ -133,11 +134,11 @@ with objMegaman event_user(0);
                     proceed = false;
                     for(i = 1; i &lt; global.totalWeapons; i ++)
                     {
-                        if ceil(global.ammo[i]) &lt; 28
+                        if ceil(global.ammo[i]) &lt; global.maxAmmo
                             proceed = true;
                     }
                     
-                    if ceil(global._health) &lt; 28
+                    if ceil(global._health) &lt; global.maxHealth
                         proceed = true;
                         
                     if proceed == true //If proceed is still false after the past calculations, it seems there is nothing to fill
@@ -194,14 +195,14 @@ with objMegaman event_user(0);
     break;
     
     case 5: //E-Tank restoring health
-        if global._health &lt; 28
+        if global._health &lt; global.maxHealth
         {
             eTankTimer += 1;
             if eTankTimer &gt;= 3
             {
                 global._health += 1;
-                if global._health &gt; 28
-                    global._health = 28;
+                if global._health &gt; global.maxHealth
+                    global._health = global.maxHealth;
                 eTankTimer = 0;
             }
         }
@@ -226,21 +227,21 @@ with objMegaman event_user(0);
             proceed = false;
             for(i = 1; i &lt; global.totalWeapons; i++)
             {
-                if global.ammo[i] &lt; 28
+                if global.ammo[i] &lt; global.maxAmmo
                 {
                     global.ammo[i] += 1;
-                    if global.ammo[i] &gt; 28
-                        global.ammo[i] = 28;
+                    if global.ammo[i] &gt; global.maxAmmo
+                        global.ammo[i] = global.maxAmmo;
                         
                     proceed = true;
                 }
             }
             
-            if global._health &lt; 28
+            if global._health &lt; global.maxHealth
             {
                 global._health += 1;
-                if global._health &gt; 28
-                    global._health = 28;
+                if global._health &gt; global.maxHealth
+                    global._health = global.maxHealth;
                     
                 proceed = true;
             }
@@ -580,6 +581,21 @@ if (phase &gt;= 1 &amp;&amp; phase &lt;= 3) || phase == 5 || phase == 6
     {
         draw_sprite_ext(sprMTankPrimary, 0, view_xview[0]+80, view_yview[0]+184, 1, 1, 0, make_color_rgb(0, 120, 248), 1);
         draw_sprite_ext(sprMTankSecondary, 0, view_xview[0]+80, view_yview[0]+184, 1, 1, 0, make_color_rgb(0, 232, 216), 1);
+    }
+    
+    //W-Tank
+    if (global.enableWTanks)
+    {
+        draw_sprite(sprWTankGrayscale, 0, view_xview[0]+24, view_yview[0]+204);
+        //draw_sprite_ext(sprWTankPrimary, 0, view_xview[0]+24, view_yview[0]+204, 1, 1, 0, make_color_rgb(0, 120, 248), 1);
+        //draw_sprite_ext(sprWTankSecondary, 0, view_xview[0]+24, view_yview[0]+204, 1, 1, 0, make_color_rgb(0, 120, 248), 1);
+        draw_text(view_xview[0]+41, view_yview[0]+216, "0" + string(global.wTanks));
+    }
+    
+    //Energy Balancer
+    if (global.enableEnergyBalancer)
+    {
+        draw_sprite(sprEnergyBalancer, 0, view_xview[0]+200, view_yview[0]+165);
     }
     
     draw_text(view_xview[0]+41, view_yview[0]+201, "0" + string(global.eTanks));

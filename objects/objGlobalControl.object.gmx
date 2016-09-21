@@ -120,7 +120,7 @@ if room == rmInit {
     
     for(i = 0; i &lt; global.totalWeapons; i++)
     {
-        global.ammo[i] = 28;
+        global.ammo[i] = global.maxAmmo;
     }
     
     global.weaponSlot[0] = megabuster;

@@ -31,6 +31,9 @@ increaseHealthAmount = 0;
 increaseAmmo = false;
 increaseAmmoAmount = 0;
 
+increaseAmmoOffscreen = false;
+weaponToIncreaseIndex = 0;
+
 increaseTimer = 0;
 </string>
           </argument>
@@ -99,6 +102,28 @@ else if increaseAmmo == true
         increaseAmmo = false;
         if global.ammo[global.currentWeapon] &gt; global.maxAmmo
             global.ammo[global.currentWeapon] = global.maxAmmo;
+        global.frozen = false;
+        increaseTimer = 0;
+        stopSFX(sfxEnergyRestore);
+    }
+}
+else if increaseAmmoOffscreen == true
+{
+    if increaseAmmoAmount &gt; 0 &amp;&amp; global.ammo[weaponToIncreaseIndex] &lt; global.maxAmmo
+    {
+        increaseTimer += 1;
+        if increaseTimer &gt;= 3
+        {
+            global.ammo[weaponToIncreaseIndex] += 1;
+            increaseAmmoAmount -= 1;
+            increaseTimer = 0;
+        }
+    }
+    else
+    {
+        increaseAmmoOffscreen = false;
+        if global.ammo[weaponToIncreaseIndex] &gt; global.maxAmmo
+            global.ammo[weaponToIncreaseIndex] = global.maxAmmo;
         global.frozen = false;
         increaseTimer = 0;
         stopSFX(sfxEnergyRestore);
