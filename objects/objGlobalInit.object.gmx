@@ -29,6 +29,7 @@
 // USE ONLY IN rmINIT.
 
 global._maxHealth = cfgMaxHealth;
+global.maxAmmo = cfgMaxAmmo;
 
 //Input key variables.
 global.enableSlideKey = cfgEnableSlideKey // Do we have an extra key dedicted to sliding?
@@ -38,10 +39,11 @@ global.enableDamageNumbers = cfgEnableDamageNumbers; //Show damage numbers.
 global.enableCharge = cfgEnableCharge; //Can we charge the buster?
 global.enableSlide = cfgEnableSlide; //Can we slide?
 global.enableScrews = cfgEnableScrews; //Do screws exist in this game?
+global.enableWTanks = cfgEnableWTanks; // Do W-Tanks exist in this game?
 global.maxNumberOfBusterShots = cfgMaxNumberOfBusterShots;
 
 // Extra options.    
-global.enableEnergyBalancer = cfgEnableEnergyBalancer // NOT IMPLEMNTED.
+global.enableEnergyBalancer = cfgEnableEnergyBalancer // Refill weapon with lowest energy when MEGA BUSTER is equipped.
 
 //Weapon inventory
 global.totalWeapons = total_weapons;
