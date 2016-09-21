@@ -114,6 +114,7 @@ if global.frozen == false &amp;&amp; dead == false
             image_index = 0;
             image_speed = 0;
             moving = false;
+            y -= 3;
         }
     }
     else
