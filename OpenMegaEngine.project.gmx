@@ -213,6 +213,7 @@
       <sprites name="MM2">
         <sprite>sprites\sprBaton</sprite>
         <sprite>sprites\sprTelly</sprite>
+        <sprite>sprites\sprFanFiend</sprite>
       </sprites>
       <sprites name="MM6">
         <sprite>sprites\sprColton</sprite>
@@ -306,6 +307,7 @@
         <sprite>sprites\sprWeaponIconsGray</sprite>
         <sprite>sprites\sprPauseMenuBar</sprite>
         <sprite>sprites\sprPauseMenuBarGray</sprite>
+        <sprite>sprites\sprPauseMenuNew</sprite>
       </sprites>
       <sprites name="Pass">
         <sprite>sprites\sprPassArrow</sprite>
@@ -367,6 +369,7 @@
       <background>background\bgStageSelect</background>
       <background>background\bgPass</background>
       <background>background\bgWeaponGet</background>
+      <background>background\bgShop</background>
     </backgrounds>
   </backgrounds>
   <paths name="paths"/>
@@ -528,6 +531,7 @@
         <object>objects\objBaton</object>
         <object>objects\objMM2Baton</object>
         <object>objects\objTelly</object>
+        <object>objects\objFanFiend</object>
       </objects>
       <objects name="MM6">
         <object>objects\objColton</object>

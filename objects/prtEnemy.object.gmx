@@ -32,6 +32,15 @@ canHit = true;
 xspeed = 0;
 yspeed = 0;
 
+healthpointsStart = 1;
+healthpoints = healthpointsStart;
+contactDamage = 1;
+
+//Reflection
+reflectProjectiles = false;
+reflectProjectilesRight = false; //Only reflect projectiles that come from the right
+reflectProjectilesLeft = false; //Only reflect projectiles that come from the left
+
 respawn = true; //Should we respawn after leaving the screen and entering it again?
 
 //Default damage
@@ -112,28 +121,20 @@ if healthpoints &lt;= 0
 }
 
 //Respawning
-if respawn == true
-{
-    if beenOutsideView == true
-    {
-        if insideView()
-        {
-            visible = true;
-            dead = false;
-            healthpoints = healthpointsStart;
-            canInitDeath = true;
-            beenOutsideView = false;
-        }
+if respawn == true {
+    if beenOutsideView == true &amp;&amp; insideView() {
+        visible = true;
+        dead = false;
+        healthpoints = healthpointsStart;
+        canInitDeath = true;
+        beenOutsideView = false;
     }
 }
-else
-{
-    if dead == true
-        instance_destroy(); //If we can't respawn, there's no point to still be able to execute any code. Destroying the instance saves memory and processing power
+else if dead == true {
+    instance_destroy(); //If we can't respawn, there's no point to still be able to execute any code. Destroying the instance saves memory and processing power
 }
 
-if !insideView()
-{
+if !insideView() {
     beenOutsideView = true;
     
     x = xstart;

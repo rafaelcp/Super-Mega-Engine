@@ -25,12 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>xspeed = 0;
+            <string>xspeed = -1;
 yspeed = 0;
 affectEnemies = false;
 affectPlayer = true;
 affectProjectiles = false;
 affectBosses = false;
+affectItems = false;
 </string>
           </argument>
         </arguments>
