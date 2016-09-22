@@ -454,6 +454,7 @@
     </scripts>
     <scripts name="Enemies">
       <script>scripts\check_enemy_death.gml</script>
+      <script>scripts\instance_number_alive.gml</script>
     </scripts>
     <scripts name="Misc">
       <script>scripts\drawDamageNumber.gml</script>
@@ -587,6 +588,7 @@
         <objects name="MM2">
           <object>objects\objMM2Conveyor</object>
           <object>objects\objWind</object>
+          <object>objects\objTellySpawner</object>
         </objects>
         <objects name="MM3">
           <object>objects\objSparkmanPlatform</object>
