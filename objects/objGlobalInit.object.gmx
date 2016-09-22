@@ -43,7 +43,7 @@ global.enableWTanks = cfgEnableWTanks; // Do W-Tanks exist in this game?
 global.maxNumberOfBusterShots = cfgMaxNumberOfBusterShots;
 
 // Extra options.    
-global.enableEnergyBalancer = false // Refill weapon with lowest energy when MEGA BUSTER is equipped or the current weapon ammo is full.
+global.enableEnergyBalancer = false; // Refill weapon with lowest energy when MEGA BUSTER is equipped or the current weapon ammo is full.
 
 //Weapon inventory
 global.totalWeapons = total_weapons;

@@ -451,30 +451,31 @@ if (phase &gt;= 1 &amp;&amp; phase &lt;= 3) || phase == 5 || phase == 6
     //BG
     draw_set_color(c_white);
     draw_set_alpha(1);
-    draw_sprite(sprPauseMenuBG, 0, view_xview[0], view_yview[0]);
+    draw_sprite(sprPauseMenuNew, 0, view_xview[0], view_yview[0]);
     
-    //Life
+
+        //Life
     var xx, yy, bgCol, i;
-    xx = view_xview[0]+200;
-    yy = view_yview[0]+183;
     bgCol = make_color_rgb(5, 5, 5);
-    draw_sprite_ext(sprLife, 0, xx, yy, 1, 1, 0, c_white, 1);
+    xx = view_xview[0]+200;
+    yy = view_yview[0]+180;
+    /*draw_sprite_ext(sprLife, 0, xx, yy, 1, 1, 0, c_white, 1);
     draw_sprite_ext(sprLifePrimary, 0, xx, yy, 1, 1, 0, global.primaryCol, 1);
     draw_sprite_ext(sprLifeSecondary, 0, xx, yy, 1, 1, 0, global.secondaryCol, 1);
-    draw_sprite_ext(sprLifeOutline, 0, xx, yy, 1, 1, 0, bgCol, 1);
-    draw_text(xx + (41-20), yy + (201-195), "0" + string(global._lives));
+    draw_sprite_ext(sprLifeOutline, 0, xx, yy, 1, 1, 0, bgCol, 1);*/
+    draw_text(xx + (41-24), yy + (201-205), "0" + string(global._lives));
     
     //Screws
     if global.enableScrews {
-        xx = view_xview[0]+200;
+        xx = view_xview[0]+192;
         yy = view_yview[0]+199;
-        draw_sprite(sprScrewBig, 0, xx, yy);
+        draw_sprite(sprScrewBig, 0, xx - 2, yy);
         draw_text(xx + (41-24), yy + (201-194), string_replace_all(string_format(global.screws, 3, 0), " ", "0"));
     }
     
     //Megaman
-    xx = view_xview[0]+155;
-    yy = view_yview[0]+192;
+    xx = view_xview[0]+194;
+    yy = view_yview[0]+172;
     draw_sprite_ext(sprMegamanStand, 0, xx, yy, 1, 1, 0, c_white, 1);
     draw_sprite_ext(sprMegamanStandPrimary, 0, xx, yy, 1, 1, 0, global.primaryCol, 1);
     draw_sprite_ext(sprMegamanStandSecondary, 0, xx, yy, 1, 1, 0, global.secondaryCol, 1);
@@ -512,7 +513,7 @@ if (phase &gt;= 1 &amp;&amp; phase &lt;= 3) || phase == 5 || phase == 6
             
             //The life bar at the bottom left
             if i == 0
-                draw_sprite_ext(sprPauseMenuBarGray, global._health, view_xview[0]+128, view_yview[0]+208, 1, 1, 0, c_white, 1);
+                draw_sprite_ext(sprPauseMenuBarGray, global._health, view_xview[0]+182, view_yview[0]+192, 1, 1, 0, c_white, 1);
                 
             //Name
             draw_set_font(global.font);
@@ -572,34 +573,41 @@ if (phase &gt;= 1 &amp;&amp; phase &lt;= 3) || phase == 5 || phase == 6
     //E-Tank
     if option == global.totalWeapons
     {
-        draw_sprite_ext(sprETankPrimary, 0, view_xview[0]+24, view_yview[0]+184, 1, 1, 0, make_color_rgb(0, 120, 248), 1);
-        draw_sprite_ext(sprETankSecondary, 0, view_xview[0]+24, view_yview[0]+184, 1, 1, 0, make_color_rgb(0, 232, 216), 1);
+        draw_sprite_ext(sprETankPrimary, 0, view_xview[0]+16, view_yview[0]+164, 1, 1, 0, make_color_rgb(0, 120, 248), 1);
+        draw_sprite_ext(sprETankSecondary, 0, view_xview[0]+16, view_yview[0]+164, 1, 1, 0, make_color_rgb(0, 232, 216), 1);
+    }
+    else {
+        draw_sprite(sprETankGrayscale, 0, view_xview[0]+16, view_yview[0]+164);
     }
     
     //M-Tank
-    else if option == global.totalWeapons+1
+    if option == global.totalWeapons+1
     {
-        draw_sprite_ext(sprMTankPrimary, 0, view_xview[0]+80, view_yview[0]+184, 1, 1, 0, make_color_rgb(0, 120, 248), 1);
-        draw_sprite_ext(sprMTankSecondary, 0, view_xview[0]+80, view_yview[0]+184, 1, 1, 0, make_color_rgb(0, 232, 216), 1);
+        draw_sprite_ext(sprMTankPrimary, 0, view_xview[0]+64, view_yview[0]+164, 1, 1, 0, make_color_rgb(0, 120, 248), 1);
+        draw_sprite_ext(sprMTankSecondary, 0, view_xview[0]+64, view_yview[0]+164, 1, 1, 0, make_color_rgb(0, 232, 216), 1);
+    }
+    else {
+        draw_sprite(sprMTankGrayscale, 0, view_xview[0]+64, view_yview[0]+164);
     }
     
     //W-Tank
     if (global.enableWTanks)
     {
-        draw_sprite(sprWTankGrayscale, 0, view_xview[0]+24, view_yview[0]+204);
+        draw_sprite(sprWTankGrayscale, 0, view_xview[0]+40, view_yview[0]+164);
         //draw_sprite_ext(sprWTankPrimary, 0, view_xview[0]+24, view_yview[0]+204, 1, 1, 0, make_color_rgb(0, 120, 248), 1);
         //draw_sprite_ext(sprWTankSecondary, 0, view_xview[0]+24, view_yview[0]+204, 1, 1, 0, make_color_rgb(0, 120, 248), 1);
-        draw_text(view_xview[0]+41, view_yview[0]+216, "0" + string(global.wTanks));
+        draw_text(view_xview[0]+40, view_yview[0]+181, "0" + string(global.wTanks));
     }
     
     //Energy Balancer
     if (global.enableEnergyBalancer)
     {
-        draw_sprite(sprEnergyBalancer, 0, view_xview[0]+200, view_yview[0]+165);
+        draw_sprite(sprEnergyBalancer, 0, view_xview[0]+16, view_yview[0]+191);
+        draw_text(view_xview[0]+17, view_yview[0]+208, "01");
     }
     
-    draw_text(view_xview[0]+41, view_yview[0]+201, "0" + string(global.eTanks));
-    draw_text(view_xview[0]+96, view_yview[0]+201, "0" + string(global.mTanks));
+    draw_text(view_xview[0]+16, view_yview[0]+181, "0" + string(global.eTanks));
+    draw_text(view_xview[0]+64, view_yview[0]+181, "0" + string(global.mTanks));
 }
 
 

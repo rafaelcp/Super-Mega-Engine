@@ -255,10 +255,12 @@
         <sprite>sprites\sprLifeSecondary</sprite>
         <sprite>sprites\sprLifeOutline</sprite>
         <sprite>sprites\sprETank</sprite>
+        <sprite>sprites\sprETankGrayscale</sprite>
         <sprite>sprites\sprETankPrimary</sprite>
         <sprite>sprites\sprETankSecondary</sprite>
         <sprite>sprites\sprETankOutline</sprite>
         <sprite>sprites\sprMTank</sprite>
+        <sprite>sprites\sprMTankGrayscale</sprite>
         <sprite>sprites\sprMTankPrimary</sprite>
         <sprite>sprites\sprMTankSecondary</sprite>
         <sprite>sprites\sprMTankOutline</sprite>
