@@ -29,7 +29,7 @@
 blackAlphaIncrease = 0.2;
 blackAlphaTimer = 0;
 blackAlphaTimerMax = 2;
-weapons_per_col = cfgWeaponsPerCol;
+weapons_per_col = global.weapons_per_col;
 
 phase = 0;  //0: increasing the black rectangle's alpha
 option = global.currentWeapon;
@@ -92,71 +92,27 @@ with objMegaman event_user(0);
         //Select the weapon/tank
         if global.keyJumpPressed || global.keyPausePressed || global.keyShootPressed
         {
-            if option != global.totalWeapons &amp;&amp; option != global.totalWeapons+1
-            {
+            if option &lt; global.totalWeapons {   //Selected a weapon
                 phase = 3;
                 global.currentWeapon = option;
                 with prtPlayerProjectile instance_destroy();
                 with objReflectedProjectile instance_destroy();
                 with prtRush instance_destroy();
                 with objRushJet instance_destroy(); //Could not be parented to prtRush since it's parented to prtMovingPlatformSolid
-                with objMegaman
-                {
-                    if onRushJet == true
-                    {
+                with objMegaman {
+                    if onRushJet {
                         onRushJet = false;
                         canMove = true;
                     }
                 }
-                
                 playSFX(sfxMenuSelect);
             }
-            else if option == global.totalWeapons
-            {
-                if global.eTanks &gt; 0 &amp;&amp; global._health &lt; global.maxHealth
-                {
-                    option = 99; //Nothing selected
+            else {  //Selected an item
+                item_index = option - global.totalWeapons;
+                with global.items[item_index] event_user(0);    //Activate item
+                if global.items[item_index].ok {
+                    option = 99;
                     phase = 5;
-                    global.eTanks -= 1;
-                    eTankTimer = 0;
-                    loopSFX(sfxEnergyRestore);
-                }
-                else
-                {
-                    playSFX(sfxError);
-                }
-            }
-            else if option == global.totalWeapons+1
-            {
-                if global.mTanks &gt; 0
-                {
-                    var proceed;
-                    proceed = false;
-                    for(i = 1; i &lt; global.totalWeapons; i ++)
-                    {
-                        if ceil(global.ammo[i]) &lt; global.maxAmmo
-                            proceed = true;
-                    }
-                    
-                    if ceil(global._health) &lt; global.maxHealth
-                        proceed = true;
-                        
-                    if proceed == true //If proceed is still false after the past calculations, it seems there is nothing to fill
-                    {
-                        option = 99; //Nothing selected
-                        phase = 6;
-                        global.mTanks -= 1;
-                        eTankTimer = 0;
-                        loopSFX(sfxEnergyRestore);
-                    }
-                    else
-                    {
-                        playSFX(sfxError);
-                    }
-                }
-                else
-                {
-                    playSFX(sfxError);
                 }
             }
         }
@@ -194,68 +150,13 @@ with objMegaman event_user(0);
         }
     break;
     
-    case 5: //E-Tank restoring health
-        if global._health &lt; global.maxHealth
-        {
-            eTankTimer += 1;
-            if eTankTimer &gt;= 3
-            {
-                global._health += 1;
-                if global._health &gt; global.maxHealth
-                    global._health = global.maxHealth;
-                eTankTimer = 0;
-            }
-        }
-        else
-        {
-            eTankTimer = 0;
+    case 5: //Using item
+        if !global.items[item_index].using {
             phase = 2;
             option = oldWeapon;
             global.weapon = oldWeapon;
             with objMegaman event_user(0);
-            stopSFX(sfxEnergyRestore);
         }
-    break;
-    
-    case 6: //M-Tank restoring energy
-        eTankTimer += 1; //While it's technically an M-tank, we can use the same timer as the E-tank without any problems, since the two can't fill at the same time
-        if eTankTimer &gt;= 3
-        {
-            eTankTimer = 0;
-            
-            var proceed;
-            proceed = false;
-            for(i = 1; i &lt; global.totalWeapons; i++)
-            {
-                if global.ammo[i] &lt; global.maxAmmo
-                {
-                    global.ammo[i] += 1;
-                    if global.ammo[i] &gt; global.maxAmmo
-                        global.ammo[i] = global.maxAmmo;
-                        
-                    proceed = true;
-                }
-            }
-            
-            if global._health &lt; global.maxHealth
-            {
-                global._health += 1;
-                if global._health &gt; global.maxHealth
-                    global._health = global.maxHealth;
-                    
-                proceed = true;
-            }
-            
-            if proceed == false //If proceed is still false after all these calculations, it means everything has been filled
-            {
-                eTankTimer = 0;
-                phase = 2;
-                option = oldWeapon;
-                global.weapon = oldWeapon;
-                with objMegaman event_user(0);
-                stopSFX(sfxEnergyRestore);
-            }
-        }              
     break;
 }
 </string>
@@ -287,11 +188,11 @@ with objMegaman event_user(0);
     var loops;
     loops = 0; //How many times the while-loop has been passed through
     
-    while global.weaponUnlocked[option] == false || loops == 0
+    while (option &lt; global.totalWeapons &amp;&amp; global.weaponUnlocked[option] == false) || loops == 0 || (option &gt;= global.totalWeapons &amp;&amp; !global.items[option-global.totalWeapons].usable)
     {
         //The bottom of the left column and the right column;
-        //when the bottom of the left column is selected and we press down, we want to select the E-tank
-        //for the right column, we want to select the M-tank
+        //when the bottom of the left column is selected and we press down, we want to select the first item
+        //for the right column, we want to select the last item
         if option != weapons_per_col-1 &amp;&amp; option != global.totalWeapons - 1
         {
             option += 1;
@@ -302,14 +203,14 @@ with objMegaman event_user(0);
         }
         else if option == weapons_per_col-1 //The bottom of the left column
         {
-            option = global.totalWeapons; //E-tank
+            option = global.totalWeapons; //First item
         }
         else //The bottom of the right column
         {
-            option = global.totalWeapons+1; //M-tank
+            option = global.totalWeapons+array_length_1d(global.items)-1; //Last item
         }
             
-        if option != global.totalWeapons &amp;&amp; option != global.totalWeapons+1
+        if option &lt; global.totalWeapons
         {
             global.weapon = global.weaponSlot[option];
             with objMegaman event_user(0);
@@ -325,26 +226,23 @@ else if global.keyUpPressed
     var loops;
     loops = 0;
     
-    while global.weaponUnlocked[option] == false || loops == 0
+    while (option &lt; global.totalWeapons &amp;&amp; global.weaponUnlocked[option] == false) || loops == 0 || (option &gt;= global.totalWeapons &amp;&amp; !global.items[option-global.totalWeapons].usable)
     {
-        if option == global.totalWeapons+1 //M-tank
+        if option == global.totalWeapons+array_length_1d(global.items)-1 //Last item
         {
-            option = global.totalWeapons-1; //The bottom weapon of the right column
+            option = global.totalWeapons-1; //The bottom weapon of the left column
         }
-        else if option == global.totalWeapons //E-tank
+        else if option &gt;= global.totalWeapons //Item
         {
-            if global.totalWeapons &gt; weapons_per_col-1
-                option = weapons_per_col-1; //The bottom weapon of the left column
-            else
-                option = global.totalWeapons;
+            option = weapons_per_col-1; //The bottom weapon of the left column
         }
         else if option == weapons_per_col //The top weapon of the right column
         {
-            option = global.totalWeapons+1; //M-tank
+            option = global.totalWeapons+array_length_1d(global.items)-1; //Last item
         }
         else if option == 0 //The top weapon of the left column
         {
-            option = global.totalWeapons; //E-tank
+            option = global.totalWeapons; //First item
         }
         else
         {
@@ -355,7 +253,7 @@ else if global.keyUpPressed
                 option = 0;
         }
             
-        if option != global.totalWeapons &amp;&amp; option != global.totalWeapons+1
+        if option &lt; global.totalWeapons
         {
             global.weapon = global.weaponSlot[option];
             with objMegaman event_user(0);
@@ -367,8 +265,8 @@ else if global.keyUpPressed
 
 if global.keyLeftPressed || global.keyRightPressed
 {
-    if global.totalWeapons &gt; weapons_per_col-1 //If there is a right column of weapons
-    &amp;&amp; option != global.totalWeapons &amp;&amp; option != global.totalWeapons+1 //When the E-tank or M-tank is not selected
+    if global.totalWeapons &gt; weapons_per_col //If there is a right column of weapons
+    &amp;&amp; option &lt; global.totalWeapons          //And an item is not selected
     {
         if option &gt; weapons_per_col-1
             option -= weapons_per_col;
@@ -383,34 +281,45 @@ if global.keyLeftPressed || global.keyRightPressed
         playSFX(sfxMenuMove);
     }
     
-    //E-Tanks and M-Tanks
-    if option == global.totalWeapons || option == global.totalWeapons+1
+    //Items
+    if option &gt;= global.totalWeapons
     {
-        if option == global.totalWeapons
-            option = global.totalWeapons+1;
-        else
-            option = global.totalWeapons;
+        if global.keyLeftPressed {
+            option--;
+            if option &lt; global.totalWeapons
+                option = global.totalWeapons+array_length_1d(global.items)-1; //Last item
+        }
+        if global.keyRightPressed {
+            option++;
+            if option &gt; global.totalWeapons+array_length_1d(global.items)-1
+                option = global.totalWeapons; //First item
+        }
+
             
         playSFX(sfxMenuMove);
     }
     
     
-    while global.weaponUnlocked[option] == false
+    while (option &lt; global.totalWeapons &amp;&amp; global.weaponUnlocked[option] == false) || option &gt; global.totalWeapons+array_length_1d(global.items)-1  || (option &gt;= global.totalWeapons &amp;&amp; !global.items[option-global.totalWeapons].usable)
     {
         if option == weapons_per_col
             option = global.totalWeapons-1;
         else if option == 0
         {
-            if global.totalWeapons &gt; weapons_per_col-1
+            if global.totalWeapons &gt; weapons_per_col
                 option = weapons_per_col-1;
             else
                 option = global.totalWeapons-1;
         }
-        else    
+        else if option &gt; global.totalWeapons+array_length_1d(global.items)-1
+            option = global.totalWeapons; //First item
+        else if global.keyLeftPressed   
             option -= 1;
+        else if global.keyRightPressed   
+            option += 1;
     }
     
-    if option != global.totalWeapons &amp;&amp; option != global.totalWeapons+1
+    if option &lt; global.totalWeapons
     {
         global.weapon = global.weaponSlot[option];
         with objMegaman event_user(0);
@@ -454,7 +363,7 @@ if (phase &gt;= 1 &amp;&amp; phase &lt;= 3) || phase == 5 || phase == 6
     draw_sprite(sprPauseMenuNew, 0, view_xview[0], view_yview[0]);
     
 
-        //Life
+    //Life
     var xx, yy, bgCol, i;
     bgCol = make_color_rgb(5, 5, 5);
     xx = view_xview[0]+200;
@@ -480,24 +389,21 @@ if (phase &gt;= 1 &amp;&amp; phase &lt;= 3) || phase == 5 || phase == 6
     draw_sprite_ext(sprMegamanStandPrimary, 0, xx, yy, 1, 1, 0, global.primaryCol, 1);
     draw_sprite_ext(sprMegamanStandSecondary, 0, xx, yy, 1, 1, 0, global.secondaryCol, 1);
     draw_sprite_ext(sprMegamanStandOutline, 0, xx, yy, 1, 1, 0, bgCol, 1);
-    
-    //Icons, ammo bars and names
-    var maxI;
-    if global.totalWeapons &gt; cfgWeaponsPerCol
-        maxI = cfgWeaponsPerCol;
-    else
-        maxI = global.totalWeapons;
-        
-    //Left column
-    for(i = 0; i &lt; maxI; i++)
-    {
-        if global.weaponUnlocked[i] == true
-        {
+            
+    //Weapons
+    currX = 32;
+    currY = 24;
+    for(i = 0; i &lt; global.totalWeapons; i++) {
+        if i &gt;= global.weapons_per_col &amp;&amp; currX == 32 {
+            currX = 144;
+            currY = 24;
+        }
+        if global.weaponUnlocked[i] == true {
             //Icon
             if option == i
-                draw_sprite_ext(sprWeaponIcons, global.weaponSlot[i], view_xview[0]+32, view_yview[0]+24+i*19, 1, 1, 0, c_white, 1);
+                draw_sprite_ext(sprWeaponIcons, global.weaponSlot[i], view_xview[0]+currX, view_yview[0]+currY, 1, 1, 0, c_white, 1);
             else
-                draw_sprite_ext(sprWeaponIconsGray, global.weaponSlot[i], view_xview[0]+32, view_yview[0]+24+i*19, 1, 1, 0, c_white, 1);
+                draw_sprite_ext(sprWeaponIconsGray, global.weaponSlot[i], view_xview[0]+currX, view_yview[0]+currY, 1, 1, 0, c_white, 1);
                 
             //Ammo bar
             var ammo;
@@ -507,14 +413,10 @@ if (phase &gt;= 1 &amp;&amp; phase &lt;= 3) || phase == 5 || phase == 6
                 ammo = ceil(global.ammo[i]);
                 
             if option == i
-                draw_sprite_ext(sprPauseMenuBar, ammo, view_xview[0]+32+32, view_yview[0]+24+i*19+8, 1, 1, 0, c_white, 1);
+                draw_sprite_ext(sprPauseMenuBar, ammo, view_xview[0]+currX+32, view_yview[0]+currY+8, 1, 1, 0, c_white, 1);
             else
-                draw_sprite_ext(sprPauseMenuBarGray, ammo, view_xview[0]+32+32, view_yview[0]+24+i*19+8, 1, 1, 0, c_white, 1);
-            
-            //The life bar at the bottom left
-            if i == 0
-                draw_sprite_ext(sprPauseMenuBarGray, global._health, view_xview[0]+182, view_yview[0]+192, 1, 1, 0, c_white, 1);
-                
+                draw_sprite_ext(sprPauseMenuBarGray, ammo, view_xview[0]+currX+32, view_yview[0]+currY+8, 1, 1, 0, c_white, 1);
+                            
             //Name
             draw_set_font(global.font);
             draw_set_halign(fa_left);
@@ -523,91 +425,36 @@ if (phase &gt;= 1 &amp;&amp; phase &lt;= 3) || phase == 5 || phase == 6
             if option == i
             {
                 draw_set_color(make_color_rgb(255, 217, 162)); //Light yellow-ish
-                draw_text(view_xview[0]+32+16+10, view_yview[0]+24+i*19+1, global.weaponName[ global.weaponSlot[i] ]);
+                draw_text(view_xview[0]+currX+16+10, view_yview[0]+currY+1, global.weaponName[ global.weaponSlot[i] ]);
                 draw_set_color(c_white);
             }
             else
-                draw_text(view_xview[0]+32+16+10, view_yview[0]+24+i*19+1, global.weaponName[ global.weaponSlot[i] ]);
+                draw_text(view_xview[0]+currX+16+10, view_yview[0]+currY+1, global.weaponName[ global.weaponSlot[i] ]);
         }
+        currY += 19
     }
-    
-    //Right column
-    if global.totalWeapons &gt;= cfgWeaponsPerCol
-    {
-        for(i = 0; i &lt; global.totalWeapons-cfgWeaponsPerCol; i++)
-        {
-            if global.weaponUnlocked[i+cfgWeaponsPerCol] == true
-            {
-                //Icon
-                if option == i+cfgWeaponsPerCol
-                    draw_sprite_ext(sprWeaponIcons, global.weaponSlot[i+cfgWeaponsPerCol], view_xview[0]+144, view_yview[0]+24+i*19, 1, 1, 0, c_white, 1);
-                else
-                    draw_sprite_ext(sprWeaponIconsGray, global.weaponSlot[i+cfgWeaponsPerCol], view_xview[0]+144, view_yview[0]+24+i*19, 1, 1, 0, c_white, 1);
-                    
-                //Ammo bar
-                var ammo;
-                ammo = ceil(global.ammo[i+cfgWeaponsPerCol]);
-                    
-                if option == i+cfgWeaponsPerCol
-                    draw_sprite_ext(sprPauseMenuBar, ammo, view_xview[0]+144+32, view_yview[0]+24+i*19+8, 1, 1, 0, c_white, 1);
-                else
-                    draw_sprite_ext(sprPauseMenuBarGray, ammo, view_xview[0]+144+32, view_yview[0]+24+i*19+8, 1, 1, 0, c_white, 1);
-                    
-                //Name
-                draw_set_font(global.font);
-                draw_set_halign(fa_left);
-                draw_set_valign(fa_top);
-                
-                if option == i+cfgWeaponsPerCol
-                {
-                    draw_set_color(make_color_rgb(255, 217, 162)); //Light yellow-ish
-                    draw_text(view_xview[0]+144+16+10, view_yview[0]+24+i*19+1, global.weaponName[ global.weaponSlot[i+cfgWeaponsPerCol] ]);
-                    draw_set_color(c_white);
-                }
-                else
-                    draw_text(view_xview[0]+144+16+10, view_yview[0]+24+i*19+1, global.weaponName[ global.weaponSlot[i+cfgWeaponsPerCol] ]);
-            }
+  
+    //Life bar
+    draw_sprite_ext(sprPauseMenuBarGray, global._health, view_xview[0]+182, view_yview[0]+192, 1, 1, 0, c_white, 1);
+  
+    //Items
+    currX = 16;
+    currY = 164;
+    for (var i = 0; i &lt; array_length_1d(global.items); i++) {
+        if !global.items[i].usable &amp;&amp; currY == 164 {
+            currX = 16;
+            currY = 191;
         }
+        if option == global.totalWeapons + i  || !global.items[i].usable {
+                draw_sprite(global.items[i].sprite_index, 0, view_xview[0]+currX, view_yview[0]+currY);
+        }
+        else {
+            draw_sprite(global.items[i].sprite_index, 1, view_xview[0]+currX, view_yview[0]+currY);
+        }
+        draw_text(view_xview[0]+currX, view_yview[0]+currY+17, "0" + string(global.items[i].count));
+        currX += 24;
     }
     
-    //E-Tank
-    if option == global.totalWeapons
-    {
-        draw_sprite_ext(sprETankPrimary, 0, view_xview[0]+16, view_yview[0]+164, 1, 1, 0, make_color_rgb(0, 120, 248), 1);
-        draw_sprite_ext(sprETankSecondary, 0, view_xview[0]+16, view_yview[0]+164, 1, 1, 0, make_color_rgb(0, 232, 216), 1);
-    }
-    else {
-        draw_sprite(sprETankGrayscale, 0, view_xview[0]+16, view_yview[0]+164);
-    }
-    
-    //M-Tank
-    if option == global.totalWeapons+1
-    {
-        draw_sprite_ext(sprMTankPrimary, 0, view_xview[0]+64, view_yview[0]+164, 1, 1, 0, make_color_rgb(0, 120, 248), 1);
-        draw_sprite_ext(sprMTankSecondary, 0, view_xview[0]+64, view_yview[0]+164, 1, 1, 0, make_color_rgb(0, 232, 216), 1);
-    }
-    else {
-        draw_sprite(sprMTankGrayscale, 0, view_xview[0]+64, view_yview[0]+164);
-    }
-    
-    //W-Tank
-    if (global.enableWTanks)
-    {
-        draw_sprite(sprWTankGrayscale, 0, view_xview[0]+40, view_yview[0]+164);
-        //draw_sprite_ext(sprWTankPrimary, 0, view_xview[0]+24, view_yview[0]+204, 1, 1, 0, make_color_rgb(0, 120, 248), 1);
-        //draw_sprite_ext(sprWTankSecondary, 0, view_xview[0]+24, view_yview[0]+204, 1, 1, 0, make_color_rgb(0, 120, 248), 1);
-        draw_text(view_xview[0]+40, view_yview[0]+181, "0" + string(global.wTanks));
-    }
-    
-    //Energy Balancer
-    if (global.enableEnergyBalancer)
-    {
-        draw_sprite(sprEnergyBalancer, 0, view_xview[0]+16, view_yview[0]+191);
-        draw_text(view_xview[0]+17, view_yview[0]+208, "01");
-    }
-    
-    draw_text(view_xview[0]+16, view_yview[0]+181, "0" + string(global.eTanks));
-    draw_text(view_xview[0]+64, view_yview[0]+181, "0" + string(global.mTanks));
 }
 
 

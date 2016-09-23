@@ -84,10 +84,7 @@ else
             <kind>1</kind>
             <string>event_inherited();
 
-if global.mTanks &lt; global.maxMTanks
-    global.mTanks += 1;
-    
-playSFX(sfxImportantItem);
+add_equip(mtank);
 </string>
           </argument>
         </arguments>

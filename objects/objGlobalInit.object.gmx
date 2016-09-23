@@ -45,8 +45,69 @@ global.maxNumberOfBusterShots = cfgMaxNumberOfBusterShots;
 // Extra options.    
 global.enableEnergyBalancer = false; // Refill weapon with lowest energy when MEGA BUSTER is equipped or the current weapon ammo is full.
 
-//Weapon inventory
-global.totalWeapons = total_weapons;
+//Weapons
+global.weaponSlot[0] = megabuster;
+global.weaponUnlocked[0] = true; //The Mega Buster is always unlocked
+global.weaponSlot[1] = silvertomahawk;
+global.weaponUnlocked[1] = true; //Unlocked because there's no RM for it yet
+global.weaponSlot[2] = windstorm;
+global.weaponUnlocked[2] = true; //Unlocked because there's no RM for it yet
+global.weaponSlot[3] = pharaohshot;
+global.weaponUnlocked[3] = false;
+global.weaponSlot[4] = metalblade;
+global.weaponUnlocked[4] = true; //Unlocked because there's no RM for it yet
+global.weaponSlot[5] = starcrash;
+global.weaponUnlocked[5] = true; //Unlocked because there's no RM for it yet
+global.weaponSlot[6] = centaurflash;
+global.weaponUnlocked[6] = true; //Unlocked because there's no RM for it yet
+global.weaponSlot[7] = rushcoil;
+global.weaponUnlocked[7] = true; //Usually, Rush Coil is available from the beginning as well
+global.weaponSlot[8] = rushjet;
+global.weaponUnlocked[8] = true; //We have no RM that unlocks Rush Jet yet
+
+//Weapon Names
+global.weaponName[megabuster] = "M.BUSTER";
+global.weaponName[rushcoil] = "R.COIL";
+global.weaponName[rushjet] = "R.JET";
+global.weaponName[metalblade] = "M.BLADE";
+global.weaponName[pharaohshot] = "P.SHOT";
+global.weaponName[starcrash] = "S.CRASH";
+global.weaponName[silvertomahawk] = "SILVER.T";
+global.weaponName[windstorm] = "W.STORM";
+global.weaponName[centaurflash] = "C.FLASH";
+
+//Weapons Ammo
+global.weaponAmmo[megabuster] = 0;
+global.weaponAmmo[rushcoil] = 2;
+global.weaponAmmo[rushjet] = 1; //Per second
+global.weaponAmmo[metalblade] = 0.25;
+global.weaponAmmo[pharaohshot] = 1;
+global.weaponAmmo[starcrash] = 2; //2 when fired
+global.weaponAmmoContact[starcrash] = 3; //3 when colliding with an enemy or projectile
+global.weaponAmmo[silvertomahawk] = 1;
+global.weaponAmmo[windstorm] = 1;
+global.weaponAmmo[centaurflash] = 4;
+
+global.totalWeapons = array_length_1d(global.weaponSlot);
+global.weapons_per_col = ceil(global.totalWeapons / 2);
+
+//Boss Names
+global.bossNames[0] = "HEAT MAN";
+global.bossNames[1] = "BLIZZARD MAN";
+global.bossNames[2] = "SPLASH WOMAN";
+global.bossNames[3] = "AIR MAN";
+global.bossNames[4] = "STRIKE MAN";
+global.bossNames[5] = "CONCRETE MAN";
+global.bossNames[6] = "SHADOW MAN";
+global.bossNames[7] = "PHARAOH MAN";
+
+//Items
+//Add all usable items before non-usable ones for correct placement in the pause menu
+global.items[etank] = instance_create(0,0, objETankEquip);
+global.items[wtank] = instance_create(0,0, objWTankEquip);
+global.items[mtank] = instance_create(0,0, objMTankEquip);
+global.items[energybalancer] = instance_create(0,0, objEnergyBalancerEquip);
+
     
 instance_create(0, 0, objGlobalControl);
 instance_destroy();

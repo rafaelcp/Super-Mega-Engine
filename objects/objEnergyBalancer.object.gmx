@@ -93,8 +93,7 @@ else
             <kind>1</kind>
             <string>instance_destroy();
 
-global.enableEnergyBalancer = true;
-playSFX(sfxImportantItem);
+add_equip(energybalancer);
 </string>
           </argument>
         </arguments>

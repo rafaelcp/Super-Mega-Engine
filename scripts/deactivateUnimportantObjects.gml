@@ -35,4 +35,4 @@ if !instance_exists(objSectionSwitcher)
 }
 
 instance_activate_object(prtMovingPlatformSolid);   //Moving platforms should be kept visibile and moving
-
+instance_activate_object(prtEquip);
