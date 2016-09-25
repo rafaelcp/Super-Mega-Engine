@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>total_shake_x = 0;
+            <string>event_inherited();
+
+total_shake_x = 0;
 total_shake_y = 0;
 shake_amount = 5;
 shake_duration = 1;
@@ -76,7 +78,9 @@ instance_destroy();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if insideView() {
+            <string>event_inherited();
+
+if !global.frozen &amp;&amp; insideView() {
     if total_shake_x == 0 || total_shake_y == 0 {
         alarm[0] = shake_duration * room_speed;
     }

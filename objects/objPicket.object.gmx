@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>contactDamage = 2;
+            <string>event_inherited();
+
+contactDamage = 2;
 image_speed = 1/6;
 
 yspeed = -6;

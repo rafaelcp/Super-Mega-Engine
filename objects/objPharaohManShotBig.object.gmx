@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>contactDamage = 6;
+            <string>event_inherited();
+
+contactDamage = 6;
 
 canStep = false;
 alarm[0] = 1;

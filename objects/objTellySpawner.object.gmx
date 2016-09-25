@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>maxTellies = 3;
+            <string>event_inherited();
+
+maxTellies = 3;
 interval = 3 * room_speed;
 counter = 0;
 </string>
@@ -50,7 +52,9 @@ counter = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if !global.frozen &amp;&amp; insideView() {
+            <string>event_inherited();
+
+if !global.frozen &amp;&amp; insideView() {
     counter++;
     if counter &gt;= interval {
         counter = 0;

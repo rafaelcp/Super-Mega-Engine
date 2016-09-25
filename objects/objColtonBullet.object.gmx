@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>contactDamage = 3;
+            <string>event_inherited();
+
+contactDamage = 3;
 </string>
           </argument>
         </arguments>

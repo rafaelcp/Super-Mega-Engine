@@ -667,7 +667,7 @@
       <room>rooms\rmPass</room>
     </rooms>
   </rooms>
-  <constants number="23">
+  <constants number="24">
     <constant name="megabuster">0</constant>
     <constant name="silvertomahawk">1</constant>
     <constant name="windstorm">2</constant>
@@ -687,6 +687,7 @@
     <constant name="cfgMaxNumberOfBusterShots">3</constant>
     <constant name="cfgMaxHealth">28</constant>
     <constant name="cfgMaxAmmo">28</constant>
+    <constant name="cfgDebug">false</constant>
     <constant name="etank">0</constant>
     <constant name="wtank">1</constant>
     <constant name="mtank">2</constant>

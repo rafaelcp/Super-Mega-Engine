@@ -298,7 +298,9 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if drawBoss == true
+            <string>event_inherited();
+
+if drawBoss == true
     drawSelf();
     
 if drawHitSpark == true

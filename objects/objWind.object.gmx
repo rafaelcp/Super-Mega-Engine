@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>xspeed = -1;
+            <string>event_inherited();
+
+xspeed = -1;
 yspeed = 0;
 affectEnemies = false;
 affectPlayer = true;
@@ -54,7 +56,9 @@ affectItems = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if !global.frozen &amp;&amp; insideView() {
+            <string>event_inherited();
+
+if !global.frozen &amp;&amp; insideView() {
     if affectItems {
         with prtPickup {
             if insideView() {
