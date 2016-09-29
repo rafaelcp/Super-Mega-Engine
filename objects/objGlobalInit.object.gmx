@@ -103,11 +103,17 @@ global.bossNames[7] = "PHARAOH MAN";
 
 //Items
 //Add all usable items before non-usable ones for correct placement in the pause menu
+global.items[life] = instance_create(0,0, objLifeEquip);
 global.items[etank] = instance_create(0,0, objETankEquip);
 global.items[wtank] = instance_create(0,0, objWTankEquip);
 global.items[mtank] = instance_create(0,0, objMTankEquip);
 global.items[energybalancer] = instance_create(0,0, objEnergyBalancerEquip);
+global.items[guardpowerup] = instance_create(0,0, objGuardPowerUpEquip);
+global.items[eddiecall] = instance_create(0,0, objEddieEquip);
+global.items[beatcall] = instance_create(0,0, objBeatEquip);
+global.items[shockguard] = instance_create(0,0, objShockGuardEquip);
 
+global.damageMultiplier = 1;
     
 instance_create(0, 0, objGlobalControl);
 instance_destroy();

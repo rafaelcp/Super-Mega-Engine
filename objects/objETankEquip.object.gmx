@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>event_inherited();
 
-name = "E-Tank";
+name = "E-TANK";
 description = "Fully restores your energy when used.";
 usable = true;
 maxUnits = 9;

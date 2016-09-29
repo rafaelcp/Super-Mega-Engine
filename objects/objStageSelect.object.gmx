@@ -144,11 +144,16 @@ playMusicVolume("StageSelect.ogg", 0.6);
         }
     }
     
-    
+    //Going to the shop
+    if global.keySelectPressed {
+        var ID = instance_create(0, 0, objFadeout);
+        ID.type = "room";
+        ID.myRoom = rmShop;
+        //room_goto(rmShop);
+    }
     
     //Selecting a stage
-    if global.keyPausePressed &amp;&amp; option != 8
-    {
+    if (global.keyPausePressed || global.keyJumpPressed || global.keyShootPressed) &amp;&amp; option != 8 {
         playSFX(sfxMenuSelect);
         
         //Add more bosses once they are added
@@ -162,9 +167,8 @@ playMusicVolume("StageSelect.ogg", 0.6);
                 global.introBGCol = make_color_rgb(255, 145, 95); //The background color of the boss introduction screen
                 global.introLineCol = make_color_rgb(255, 204, 174); //The color of the moving lines in the boss introduction screen
                 
-                var ID;
-                ID = instance_create(0, 0, objFadeout);
-                    ID.type = "room";
+                var ID = instance_create(0, 0, objFadeout);
+                ID.type = "room";
                     
                 if global.bossDefeated[option] == false
                     ID.myRoom = rmIntroduction;
@@ -257,6 +261,10 @@ ds_queue_destroy(words);
 
 //Draw MM's head in the middle
 draw_sprite(sprMMStageSelect, option, xx[8]+8, yy[8]+8);
+
+draw_set_halign(fa_left);
+draw_set_valign(fa_top);
+draw_text(1, 1, "SELECT/SHIFT: SHOP");
 </string>
           </argument>
         </arguments>

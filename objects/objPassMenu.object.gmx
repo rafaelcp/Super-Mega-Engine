@@ -28,6 +28,8 @@
             <string>pass = make_password();
 show_debug_message(pass);
 
+global.damageMultiplier = 1;
+
 option = 0;
 selectedOption = false;
 global.checkpoint = false;

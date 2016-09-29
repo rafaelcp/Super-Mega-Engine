@@ -59,9 +59,21 @@
       <sound>sound\bgmPassScreen</sound>
       <sound>sound\bgmVictory</sound>
       <sound>sound\bgmWeaponGet</sound>
+      <sound>sound\bgmShop</sound>
     </sounds>
   </sounds>
   <sprites name="sprites">
+    <sprites name="Equip">
+      <sprite>sprites\sprETankEquip</sprite>
+      <sprite>sprites\sprMTankEquip</sprite>
+      <sprite>sprites\sprWTankEquip</sprite>
+      <sprite>sprites\sprLifeEqup</sprite>
+      <sprite>sprites\sprEnergyBalancerEquip</sprite>
+      <sprite>sprites\sprGuardPowerUpEquip</sprite>
+      <sprite>sprites\sprEddieEquip</sprite>
+      <sprite>sprites\sprBeatEquip</sprite>
+      <sprite>sprites\sprShockGuardEquip</sprite>
+    </sprites>
     <sprites name="Collision">
       <sprite>sprites\sprSolid</sprite>
       <sprite>sprites\sprIce</sprite>
@@ -271,6 +283,7 @@
         <sprite>sprites\sprWTankSecondary</sprite>
         <sprite>sprites\sprScrewSmall</sprite>
         <sprite>sprites\sprScrewBig</sprite>
+        <sprite>sprites\sprEnergyBalancer</sprite>
       </sprites>
       <sprites name="Gimmicks">
         <sprites name="General">
@@ -290,12 +303,6 @@
       </sprites>
       <sprites name="Checkpoint">
         <sprite>sprites\sprCheckpoint</sprite>
-      </sprites>
-      <sprites name="Equip">
-        <sprite>sprites\sprEnergyBalancer</sprite>
-        <sprite>sprites\sprETankEquip</sprite>
-        <sprite>sprites\sprMTankEquip</sprite>
-        <sprite>sprites\sprWTankEquip</sprite>
       </sprites>
     </sprites>
     <sprites name="Effects">
@@ -340,6 +347,9 @@
       </sprites>
       <sprites name="TitleScreen">
         <sprite>sprites\sprLogo</sprite>
+      </sprites>
+      <sprites name="Shop">
+        <sprite>sprites\sprShopCursor</sprite>
       </sprites>
     </sprites>
     <sprites name="Sections">
@@ -439,6 +449,7 @@
     <scripts name="Strings">
       <script>scripts\split.gml</script>
       <script>scripts\string_lpad.gml</script>
+      <script>scripts\string_break.gml</script>
     </scripts>
     <scripts name="Saving">
       <script>scripts\saveGame.gml</script>
@@ -629,6 +640,7 @@
       <object>objects\objIntroduction</object>
       <object>objects\objDisclaimer</object>
       <object>objects\objTitleScreen</object>
+      <object>objects\objShop</object>
     </objects>
     <objects name="Sections">
       <object>objects\objSectionBorderLeftScreen</object>
@@ -650,9 +662,14 @@
     <objects name="Equips">
       <object>objects\prtEquip</object>
       <object>objects\objETankEquip</object>
+      <object>objects\objShockGuardEquip</object>
+      <object>objects\objLifeEquip</object>
       <object>objects\objEnergyBalancerEquip</object>
       <object>objects\objWTankEquip</object>
       <object>objects\objMTankEquip</object>
+      <object>objects\objGuardPowerUpEquip</object>
+      <object>objects\objEddieEquip</object>
+      <object>objects\objBeatEquip</object>
     </objects>
   </objects>
   <rooms name="rooms">
@@ -665,9 +682,10 @@
       <room>rooms\rmIntroduction</room>
       <room>rooms\rmWeaponGet</room>
       <room>rooms\rmPass</room>
+      <room>rooms\rmShop</room>
     </rooms>
   </rooms>
-  <constants number="24">
+  <constants number="29">
     <constant name="megabuster">0</constant>
     <constant name="silvertomahawk">1</constant>
     <constant name="windstorm">2</constant>
@@ -688,10 +706,15 @@
     <constant name="cfgMaxHealth">28</constant>
     <constant name="cfgMaxAmmo">28</constant>
     <constant name="cfgDebug">false</constant>
-    <constant name="etank">0</constant>
-    <constant name="wtank">1</constant>
-    <constant name="mtank">2</constant>
-    <constant name="energybalancer">3</constant>
+    <constant name="life">0</constant>
+    <constant name="etank">1</constant>
+    <constant name="wtank">2</constant>
+    <constant name="mtank">3</constant>
+    <constant name="eddiecall">4</constant>
+    <constant name="guardpowerup">5</constant>
+    <constant name="beatcall">6</constant>
+    <constant name="energybalancer">7</constant>
+    <constant name="shockguard">8</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

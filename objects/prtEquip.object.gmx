@@ -28,6 +28,7 @@
             <string>usable = false;     //Can select and activate the item in the pause menu
 maxUnits = 1;       //Maximum number of units that can be held
 showZero = false;   //Whether to show the item in the pause menu if you have 0 units
+showPause = true;  //Whether to show the item in the pause menu
 buyable = false;    //Can be bought in the shop
 count = 0;          //Current amount of this item you have
 price = 1;          //Shop price
@@ -35,6 +36,7 @@ name = "";          //Item name (for shop)
 description = "";   //Item description (for shop)
 using = false;      //Whether the item effect is being applied right now
 
+buyok = false;      //Buying transation was ok?
 ok = false;         //Last activation was ok?
 
 persistent = true;
@@ -95,9 +97,11 @@ if count == 0 &amp;&amp; !using {
             <string>//OnBuy: to be inherited
 //Called when the item is bought
 
+buyok = false;
 if count &lt; maxUnits &amp;&amp; global.screws &gt;= price {
     count++;
     global.screws -= price;
+    buyok = true;
 }
 
 show_debug_message("Buying " + name);

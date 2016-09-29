@@ -8,10 +8,15 @@ var mySolid, mySpikeFloor, mySpikeWall, mySpikeCeiling;
 mySpikeFloor = instance_place(x, y+global.yspeed+1, objSpike);
 mySpikeWall = instance_place(x+global.xspeed, y, objSpike);
 mySpikeCeiling = instance_place(x, y+global.yspeed-1, objSpike);
-if (mySpikeFloor >= 0 || mySpikeWall >= 0 || mySpikeCeiling >= 0) && canHit == true
-{
-    global._health = 0;
-    exit;
+if (mySpikeFloor >= 0 || mySpikeWall >= 0 || mySpikeCeiling >= 0) && canHit == true {
+    if global.items[shockguard].count < 1 {
+        global._health = 0;
+        exit;
+    }
+    else {
+        global.items[shockguard].count--;
+        playerGetHit(1);
+    }
 }
 
 

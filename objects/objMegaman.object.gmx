@@ -106,6 +106,7 @@ blinkDuration = 8; //The amount of frames the blinking lasts
 drawWeaponIcon = false; //Whether or not we should draw the weapon icon above our head (used when using quick weapon switching)
 drawWeaponIconTimer = -1;
 onRushJet = false; //Are we on the Rush Jet?
+damageMultiplier = 1;   //Multiplies damage taken
 
 global.outlineCol = c_black;
 
