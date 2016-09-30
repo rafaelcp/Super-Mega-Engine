@@ -26,14 +26,15 @@ The engine has several features, including:
 - A “section system” as present in the Classic titles, including proper screen transitions
 - Several built-in special weapons, with flexibility in adding new ones or changing existing ones
 - Built-in enemies, as well as flexibility in adding your own
-- Three example gimmicks included in the engine, and flexibility in adding your own
+- Various example gimmicks included in the engine, and flexibility in adding your own
 - An example Robot Master with full AI, and flexibility to add your own bosses
 - A customizable title screen, stage select, boss introduction screen, weapon get screen, game over screen and pause screen
 - E-Tanks, M-Tanks, health drops, weapon drops, screws and extra lives
+- Fully functional shop with many built-in items, with flexibility in adding your own
 - Fully functional checkpoints
 - Gamepad support
 - Friendly to multiple keyboard layouts (multiple keys assigned to shoot and jump)
-- Experimental HTML5 support
+- HTML5 support
 
 <a href="https://www.youtube.com/watch?v=cGZtF46oGJ8" target="_blank">Open Mega Engine playthrough video<br><img src="https://img.youtube.com/vi/cGZtF46oGJ8/0.jpg" 
 alt="Open Mega Engine playthrough video" title="Open Mega Engine playthrough video" width="240" height="180" border="10" /></a>
@@ -56,7 +57,7 @@ alt="Tutorial" title="Tutorial" width="240" height="180" border="10" /></a>
 
 **Q**: I don’t want sliding and/or buster charging and/or screws/bolts in my game. How do I disable them?
 
-**A**: Go to Objects > Player > objGlobalControl and open the Create event code. Upon scrolling down, you will encounter a section called “Option variables”. Here you will see the variables global.enableCharge, global.enableSlide and global.enableScrews. Set any of them to false to disable the feature.
+**A**: Go to Macros > All Configurations and change cfgEnableSlide / cfgEnableCharge / cfgEnableScrews to false.
 
 **Q**: Where can I view the credits of the game?
 
