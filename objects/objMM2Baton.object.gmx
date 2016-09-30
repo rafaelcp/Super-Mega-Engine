@@ -90,10 +90,8 @@ counter = 0;
             <kind>1</kind>
             <string>event_inherited();
 
-if global.frozen == false &amp;&amp; dead == false
-{
-    if instance_exists(objMegaman) &amp;&amp; image_index &gt; 1
-    {
+if !global.frozen &amp;&amp; !dead {
+    if instance_exists(objMegaman) &amp;&amp; image_index &gt; 1 {
         // Turn right.
         if x &lt; objMegaman.x
             image_xscale = 1;
@@ -102,14 +100,12 @@ if global.frozen == false &amp;&amp; dead == false
             image_xscale = -1;
     }
     
-    if retreating
-    {        
+    if retreating {        
         y += yspeed;
         
         generalCollision();
         
-        if (yspeed == 0)
-        {
+        if (yspeed == 0) {
             retreating = false;
             image_index = 0;
             image_speed = 0;
@@ -117,63 +113,42 @@ if global.frozen == false &amp;&amp; dead == false
             y -= 3;
         }
     }
-    else
-    {
-        if moving == false
-        {
-            show_debug_message("not moving, moveTimer = " + string(moveTimer));
+    else {
+        if !moving {
             moveTimer += 1;
-            if (moveTimer &gt;= 180)
-            {
-                show_debug_message("move timer complete, animate. Current index: " + string(image_index))
+            if (moveTimer &gt;= 180) {
                 image_speed = 0.1;
             }
             
-            if (floor(image_index) == 2)
-            {
-                show_debug_message("img index 2, start moving");
+            if (floor(image_index) == 2) {
                 moving = true;
                 image_speed = 0;
                 playSFX(sfxTaban);
             }
         }
-        else
-        {
-            
-            if instance_exists(objMegaman)
-            {
-                show_debug_message("linear step");
+        else {
+            if instance_exists(objMegaman) {
                 mp_linear_step(objMegaman.x, objMegaman.y - 16, 0.5, false);
             }
         }
     }
     
     if moving {
-    
-        show_debug_message("moving");
         image_speed = 0;
         counter += 1;
         
-        if (counter == 8)
-        {
-            show_debug_message("counter == 8");
-            if (floor(image_index) == 2)
-            {
+        if (counter == 8) {
+            if (floor(image_index) == 2) {
                 counter = 0;
                 image_index = 3;
-                show_debug_message("frame 2 -&gt; 3");
             }
-            else if (floor(image_index) == 3)
-            {
+            else if (floor(image_index) == 3) {
                 counter = 0;
                 image_index = 4;
-                show_debug_message("frame 3 -&gt; 4");
             }
-            else if (floor(image_index) == 4)
-            {
+            else if (floor(image_index) == 4) {
                 counter = 0;
                 image_index = 2;
-                show_debug_message("frame 4 -&gt; 2");
             }
         }
     }
@@ -187,10 +162,8 @@ if global.frozen == false &amp;&amp; dead == false
         reflectProjectiles = false;
     }
 }
-else
-{
-    if dead == true
-    {
+else {
+    if dead {
         counter = 0;
         moveTimer = 0;
         moving = false;

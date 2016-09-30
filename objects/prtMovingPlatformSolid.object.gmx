@@ -57,10 +57,14 @@ neverDespawn = true;
             <string>event_inherited();
 
 //If transitioning on top of a moving platform, move the platform at the same speed as Mega Man
-//Bug: there is a small hop when transitioning upwards
-if global.frozen &amp;&amp; !dead &amp;&amp; instance_exists(objSectionSwitcher) &amp;&amp; instance_exists(objMegaman) &amp;&amp; place_meeting(x, y-1, objMegaman) &amp;&amp; objSectionSwitcher.plt == self {
+//Different conditions for browser or desktop, at least until this issue is better understood
+if global.frozen &amp;&amp; !dead &amp;&amp; instance_exists(objSectionSwitcher) &amp;&amp; instance_exists(objMegaman) &amp;&amp; ( (os_browser == browser_not_a_browser &amp;&amp; place_meeting(x, y-1, objMegaman) ) || (os_browser != browser_not_a_browser &amp;&amp; place_meeting(x, bbox_top-1, objMegaman) )) &amp;&amp; objSectionSwitcher.plt == self {
     x += objSectionSwitcher.playerSpeedHor * sign(xspeed);
-    y += objSectionSwitcher.playerSpeedVert * sign(yspeed);
+    //Small hop workaround
+    if os_browser == browser_not_a_browser
+        y += objSectionSwitcher.playerSpeedVert * sign(yspeed);
+    else
+        y = objMegaman.bbox_bottom + sprite_yoffset + 1 + objSectionSwitcher.playerSpeedVert;
 }
 
 if global.frozen == false &amp;&amp; dead == false
