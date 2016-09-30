@@ -121,14 +121,17 @@ if global.frozen == false &amp;&amp; dead == false
     {
         if moving == false
         {
+            show_debug_message("not moving, moveTimer = " + string(moveTimer));
             moveTimer += 1;
             if (moveTimer &gt;= 180)
             {
+                show_debug_message("move timer complete, animate. Current index: " + string(image_index))
                 image_speed = 0.1;
             }
             
-            if (image_index == 2)
+            if (floor(image_index) == 2)
             {
+                show_debug_message("img index 2, start moving");
                 moving = true;
                 image_speed = 0;
                 playSFX(sfxTaban);
@@ -139,6 +142,7 @@ if global.frozen == false &amp;&amp; dead == false
             
             if instance_exists(objMegaman)
             {
+                show_debug_message("linear step");
                 mp_linear_step(objMegaman.x, objMegaman.y - 16, 0.5, false);
             }
         }
@@ -146,25 +150,30 @@ if global.frozen == false &amp;&amp; dead == false
     
     if moving {
     
+        show_debug_message("moving");
         image_speed = 0;
         counter += 1;
         
         if (counter == 8)
         {
-            if (image_index == 2)
+            show_debug_message("counter == 8");
+            if (floor(image_index) == 2)
             {
                 counter = 0;
                 image_index = 3;
+                show_debug_message("frame 2 -&gt; 3");
             }
-            else if (image_index == 3)
+            else if (floor(image_index) == 3)
             {
                 counter = 0;
                 image_index = 4;
+                show_debug_message("frame 3 -&gt; 4");
             }
-            else if (image_index == 4)
+            else if (floor(image_index) == 4)
             {
                 counter = 0;
                 image_index = 2;
+                show_debug_message("frame 4 -&gt; 2");
             }
         }
     }

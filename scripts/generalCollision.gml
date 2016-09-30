@@ -30,8 +30,7 @@ if mySolid >= 0 && xspeed != 0
 
 //Ceiling
 mySolid = instance_place(x, y+yspeed, objSolid);
-if mySolid >= 0 && yspeed < 0
-{
+if mySolid >= 0 && yspeed < 0 {
     y = mySolid.y + 16 + (y - (bbox_top-1));
     yspeed = 0;
 }
