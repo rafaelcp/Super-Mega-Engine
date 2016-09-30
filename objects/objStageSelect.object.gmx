@@ -145,7 +145,7 @@ playMusicVolume("StageSelect.ogg", 0.6);
     }
     
     //Going to the shop
-    if global.keySelectPressed {
+    if global.enableScrews &amp;&amp; global.keySelectPressed {
         var ID = instance_create(0, 0, objFadeout);
         ID.type = "room";
         ID.myRoom = rmShop;
@@ -262,9 +262,11 @@ ds_queue_destroy(words);
 //Draw MM's head in the middle
 draw_sprite(sprMMStageSelect, option, xx[8]+8, yy[8]+8);
 
-draw_set_halign(fa_left);
-draw_set_valign(fa_top);
-draw_text(1, 1, "SELECT/SHIFT: SHOP");
+if global.enableScrews {
+    draw_set_halign(fa_left);
+    draw_set_valign(fa_top);
+    draw_text(1, 1, "SELECT/SHIFT: SHOP");
+}
 </string>
           </argument>
         </arguments>
