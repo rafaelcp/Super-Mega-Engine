@@ -379,6 +379,7 @@
     </backgrounds>
     <backgrounds name="Tilesets">
       <background>background\tstBeta</background>
+      <background>background\tstMM3</background>
     </backgrounds>
     <backgrounds name="Menu">
       <background>background\bgStageSelect</background>
@@ -684,6 +685,7 @@
       <room>rooms\rmPass</room>
       <room>rooms\rmShop</room>
     </rooms>
+    <room>rooms\rmInitialStage</room>
   </rooms>
   <constants number="29">
     <constant name="megabuster">0</constant>
