@@ -462,7 +462,11 @@ if (phase &gt;= 1 &amp;&amp; phase &lt;= 3) || phase == 5 || phase == 6
         else {
             draw_sprite(global.items[i].sprite_index, 1, view_xview[0]+currX, view_yview[0]+currY);
         }
-        draw_text(view_xview[0]+currX, view_yview[0]+currY+17, "0" + string(global.items[i].count));
+        
+        if (global.items[i].showCount)
+        {
+            draw_text(view_xview[0]+currX, view_yview[0]+currY+17, "0" + string(global.items[i].count));
+        }
         currX += 24;
     }
     
