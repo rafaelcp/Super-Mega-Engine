@@ -36,6 +36,7 @@ option = global.currentWeapon;
 oldWeapon = global.weapon;
 resetWeapon = false; //Should we, after exiting the menu, reset our weapon to the weapon that was used before the pause menu was opened? 
 
+primedItemIndex = -1;
 with objMegaman event_user(0);
 </string>
           </argument>
@@ -92,8 +93,7 @@ with objMegaman event_user(0);
         //Select the weapon/tank
         if global.keyJumpPressed || global.keyPausePressed || global.keyShootPressed
         {
-            if option &lt; global.totalWeapons {   //Selected a weapon
-                phase = 3;
+            if option &lt; global.totalWeapons {   //Selected a weapon             
                 global.currentWeapon = option;
                 with prtPlayerProjectile instance_destroy();
                 with objReflectedProjectile instance_destroy();
@@ -105,14 +105,48 @@ with objMegaman event_user(0);
                         canMove = true;
                     }
                 }
-                playSFX(sfxMenuSelect);
+                
+                // If an item hasn't been primed for use, transition to phase 3.
+                if (primedItemIndex == -1)
+                {
+                    playSFX(sfxMenuSelect);
+                    phase = 3;
+                }
+                // Otherwise, transition to phase 5.
+                else
+                {
+                    global.items[item_index].using = true;
+                    global.items[item_index].useOnIndex = option;
+                    option = 99;
+                    phase = 5;
+                }
             }
             else {  //Selected an item
                 item_index = option - global.totalWeapons;
-                with global.items[item_index] event_user(0);    //Activate item
-                if global.items[item_index].ok {
-                    option = 99;
-                    phase = 5;
+                
+                // If the item selected was already primed, unprime it.
+                if (item_index == primedItemIndex)
+                {
+                    with global.items[item_index] event_user(3);    //Unprime item.
+                    primedItemIndex = -1;
+                }
+                else
+                {
+                    with global.items[item_index] event_user(0);    //Activate item
+                    if global.items[item_index].ok {
+                        // If this flag is true, it means that this item will need to be used on a weapon/util.
+                        if (global.items[item_index].useOnWeapon)
+                        {
+                            global.currentWeapon = megabuster;
+                            primedItemIndex = item_index;
+                        }
+                        else
+                        {
+                            option = 99;
+                            phase = 5;
+                            primedItemIndex = -1;
+                        }
+                    }
                 }
             }
         }
@@ -155,6 +189,7 @@ with objMegaman event_user(0);
             phase = 2;
             option = oldWeapon;
             global.weapon = oldWeapon;
+            primedItemIndex = -1;
             with objMegaman event_user(0);
         }
     break;
@@ -409,7 +444,13 @@ if (phase &gt;= 1 &amp;&amp; phase &lt;= 3) || phase == 5 || phase == 6
         if global.weaponUnlocked[i] == true {
             //Icon
             if option == i
+            {
                 draw_sprite_ext(sprWeaponIcons, global.weaponSlot[i], view_xview[0]+currX, view_yview[0]+currY, 1, 1, 0, c_white, 1);
+                
+                // If using something like an W-Tank, draw the arrow as an indicator.
+                if primedItemIndex != -1
+                    draw_sprite_ext(sprPassArrow, 0, view_xview[0]+currX-6, view_yview[0]+currY+8, 2, 2, 0, make_color_rgb(0, 112, 232), 1);
+            }
             else
                 draw_sprite_ext(sprWeaponIconsGray, global.weaponSlot[i], view_xview[0]+currX, view_yview[0]+currY, 1, 1, 0, c_white, 1);
                 
@@ -456,11 +497,11 @@ if (phase &gt;= 1 &amp;&amp; phase &lt;= 3) || phase == 5 || phase == 6
             currX = 16;
             currY = 191;
         }
-        if option == global.totalWeapons + i  || !global.items[i].usable {
-                draw_sprite(global.items[i].sprite_index, 0, view_xview[0]+currX, view_yview[0]+currY);
+        if option == global.totalWeapons + i || !global.items[i].usable || i == primedItemIndex {
+            draw_sprite(global.items[i].sprite_index, 0, view_xview[0]+currX, view_yview[0]+currY);
         }
         else {
-            draw_sprite(global.items[i].sprite_index, 1, view_xview[0]+currX, view_yview[0]+currY);
+            draw_sprite(global.items[i].sprite_index, 1, view_xview[0]+currX, view_yview[0]+currY);           
         }
         
         if (global.items[i].showCount)

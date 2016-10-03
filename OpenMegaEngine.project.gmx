@@ -42,6 +42,7 @@
       <sound>sound\sfxError</sound>
       <sound>sound\sfxMenuMove</sound>
       <sound>sound\sfxMenuSelect</sound>
+      <sound>sound\sfxMenuSelect3</sound>
       <sound>sound\sfxPause</sound>
     </sounds>
     <sounds name="Misc">
