@@ -168,6 +168,7 @@ else
     {
         startDir = beginStartDir;
         dashing = false;
+        frozeTimer = 0;
         image_index = 0;
     }
 }
