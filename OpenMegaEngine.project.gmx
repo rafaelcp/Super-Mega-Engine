@@ -216,6 +216,9 @@
         <sprite>sprites\sprBigEyeRed</sprite>
         <sprite>sprites\sprBigEyeBlue</sprite>
         <sprite>sprites\sprBigEyeOrange</sprite>
+        <sprite>sprites\sprSpineRed</sprite>
+        <sprite>sprites\sprSpineOrange</sprite>
+        <sprite>sprites\sprSpineBlue</sprite>
         <sprites name="Projectiles">
           <sprite>sprites\sprMM1MetBullet</sprite>
           <sprite>sprites\sprBeakBullet</sprite>
@@ -226,6 +229,12 @@
         <sprite>sprites\sprBaton</sprite>
         <sprite>sprites\sprTelly</sprite>
         <sprite>sprites\sprFanFiend</sprite>
+        <sprite>sprites\sprSniperJoe</sprite>
+        <sprite>sprites\sprMM2Bullet</sprite>
+      </sprites>
+      <sprites name="MM5">
+        <sprite>sprites\sprBBitter</sprite>
+        <sprite>sprites\sprMM5Bullet</sprite>
       </sprites>
       <sprites name="MM6">
         <sprite>sprites\sprColton</sprite>
@@ -542,6 +551,7 @@
         <object>objects\objPicketMan</object>
         <object>objects\objScrewBomber</object>
         <object>objects\objBigEye</object>
+        <object>objects\objGabyoall</object>
         <objects name="Projectiles">
           <object>objects\objMM1MetBullet</object>
           <object>objects\objBeakBullet</object>
@@ -553,6 +563,11 @@
         <object>objects\objMM2Baton</object>
         <object>objects\objTelly</object>
         <object>objects\objFanFiend</object>
+        <object>objects\objSniperJoe</object>
+        <object>objects\objMM2Bullet</object>
+      </objects>
+      <objects name="MM5">
+        <object>objects\objBBitter</object>
       </objects>
       <objects name="MM6">
         <object>objects\objColton</object>
