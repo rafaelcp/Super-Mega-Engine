@@ -28,7 +28,8 @@
             <string>usable = false;     //Can select and activate the item in the pause menu
 maxUnits = 1;       //Maximum number of units that can be held
 showZero = false;   //Whether to show the item in the pause menu if you have 0 units
-showPause = true;  //Whether to show the item in the pause menu
+showCount = true;   //Whether to show the item's count in the pause menu.
+showPause = true;   //Whether to show the item in the pause menu
 buyable = false;    //Can be bought in the shop
 count = 0;          //Current amount of this item you have
 price = 1;          //Shop price
