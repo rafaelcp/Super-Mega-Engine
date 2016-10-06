@@ -316,6 +316,11 @@ if isStep == true
 x += global.xspeed;
 y += global.yspeed;
 
+//Avoids free movement on screen above
+if (!ground && !climbing && !instance_exists(objSectionSwitcher) && sprite_get_bottom() < sectionTop) {
+    y = sectionTop - sprite_height;
+}
+
 
 //Stop movement at section borders
 if x > sectionRight-6 && !place_meeting(x+6, y, objSectionArrowRight) && !place_meeting(x-global.xspeed, y, objSectionArrowRight)
