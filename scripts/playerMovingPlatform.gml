@@ -23,7 +23,7 @@ if mySolid >= 0 && global.yspeed > 0
 
 //Floor (moving platforms)
 mySolid = instance_place(x, y+global.yspeed, prtMovingPlatformSolid);
-if mySolid >= 0 /*&& global.yspeed >= 0*/ && !place_meeting(x, y, mySolid)
+if mySolid >= 0 /*&& global.yspeed >= 0*/ /*&& !place_meeting(x, y, mySolid)*/
 && collision_rectangle(bbox_left, bbox_bottom, bbox_right, bbox_bottom+global.yspeed+1, mySolid, false, false)
 {
     if mySolid.dead == false
@@ -34,6 +34,7 @@ if mySolid >= 0 /*&& global.yspeed >= 0*/ && !place_meeting(x, y, mySolid)
         
         if playLandSound == true
             playSFX(sfxLand);
+            
         
         //Note: there used to be a system here that set MM's sprite to the walking sprite when landing
         //However, due to complications such as climbing up ladders, it was a lot of work for such a minor feature
