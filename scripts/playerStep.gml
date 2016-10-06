@@ -374,6 +374,7 @@ if (canMove == true || isThrow == true || onRushJet == true) && ground == true &
     
     global.yspeed = -currentJumpSpeed;
     ground = false;
+    canMinJump = true;
     y -= 1; //To negate the prevGround y += 1
     sprite_index = spriteJump;
 }

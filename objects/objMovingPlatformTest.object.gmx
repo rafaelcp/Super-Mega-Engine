@@ -61,7 +61,7 @@ else
     
 if keyboard_check(ord('S')) &amp;&amp; !keyboard_check(ord('W'))
     yspeed = 2;
-else if keyboard_check(ord('W')) &amp;&amp; !keyboard_check(ord('S'))
+else if (keyboard_check(ord('W')) || keyboard_check(vk_up))&amp;&amp; !keyboard_check(ord('S'))
     yspeed = -2;
 else
     yspeed = 0;
