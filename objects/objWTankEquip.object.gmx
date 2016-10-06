@@ -34,6 +34,10 @@ maxUnits = 9;
 showZero = true;
 buyable = true;
 price = 30;
+
+useOnWeapon = true;
+useOnIndex = 0;     // What weapon/util will this tank refill?
+firstCheck = true;  // Is the first check during the step function after a weapon/util is selected?
 </string>
           </argument>
         </arguments>
@@ -59,10 +63,85 @@ price = 30;
             <string>event_inherited();
 
 if using {
-
-    //ToDo
+    show_debug_message("W-Tank restoring in progress...");
+    timer++;
     
+    // If the weapon the user selected is already full.
+    if firstCheck &amp;&amp; global.ammo[useOnIndex] == global.maxAmmo
+    {
+        playSFX(sfxError);
+        show_debug_message("Ammo for this weapon already full. W-Tank count: " + string(count));
+        timer = 0;
+        primed = false;
+        using = false;
+        useOnIndex = 0;
+        
+        firstCheck = true;
+    }
+    else
+    {
+        loopSFX(sfxEnergyRestore);
+        if timer &gt;= 3 {
+            var proceed = false;
+            firstCheck = false;
+            
+            // Restore the weapon energy of the selected weapon.
+            if global.ammo[useOnIndex] &lt; global.maxAmmo {
+                global.ammo[useOnIndex]++;
+                if global.ammo[useOnIndex] &gt; global.maxAmmo
+                    global.ammo[useOnIndex] = global.maxAmmo;
+                proceed = true;
+            }
+            
+            //If had nothing more to restore
+            if !proceed {
+                show_debug_message("Ammo restoring complete.");
+                timer = 0;
+                primed = false;
+                using = false;
+                useOnIndex = 0;
+                count--;
+                stopSFX(sfxEnergyRestore);
+                
+                firstCheck = true;
+            }
+        }
+    }
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="13">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>event_inherited();
+if !ok return false; //Must be on the beginning of every child of prtEquip
+
+// Unprime this item.
+playSFX(sfxMenuSelect3);
+primed = false;
+using = false;
+useOnIndex = 0;
+
+firstCheck = true;
+
+return ok;
 </string>
           </argument>
         </arguments>
@@ -88,12 +167,39 @@ if using {
             <string>event_inherited();
 if !ok return false; //Must be on the beginning of every child of prtEquip
 
-//ToDo
-playSFX(sfxError);
-ok = false;
-count++;
+var proceed = false;
+
+// Only prime the W-Tank if there's a weapon that needs refilling.
+for(i = 0; i &lt; global.totalWeapons; i++) {
+    if global.ammo[i] &lt; global.maxAmmo
+        proceed = true;
+}
+
+count++ // Don't decrement the counter yet! Returns the unit subtracted in parent
+// If the W-Tank is ready to proceed, prime it for use.
+if proceed {
+    show_debug_message("Can use. Primed.");
+    timer = 0;
+    using = false;
+    ok = true;
+    primed = true;
+    playSFX(sfxMenuSelect3);
+}
+else {
+    ok = false;
+    using = false;
+    playSFX(sfxError);
+    show_debug_message("Ammo already full. W-Tank count: " + string(count));
+}
 
 return ok;
+
+//ToDo
+//playSFX(sfxError);
+//ok = false;
+//count++;
+
+//return ok;
 </string>
           </argument>
         </arguments>
