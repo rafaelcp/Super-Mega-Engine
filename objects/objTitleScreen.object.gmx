@@ -64,7 +64,7 @@ if canProceed == true
     }
 }
 
-//Going to the stage select
+//Going to the stage select (or initial stage)
 if global.keyPausePressed &amp;&amp; canProceed == true
 {
     canProceed = false;
@@ -73,8 +73,13 @@ if global.keyPausePressed &amp;&amp; canProceed == true
     
     var ID;
     ID = instance_create(0, 0, objFadeout);
-        ID.type = "room";
+    ID.type = "room";
+    if cfgInitialStage &gt; -1 {
+        ID.myRoom = cfgInitialStage;
+    }
+    else {
         ID.myRoom = rmStageSelect;
+    }
 }
 </string>
           </argument>

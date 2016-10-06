@@ -55,6 +55,9 @@ global.bossHealth = 0;
 musicVolume = -1;
 musicLoopPointStart = -1;
 musicLoopPointEnd = -1;
+
+music = "Boss.ogg";
+musicVolume = 0.7;
 </string>
           </argument>
         </arguments>

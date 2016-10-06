@@ -60,6 +60,8 @@
       <sound>sound\bgmVictory</sound>
       <sound>sound\bgmWeaponGet</sound>
       <sound>sound\bgmShop</sound>
+      <sound>sound\bgmIntro</sound>
+      <sound>sound\bgmBossMMPU8bit</sound>
     </sounds>
   </sounds>
   <sprites name="sprites">
@@ -595,6 +597,7 @@
         <object>objects\objBossDeathTimer</object>
         <object>objects\objAbsorbEffect</object>
       </objects>
+      <object>objects\objBigEyeBoss</object>
     </objects>
     <objects name="LevelObjects">
       <objects name="Drops/Tanks">
@@ -702,7 +705,7 @@
     </rooms>
     <room>rooms\rmInitialStage</room>
   </rooms>
-  <constants number="29">
+  <constants number="30">
     <constant name="megabuster">0</constant>
     <constant name="silvertomahawk">1</constant>
     <constant name="windstorm">2</constant>
@@ -723,6 +726,7 @@
     <constant name="cfgMaxHealth">28</constant>
     <constant name="cfgMaxAmmo">28</constant>
     <constant name="cfgDebug">false</constant>
+    <constant name="cfgInitialStage">-1</constant>
     <constant name="life">0</constant>
     <constant name="etank">1</constant>
     <constant name="wtank">2</constant>

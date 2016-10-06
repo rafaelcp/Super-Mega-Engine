@@ -44,6 +44,8 @@ canHit = true;
 drawHitSpark = false;
 drawBoss = true; //Should we be visible? (Can't use the 'visible' variable as this prevents the Draw event from executing)
 
+global.weaponID = -1;
+
 alarm[8] = 1;
 
 

@@ -69,13 +69,11 @@ with objMegaman canPause = false;
 ID = instance_create(x, y, objFadeout);
     ID.type = "room";
     
-if global.weaponUnlocked[global.weaponID] == false
-{
+if global.weaponID &gt; -1 &amp;&amp; !global.weaponUnlocked[global.weaponID] {
     ID.myRoom = rmWeaponGet;
     global.passPlayVictory = false;
 }
-else
-{
+else {
     ID.myRoom = rmPass;
     global.passPlayVictory = true;
 }
@@ -210,7 +208,7 @@ alarm[1] = 270;
         {
             if canInitJump == true &amp;&amp; ground == true
             {
-                if global.weaponUnlocked[global.weaponID] == false //Only absorb the power if it's not already been unlocked
+                if global.weaponID &gt; -1 &amp;&amp; global.weaponUnlocked[global.weaponID] == false //Only absorb the power if it's not already been unlocked
                 {
                     canInitJump = false;
                     
