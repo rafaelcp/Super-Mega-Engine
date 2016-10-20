@@ -42,45 +42,7 @@ alt="Tutorial" title="Tutorial" width="240" height="180" border="10" /></a>
 
 # F.A.Q.
 
-**Q**: Why would I use this engine over other Game Maker engines?
-
-**A**: Most engines tend to try and accomplish only what is necessary for the example level(s) and do not consider flexibility and ease of use; the Mega Engine does account for all that. Plus, this engine is fully compatible with Game Maker Studio, unlike most other engines.
-
-**Q**: What is the engine’s frame rate?
-
-**A**: The engine runs at 60 frames per second (assuming your PC can handle it, of course)
-
-**Q**: I don’t want sliding and/or buster charging and/or screws/bolts/shop in my game. How do I disable them?
-
-**A**: Go to Macros > All Configurations and change cfgEnableSlide / cfgEnableCharge / cfgEnableScrews to false.
-
-**Q**: How can I add an intro stage to my game?
-
-**A**: Create a room for your intro stage, go to Macros > All Configurations and set cfgInitialStage to the name of your rooom.
-
-**Q**: Where can I view the credits of the game?
-
-**A**: The credits can be found in the Game Information.
-
-**Q**: I ran into a bug! How do I report it?
-
-**A**: Use the built-in GitHub [issue tracker](https://github.com/rafaelcp/Open-Mega-Engine/issues).
-
-**Q**: I have an idea or suggestion for the engine, where do I post it?
-
-**A**: Again, use the built-in GitHub [issue tracker](https://github.com/rafaelcp/Open-Mega-Engine/issues). Better yet, implement your ideas and send a [pull request](https://github.com/rafaelcp/Open-Mega-Engine/pulls).
-
-**Q**: The HTML5 demo is outdated!
-
-**A**: There is no intention to keep it updated with every code update. The demo is updated only after major code updates.
-
-**Q**: I want *X* feature!
-
-**A**: Read the guidelines and goals below. If your request is compatible, add an [issue](https://github.com/rafaelcp/Open-Mega-Engine/issues). Please, verify if it is not already there, though.
-
-**Q**: What features are planned for the 1.0 version?
-
-**A**: You can find them [here](https://github.com/rafaelcp/Open-Mega-Engine/milestone/1).
+Read the [F.A.Q. page](https://github.com/rafaelcp/Open-Mega-Engine/wiki/F.A.Q.) in the wiki.
 
 # Guidelines for Contribution
 - Everything that can be found in MM 1-10 is welcome (mechanics, weapons, bosses, 8-bit resources, etc.)
