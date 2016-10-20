@@ -671,31 +671,29 @@ if climbing == true
         image_xscale = ladderXScale;
         global.yspeed = 0;
         
-        
-        if position_meeting(x, bbox_bottom+15, objTopSolid) || ground == true
-        {
-            if (global.keyRight && !global.keyLeft) || (global.keyLeft && !global.keyRight)
-            {
+        if position_meeting(x, bbox_bottom+15, objTopSolid) || ground == true {
+            ground = true;  //To avoid "falling" after climbing (shouldn't play the landing sfx)
+            if (global.keyRight && !global.keyLeft) || (global.keyLeft && !global.keyRight) {
                 sprite_index = spriteWalk;
                 
-                if global.keyRight
-                {
+                if global.keyRight {
                     global.xspeed = walkSpeed;
                     image_xscale = 1;
                 }
-                else if global.keyLeft
-                {
+                else if global.keyLeft {
                     global.xspeed = -walkSpeed;
                     image_xscale = -1;
                 }
             }
-            else
+            else {
                 sprite_index = spriteStand;
+            }
         }
-        else
+        else {
             sprite_index = spriteJump;
+        }
         
-        if !place_meeting(x, y, objLadder)
+        if !place_meeting(x, y+1, objLadder)
         {
             var topSolidID;
             topSolidID = instance_place(x, y+2, objTopSolid);

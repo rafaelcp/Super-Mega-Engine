@@ -68,6 +68,7 @@ playerSpeedVertDoor = 0.9; //The speed that Mega Man will move at if travelling 
 climbTimer = 0;
 canProgressDoor = false;
 canStep = false;
+plt = -1;
 </string>
           </argument>
         </arguments>

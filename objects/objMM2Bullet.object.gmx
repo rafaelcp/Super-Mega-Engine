@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>contactDamage = 3;
+            <string>event_inherited();
+
+contactDamage = 3;
 moveSpeed = 3;
 </string>
           </argument>
@@ -49,7 +51,9 @@ moveSpeed = 3;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.frozen == false
+            <string>event_inherited();
+
+if global.frozen == false
 {
     xspeed = cos(degtorad(dir)) * moveSpeed * xscale;
     yspeed = -sin(degtorad(dir)) * moveSpeed;   //The vertical speed was, for some reason, inverted, which is why I used a minus. Don't ask me what actually caused this behaviour

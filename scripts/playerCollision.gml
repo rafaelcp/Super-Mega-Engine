@@ -28,8 +28,9 @@ if mySolid >= 0 && global.yspeed > 0
     ground = true;
     global.yspeed = 0;
     
-    if playLandSound == true
+    if playLandSound == true {
         playSFX(sfxLand);
+    }
     
     //Note: there used to be a system here that set MM's sprite to the walking sprite when landing
     //However, due to complications such as climbing up ladders, it was a lot of work for such a minor feature
@@ -69,7 +70,8 @@ if mySolid >= 0 && global.yspeed > 0
         ground = true;
         global.yspeed = 0;
         
-        if playLandSound == true
+        if playLandSound {
             playSFX(sfxLand);
+        }
     }
 }
