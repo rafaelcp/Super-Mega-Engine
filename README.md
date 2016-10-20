@@ -80,7 +80,7 @@ alt="Tutorial" title="Tutorial" width="240" height="180" border="10" /></a>
 
 **Q**: What features are planned for the 1.0 version?
 
-**Q**: You can find them [here](https://github.com/rafaelcp/Open-Mega-Engine/milestone/1).
+**A**: You can find them [here](https://github.com/rafaelcp/Open-Mega-Engine/milestone/1).
 
 # Guidelines for Contribution
 - Everything that can be found in MM 1-10 is welcome (mechanics, weapons, bosses, 8-bit resources, etc.)
