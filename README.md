@@ -46,6 +46,7 @@ alt="Tutorial" title="Tutorial" width="240" height="180" border="10" /></a>
 
 [Guidelines for Contribution](https://github.com/rafaelcp/Open-Mega-Engine/wiki/Guidelines-for-Contribution)
 
+[How To](https://github.com/rafaelcp/Open-Mega-Engine/wiki/How-To)
 
 # Goals
 - Ideally, the engine should be an empty game, and levels, weapons and bosses (from examples or created by the user) should be added by the user according to his individual game 
