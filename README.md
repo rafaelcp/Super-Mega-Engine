@@ -24,10 +24,10 @@ The engine has several features, including:
 - Various example gimmicks included in the engine, and flexibility in adding your own
 - An example Robot Master with full AI, and flexibility to add your own bosses
 - A customizable title screen, stage select, boss introduction screen, weapon get screen, game over screen and pause screen
-- E-Tanks, M-Tanks, health drops, weapon drops, screws and extra lives
+- E-Tanks, M-Tanks, W-Tanks, health drops, weapon drops, screws and extra lives
 - Fully functional shop with many built-in items, with flexibility in adding your own
 - Fully functional checkpoints
-- Gamepad support
+- Gamepad support (desktop only)
 - Friendly to multiple keyboard layouts (multiple keys assigned to shoot and jump)
 - HTML5 support
 
@@ -73,6 +73,14 @@ alt="Tutorial" title="Tutorial" width="240" height="180" border="10" /></a>
 **Q**: The HTML5 demo is outdated!
 
 **A**: There is no intention to keep it updated with every code update. The demo is updated only after major code updates.
+
+**Q**: I want *X* feature!
+
+**A**: Read the guidelines and goals below. If your request is compatible, add an [issue](https://github.com/rafaelcp/Open-Mega-Engine/issues). Please, verify if it is not already there, though.
+
+**Q**: What features are planned for the 1.0 version?
+
+**Q**: You can find them [here](https://github.com/rafaelcp/Open-Mega-Engine/milestone/1).
 
 # Guidelines for Contribution
 - Everything that can be found in MM 1-10 is welcome (mechanics, weapons, bosses, 8-bit resources, etc.)
