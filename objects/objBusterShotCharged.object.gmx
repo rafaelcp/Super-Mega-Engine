@@ -48,13 +48,18 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.frozen == false
-{
+            <string>if !global.frozen {
+    if cfgShotSplash {
+        waterBelow = instance_position(x - sprite_xoffset, y + sprite_height, objWater);
+        if waterBelow &gt; -1 {
+            instance_create(x - sprite_xoffset, waterBelow.y, objSplash);
+            playSFX(sfxSplash);
+        }
+    }
     x += xspeed;
     image_speed = 0.5;
 }
-else
-{
+else{
     image_speed = 0;
 }
 </string>

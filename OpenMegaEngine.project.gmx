@@ -706,7 +706,7 @@
     </rooms>
     <room>rooms\rmInitialStage</room>
   </rooms>
-  <constants number="30">
+  <constants number="31">
     <constant name="megabuster">0</constant>
     <constant name="silvertomahawk">1</constant>
     <constant name="windstorm">2</constant>
@@ -727,6 +727,7 @@
     <constant name="cfgMaxHealth">28</constant>
     <constant name="cfgMaxAmmo">28</constant>
     <constant name="cfgDebug">false</constant>
+    <constant name="cfgShotSplash">false</constant>
     <constant name="cfgInitialStage">-1</constant>
     <constant name="life">0</constant>
     <constant name="etank">1</constant>
