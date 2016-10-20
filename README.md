@@ -5,16 +5,11 @@ Run the [HTML5 DEMO](https://rawgit.com/rafaelcp/Open-Mega-Engine/master/demo/in
 
 Download the [Windows DEMO (EXE)](https://www.dropbox.com/s/kxaypg7ex8lloi9/OpenMegaEngine.zip?dl=0).
 
-Original source code from 'Mega Engine' by [WreckingPrograms](https://twitter.com/WreckingProg) - Original forum post: http://sprites-inc.co.uk/showthread.php?tid=1648
+Original source code from 'Mega Engine' 1.3 by [WreckingPrograms](https://twitter.com/WreckingProg) - Original forum post: http://sprites-inc.co.uk/showthread.php?tid=1648
 
 <img src="https://i.imgur.com/hOlZCn7.png" width="358" alt="Open Mega Engine" title="Open Mega Engine">
 
-This is a fork of Mega Engine 1.3 for GM Studio, intended to incorporate contributions from users.
-
-From the original post:
-
-> The Mega Engine is a free open-source Classic Mega Man engine for Game Maker Studio and Game Maker 8.1, built around the idea of combining accuracy to the original games with being flexible and easy-to-use. It aims to take the best of all entries in the Classic series and combining it in one engine. Being built from the ground up, this engine is the result of three months of work; while this may seem like a short development time, I did not cut any corners in regards to quality.
-
+This is a fork of Mega Engine 1.3 for GM Studio, intended to improve the code and incorporate contributions from users.
 
 The engine has several features, including:
 
@@ -55,9 +50,13 @@ alt="Tutorial" title="Tutorial" width="240" height="180" border="10" /></a>
 
 **A**: The engine runs at 60 frames per second (assuming your PC can handle it, of course)
 
-**Q**: I don’t want sliding and/or buster charging and/or screws/bolts in my game. How do I disable them?
+**Q**: I don’t want sliding and/or buster charging and/or screws/bolts/shop in my game. How do I disable them?
 
 **A**: Go to Macros > All Configurations and change cfgEnableSlide / cfgEnableCharge / cfgEnableScrews to false.
+
+**Q**: How can I add an intro stage to my game?
+
+**A**: Create a room for your intro stage, go to Macros > All Configurations and set cfgInitialStage to the name of your rooom.
 
 **Q**: Where can I view the credits of the game?
 
@@ -71,12 +70,18 @@ alt="Tutorial" title="Tutorial" width="240" height="180" border="10" /></a>
 
 **A**: Again, use the built-in GitHub [issue tracker](https://github.com/rafaelcp/Open-Mega-Engine/issues). Better yet, implement your ideas and send a [pull request](https://github.com/rafaelcp/Open-Mega-Engine/pulls).
 
+**Q**: The HTML5 demo is outdated!
+
+**A**: There is no intention to keep it updated with every code update. The demo is updated only after major code updates.
+
 # Guidelines for Contribution
 - Everything that can be found in MM 1-10 is welcome (mechanics, weapons, bosses, 8-bit resources, etc.)
 - Features not present in *every* game should be made optional (include a boolean variable set to false by default) (e.g., start charging while sliding, shop, initial stage, etc.)
 - Features not present in *any* game will be discussed by the contributors, but should be optional anyway
 - Original content won't be added. This is left for individual games.
 - Solve any merge conflicts
+- If you propose a new feature, be prepared to be assigned to it
+- If you don't work on your assignments for more than 30 days, they may get closed
 
 # Goals
 - Ideally, the engine should be an empty game, and levels, weapons and bosses (from examples or created by the user) should be added by the user according to his individual game 
