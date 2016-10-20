@@ -124,8 +124,7 @@ if room == rmInit {
 
 
 //When the level starts, all pickups should spawn
-if global.levelStart == true
-{
+if global.levelStart == true {
     event_user(0);
     alarm[0] = 1;
 }
