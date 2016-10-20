@@ -40,7 +40,7 @@ alt="Mega Engine 1.0 playthrough video" title="Mega Engine 1.0 playthrough video
 <a href="https://www.youtube.com/playlist?list=PLZWFosEIaQq13eVkura_XwdqkgZtLEr2D" target="_blank">Tutorial<br><img src="https://img.youtube.com/vi/LT12qZz1PpM/0.jpg" 
 alt="Tutorial" title="Tutorial" width="240" height="180" border="10" /></a>
 
-# Wiki
+# [Wiki](https://github.com/rafaelcp/Open-Mega-Engine/wiki)
 
 [F.A.Q.](https://github.com/rafaelcp/Open-Mega-Engine/wiki/F.A.Q.) 
 
