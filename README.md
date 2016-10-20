@@ -40,19 +40,11 @@ alt="Mega Engine 1.0 playthrough video" title="Mega Engine 1.0 playthrough video
 <a href="https://www.youtube.com/playlist?list=PLZWFosEIaQq13eVkura_XwdqkgZtLEr2D" target="_blank">Tutorial<br><img src="https://img.youtube.com/vi/LT12qZz1PpM/0.jpg" 
 alt="Tutorial" title="Tutorial" width="240" height="180" border="10" /></a>
 
-# F.A.Q.
+# Wiki
 
-Read the [F.A.Q. page](https://github.com/rafaelcp/Open-Mega-Engine/wiki/F.A.Q.) in the wiki.
+[F.A.Q.](https://github.com/rafaelcp/Open-Mega-Engine/wiki/F.A.Q.) 
+[Guidelines for Contribution](https://github.com/rafaelcp/Open-Mega-Engine/wiki/Guidelines-for-Contribution)
 
-# Guidelines for Contribution
-- Everything that can be found in MM 1-10 is welcome (mechanics, weapons, bosses, 8-bit resources, etc.)
-- Features not present in *every* game should be made optional (include a boolean variable set to false by default) (e.g., start charging while sliding, shop, initial stage, etc.)
-- Features not present in *any* game will be discussed by the contributors, but should be optional anyway
-- Original content won't be added. This is left for individual games.
-- Solve any merge conflicts
-- If you propose a new feature, be prepared to be assigned to it
-- If you don't work on your assignments for more than 30 days, they may get closed
-- If your pull request gets merged and a bug is found later on, you may be assigned to fix it
 
 # Goals
 - Ideally, the engine should be an empty game, and levels, weapons and bosses (from examples or created by the user) should be added by the user according to his individual game 
