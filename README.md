@@ -82,6 +82,7 @@ alt="Tutorial" title="Tutorial" width="240" height="180" border="10" /></a>
 - Solve any merge conflicts
 - If you propose a new feature, be prepared to be assigned to it
 - If you don't work on your assignments for more than 30 days, they may get closed
+- If your pull request gets merged and a bug is found later on, you may be assigned to fix it
 
 # Goals
 - Ideally, the engine should be an empty game, and levels, weapons and bosses (from examples or created by the user) should be added by the user according to his individual game 
