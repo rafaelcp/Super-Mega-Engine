@@ -80,6 +80,9 @@ while bottom == -999 {
     curry++;
 }
 
+var center = (left + right) / 2;
+var middle = (top + bottom) / 2;
+
 //show_debug_message("Bottom: " + string(bottom));
 
 var rect = ds_map_create();
@@ -89,8 +92,13 @@ ds_map_add(rect, "top", top);
 ds_map_add(rect, "bottom", bottom);
 ds_map_add(rect, "width", right - left + 1);
 ds_map_add(rect, "height", bottom - top + 1);
-ds_map_add(rect, "center", (left + right) / 2);
-ds_map_add(rect, "middle", (top + bottom) / 2);
+ds_map_add(rect, "center", center);
+ds_map_add(rect, "middle", middle);
 ds_map_add(rect, "id", string(left) + "," +  string(top) );
+
+ds_map_add(rect, "path_top", instanceInside(left, top, right, bottom, objSectionArrowUp) > -1 || instanceInside(left, top - 17, right, middle, objBossDoorH) > -1);    
+ds_map_add(rect, "path_right", instanceInside(left, top, right, bottom, objSectionArrowRight) > -1 || instanceInside(center, top, right, bottom, objBossDoor) > -1);    
+ds_map_add(rect, "path_bottom", instanceInside(left, top, right, bottom, objSectionArrowDown) > -1 || instanceInside(left, middle, right, bottom, objBossDoorH) > -1);    
+ds_map_add(rect, "path_left", instanceInside(left, top, right, bottom, objSectionArrowLeft) > -1 || instanceInside(left - 17, top, center, bottom, objBossDoor) > -1);    
 
 return rect;

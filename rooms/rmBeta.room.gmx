@@ -1380,6 +1380,22 @@
     <instance objName="objSniperJoe" x="1584" y="416" name="inst_D5B2A097" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBBitter" x="336" y="320" name="inst_6429FA1A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="1200" y="176" name="inst_7C613295" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSectionBorderBottom" x="1184" y="208" name="inst_25D1304B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSectionBorderBottom" x="1200" y="208" name="inst_D9D3917B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSectionBorderBottom" x="1216" y="208" name="inst_07FC1BC1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSectionBorderBottom" x="1232" y="208" name="inst_008FB1BB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSectionBorderBottom" x="1248" y="208" name="inst_9A87722C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSectionBorderBottom" x="1264" y="208" name="inst_1F9F5E46" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSectionBorderBottom" x="1280" y="208" name="inst_063FB9FE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSectionBorderBottom" x="1296" y="208" name="inst_79532327" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSectionBorderBottom" x="1344" y="208" name="inst_98FFDB0D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSectionBorderBottom" x="1360" y="208" name="inst_6BED4B6B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSectionBorderBottom" x="1376" y="208" name="inst_8B5DD026" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSectionBorderBottom" x="1392" y="208" name="inst_C842A173" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSectionBorderBottom" x="1408" y="208" name="inst_85AF9E89" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSectionBorderBottom" x="1424" y="208" name="inst_DEDC61E2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSectionBorderBottom" x="1312" y="208" name="inst_B9D6E744" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSectionBorderBottom" x="1328" y="208" name="inst_DDF15B4E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tstBeta" x="0" y="400" w="16" h="16" xo="18" yo="1" id="10000709" name="tile_0AABF942" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

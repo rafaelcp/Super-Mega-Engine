@@ -461,6 +461,8 @@ if !instance_exists(objHealthWeaponBar)
     
 if !instance_exists(objFadeIn)
     instance_create(x, y, objFadeIn);
+    
+map_surf = drawMap(room, 1/48, x, y);
 </string>
           </argument>
         </arguments>
@@ -573,6 +575,10 @@ if cfgDebug {
     draw_set_color(c_white);
     draw_rectangle(bbox_left,bbox_top,bbox_right,bbox_bottom,1);
     draw_arrow(sprite_get_xcenter(), sprite_get_ycenter(), sprite_get_xcenter() + global.xspeed * 10, sprite_get_ycenter() + global.yspeed * 10, 10);
+}
+
+if keyboard_check(ord('M')) {
+    draw_surface(map_surf, view_xview[0], view_yview[0]);
 }
 </string>
           </argument>

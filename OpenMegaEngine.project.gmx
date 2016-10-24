@@ -363,6 +363,9 @@
       <sprites name="Shop">
         <sprite>sprites\sprShopCursor</sprite>
       </sprites>
+      <sprites name="Fortress">
+        <sprite>sprites\sprFortressPoint</sprite>
+      </sprites>
     </sprites>
     <sprites name="Sections">
       <sprite>sprites\sprSectionBorderLeftScreen</sprite>
@@ -490,6 +493,18 @@
     </scripts>
     <scripts name="Equip">
       <script>scripts\add_equip.gml</script>
+    </scripts>
+    <scripts name="Rooms">
+      <script>scripts\makeMap.gml</script>
+      <script>scripts\drawMap.gml</script>
+    </scripts>
+    <scripts name="Sections">
+      <script>scripts\sectionRect.gml</script>
+      <script>scripts\getSections.gml</script>
+      <script>scripts\sectionNeighbors.gml</script>
+    </scripts>
+    <scripts name="Instances">
+      <script>scripts\instanceInside.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">
@@ -661,6 +676,7 @@
       <object>objects\objDisclaimer</object>
       <object>objects\objTitleScreen</object>
       <object>objects\objShop</object>
+      <object>objects\objMapDrawer</object>
     </objects>
     <objects name="Sections">
       <object>objects\objSectionBorderLeftScreen</object>
