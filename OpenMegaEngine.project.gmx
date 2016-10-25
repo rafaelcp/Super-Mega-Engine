@@ -715,6 +715,9 @@
       <object>objects\objEddieEquip</object>
       <object>objects\objBeatEquip</object>
     </objects>
+    <objects name="Dialog">
+      <object>objects\objText</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rmInit</room>
