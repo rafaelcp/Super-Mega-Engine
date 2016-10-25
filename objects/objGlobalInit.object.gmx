@@ -114,6 +114,10 @@ global.items[beatcall] = instance_create(0,0, objBeatEquip);
 global.items[shockguard] = instance_create(0,0, objShockGuardEquip);
 
 global.damageMultiplier = 1;
+
+if cfgDebug || debug_mode {
+    show_debug_overlay(true);
+}
     
 instance_create(0, 0, objGlobalControl);
 instance_destroy();

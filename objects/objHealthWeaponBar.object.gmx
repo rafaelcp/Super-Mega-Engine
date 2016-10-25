@@ -193,6 +193,11 @@ if global.weapon != 0
         draw_sprite_ext(sprHealthbarSecondary, 0, view_xview[0]+7+1+5, view_yview[0]+17+(sprite_get_height(sprHealthbarBackground)-i*2), 1, 1, 0, global.secondaryCol, 1);
     }
 }
+
+if cfgShowLives {
+    draw_set_colour(c_white);
+    draw_text(view_xview[0]+7+8+1+5, view_yview[0]+18+sprite_get_height(sprHealthbarBackground), string(max(0,global._lives)));
+}
 </string>
           </argument>
         </arguments>

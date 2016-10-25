@@ -365,6 +365,8 @@
       </sprites>
       <sprites name="Fortress">
         <sprite>sprites\sprFortressPoint</sprite>
+        <sprite>sprites\sprMM3Fortress</sprite>
+        <sprite>sprites\sprFortressSkull</sprite>
       </sprites>
     </sprites>
     <sprites name="Sections">
@@ -722,7 +724,7 @@
     </rooms>
     <room>rooms\rmInitialStage</room>
   </rooms>
-  <constants number="31">
+  <constants number="32">
     <constant name="megabuster">0</constant>
     <constant name="silvertomahawk">1</constant>
     <constant name="windstorm">2</constant>
@@ -743,6 +745,7 @@
     <constant name="cfgMaxHealth">28</constant>
     <constant name="cfgMaxAmmo">28</constant>
     <constant name="cfgDebug">false</constant>
+    <constant name="cfgShowLives">false</constant>
     <constant name="cfgShotSplash">false</constant>
     <constant name="cfgInitialStage">-1</constant>
     <constant name="life">0</constant>

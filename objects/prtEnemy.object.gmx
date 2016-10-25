@@ -771,7 +771,7 @@ else if !dead
             <kind>1</kind>
             <string>drawSelf();
 
-if cfgDebug {
+if cfgDebug || debug_mode {
     if dead {
         draw_set_color(c_black);
     }
