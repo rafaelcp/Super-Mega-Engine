@@ -31,6 +31,7 @@ draw_speed = 0.1;
 lines = ds_list_create();
 step = 0;
 point_frame = 0;
+instance_deactivate_object(self);
 </string>
           </argument>
         </arguments>

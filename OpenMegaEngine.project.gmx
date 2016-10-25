@@ -44,6 +44,7 @@
       <sound>sound\sfxMenuSelect</sound>
       <sound>sound\sfxMenuSelect3</sound>
       <sound>sound\sfxPause</sound>
+      <sound>sound\sfxThunder</sound>
     </sounds>
     <sounds name="Misc">
       <sound>sound\sfxDoor</sound>
@@ -63,6 +64,7 @@
       <sound>sound\bgmShop</sound>
       <sound>sound\bgmIntro</sound>
       <sound>sound\bgmBossMMPU8bit</sound>
+      <sound>sound\bgmFortress</sound>
     </sounds>
   </sounds>
   <sprites name="sprites">
@@ -403,6 +405,7 @@
       <background>background\bgPass</background>
       <background>background\bgWeaponGet</background>
       <background>background\bgShop</background>
+      <background>background\bgFortress</background>
     </backgrounds>
   </backgrounds>
   <paths name="paths"/>
@@ -492,6 +495,7 @@
     </scripts>
     <scripts name="Misc">
       <script>scripts\drawDamageNumber.gml</script>
+      <script>scripts\makeLine.gml</script>
     </scripts>
     <scripts name="Equip">
       <script>scripts\add_equip.gml</script>
@@ -679,6 +683,7 @@
       <object>objects\objTitleScreen</object>
       <object>objects\objShop</object>
       <object>objects\objMapDrawer</object>
+      <object>objects\objFortress</object>
     </objects>
     <objects name="Sections">
       <object>objects\objSectionBorderLeftScreen</object>
@@ -717,6 +722,7 @@
     <rooms name="Menu">
       <room>rooms\rmTitleScreen</room>
       <room>rooms\rmStageSelect</room>
+      <room>rooms\rmFortress</room>
       <room>rooms\rmIntroduction</room>
       <room>rooms\rmWeaponGet</room>
       <room>rooms\rmPass</room>
