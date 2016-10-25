@@ -39,6 +39,7 @@ playMusicNoLoop("Fortress.ogg");
 var drawer1 = instance_create(48, 192, objMapDrawer);
 drawer1.lines = makePath(16, 0, 16, -16, 32, -16, 32, -32, 64, -32);
 drawer1.step = ds_list_size(drawer1.lines);
+drawer1.draw_speed = 0;
 
 var drawer2 = instance_create(48 + 64, 192 - 32, objMapDrawer);
 drawer2.lines =  makePath(0, 16, 16, 16, 16, 0, 32, 0, 32, 16, 48, 16, 48, 0);

@@ -179,7 +179,7 @@ else {
     var line = ds_list_find_value(last_line, 0);
     draw_sprite(sprFortressPoint, round(point_frame), x + line[2], y + line[3]);
 }
-if point_frame &lt; 1 {
+if draw_speed &gt; 0 &amp;&amp; point_frame &lt; 1 {
     point_frame += 0.1;
 }
 else {
