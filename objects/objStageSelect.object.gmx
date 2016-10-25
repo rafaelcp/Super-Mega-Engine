@@ -28,6 +28,7 @@
             <string>option = 8; //Starting from the topleft, going clockwise; the middle panel is option 8
 imgSpd = 0.1; //For the selected panel
 imgIndex = 0; //For the selected panel
+showShop = 0;
 selected = false;
 
 playMusicVolume("StageSelect.ogg", 0.6);
@@ -182,8 +183,11 @@ playMusicVolume("StageSelect.ogg", 0.6);
 
 //Animation
 imgIndex += imgSpd;
+showShop += imgSpd / 3;
 if imgIndex &gt;= 2
     imgIndex -= 2;
+if showShop &gt;= 3
+    showShop -= 3;
 </string>
           </argument>
         </arguments>
@@ -262,10 +266,17 @@ ds_queue_destroy(words);
 //Draw MM's head in the middle
 draw_sprite(sprMMStageSelect, option, xx[8]+8, yy[8]+8);
 
-if global.enableScrews {
-    draw_set_halign(fa_left);
+if global.enableScrews &amp;&amp; showShop &gt;= 1 {
+    draw_set_halign(fa_center);
     draw_set_valign(fa_top);
-    draw_text(1, 1, "SELECT/SHIFT: SHOP");
+    var posx = view_wview[0] / 2;
+    var posy = yy[8] + 52;
+    if global.GP == -1 {
+        draw_text(posx, posy, "SHIFT] SHOP");
+    }
+    else {
+        draw_text(posx, posy, "SELECT] SHOP");
+    }
 }
 </string>
           </argument>
