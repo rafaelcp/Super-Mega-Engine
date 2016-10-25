@@ -54,7 +54,6 @@
     <instance objName="objGlobalControl" x="0" y="0" name="inst_4760D042" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFadeInNoDeactivation" x="16" y="0" name="inst_4D629E6D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFortress" x="32" y="0" name="inst_0B577CBA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objMapDrawer" x="32" y="192" name="inst_5A125893" locked="0" code="ds_list_add(lines, makeLine(0,0,16,0));&#xA;ds_list_add(lines, makeLine(16,0,16,-16));&#xA;ds_list_add(lines, makeLine(16,-16,32,-16));&#xA;ds_list_add(lines, makeLine(32,-16,32,-32));&#xA;ds_list_add(lines, makeLine(32,-32,64,-32));&#xA;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

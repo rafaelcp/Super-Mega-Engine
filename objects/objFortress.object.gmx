@@ -31,9 +31,47 @@ time_to_flash2 = 12;
 flash2_duration = 12;
 time_to_tint = 1;
 time_to_map = 24;
+time_to_start = 60;
 
 alarm[0] = time_to_flash1;
 playMusicNoLoop("Fortress.ogg");
+
+var drawer1 = instance_create(48, 192, objMapDrawer);
+drawer1.lines = makePath(16, 0, 16, -16, 32, -16, 32, -32, 64, -32);
+drawer1.step = ds_list_size(drawer1.lines);
+
+var drawer2 = instance_create(48 + 64, 192 - 32, objMapDrawer);
+drawer2.lines =  makePath(0, 16, 16, 16, 16, 0, 32, 0, 32, 16, 48, 16, 48, 0);
+
+var drawer3 = instance_create(48 + 64 + 48, 192 - 32, objMapDrawer);
+drawer3.lines =  makePath(16, 0, 16, -64);
+drawer3.draw_speed = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="6">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Go to level
+var ID = instance_create(0, 0, objFadeout);
+ID.type = "room";
+ID.myRoom = rmBeta; //TODO: Change to correct variable room according to current level
 </string>
           </argument>
         </arguments>
@@ -206,6 +244,15 @@ playSFX(sfxThunder);
 }
 else {
     background_colour = c_black;
+}
+
+if alarm[6] == -1 &amp;&amp; instance_exists(objMapDrawer) {
+    alarm[6] = time_to_start;
+    with objMapDrawer {
+        if draw_speed &gt; 0 &amp;&amp; step &lt; ds_list_size(lines) {
+            other.alarm[6] = -1;
+        }
+    }
 }
 </string>
           </argument>

@@ -496,6 +496,7 @@
     <scripts name="Misc">
       <script>scripts\drawDamageNumber.gml</script>
       <script>scripts\makeLine.gml</script>
+      <script>scripts\makePath.gml</script>
     </scripts>
     <scripts name="Equip">
       <script>scripts\add_equip.gml</script>
