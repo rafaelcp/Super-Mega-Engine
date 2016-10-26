@@ -313,8 +313,10 @@ if isStep == true
 
 
 //Allow movement
-x += global.xspeed;
-y += global.yspeed;
+if !place_meeting(x+global.xspeed, y, objSolid)
+    x += global.xspeed;
+if !place_meeting(x, y+global.yspeed, objSolid)
+    y += global.yspeed;
 
 //Avoids free movement on screen above
 if (!ground && !climbing && !instance_exists(objSectionSwitcher) && sprite_get_bottom() < sectionTop) {
