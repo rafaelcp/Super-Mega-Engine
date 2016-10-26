@@ -34,5 +34,12 @@ if !instance_exists(objSectionSwitcher)
     instance_activate_object(objBossControl);
 }
 
-instance_activate_object(prtMovingPlatformSolid);   //Moving platforms should be kept visibile and moving
+instance_activate_object(prtMovingPlatformSolid);   //Moving platforms with keepOnSwitch should be kept visibile and moving
+var count = instance_number(prtMovingPlatformSolid);
+for (var i = 0; i < count; i++) {
+    var obj = instance_find(prtMovingPlatformSolid, i);
+    if obj != noone && instance_exists(obj) && !obj.keepOnSwitch {
+        instance_deactivate_object(obj);
+    }
+}
 instance_activate_object(prtEquip);

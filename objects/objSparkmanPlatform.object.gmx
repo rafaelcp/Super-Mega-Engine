@@ -35,6 +35,8 @@ subYspeed = 0;
 maxSpeed = 3;
 decendSpeed = 1;
 phase = 0; //0 = not moving; 1 = moving up; 2 = moving down
+
+keepOnSwitch = true;
 </string>
           </argument>
         </arguments>

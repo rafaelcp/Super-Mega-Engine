@@ -33,6 +33,17 @@ global.switchingSections = true;
 with prtEnemy beenOutsideView = true;
 with prtPlayerProjectile instance_destroy();
 
+with prtRush instance_destroy();
+with objRushJet instance_destroy();
+
+with objMegaman {
+    if onRushJet {
+        onRushJet = false;
+        canMove = true;
+    }
+}
+
+
 deactivateUnimportantObjects();
 
 if instance_exists(objMegaman)
@@ -52,6 +63,7 @@ else
     instance_destroy();
     global.frozen = false;
 }
+
 
 
 //Variables that can me modified to make switching sections faster/slower

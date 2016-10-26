@@ -32,6 +32,8 @@ yspeed = 0;
 
 prevPlayer = false;
 neverDespawn = true;
+
+keepOnSwitch = false;
 </string>
           </argument>
         </arguments>
@@ -58,7 +60,7 @@ neverDespawn = true;
 
 //If transitioning on top of a moving platform, move the platform at the same speed as Mega Man
 //Different conditions for browser or desktop, at least until this issue is better understood
-if global.frozen &amp;&amp; !dead &amp;&amp; instance_exists(objSectionSwitcher) &amp;&amp; instance_exists(objMegaman) &amp;&amp; ( (os_browser == browser_not_a_browser &amp;&amp; place_meeting(x, y-1, objMegaman) ) || (os_browser != browser_not_a_browser &amp;&amp; place_meeting(x, bbox_top-1, objMegaman) )) &amp;&amp; objSectionSwitcher.plt == self {
+if keepOnSwitch &amp;&amp; global.frozen &amp;&amp; !dead &amp;&amp; instance_exists(objSectionSwitcher) &amp;&amp; instance_exists(objMegaman) &amp;&amp; ( (os_browser == browser_not_a_browser &amp;&amp; place_meeting(x, y-1, objMegaman) ) || (os_browser != browser_not_a_browser &amp;&amp; place_meeting(x, bbox_top-1, objMegaman) )) &amp;&amp; objSectionSwitcher.plt == self {
     x += objSectionSwitcher.playerSpeedHor * sign(xspeed);
     //Small hop workaround
     if os_browser == browser_not_a_browser

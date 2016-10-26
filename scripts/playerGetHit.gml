@@ -2,8 +2,7 @@
 //Call it like this: with objMegaman playerGetHit();
 //Makes the player get hit
 
-if canHit == true
-{
+if canHit {
     drawDamageNumber(objMegaman.x, objMegaman.y, ceil(argument0 * global.damageMultiplier));
     global._health -= ceil(argument0 * global.damageMultiplier);
     
@@ -19,8 +18,7 @@ if canHit == true
     
     //When sliding and there's a solid above us, we should not experience knockback
     //If we did, we would clip inside the ceiling above us
-    if !(isSlide == true && (place_meeting(x, y-3, objSolid) || place_meeting(x, y-3, prtMovingPlatformSolid)))
-    {
+    if !(isSlide && (place_meeting(x, y-3, objSolid) || place_meeting(x, y-3, prtMovingPlatformSolid))) {
         canMove = false;
         canSpriteChange = false;
         isSlide = false;
@@ -28,8 +26,7 @@ if canHit == true
         global.xspeed = image_xscale * -0.5;
         global.yspeed = 0;
         
-        if global._health > 0
-        {
+        if global._health > 0 {
             sprite_index = spriteHit;
             
             //Create sweat effects

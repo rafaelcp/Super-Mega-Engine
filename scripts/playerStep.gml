@@ -16,7 +16,7 @@ if place_meeting(x, y+global.yspeed+1, objSolid) || (place_meeting(x, y+global.y
     {
         if bbox_bottom < instance_place(x, y+global.yspeed+1, objTopSolid).bbox_top
             ground = true;
-        else
+        else if !onRushJet
             ground = false;
     }
     else if place_meeting(x, y+global.yspeed+1, prtMovingPlatformJumpthrough)
@@ -28,7 +28,7 @@ if place_meeting(x, y+global.yspeed+1, objSolid) || (place_meeting(x, y+global.y
             else
                 ground = false;
         }
-        else
+        else if !onRushJet
             ground = false;
     }
     else if place_meeting(x, y+global.yspeed+1, prtMovingPlatformSolid)
@@ -400,16 +400,16 @@ else
 if global.enableSlide == true
 {
     if ground == true && isSlide == false && ((global.keyJumpPressed && global.keyDown) || (global.enableSlideKey && global.keySlidePressed)) 
-        && (canMove == true || isThrow == true) && !position_meeting(box+image_xscale*5, bbox_bottom-8, objSolid)
+        && (canMove == true || isThrow == true) && !position_meeting(box+image_xscale*5, bbox_bottom-12, objSolid)
     {
         var canSld;
         canSld = false;
         
-        if !position_meeting(box+image_xscale*5, bbox_bottom-8, prtMovingPlatformSolid)
+        if !position_meeting(box+image_xscale*5, bbox_bottom-12, prtMovingPlatformSolid) {
             canSld = true;
-        else
-        {
-            if instance_position(box+image_xscale*5, bbox_bottom-8, prtMovingPlatformSolid).dead == true //We can still slide if the moving platform is despawned
+        }
+        else {
+            if instance_position(box+image_xscale*5, bbox_bottom-12, prtMovingPlatformSolid).dead == true //We can still slide if the moving platform is despawned
                 canSld = true;
         }
         
@@ -433,16 +433,7 @@ if global.enableSlide == true
             else
                 instance_create(bbox_left+2, bbox_bottom-2, objSlideDust);
             
-            var endLoop;
-            endLoop = false;
-            while (place_meeting(x, y, objSolid) || place_meeting(x, y, prtMovingPlatformSolid)) && endLoop == false
-            {
-                if !place_meeting(x, y, objSolid) && place_meeting(x, y, prtMovingPlatformSolid)
-                {
-                    if instance_place(x, y, prtMovingPlatformSolid).dead == true
-                        endLoop = true;
-                }
-                
+            while position_meeting(x, y+5, objSolid) || (position_meeting(x, y+5, prtMovingPlatformSolid) && !instance_position(x, y+5, prtMovingPlatformSolid).dead) {
                 x += image_xscale;
             }
             
@@ -809,28 +800,24 @@ if invincibilityTimer != 0
 
 
 //Dying
-if global._health <= 0
-{
-    if deathByPit == false
-    {
+if global._health <= 0 {
+    if !deathByPit {
         var i, explosionID;
             
         i = 0;
-        repeat 8
-        {
+        repeat 8 {
             explosionID = instance_create(x, y, objMegamanExplosion);
-                explosionID.dir = i;
-                explosionID.spd = 1.5;
+            explosionID.dir = i;
+            explosionID.spd = 1.5;
                 
             i += 45;
         }
         
         i = 0;
-        repeat 8
-        {
+        repeat 8 {
             explosionID = instance_create(x, y, objMegamanExplosion);
-                explosionID.dir = i;
-                explosionID.spd = 2.5;
+            explosionID.dir = i;
+            explosionID.spd = 2.5;
                 
             i += 45;
         }

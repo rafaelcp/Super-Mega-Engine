@@ -220,7 +220,11 @@ else if newSectionYOffset &lt; 0 //Switching to the top
             <kind>1</kind>
             <string>//Initialize switching sections
 
+
 var plt = instance_place(x, y+1, prtMovingPlatformSolid);   //Moving platform below Mega Man?
+if plt &gt; -1 &amp;&amp; !plt.keepOnSwitch {
+    plt = -1;
+}
 
 if newSectionXOffset &gt; 0 //Switching to the right
 {
@@ -248,10 +252,10 @@ else if newSectionYOffset &lt; 0 //Switching up
 }
 
 //If there was a moving platform below Mega Man, adjust it to remain below him
-if ground == true &amp;&amp; plt &gt;= 0 {
+if ground == true &amp;&amp; plt &gt;= 0 &amp;&amp; plt.keepOnSwitch {
     plt.y = bbox_bottom + plt.sprite_yoffset + 1;
 }
-if (instance_exists(objSectionSwitcher)) {
+if (instance_exists(objSectionSwitcher) &amp;&amp; plt &gt; -1 &amp;&amp; plt.keepOnSwitch) {
     objSectionSwitcher.plt = plt;
 }
 
