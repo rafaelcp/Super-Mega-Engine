@@ -10,7 +10,7 @@ if mySolid >= 0 && global.yspeed > 0
     {
         if !place_meeting(x, y, mySolid)
         {
-            y = mySolid.y - (sprite_get_height(mask_index) - sprite_get_yoffset(mask_index));
+            y = mySolid.bbox_top - (sprite_get_height(mask_index) - sprite_get_yoffset(mask_index));
             ground = true;
             global.yspeed = 0;
             

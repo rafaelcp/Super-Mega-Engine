@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-3</depth>
   <persistent>0</persistent>
-  <parentName>prtMovingPlatformSolid</parentName>
+  <parentName>prtMovingPlatformJumpthrough</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -145,7 +145,8 @@ if global.frozen == false
     {
         if canJet == true //Waiting for Megaman
         {
-            if collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_top-1, objMegaman, false, false)
+        
+            if collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_top-1, objMegaman, false, false) &amp;&amp; collision_rectangle(objMegaman.bbox_left, objMegaman.bbox_bottom-1, objMegaman.bbox_right, objMegaman.bbox_bottom + 1, self, false, false)
             {
                 canJet = false;
                 alarm[0] = -1;
@@ -168,7 +169,7 @@ if global.frozen == false
                 }
             }
             
-            if collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_top-1, objMegaman, false, false)
+            if !dead &amp;&amp; collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_top-1, objMegaman, false, false)
             {               
                 //Set player properties
                 objMegaman.canMove = false;
@@ -411,6 +412,13 @@ else if teleportingUp == true
             instance_destroy();
     }
 }
+
+if debug_mode || cfgDebug {
+    draw_set_color(c_white);
+    draw_rectangle(bbox_left,bbox_top,bbox_right,bbox_bottom,1);
+    draw_arrow(sprite_get_xcenter(), sprite_get_ycenter(), sprite_get_xcenter() + xspeed * 10, sprite_get_ycenter() + yspeed * 10, 10);
+}
+
 </string>
           </argument>
         </arguments>
