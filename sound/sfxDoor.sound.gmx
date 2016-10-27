@@ -9,10 +9,10 @@
   </volume>
   <pan>0</pan>
   <bitRates>
-    <bitRate>192</bitRate>
+    <bitRate>32</bitRate>
   </bitRates>
   <sampleRates>
-    <sampleRate>44100</sampleRate>
+    <sampleRate>22050</sampleRate>
   </sampleRates>
   <types>
     <type>1</type>
@@ -22,8 +22,8 @@
   </bitDepths>
   <preload>-1</preload>
   <data>sfxDoor.wav</data>
-  <compressed>0</compressed>
+  <compressed>1</compressed>
   <streamed>0</streamed>
-  <uncompressOnLoad>0</uncompressOnLoad>
+  <uncompressOnLoad>1</uncompressOnLoad>
   <audioGroup>0</audioGroup>
 </sound>
