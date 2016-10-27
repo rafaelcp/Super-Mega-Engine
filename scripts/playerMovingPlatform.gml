@@ -23,7 +23,7 @@ if mySolid >= 0 && global.yspeed > 0
 
 //Floor (moving platforms)
 mySolid = instance_place(x, y+global.yspeed, prtMovingPlatformSolid);
-if mySolid >= 0 /*&& global.yspeed >= 0*/ /*&& !place_meeting(x, y, mySolid)*/
+if mySolid >= 0 /*&& global.yspeed >= 0*/ && !place_meeting(x, y, mySolid)
 && collision_rectangle(bbox_left, bbox_bottom, bbox_right, bbox_bottom+global.yspeed+1, mySolid, false, false)
 {
     if mySolid.dead == false
