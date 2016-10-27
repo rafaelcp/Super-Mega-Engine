@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>//The boss introduction screen object
 
-playMusicNoLoopVolume("Introduction.ogg", 0.7);
+playMusicNoLoopVolume(bgmIntroduction, 0.7);
 
 totalLinesUp = 2;
 lineUpY[0] = round(room_height/4)-21;
@@ -98,8 +98,8 @@ alarm[0] = 450; //Going to the level
             <kind>1</kind>
             <string>var ID;
 ID = instance_create(0, 0, objFadeout);
-    ID.type = "room";
-    ID.myRoom = global.destinationLevel;
+ID.type = "room";
+ID.myRoom = global.destinationLevel;
 </string>
           </argument>
         </arguments>

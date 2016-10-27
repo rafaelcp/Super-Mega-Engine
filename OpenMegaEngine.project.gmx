@@ -513,6 +513,9 @@
     <scripts name="Instances">
       <script>scripts\instanceInside.gml</script>
     </scripts>
+    <scripts name="Debug">
+      <script>scripts\assert.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <objects name="Collision">
@@ -565,7 +568,6 @@
         <object>objects\objMegamanDeathTimer</object>
         <object>objects\objFadeIn</object>
         <object>objects\objFadeout</object>
-        <object>objects\objFadeInNoDeactivation</object>
       </objects>
     </objects>
     <objects name="Enemies">

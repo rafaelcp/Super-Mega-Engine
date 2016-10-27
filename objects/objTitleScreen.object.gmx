@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>playMusicNoLoopVolume("TitleScreen.ogg", 0.55);
+            <string>playMusicNoLoopVolume(bgmTitleScreen, 0.55);
 
 drawText = false;
 drawTextTimer = 0;
@@ -54,19 +54,16 @@ canProceed = true;
           <argument>
             <kind>1</kind>
             <string>//Timer for toggling the visibility of the "PRESS THE SPACE BAR" text
-if canProceed == true
-{
+if canProceed {
     drawTextTimer += 1;
-    if drawTextTimer &gt;= drawTextTimerMax
-    {
+    if drawTextTimer &gt;= drawTextTimerMax {
         drawTextTimer = 0;
         drawText = !drawText;
     }
 }
 
 //Going to the stage select (or initial stage)
-if global.keyPausePressed &amp;&amp; canProceed == true
-{
+if global.keyPausePressed &amp;&amp; canProceed {
     canProceed = false;
     drawText = false;
     playSFX(sfxMenuSelect);
@@ -103,7 +100,7 @@ if global.keyPausePressed &amp;&amp; canProceed == true
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite(sprLogo, 0, round(room_width/2), round(room_height/2)-55);
+            <string>draw_sprite(sprLogo, 0, round(room_width / 2), round(room_height / 2) - 55);
 
 
 var oldCol;
@@ -114,8 +111,7 @@ draw_set_halign(fa_center);
 
 draw_text(round(room_width/2), room_height-30, "OPEN SOURCE SOFTWARE#MAINTAINED BY THE MEGA MAN FANDOM");
 
-if drawText == true
-{
+if drawText {
     draw_text(round(room_width/2), 125, "PRESS START");
 }
 

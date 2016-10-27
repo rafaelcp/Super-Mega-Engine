@@ -35,26 +35,23 @@ selectedOption = false;
 global.checkpoint = false;
 global.levelStart = true;
 
-if global._lives &lt; 0
-{
+if global._lives &lt; 0 {
     global._lives = 2;
     gameOver = true;
     canSelectOption = false;
-    playMusicNoLoopVolume("GameOver.ogg", 1);
+    playMusicNoLoopVolume(bgmGameOver, 1);
     alarm[0] = 240;
 }
-else
-{
+else {
     gameOver = false;
     canSelectOption = true;
     
-    if global.passPlayVictory == true
-        playMusicVolume("WeaponGet.ogg", 1);
+    if global.passPlayVictory
+        playMusicVolume(bgmWeaponGet, 1);
 }
     
 var i;
-for(i = 0; i &lt;= global.totalWeapons; i += 1)
-{
+for(i = 0; i &lt;= global.totalWeapons; i++){
     global.ammo[i] = 28;
 }
 </string>

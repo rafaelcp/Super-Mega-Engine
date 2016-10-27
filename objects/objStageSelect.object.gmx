@@ -31,7 +31,7 @@ imgIndex = 0; //For the selected panel
 showShop = 0;
 selected = false;
 
-playMusicVolume("StageSelect.ogg", 0.6);
+playMusicVolume(bgmStageSelect, 0.6);
 </string>
           </argument>
         </arguments>

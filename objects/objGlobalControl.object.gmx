@@ -333,8 +333,7 @@ if async_load[? "event_type"] == "gamepad discovered" {
 var i, totalPickups;
 totalPickups = instance_number(prtPickup);
 
-for(i = 0; i &lt;= totalPickups; i += 1)
-{
+for(i = 0; i &lt;= totalPickups; i++) {
     global.pickupCollected[i] = false;
 }
 </string>

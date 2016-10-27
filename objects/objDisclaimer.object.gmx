@@ -63,46 +63,35 @@ ON THE WORK OF WRECKINGPROGRAMS.";
           <argument>
             <kind>1</kind>
             <string>//Fading in/out
-if textAlphaIncrease == true
-{
-    if textAlpha &lt; 1
-    {
-        textAlphaTimer += 1;
-        if textAlphaTimer &gt;= textAlphaInterval
-        {
+if textAlphaIncrease {
+    if textAlpha &lt; 1 {
+        textAlphaTimer++;
+        if textAlphaTimer &gt;= textAlphaInterval {
             textAlphaTimer = 0;
             textAlpha += textAlphaIncreaseAmount;
         }
     }
-    else
-    {
+    else {
         textAlphaTimer = 0;
     }
 }
-else
-{
-    if textAlpha &gt; 0
-    {
-        textAlphaTimer += 1;
-        if textAlphaTimer &gt;= textAlphaInterval
-        {
+else {
+    if textAlpha &gt; 0 {
+        textAlphaTimer++;
+        if textAlphaTimer &gt;= textAlphaInterval {
             textAlphaTimer = 0;
             textAlpha -= textAlphaIncreaseAmount;
         }
     }
-    else
-    {
+    else {
         textAlphaTimer = 0;
         room_goto(rmTitleScreen);
     }
 }
 
-
-
 //Proceed to the next screen ("phase")
-proceedTimer += 1;
-if global.keyPausePressed || global.keyJumpPressed || global.keyShootPressed || proceedTimer &gt;= proceedTimerMax
-{
+proceedTimer++;
+if global.keyPausePressed || global.keyJumpPressed || global.keyShootPressed || proceedTimer &gt;= proceedTimerMax {
     textAlphaIncrease = false;
 }
 </string>

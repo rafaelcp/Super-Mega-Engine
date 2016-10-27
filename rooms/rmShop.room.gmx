@@ -53,6 +53,7 @@
   <instances>
     <instance objName="objGlobalControl" x="16" y="0" name="inst_3BDABA01" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objShop" x="0" y="0" name="inst_FAC8AAF1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objFadeIn" x="32" y="0" name="inst_6F10BB31" locked="0" code="deactivate = false;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

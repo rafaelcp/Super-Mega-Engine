@@ -26,8 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>//NOTE: This is the fade in object that gets created at the start of every level
-//That means it deactivates all objects except itself and objGlobalControl, and only activates objPlayer and objHealthWeaponBar after a while
-//Please use objFadeInNoDeactivation if you do not want this behaviour
+//That means that, by default, it deactivates all objects except itself and objGlobalControl, and only activates objPlayer and objHealthWeaponBar after a while
+//Set deactivate to false if you don't want this behavior
 
 blackAlpha = 1;
 blackAlphaDecrease = 0.2;
@@ -36,6 +36,8 @@ blackAlphaTimerMax = 3;
 
 alarm[0] = 1;
 canAlarm = true;
+
+deactivate = true;
 </string>
           </argument>
         </arguments>
@@ -60,9 +62,11 @@ canAlarm = true;
             <kind>1</kind>
             <string>instance_destroy();
 
-instance_activate_object(objMegaman);
-instance_activate_object(objHealthWeaponBar);
-instance_activate_object(objBossDoor);
+if deactivate {
+    instance_activate_object(objMegaman);
+    instance_activate_object(objHealthWeaponBar);
+    instance_activate_object(objBossDoor);
+}
 </string>
           </argument>
         </arguments>
@@ -85,13 +89,14 @@ instance_activate_object(objBossDoor);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if instance_exists(objMegaman)
-{
-    with objMegaman playerCamera();
+            <string>if deactivate {
+    if instance_exists(objMegaman) {
+        with objMegaman playerCamera();
+    }
+    
+    instance_deactivate_all(true);
+    instance_activate_object(objGlobalControl);
 }
-
-instance_deactivate_all(true);
-instance_activate_object(objGlobalControl);
 </string>
           </argument>
         </arguments>
@@ -116,14 +121,12 @@ instance_activate_object(objGlobalControl);
             <kind>1</kind>
             <string>blackAlphaTimer += 1;
 
-if blackAlphaTimer &gt;= blackAlphaTimerMax
-{
+if blackAlphaTimer &gt;= blackAlphaTimerMax {
     blackAlpha -= blackAlphaDecrease;
     blackAlphaTimer = 0;
 }
 
-if blackAlpha &lt;= 0 &amp;&amp; canAlarm == true
-{
+if blackAlpha &lt;= 0 &amp;&amp; canAlarm {
     alarm[1] = 4;
     canAlarm = false;
 }

@@ -1,6 +1,7 @@
 ///playerGetHit(health)
 //Call it like this: with objMegaman playerGetHit();
 //Makes the player get hit
+assert(argument0 >= 0, "playerGetHit: Damage must be non-negative");
 
 if canHit {
     drawDamageNumber(objMegaman.x, objMegaman.y, ceil(argument0 * global.damageMultiplier));
@@ -36,6 +37,7 @@ if canHit {
         }
     }
     
-    if global._health > 0
+    if global._health > 0 {
         playSFX(sfxHit);
+    }
 }

@@ -10,7 +10,7 @@
   <persistent>0</persistent>
   <colour>0</colour>
   <showcolour>-1</showcolour>
-  <code>playMusicVolumeLoopPoint("TestMusic.ogg", 0.9, 6.038/59.369, 1);</code>
+  <code>playMusicVolumeLoopPoint(bgmTestMusic, 0.9, 6.038/59.369, 1);</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
