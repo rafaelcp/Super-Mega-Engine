@@ -90,20 +90,14 @@ if room == rmInit {
     global.screws = 0;
        
     var i;
-    for(i = 0; i &lt; 1000; i++) //If you somehow have over 1000 pickups in one room, increase this number
-    {
+    for(i = 0; i &lt; 1000; i++) { //If you somehow have over 1000 pickups in one room, increase this number
         global.pickupCollected[i] = false;
     }
     
-    for(i = 0; i &lt; global.maxUpgrades; i++) //If you somehow have over 1000 upgrades in the game, increase this number
-    {
+    for(i = 0; i &lt; global.maxUpgrades; i++) { //If you somehow have over 1000 upgrades in the game, increase this number
         global.upgradeCollected[i] = false;
     }
     
-    for(i = 0; i &lt;= 7; i += 1)
-    {
-        global.bossDefeated[i] = false;
-    }
     
     global.lastRoom = rmInit;
     global.checkpoint = false;

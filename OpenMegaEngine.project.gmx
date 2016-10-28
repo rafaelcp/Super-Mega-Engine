@@ -497,6 +497,7 @@
       <script>scripts\drawDamageNumber.gml</script>
       <script>scripts\makeLine.gml</script>
       <script>scripts\makePath.gml</script>
+      <script>scripts\numBossesDefeated.gml</script>
     </scripts>
     <scripts name="Equip">
       <script>scripts\add_equip.gml</script>
@@ -675,6 +676,7 @@
       <object>objects\objSplash</object>
       <object>objects\objAirBubble</object>
       <object>objects\objDmgText</object>
+      <object>objects\objFlash</object>
     </objects>
     <objects name="Menu">
       <object>objects\objPauseMenu</object>

@@ -25,22 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>progress = 0;
-current_priority = 0;
-draw_speed = 0.1;
-lines = ds_list_create();
-step = 0;
-point_frame = 0;
-line_width = 2;
-place_icon = sprFortressPoint;
-hidden = false;
-instance_deactivate_object(self);
+            <string>alarm[0] = 12;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="1" enumb="0">
+    <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -57,13 +48,13 @@ instance_deactivate_object(self);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>ds_priority_destroy(lines);
+            <string>instance_destroy();
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="8" enumb="64">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -80,14 +71,7 @@ instance_deactivate_object(self);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var size = ds_list_size(lines);
-if step &lt; size {
-    progress += draw_speed;
-    if progress &gt;= 1 {
-        progress = 0;
-        step++;
-    }
-}
+            <string>if (os_browser != browser_not_a_browser &amp;&amp; floor(alarm[0] / 2) % 2 == 0) draw_clear(c_white);
 </string>
           </argument>
         </arguments>
@@ -110,85 +94,7 @@ if step &lt; size {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var lines_size = ds_list_size(lines);
-
-draw_set_colour(c_black);
-for (var i = 0; i &lt;= step; i++) {
-    if i &gt;= lines_size {
-        break;
-    }
-    var p = 1;
-    if i == step {
-        p = progress;
-        if draw_speed &gt; 0 {
-            playSFX(sfxEnergyRestore);
-        }
-    }
-    var current_lines = ds_list_find_value(lines, i);
-    if is_array(current_lines) {
-        var line = current_lines;
-        var dx = line[0] + p * (line[2] - line[0]);
-        var dy = line[1] + p * (line[3] - line[1]);
-        draw_line_width(x + line[0], y + line[1], x + dx, y + dy, line_width+2);
-    }
-    else {
-        var size = ds_list_size(current_lines);
-        for (var j = 0; j &lt; size; j++) {
-            var line = ds_list_find_value(current_lines, j);
-            var dx = line[0] + p * (line[2] - line[0]);
-            var dy = line[1] + p * (line[3] - line[1]);
-            draw_line_width(x + line[0], y + line[1], x + dx, y + dy, line_width+2);
-        }
-    }
-}
-
-
-draw_set_colour(c_white);
-for (var i = 0; i &lt;= step; i++) {
-    if i &gt;= lines_size {
-        break;
-    }
-    var p = 1;
-    if i == step {
-        p = progress;
-        if draw_speed &gt; 0 {
-            playSFX(sfxEnergyRestore);
-        }
-    }
-    var current_lines = ds_list_find_value(lines, i);
-    if is_array(current_lines) {
-        var line = current_lines;
-        var dx = line[0] + p * (line[2] - line[0]);
-        var dy = line[1] + p * (line[3] - line[1]);
-        draw_line_width(x + line[0], y + line[1], x + dx, y + dy, line_width);
-    }
-    else {
-        var size = ds_list_size(current_lines);
-        for (var j = 0; j &lt; size; j++) {
-            var line = ds_list_find_value(current_lines, j);
-            var dx = line[0] + p * (line[2] - line[0]);
-            var dy = line[1] + p * (line[3] - line[1]);
-            draw_line_width(x + line[0], y + line[1], x + dx, y + dy, line_width);
-        }
-    }
-}
-draw_sprite(sprFortressPoint, 0, x, y);
-var last_line = ds_list_find_value(lines, lines_size - 1);
-if !hidden || draw_speed &gt; 0 {
-    if is_array(last_line) {
-        draw_sprite(place_icon, round(point_frame), x + last_line[2], y + last_line[3]);
-    }
-    else {
-        var line = ds_list_find_value(last_line, 0);
-        draw_sprite(place_icon, round(point_frame), x + line[2], y + line[3]);
-    }
-}
-if draw_speed &gt; 0 &amp;&amp; point_frame &lt; 1 {
-    point_frame += 0.1;
-}
-else {
-    point_frame = 0;
-}
+            <string>if (floor(alarm[0] / 2) % 2 == 0) draw_clear(c_white);
 </string>
           </argument>
         </arguments>

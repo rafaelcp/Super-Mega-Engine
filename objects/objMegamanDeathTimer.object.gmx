@@ -53,15 +53,13 @@ alarm[0] = 210;
             <kind>1</kind>
             <string>global._lives -= 1;
 
-var ID;
-ID = instance_create(x, y, objFadeout);
+var ID = instance_create(x, y, objFadeout);
 
 global.lastRoom = room;
 
 if global._lives &gt;= 0
     ID.type = "restart";
-else
-{
+else {
     ID.type = "room";
     ID.myRoom = rmPass;
     global.passPlayVictory = false;

@@ -65,20 +65,32 @@ with objMegaman canPause = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var ID;
-ID = instance_create(x, y, objFadeout);
-    ID.type = "room";
+            <string>var ID = instance_create(x, y, objFadeout);
+ID.type = "room";
     
 if global.weaponID &gt; -1 &amp;&amp; !global.weaponUnlocked[global.weaponID] {
     ID.myRoom = rmWeaponGet;
     global.passPlayVictory = false;
 }
-else {
+else if !global.fortressStarted {
     ID.myRoom = rmPass;
     global.passPlayVictory = true;
 }
+else if global.fortressLevels[global.currentFortressLevel] == room {
+    global.fortressLevelDone[global.currentFortressLevel] = true;
+    global.currentFortressLevel++;
+    if global.currentFortressLevel &gt;= global.numFortressLevels {
+        //Ending
+        ID.myRoom = rmDisclaimer;
+    }
+    else {
+        ID.myRoom = rmFortress;
+    }
+}
 
 global.passContinueRoom = room;
+
+
 </string>
           </argument>
         </arguments>
@@ -131,7 +143,7 @@ with objMegaman instance_destroy();
           <argument>
             <kind>1</kind>
             <string>playerLockMovement();
-playMusicNoLoop("Victory.ogg");
+playMusicNoLoop(bgmVictory);
 with objMegaman event_user(0); //Resets the colors, so charging the buster won't affect the colors
 
 alarm[1] = 270;

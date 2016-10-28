@@ -101,6 +101,18 @@ global.bossNames[5] = "CONCRETE MAN";
 global.bossNames[6] = "SHADOW MAN";
 global.bossNames[7] = "PHARAOH MAN";
 
+//Initialize all bosses as undefeated (this is the correct behavior)
+for(i = 0; i &lt; 8; i++) {
+    global.bossDefeated[i] = false; 
+}
+
+//While there are not other bosses, let's overwrite this for testing
+//Comment the following lines when your game has 8 bosses
+for(i = 0; i &lt; 8; i++) {
+    global.bossDefeated[i] = true;  //All bosses are defeated
+}
+global.bossDefeated[7] = false; //We have only Pharaoh Man
+
 //Items
 //Add all usable items before non-usable ones for correct placement in the pause menu
 global.items[life] = instance_create(0,0, objLifeEquip);
@@ -114,6 +126,8 @@ global.items[beatcall] = instance_create(0,0, objBeatEquip);
 global.items[shockguard] = instance_create(0,0, objShockGuardEquip);
 
 global.damageMultiplier = 1;
+
+global.fortressStarted = false;
 
 if cfgDebug || debug_mode {
     show_debug_overlay(true);

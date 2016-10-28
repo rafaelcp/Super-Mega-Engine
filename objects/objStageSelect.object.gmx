@@ -32,6 +32,11 @@ showShop = 0;
 selected = false;
 
 playMusicVolume(bgmStageSelect, 0.6);
+
+if numBossesDefeated() == 8 {
+    instance_create(0, 0, objFlash);
+    playSFX(sfxThunder);
+}
 </string>
           </argument>
         </arguments>
@@ -54,15 +59,12 @@ playMusicVolume(bgmStageSelect, 0.6);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if selected == false
-{
+            <string>if !selected {
     //Moving the selection
     var soundPlayed;
     soundPlayed = false; //Prevents the menu move sound from playing twice when two buttons are pressed at the same time
-    if global.keyRightPressed
-    {
-        switch option
-        {
+    if global.keyRightPressed {
+        switch option {
             case 0: option = 1; break;
             case 1: option = 2; break;
             case 2: option = 0; break;
@@ -74,16 +76,13 @@ playMusicVolume(bgmStageSelect, 0.6);
             case 8: option = 3; break;
         }
         
-        if soundPlayed == false
-        {
+        if !soundPlayed {
             playSFX(sfxMenuMove);
             soundPlayed = true;
         }
     }
-    else if global.keyLeftPressed
-    {
-        switch option
-        {
+    else if global.keyLeftPressed {
+        switch option {
             case 0: option = 2; break;
             case 1: option = 0; break;
             case 2: option = 1; break;
@@ -95,17 +94,14 @@ playMusicVolume(bgmStageSelect, 0.6);
             case 8: option = 7; break;
         }
         
-        if soundPlayed == false
-        {
+        if !soundPlayed {
             playSFX(sfxMenuMove);
             soundPlayed = true;
         }
     }
     
-    if global.keyDownPressed
-    {
-        switch option
-        {
+    if global.keyDownPressed {
+        switch option {
             case 0: option = 7; break;
             case 1: option = 8; break;
             case 2: option = 3; break;
@@ -117,16 +113,13 @@ playMusicVolume(bgmStageSelect, 0.6);
             case 8: option = 5; break;
         }
         
-        if soundPlayed == false
-        {
+        if !soundPlayed {
             playSFX(sfxMenuMove);
             soundPlayed = true;
         }
     }
-    else if global.keyUpPressed
-    {
-        switch option
-        {
+    else if global.keyUpPressed {
+        switch option {
             case 0: option = 6; break;
             case 1: option = 5; break;
             case 2: option = 4; break;
@@ -138,8 +131,7 @@ playMusicVolume(bgmStageSelect, 0.6);
             case 8: option = 1; break;
         }
         
-        if soundPlayed == false
-        {
+        if !soundPlayed {
             playSFX(sfxMenuMove);
             soundPlayed = true;
         }
@@ -150,16 +142,16 @@ playMusicVolume(bgmStageSelect, 0.6);
         var ID = instance_create(0, 0, objFadeout);
         ID.type = "room";
         ID.myRoom = rmShop;
-        //room_goto(rmShop);
     }
     
     //Selecting a stage
-    if (global.keyPausePressed || global.keyJumpPressed || global.keyShootPressed) &amp;&amp; option != 8 {
-        playSFX(sfxMenuSelect);
+    if (global.keyPausePressed || global.keyJumpPressed || global.keyShootPressed) &amp;&amp; option &lt; 9 {
+        if option &lt; 8 || numBossesDefeated() == 8 {
+            playSFX(sfxMenuSelect);
+        }
         
         //Add more bosses once they are added
-        switch option
-        {
+        switch option {
             case 7: //Pharaoh Man; currently the only selectable boss
                 selected = true;
                 
@@ -171,11 +163,24 @@ playMusicVolume(bgmStageSelect, 0.6);
                 var ID = instance_create(0, 0, objFadeout);
                 ID.type = "room";
                     
-                if global.bossDefeated[option] == false
+                if !global.bossDefeated[option]
                     ID.myRoom = rmIntroduction;
                 else
                     ID.myRoom = global.destinationLevel;
             break;
+            
+            case 8:
+                if numBossesDefeated() &lt; 8 {
+                    break;
+                }
+                 selected = true;
+                
+                global.destinationLevel = rmFortress;
+                
+                var ID = instance_create(0, 0, objFadeout);
+                ID.type = "room";
+                ID.myRoom = global.destinationLevel;               
+            break
         }
     }
 }
@@ -212,10 +217,8 @@ if showShop &gt;= 3
             <kind>1</kind>
             <string>//Register the X and Y coordinates of all panels
 var i;
-for(i = 0; i &lt;= 8; i += 1)
-{
-    switch i
-    {
+for(i = 0; i &lt;= 8; i++) {
+    switch i {
         case 0: xx[i] = 24; yy[i] = 24; break;
         case 1: xx[i] = 104; yy[i] = 24; break;
         case 2: xx[i] = 184; yy[i] = 24; break;
@@ -238,9 +241,8 @@ draw_set_font(global.MM3font);
 var words, word;
 
 //Draw the boss icons and names
-for(i = 0; i &lt;= 7; i += 1)
-{
-    if global.bossDefeated[i] == false
+for(i = 0; i &lt;= 7; i++) {
+    if !global.bossDefeated[i]
         draw_sprite(sprStageSelectIcons, i, xx[i]+8, yy[i]+8);
 
     //Boss name
@@ -263,8 +265,15 @@ for(i = 0; i &lt;= 7; i += 1)
 
 ds_queue_destroy(words);
 
-//Draw MM's head in the middle
-draw_sprite(sprMMStageSelect, option, xx[8]+8, yy[8]+8);
+if numBossesDefeated() &lt; 8 {
+    //Draw MM's head in the middle
+    draw_sprite(sprMMStageSelect, option, xx[8]+8, yy[8]+8);
+}
+else {
+    //Draw Dr. Wily's logo
+     draw_sprite(sprStageSelectIcons, 8, xx[8]+8, yy[8]+8);
+    
+}
 
 if global.enableScrews &amp;&amp; showShop &gt;= 1 {
     draw_set_halign(fa_center);
