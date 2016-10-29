@@ -237,7 +237,8 @@ draw_sprite(sprStageSelectPanel, floor(imgIndex), xx[option], yy[option]);
 
 draw_set_color(c_white);
 draw_set_font(global.MM3font);
-
+draw_set_valign(fa_top);
+    
 var words, word;
 
 //Draw the boss icons and names
