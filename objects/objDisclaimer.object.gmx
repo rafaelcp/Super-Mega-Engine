@@ -85,7 +85,7 @@ else {
     }
     else {
         textAlphaTimer = 0;
-        room_goto(rmTitleScreen);
+        room_goto(rmOpening);
     }
 }
 

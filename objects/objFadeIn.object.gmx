@@ -38,6 +38,8 @@ alarm[0] = 1;
 canAlarm = true;
 
 deactivate = true;
+
+reverse = false;    //After finishing the fade, start a new fade in the opposite direction
 </string>
           </argument>
         </arguments>
@@ -124,11 +126,17 @@ if deactivate {
 if blackAlphaTimer &gt;= blackAlphaTimerMax {
     blackAlpha -= blackAlphaDecrease;
     blackAlphaTimer = 0;
-}
 
-if blackAlpha &lt;= 0 &amp;&amp; canAlarm {
-    alarm[1] = 4;
-    canAlarm = false;
+    if (blackAlpha &lt;= 0 || blackAlpha &gt;= 1) &amp;&amp; canAlarm {
+        if !reverse {
+            alarm[1] = 4;
+            canAlarm = false;
+        }
+        else {
+            blackAlphaDecrease *= -1;
+            reverse = false;
+        }
+    }
 }
 </string>
           </argument>

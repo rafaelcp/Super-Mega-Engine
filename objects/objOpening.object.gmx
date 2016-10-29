@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>prtCutscene</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,69 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>text = "";
-phrase = "";
-phrases = ds_queue_create();
-delay = 4;
-pos = -1;
-line_spacing = 8;
-arrow_delay = 0;   //0 = no arrow
-allow_fast_forward = true;
-allow_jump_to_end = true;
-allow_manual_page_turn = true;
-page_delay = room_speed * 2; //0 = no auto turn page
-alarm[0] = 1;
-instance_deactivate_object(self);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="3">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if ds_queue_size(phrases) &gt; 0 {
-    phrase = ds_queue_dequeue(phrases);
-    pos = -1;
-    alarm[1] = delay;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="2">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>alarm[2] = arrow_delay;
+            <string>event_inherited();
+
+next_room = rmTitleScreen;
+final_scene = 2;
+can_skip = true;
+delay = 2;
+alarm[0] = room_speed * delay;
+txt = -1;
+txt2 = -1;
 </string>
           </argument>
         </arguments>
@@ -110,10 +56,28 @@ instance_deactivate_object(self);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>pos++;
-if pos &lt; string_length(phrase) {
-    alarm[1] = delay;
+            <string>event_inherited();
+delay = 32;
+delay_frames = room_speed * delay;
+alarm[2] = delay_frames;
+
+with objText {
+    instance_destroy();
 }
+stopAllSFX();
+playMusicNoLoop(bgmOpening2);
+
+txt2 = instance_create(24, 165, objText);
+txt2.allow_fast_forward = false;
+txt2.allow_jump_to_end = false;
+txt2.allow_manual_page_turn = false;
+txt2.page_delay = room_speed * 8;
+txt2.delay = 0;
+txt2.text = "The Mega Man fandom will never let it go.
+&gt;By joining forces and with the power of open source, a new game creation tool was born.
+&gt;Now, you can make the Mega Man game of your dreams!
+&gt;Unearth those old Robot Master sketches and let's get to work!";
+
 </string>
           </argument>
         </arguments>
@@ -136,11 +100,25 @@ if pos &lt; string_length(phrase) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Initialize
-phrases = split(text, "&gt;");
-phrase = ds_queue_dequeue(phrases);
-alarm[1] = delay;
-alarm[2] = arrow_delay;
+            <string>event_inherited();
+delay = 46;
+delay_frames = room_speed * delay;
+alarm[1] = delay_frames;
+playMusicNoLoop(bgmOpening);
+
+txt = instance_create(24, 165, objText);
+txt.allow_fast_forward = false;
+txt.allow_jump_to_end = false;
+txt.allow_manual_page_turn = false;
+txt.page_delay = room_speed * 8;
+txt.delay = 0;
+txt.text = "The Mega Man series has been around since 1987, bringing joy to fans in the whole world.
+&gt;Its formidable gameplay, combined with a challenging difficulty, remains unparalleled.
+&gt;But Capcom has abandoned Mega Man. It's been years since the last original game.
+&gt;The fans are eager for a new game, but there seems to be little hope that Capcom will ever listen.
+&gt;Are we doomed? Should we play Rockman Xover? Or maybe some random FPS instead?
+&gt;Never!";
+
 </string>
           </argument>
         </arguments>
@@ -163,23 +141,22 @@ alarm[2] = arrow_delay;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if is_string(phrase) {
-    if alarm[3] &lt;= 0 &amp;&amp; pos &gt;= string_length(phrase) - 1 {
-        alarm[3] = page_delay;
-    }
-    if allow_fast_forward &amp;&amp; alarm[1] &gt; 0 &amp;&amp; pos &lt; string_length(phrase) - 1 &amp;&amp; (global.keyJump || global.keyShoot || keyboard_check(vk_pagedown)) {
-        pos++;
-    }
-    else if allow_manual_page_turn &amp;&amp; pos &gt;= string_length(phrase) - 1 &amp;&amp; ds_queue_size(phrases) &gt; 0 &amp;&amp; (global.keyJumpPressed || global.keyShootPressed || keyboard_check_pressed(vk_pagedown) || global.keyPausePressed || keyboard_check_pressed(vk_end)) {
-        phrase = ds_queue_dequeue(phrases);
-        pos = -1;
-        alarm[1] = delay;
-    }
-    else if delay == 0 || (allow_jump_to_end &amp;&amp; alarm[1] &gt; 0 &amp;&amp; pos &lt; string_length(phrase) - 1 &amp;&amp; (global.keyPausePressed || keyboard_check_pressed(vk_end))) {
-        pos = string_length(phrase) - 1;
-    }
-}
+            <string>event_inherited();
 
+switch current_scene {
+    case 1:
+        instance_activate_object(txt);
+        var intensity = 255 * round((alarm[1] / delay_frames) * 4)/4;
+        var blue = 255;
+        if intensity &lt;= 0 {
+            blue = 0;
+        }
+        background_blend[1] = make_colour_rgb(intensity,intensity,blue);
+    break;
+    case 2:
+        instance_activate_object(txt2);
+    break;    
+}
 </string>
           </argument>
         </arguments>
@@ -202,13 +179,16 @@ alarm[2] = arrow_delay;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if is_string(phrase) {
-    var txt = string_upper(string_copy(phrase, 0, pos + 1));// + string_repeat("_", string_length(text) - pos - 1);
-    draw_text_ext(x, y, txt, line_spacing, view_wview[0] - 2 * x);
-    
-    if alarm[2] &gt; arrow_delay / 2 &amp;&amp; pos &gt;= string_length(phrase) - 1 &amp;&amp; ds_queue_size(phrases) &gt; 0 {
-        draw_sprite_ext(sprPassArrow, 0, view_xview[0] + view_wview[0] - 4, view_yview[0] + view_hview[0] - 1, 1, 1, -90, c_white, 1);
-    }
+            <string>switch current_scene {
+    case 0:
+        draw_set_halign(fa_center);
+        draw_set_valign(fa_middle);
+        draw_text(room_width / 2, room_height / 2, "YEAR 20XX");
+    break;
+    case 1:
+        draw_set_halign(fa_left);
+        draw_set_valign(fa_top);    
+    break;
 }
 </string>
           </argument>

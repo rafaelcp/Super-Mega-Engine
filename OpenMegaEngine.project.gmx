@@ -65,6 +65,8 @@
       <sound>sound\bgmIntro</sound>
       <sound>sound\bgmBossMMPU8bit</sound>
       <sound>sound\bgmFortress</sound>
+      <sound>sound\bgmOpening</sound>
+      <sound>sound\bgmOpening2</sound>
     </sounds>
   </sounds>
   <sprites name="sprites">
@@ -407,6 +409,10 @@
       <background>background\bgShop</background>
       <background>background\bgFortress</background>
     </backgrounds>
+    <backgrounds name="Cutscenes">
+      <background>background\bgCity</background>
+      <background>background\bgMTK</background>
+    </backgrounds>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -516,6 +522,9 @@
     </scripts>
     <scripts name="Debug">
       <script>scripts\assert.gml</script>
+    </scripts>
+    <scripts name="Cutscenes">
+      <script>scripts\changeScene.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">
@@ -719,13 +728,16 @@
       <object>objects\objEddieEquip</object>
       <object>objects\objBeatEquip</object>
     </objects>
-    <objects name="Dialog">
+    <objects name="Cutscenes">
       <object>objects\objText</object>
+      <object>objects\prtCutscene</object>
+      <object>objects\objOpening</object>
     </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rmInit</room>
     <room>rooms\rmDisclaimer</room>
+    <room>rooms\rmOpening</room>
     <room>rooms\rmBeta</room>
     <rooms name="Menu">
       <room>rooms\rmTitleScreen</room>
