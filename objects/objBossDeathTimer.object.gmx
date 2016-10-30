@@ -81,7 +81,7 @@ else if global.fortressLevels[global.currentFortressLevel] == room {
     global.currentFortressLevel++;
     if global.currentFortressLevel &gt;= global.numFortressLevels {
         //Ending
-        ID.myRoom = rmDisclaimer;
+        ID.myRoom = rmCredits;
     }
     else {
         ID.myRoom = rmFortress;
