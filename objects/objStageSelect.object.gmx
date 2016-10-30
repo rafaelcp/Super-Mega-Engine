@@ -175,7 +175,10 @@ if numBossesDefeated() == 8 {
                 }
                  selected = true;
                 
-                global.destinationLevel = rmFortress;
+                if global.fortressStarted
+                    global.destinationLevel = rmFortress;
+                else
+                    global.destinationLevel = rmWilyIntro;
                 
                 var ID = instance_create(0, 0, objFadeout);
                 ID.type = "room";

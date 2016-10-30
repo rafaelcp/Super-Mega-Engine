@@ -50,6 +50,7 @@
       <sound>sound\sfxDoor</sound>
       <sound>sound\sfxAbsorb</sound>
       <sound>sound\sfxYokuBlock</sound>
+      <sound>sound\sfxWilyUFO</sound>
     </sounds>
     <sounds name="Music">
       <sound>sound\bgmIntroduction</sound>
@@ -392,6 +393,7 @@
       <sprite>sprites\sprMM3Font</sprite>
       <sprite>sprites\sprInvisible</sprite>
       <sprite>sprites\sprReady</sprite>
+      <sprite>sprites\sprWilyUFO</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -412,6 +414,7 @@
     <backgrounds name="Cutscenes">
       <background>background\bgCity</background>
       <background>background\bgMTK</background>
+      <background>background\bgWilyIntro</background>
     </backgrounds>
   </backgrounds>
   <paths name="paths"/>
@@ -732,11 +735,13 @@
       <object>objects\objText</object>
       <object>objects\prtCutscene</object>
       <object>objects\objOpening</object>
+      <object>objects\objWilyUFO</object>
     </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rmInit</room>
     <room>rooms\rmDisclaimer</room>
+    <room>rooms\rmWilyIntro</room>
     <room>rooms\rmOpening</room>
     <room>rooms\rmBeta</room>
     <rooms name="Menu">
