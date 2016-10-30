@@ -68,6 +68,7 @@
       <sound>sound\bgmFortress</sound>
       <sound>sound\bgmOpening</sound>
       <sound>sound\bgmOpening2</sound>
+      <sound>sound\bgmCredits</sound>
     </sounds>
   </sounds>
   <sprites name="sprites">
@@ -736,11 +737,13 @@
       <object>objects\prtCutscene</object>
       <object>objects\objOpening</object>
       <object>objects\objWilyUFO</object>
+      <object>objects\objCredits</object>
     </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rmInit</room>
     <room>rooms\rmDisclaimer</room>
+    <room>rooms\rmCredits</room>
     <room>rooms\rmWilyIntro</room>
     <room>rooms\rmOpening</room>
     <room>rooms\rmBeta</room>
@@ -765,7 +768,7 @@
     <constant name="starcrash">5</constant>
     <constant name="rushjet">8</constant>
     <constant name="centaurflash">6</constant>
-    <constant name="initialRoom">rmDisclaimer</constant>
+    <constant name="initialRoom">rmCredits</constant>
     <constant name="cfgEnableSlideKey">false</constant>
     <constant name="cfgEnableDamageNumbers">false</constant>
     <constant name="cfgEnableCharge">true</constant>
