@@ -768,7 +768,7 @@
     <constant name="starcrash">5</constant>
     <constant name="rushjet">8</constant>
     <constant name="centaurflash">6</constant>
-    <constant name="initialRoom">rmCredits</constant>
+    <constant name="initialRoom">rmDisclaimer</constant>
     <constant name="cfgEnableSlideKey">false</constant>
     <constant name="cfgEnableDamageNumbers">false</constant>
     <constant name="cfgEnableCharge">true</constant>
