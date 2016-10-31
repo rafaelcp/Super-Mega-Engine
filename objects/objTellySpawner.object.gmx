@@ -60,7 +60,7 @@ if !global.frozen &amp;&amp; insideView() {
         counter = 0;
     }
     if instance_number_alive(objTelly) &lt; maxTellies &amp;&amp; counter == 0 {
-        telly = instance_create(x, y, objTelly);
+        telly = instance_create(x + 8, y + 8, objTelly);
         telly.respawn = false;
     }
 }
