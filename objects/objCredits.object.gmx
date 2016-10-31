@@ -35,10 +35,11 @@ megamany = room_height;
 rushx = 0;
 rushy = megamany + 19;
 megamansprite = sprMegamanStand;
+scroll_threshold = -720;
 
 text = "OPEN MEGA ENGINE (OME)
 
-github.com/rafaelcp/Open-Mega-Engine/
+github.com / rafaelcp / Open-Mega-Engine
 
 
 GitHub Maintainer
@@ -109,7 +110,7 @@ Rafael C.P.
 
 All GitHub Contributors
 
-github.com/rafaelcp/Open-Mega-Engine/graphs/contributors
+github.com / rafaelcp / Open-Mega-Engine / graphs / contributors
 
 
 Special Thanks
@@ -159,22 +160,22 @@ Presented by the Mega Man Fandom
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if y &lt; -710 {
+            <string>if y &lt; scroll_threshold {
     vspeed = 0;
     if global.keyPausePressed {
         stopAllSFX();
         room_goto(rmDisclaimer);
     }
 
-    if megamanx &lt; 240 {
+    if megamanx &lt; 230 {
         megamanx++;
-        megamany -= 0.4;
+        megamany -= 0.45;
     }
     else {
         megamansprite = sprMegamanJump;
     }
     rushx++;
-    rushy -= 0.4;
+    rushy -= 0.45;
 }
 else if global.keyJump || global.keyShoot || global.keyPause {
     vspeed = -1;
@@ -206,7 +207,7 @@ else {
             <kind>1</kind>
             <string>draw_text_ext(room_width / 2, y, string_upper(text), 8, 240);
 
-if y &lt; -710 {
+if y &lt; scroll_threshold {
     draw_sprite(megamansprite, 0, megamanx, megamany);
     draw_sprite(sprRushJet, round(rushx / 5) % 2, rushx, rushy);
 }

@@ -30,7 +30,7 @@ global.frozen = true;
 playSFX(sfxCentaurFlash);
 with prtEnemy {
     if !dead &amp;&amp; canHit &amp;&amp; !reflectProjectiles &amp;&amp; insideView() {
-        healthpoints -= damageCentaurFlash;
+        healthpoints -= damage[objCentaurFlash];
         playSFX(sfxEnemyHit);
         check_enemy_death();
     }    

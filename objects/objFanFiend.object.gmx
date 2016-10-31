@@ -37,9 +37,10 @@ healthpointsStart = 5;
 healthpoints = healthpointsStart;
 contactDamage = 6;
 
+damage[objPharaohShotCharged] = 3;
 
-damagePharaohShotCharged = 3;
-damageWindStorm = 0;
+damage[objWindStorm] = 0;
+
 </string>
           </argument>
         </arguments>

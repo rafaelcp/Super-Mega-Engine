@@ -25,7 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed = 0.375;
+            <string>event_inherited();
+
+image_speed = 0.375;
+
+passThrough = true;
 </string>
           </argument>
         </arguments>

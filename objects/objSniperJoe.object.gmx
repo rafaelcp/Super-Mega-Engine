@@ -35,21 +35,15 @@ healthpointsStart = 10;
 healthpoints = healthpointsStart;
 contactDamage = 4;
 reflectProjectiles = true;
-reflectProjectilesRight = false; //Only reflect projectiles that come from the right
-reflectProjectilesLeft = false; //Only reflect projectiles that come from the left
 
-damageBuster = 1;
-damageBusterCharged = 3;
+damage[objPharaohShotCharged] = 4;
+damage[objPharaohShotCharging] = 4;
 
-damageMetalBlade = 1;
+damage[objStarCrash] = 4;
 
-damagePharaohShot = 1;
-damagePharaohShotCharged = 4;
+damage[objSilverTomahawk] = 2;
 
-damageStarCrash = 4;
-
-damageSilverTomahawk = 2;
-damageWindStorm = 2;
+damage[objWindStorm] = 2;
 
 //Enemy specific code
 shootTimer = 0;

@@ -41,6 +41,9 @@ collisionEnabled = false;
 groundEnabled = false;
 destroyOnHorizontalCollision = false;
 destroyOnVerticalCollision = false;
+
+passThrough = false;
+checkDeath = true;
 </string>
           </argument>
         </arguments>
@@ -98,6 +101,56 @@ destroyOnVerticalCollision = false;
 }
 else {
     image_speed = 0;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="prtEnemy">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>with other {
+    if !reflectProjectiles &amp;&amp; damage[other.object_index] != 0
+    &amp;&amp; !(reflectProjectilesLeft &amp;&amp; sprite_get_xcenter_object(other.id) &lt; sprite_get_xcenter())
+    &amp;&amp; !(reflectProjectilesRight &amp;&amp; sprite_get_xcenter_object(other.id) &gt; sprite_get_xcenter()) {
+        if !dead {
+            if canHit {
+                drawDamageNumber(x, y, damage[other.object_index]);
+                healthpoints -= damage[other.object_index];
+                visible = false;
+            }
+            
+            alarm[11] = 2;
+            if !other.passThrough || healthpoints &gt; 0 {
+                with other instance_destroy();
+            }
+            
+            stopSFX(sfxBuster);
+            playSFX(sfxEnemyHit);
+            
+            if other.checkDeath {
+                check_enemy_death();
+            }
+        }
+    }
+    else if !dead {
+        event_user(0); //Reflect the projectiles
+    }
 }
 </string>
           </argument>

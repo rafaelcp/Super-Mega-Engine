@@ -29,29 +29,19 @@
 
 image_xscale = -1;
 
-respawn = true;
-
 healthpointsStart = 6;
 healthpoints = healthpointsStart;
 contactDamage = 4;
-reflectProjectiles = false;
-reflectProjectilesRight = false; //Only reflect projectiles that come from the right
-reflectProjectilesLeft = false; //Only reflect projectiles that come from the left
 
+damage[objPharaohShot] = 2;
+damage[objPharaohShotCharging] = 6;
+damage[objPharaohShotCharged] = 6;
 
-damageBuster = 1;
-damageBusterCharged = 3;
+damage[objStarCrash] = 6;
 
-damageMetalBlade = 1;
+damage[objSilverTomahawk] = 2;
 
-damagePharaohShot = 2;
-damagePharaohShotCharged = 6;
-
-damageStarCrash = 6;
-
-damageSilverTomahawk = 2;
-damageWindStorm = 2;
-
+damage[objWindStorm] = 2;
 
 //Enemy specific code
 shooting = false;

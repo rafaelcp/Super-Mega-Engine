@@ -52,20 +52,14 @@ global.bossWeaponSecondary = make_color_rgb(240, 208, 176); //The secondary colo
 
 
 
-damageBuster = 1;
-damageBusterCharged = 3;
 
-damageMetalBlade = 1;
+damage[objStarCrash] = 0;
 
-damagePharaohShot = 1;
-damagePharaohShotCharged = 3;
+damage[objSilverTomahawk] = 2;
 
-damageStarCrash = 0;
+damage[objWindStorm] = 5;
 
-damageSilverTomahawk = 2;
-damageWindStorm = 5;
-
-damageCentaurFlash = 4;
+damage[objCentaurFlash] = 4;
 </string>
           </argument>
         </arguments>

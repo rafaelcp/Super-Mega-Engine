@@ -31,25 +31,19 @@
 
 event_inherited();
 
-healthpointsStart = 1;
-healthpoints = healthpointsStart;
 contactDamage = 3;
-reflectProjectiles = false;
-reflectProjectilesRight = false; //Only reflect projectiles that come from the right
-reflectProjectilesLeft = false; //Only reflect projectiles that come from the left
 
-damageBuster = 0;
-damageBusterCharged = 0;
+damage[objBusterShot] = 0;
+damage[objBusterShotCharged] = 0;
+damage[objBusterShotHalfCharged] = 0;
 
-damageMetalBlade = 0;
+damage[objMetalBlade] = 0;
 
-damagePharaohShot = 1;
-damagePharaohShotCharged = 3;
+damage[objStarCrash] = 0;
 
-damageStarCrash = 0;
+damage[objSilverTomahawk] = 0;
 
-damageSilverTomahawk = 0;
-damageWindStorm = 0;
+damage[objWindStorm] = 0;
 
 //Enemy specific code
 col = 0; //0 = red; 1 = orange; 2 = blue
