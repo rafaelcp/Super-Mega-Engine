@@ -448,17 +448,23 @@ if (phase &gt;= 1 &amp;&amp; phase &lt;= 3) || phase == 5 || phase == 6
         }
         if global.weaponUnlocked[i] == true {
             //Icon
-            if option == i
-            {
+            if option == i {
                 draw_sprite_ext(sprWeaponIcons, global.weaponSlot[i], view_xview[0]+currX, view_yview[0]+currY, 1, 1, 0, c_white, 1);
+                /*shader_set(shBlueish);
+                draw_sprite_ext(sprWeaponIconsColor, global.weaponSlot[i], view_xview[0]+currX, view_yview[0]+currY, 1, 1, 0, c_white, 1);
+                shader_reset();*/
                 
                 // If using something like an W-Tank, draw the arrow as an indicator.
                 if primedItemIndex != -1
                     draw_sprite_ext(sprPassArrow, 0, view_xview[0]+currX-6, view_yview[0]+currY+8, 1, 1, 0, c_white, 1);
             }
-            else
-                draw_sprite_ext(sprWeaponIconsGray, global.weaponSlot[i], view_xview[0]+currX, view_yview[0]+currY, 1, 1, 0, c_white, 1);
-                
+            else {
+                //draw_sprite_ext(sprWeaponIconsGray, global.weaponSlot[i], view_xview[0]+currX, view_yview[0]+currY, 1, 1, 0, c_white, 1);
+                //EXPERIMENTAL: grayscale in runtime. If everything goes ok, will make this change permanent
+                shader_set(shGrayscale);
+                draw_sprite_ext(sprWeaponIcons, global.weaponSlot[i], view_xview[0]+currX, view_yview[0]+currY, 1, 1, 0, c_white, 1);
+                shader_reset();
+            }    
             //Ammo bar
             var ammo;
             if i == 0
@@ -468,9 +474,12 @@ if (phase &gt;= 1 &amp;&amp; phase &lt;= 3) || phase == 5 || phase == 6
                 
             if option == i
                 draw_sprite_ext(sprPauseMenuBar, ammo, view_xview[0]+currX+32, view_yview[0]+currY+8, 1, 1, 0, c_white, 1);
-            else
-                draw_sprite_ext(sprPauseMenuBarGray, ammo, view_xview[0]+currX+32, view_yview[0]+currY+8, 1, 1, 0, c_white, 1);
-                            
+            else {
+                //draw_sprite_ext(sprPauseMenuBarGray, ammo, view_xview[0]+currX+32, view_yview[0]+currY+8, 1, 1, 0, c_white, 1);
+                shader_set(shGrayscale);
+                draw_sprite_ext(sprPauseMenuBar, ammo, view_xview[0]+currX+32, view_yview[0]+currY+8, 1, 1, 0, c_white, 1);
+                shader_reset();
+            }                
             //Name
             draw_set_font(global.font);
             draw_set_halign(fa_left);
@@ -489,7 +498,10 @@ if (phase &gt;= 1 &amp;&amp; phase &lt;= 3) || phase == 5 || phase == 6
     }
   
     //Life bar
+    //draw_sprite_ext(sprPauseMenuBarGray, global._health, view_xview[0]+182, view_yview[0]+192, 1, 1, 0, c_white, 1);
+    shader_set(shGrayscale);
     draw_sprite_ext(sprPauseMenuBarGray, global._health, view_xview[0]+182, view_yview[0]+192, 1, 1, 0, c_white, 1);
+    shader_reset();
   
     //Items
     currX = 16;
@@ -506,11 +518,13 @@ if (phase &gt;= 1 &amp;&amp; phase &lt;= 3) || phase == 5 || phase == 6
             draw_sprite(global.items[i].sprite_index, 0, view_xview[0]+currX, view_yview[0]+currY);
         }
         else {
-            draw_sprite(global.items[i].sprite_index, 1, view_xview[0]+currX, view_yview[0]+currY);           
+           //draw_sprite(global.items[i].sprite_index, 1, view_xview[0]+currX, view_yview[0]+currY);           
+           shader_set(shGrayscale);
+           draw_sprite(global.items[i].sprite_index, 0, view_xview[0]+currX, view_yview[0]+currY);           
+           shader_reset();
         }
         
-        if (global.items[i].showCount)
-        {
+        if (global.items[i].showCount) {
             draw_text(view_xview[0]+currX, view_yview[0]+currY+17, "0" + string(global.items[i].count));
         }
         currX += 24;
