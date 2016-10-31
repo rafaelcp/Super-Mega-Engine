@@ -40,7 +40,6 @@ if global.keyShootPressed && canShoot == true && (canMove == true || climbing ==
             if instance_number(objBusterShot) + instance_number(objBusterShotHalfCharged) + instance_number(objReflectedProjectile) < 3
             {
                 attackID = instance_create(box+image_xscale*4, yy, objBusterShot);
-                    attackID.xspeed = image_xscale * 5;
                 playSFX(sfxBuster);
                 isShoot = true;
                 shootTimer = 0;
@@ -51,7 +50,6 @@ if global.keyShootPressed && canShoot == true && (canMove == true || climbing ==
             if instance_number(objSilverTomahawk) + instance_number(objReflectedProjectile) < 2
             {
                 attackID = instance_create(box+image_xscale*12, yy, objSilverTomahawk);
-                    attackID.xspeed = image_xscale * 3.5;
                 playSFX(sfxBuster);
                 isShoot = true;
                 shootTimer = 0;
@@ -66,8 +64,6 @@ if global.keyShootPressed && canShoot == true && (canMove == true || climbing ==
             if instance_number(objWindStorm) + instance_number(objReflectedProjectile) < 3
             {
                 attackID = instance_create(box+image_xscale*9, yy, objWindStorm);
-                    attackID.xspeed = image_xscale * 3;
-                    attackID.image_xscale = image_xscale;
                 playSFX(sfxBuster);
                 isShoot = true;
                 shootTimer = 0;
@@ -82,7 +78,6 @@ if global.keyShootPressed && canShoot == true && (canMove == true || climbing ==
             if instance_number(objPharaohShot) + instance_number(objReflectedProjectile) < 3
             {
                 attackID = instance_create(box+image_xscale*4, yy, objPharaohShot);
-                    attackID.xspeed = image_xscale * 4.5;
                     
                 if global.keyUp && !global.keyDown
                     attackID.yspeed = -4.5;
@@ -259,7 +254,6 @@ if global.keyShootPressed && canShoot == true && (canMove == true || climbing ==
                 if instance_number(objBusterShot) + instance_number(objBusterShotHalfCharged) + instance_number(objReflectedProjectile) < 3
                 {
                     attackID = instance_create(box+image_xscale*4, yy, objBusterShot);
-                        attackID.xspeed = image_xscale * 5;
                     playSFX(sfxBuster);
                     isShoot = true;
                     shootTimer = 0;
@@ -278,7 +272,6 @@ if global.keyShootPressed && canShoot == true && (canMove == true || climbing ==
                 if instance_number(objBusterShot) + instance_number(objBusterShotHalfCharged) + instance_number(objReflectedProjectile) < 3
                 {
                     attackID = instance_create(box+image_xscale*4, yy, objBusterShot);
-                        attackID.xspeed = image_xscale * 5;
                     playSFX(sfxBuster);
                     isShoot = true;
                     shootTimer = 0;
@@ -301,30 +294,25 @@ if global.keyShootPressed && canShoot == true && (canMove == true || climbing ==
 
 
 //While shooting
-if isShoot == true
-{
+if isShoot {
     isThrow = false;
-    shootTimer += 1;
-    if shootTimer >= 20
-    {
+    shootTimer++;
+    if shootTimer >= 20 {
         isShoot = false;
     }
 }
-else if isThrow == true //Throwing weapons, like Pharaoh Shot and Metal Blade
-{
+else if isThrow { //Throwing weapons, like Pharaoh Shot and Metal Blade
     isShoot = false;
     
     //To allow shooting in the opposite direction
-    if global.keyShootPressed
-    {
+    if global.keyShootPressed {
         if global.keyRight && !global.keyLeft
             image_xscale = 1;
         else if global.keyLeft && !global.keyRight
             image_xscale = -1;
     }
     
-    if ground == true && shootTimer == 0 && climbing == false //Only do this on the ground on the first frame
-    {
+    if ground && shootTimer == 0 && !climbing { //Only do this on the ground on the first frame
         canMove = false;
         global.xspeed = 0;
         canSpriteChange = false;
@@ -333,18 +321,15 @@ else if isThrow == true //Throwing weapons, like Pharaoh Shot and Metal Blade
         shootTimer = 5; //20 frames is too much to be frozen for. However, when not frozen, 20 frames looks better
     }
     
-    if ground == false && climbing == false
-    {
+    if !ground && !climbing {
         canMove = true;
         canSpriteChange = true;
     }
     
-    shootTimer += 1;
-    if shootTimer >= 20
-    {
+    shootTimer++;
+    if shootTimer >= 20 {
         isThrow = false;
-        if ground == true
-        {
+        if ground {
             canMove = true;
             canSpriteChange = true;
         }
@@ -353,8 +338,7 @@ else if isThrow == true //Throwing weapons, like Pharaoh Shot and Metal Blade
 
 
 //Charging
-if global.enableCharge == true
-{
+if global.enableCharge {
     if global.weapon == megabuster && (global.keyShoot || (isSlide == true && chargeTimer != 0))
     {
         if (canMove == true || isSlide == true || climbing == true) && isShoot == false
@@ -436,18 +420,12 @@ if global.enableCharge == true
                     box = bbox_left;
             }
         
-            if chargeTimer < chargeTime
-            {
+            if chargeTimer < chargeTime {
                 attackID = instance_create(box+image_xscale*6, yy, objBusterShotHalfCharged);
-                    attackID.xspeed = image_xscale * 5;
-                    attackID.image_xscale = image_xscale;
                 playSFX(sfxBusterHalfCharged);
             }
-            else
-            {
+            else {
                 attackID = instance_create(box+image_xscale*14, yy, objBusterShotCharged);
-                    attackID.xspeed = image_xscale * 5.5;
-                    attackID.image_xscale = image_xscale;
                 playSFX(sfxBusterCharged);
             }
             
@@ -505,7 +483,6 @@ if global.weapon == pharaohshot && global.ammo[global.currentWeapon] > 0
             else    //Big shot
             {
                 attackID = instance_create(box+image_xscale*10, yy, objPharaohShotCharged);
-                    attackID.xspeed = image_xscale * 4.5;
                     
                 if global.keyUp && !global.keyDown
                     attackID.yspeed = -4.5;
