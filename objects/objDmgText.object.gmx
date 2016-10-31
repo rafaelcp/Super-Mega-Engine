@@ -49,7 +49,9 @@ alarm[0] = 60;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_destroy();
+            <string>/// Finish the effect
+
+instance_destroy();
 </string>
           </argument>
         </arguments>

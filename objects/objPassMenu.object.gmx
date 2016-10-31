@@ -76,8 +76,9 @@ for(i = 0; i &lt;= global.totalWeapons; i++){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>canSelectOption = true;
-playMusicVolume("PassScreen.ogg", 1);
+            <string>/// Enables cursor and plays music 
+canSelectOption = true;
+playMusicVolume(bgmPassScreen, 1);
 </string>
           </argument>
         </arguments>

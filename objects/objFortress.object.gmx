@@ -104,7 +104,7 @@ global.fortressStarted = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Go to level
+            <string>/// Go to level
 var ID = instance_create(0, 0, objFadeout);
 ID.type = "room";
 ID.myRoom = global.fortressLevels[global.currentFortressLevel];
@@ -130,7 +130,7 @@ ID.myRoom = global.fortressLevels[global.currentFortressLevel];
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Draw Map
+            <string>/// Draw Map
 instance_activate_object(objMapDrawer);
 </string>
           </argument>
@@ -154,7 +154,7 @@ instance_activate_object(objMapDrawer);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Tint Background
+            <string>/// Tint Background
 alarm[5] = time_to_map;
 background_blend[0] = c_blue;
 </string>
@@ -179,7 +179,8 @@ background_blend[0] = c_blue;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[4] = time_to_tint;
+            <string>/// Interval before tint
+alarm[4] = time_to_tint;
 </string>
           </argument>
         </arguments>
@@ -202,7 +203,7 @@ background_blend[0] = c_blue;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Second Flash
+            <string>/// Second Flash
 alarm[3] = flash2_duration;
 playSFX(sfxThunder);
 </string>
@@ -227,7 +228,8 @@ playSFX(sfxThunder);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[2] = time_to_flash2;
+            <string>/// Interval before second flash
+alarm[2] = time_to_flash2;
 </string>
           </argument>
         </arguments>
@@ -250,7 +252,7 @@ playSFX(sfxThunder);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//First Flash
+            <string>/// First Flash
 alarm[1] = flash1_duration;
 playSFX(sfxThunder);
 </string>

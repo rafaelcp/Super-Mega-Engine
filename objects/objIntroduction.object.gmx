@@ -96,7 +96,8 @@ alarm[0] = 450; //Going to the level
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var ID;
+            <string>/// Go to level
+var ID;
 ID = instance_create(0, 0, objFadeout);
 ID.type = "room";
 ID.myRoom = global.destinationLevel;

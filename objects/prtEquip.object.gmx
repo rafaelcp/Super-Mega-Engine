@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>usable = false;     //Can select and activate the item in the pause menu
+            <string>///Initialize equipment variables
+
+usable = false;     //Can select and activate the item in the pause menu
 maxUnits = 1;       //Maximum number of units that can be held
 showZero = false;   //Whether to show the item in the pause menu if you have 0 units
 showCount = true;   //Whether to show the item's count in the pause menu.
@@ -68,7 +70,7 @@ visible = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//to be inherited
+            <string>///Execute at every. To be inherited
 ok = false;
 if count == 0 &amp;&amp; !using {
     return 0;
@@ -99,7 +101,7 @@ if count == 0 &amp;&amp; !using {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//onUnPrime: to be inherited
+            <string>/// onUnPrime: to be inherited
 //will be called when unpriming the item in the pause menu
 
 if count &lt;= 0 || !usable {
@@ -136,7 +138,7 @@ return true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//OnBuy: to be inherited
+            <string>/// OnBuy: to be inherited
 //Called when the item is bought
 
 buyok = false;
@@ -169,7 +171,7 @@ show_debug_message("Buying " + name);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//onActivate: to be inherited
+            <string>/// onActivate: to be inherited
 //will be called when activating the item in the pause menu
 
 if count &lt;= 0 || !usable {

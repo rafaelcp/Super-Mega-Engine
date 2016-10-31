@@ -65,7 +65,9 @@ with objMegaman canPause = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var ID = instance_create(x, y, objFadeout);
+            <string>/// Go to next room
+
+var ID = instance_create(x, y, objFadeout);
 ID.type = "room";
     
 if global.weaponID &gt; -1 &amp;&amp; !global.weaponUnlocked[global.weaponID] {
@@ -113,7 +115,9 @@ global.passContinueRoom = room;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x = objMegaman.x;
+            <string>/// Initialize fake Mega Man movement
+
+x = objMegaman.x;
 y = objMegaman.y;
 sprite_index = sprMegamanWalk;
 image_speed = 0.15;
@@ -142,7 +146,9 @@ with objMegaman instance_destroy();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>playerLockMovement();
+            <string>/// Lock movement and play music
+
+playerLockMovement();
 playMusicNoLoop(bgmVictory);
 with objMegaman event_user(0); //Resets the colors, so charging the buster won't affect the colors
 

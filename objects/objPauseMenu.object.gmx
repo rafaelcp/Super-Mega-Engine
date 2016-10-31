@@ -220,7 +220,8 @@ with objMegaman event_user(0);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.keyDownPressed
+            <string>/// Cursor Movement
+if global.keyDownPressed
 {
     playSFX(sfxMenuMove);
     

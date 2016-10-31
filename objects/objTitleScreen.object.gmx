@@ -55,7 +55,9 @@ alarm[0] = room_speed * 23;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var fade = instance_create(0,0,objFadeout);
+            <string>/// Go back to the game opening
+
+var fade = instance_create(0,0,objFadeout);
 fade.type = "room";
 fade.myRoom = rmOpening;
 </string>
