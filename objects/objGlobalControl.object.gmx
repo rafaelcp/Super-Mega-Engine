@@ -210,15 +210,14 @@ if (global.enableSlideKey) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if instance_exists(objMegaman)
-{
+            <string>if instance_exists(objMegaman) {
     x = objMegaman.x;
     y = objMegaman.y;
 }
 
 if global.loopEnd &gt; -1 &amp;&amp; global.loopStart &gt; -1 &amp;&amp; global.bgm &gt; -1 {    //Loop point
     var currPos = audio_sound_get_track_position(global.bgm);
-    if currPos &gt;= global.loopEnd * 0.999 {
+    if currPos &gt;= global.loopEnd - 0.1 {
         var diff = global.loopEnd - global.loopStart;
         var newPos = currPos - diff;
         audio_sound_set_track_position(global.bgm, newPos);
