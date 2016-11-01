@@ -38,7 +38,14 @@ void main()
 
     float gray = 0.21 * c.r + 0.72 * c.g + 0.07 * c.b;
     gray = min(0.999, floor(gray * 3.0 + 0.5) / 3.0);
-    vec3 col = colors[int(floor(gray * 4.0))]; 
+    int i = int(floor(gray * 4.0));
+    vec3 col;
+    for (int x = 0; x < 4; x++) {  //workaround for webgl, array index must be constant
+        if (i == x) { 
+            col = colors[x];
+        }
+    }
+    //vec3 col = colors[i]; 
     gl_FragColor = vec4(col, c.a);
 }
 

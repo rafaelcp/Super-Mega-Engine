@@ -436,6 +436,7 @@
       <script>scripts\playerDeactivateObjects.gml</script>
       <script>scripts\playerLockMovement.gml</script>
       <script>scripts\playerFreeMovement.gml</script>
+      <script>scripts\drawSelf3Colors.gml</script>
     </scripts>
     <scripts name="Drawing">
       <script>scripts\drawSelf.gml</script>
@@ -452,6 +453,7 @@
       <script>scripts\mask_get_xcenter_object.gml</script>
       <script>scripts\mask_get_ycenter_object.gml</script>
       <script>scripts\drawSpriteTiled.gml</script>
+      <script>scripts\drawSpriteColorSwap.gml</script>
     </scripts>
     <scripts name="Collision/Gravity">
       <script>scripts\checkGround.gml</script>
@@ -460,6 +462,7 @@
       <script>scripts\gravityCheckGroundExt.gml</script>
       <script>scripts\gravityNoGround.gml</script>
       <script>scripts\gravityNoGroundExt.gml</script>
+      <script>scripts\escapeWall.gml</script>
     </scripts>
     <scripts name="Views">
       <script>scripts\insideView.gml</script>
@@ -534,8 +537,9 @@
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shGrayscale.shader</shader>
     <shader type="GLSLES">shaders\shBlueish.shader</shader>
-    <shader type="GLSLES">shaders\shColorReplaceBlend.shader</shader>
     <shader type="GLSLES">shaders\shColorReplace.shader</shader>
+    <shader type="GLSLES">shaders\shColorReplace2.shader</shader>
+    <shader type="GLSLES">shaders\shColorReplace3.shader</shader>
     <shader type="GLSLES">shaders\sh256.shader</shader>
     <shader type="GLSLES">shaders\sh64.shader</shader>
     <shader type="GLSLES">shaders\sh8.shader</shader>

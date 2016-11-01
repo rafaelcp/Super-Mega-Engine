@@ -202,6 +202,10 @@ draw_set_alpha(1);
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 
+var src_col1 = make_colour_rgb(0, 89, 255);
+var src_col2 = make_colour_rgb(0, 0, 187);
+var src_col3 = make_colour_rgb(0, 217, 255);
+
 var textX, textY;
 textX = round(view_xview[0] + (view_wview[0] / 3));
 textY = round(view_yview[0] + (view_hview[0] * 0.4));
@@ -223,15 +227,21 @@ if phase &gt;= 7 {
 if phase == 8 {
     //Flickering
     if timer mod 2 == 0 {
+        drawSpriteColorSwap(sprMegamanWeaponGet, megaImg, megaX, megaY, src_col1, src_col2, src_col3, global.bossWeaponPrimary, global.bossWeaponPrimaryDark, global.bossWeaponSecondary);
+        /*
         draw_sprite_ext(sprMegamanWeaponGetPrimary, megaImg, megaX, megaY, 1, 1, 0, global.bossWeaponPrimary, 1);
         draw_sprite_ext(sprMegamanWeaponGetPrimaryDark, megaImg, megaX, megaY, 1, 1, 0, global.bossWeaponPrimaryDark, 1);
         draw_sprite_ext(sprMegamanWeaponGetSecondary, megaImg, megaX, megaY, 1, 1, 0, global.bossWeaponSecondary, 1);
+        */
     }
 }
 else if phase == 9 {
+    drawSpriteColorSwap(sprMegamanWeaponGet, megaImg, megaX, megaY, src_col1, src_col2, src_col3, global.bossWeaponPrimary, global.bossWeaponPrimaryDark, global.bossWeaponSecondary);
+    /*
     draw_sprite_ext(sprMegamanWeaponGetPrimary, megaImg, megaX, megaY, 1, 1, 0, global.bossWeaponPrimary, 1);
     draw_sprite_ext(sprMegamanWeaponGetPrimaryDark, megaImg, megaX, megaY, 1, 1, 0, global.bossWeaponPrimaryDark, 1);
     draw_sprite_ext(sprMegamanWeaponGetSecondary, megaImg, megaX, megaY, 1, 1, 0, global.bossWeaponSecondary, 1);
+    */
 }
 
 

@@ -109,7 +109,10 @@ switch sprite_index
     break;
 }
 
-drawSelf();
+drawSelf3Colors(global.primaryCol, global.secondaryCol, global.outlineCol);
+
+/*
 draw_sprite_ext(primary, image_index, round(x), round(y), image_xscale, image_yscale, image_angle, global.primaryCol, image_alpha);
 draw_sprite_ext(secondary, image_index, round(x), round(y), image_xscale, image_yscale, image_angle, global.secondaryCol, image_alpha);
 draw_sprite_ext(outline, image_index, round(x), round(y), image_xscale, image_yscale, image_angle, global.outlineCol, image_alpha);
+*/
