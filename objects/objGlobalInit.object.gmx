@@ -129,6 +129,8 @@ global.damageMultiplier = 1;
 
 global.fortressStarted = false;
 
+global.screen_shader = cfgShader;
+
 if cfgDebug || debug_mode {
     show_debug_overlay(true);
 }

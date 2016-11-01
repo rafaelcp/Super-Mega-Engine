@@ -535,6 +535,12 @@
     <shader type="GLSLES">shaders\shGrayscale.shader</shader>
     <shader type="GLSLES">shaders\shBlueish.shader</shader>
     <shader type="GLSLES">shaders\shColorReplaceBlend.shader</shader>
+    <shader type="GLSLES">shaders\shColorReplace.shader</shader>
+    <shader type="GLSLES">shaders\sh256.shader</shader>
+    <shader type="GLSLES">shaders\sh64.shader</shader>
+    <shader type="GLSLES">shaders\sh8.shader</shader>
+    <shader type="GLSLES">shaders\shGB.shader</shader>
+    <shader type="GLSLES">shaders\shGB2.shader</shader>
   </shaders>
   <objects name="objects">
     <objects name="Collision">
@@ -763,7 +769,7 @@
     </rooms>
     <room>rooms\rmInitialStage</room>
   </rooms>
-  <constants number="32">
+  <constants number="33">
     <constant name="megabuster">0</constant>
     <constant name="silvertomahawk">1</constant>
     <constant name="windstorm">2</constant>
@@ -787,6 +793,7 @@
     <constant name="cfgShowLives">false</constant>
     <constant name="cfgShotSplash">false</constant>
     <constant name="cfgInitialStage">-1</constant>
+    <constant name="cfgShader">noone</constant>
     <constant name="life">0</constant>
     <constant name="etank">1</constant>
     <constant name="wtank">2</constant>

@@ -180,7 +180,10 @@ for (var i = 0; i &lt; total_items; i++) {
         draw_sprite(global.items[i].sprite_index, 0, currX + 2, currY);
     }
     else {
-        draw_sprite(global.items[i].sprite_index, 1, currX + 2, currY);
+        //draw_sprite(global.items[i].sprite_index, 1, currX + 2, currY);
+        shader_set(shGrayscale);
+        draw_sprite(global.items[i].sprite_index, 0, currX + 2, currY);
+        shader_reset();
     }
     draw_text(currX, currY+17, string_replace_all(string_format(global.items[i].price, 3, 0), " ", "0"));
     currX += 40;

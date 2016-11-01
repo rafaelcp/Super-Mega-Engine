@@ -25,7 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Keys
+            <string>if global.screen_shader != noone {
+    application_surface_draw_enable(false);
+}
+
+//Keys
 leftKey = vk_left;
 rightKey = vk_right;
 upKey = vk_up;
@@ -328,6 +332,33 @@ totalPickups = instance_number(prtPickup);
 
 for(i = 0; i &lt;= totalPickups; i++) {
     global.pickupCollected[i] = false;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="77">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if global.screen_shader != noone {
+    shader_set(global.screen_shader);
+    draw_surface(application_surface, 0, 0);
+    shader_reset();
 }
 </string>
           </argument>
