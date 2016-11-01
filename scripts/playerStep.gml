@@ -847,3 +847,6 @@ else
 //Variables on the previous frame
 prevGround = ground;
 prevXScale = image_xscale;
+
+
+escapeWall();

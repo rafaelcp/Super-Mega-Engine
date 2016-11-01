@@ -107,3 +107,5 @@ if mySolid >= 0 && yspeed > 0
         }
     }
 }
+
+escapeWall();
