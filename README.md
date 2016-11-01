@@ -1,4 +1,7 @@
 # Open Mega Engine
+
+[![Join the chat at https://gitter.im/Open-Mega-Engine/Lobby](https://badges.gitter.im/Open-Mega-Engine/Lobby.svg)](https://gitter.im/Open-Mega-Engine/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 **Open Mega Engine - Open-source Classic Megaman engine for Game Maker Studio!**
 
 Run the [HTML5 DEMO](https://rawgit.com/rafaelcp/Open-Mega-Engine/master/demo/index.html) inside your browser!
