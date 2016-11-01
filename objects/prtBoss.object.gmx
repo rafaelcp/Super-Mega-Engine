@@ -40,7 +40,7 @@ image_index = 0;
 
 healthpoints = 28;
 prevHealthPoints = healthpoints;
-canHit = true;
+canHit = false;
 drawHitSpark = false;
 drawBoss = true; //Should we be visible? (Can't use the 'visible' variable as this prevents the Draw event from executing)
 
@@ -220,6 +220,7 @@ if startIntro == true
     {
         startFight = false;
         isFight = true;
+        canHit = true;
     }
     
     
