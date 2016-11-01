@@ -56,7 +56,7 @@ musicVolume = -1;
 musicLoopPointStart = -1;
 musicLoopPointEnd = -1;
 
-music = "Boss.ogg";
+music = bgmBoss;
 musicVolume = 0.7;
 </string>
           </argument>
