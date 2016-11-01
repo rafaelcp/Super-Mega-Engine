@@ -43,17 +43,17 @@ uniform vec4  colorOut3;
 void main() {
     vec4 colorPixel = texture2D( gm_BaseTexture, v_vTexcoord );
     
-    if (all(equal(colorPixel, colorIn1))) {
-        gl_FragColor = v_vColour * colorOut1;
+    if (length(colorPixel - colorIn1) < 3.0/255.0) {
+        gl_FragColor = colorOut1;
     }
-    else if (all(equal(colorPixel, colorIn2))) {
-        gl_FragColor = v_vColour * colorOut2;
+    else if (length(colorPixel - colorIn2) < 3.0/255.0) {
+        gl_FragColor = colorOut2;
     }
-    else if (all(equal(colorPixel, colorIn3))) {
-        gl_FragColor = v_vColour * colorOut3;
+    else if (length(colorPixel - colorIn3) < 3.0/255.0) {
+        gl_FragColor = colorOut3;
     }
     else {
-        gl_FragColor = v_vColour * colorPixel;
+        gl_FragColor = colorPixel;
     }
     
 }
