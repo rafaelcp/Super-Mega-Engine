@@ -250,6 +250,7 @@ if global.loopEnd &gt; -1 &amp;&amp; global.loopStart &gt; -1 &amp;&amp; global.
             <string>///Debug keys
 if keyboard_check_pressed(vk_f2)
 {
+    application_surface_draw_enable(true);
     sound_stop_all();
     game_restart();
 }
@@ -268,12 +269,23 @@ if keyboard_check_pressed(vk_escape)
     
 if keyboard_check_pressed(vk_f7) saveGame(0);
 if keyboard_check_pressed(vk_f8) loadGame(0);
-if keyboard_check_pressed(vk_f12) game_restart();
 if keyboard_check_pressed(vk_f11) with objMegaman grav *= -1;
 
 if keyboard_check(vk_add) global.screws++;
 if keyboard_check(vk_subtract) global.screws--;
 
+if keyboard_check_pressed(vk_f9) {
+    global.current_screen_shader++;
+    if global.current_screen_shader &gt;= global.num_screen_shaders {
+        global.current_screen_shader = 0;
+        application_surface_draw_enable(true);
+    }
+    else {
+        application_surface_draw_enable(false);
+    }
+    global.screen_shader = global.screen_shaders[global.current_screen_shader];
+    show_debug_message("Current shader: " +  string(global.current_screen_shader));
+}
 </string>
           </argument>
         </arguments>

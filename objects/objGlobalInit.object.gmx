@@ -131,6 +131,18 @@ global.fortressStarted = false;
 
 global.screen_shader = cfgShader;
 
+global.screen_shaders[0] = noone;
+global.screen_shaders[1] = sh256;
+global.screen_shaders[2] = sh64;
+global.screen_shaders[3] = sh8;
+global.screen_shaders[4] = shGB;
+global.screen_shaders[5] = shGB2;
+global.screen_shaders[6] = shGrayscale;
+global.screen_shaders[7] = shBlueish;
+
+global.num_screen_shaders = array_length_1d(global.screen_shaders);
+global.current_screen_shader = 0;
+
 if cfgDebug || debug_mode {
     show_debug_overlay(true);
 }
