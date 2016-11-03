@@ -35,6 +35,8 @@ global.items[life].count = global._lives;
 
 cursorCounter = 0;
 cursorSprite = 0;
+autoImg = 0;
+megaImg = 0;
 </string>
           </argument>
         </arguments>
@@ -59,6 +61,19 @@ cursorSprite = 0;
             <kind>1</kind>
             <string>var total_items = array_length_1d(global.items);
 
+autoImg += 0.1;
+if autoImg &gt;= 2 {
+    autoImg = 0;
+}
+if floor(megaImg) == 0 {
+    megaImg += 0.01;
+}
+else {
+    megaImg += 0.1;
+}
+if megaImg &gt;= 2 {
+    megaImg = 0;
+}
 cursorCounter++;
 if cursorCounter == 10 {
     cursorSprite = 1 - cursorSprite;
@@ -210,14 +225,26 @@ draw_sprite_ext(sprShopCursor, cursorSprite, currX, currY, sX, sY, 0, c_white, 1
 
 
 //Screws
-draw_text(66, 95, string_replace_all(string_format(global.screws, 3, 0), " ", "0"));
+draw_sprite(sprScrewBig, 0, 43, 90);
+draw_text(66, 96, string_replace_all(string_format(global.screws, 3, 0), " ", "0"));
+
+//Exit
+draw_rectangle(175, 95, 214, 104, c_black);
+draw_set_color(c_black);
+draw_text(183, 96, "EXIT");
+draw_set_color(c_white);
+
+
+//Sprites
+draw_sprite(sprAuto, autoImg, 40, 127);
+draw_sprite_ext(sprMegamanStand, megaImg, 198, 145, -1, 1, 0, c_white, 1);
 
 if option &lt; total_items {
     //Item Name
-    draw_text(8, 178, string_upper(global.items[item_index].name) + ": 0" + string(global.items[item_index].count) + " / MAX: 0" + string(global.items[item_index].maxUnits) );
+    draw_text(8, 182, string_upper(global.items[item_index].name) + ": 0" + string(global.items[item_index].count) + " / MAX: 0" + string(global.items[item_index].maxUnits) );
     
     //Item Description
-    draw_text_ext(8, 194, string_upper(global.items[item_index].description), 10, 240);
+    draw_text_ext(8, 198, string_upper(global.items[item_index].description), 10, 240);
 }
 </string>
           </argument>

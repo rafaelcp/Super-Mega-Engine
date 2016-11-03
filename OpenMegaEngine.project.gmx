@@ -368,6 +368,7 @@
       </sprites>
       <sprites name="Shop">
         <sprite>sprites\sprShopCursor</sprite>
+        <sprite>sprites\sprAuto</sprite>
       </sprites>
       <sprites name="Fortress">
         <sprite>sprites\sprFortressPoint</sprite>
