@@ -117,7 +117,7 @@ if room == rmInit {
         global.ammo[i] = global.maxAmmo;
     }    
     
-
+    application_surface_draw_enable(true);
 }
 
 
