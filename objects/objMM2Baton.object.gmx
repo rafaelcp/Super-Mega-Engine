@@ -58,6 +58,8 @@ image_speed = 0;
 image_index = 0;
 
 counter = 0;
+
+move_speed = 0.5;
 </string>
           </argument>
         </arguments>
@@ -120,7 +122,13 @@ if !global.frozen &amp;&amp; !dead {
         }
         else {
             if instance_exists(objMegaman) {
-                mp_linear_step(objMegaman.x, objMegaman.y - 16, 0.5, false);
+                with objMegaman {
+                    dirX = sprite_get_xcenter() - sprite_get_xcenter_object(other);
+                    dirY = sprite_get_ycenter() - sprite_get_ycenter_object(other);
+                    len = sqrt(dirX * dirX + dirY * dirY);
+                    other.x += dirX * other.move_speed / len;
+                    other.y += dirY * other.move_speed / len;
+                }
             }
         }
     }

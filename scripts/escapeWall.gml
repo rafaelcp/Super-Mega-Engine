@@ -1,19 +1,19 @@
 /// escapeWall(): avoids getting stuck into walls
 
-while place_meeting(x, y, objSolid) || place_meeting(x, y, prtMovingPlatformSolid) {
-    if !place_meeting(x-1, y, objSolid) && !place_meeting(x-1, y, prtMovingPlatformSolid) {
+while !place_free(x, y) {
+    if place_free(x-1, y) {
         show_debug_message(object_get_name(object_index) + " Stuck: Move 1 pixel to the left");
         x--;
     }
-    else if !place_meeting(x+1, y, objSolid) && !place_meeting(x+1, y, prtMovingPlatformSolid) {
+    else if place_free(x+1, y) {
         show_debug_message(object_get_name(object_index) + " Stuck: Move 1 pixel to the right");
         x++;
     }
-    else if !place_meeting(x, y-1, objSolid) && !place_meeting(x, y-1, prtMovingPlatformSolid) {
+    else if place_free(x, y-1) {
         show_debug_message(object_get_name(object_index) + " Stuck: Move 1 pixel up");
         y--;
     }
-    else if !place_meeting(x, y+1, objSolid) && !place_meeting(x, y+1, prtMovingPlatformSolid) {
+    else if place_free(x, y+1) {
         show_debug_message(object_get_name(object_index) + " Stuck: Move 1 pixel down");
         y++;
     }

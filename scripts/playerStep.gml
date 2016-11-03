@@ -177,11 +177,16 @@ if canMove == true
             else if global.keyRight && !global.keyLeft
                 image_xscale = 1;
             
-            if canSpriteChange == true
-            {
-                sprite_index = spriteStand;
+            if canSpriteChange {
                 image_speed = 0;
-                image_index = blinkImage;
+                if !prevGround {    //Landing animation
+                    sprite_index = spriteWalk;
+                    image_index = 1;
+                }
+                else {
+                    sprite_index = spriteStand;
+                    image_index = blinkImage;
+                }
             }
         }
     }
@@ -313,9 +318,9 @@ if isStep == true
 
 
 //Allow movement
-if !place_meeting(x+global.xspeed, y, objSolid)
+if place_free(x+global.xspeed, y)
     x += global.xspeed;
-if !place_meeting(x, y+global.yspeed, objSolid)
+if place_free(x, y+global.yspeed)
     y += global.yspeed;
 
 //Avoids free movement on screen above
@@ -577,7 +582,7 @@ ladder = collision_rectangle(sprite_get_xcenter()-3, bbox_top+4, sprite_get_xcen
 ladderDown = collision_rectangle(sprite_get_xcenter()-3, bbox_bottom+1, sprite_get_xcenter()+3, bbox_bottom+2, objLadder, false, false);
 if ((ladder >= 0 && global.keyUp && !global.keyDown)
 || (ladderDown >= 0 && ground == true && !isSlide && global.keyDown && !global.keyUp && !place_meeting(x, y, objLadder)))
-&& (canMove == true || isSlide == true)
+&& (canMove == true || isSlide == true) && sprite_get_bottom() > sectionTop
 {
     isSlide = false;
     mask_index = mskMegaman;
