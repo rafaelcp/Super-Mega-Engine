@@ -133,11 +133,39 @@ if proceed {
     ok = true;
 }
 else {
-    ok = false;
+    var total = 0;
+    ok = true;
     using = false;
-    count++;    //Return the unit subtracted in parent
-    playSFX(sfxError);
-    show_debug_message("Health and ammo already full. M-Tank count: " + string(count));
+    for (var i = 0; i &lt; instance_number(prtEnemy); i++) {
+        var enemy = instance_find(prtEnemy, i);
+        with enemy {
+            if !dead &amp;&amp; insideView() &amp;&amp; object_get_parent(object_index) != prtBoss {
+                var l = instance_create(x, y, objLife);
+                l.alarm[0] = room_speed * 99999999;
+                dead = true;
+                visible = false;
+                healthpoints = 0;
+                total++;
+                show_debug_message("Created 1 life.");
+            }
+        }
+    }
+    if total == 0 {
+        show_debug_message("No enemies on screen. Gain 1 life.");
+        if global._lives &lt; 9 {
+            global._lives++
+        }
+        else {
+            ok = false;
+        }
+    }
+    if ok {
+        playSFX(sfxImportantItem);
+    }
+    else {
+        count++;
+        playSFX(sfxError);
+    }
 }
 
 return ok;

@@ -50,10 +50,10 @@
             <kind>1</kind>
             <string>event_inherited();
 
-if global._lives &lt; 9
-    global._lives += 1;
-    
-playSFX(sfxImportantItem);
+if global._lives &lt; 9 {
+    global._lives++;
+    playSFX(sfxImportantItem);
+}
 </string>
           </argument>
         </arguments>
