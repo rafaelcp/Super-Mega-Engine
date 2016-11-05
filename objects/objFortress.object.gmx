@@ -42,9 +42,8 @@ global.levelStart = true;
 //Code to run the first time the fortress is loaded
 if !global.fortressStarted {
     global.fortressLevels[0] = rmInitialStage;
-    global.fortressLevels[1] = rmBeta;
-    global.fortressLevels[2] = rmInitialStage;
-    global.fortressLevels[3] = rmBeta;
+    global.fortressLevels[1] = rmBossRush;
+    global.fortressLevels[2] = rmBeta;
     
     global.numFortressLevels = array_length_1d(global.fortressLevels);
     global.currentFortressLevel = 0;
@@ -57,19 +56,16 @@ if !global.fortressStarted {
 var drawer;
 
 drawer[0] = instance_create(48, 192, objMapDrawer);
-drawer[0].lines = makePath(16, 0, 16, -16, 32, -16, 32, -32, 64, -32);
+drawer[0].lines =  makePath(0, 16, 16, 16, 16, 0, 32, 0, 32, 16, 48, 16, 48, 0);
 
-drawer[1] = instance_create(48 + 64, 192 - 32, objMapDrawer);
-drawer[1].lines =  makePath(0, 16, 16, 16, 16, 0, 32, 0, 32, 16, 48, 16, 48, 0);
+drawer[1] = instance_create(48 + 48, 192, objMapDrawer);
+drawer[1].lines =  makePath(16, 0, 16, -64);
+drawer[1].place_icon = sprFortressSkull;
 
-drawer[2] = instance_create(48 + 64 + 48, 192 - 32, objMapDrawer);
-drawer[2].lines =  makePath(16, 0, 16, -64);
+drawer[2] = instance_create(48 + 48 + 16, 192 - 64, objMapDrawer);
+drawer[2].lines =  makePath(16, 0, 16, 80);
 drawer[2].place_icon = sprFortressSkull;
-
-drawer[3] = instance_create(48 + 64 + 48 + 16, 192 - 32 - 64, objMapDrawer);
-drawer[3].lines =  makePath(16, 0, 16, 80);
-drawer[3].place_icon = sprFortressSkull;
-drawer[3].hidden = true;
+drawer[2].hidden = true;
 
 for (var i = 0; i &lt; global.numFortressLevels; i++) {
     if i != global.currentFortressLevel {

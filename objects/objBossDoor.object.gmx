@@ -38,6 +38,8 @@ openImgSpeed = 0.15;
 image_speed = 0;
 
 alarm[0] = 1;
+
+mySolid = -1;
 </string>
           </argument>
         </arguments>
@@ -60,15 +62,13 @@ alarm[0] = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if dir == -1
-{
+            <string>if dir == -1 &amp;&amp; canOpen {
     mySolid = instance_create(x+16, y, objSolid);
-        mySolid.image_yscale = 4;
+    mySolid.image_yscale = 4;
 }
-else
-{
+else {
     mySolid = instance_create(x, y, objSolid);
-        mySolid.image_yscale = 4;
+    mySolid.image_yscale = 4;
 }
 </string>
           </argument>
@@ -92,8 +92,15 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if canOpen == true
-{
+            <string>if canOpen {
+    if mySolid &gt; -1 {
+        if dir == -1 {
+            mySolid.x = x+16;
+        }
+        else {
+            mySolid.x = x;
+        }
+    }
     if instance_exists(objMegaman)
     {
         //Colliding with the player. We're checking x+7 because in the NES games, the player needs to be slightly inside the door
@@ -147,7 +154,6 @@ else
         }
     }
 }
-
 
 if opening == true
 {

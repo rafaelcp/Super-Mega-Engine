@@ -136,7 +136,7 @@ alarm[9] = 2;
             <kind>1</kind>
             <string>/// Put the boss at the top of the screen
 
-y = view_yview[0];
+y = -999;//view_yview[0];
 </string>
           </argument>
         </arguments>
@@ -245,28 +245,20 @@ if startIntro == true
             
             var i, explosionID;
                 
-            i = 0;
-            repeat 8
-            {
-                explosionID = instance_create(x, y, objMegamanExplosion);
-                    explosionID.dir = i;
-                    explosionID.spd = 1.5;
-                    
-                i += 45;
-            }
+            doExplosion(x, y, 1.5);
             
-            i = 0;
-            repeat 8
-            {
-                explosionID = instance_create(x, y, objMegamanExplosion);
-                    explosionID.dir = i;
-                    explosionID.spd = 2.5;
-                    
-                i += 45;
-            }
+            doExplosion(x, y, 2.5);
             
+            instance_activate_object(objTeleport);
+            with objTeleport {
+                if boss == global.bossID {
+                    instance_destroy();
+                }
+            }
+
             instance_destroy();
             instance_create(x, y, objBossDeathTimer);
+            
         }
     }
     

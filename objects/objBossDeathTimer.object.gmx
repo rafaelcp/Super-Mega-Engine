@@ -27,6 +27,28 @@
             <kind>1</kind>
             <string>//Handles the boss's death
 //Also transforms into the Mega Man that automatically moves to the center of the screen
+
+//If there is a teleporter in the room (boss rush), just destrou the death timer
+instance_activate_object(objTeleport);
+with objTeleport {
+    if insideView() {
+        on = true;
+        var inst = instance_create(other.x, other.y, objLifeEnergyBig);
+        inst.alarm[0] = room_speed * 9999;
+        global.bossRushDefeated[global.bossID] = true;
+        if numRushBossesDefeated() == 8 {
+            instance_activate_object(objBossDoor);
+            objBossDoor.canOpen = true;
+        }
+        with other instance_destroy();
+        with objBossControl {
+            drawHealthBar = false;
+        }
+        exit;
+    }
+}
+
+//Otherwise, normal behavior (weapon absorb, etc...)
 alarm[0] = 240;
 
 xspeed = 0;

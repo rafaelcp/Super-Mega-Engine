@@ -69,6 +69,7 @@
       <sound>sound\bgmOpening</sound>
       <sound>sound\bgmOpening2</sound>
       <sound>sound\bgmCredits</sound>
+      <sound>sound\bgmBossRush</sound>
     </sounds>
   </sounds>
   <sprites name="sprites">
@@ -512,6 +513,8 @@
       <script>scripts\makeLine.gml</script>
       <script>scripts\makePath.gml</script>
       <script>scripts\numBossesDefeated.gml</script>
+      <script>scripts\doExplosion.gml</script>
+      <script>scripts\numRushBossesDefeated.gml</script>
     </scripts>
     <scripts name="Equip">
       <script>scripts\add_equip.gml</script>
@@ -774,6 +777,7 @@
       <room>rooms\rmShop</room>
     </rooms>
     <room>rooms\rmInitialStage</room>
+    <room>rooms\rmBossRush</room>
   </rooms>
   <constants number="33">
     <constant name="megabuster">0</constant>

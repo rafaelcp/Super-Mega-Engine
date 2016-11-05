@@ -29,7 +29,42 @@
 origY = y;
 toX = x;
 toY = y;
+toDir = 1;
 out = false;
+on = true;
+boss = -1;
+returnBGM = -1;
+drawLED = true;
+timerLED = 0;
+
+alarm[9] = 1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="9">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Verify if boss is already defeated on boss rush
+
+if boss &gt; -1 &amp;&amp; global.bossRushDefeated[boss] {
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>
@@ -84,6 +119,8 @@ out = true;
 //Move camera to destination
 objMegaman.x = toX;
 objMegaman.y = toY;
+objMegaman.newSectionXOffset = 0;
+objMegaman.newSectionYOffset = 0;
 with objMegaman playerCameraInit();
 
 x = toX;
@@ -112,7 +149,11 @@ show_debug_message("Teleport to (" + string(toX) + "," + string(toY) + ") now!")
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if sprite_index == sprMegamanTeleport {
+            <string>timerLED += 0.1;
+if timerLED &gt;= 2 {
+    timerLED = 0;
+}
+if sprite_index == sprMegamanTeleport {
     if image_index &gt;= 2 {
         if !out {
             visible = false;
@@ -127,16 +168,24 @@ show_debug_message("Teleport to (" + string(toX) + "," + string(toY) + ") now!")
         }
         else {
             //instance_activate_object(objMegaman);
-            playerFreeMovement()
+            with instance_nearest(toX, toY, objBossControl) {
+                if !insideView() {
+                    playerFreeMovement()
+                }
+            }
             objMegaman.x = toX;
             objMegaman.y = toY;
             objMegaman.visible = true;
-            objMegaman.canMove = true;
+            objMegaman.image_xscale = toDir;
             x = origX;
             y = origY;            
-            visible = true;
+            visible = false;
             sprite_index = sprCollisionOther;
             out = false;
+            instance_activate_object(objSolid);
+            if returnBGM &gt; -1 {
+                playMusicVolume(returnBGM, 0.9);
+            }
         }
     }
 }
@@ -162,7 +211,7 @@ show_debug_message("Teleport to (" + string(toX) + "," + string(toY) + ") now!")
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if sprite_index != sprMegamanTeleport {
+            <string>if on &amp;&amp; sprite_index != sprMegamanTeleport &amp;&amp; collision_point(x + 8, y + 8, other, false, false) {
     x = other.x;
     y = other.y;
     visible = true;
@@ -170,16 +219,46 @@ show_debug_message("Teleport to (" + string(toX) + "," + string(toY) + ") now!")
     image_speed = 0.15;
     with other {
         visible = false;
-        canMove = false;
         global.xspeed = 0;
         global.yspeed = 0;        
     }
     //instance_deactivate_object(objMegaman);
     playerLockMovement();
     playSFX(sfxTeleportIn);
-    
-    show_debug_message("Teleport start!");
+    instance_activate_object(objSectionBorderLeft);
+    instance_activate_object(objSectionBorderRight);
+    instance_activate_object(objSectionBorderTop);
+    instance_activate_object(objSectionBorderBottom);    
+    show_debug_message("Teleport start! Going to ("+string(toX)+","+string(toY)+")");
 
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if sprite_index == sprMegamanTeleport {
+    drawSelf3Colors(global.primaryCol, global.secondaryCol, global.outlineCol);
+}
+if on &amp;&amp; drawLED &amp;&amp; sprite_index != sprMegamanTeleport &amp;&amp; timerLED &gt; 0.5 {
+    draw_rectangle_colour(x + 11, y - 22, x + 20, y - 21, c_red, c_red, c_red, c_red, false);
 }
 </string>
           </argument>
