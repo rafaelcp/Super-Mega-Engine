@@ -330,25 +330,23 @@ if (!ground && !climbing && !instance_exists(objSectionSwitcher) && sprite_get_b
 
 
 //Stop movement at section borders
-if x > sectionRight-6 && !place_meeting(x+6, y, objSectionArrowRight) && !place_meeting(x-global.xspeed, y, objSectionArrowRight)
-{
-    x = sectionRight-6;
-    global.xspeed = 0;
-}
-else if x < sectionLeft+6 && !place_meeting(x-6, y, objSectionArrowLeft) && !place_meeting(x-global.xspeed, y, objSectionArrowLeft)
-{
-    x = sectionLeft+6;
-    global.xspeed = 0;
-}
-    
-if y < sectionTop-32
-    y = sectionTop-32;
-else if bbox_top > sectionBottom && !place_meeting(x, y, objSectionArrowDown)
-{
-    global._health = 0;
-    deathByPit = true;
-}
-    
+if canMove && visible {
+    if x > sectionRight-6 && !place_meeting(x+6, y, objSectionArrowRight) && !place_meeting(x-global.xspeed, y, objSectionArrowRight) {
+        x = sectionRight-6;
+        global.xspeed = 0;
+    }
+    else if x < sectionLeft+6 && !place_meeting(x-6, y, objSectionArrowLeft) && !place_meeting(x-global.xspeed, y, objSectionArrowLeft) {
+        x = sectionLeft+6;
+        global.xspeed = 0;
+    }    
+    if y < sectionTop-32 {
+        y = sectionTop-32;
+    }
+    else if bbox_top > sectionBottom && !place_meeting(x, y, objSectionArrowDown) {
+        global._health = 0;
+        deathByPit = true;
+    }
+}   
     
 //Stop movement at room borders
 if x > room_width-6
