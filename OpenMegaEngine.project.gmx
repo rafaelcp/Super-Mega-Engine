@@ -273,11 +273,17 @@
         <sprite>sprites\sprWilyMachine4b</sprite>
         <sprite>sprites\sprWilyMachineSmoke</sprite>
         <sprite>sprites\sprWilyMachineShot</sprite>
+        <sprite>sprites\sprWilyEscape</sprite>
+        <sprite>sprites\sprWilyCapsule4</sprite>
       </sprites>
       <sprites name="YellowDevil">
         <sprite>sprites\sprYellowDevil</sprite>
         <sprite>sprites\sprYellowDevilEye</sprite>
         <sprite>sprites\sprYellowDevilBlock</sprite>
+      </sprites>
+      <sprites name="DrWily">
+        <sprite>sprites\sprWilyJump</sprite>
+        <sprite>sprites\sprWilySorry</sprite>
       </sprites>
     </sprites>
     <sprites name="LevelObjects">
