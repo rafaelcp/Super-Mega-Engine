@@ -274,6 +274,11 @@
         <sprite>sprites\sprWilyMachineSmoke</sprite>
         <sprite>sprites\sprWilyMachineShot</sprite>
       </sprites>
+      <sprites name="YellowDevil">
+        <sprite>sprites\sprYellowDevil</sprite>
+        <sprite>sprites\sprYellowDevilEye</sprite>
+        <sprite>sprites\sprYellowDevilBlock</sprite>
+      </sprites>
     </sprites>
     <sprites name="LevelObjects">
       <sprites name="Drops/Tanks">
@@ -411,6 +416,7 @@
     </backgrounds>
     <backgrounds name="Tilesets">
       <background>background\tstBeta</background>
+      <background>background\tstMM1</background>
       <background>background\tstMM3</background>
     </backgrounds>
     <backgrounds name="Menu">
