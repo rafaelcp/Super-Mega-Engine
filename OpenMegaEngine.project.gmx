@@ -275,6 +275,8 @@
         <sprite>sprites\sprWilyMachineShot</sprite>
         <sprite>sprites\sprWilyEscape</sprite>
         <sprite>sprites\sprWilyCapsule4</sprite>
+        <sprite>sprites\sprWilyCapsule4Shot1</sprite>
+        <sprite>sprites\sprWilyCapsule4Shot2</sprite>
       </sprites>
       <sprites name="YellowDevil">
         <sprite>sprites\sprYellowDevil</sprite>
