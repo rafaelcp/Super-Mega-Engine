@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>xspeed = 0;
 yspeed = 0;
+contactDamage = 1;
 </string>
           </argument>
         </arguments>

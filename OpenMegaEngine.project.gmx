@@ -73,6 +73,7 @@
       <sound>sound\bgmWilyBoss3</sound>
       <sound>sound\bgmWilyFinalBoss4</sound>
       <sound>sound\bgmWilyBoss1</sound>
+      <sound>sound\bgmWilyCastle1</sound>
     </sounds>
   </sounds>
   <sprites name="sprites">
@@ -678,6 +679,11 @@
         <object>objects\objBossDeathTimer</object>
         <object>objects\objAbsorbEffect</object>
       </objects>
+      <objects name="YellowDevil">
+        <object>objects\objYellowDevil</object>
+        <object>objects\objYellowDevilBlock</object>
+        <object>objects\objYellowDevilBullet</object>
+      </objects>
       <object>objects\objBigEyeBoss</object>
     </objects>
     <objects name="LevelObjects">
@@ -800,8 +806,9 @@
       <room>rooms\rmShop</room>
     </rooms>
     <room>rooms\rmInitialStage</room>
+    <room>rooms\rmFortressStage</room>
     <room>rooms\rmBossRush</room>
-    <room>rooms\rmFInalStage</room>
+    <room>rooms\rmFinalStage</room>
   </rooms>
   <constants number="33">
     <constant name="megabuster">0</constant>
