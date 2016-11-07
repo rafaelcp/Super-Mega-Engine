@@ -70,6 +70,9 @@
       <sound>sound\bgmOpening2</sound>
       <sound>sound\bgmCredits</sound>
       <sound>sound\bgmBossRush</sound>
+      <sound>sound\bgmWilyBoss3</sound>
+      <sound>sound\bgmWilyFinalBoss4</sound>
+      <sound>sound\bgmWilyBoss1</sound>
     </sounds>
   </sounds>
   <sprites name="sprites">
@@ -275,8 +278,7 @@
         <sprite>sprites\sprWilyMachineShot</sprite>
         <sprite>sprites\sprWilyEscape</sprite>
         <sprite>sprites\sprWilyCapsule4</sprite>
-        <sprite>sprites\sprWilyCapsule4Shot1</sprite>
-        <sprite>sprites\sprWilyCapsule4Shot2</sprite>
+        <sprite>sprites\sprWilyCapsule4Shot</sprite>
       </sprites>
       <sprites name="YellowDevil">
         <sprite>sprites\sprYellowDevil</sprite>
@@ -426,6 +428,7 @@
       <background>background\tstBeta</background>
       <background>background\tstMM1</background>
       <background>background\tstMM3</background>
+      <background>background\tstMM4Wily4</background>
     </backgrounds>
     <backgrounds name="Menu">
       <background>background\bgStageSelect</background>
@@ -798,6 +801,7 @@
     </rooms>
     <room>rooms\rmInitialStage</room>
     <room>rooms\rmBossRush</room>
+    <room>rooms\rmFInalStage</room>
   </rooms>
   <constants number="33">
     <constant name="megabuster">0</constant>
