@@ -208,10 +208,10 @@
     <instance objName="objSectionBorderTopScreen" x="0" y="448" name="inst_C7B31C38" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSectionBorderBottomScreen" x="0" y="656" name="inst_DE1F49A7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCheckpoint" x="16" y="480" name="inst_B26A3F27" locked="0" code="xx = 127;&#xA;yy = 528;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
-    <instance objName="objSectionArrowDown" x="96" y="448" name="inst_5CF2E91A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSectionArrowDown" x="112" y="448" name="inst_58E6FFEC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSectionArrowDown" x="128" y="448" name="inst_4FAB86DD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSectionArrowDown" x="144" y="448" name="inst_BC5BA568" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSectionArrowDown" x="96" y="432" name="inst_5CF2E91A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSectionArrowDown" x="112" y="432" name="inst_58E6FFEC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSectionArrowDown" x="128" y="432" name="inst_4FAB86DD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSectionArrowDown" x="144" y="432" name="inst_BC5BA568" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWeaponEnergyBig" x="16" y="144" name="inst_792EECE9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWeaponEnergyBig" x="224" y="144" name="inst_05A0D460" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objETank" x="208" y="48" name="inst_571799A1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
