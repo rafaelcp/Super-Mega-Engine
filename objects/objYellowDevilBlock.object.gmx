@@ -32,14 +32,14 @@ enum block_states {MOVING, FIT, UNFIT, IDLE};
 
 current_state = block_states.MOVING;
 
-spd = 4;
+spd = 5;
 
 col = 0;
 row = 0;
 xpos = 0;
 ypos = 0;
 
-delay = 1;
+delay = 0.5;
 </string>
           </argument>
         </arguments>

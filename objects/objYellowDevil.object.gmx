@@ -37,7 +37,7 @@ offsetX = 16 + 12;
 offsetY = 16 * 5 - 8;
 
 blocks = 19;
-block_delay = 1;    //Interval between blocks, in seconds
+block_delay = 0.5;    //Interval between blocks, in seconds
 
 //First column
 blockX[0] = 0;
