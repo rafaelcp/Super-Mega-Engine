@@ -131,6 +131,7 @@ if !global.frozen &amp;&amp; !dead &amp;&amp; isFight
     checkGround();
     gravityCheckGround();
     generalCollision();
+    escapeWall();
     
     if ground {
         moveTimer += 1;

@@ -1,26 +1,25 @@
 /// escapeWall(): avoids getting stuck into walls
 
+amount = 1;
 while !place_free(x, y) {
-    if place_free(x-1, y) {
-        show_debug_message(object_get_name(object_index) + " Stuck: Move 1 pixel to the left");
-        x--;
+    if place_free(x-amount, y) {
+        show_debug_message(object_get_name(object_index) + " Stuck: Move "+string(amount)+" pixel to the left");
+        x -= amount;
     }
-    else if place_free(x+1, y) {
-        show_debug_message(object_get_name(object_index) + " Stuck: Move 1 pixel to the right");
-        x++;
+    else if place_free(x+amount, y) {
+        show_debug_message(object_get_name(object_index) + " Stuck: Move "+string(amount)+" pixel to the right");
+        x += amount;
     }
-    else if place_free(x, y-1) {
-        show_debug_message(object_get_name(object_index) + " Stuck: Move 1 pixel up");
-        y--;
+    else if place_free(x, y-amount) {
+        show_debug_message(object_get_name(object_index) + " Stuck: Move "+string(amount)+" pixel up");
+        y -= amount;
     }
-    else if place_free(x, y+1) {
-        show_debug_message(object_get_name(object_index) + " Stuck: Move 1 pixel down");
-        y++;
+    else if place_free(x, y+amount) {
+        show_debug_message(object_get_name(object_index) + " Stuck: Move "+string(amount)+" pixel down");
+        y += amount;
     }
     else {
-        show_debug_message(object_get_name(object_index) + " Stuck: Nowhere to go! Let's try to keep moving forward.");
-        x += sign(image_xscale);
-        break;
+        amount++;
     }
 }
 
