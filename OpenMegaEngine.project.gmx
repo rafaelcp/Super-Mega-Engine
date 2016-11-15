@@ -257,6 +257,7 @@
     </sprites>
     <sprites name="Boss">
       <sprite>sprites\sprBossDoor</sprite>
+      <sprite>sprites\sprBossHalfDoor</sprite>
       <sprite>sprites\sprBossDoorH</sprite>
       <sprites name="Pharaoh">
         <sprite>sprites\sprPharaohmask</sprite>

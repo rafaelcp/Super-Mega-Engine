@@ -39,6 +39,8 @@ image_speed = 0;
 
 alarm[0] = 1;
 
+halfDoor = false;   //Whether to use just half the door
+
 mySolid = -1;
 </string>
           </argument>
@@ -62,7 +64,7 @@ mySolid = -1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if dir == -1 &amp;&amp; canOpen {
+            <string>if dir == -1 &amp;&amp; canOpen &amp;&amp; !halfDoor {
     mySolid = instance_create(x+16, y, objSolid);
     mySolid.image_yscale = 4;
 }
@@ -92,7 +94,10 @@ else {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if canOpen {
+            <string>if halfDoor {
+    sprite_index = sprBossHalfDoor;
+}
+if canOpen {
     if mySolid &gt; -1 {
         if dir == -1 {
             mySolid.x = x+16;
@@ -101,13 +106,11 @@ else {
             mySolid.x = x;
         }
     }
-    if instance_exists(objMegaman)
-    {
+    if instance_exists(objMegaman) {
         //Colliding with the player. We're checking x+7 because in the NES games, the player needs to be slightly inside the door
         //for it to activate.
         if (collision_rectangle(x+7, y, x+7, y+sprite_height, objMegaman, false, false) &amp;&amp; dir == -1)
-        || (collision_rectangle(x+sprite_width-7, y, x+sprite_width-7, y+sprite_height, objMegaman, false, false) &amp;&amp; dir == 1)
-        {
+        || (collision_rectangle(x+sprite_width-7, y, x+sprite_width-7, y+sprite_height, objMegaman, false, false) &amp;&amp; dir == 1) {
             canOpen = false;
             opening = true;
             image_speed = openImgSpeed;
@@ -133,10 +136,8 @@ else {
                     alarm[2] = 1;
                 }
             }
-            else //Switch to the left
-            {
-                with objMegaman
-                {
+            else { //Switch to the left
+                with objMegaman {
                     instance_activate_object(objSectionBorderLeft);
                     instance_activate_object(objSectionBorderRight);
                     instance_activate_object(objSectionBorderTop);
@@ -155,35 +156,34 @@ else {
     }
 }
 
-if opening == true
-{
-    if floor(image_index) == 4
-    {
+if opening {
+    if floor(image_index) == 4 {
         image_index = 4;
         image_speed = 0;
     }
 }
 
-if closing == true
-{
+if closing {
     image_speed = openImgSpeed;
-    if floor(image_index) == 8
-    {
+    if floor(image_index) == 8 {
         image_index = 8;
         
-        if dir == -1
-        {
-            mySolid = instance_create(x+16, y, objSolid);
+        if !halfDoor {
+            if dir == -1 {
+                mySolid = instance_create(x+16, y, objSolid);
                 mySolid.image_yscale = 4;
+            }
+            else {
+                mySolid = instance_create(x, y, objSolid);
+                mySolid.image_yscale = 4;
+            }
         }
-        else
-        {
-            mySolid = instance_create(x, y, objSolid);
+        else {
+                mySolid = instance_create(x, y, objSolid);
                 mySolid.image_yscale = 4;
         }
             
-        with objSectionSwitcher
-        {
+        with objSectionSwitcher {
             global.frozen = false;
             objMegaman.visible = true;
             instance_destroy();
