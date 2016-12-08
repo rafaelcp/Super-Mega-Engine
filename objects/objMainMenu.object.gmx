@@ -50,6 +50,8 @@ if cfgEnableKeyConfig {
     current_item++;
 }
 
+menu[current_item] = "BACK";
+
 num_menu_items = array_length_1d(menu);
 
 selected = 0;
@@ -90,11 +92,11 @@ else if global.keyDownPressed || global.keySelectPressed {
     playSFX(sfxMenuMove);
 }
 else if global.keyPausePressed || global.keyJumpPressed || global.keyShootPressed {
+    playSFX(sfxMenuSelect);            
+    var ID = instance_create(0, 0, objFadeout);
+    ID.type = "room";
     switch menu[selected] {
         case "NEW GAME":
-            playSFX(sfxMenuSelect);            
-            var ID = instance_create(0, 0, objFadeout);
-            ID.type = "room";
             if cfgInitialStage &gt; -1 {
                 ID.myRoom = cfgInitialStage;
             }
@@ -102,6 +104,11 @@ else if global.keyPausePressed || global.keyJumpPressed || global.keyShootPresse
                 ID.myRoom = rmStageSelect;
             }        
         break;
+        case "BACK":
+            ID.myRoom = rmDisclaimer;        
+        break;
+        default:
+            ID.myRoom = room;
     }
 }
 </string>

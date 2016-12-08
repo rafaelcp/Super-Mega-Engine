@@ -40,6 +40,8 @@ RELATED CONTENT
 THE OPEN MEGA ENGINE IS AN
 OPEN SOURCE SOFTWARE BASED
 ON THE WORK OF WRECKINGPROGRAMS.";
+
+stopAllSFX();
 </string>
           </argument>
         </arguments>

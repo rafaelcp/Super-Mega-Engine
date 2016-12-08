@@ -842,8 +842,8 @@
     <constant name="cfgInitialStage">-1</constant>
     <constant name="cfgShader">noone</constant>
     <constant name="cfgEnableKeyConfig">true</constant>
-    <constant name="cfgEnableSaving">false</constant>
-    <constant name="cfgEnablePasswords">false</constant>
+    <constant name="cfgEnableSaving">true</constant>
+    <constant name="cfgEnablePasswords">true</constant>
     <constant name="life">0</constant>
     <constant name="etank">1</constant>
     <constant name="wtank">2</constant>
