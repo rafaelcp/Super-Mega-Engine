@@ -446,11 +446,10 @@ if global.enableSlide == true
     
     
     //While sliding
-    if isSlide == true
-    {
+    if isSlide {
         isStep = false;
         canInitStep = false;
-        slideTimer += 1;
+        slideTimer++;
         
         var canProceed;
         canProceed = true;
@@ -479,8 +478,7 @@ if global.enableSlide == true
                     canProceed = false;
             }
             
-            if canProceed == true
-            {
+            if canProceed {
                 if global.keyLeft && !global.keyRight
                 {
                     image_xscale = -1;
@@ -501,9 +499,8 @@ if global.enableSlide == true
         }
         
         
-        if canProceed == false
-        {
-            if ground == false || (global.keyLeft && !global.keyRight && image_xscale == 1)
+        if !canProceed {
+            if !ground || (global.keyLeft && !global.keyRight && image_xscale == 1)
             || (global.keyRight && !global.keyLeft && image_xscale == -1)
             || slideTimer >= slideFrames || (global.keyJumpPressed && !global.keyDown)
             || place_meeting(x+image_xscale*3, y, objSolid) || place_meeting(x+image_xscale*3, y, prtMovingPlatformSolid)
@@ -511,7 +508,7 @@ if global.enableSlide == true
                 var stopSld;
                 stopSld = true;
                 
-                if ground == false || (global.keyLeft && !global.keyRight && image_xscale == 1)
+                if !ground || (global.keyLeft && !global.keyRight && image_xscale == 1)
                 || (global.keyRight && !global.keyLeft && image_xscale == -1)
                 || slideTimer >= slideFrames || (global.keyJumpPressed && !global.keyDown)
                 || place_meeting(x+image_xscale*3, y, objSolid)
@@ -524,8 +521,7 @@ if global.enableSlide == true
                         stopSld = false;
                 }
                 
-                if stopSld == true
-                {
+                if stopSld {
                     isSlide = false;
                     canMove = true;
                     canSpriteChange = true;

@@ -88,6 +88,13 @@ instance_destroy();
             <kind>1</kind>
             <string>///UNFIT
 current_state = block_states.UNFIT;
+
+/// Throw next block
+with objYellowDevilBlock {
+    if block_id == other.block_id + 1 &amp;&amp; current_state == block_states.IDLE &amp;&amp; image_xscale == other.image_xscale {
+        alarm[0] = room_speed * delay;
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -124,7 +131,7 @@ current_state = block_states.UNFIT;
                 image_index = 0;
                 image_xscale *= -1;
                 current_state = block_states.IDLE;
-                alarm[0] = room_speed * (19 * delay + 1); 
+                //alarm[0] = room_speed * (19 * delay + 1); 
                 mustOpen = true;
                 with objYellowDevilBlock {
                     if current_state != block_states.IDLE {

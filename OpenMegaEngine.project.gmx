@@ -74,6 +74,7 @@
       <sound>sound\bgmWilyFinalBoss4</sound>
       <sound>sound\bgmWilyBoss1</sound>
       <sound>sound\bgmWilyCastle1</sound>
+      <sound>sound\bgmMainMenu</sound>
     </sounds>
   </sounds>
   <sprites name="sprites">
@@ -438,6 +439,7 @@
       <background>background\bgWeaponGet</background>
       <background>background\bgShop</background>
       <background>background\bgFortress</background>
+      <background>background\bgMainMenu</background>
     </backgrounds>
     <backgrounds name="Cutscenes">
       <background>background\bgCity</background>
@@ -558,6 +560,7 @@
     </scripts>
     <scripts name="Debug">
       <script>scripts\assert.gml</script>
+      <script>scripts\print.gml</script>
     </scripts>
     <scripts name="Cutscenes">
       <script>scripts\changeScene.gml</script>
@@ -752,6 +755,7 @@
       <object>objects\objShop</object>
       <object>objects\objMapDrawer</object>
       <object>objects\objFortress</object>
+      <object>objects\objMainMenu</object>
     </objects>
     <objects name="Sections">
       <object>objects\objSectionBorderLeftScreen</object>
@@ -804,6 +808,7 @@
       <room>rooms\rmIntroduction</room>
       <room>rooms\rmWeaponGet</room>
       <room>rooms\rmPass</room>
+      <room>rooms\rmMainMenu</room>
       <room>rooms\rmShop</room>
     </rooms>
     <room>rooms\rmInitialStage</room>
@@ -811,7 +816,7 @@
     <room>rooms\rmBossRush</room>
     <room>rooms\rmFinalStage</room>
   </rooms>
-  <constants number="33">
+  <constants number="36">
     <constant name="megabuster">0</constant>
     <constant name="silvertomahawk">1</constant>
     <constant name="windstorm">2</constant>
@@ -836,6 +841,9 @@
     <constant name="cfgShotSplash">false</constant>
     <constant name="cfgInitialStage">-1</constant>
     <constant name="cfgShader">noone</constant>
+    <constant name="cfgEnableKeyConfig">true</constant>
+    <constant name="cfgEnableSaving">false</constant>
+    <constant name="cfgEnablePasswords">false</constant>
     <constant name="life">0</constant>
     <constant name="etank">1</constant>
     <constant name="wtank">2</constant>

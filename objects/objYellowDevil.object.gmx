@@ -145,9 +145,9 @@ depth--;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>current_state = yd_states.CLOSING;
+            <string>/// Close eye
+current_state = yd_states.CLOSING;
 show_debug_message("CLOSING");
-
 </string>
           </argument>
         </arguments>
@@ -170,7 +170,8 @@ show_debug_message("CLOSING");
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var block_id = instance_number(objYellowDevilBlock);
+            <string>/// Create block
+var block_id = instance_number(objYellowDevilBlock);
 var block = instance_create(view_xview[0] - 100, view_yview[0] + blockY[block_id] * 16 + offsetY, objYellowDevilBlock);
 block.block_id = block_id;
 block.col = blockX[block_id];
@@ -216,18 +217,18 @@ if isFight &amp;&amp; !global.frozen {
             //canHit = false;
             mustOpen = (instance_number(objYellowDevilBlock) == blocks);
             with objYellowDevilBlock {
-                if current_state != block_states.IDLE {
+                if other.alarm[2] &gt; 0 || current_state != block_states.IDLE {
                     other.mustOpen = false;
                 }
             }
             if mustOpen {
                 if image_xscale == -1 {
-                    x = view_xview[0] + view_wview[0] - 16 * 5 + random(8) - 4;
+                    x = view_xview[0] + view_wview[0] - 16 * 5 + random(4) - 2;
                 }
                 else {
-                    x = view_xview[0] + 16 * 5 + random(8) - 4;
+                    x = view_xview[0] + 16 * 5 + random(4) - 2;
                 }
-                y = view_yview[0] + view_hview[0] - 16 * 9 + random(16) - 8;
+                y = view_yview[0] + view_hview[0] - 16 * 9 + random(4) - 2;
                 current_state = yd_states.OPENING;
                 image_index = 2.9;
                 show_debug_message("OPENING");
@@ -260,8 +261,13 @@ if isFight &amp;&amp; !global.frozen {
                 current_state = yd_states.CLOSED;
                 image_xscale *= -1;
                 y = view_yview[0] - 16;
-                alarm[9] = -1;
                 drawHitSpark = false;
+                alarm[9] = -1;
+                with objYellowDevilBlock {
+                    if block_id == 0 {
+                        alarm[0] = room_speed * delay;
+                    }
+                }
                 instance_deactivate_object(self);
             }
         break;
@@ -273,6 +279,9 @@ else {
     }
     if alarm[1] &gt; 0 {
         alarm[1]++;
+    }
+    if alarm[2] &gt; 0 {
+        alarm[2]++;
     }
 }
 </string>

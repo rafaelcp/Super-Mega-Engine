@@ -25,41 +25,34 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>playMusicNoLoopVolume(bgmTitleScreen, 0.55);
+            <string>draw_set_color(c_white);
+draw_set_font(global.MM3font);
+draw_set_valign(fa_top);
+draw_set_halign(fa_center);
 
-drawText = false;
-drawTextTimer = 0;
-drawTextTimerMax = 25;
-canProceed = true;
+playMusicVolume(bgmMainMenu, 0.7);
 
-alarm[0] = room_speed * 23;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Go back to the game opening
+menu[0] = "NEW GAME";
+var current_item = 1;
 
-var fade = instance_create(0,0,objFadeout);
-fade.type = "room";
-fade.myRoom = rmOpening;
+if cfgEnableSaving {
+    menu[current_item] = "LOAD GAME";
+    current_item++;
+}
+
+if cfgEnablePasswords {
+    menu[current_item] = "PASSWORD";
+    current_item++;
+}
+
+if cfgEnableKeyConfig {
+    menu[current_item] = "KEY CONFIG";
+    current_item++;
+}
+
+num_menu_items = array_length_1d(menu);
+
+selected = 0;
 </string>
           </argument>
         </arguments>
@@ -82,33 +75,33 @@ fade.myRoom = rmOpening;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Timer for toggling the visibility of the "PRESS THE SPACE BAR" text
-if canProceed {
-    drawTextTimer += 1;
-    if drawTextTimer &gt;= drawTextTimerMax {
-        drawTextTimer = 0;
-        drawText = !drawText;
+            <string>if global.keyUpPressed {
+    selected--;
+    if selected &lt; 0 {
+        selected = num_menu_items - 1;
     }
+    playSFX(sfxMenuMove);
 }
-
-//Going to the stage select (or initial stage)
-if global.keyPausePressed &amp;&amp; canProceed {
-    canProceed = false;
-    drawText = false;
-    playSFX(sfxMenuSelect);
-    
-    var ID = instance_create(0, 0, objFadeout);
-    ID.type = "room";
-    if !cfgEnableSaving &amp;&amp; !cfgEnablePasswords &amp;&amp; !cfgEnableKeyConfig {
-        if cfgInitialStage &gt; -1 {
-            ID.myRoom = cfgInitialStage;
-        }
-        else {
-            ID.myRoom = rmStageSelect;
-        }
+else if global.keyDownPressed || global.keySelectPressed {
+    selected++;
+    if selected &gt;= num_menu_items {
+        selected = 0;
     }
-    else {
-        ID.myRoom = rmMainMenu;
+    playSFX(sfxMenuMove);
+}
+else if global.keyPausePressed || global.keyJumpPressed || global.keyShootPressed {
+    switch menu[selected] {
+        case "NEW GAME":
+            playSFX(sfxMenuSelect);            
+            var ID = instance_create(0, 0, objFadeout);
+            ID.type = "room";
+            if cfgInitialStage &gt; -1 {
+                ID.myRoom = cfgInitialStage;
+            }
+            else {
+                ID.myRoom = rmStageSelect;
+            }        
+        break;
     }
 }
 </string>
@@ -133,25 +126,21 @@ if global.keyPausePressed &amp;&amp; canProceed {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite(sprLogo, 0, round(room_width / 2), round(room_height / 2) - 55);
+            <string>draw_set_halign(fa_center);
 
+draw_text(room_width / 2, 30, "GAME MENU");
 
-var oldCol;
-oldCol = draw_get_color();
-draw_set_color(c_white);
-draw_set_font(global.MM3font);
-draw_set_valign(fa_top);
-draw_set_halign(fa_center);
+var initial_y = 60;
+var vspace = 16;
+var left = room_width / 3;
 
-draw_text(round(room_width/2), room_height-30, "OPEN SOURCE SOFTWARE#MAINTAINED BY THE MEGA MAN FANDOM");
+draw_set_halign(fa_left);
 
-if drawText {
-    draw_text(round(room_width/2), 125, "PRESS START");
+for (var i = 0; i &lt; num_menu_items; i++) {
+    draw_text(left, i * vspace + initial_y, menu[i]);
 }
 
-
-draw_set_color(oldCol);
-draw_set_halign(fa_left);
+draw_sprite(sprPassArrow, 0, left - 10, selected * vspace + initial_y + 3);
 </string>
           </argument>
         </arguments>
