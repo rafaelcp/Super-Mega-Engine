@@ -146,6 +146,9 @@ global.screen_shaders[7] = shBlueish;
 global.num_screen_shaders = array_length_1d(global.screen_shaders);
 global.current_screen_shader = 0;
 
+global.passPlayVictory = false;
+global.lastSave = 0;
+
 if cfgDebug || debug_mode {
     show_debug_overlay(true);
 }

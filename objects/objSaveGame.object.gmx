@@ -25,38 +25,18 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_color(c_white);
-draw_set_font(global.MM3font);
-draw_set_valign(fa_top);
-draw_set_halign(fa_center);
+            <string>var max_saves = 3;
 
-if !audio_is_playing(bgmMainMenu) {
-    playMusicVolume(bgmMainMenu, 0.7);
+var map;
+
+for (var i = 0; i &lt; max_saves; i++) {
+    map  = ds_map_secure_load("save" + string(i) + ".dat");
+    saves[i] = map;
 }
 
-menu[0] = "NEW GAME";
-var current_item = 1;
+num_saves = array_length_1d(saves);
 
-if cfgEnableSaving {
-    menu[current_item] = "LOAD GAME";
-    current_item++;
-}
-
-if cfgEnablePasswords {
-    menu[current_item] = "PASSWORD";
-    current_item++;
-}
-
-if cfgEnableKeyConfig {
-    menu[current_item] = "KEY CONFIG";
-    current_item++;
-}
-
-menu[current_item] = "BACK";
-
-num_menu_items = array_length_1d(menu);
-
-selected = 0;
+selected = global.lastSave;
 </string>
           </argument>
         </arguments>
@@ -82,39 +62,32 @@ selected = 0;
             <string>if global.keyUpPressed {
     selected--;
     if selected &lt; 0 {
-        selected = num_menu_items - 1;
+        selected = num_saves;
     }
     playSFX(sfxMenuMove);
 }
 else if global.keyDownPressed || global.keySelectPressed {
     selected++;
-    if selected &gt;= num_menu_items {
+    if selected &gt; num_saves {
         selected = 0;
     }
     playSFX(sfxMenuMove);
 }
 else if global.keyPausePressed || global.keyJumpPressed || global.keyShootPressed {
-    playSFX(sfxMenuSelect);            
-    var ID = instance_create(0, 0, objFadeout);
-    ID.type = "room";
-    switch menu[selected] {
-        case "NEW GAME":
-            if cfgInitialStage &gt; -1 {
-                ID.myRoom = cfgInitialStage;
-            }
-            else {
-                ID.myRoom = rmStageSelect;
-            }        
-        break;
-        case "LOAD GAME":
-            ID.myRoom = rmLoadGame;
-        break;
-        case "BACK":
-            ID.myRoom = rmDisclaimer;
-        break;
-        default:
-            ID.myRoom = room;
+
+    playSFX(sfxMenuSelect);
+    if selected == num_saves {  //Back?
+        var ID = instance_create(0, 0, objFadeout);
+        ID.type = "room";
+        ID.myRoom = rmPass;
     }
+    else {
+        saveGame(selected);        
+        global.lastSave = selected;
+        saves[selected] = ds_map_secure_load("save" + string(selected) + ".dat");
+    }
+
+
 }
 </string>
           </argument>
@@ -138,21 +111,19 @@ else if global.keyPausePressed || global.keyJumpPressed || global.keyShootPresse
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_halign(fa_center);
-
-draw_text(room_width / 2, 30, "GAME MENU");
-
-var initial_y = 60;
-var vspace = 16;
-var left = room_width / 3;
-
-draw_set_halign(fa_left);
-
-for (var i = 0; i &lt; num_menu_items; i++) {
-    draw_text(left, i * vspace + initial_y, menu[i]);
+            <string>for (var i = 0; i &lt; num_saves; i++) {
+    drawSave(i, saves[i], selected == i);
 }
 
-draw_sprite(sprPassArrow, 0, left - 10, selected * vspace + initial_y + 3);
+if selected == num_saves {
+    draw_set_colour(c_white);
+}
+else {
+    draw_set_colour(c_gray);
+}
+
+draw_set_halign(fa_center);
+draw_text(room_width / 2, room_height - 40, "BACK");
 </string>
           </argument>
         </arguments>

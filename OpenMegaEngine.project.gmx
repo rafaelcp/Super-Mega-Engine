@@ -519,6 +519,7 @@
       <script>scripts\loadGame.gml</script>
       <script>scripts\make_password.gml</script>
       <script>scripts\draw_password.gml</script>
+      <script>scripts\drawSave.gml</script>
     </scripts>
     <scripts name="Numbers">
       <script>scripts\base_convert.gml</script>
@@ -756,6 +757,8 @@
       <object>objects\objMapDrawer</object>
       <object>objects\objFortress</object>
       <object>objects\objMainMenu</object>
+      <object>objects\objLoadGame</object>
+      <object>objects\objSaveGame</object>
     </objects>
     <objects name="Sections">
       <object>objects\objSectionBorderLeftScreen</object>
@@ -809,6 +812,8 @@
       <room>rooms\rmWeaponGet</room>
       <room>rooms\rmPass</room>
       <room>rooms\rmMainMenu</room>
+      <room>rooms\rmLoadGame</room>
+      <room>rooms\rmSaveGame</room>
       <room>rooms\rmShop</room>
     </rooms>
     <room>rooms\rmInitialStage</room>

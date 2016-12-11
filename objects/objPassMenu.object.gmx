@@ -39,15 +39,18 @@ if global._lives &lt; 0 {
     global._lives = 2;
     gameOver = true;
     canSelectOption = false;
-    playMusicNoLoopVolume(bgmGameOver, 1);
+    if !audio_is_playing(bgmGameOver) {
+        playMusicNoLoopVolume(bgmGameOver, 1);
+    }
     alarm[0] = 240;
 }
 else {
     gameOver = false;
     canSelectOption = true;
     
-    if global.passPlayVictory
+    if global.passPlayVictory &amp;&amp; !audio_is_playing(bgmWeaponGet) {
         playMusicVolume(bgmWeaponGet, 1);
+    }
 }
     
 var i;
@@ -101,29 +104,40 @@ playMusicVolume(bgmPassScreen, 1);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if canSelectOption == true
-{
-    if selectedOption == false
-    {
-        if global.keyUpPressed || global.keyDownPressed
-        {
-            option = !option;
+            <string>if canSelectOption {
+    if !selectedOption {
+        var lastOption = 1;
+        if cfgEnableSaving {
+            lastOption = 2;
+        }
+        if global.keyUpPressed {
+            option--;
+            if option &lt; 0 {
+                option = lastOption;
+            }
+            playSFX(sfxMenuMove);
+        }
+        if global.keySelectPressed || global.keyDownPressed {
+            option++;
+            if option &gt; lastOption {
+                option = 0;
+            }
             playSFX(sfxMenuMove);
         }
         
-        if global.keyJumpPressed || global.keyShootPressed || global.keyPausePressed
-        {
+        if global.keyJumpPressed || global.keyShootPressed || global.keyPausePressed {
             selectedOption = true;
             playSFX(sfxMenuSelect);
             
-            var ID;
-            ID = instance_create(x, y, objFadeout);
-                ID.type = "room";
+            var ID = instance_create(x, y, objFadeout);
+            ID.type = "room";
             
             if option == 0
                 ID.myRoom = rmStageSelect;
-            else
+            else if option == 1
                 ID.myRoom = global.passContinueRoom;
+            else
+                ID.myRoom = rmSaveGame;
         }
     }
 }
@@ -150,22 +164,32 @@ playMusicVolume(bgmPassScreen, 1);
           <argument>
             <kind>1</kind>
             <string>var xx, yy1, yy2;
-xx = 78;
-yy1 = 171;
-yy2 = yy1 + 16;
+var xx = 78;
+var yy1 = 165;
+var yy2 = yy1 + 16;
+var yy3 = yy2 + 16;
 
-draw_sprite(sprPassText, !canSelectOption, 88, 164); //1 when game over, 0 otherwise
+draw_sprite(sprPassText, !canSelectOption, xx + 10, yy1 - 7); //1 when game over, 0 otherwise
 
-if canSelectOption == true
-{
+if canSelectOption {
     if option == 0
         draw_sprite(sprPassArrow, 0, xx, yy1);
-    else
+    else if option == 1
         draw_sprite(sprPassArrow, 0, xx, yy2);
+    else
+        draw_sprite(sprPassArrow, 0, xx, yy3);
+    if cfgEnableSaving {
+        draw_set_colour(c_white);
+        draw_set_font(global.MM3font);
+        draw_set_halign(fa_left);
+        draw_text(xx + 10, yy3 - 3, "SAVE GAME");
+    }
 }
 
-draw_password(pass);
 
+if cfgEnablePasswords {
+    draw_password(pass);
+}
 </string>
           </argument>
         </arguments>
