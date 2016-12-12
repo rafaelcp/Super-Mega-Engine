@@ -1,4 +1,4 @@
-//assert(condition, [msg])
+/// assert(condition, [msg])
 if cfgDebug || debug_mode {
     var condition = argument0;
     if !condition {

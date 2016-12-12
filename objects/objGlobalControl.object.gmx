@@ -267,6 +267,8 @@ if keyboard_check_pressed(vk_f4)
 if keyboard_check_pressed(vk_escape)
     game_end();
     
+
+if keyboard_check_pressed(vk_f6) debug_password();
 if keyboard_check_pressed(vk_f7) saveGame(0);
 if keyboard_check_pressed(vk_f8) loadGame(0);
 if keyboard_check_pressed(vk_f11) with objMegaman grav *= -1;

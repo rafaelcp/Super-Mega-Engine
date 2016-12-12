@@ -175,6 +175,8 @@ else {
     if alarm[1] &gt; 0 {
         alarm[1]++;
     }
+    hspeed = 0;
+    image_speed = 0;
 }
 </string>
           </argument>

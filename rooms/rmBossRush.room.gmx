@@ -371,7 +371,7 @@
     <instance objName="objSolid" x="256" y="464" name="inst_5975C94B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="256" y="448" name="inst_2A682D45" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBossControl" x="256" y="448" name="inst_098E3D78" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objBigEyeBoss" x="480" y="624" name="inst_E6EB3F86" locked="0" code="col = 0;&#xA;contactDamage = 4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objBigEyeBoss" x="464" y="624" name="inst_E6EB3F86" locked="0" code="col = 0;&#xA;contactDamage = 4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSectionBorderRightScreen" x="240" y="448" name="inst_5BF2FD61" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="496" y="640" name="inst_209B719C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="496" y="624" name="inst_03010FE2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

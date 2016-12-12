@@ -165,7 +165,7 @@ playMusicVolume(bgmPassScreen, 1);
             <kind>1</kind>
             <string>var xx, yy1, yy2;
 var xx = 78;
-var yy1 = 165;
+var yy1 = 174;
 var yy2 = yy1 + 16;
 var yy3 = yy2 + 16;
 
