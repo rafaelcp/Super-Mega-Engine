@@ -75,6 +75,7 @@
       <sound>sound\bgmWilyBoss1</sound>
       <sound>sound\bgmWilyCastle1</sound>
       <sound>sound\bgmMainMenu</sound>
+      <sound>sound\bgmBeatFinalBoss</sound>
     </sounds>
   </sounds>
   <sprites name="sprites">

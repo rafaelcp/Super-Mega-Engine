@@ -171,7 +171,14 @@ with objMegaman instance_destroy();
             <string>/// Lock movement and play music
 
 playerLockMovement();
-playMusicNoLoop(bgmVictory);
+
+if global.fortressStarted &amp;&amp; global.fortressLevels[global.currentFortressLevel] == room &amp;&amp;
+global.currentFortressLevel &gt;= global.numFortressLevels - 1 {
+    playMusicNoLoop(bgmBeatFinalBoss);
+}
+else {
+    playMusicNoLoop(bgmVictory);
+}
 with objMegaman event_user(0); //Resets the colors, so charging the buster won't affect the colors
 
 alarm[1] = 270;

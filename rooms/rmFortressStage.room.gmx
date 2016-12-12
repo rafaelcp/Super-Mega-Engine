@@ -265,7 +265,7 @@
     <instance objName="objSolid" x="720" y="160" name="inst_1BA43AFC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="720" y="176" name="inst_E127133D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="720" y="192" name="inst_8C4B7BE9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objBigEye" x="288" y="144" name="inst_7D28ABC3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objBigEye" x="288" y="144" name="inst_7D28ABC3" locked="0" code="col = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSuzi" x="320" y="64" name="inst_79548260" locked="0" code="dir = &quot;ver&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBeak" x="304" y="48" name="inst_C37FF448" locked="0" code="dir = -1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMM1Met" x="224" y="176" name="inst_46CA67BC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
