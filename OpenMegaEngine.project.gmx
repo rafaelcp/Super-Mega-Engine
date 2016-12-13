@@ -370,6 +370,7 @@
         <sprite>sprites\sprPassText</sprite>
         <sprite>sprites\bluedot</sprite>
         <sprite>sprites\reddot</sprite>
+        <sprite>sprites\sprPassCursor</sprite>
       </sprites>
       <sprites name="WeaponGet">
         <sprite>sprites\sprMegamanWeaponGetTeleport</sprite>
@@ -514,6 +515,7 @@
       <script>scripts\split.gml</script>
       <script>scripts\string_lpad.gml</script>
       <script>scripts\string_break.gml</script>
+      <script>scripts\string_replace_at.gml</script>
     </scripts>
     <scripts name="Saving">
       <script>scripts\saveGame.gml</script>
@@ -755,6 +757,7 @@
     <objects name="Menu">
       <object>objects\objPauseMenu</object>
       <object>objects\objPassMenu</object>
+      <object>objects\objPassInput</object>
       <object>objects\objWeaponGet</object>
       <object>objects\objStageSelect</object>
       <object>objects\objIntroduction</object>
@@ -818,6 +821,7 @@
       <room>rooms\rmIntroduction</room>
       <room>rooms\rmWeaponGet</room>
       <room>rooms\rmPass</room>
+      <room>rooms\rmPassInput</room>
       <room>rooms\rmMainMenu</room>
       <room>rooms\rmLoadGame</room>
       <room>rooms\rmSaveGame</room>

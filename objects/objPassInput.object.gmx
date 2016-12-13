@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-1000</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,38 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_color(c_white);
-draw_set_font(global.MM3font);
-draw_set_valign(fa_top);
-draw_set_halign(fa_center);
-
-if !audio_is_playing(bgmMainMenu) {
-    playMusicVolume(bgmMainMenu, 0.7);
+            <string>row = 0;
+col = 0;
+color = 0;
+password = string_repeat("0", 64);
+if !audio_is_playing(bgmPassScreen) {
+    playMusicVolume(bgmPassScreen, 1);
 }
-
-menu[0] = "NEW GAME";
-var current_item = 1;
-
-if cfgEnableSaving {
-    menu[current_item] = "LOAD GAME";
-    current_item++;
-}
-
-if cfgEnablePasswords {
-    menu[current_item] = "PASSWORD";
-    current_item++;
-}
-
-if cfgEnableKeyConfig {
-    menu[current_item] = "KEY CONFIG";
-    current_item++;
-}
-
-menu[current_item] = "BACK";
-
-num_menu_items = array_length_1d(menu);
-
-selected = 0;
 </string>
           </argument>
         </arguments>
@@ -79,44 +54,59 @@ selected = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.keyUpPressed {
-    selected--;
-    if selected &lt; 0 {
-        selected = num_menu_items - 1;
+            <string>if global.keyRightPressed {
+    col++;
+    if col &gt; 7 {
+        col = 0;
     }
-    playSFX(sfxMenuMove);
 }
-else if global.keyDownPressed || global.keySelectPressed {
-    selected++;
-    if selected &gt;= num_menu_items {
-        selected = 0;
+if global.keyLeftPressed {
+    col--;
+    if col &lt; 0 {
+        col = 7;
     }
-    playSFX(sfxMenuMove);
 }
-else if global.keyPausePressed || global.keyJumpPressed || global.keyShootPressed {
-    playSFX(sfxMenuSelect);            
-    var ID = instance_create(0, 0, objFadeout);
+if global.keyUpPressed {
+    row--;
+    if row &lt; 0 {
+        row = 7;
+    }
+}
+if global.keyDownPressed {
+    row++;
+    if row &gt; 7 {
+        row = 0;
+    }
+}
+if global.keyShootPressed { //Toggle marble
+    var pos = row * 8 + col + 1;
+    var value = string_char_at(password, pos);
+    if value == "0" {
+        password = string_replace_at(password, pos, color + 1);
+    }
+    else {
+        password = string_replace_at(password, pos, "0");
+    }
+}
+if global.keySelectPressed {  //Select marble
+    color = 1 - color;
+    print("Current color:", iif(color == 0, "red", "blue"));
+}
+if global.keyJumpPressed {
+    var ID = instance_create(x, y, objFadeout);
     ID.type = "room";
-    switch menu[selected] {
-        case "NEW GAME":
-            if cfgInitialStage &gt; -1 {
-                ID.myRoom = cfgInitialStage;
-            }
-            else {
-                ID.myRoom = rmStageSelect;
-            }        
-        break;
-        case "LOAD GAME":
-            ID.myRoom = rmLoadGame;
-        break;
-        case "PASSWORD":
-            ID.myRoom = rmPassInput;
-        break;
-        case "BACK":
-            ID.myRoom = rmDisclaimer;
-        break;
-        default:
-            ID.myRoom = room;
+    ID.myRoom = rmMainMenu;
+}
+if global.keyPausePressed { //Finish
+    if check_password(password) {
+        playSFX(sfxMenuSelect);
+        apply_password(password);
+        var ID = instance_create(x, y, objFadeout);
+        ID.type = "room";
+        ID.myRoom = rmStageSelect;    
+    }
+    else {
+        playSFX(sfxError);
     }
 }
 </string>
@@ -141,21 +131,29 @@ else if global.keyPausePressed || global.keyJumpPressed || global.keyShootPresse
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_halign(fa_center);
+            <string>var xx = 78;
+var yy = 174;
 
-draw_text(room_width / 2, 30, "GAME MENU");
-
-var initial_y = 60;
-var vspace = 16;
-var left = room_width / 3;
-
+draw_set_colour(c_white);
+draw_set_font(global.MM3font);
 draw_set_halign(fa_left);
+draw_text(xx + 10, yy, "INPUT PASSWORD");
+draw_set_halign(fa_center);
+draw_text(room_width / 2 + 11, yy + 16, "FIRE: PUT - SELECT: COLOR");
+draw_text(room_width / 2 + 11, yy + 26, "JUMP: BACK - START: END");
 
-for (var i = 0; i &lt; num_menu_items; i++) {
-    draw_text(left, i * vspace + initial_y, menu[i]);
-}
+var posx = 21;
+var posy = 17;
+var size = 16;
+var offset = 3;
 
-draw_sprite(sprPassArrow, 0, left - 10, selected * vspace + initial_y + 3);
+draw_password(password);
+
+//Password cursor
+draw_sprite(sprPassCursor, 0, posx + col * size + offset, posy + row * size + offset);
+
+//Selected color
+draw_sprite(sprPassCursor, 0, posx + (11 + (1 - color)) * size + offset - 2, posy + 1.5 * size + offset + 2);
 </string>
           </argument>
         </arguments>
