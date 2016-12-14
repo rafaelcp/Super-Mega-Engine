@@ -318,10 +318,12 @@ if isStep == true
 
 
 //Allow movement
-if place_free(x+global.xspeed, y)
+if place_free(x+global.xspeed, y) {
     x += global.xspeed;
-if place_free(x, y+global.yspeed)
+}
+if place_free(x, y+global.yspeed) {
     y += global.yspeed;
+}
 
 //Avoids free movement on screen above
 if (!ground && !climbing && !instance_exists(objSectionSwitcher) && sprite_get_bottom() < sectionTop) {
@@ -330,7 +332,7 @@ if (!ground && !climbing && !instance_exists(objSectionSwitcher) && sprite_get_b
 
 
 //Stop movement at section borders
-if canMove && visible {
+if (canMove || isSlide) && visible {
     if x > sectionRight-6 && !place_meeting(x+6, y, objSectionArrowRight) && !place_meeting(x-global.xspeed, y, objSectionArrowRight) {
         x = sectionRight-6;
         global.xspeed = 0;
