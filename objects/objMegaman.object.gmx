@@ -361,7 +361,7 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Change colors depending on the special weapon
+            <string>/// Change colors depending on the special weapon
 //Primary is the helmet color (dark blue), secondary is the shirt color (cyan)
 
 switch global.weapon

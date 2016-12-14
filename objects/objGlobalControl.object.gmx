@@ -122,7 +122,7 @@ if room == rmInit {
 
 
 //When the level starts, all pickups should spawn
-if global.levelStart == true {
+if global.levelStart {
     event_user(0);
     alarm[0] = 1;
 }
@@ -339,7 +339,7 @@ if async_load[? "event_type"] == "gamepad discovered" {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//When starting a level, none of the pickups have been used yet; however, they can be picked up, and shouldn't respawn when the room restarts
+            <string>/// When starting a level, none of the pickups have been used yet; however, they can be picked up, and shouldn't respawn when the room restarts
 //This code makes sure all pickups spawn normally
 var i, totalPickups;
 totalPickups = instance_number(prtPickup);

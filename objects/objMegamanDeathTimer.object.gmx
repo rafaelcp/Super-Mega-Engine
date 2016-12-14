@@ -57,8 +57,10 @@ var ID = instance_create(x, y, objFadeout);
 
 global.lastRoom = room;
 
-if global._lives &gt;= 0
+if global._lives &gt;= 0 {
     ID.type = "restart";
+    global.levelStart = false;
+}
 else {
     ID.type = "room";
     ID.myRoom = rmPass;
