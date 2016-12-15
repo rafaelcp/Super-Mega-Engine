@@ -62,7 +62,8 @@ event_inherited();
 
 if instance_exists(objPharaohShotCharging) {
     if (objMegaman.canMove || objMegaman.climbing) {
-        
+        initChargeTimer = 0;
+        chargeTimer = 0;        
         if objPharaohShotCharging.sprite_index == sprPharaohShotCharging { //Small shot
             event_user(1);
         }
@@ -82,11 +83,16 @@ if instance_exists(objPharaohShotCharging) {
             
         }
         
-        with objPharaohShotCharging instance_destroy();
+            ammo -= chargeConsumption;
+            if ammo &lt;= 0
+                ammo = 0;
+            with objPharaohShotCharging instance_destroy();
     }
+
 }
 else {
     initChargeTimer = 0;
+    chargeTimer = 0;
 }
 </string>
           </argument>
@@ -117,6 +123,7 @@ if !instance_exists(objPharaohShotCharging) {
     if initChargeTimer &gt;= initChargeTime {
         instance_create(objMegaman.x + objMegaman.image_xscale, objMegaman.y - 20, objPharaohShotCharging);
         initChargeTimer = 0;
+        chargeTimer = 1;
     }
 }
 </string>

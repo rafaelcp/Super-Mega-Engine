@@ -8,12 +8,17 @@ if global.totalWeapons < 2 {
 
 //Switching to the left
 if global.keyWeaponSwitchLeftPressed {
+    global.weapons[global.currentWeapon].initChargeTimer = 0;
+    global.weapons[global.currentWeapon].chargeTimer = 0;
     do {
         global.currentWeapon--;
         if global.currentWeapon < 0
             global.currentWeapon = global.totalWeapons - 1;            
     } until global.weapons[global.currentWeapon].unlocked;
     
+    global.weapons[global.currentWeapon].initChargeTimer = 0;
+    global.weapons[global.currentWeapon].chargeTimer = 0;
+
     drawWeaponIcon = true;
     drawWeaponIconTimer = 30;
     
@@ -34,13 +39,17 @@ if global.keyWeaponSwitchLeftPressed {
 
 //Switching to the right
 if global.keyWeaponSwitchRightPressed {
-
+    global.weapons[global.currentWeapon].initChargeTimer = 0;
+    global.weapons[global.currentWeapon].chargeTimer = 0;
     do {
         global.currentWeapon++;
         if global.currentWeapon > global.totalWeapons - 1
             global.currentWeapon = 0;
     } until global.weapons[global.currentWeapon].unlocked;
     
+    global.weapons[global.currentWeapon].initChargeTimer = 0;
+    global.weapons[global.currentWeapon].chargeTimer = 0;
+
     drawWeaponIcon = true;
     drawWeaponIconTimer = 30;
     
@@ -61,8 +70,14 @@ if global.keyWeaponSwitchRightPressed {
 
 //Holding the left and right weapon switch keys at the same time results in the Mega Buster being selected
 if global.keyWeaponSwitchLeft && global.keyWeaponSwitchRight && global.weapon != megabuster {
-    global.currentWeapon = 0;
+    global.weapons[global.currentWeapon].initChargeTimer = 0;
+    global.weapons[global.currentWeapon].chargeTimer = 0;
+
+        global.currentWeapon = 0;
     
+    global.weapons[global.currentWeapon].initChargeTimer = 0;
+    global.weapons[global.currentWeapon].chargeTimer = 0;
+
     drawWeaponIcon = true;
     drawWeaponIconTimer = 30;
     

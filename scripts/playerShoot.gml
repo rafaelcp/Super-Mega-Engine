@@ -87,7 +87,7 @@ else if isThrow { //Throwing weapons, like Pharaoh Shot and Metal Blade
 
 //Charging
 if global.enableCharge {
-    if global.weapon == megabuster && (global.keyShoot || (isSlide && chargeTimer != 0)) {
+    if global.weapon == megabuster && (global.keyShoot || (isSlide && objMegaBusterWeapon.chargeTimer != 0)) {
         with objMegaBusterWeapon event_user(3);
     }
     else if global.weapon == megabuster && !global.keyShoot {      //Release the charge shot
@@ -98,10 +98,10 @@ if global.enableCharge {
 
 //Charging other weapons
 if global.weapons[global.currentWeapon].ammo > 0 {
-    if global.keyShoot {    // Pressing shoot key
+    if global.keyShoot || (isSlide && global.weapons[global.currentWeapon].chargeTimer != 0) {    // Pressing shoot key
         with global.weapons[global.currentWeapon] event_user(3);
     }
-    if global.keyShootReleased {  // Shoot key released
+    if !global.keyShoot && global.weapons[global.currentWeapon].chargeTimer != 0 {  // Shoot key released
         with global.weapons[global.currentWeapon] event_user(4);
     }
 }

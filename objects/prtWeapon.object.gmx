@@ -91,9 +91,10 @@ if objMegaman.climbing {
         box = objMegaman.bbox_left;
 }
 
-ammo -= chargeConsumption;
-if ammo &lt;= 0
-    ammo = 0;
+//chargeTimer = 0;
+//initChargeTimer = 0;
+
+
 </string>
           </argument>
         </arguments>
