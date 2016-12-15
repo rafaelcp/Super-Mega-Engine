@@ -59,6 +59,7 @@ maxshots = cfgMaxNumberOfBusterShots;
 event_inherited();
 
 if (objMegaman.canMove || objMegaman.climbing) &amp;&amp; chargeTimer != 0 {
+  
     objMegaman.isShoot = true;
     objMegaman.shootTimer = 0;
 

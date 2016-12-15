@@ -90,7 +90,7 @@ if global.enableCharge {
     if global.weapon == megabuster && (global.keyShoot || (isSlide && objMegaBusterWeapon.chargeTimer != 0)) {
         with objMegaBusterWeapon event_user(3);
     }
-    else if global.weapon == megabuster && !global.keyShoot {      //Release the charge shot
+    else if global.weapon == megabuster && !global.keyShoot&& global.weapons[global.currentWeapon].chargeTimer != 0 {      //Release the charge shot
         with objMegaBusterWeapon event_user(4); 
     }
 }
