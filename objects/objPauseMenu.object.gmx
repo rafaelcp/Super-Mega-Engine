@@ -229,7 +229,7 @@ if global.keyDownPressed
     loops = 0; //How many times the while-loop has been passed through
     //show_debug_message("Going down from " + string(option));
     
-    while (option &lt; global.totalWeapons &amp;&amp; global.weaponUnlocked[option] == false) || loops == 0 || (option &gt;= global.totalWeapons &amp;&amp; (!global.items[option-global.totalWeapons].usable || !global.items[option-global.totalWeapons].showPause))
+    while (option &lt; global.totalWeapons &amp;&amp; global.weapons[option].unlocked == false) || loops == 0 || (option &gt;= global.totalWeapons &amp;&amp; (!global.items[option-global.totalWeapons].usable || !global.items[option-global.totalWeapons].showPause))
     {
         if option &gt; global.totalWeapons {
             option = 0;
@@ -270,7 +270,7 @@ else if global.keyUpPressed
     var loops;
     loops = 0;
     
-    while (option &lt; global.totalWeapons &amp;&amp; global.weaponUnlocked[option] == false) || loops == 0 || (option &gt;= global.totalWeapons &amp;&amp; (!global.items[option-global.totalWeapons].usable || !global.items[option-global.totalWeapons].showPause))
+    while (option &lt; global.totalWeapons &amp;&amp; global.weapons[option].unlocked == false) || loops == 0 || (option &gt;= global.totalWeapons &amp;&amp; (!global.items[option-global.totalWeapons].usable || !global.items[option-global.totalWeapons].showPause))
     {
         if option == global.totalWeapons+array_length_1d(global.items)-1 //Last item
         {
@@ -344,7 +344,7 @@ if global.keyLeftPressed || global.keyRightPressed
     }
     
     
-    while (option &lt; global.totalWeapons &amp;&amp; global.weaponUnlocked[option] == false) || option &gt; global.totalWeapons+array_length_1d(global.items)-1  || (option &gt;= global.totalWeapons &amp;&amp; (!global.items[option-global.totalWeapons].usable || !global.items[option-global.totalWeapons].showPause))
+    while (option &lt; global.totalWeapons &amp;&amp; global.weapons[option].unlocked == false) || option &gt; global.totalWeapons+array_length_1d(global.items)-1  || (option &gt;= global.totalWeapons &amp;&amp; (!global.items[option-global.totalWeapons].usable || !global.items[option-global.totalWeapons].showPause))
     {
         if option == weapons_per_col
             option = global.totalWeapons-1;
@@ -446,7 +446,7 @@ if (phase &gt;= 1 &amp;&amp; phase &lt;= 3) || phase == 5 || phase == 6
             currX = 144;
             currY = 24;
         }
-        if global.weaponUnlocked[i] == true {
+        if global.weapons[i].unlocked == true {
             //Icon
             if option == i {
                 draw_sprite_ext(sprWeaponIcons, global.weaponSlot[i], view_xview[0]+currX, view_yview[0]+currY, 1, 1, 0, c_white, 1);
@@ -470,7 +470,7 @@ if (phase &gt;= 1 &amp;&amp; phase &lt;= 3) || phase == 5 || phase == 6
             if i == 0
                 ammo = global._health;
             else
-                ammo = ceil(global.ammo[i]);
+                ammo = ceil(global.weapons[i].ammo);
                 
             if option == i
                 draw_sprite_ext(sprPauseMenuBar, ammo, view_xview[0]+currX+32, view_yview[0]+currY+8, 1, 1, 0, c_white, 1);
@@ -488,11 +488,11 @@ if (phase &gt;= 1 &amp;&amp; phase &lt;= 3) || phase == 5 || phase == 6
             if option == i
             {
                 draw_set_color(make_color_rgb(255, 217, 162)); //Light yellow-ish
-                draw_text(view_xview[0]+currX+16+10, view_yview[0]+currY+1, global.weaponName[ global.weaponSlot[i] ]);
+                draw_text(view_xview[0]+currX+16+10, view_yview[0]+currY+1, global.weapons[ global.weaponSlot[i] ].abbrev);
                 draw_set_color(c_white);
             }
             else
-                draw_text(view_xview[0]+currX+16+10, view_yview[0]+currY+1, global.weaponName[ global.weaponSlot[i] ]);
+                draw_text(view_xview[0]+currX+16+10, view_yview[0]+currY+1, global.weapons[ global.weaponSlot[i] ].abbrev);
         }
         currY += 19
     }

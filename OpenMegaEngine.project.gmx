@@ -602,32 +602,42 @@
       <object>objects\objGlobalInit</object>
       <object>objects\objMegaman</object>
       <objects name="Weapons">
+        <object>objects\prtWeapon</object>
         <object>objects\prtPlayerProjectile</object>
         <object>objects\prtShieldWeapon</object>
         <object>objects\objReflectedProjectile</object>
         <object>objects\objBusterShot</object>
         <object>objects\objBusterShotHalfCharged</object>
         <object>objects\objBusterShotCharged</object>
+        <object>objects\objMegaBusterWeapon</object>
         <objects name="Rush">
           <object>objects\prtRush</object>
           <object>objects\objRushCoil</object>
+          <object>objects\objRushCoilWeapon</object>
           <object>objects\objRushJet</object>
+          <object>objects\objRushJetWeapon</object>
         </objects>
         <objects name="MM2">
           <object>objects\objMetalBlade</object>
+          <object>objects\objMetalBladeWeapon</object>
         </objects>
         <objects name="MM4">
           <object>objects\objPharaohShotCharging</object>
           <object>objects\objPharaohShot</object>
           <object>objects\objPharaohShotCharged</object>
+          <object>objects\objPharaohShotWeapon</object>
         </objects>
         <objects name="MM5">
           <object>objects\objStarCrash</object>
+          <object>objects\objStarCrashWeapon</object>
         </objects>
         <objects name="MM6">
           <object>objects\objSilverTomahawk</object>
+          <object>objects\objSilverTomahawkWeapon</object>
           <object>objects\objWindStorm</object>
+          <object>objects\objWindStormWeapon</object>
           <object>objects\objCentaurFlash</object>
+          <object>objects\objCentaurFlashWeapon</object>
         </objects>
       </objects>
       <objects name="Effects">
@@ -857,7 +867,7 @@
     <constant name="cfgShotSplash">false</constant>
     <constant name="cfgInitialStage">-1</constant>
     <constant name="cfgShader">noone</constant>
-    <constant name="cfgEnableKeyConfig">true</constant>
+    <constant name="cfgEnableKeyConfig">false</constant>
     <constant name="cfgEnableSaving">true</constant>
     <constant name="cfgEnablePasswords">true</constant>
     <constant name="life">0</constant>

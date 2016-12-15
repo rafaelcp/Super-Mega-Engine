@@ -66,10 +66,10 @@ if using {
         
         //Restore weapons
         for(i = 0; i &lt; global.totalWeapons; i++) {
-            if global.ammo[i] &lt; global.maxAmmo {
-                global.ammo[i]++;
-                if global.ammo[i] &gt; global.maxAmmo
-                    global.ammo[i] = global.maxAmmo;
+            if global.weapons[i].ammo &lt; global.maxAmmo {
+                global.weapons[i].ammo++;
+                if global.weapons[i].ammo &gt; global.maxAmmo
+                    global.weapons[i].ammo = global.maxAmmo;
                 proceed = true;
             }
         }
@@ -118,7 +118,7 @@ if !ok return false; //Must be on the beginning of every child of prtEquip
 
 var proceed = false;
 for(i = 0; i &lt; global.totalWeapons; i++) {
-    if ceil(global.ammo[i]) &lt; global.maxAmmo
+    if ceil(global.weapons[i].ammo) &lt; global.maxAmmo
         proceed = true;
 }
 

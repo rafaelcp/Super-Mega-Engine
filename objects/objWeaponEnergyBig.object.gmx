@@ -52,24 +52,19 @@ amount = 10;
             <kind>1</kind>
             <string>event_inherited();
 
-if global.items[energybalancer].count &gt; 0 &amp;&amp; (global.currentWeapon == megabuster || global.ammo[global.currentWeapon] &gt;= global.maxAmmo)
-{
+if global.items[energybalancer].count &gt; 0 &amp;&amp; (global.currentWeapon == megabuster || global.weapons[global.currentWeapon].ammo &gt;= global.maxAmmo) {
     var i = 0;
     var lowestIndex = 0;
     
-    for (i = 1; i &lt; global.totalWeapons; i += 1)
-    {
-        if (global.ammo[i] &lt; global.ammo[lowestIndex])
-        {
+    for (i = 1; i &lt; global.totalWeapons; i++) {
+        if (global.weapons[i].ammo &lt; global.weapons[lowestIndex].ammo) {
             lowestIndex = i;
         }
     }
     
-    if (global.ammo[lowestIndex] &lt; global.maxAmmo)
-    {
+    if (global.weapons[lowestIndex].ammo &lt; global.maxAmmo) {
         global.frozen = true;
-        with objHealthWeaponBar
-        {
+        with objHealthWeaponBar {
             increaseAmmoOffscreen = true;
             weaponToIncreaseIndex = lowestIndex;
             increaseAmmoAmount = other.amount;
@@ -79,11 +74,10 @@ if global.items[energybalancer].count &gt; 0 &amp;&amp; (global.currentWeapon ==
         loopSFX(sfxEnergyRestore);
     }
 }
-else if global.ammo[global.currentWeapon] &lt; global.maxAmmo
+else if global.weapons[global.currentWeapon].ammo &lt; global.maxAmmo
 {
     global.frozen = true;
-    with objHealthWeaponBar
-    {
+    with objHealthWeaponBar {
         increaseAmmo = true;
         increaseAmmoAmount = other.amount;
     }

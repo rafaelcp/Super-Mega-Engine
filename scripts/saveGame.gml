@@ -6,7 +6,7 @@ for(var i = 0; i < 8; i++) {
     map[? ("bossDefeated" + string(i))] = global.bossDefeated[i];
 }
 for (var i = 0; i < global.totalWeapons; i++) {
-    map[? ("weaponUnlocked" + string(i))] = global.weaponUnlocked[i];
+    map[? ("weaponUnlocked" + string(i))] = global.weapons[i].unlocked;
 }
 for (var i = 0; i < array_length_1d(global.items); i++) {
     map[? ("itemCount" + string(i))] = global.items[i].count;

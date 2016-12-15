@@ -56,13 +56,11 @@ passThrough = true;
           <argument>
             <kind>1</kind>
             <string>//Set position to above the player's head
-if instance_exists(objMegaman)
-{
+if instance_exists(objMegaman) {
     x = objMegaman.x + objMegaman.image_xscale;
     y = objMegaman.y - 20;
 }
-else
-{
+else {
     instance_destroy();
 }
 </string>
@@ -87,20 +85,16 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.frozen == false
-{
+            <string>if !global.frozen {
     imgIndex += imgSpeed;
     
     //After fully charging, change sprites
-    if sprite_index == sprPharaohShotCharging
-    {
-        if imgIndex &gt;= image_number-imgSpeed*3
-        {
+    if sprite_index == sprPharaohShotCharging {
+        if imgIndex &gt;= image_number - imgSpeed * 3 {
             sprite_index = sprPharaohShotCharged;
             imgIndex = 1;
         }
-    }
-    
+    }    
     image_index = imgIndex;
 }
 </string>

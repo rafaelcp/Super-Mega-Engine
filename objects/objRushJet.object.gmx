@@ -158,13 +158,12 @@ if global.frozen == false
             
             //Take away ammo
             decreaseAmmoTimer += 1;
-            if decreaseAmmoTimer &gt;= decreaseAmmoTimerMax
-            {
+            if decreaseAmmoTimer &gt;= decreaseAmmoTimerMax {
                 decreaseAmmoTimer = 0;
-                global.ammo[global.currentWeapon] -= global.weaponAmmo[global.weaponSlot[global.currentWeapon]];
-                if global.ammo[global.currentWeapon] &lt;= 0
+                global.weapons[global.currentWeapon].ammo -= global.weapons[global.weaponSlot[global.currentWeapon]].consumption;
+                if global.weapons[global.currentWeapon].ammo &lt;= 0
                 {
-                    global.ammo[global.currentWeapon] = 0;
+                    global.weapons[global.currentWeapon].ammo = 0;
                     event_perform(ev_alarm, 0);
                 }
             }

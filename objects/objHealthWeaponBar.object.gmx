@@ -85,45 +85,37 @@ if increaseHealth == true
         stopSFX(sfxEnergyRestore);
     }
 }
-else if increaseAmmo == true
-{
-    if increaseAmmoAmount &gt; 0 &amp;&amp; global.ammo[global.currentWeapon] &lt; global.maxAmmo
-    {
+else if increaseAmmo {
+    if increaseAmmoAmount &gt; 0 &amp;&amp; global.weapons[global.currentWeapon].ammo &lt; global.maxAmmo {
         increaseTimer += 1;
-        if increaseTimer &gt;= 3
-        {
-            global.ammo[global.currentWeapon] += 1;
+        if increaseTimer &gt;= 3 {
+            global.weapons[global.currentWeapon].ammo += 1;
             increaseAmmoAmount -= 1;
             increaseTimer = 0;
         }
     }
-    else
-    {
+    else {
         increaseAmmo = false;
-        if global.ammo[global.currentWeapon] &gt; global.maxAmmo
-            global.ammo[global.currentWeapon] = global.maxAmmo;
+        if global.weapons[global.currentWeapon].ammo &gt; global.maxAmmo
+            global.weapons[global.currentWeapon].ammo = global.maxAmmo;
         global.frozen = false;
         increaseTimer = 0;
         stopSFX(sfxEnergyRestore);
     }
 }
-else if increaseAmmoOffscreen == true
-{
-    if increaseAmmoAmount &gt; 0 &amp;&amp; global.ammo[weaponToIncreaseIndex] &lt; global.maxAmmo
-    {
+else if increaseAmmoOffscreen {
+    if increaseAmmoAmount &gt; 0 &amp;&amp; global.weapons[weaponToIncreaseIndex].ammo &lt; global.maxAmmo {
         increaseTimer += 1;
-        if increaseTimer &gt;= 3
-        {
-            global.ammo[weaponToIncreaseIndex] += 1;
+        if increaseTimer &gt;= 3 {
+            global.weapons[weaponToIncreaseIndex].ammo += 1;
             increaseAmmoAmount -= 1;
             increaseTimer = 0;
         }
     }
-    else
-    {
+    else {
         increaseAmmoOffscreen = false;
-        if global.ammo[weaponToIncreaseIndex] &gt; global.maxAmmo
-            global.ammo[weaponToIncreaseIndex] = global.maxAmmo;
+        if global.weapons[weaponToIncreaseIndex].ammo &gt; global.maxAmmo
+            global.weapons[weaponToIncreaseIndex].ammo = global.maxAmmo;
         global.frozen = false;
         increaseTimer = 0;
         stopSFX(sfxEnergyRestore);
@@ -183,12 +175,10 @@ else
 
 
 //Weapons
-if global.weapon != 0
-{
+if global.weapon != 0 {
     draw_sprite(sprHealthbarBackground, 0, view_xview[0]+7+5, view_yview[0]+17);
     
-    for(i = 1; i &lt;= ceil(global.ammo[global.currentWeapon]); i += 1)
-    {
+    for(i = 1; i &lt;= ceil(global.weapons[global.currentWeapon].ammo); i += 1) {
         draw_sprite_ext(sprHealthbarPrimary, 0, view_xview[0]+7+1+5, view_yview[0]+17+(sprite_get_height(sprHealthbarBackground)-i*2), 1, 1, 0, global.primaryCol, 1);
         draw_sprite_ext(sprHealthbarSecondary, 0, view_xview[0]+7+1+5, view_yview[0]+17+(sprite_get_height(sprHealthbarBackground)-i*2), 1, 1, 0, global.secondaryCol, 1);
     }

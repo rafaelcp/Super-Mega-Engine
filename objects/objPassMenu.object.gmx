@@ -54,8 +54,8 @@ else {
 }
     
 var i;
-for(i = 0; i &lt;= global.totalWeapons; i++){
-    global.ammo[i] = 28;
+for(i = 0; i &lt; global.totalWeapons; i++){
+    global.weapons[i].ammo = 28;
 }
 </string>
           </argument>

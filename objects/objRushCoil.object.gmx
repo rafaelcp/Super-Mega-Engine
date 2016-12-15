@@ -116,9 +116,9 @@ canCoil = false;
                 canCoil = false;
                 alarm[0] = 60;
                 
-                global.ammo[global.currentWeapon] -= global.weaponAmmo[global.weaponSlot[global.currentWeapon]];
-                if global.ammo[global.currentWeapon] &lt;= 0
-                    global.ammo[global.currentWeapon] = 0;
+                global.weapons[global.currentWeapon].ammo -= global.weapons[global.weaponSlot[global.currentWeapon]].consumption;
+                if global.weapons[global.currentWeapon].ammo &lt;= 0
+                    global.weapons[global.currentWeapon].ammo = 0;
             }
         }
     }

@@ -2,13 +2,17 @@
 //Allows for quick weapon switching
 //If you do not want quick weapon switching in your game, simply remove the script from objMegaman's step event
 
+if global.totalWeapons < 2 {
+    return false;
+}
+
 //Switching to the left
 if global.keyWeaponSwitchLeftPressed {
     do {
         global.currentWeapon--;
         if global.currentWeapon < 0
             global.currentWeapon = global.totalWeapons - 1;            
-    } until global.weaponUnlocked[global.currentWeapon];
+    } until global.weapons[global.currentWeapon].unlocked;
     
     drawWeaponIcon = true;
     drawWeaponIconTimer = 30;
@@ -35,7 +39,7 @@ if global.keyWeaponSwitchRightPressed {
         global.currentWeapon++;
         if global.currentWeapon > global.totalWeapons - 1
             global.currentWeapon = 0;
-    } until global.weaponUnlocked[global.currentWeapon];
+    } until global.weapons[global.currentWeapon].unlocked;
     
     drawWeaponIcon = true;
     drawWeaponIconTimer = 30;

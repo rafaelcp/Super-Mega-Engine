@@ -67,8 +67,7 @@ if using {
     timer++;
     
     // If the weapon the user selected is already full.
-    if firstCheck &amp;&amp; global.ammo[useOnIndex] == global.maxAmmo
-    {
+    if firstCheck &amp;&amp; global.weapons[useOnIndex].ammo &gt;= global.maxAmmo {
         playSFX(sfxError);
         show_debug_message("Ammo for this weapon already full. W-Tank count: " + string(count));
         timer = 0;
@@ -78,18 +77,17 @@ if using {
         
         firstCheck = true;
     }
-    else
-    {
+    else {
         loopSFX(sfxEnergyRestore);
         if timer &gt;= 3 {
             var proceed = false;
             firstCheck = false;
             
             // Restore the weapon energy of the selected weapon.
-            if global.ammo[useOnIndex] &lt; global.maxAmmo {
-                global.ammo[useOnIndex]++;
-                if global.ammo[useOnIndex] &gt; global.maxAmmo
-                    global.ammo[useOnIndex] = global.maxAmmo;
+            if global.weapons[useOnIndex].ammo &lt; global.maxAmmo {
+                global.weapons[useOnIndex].ammo++;
+                if global.weapons[useOnIndex].ammo &gt; global.maxAmmo
+                    global.weapons[useOnIndex].ammo = global.maxAmmo;
                 proceed = true;
             }
             
@@ -171,7 +169,7 @@ var proceed = false;
 
 // Only prime the W-Tank if there's a weapon that needs refilling.
 for(i = 0; i &lt; global.totalWeapons; i++) {
-    if global.ammo[i] &lt; global.maxAmmo
+    if global.weapons[i].ammo &lt; global.maxAmmo
         proceed = true;
 }
 

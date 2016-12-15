@@ -92,7 +92,7 @@ with objMegaman canPause = false;
 var ID = instance_create(x, y, objFadeout);
 ID.type = "room";
     
-if global.weaponID &gt; -1 &amp;&amp; !global.weaponUnlocked[global.weaponID] {
+if global.weaponID &gt; -1 &amp;&amp; !global.weapons[global.weaponID].unlocked {
     ID.myRoom = rmWeaponGet;
     global.passPlayVictory = false;
 }
@@ -255,7 +255,7 @@ alarm[1] = 270;
         {
             if canInitJump == true &amp;&amp; ground == true
             {
-                if global.weaponID &gt; -1 &amp;&amp; global.weaponUnlocked[global.weaponID] == false //Only absorb the power if it's not already been unlocked
+                if global.weaponID &gt; -1 &amp;&amp; global.weapons[global.weaponID].unlocked == false //Only absorb the power if it's not already been unlocked
                 {
                     canInitJump = false;
                     
@@ -275,7 +275,7 @@ alarm[1] = 270;
                 }
             }
             
-            if yspeed &gt; 0 &amp;&amp; y &gt;= view_yview[0]+112 &amp;&amp; canInitJump == false &amp;&amp; global.weaponUnlocked[global.weaponID] == false
+            if yspeed &gt; 0 &amp;&amp; y &gt;= view_yview[0]+112 &amp;&amp; canInitJump == false &amp;&amp; global.weapons[global.weaponID].unlocked == false
             {
                 y = view_yview[0]+112;
                 absorbing = true;

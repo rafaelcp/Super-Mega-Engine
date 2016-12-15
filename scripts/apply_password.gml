@@ -15,7 +15,7 @@ for(var i = 0; i < 8; i++) {
     pos++;
 }
 for (var i = 0; i < global.totalWeapons; i++) {
-    global.weaponUnlocked[i] = (string_copy(bin_pass, pos, 1) == "1");
+    global.weapons[i].unlocked = (string_copy(bin_pass, pos, 1) == "1");
     pos++;
 }
 for (var i = 0; i < array_length_1d(global.items); i++) {
