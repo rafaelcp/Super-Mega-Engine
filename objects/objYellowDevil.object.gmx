@@ -231,6 +231,7 @@ if isFight &amp;&amp; !global.frozen {
                 y = view_yview[0] + view_hview[0] - 16 * 9 + random(4) - 2;
                 current_state = yd_states.OPENING;
                 image_index = 2.9;
+                depth--;
                 show_debug_message("OPENING");
             }
         break;
