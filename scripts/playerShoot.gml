@@ -97,7 +97,7 @@ if global.enableCharge {
 
 
 //Charging other weapons
-if global.weapons[global.currentWeapon].ammo > 0 {
+if global.weapon != megabuster && global.weapons[global.currentWeapon].ammo > 0 {
     if global.keyShoot || (isSlide && global.weapons[global.currentWeapon].chargeTimer != 0) {    // Pressing shoot key
         with global.weapons[global.currentWeapon] event_user(3);
     }
