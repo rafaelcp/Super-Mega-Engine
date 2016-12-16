@@ -6,7 +6,7 @@
 
 Run the [HTML5 DEMO](https://rawgit.com/rafaelcp/Open-Mega-Engine/master/demo/index.html) inside your browser!
 
-Download the [Windows DEMO (EXE)](https://www.dropbox.com/s/kxaypg7ex8lloi9/OpenMegaEngine.zip?dl=0).
+Download the [Windows DEMO (EXE)](https://www.dropbox.com/s/kxaypg7ex8lloi9/OpenMegaEngine.zip?dl=0). (very old version)
 
 <img src="https://github.com/rafaelcp/Open-Mega-Engine/blob/master/sprites/images/sprLogo_0.png?raw=true" width="358" alt="Open Mega Engine" title="Open Mega Engine"  style="background-color: black">
 
