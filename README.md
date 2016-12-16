@@ -1,6 +1,7 @@
 # Super Mega Engine
 
-[![Join the chat at https://gitter.im/Open-Mega-Engine/Lobby](https://badges.gitter.im/Open-Mega-Engine/Lobby.svg)](https://gitter.im/Open-Mega-Engine/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![alt text]( http://i.imgur.com/tXSoThF.png) Twitter](https://twitter.com/netfighters)
+[![Join the chat at https://gitter.im/Open-Mega-Engine/Lobby](https://badges.gitter.im/Open-Mega-Engine/Lobby.svg)](https://gitter.im/Open-Mega-Engine/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![alt text]( http://i.imgur.com/tXSoThF.png) Twitter](https://twitter.com/netfighters) [![alt text]( http://i.imgur.com/P3YfQoD.png) Facebook](https://www.facebook.com/Super-Mega-Engine-1864987877046420/)
+
 
 **Super Mega Engine - Open-source Classic Megaman engine for Game Maker Studio!**
 
