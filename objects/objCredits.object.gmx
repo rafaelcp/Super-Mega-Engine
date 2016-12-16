@@ -37,9 +37,9 @@ rushy = megamany + 19;
 megamansprite = sprMegamanStand;
 scroll_threshold = -730;
 
-text = "OPEN MEGA ENGINE (OME)
+text = "SUPER MEGA ENGINE (SME)
 
-github.com / rafaelcp / Open-Mega-Engine
+github.com / rafaelcp / Super-Mega-Engine
 
 
 GitHub Maintainer

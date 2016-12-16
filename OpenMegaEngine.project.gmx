@@ -516,6 +516,7 @@
       <script>scripts\string_lpad.gml</script>
       <script>scripts\string_break.gml</script>
       <script>scripts\string_replace_at.gml</script>
+      <script>scripts\concat.gml</script>
     </scripts>
     <scripts name="Saving">
       <script>scripts\saveGame.gml</script>
