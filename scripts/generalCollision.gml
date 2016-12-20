@@ -20,7 +20,7 @@ mySolid = instance_place(x+xspeed, y, objSolid);
 if mySolid >= 0 && xspeed != 0
 {    
     if xspeed < 0
-        x = mySolid.x + 16 + (x - (bbox_left-1));
+        x = mySolid.x + 16 * abs(mySolid.image_xscale) + (x - (bbox_left-1));
     else
         x = mySolid.x - (bbox_right+1 - x) - 1;
         
@@ -31,7 +31,7 @@ if mySolid >= 0 && xspeed != 0
 //Ceiling
 mySolid = instance_place(x, y+yspeed, objSolid);
 if mySolid >= 0 && yspeed < 0 {
-    y = mySolid.y + 16 + (y - (bbox_top-1));
+    y = mySolid.y + 16 * abs(mySolid.image_xscale) + (y - (bbox_top-1));
     yspeed = 0;
 }
 

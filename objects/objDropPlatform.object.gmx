@@ -34,7 +34,7 @@ image_index = 0;
 canDrop = true;
 phase = 0; //0 = idle; 1 = preparing to drop down; 2 = dropping down animation; 3 = dropped down; 4 = rebuilding animation
 timer = 0;
-dropTimerMax = 15;
+dropTimerMax = 0;
 rebuildTimerMax = 10;
 
 topSolidID = instance_create(x-16, y, objTopSolid);
