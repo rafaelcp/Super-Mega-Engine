@@ -103,28 +103,23 @@ canCoil = false;
     if sprite_index == sprRush
         image_speed = 7/60;
     
-    if canCoil == true
-    {
-        if collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_top, objMegaman, false, false)
-        {
-            if global.yspeed &gt; 0 &amp;&amp; objMegaman.bbox_bottom &lt;= bbox_top+global.yspeed
-            &amp;&amp; objMegaman.climbing == false
-            {
-                global.yspeed = -7;
-                objMegaman.canMinJump = false;
-                sprite_index = sprRushCoil;
-                canCoil = false;
-                alarm[0] = 60;
-                
-                global.weapons[global.currentWeapon].ammo -= global.weapons[global.weaponSlot[global.currentWeapon]].consumption;
-                if global.weapons[global.currentWeapon].ammo &lt;= 0
-                    global.weapons[global.currentWeapon].ammo = 0;
-            }
-        }
+    if canCoil 
+    &amp;&amp; !objMegaman.climbing 
+    &amp;&amp; collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_top, objMegaman, false, false) 
+    &amp;&amp; global.yspeed &gt; 1 
+    &amp;&amp; objMegaman.bbox_bottom &lt;= bbox_bottom - 8 + global.yspeed {
+        global.yspeed = -7;
+        objMegaman.canMinJump = false;
+        sprite_index = sprRushCoil;
+        canCoil = false;
+        alarm[0] = 60;
+        
+        global.weapons[global.currentWeapon].ammo -= global.weapons[global.weaponSlot[global.currentWeapon]].consumption;
+        if global.weapons[global.currentWeapon].ammo &lt;= 0
+            global.weapons[global.currentWeapon].ammo = 0;
     }
     
-    if collision_rectangle(x-5, bbox_top, x+5, bbox_bottom, objSolid, false, false) &amp;&amp; sprite_index == sprRush
-    {
+    if collision_rectangle(x-5, bbox_top, x+5, bbox_bottom, objSolid, false, false) &amp;&amp; sprite_index == sprRush {
         event_perform(ev_alarm, 0);
     }
     
