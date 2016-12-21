@@ -369,7 +369,9 @@ else if teleporting == true
     {
         //Teleporting downwards
         draw_sprite_ext(sprite_index, image_index, round(x), round(view_yview[0]-32+teleportY), image_xscale, image_yscale, image_angle, c_white, 1);
-        
+        if global.yspeed != 0 {
+            y = sprite_get_ycenter_object(objMegaman) + 16;
+        }
         if global.frozen == false
             teleportY += 7;
     }
