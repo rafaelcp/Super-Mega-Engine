@@ -373,7 +373,7 @@ else if teleporting == true
             y = sprite_get_ycenter_object(objMegaman) + 16;
         }
         if global.frozen == false
-            teleportY += 7;
+            teleportY += cfgRushTeleportSpeed;
     }
 }
 else if teleportingUp == true
@@ -392,7 +392,7 @@ else if teleportingUp == true
             image_index = 1;
         else if teleportTimer = 9
         {
-            teleportY -= 7;
+            teleportY -= cfgRushTeleportSpeed;
             image_speed = 0;
             image_index = 0;
             exit;
@@ -407,7 +407,7 @@ else if teleportingUp == true
         draw_sprite_ext(sprite_index, image_index, round(x), round(y+teleportY), image_xscale, image_yscale, image_angle, c_white, 1);
         
         if global.frozen == false
-            teleportY -= 7;
+            teleportY -= cfgRushTeleportSpeed;
         
         if round(y+teleportY) &lt;= view_yview[0] || round(y+teleportY) &lt;= 0
             instance_destroy();

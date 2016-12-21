@@ -843,7 +843,7 @@
     <room>rooms\rmBossRush</room>
     <room>rooms\rmFinalStage</room>
   </rooms>
-  <constants number="36">
+  <constants number="37">
     <constant name="megabuster">0</constant>
     <constant name="silvertomahawk">1</constant>
     <constant name="windstorm">2</constant>
@@ -871,6 +871,7 @@
     <constant name="cfgEnableKeyConfig">false</constant>
     <constant name="cfgEnableSaving">true</constant>
     <constant name="cfgEnablePasswords">true</constant>
+    <constant name="cfgRushTeleportSpeed">10</constant>
     <constant name="life">0</constant>
     <constant name="etank">1</constant>
     <constant name="wtank">2</constant>
