@@ -72,6 +72,7 @@ if !other.dead &amp;&amp; other.healthpoints &lt;= 0 &amp;&amp; object_get_paren
     windID.image_index = image_index;
     windID.image_speed = image_speed;
     windID.image_xscale = image_xscale;
+    windID.contactDamage = other.contactDamage;
         
     other.dead = false;
 }
