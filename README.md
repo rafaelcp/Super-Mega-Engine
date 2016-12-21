@@ -1,12 +1,15 @@
 # Super Mega Engine
 
-[![Join the chat at https://gitter.im/Open-Mega-Engine/Lobby](https://badges.gitter.im/Open-Mega-Engine/Lobby.svg)](https://gitter.im/Open-Mega-Engine/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Join the chat at https://gitter.im/Open-Mega-Engine/Lobby](https://badges.gitter.im/Open-Mega-Engine/Lobby.svg)](https://gitter.im/Open-Mega-Engine/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![alt text]( http://i.imgur.com/tXSoThF.png) Twitter](https://twitter.com/netfighters) [![alt text]( http://i.imgur.com/P3YfQoD.png) Facebook](https://www.facebook.com/Super-Mega-Engine-1864987877046420/)
 
-**Super Mega Engine - Open-source Classic Megaman engine for Game Maker Studio!**
+
+**Super Mega Engine - Open-source Classic Megaman engine for [Game Maker Studio](https://www.yoyogames.com/get)!**
 
 Run the [HTML5 DEMO](https://rawgit.com/rafaelcp/Open-Mega-Engine/master/demo/index.html) inside your browser!
 
-Download the [Windows DEMO (EXE)](https://www.dropbox.com/s/kxaypg7ex8lloi9/OpenMegaEngine.zip?dl=0).
+Download the [Windows DEMO (EXE)](https://www.dropbox.com/s/kxaypg7ex8lloi9/OpenMegaEngine.zip?dl=0). (very old version)
+
+Download [GameMaker Studio 1.4](https://www.yoyogames.com/get). 
 
 <img src="https://github.com/rafaelcp/Open-Mega-Engine/blob/master/sprites/images/sprLogo_0.png?raw=true" width="358" alt="Open Mega Engine" title="Open Mega Engine"  style="background-color: black">
 
