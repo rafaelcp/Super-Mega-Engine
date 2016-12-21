@@ -407,6 +407,7 @@
       <sprite>sprites\sprSectionBorderLeftScreen</sprite>
       <sprite>sprites\sprSectionBorderRightScreen</sprite>
       <sprite>sprites\sprSectionBorderVertical</sprite>
+      <sprite>sprites\sprSectionScrollRight</sprite>
       <sprite>sprites\sprSectionBorderTopScreen</sprite>
       <sprite>sprites\sprSectionBorderBottomScreen</sprite>
       <sprite>sprites\sprSectionBorderLeft</sprite>
@@ -788,6 +789,7 @@
       <object>objects\objSectionBorderLeftScreen</object>
       <object>objects\objSectionBorderRightScreen</object>
       <object>objects\objSectionBorderVertical</object>
+      <object>objects\objSectionScrollRight</object>
       <object>objects\objSectionBorderTopScreen</object>
       <object>objects\objSectionBorderBottomScreen</object>
       <object>objects\objSectionBorderLeft</object>

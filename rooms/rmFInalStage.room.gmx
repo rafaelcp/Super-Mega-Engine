@@ -219,7 +219,7 @@
     <instance objName="objSolid" x="192" y="176" name="inst_DA6350E8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBossControl" x="512" y="448" name="inst_2344CB38" locked="0" code="music = bgmWilyFinalBoss4;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="496" y="592" name="inst_33095FF6" locked="0" code="" scaleX="1" scaleY="5" colour="4294967295" rotation="0"/>
-    <instance objName="objSolid" x="496" y="336" name="inst_37228751" locked="0" code="" scaleX="1" scaleY="12" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="496" y="336" name="inst_37228751" locked="0" code="" scaleX="1" scaleY="11" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="432" y="512" name="inst_46C84F0F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="448" y="592" name="inst_F5FEB936" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="464" y="592" name="inst_0E0AF341" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -229,6 +229,7 @@
     <instance objName="objSolid" x="480" y="512" name="inst_72E8D5DF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSectionBorderVertical" x="240" y="0" name="inst_29B7A09D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSectionBorderVertical" x="240" y="224" name="inst_4FAAB18C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="496" y="512" name="inst_6D0AC562" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tstMM4Wily4" x="80" y="208" w="16" h="16" xo="32" yo="48" id="10005026" name="inst_812CDBB5" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

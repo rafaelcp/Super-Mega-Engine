@@ -25,11 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_create(x + 16, y, objSectionBorderLeftScreen);
+            <string>event_inherited();
 
-if cfgDebug || debug_mode {
-    visible = true;
-}
+instance_create(x + 16, y, objSectionBorderLeftScreen);
 </string>
           </argument>
         </arguments>
