@@ -566,6 +566,7 @@
       <script>scripts\getSections.gml</script>
       <script>scripts\sectionNeighbors.gml</script>
       <script>scripts\placeHorizontalBorders.gml</script>
+      <script>scripts\placeRoomBorders.gml</script>
     </scripts>
     <scripts name="Instances">
       <script>scripts\instanceInside.gml</script>

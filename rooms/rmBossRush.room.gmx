@@ -55,7 +55,6 @@
     <instance objName="objSolid" x="16" y="208" name="inst_8B6BC986" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="32" y="208" name="inst_7A4E774F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="48" y="208" name="inst_FFE3F9A5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSectionBorderLeftScreen" x="0" y="0" name="inst_9E9F7976" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMegaman" x="64" y="192" name="inst_98467B97" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSectionBorderRightScreen" x="240" y="0" name="inst_38AA42A4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="0" y="192" name="inst_D5600443" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -130,7 +129,6 @@
     <instance objName="objSolid" x="80" y="256" name="inst_C0BAE017" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="80" y="272" name="inst_4B63BF5D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="80" y="288" name="inst_E41BC53C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSectionBorderLeftScreen" x="0" y="224" name="inst_E77B3543" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSectionBorderRightScreen" x="240" y="224" name="inst_5EF83E03" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="80" y="304" name="inst_8132D5E2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="80" y="320" name="inst_557D151F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -186,7 +184,6 @@
     <instance objName="objSolid" x="240" y="496" name="inst_3427A08F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="240" y="480" name="inst_5371AF98" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="240" y="464" name="inst_1D4C41EE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSectionBorderLeftScreen" x="0" y="448" name="inst_85FF5917" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCheckpoint" x="16" y="480" name="inst_B26A3F27" locked="0" code="xx = 127;&#xA;yy = 528;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="objSectionArrowDown" x="96" y="432" name="inst_5CF2E91A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSectionArrowDown" x="112" y="432" name="inst_58E6FFEC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -257,7 +254,6 @@
     <instance objName="objSolid" x="176" y="288" name="inst_D270CF27" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMTank" x="208" y="272" name="inst_022AD8B7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSectionBorderLeftScreen" x="256" y="0" name="inst_B1FC8366" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSectionBorderRightScreen" x="496" y="0" name="inst_9CFC1262" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="256" y="208" name="inst_0AF01FD4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="256" y="192" name="inst_3CB1BCB0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="256" y="176" name="inst_3097D4C3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -317,7 +313,6 @@
     <instance objName="objSolid" x="304" y="208" name="inst_D85E38B1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTeleport" x="272" y="192" name="inst_7357DA94" locked="0" code="toX = 127;&#xA;toY = 528;&#xA;on = false;&#xA;returnBGM = bgmBossRush;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSectionBorderLeftScreen" x="256" y="448" name="inst_40CFAC5B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSectionBorderRightScreen" x="496" y="448" name="inst_3284DFBB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBossDoor" x="240" y="592" name="inst_A8F66763" locked="0" code="if numRushBossesDefeated() &lt; 8 {&#xA;    canOpen = false;&#xA;}&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBossControl" x="256" y="448" name="inst_098E3D78" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBigEyeBoss" x="464" y="624" name="inst_E6EB3F86" locked="0" code="col = 0;&#xA;contactDamage = 4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
