@@ -696,14 +696,12 @@
     <instance objName="objSolid" x="3312" y="640" name="inst_CCB027D9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPharaoh" x="3528" y="624" name="inst_E451B43C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMTank" x="2704" y="416" name="inst_050F431F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objMegaman" x="96" y="384" name="inst_321CFFA3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBossControl" x="3312" y="448" name="inst_9B0FD3CC" locked="0" code="music = &quot;Boss.ogg&quot;;&#xA;musicVolume = 0.7;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSectionArrowUp" x="432" y="224" name="inst_89A90F11" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSectionArrowDown" x="432" y="208" name="inst_4691F98E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSectionBorderLeftScreen" x="1952" y="448" name="inst_A9D45E35" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSectionArrowDown" x="2000" y="432" name="inst_1968F919" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSectionArrowUp" x="2000" y="448" name="inst_F1011A65" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSectionBorderLeftScreen" x="2800" y="448" name="inst_0C61E2E0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objIce" x="2064" y="640" name="inst_44D9B8CC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objIce" x="1968" y="640" name="inst_EE3332B2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objIce" x="1984" y="640" name="inst_A564FDD7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -919,7 +917,6 @@
     <instance objName="objSolid" x="896" y="208" name="inst_9CD793B4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBossDoorH" x="688" y="208" name="inst_84DD356E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBossDoorH" x="2224" y="432" name="inst_E7C5C641" locked="0" code="dir = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSectionBorderLeftScreen" x="2208" y="224" name="inst_2A13E49D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="2288" y="448" name="inst_D924036F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="2304" y="448" name="inst_3B22D2D1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="2320" y="448" name="inst_D4C27FA3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1076,6 +1073,7 @@
     <instance objName="objSectionScrollRight" x="1936" y="224" name="inst_F871F558" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSectionScrollRight" x="2192" y="448" name="inst_F150C2BB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSectionScrollRight" x="2784" y="448" name="inst_D28DFDB1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objMegaman" x="96" y="384" name="inst_321CFFA3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tstBeta" x="0" y="400" w="16" h="16" xo="18" yo="1" id="10000709" name="tile_0AABF942" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

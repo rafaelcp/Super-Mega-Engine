@@ -44,8 +44,8 @@ with objMegaman {
 }
 
 
-deactivateUnimportantObjects();
 with prtEnemyProjectile instance_destroy();
+deactivateUnimportantObjects();
 
 if instance_exists(objMegaman)
 {
