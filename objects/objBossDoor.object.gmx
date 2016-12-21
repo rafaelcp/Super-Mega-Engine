@@ -42,6 +42,8 @@ alarm[0] = 1;
 halfDoor = false;   //Whether to use just half the door
 
 mySolid = -1;
+
+instance_create(x, floor(y / view_hview[0]) * view_hview[0], objSectionBorderVertical);
 </string>
           </argument>
         </arguments>

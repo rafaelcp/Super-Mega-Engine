@@ -104,9 +104,9 @@ canCoil = false;
         image_speed = 7/60;
     
     if canCoil 
-    &amp;&amp; !objMegaman.climbing 
     &amp;&amp; collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_top, objMegaman, false, false) 
     &amp;&amp; global.yspeed &gt; 1 
+    &amp;&amp; !objMegaman.climbing 
     &amp;&amp; objMegaman.bbox_bottom &lt;= bbox_bottom - 8 + global.yspeed {
         global.yspeed = -7;
         objMegaman.canMinJump = false;

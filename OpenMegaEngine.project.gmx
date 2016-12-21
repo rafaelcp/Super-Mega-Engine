@@ -406,6 +406,7 @@
     <sprites name="Sections">
       <sprite>sprites\sprSectionBorderLeftScreen</sprite>
       <sprite>sprites\sprSectionBorderRightScreen</sprite>
+      <sprite>sprites\sprSectionBorderVertical</sprite>
       <sprite>sprites\sprSectionBorderTopScreen</sprite>
       <sprite>sprites\sprSectionBorderBottomScreen</sprite>
       <sprite>sprites\sprSectionBorderLeft</sprite>
@@ -786,6 +787,7 @@
     <objects name="Sections">
       <object>objects\objSectionBorderLeftScreen</object>
       <object>objects\objSectionBorderRightScreen</object>
+      <object>objects\objSectionBorderVertical</object>
       <object>objects\objSectionBorderTopScreen</object>
       <object>objects\objSectionBorderBottomScreen</object>
       <object>objects\objSectionBorderLeft</object>

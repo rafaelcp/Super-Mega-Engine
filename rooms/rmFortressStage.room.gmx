@@ -261,8 +261,6 @@
     <instance objName="objMM1Met" x="224" y="176" name="inst_46CA67BC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPicketMan" x="736" y="128" name="inst_4E7518FC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objScrewBomber" x="672" y="192" name="inst_708E74C1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSectionBorderRightScreen" x="752" y="0" name="inst_A2A10F2F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSectionBorderLeftScreen" x="768" y="0" name="inst_1EEF9880" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tstMM1" x="176" y="192" w="16" h="16" xo="21" yo="481" id="10006120" name="inst_2FDDBD40" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
