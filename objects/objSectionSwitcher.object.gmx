@@ -127,10 +127,14 @@ canProgressDoor = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if door == true
-{
+            <string>if door {
     image_speed = 0;
     alarm[1] = ceil(4 / 0.15)
+    with objMegaman {
+        if isHit {
+            hitTimer = hitTime;
+        }
+    }
 }
 else
     image_speed = imgSpd;

@@ -751,27 +751,23 @@ if inWater == true
     
 
 //While being hit
-if isHit == true
-{
+if isHit {
     hitTimer += 1;
-    if hitTimer >= hitTime
-    {
+    if hitTimer >= hitTime {
         isHit = false;
         drawHitspark = false;
         hitTimer = 0;
         
         //When sliding and there's a solid above us, we should not experience knockback
         //If we did, we would clip inside the ceiling above us
-        if !(isSlide == true && (place_meeting(x, y-3, objSolid) || place_meeting(x, y-3, prtMovingPlatformSolid)))
-        {
+        if !(isSlide && (place_meeting(x, y-3, objSolid) || place_meeting(x, y-3, prtMovingPlatformSolid))) {
             canMove = true;
             canSpriteChange = true;
         }
         
         invincibilityTimer = 60;
     }
-    else
-    {
+    else {
         if hitTimer mod 4 == 0 || hitTimer mod 4 == 1  //mod: modulo, %. Gives the remainder
             drawHitspark = true;
         else
