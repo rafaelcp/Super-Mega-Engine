@@ -178,15 +178,7 @@
     <instance objName="objSectionBorderLeftScreen" x="0" y="0" name="inst_9E9F7976" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSectionBorderLeftScreen" x="768" y="0" name="inst_9FCD6DCF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSectionBorderRightScreen" x="752" y="0" name="inst_C6E1EC29" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSectionBorderBottomScreen" x="0" y="208" name="inst_68C65A31" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSectionBorderBottomScreen" x="256" y="208" name="inst_3E55F083" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSectionBorderBottomScreen" x="512" y="208" name="inst_E75BFE26" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSectionBorderBottomScreen" x="768" y="208" name="inst_24FCF5AA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSectionBorderRightScreen" x="1008" y="0" name="inst_EDCA4BB2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSectionBorderTopScreen" x="768" y="0" name="inst_BC652D70" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSectionBorderTopScreen" x="0" y="0" name="inst_917A4AC7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSectionBorderTopScreen" x="256" y="0" name="inst_5CA25861" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSectionBorderTopScreen" x="512" y="0" name="inst_0CD117A8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBossControl" x="768" y="0" name="inst_EF0DAC4C" locked="0" code="music = &quot;BossMMPU8bit.ogg&quot;;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBigEyeBoss" x="960" y="176" name="inst_53E446BD" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="1008" y="192" name="inst_B7EDD7F5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

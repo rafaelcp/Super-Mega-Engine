@@ -26,12 +26,12 @@
           <argument>
             <kind>1</kind>
             <string>//Teleport to the checkpoint location, if we hit a checkpoint
-if global.checkpoint == true
-{
+if global.checkpoint {
     x = global.checkpointX;
     y = global.checkpointY;
 }
 
+placeHorizontalBorders();
 
 //Initialize the camera
 newSectionXOffset = 0;
