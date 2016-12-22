@@ -33,6 +33,7 @@ image_speed = 0;
 image_index = 0;
 
 passThrough = true;
+reflectible = false;
 </string>
           </argument>
         </arguments>

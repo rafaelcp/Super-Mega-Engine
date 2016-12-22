@@ -496,6 +496,9 @@
       <script>scripts\gravityNoGround.gml</script>
       <script>scripts\gravityNoGroundExt.gml</script>
       <script>scripts\escapeWall.gml</script>
+      <script>scripts\mergeBlocksHorizontal.gml</script>
+      <script>scripts\mergeBlocksVertical.gml</script>
+      <script>scripts\mergeBlocks.gml</script>
     </scripts>
     <scripts name="Views">
       <script>scripts\insideView.gml</script>

@@ -33,6 +33,7 @@ if global.checkpoint {
 
 placeRoomBorders();
 placeHorizontalBorders();
+mergeBlocks();
 
 //Initialize the camera
 newSectionXOffset = 0;

@@ -27,6 +27,10 @@
             <kind>1</kind>
             <string>if !place_meeting(x, y-1, objLadder)
     instance_create(x, y, objTopSolid);
+    
+if cfgDebug || debug_mode {
+    visible = true;
+}
 </string>
           </argument>
         </arguments>

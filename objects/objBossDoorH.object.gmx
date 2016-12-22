@@ -60,15 +60,13 @@ alarm[0] = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if dir == -1
-{
+            <string>if dir == -1 {
     mySolid = instance_create(x, y+16, objSolid);
-        mySolid.image_xscale = 4;
+    mySolid.image_xscale = 4;
 }
-else
-{
+else {
     mySolid = instance_create(x, y, objSolid);
-        mySolid.image_xscale = 4;
+    mySolid.image_xscale = 4;
 }
 </string>
           </argument>

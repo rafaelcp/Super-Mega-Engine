@@ -22,8 +22,7 @@ if (mySpikeFloor >= 0 || mySpikeWall >= 0 || mySpikeCeiling >= 0) && canHit == t
 
 //Floor
 mySolid = instance_place(x, y+global.yspeed, objSolid);
-if mySolid >= 0 && global.yspeed > 0
-{
+if mySolid >= 0 && global.yspeed > 0 {
     y = mySolid.y - (sprite_get_height(mask_index) - sprite_get_yoffset(mask_index));
     ground = true;
     global.yspeed = 0;
@@ -40,10 +39,9 @@ if mySolid >= 0 && global.yspeed > 0
 
 //Wall
 mySolid = instance_place(x+global.xspeed, y, objSolid);
-if mySolid >= 0 && global.xspeed != 0
-{
+if mySolid >= 0 && global.xspeed != 0 {
     if global.xspeed < 0
-        x = mySolid.x + 16 + sprite_get_xoffset(mask_index) - sprite_get_bbox_left(mask_index) + 1;
+        x = mySolid.x + mySolid.sprite_width + sprite_get_xoffset(mask_index) - sprite_get_bbox_left(mask_index) + 1;
     else
         x = mySolid.x - (sprite_get_width(mask_index) - sprite_get_xoffset(mask_index)) + (sprite_get_width(mask_index) - sprite_get_bbox_right(mask_index)) - 1;
         
@@ -53,19 +51,16 @@ if mySolid >= 0 && global.xspeed != 0
 
 //Ceiling
 mySolid = instance_place(x, y+global.yspeed, objSolid);
-if mySolid >= 0 && global.yspeed < 0
-{
-    y = mySolid.y + 16 + sprite_get_yoffset(mask_index);
+if mySolid >= 0 && global.yspeed < 0 {
+    y = mySolid.y + sprite_height - sprite_get_yoffset(mask_index);
     global.yspeed = 0;
 }
 
 
 //Topsolids
 mySolid = instance_place(x, y+global.yspeed, objTopSolid);
-if mySolid >= 0 && global.yspeed > 0
-{
-    if !place_meeting(x, y, mySolid)
-    {
+if mySolid >= 0 && global.yspeed > 0 {
+    if !place_meeting(x, y, mySolid) {
         y = mySolid.y - (sprite_get_height(mask_index) - sprite_get_yoffset(mask_index));
         ground = true;
         global.yspeed = 0;

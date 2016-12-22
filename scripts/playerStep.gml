@@ -438,9 +438,9 @@ if global.enableSlide == true
             else
                 instance_create(bbox_left+2, bbox_bottom-2, objSlideDust);
             
-            while position_meeting(x, y+5, objSolid) || (position_meeting(x, y+5, prtMovingPlatformSolid) && !instance_position(x, y+5, prtMovingPlatformSolid).dead) {
+            /*while position_meeting(x, y+5, objSolid) || (position_meeting(x, y+5, prtMovingPlatformSolid) && !instance_position(x, y+5, prtMovingPlatformSolid).dead) {
                 x += image_xscale;
-            }
+            }*/
             
             global.xspeed = slideSpeed * image_xscale;
         }

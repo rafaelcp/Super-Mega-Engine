@@ -41,6 +41,7 @@ collisionEnabled = false;
 groundEnabled = false;
 destroyOnHorizontalCollision = false;
 destroyOnVerticalCollision = false;
+reflectible = true;
 
 passThrough = false;
 checkDeath = true;
