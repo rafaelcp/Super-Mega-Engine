@@ -121,63 +121,6 @@
         <sprite>sprites\sprMegamanHit</sprite>
         <sprite>sprites\sprMegamanTeleport</sprite>
       </sprites>
-      <sprites name="Primary">
-        <sprite>sprites\sprMegamanStandPrimary</sprite>
-        <sprite>sprites\sprMegamanStepPrimary</sprite>
-        <sprite>sprites\sprMegamanWalkPrimary</sprite>
-        <sprite>sprites\sprMegamanJumpPrimary</sprite>
-        <sprite>sprites\sprMegamanStandShootPrimary</sprite>
-        <sprite>sprites\sprMegamanWalkShootPrimary</sprite>
-        <sprite>sprites\sprMegamanJumpShootPrimary</sprite>
-        <sprite>sprites\sprMegamanStandThrowPrimary</sprite>
-        <sprite>sprites\sprMegamanWalkThrowPrimary</sprite>
-        <sprite>sprites\sprMegamanJumpThrowPrimary</sprite>
-        <sprite>sprites\sprMegamanSlidePrimary</sprite>
-        <sprite>sprites\sprMegamanClimbPrimary</sprite>
-        <sprite>sprites\sprMegamanClimbShootPrimary</sprite>
-        <sprite>sprites\sprMegamanClimbThrowPrimary</sprite>
-        <sprite>sprites\sprMegamanClimbGetupPrimary</sprite>
-        <sprite>sprites\sprMegamanHitPrimary</sprite>
-        <sprite>sprites\sprMegamanTeleportPrimary</sprite>
-      </sprites>
-      <sprites name="Secondary">
-        <sprite>sprites\sprMegamanStandSecondary</sprite>
-        <sprite>sprites\sprMegamanStepSecondary</sprite>
-        <sprite>sprites\sprMegamanWalkSecondary</sprite>
-        <sprite>sprites\sprMegamanJumpSecondary</sprite>
-        <sprite>sprites\sprMegamanStandShootSecondary</sprite>
-        <sprite>sprites\sprMegamanWalkShootSecondary</sprite>
-        <sprite>sprites\sprMegamanJumpShootSecondary</sprite>
-        <sprite>sprites\sprMegamanStandThrowSecondary</sprite>
-        <sprite>sprites\sprMegamanWalkThrowSecondary</sprite>
-        <sprite>sprites\sprMegamanJumpThrowSecondary</sprite>
-        <sprite>sprites\sprMegamanSlideSecondary</sprite>
-        <sprite>sprites\sprMegamanClimbSecondary</sprite>
-        <sprite>sprites\sprMegamanClimbShootSecondary</sprite>
-        <sprite>sprites\sprMegamanClimbThrowSecondary</sprite>
-        <sprite>sprites\sprMegamanClimbGetupSecondary</sprite>
-        <sprite>sprites\sprMegamanHitSecondary</sprite>
-        <sprite>sprites\sprMegamanTeleportSecondary</sprite>
-      </sprites>
-      <sprites name="Outline">
-        <sprite>sprites\sprMegamanStandOutline</sprite>
-        <sprite>sprites\sprMegamanStepOutline</sprite>
-        <sprite>sprites\sprMegamanWalkOutline</sprite>
-        <sprite>sprites\sprMegamanJumpOutline</sprite>
-        <sprite>sprites\sprMegamanStandShootOutline</sprite>
-        <sprite>sprites\sprMegamanWalkShootOutline</sprite>
-        <sprite>sprites\sprMegamanJumpShootOutline</sprite>
-        <sprite>sprites\sprMegamanStandThrowOutline</sprite>
-        <sprite>sprites\sprMegamanWalkThrowOutline</sprite>
-        <sprite>sprites\sprMegamanJumpThrowOutline</sprite>
-        <sprite>sprites\sprMegamanSlideOutline</sprite>
-        <sprite>sprites\sprMegamanClimbOutline</sprite>
-        <sprite>sprites\sprMegamanClimbShootOutline</sprite>
-        <sprite>sprites\sprMegamanClimbThrowOutline</sprite>
-        <sprite>sprites\sprMegamanClimbGetupOutline</sprite>
-        <sprite>sprites\sprMegamanHitOutline</sprite>
-        <sprite>sprites\sprMegamanTeleportOutline</sprite>
-      </sprites>
       <sprites name="Weapons">
         <sprite>sprites\sprBusterShot</sprite>
         <sprite>sprites\sprBusterShotHalfCharged</sprite>
@@ -299,32 +242,11 @@
         <sprite>sprites\sprLifeEnergySmall</sprite>
         <sprite>sprites\sprLifeEnergyBig</sprite>
         <sprite>sprites\sprWeaponEnergySmall</sprite>
-        <sprite>sprites\sprWeaponEnergySmallPrimary</sprite>
-        <sprite>sprites\sprWeaponEnergySmallSecondary</sprite>
-        <sprite>sprites\sprWeaponEnergySmallOutline</sprite>
         <sprite>sprites\sprWeaponEnergyBig</sprite>
-        <sprite>sprites\sprWeaponEnergyBigPrimary</sprite>
-        <sprite>sprites\sprWeaponEnergyBigSecondary</sprite>
-        <sprite>sprites\sprWeaponEnergyBigOutline</sprite>
         <sprite>sprites\sprLife</sprite>
-        <sprite>sprites\sprLifePrimary</sprite>
-        <sprite>sprites\sprLifeSecondary</sprite>
-        <sprite>sprites\sprLifeOutline</sprite>
         <sprite>sprites\sprETank</sprite>
-        <sprite>sprites\sprETankGrayscale</sprite>
-        <sprite>sprites\sprETankPrimary</sprite>
-        <sprite>sprites\sprETankSecondary</sprite>
-        <sprite>sprites\sprETankOutline</sprite>
         <sprite>sprites\sprMTank</sprite>
-        <sprite>sprites\sprMTankGrayscale</sprite>
-        <sprite>sprites\sprMTankPrimary</sprite>
-        <sprite>sprites\sprMTankSecondary</sprite>
-        <sprite>sprites\sprMTankOutline</sprite>
         <sprite>sprites\sprWTank</sprite>
-        <sprite>sprites\sprWTankGrayscale</sprite>
-        <sprite>sprites\sprWTankOutline</sprite>
-        <sprite>sprites\sprWTankPrimary</sprite>
-        <sprite>sprites\sprWTankSecondary</sprite>
         <sprite>sprites\sprScrewSmall</sprite>
         <sprite>sprites\sprScrewBig</sprite>
         <sprite>sprites\sprEnergyBalancer</sprite>
@@ -852,7 +774,7 @@
     <room>rooms\rmBossRush</room>
     <room>rooms\rmFinalStage</room>
   </rooms>
-  <constants number="37">
+  <constants number="39">
     <constant name="megabuster">0</constant>
     <constant name="silvertomahawk">1</constant>
     <constant name="windstorm">2</constant>
@@ -881,6 +803,8 @@
     <constant name="cfgEnableSaving">true</constant>
     <constant name="cfgEnablePasswords">true</constant>
     <constant name="cfgRushTeleportSpeed">10</constant>
+    <constant name="cfgGravity">0.25</constant>
+    <constant name="cfgMaxFallingSpeed">7</constant>
     <constant name="life">0</constant>
     <constant name="etank">1</constant>
     <constant name="wtank">2</constant>

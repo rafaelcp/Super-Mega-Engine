@@ -433,10 +433,7 @@ if (phase &gt;= 1 &amp;&amp; phase &lt;= 3) || phase == 5 || phase == 6
     //Megaman
     xx = view_xview[0]+194;
     yy = view_yview[0]+172;
-    draw_sprite_ext(sprMegamanStand, 0, xx, yy, 1, 1, 0, c_white, 1);
-    draw_sprite_ext(sprMegamanStandPrimary, 0, xx, yy, 1, 1, 0, global.primaryCol, 1);
-    draw_sprite_ext(sprMegamanStandSecondary, 0, xx, yy, 1, 1, 0, global.secondaryCol, 1);
-    draw_sprite_ext(sprMegamanStandOutline, 0, xx, yy, 1, 1, 0, bgCol, 1);
+    drawSpriteColorSwap(sprMegamanStand, 0, xx, yy, make_colour_rgb(0, 112, 236), make_colour_rgb(0, 232, 216), make_colour_rgb(1.0, 1.0, 1.0),global.primaryCol,global.secondaryCol, global.outlineCol);
             
     //Weapons
     currX = 32;

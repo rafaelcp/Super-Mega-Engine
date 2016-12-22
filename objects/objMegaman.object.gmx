@@ -549,10 +549,7 @@ else if teleporting == true
     else
     {
         //Teleporting downwards
-        draw_sprite_ext(spriteTeleport, image_index, round(x), round(view_yview[0]-32+teleportY), image_xscale, image_yscale, image_angle, c_white, 1);
-        draw_sprite_ext(sprMegamanTeleportPrimary, image_index, round(x), round(view_yview[0]-32+teleportY), image_xscale, image_yscale, image_angle, global.primaryCol, 1);
-        draw_sprite_ext(sprMegamanTeleportSecondary, image_index, round(x), round(view_yview[0]-32+teleportY), image_xscale, image_yscale, image_angle, global.secondaryCol, 1);
-        
+        drawSpriteColorSwap(spriteTeleport, image_index, round(x), round(view_yview[0]-32+teleportY), make_colour_rgb(0, 112, 236), make_colour_rgb(0, 232, 216), make_colour_rgb(1.0, 1.0, 1.0),global.primaryCol,global.secondaryCol, global.outlineCol);
         teleportY += 7;
     }
 }

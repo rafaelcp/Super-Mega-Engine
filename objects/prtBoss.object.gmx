@@ -162,7 +162,7 @@ y = -999;//view_yview[0];
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Starting the intro pose (and falling down)
+            <string>/// Starting the intro pose (and falling down)
 if pose &gt; -1 &amp;&amp; startIntro == true {
     startIntro = false;
     isIntro = true;

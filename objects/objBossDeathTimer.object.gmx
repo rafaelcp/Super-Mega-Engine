@@ -396,10 +396,7 @@ alarm[1] = 270;
                 teleportY -= 7;
         }
         
-        draw_sprite_ext(sprMegamanTeleport, image_index, round(x), round(y+teleportY), image_xscale, image_yscale, image_angle, c_white, 1);
-        draw_sprite_ext(sprMegamanTeleportPrimary, image_index, round(x), round(y+teleportY), image_xscale, image_yscale, image_angle, global.primaryCol, 1);
-        draw_sprite_ext(sprMegamanTeleportSecondary, image_index, round(x), round(y+teleportY), image_xscale, image_yscale, image_angle, global.secondaryCol, 1);
-        draw_sprite_ext(sprMegamanTeleportOutline, image_index, round(x), round(y+teleportY), image_xscale, image_yscale, image_angle, global.outlineCol, 1);
+        drawSpriteColorSwap(sprMegamanTeleport, image_index, round(x), round(y+teleportY), make_colour_rgb(0, 112, 236), make_colour_rgb(0, 232, 216), make_colour_rgb(1.0, 1.0, 1.0),global.primaryCol,global.secondaryCol, global.outlineCol);
     }
 }
 </string>
