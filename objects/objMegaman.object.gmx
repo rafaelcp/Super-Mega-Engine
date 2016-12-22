@@ -468,6 +468,8 @@ if !instance_exists(objFadeIn)
     instance_create(x, y, objFadeIn);
     
 //map_surf = drawMap(room, 1/48, x, y);
+
+playerCameraInit();
 </string>
           </argument>
         </arguments>
