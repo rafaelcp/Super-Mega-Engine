@@ -321,8 +321,13 @@
       </sprites>
       <sprites name="Fortress">
         <sprite>sprites\sprFortressPoint</sprite>
+        <sprite>sprites\sprFortressTurnPoint</sprite>
         <sprite>sprites\sprMM3Fortress</sprite>
         <sprite>sprites\sprFortressSkull</sprite>
+        <sprite>sprites\sprFortressUp</sprite>
+        <sprite>sprites\sprFortressRight</sprite>
+        <sprite>sprites\sprFortressLeft</sprite>
+        <sprite>sprites\sprFortressDown</sprite>
       </sprites>
     </sprites>
     <sprites name="Sections">
@@ -497,6 +502,8 @@
     </scripts>
     <scripts name="Instances">
       <script>scripts\instanceInside.gml</script>
+      <script>scripts\instance_nth_nearest.gml</script>
+      <script>scripts\instance_distance.gml</script>
     </scripts>
     <scripts name="Debug">
       <script>scripts\assert.gml</script>
@@ -705,7 +712,6 @@
       <object>objects\objTitleScreen</object>
       <object>objects\objShop</object>
       <object>objects\objMapDrawer</object>
-      <object>objects\objFortress</object>
       <object>objects\objMainMenu</object>
       <object>objects\objLoadGame</object>
       <object>objects\objSaveGame</object>
@@ -747,6 +753,17 @@
       <object>objects\objOpening</object>
       <object>objects\objWilyUFO</object>
       <object>objects\objCredits</object>
+    </objects>
+    <objects name="Fortress">
+      <object>objects\objFortress</object>
+      <object>objects\objFortressPoint</object>
+      <object>objects\objFortressTurnPoint</object>
+      <object>objects\objFortressPointStart</object>
+      <object>objects\objFortressUp</object>
+      <object>objects\objFortressDown</object>
+      <object>objects\objFortressRight</object>
+      <object>objects\objFortressLeft</object>
+      <object>objects\objFortressSpot</object>
     </objects>
   </objects>
   <rooms name="rooms">

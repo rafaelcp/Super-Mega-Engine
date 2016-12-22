@@ -52,8 +52,20 @@
   </views>
   <instances>
     <instance objName="objGlobalControl" x="0" y="0" name="inst_4760D042" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objFortress" x="32" y="0" name="inst_0B577CBA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFadeIn" x="16" y="0" name="inst_68B360A9" locked="0" code="deactivate = false;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objFortressPointStart" x="32" y="176" name="inst_5839BA08" locked="0" code="dir = &quot;down&quot;;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objFortressPoint" x="80" y="176" name="inst_B532808F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objFortressRight" x="32" y="192" name="inst_05C34484" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objFortressRight" x="48" y="176" name="inst_C0653F4B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objFortressRight" x="64" y="192" name="inst_E4A93F09" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objFortressUp" x="48" y="192" name="inst_8C1BB79A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objFortressUp" x="80" y="192" name="inst_5EAB54B9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objFortressDown" x="64" y="176" name="inst_E967DFB9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objFortress" x="32" y="0" name="inst_0B577CBA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objFortressPoint" x="96" y="80" name="inst_DE7084F0" locked="0" code="sprite_index = sprFortressSkull;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objFortressPoint" x="112" y="208" name="inst_23EA4D87" locked="0" code="sprite_index = sprFortressSkull;&#xA;hidden = true;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objFortressUp" x="96" y="176" name="inst_5934CDCB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objFortressDown" x="112" y="80" name="inst_B7789FD9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

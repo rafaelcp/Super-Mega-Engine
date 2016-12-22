@@ -53,21 +53,72 @@ if !global.fortressStarted {
     }
 }
 
+alarm[11] = 1;
+
+
+global.fortressStarted = true;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="11">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Create Paths
+
 var drawer;
 
-drawer[0] = instance_create(48, 192, objMapDrawer);
-drawer[0].lines =  makePath(0, 16, 16, 16, 16, 0, 32, 0, 32, 16, 48, 16, 48, 0);
-
-drawer[1] = instance_create(48 + 48, 192, objMapDrawer);
-drawer[1].lines =  makePath(16, 0, 16, -64);
-drawer[1].place_icon = sprFortressSkull;
-
-drawer[2] = instance_create(48 + 48 + 16, 192 - 64, objMapDrawer);
-drawer[2].lines =  makePath(16, 0, 16, 80);
-drawer[2].place_icon = sprFortressSkull;
-drawer[2].hidden = true;
+currentObj = instance_find(objFortressPointStart, 0);
 
 for (var i = 0; i &lt; global.numFortressLevels; i++) {
+    origin = currentObj;
+    x = 0;
+    y = 0;
+    
+    drawer[i] = instance_create(currentObj.x, currentObj.y, objMapDrawer);
+    do {
+        deltaX = 0;
+        deltaY = 0;
+        do {
+            switch currentObj.dir {
+                case "right": deltaX = 16; break;
+                case "left": deltaX = -16; break;
+                case "down": deltaY = 16; break;
+                case "up": deltaY = -16; break;
+            }
+            oldX = x;
+            oldY = y;
+            x += deltaX;
+            y += deltaY;
+            
+            if origin.x + x &gt; room_width || origin.y + y &gt; room_height || origin.x + x &lt; 0 || origin.y + y &lt; 0 {
+                exit;
+            }
+        
+            var line = makeLine(oldX, oldY, x, y);
+            ds_list_add(drawer[i].lines, line);
+            next = instance_position(origin.x + x, origin.y + y, objFortressSpot);
+        } until (next &gt; -1);
+        currentObj = next;
+    } until (currentObj.object_index == objFortressPoint);
+
+    drawer[i].place_icon = currentObj.sprite_index;
+    drawer[i].hidden = currentObj.hidden;
     if i != global.currentFortressLevel {
         drawer[i].draw_speed = 0;
     }
@@ -75,9 +126,6 @@ for (var i = 0; i &lt; global.numFortressLevels; i++) {
         drawer[i].step = ds_list_size(drawer[i].lines);
     }
 }
-
-
-global.fortressStarted = true;
 </string>
           </argument>
         </arguments>
