@@ -76,9 +76,7 @@ if room == rmInit {
     
     display_reset(0, true); //Enables V-synch to make everything look nicer (without V-sync, GM Studio games tend to look pretty bad)
     stopAllSFX();
-    
-    global.GP = -1  //Gamepad
-    
+        
     // Max values for several vitals.
     global.maxETanks = 9;
     global.maxWTanks = 9;
@@ -149,10 +147,10 @@ if global.levelStart {
           <argument>
             <kind>1</kind>
             <string>///Keys
-global.keyLeft = keyboard_check(leftKey) || gamepad_axis_value(global.GP, gp_axislh) &lt; -0.1 || gamepad_button_check(global.GP, gp_padl);
-global.keyRight = keyboard_check(rightKey) || gamepad_axis_value(global.GP, gp_axislh) &gt; 0.1 || gamepad_button_check(global.GP, gp_padr);
-global.keyUp = keyboard_check(upKey) || gamepad_axis_value(global.GP, gp_axislv) &lt; -0.1 || gamepad_button_check(global.GP, gp_padu);
-global.keyDown = keyboard_check(downKey) || gamepad_axis_value(global.GP, gp_axislv) &gt; 0.1 || gamepad_button_check(global.GP, gp_padd);
+global.keyLeft = keyboard_check(leftKey) || gamepad_axis_value(global.GP, gp_axislh) &lt; -0.2 || gamepad_button_check(global.GP, gp_padl);
+global.keyRight = keyboard_check(rightKey) || gamepad_axis_value(global.GP, gp_axislh) &gt; 0.2 || gamepad_button_check(global.GP, gp_padr);
+global.keyUp = keyboard_check(upKey) || gamepad_axis_value(global.GP, gp_axislv) &lt; -0.2 || gamepad_button_check(global.GP, gp_padu);
+global.keyDown = keyboard_check(downKey) || gamepad_axis_value(global.GP, gp_axislv) &gt; 0.2 || gamepad_button_check(global.GP, gp_padd);
 global.keyJump = keyboard_check(jumpKey) || gamepad_button_check(global.GP, gp_face1) || gamepad_button_check(global.GP, gp_face3);
 global.keyShoot = keyboard_check(shootKey) || gamepad_button_check(global.GP, gp_face2) || gamepad_button_check(global.GP, gp_face4);
 global.keyPause = keyboard_check(pauseKey) || gamepad_button_check(global.GP, gp_start);

@@ -370,7 +370,7 @@ else if teleporting == true
         //Teleporting downwards
         draw_sprite_ext(sprite_index, image_index, round(x), round(view_yview[0]-32+teleportY), image_xscale, image_yscale, image_angle, c_white, 1);
         if global.yspeed != 0 &amp;&amp; !place_meeting(x, sprite_get_ycenter_object(objMegaman) + 16, objSolid) {
-            y = sprite_get_ycenter_object(objMegaman) + 16 + global.yspeed;
+            y = sprite_get_ycenter_object(objMegaman) + 24 + global.yspeed;
         }
         else {
             y = sprite_get_ycenter_object(objMegaman) - 8;

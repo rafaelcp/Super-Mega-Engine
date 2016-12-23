@@ -137,6 +137,8 @@ global.current_screen_shader = 0;
 global.passPlayVictory = false;
 global.lastSave = 0;
 
+global.GP = -1  //Gamepad
+
 if cfgDebug || debug_mode {
     show_debug_overlay(true);
 }
