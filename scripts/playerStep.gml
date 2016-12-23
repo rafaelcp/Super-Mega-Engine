@@ -597,7 +597,7 @@ if ((ladder >= 0 && global.keyUp && !global.keyDown)
     else if ladderDown >= 0
     {
         x = ladderDown.x+8;
-        y += climbSpeed;
+        y += climbSpeed * 2 + 2;
         ground = false;
     }
     
@@ -644,11 +644,16 @@ if climbing == true
     }
     
     //Getup sprite
-    if !position_meeting(x, bbox_top+11, objLadder) && position_meeting(x, bbox_bottom+1, objLadder) //The second check is to make sure the getup animation is not shown when on the BOTTOM of a ladder that's placed in the air
+    if !position_meeting(x, bbox_top+7, objLadder) && position_meeting(x, bbox_bottom+1, objLadder) //The second check is to make sure the getup animation is not shown when on the BOTTOM of a ladder that's placed in the air
     {
         sprite_index = spriteGetup;
         if sprite_index == sprMegamanClimbGetup //not when shooting
             image_xscale = 1;
+        if global.yspeed < 0 && !position_meeting(x, bbox_top+14, objLadder) {
+            while place_meeting(x, y, objLadder) {
+                y--;
+            }
+        }
     }
     else
     {
