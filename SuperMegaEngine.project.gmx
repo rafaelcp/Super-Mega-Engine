@@ -194,6 +194,8 @@
       <sprites name="MM5">
         <sprite>sprites\sprBBitter</sprite>
         <sprite>sprites\sprMM5Bullet</sprite>
+        <sprite>sprites\sprOctoper</sprite>
+        <sprite>sprites\sprOctoShot</sprite>
       </sprites>
       <sprites name="MM6">
         <sprite>sprites\sprColton</sprite>
@@ -613,6 +615,8 @@
       </objects>
       <objects name="MM5">
         <object>objects\objBBitter</object>
+        <object>objects\objOctoper</object>
+        <object>objects\objOctoShot</object>
       </objects>
       <objects name="MM6">
         <object>objects\objColton</object>
@@ -624,6 +628,7 @@
         <object>objects\prtEnemy</object>
         <object>objects\prtEnemyProjectile</object>
         <object>objects\objEnemyWindStorm</object>
+        <object>objects\prtMiniBoss</object>
       </objects>
     </objects>
     <objects name="Boss">

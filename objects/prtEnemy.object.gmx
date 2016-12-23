@@ -43,6 +43,12 @@ reflectProjectilesLeft = false; //Only reflect projectiles that come from the le
 
 respawn = true; //Should we respawn after leaving the screen and entering it again?
 
+useHitBox = false;
+hitbox_left = bbox_left - x;
+hitbox_right = bbox_right - x;
+hitbox_top = bbox_top - y;
+hitbox_bottom = bbox_bottom - y;
+
 //Default damage
 
 damage[objBusterShot] = 1;
@@ -110,10 +116,8 @@ damage[objCentaurFlash] = 10;
           <argument>
             <kind>1</kind>
             <string>//"Die" (doesn't actually destroy the enemy though)
-if healthpoints &lt;= 0
-{   
-    if canInitDeath == true
-    {
+if healthpoints &lt;= 0 {   
+    if canInitDeath {
         beenOutsideView = false;
         visible = false;
         dead = true;    //Enemies don't actually destroy themselves, they become invisible and all collision is neglected
@@ -126,8 +130,8 @@ if healthpoints &lt;= 0
 }
 
 //Respawning
-if respawn == true {
-    if beenOutsideView == true &amp;&amp; insideView() {
+if respawn {
+    if beenOutsideView &amp;&amp; insideView() {
         visible = true;
         dead = false;
         healthpoints = healthpointsStart;
@@ -135,7 +139,7 @@ if respawn == true {
         beenOutsideView = false;
     }
 }
-else if dead == true {
+else if dead {
     instance_destroy(); //If we can't respawn, there's no point to still be able to execute any code. Destroying the instance saves memory and processing power
 }
 
@@ -153,8 +157,7 @@ if !insideView() {
 }
     
     
-if dead == true
-{
+if dead {
     xspeed = 0;
     yspeed = 0;
     exit;
@@ -249,6 +252,10 @@ if dead == true
             <string>drawSelf();
 
 if cfgDebug || debug_mode {
+    if useHitBox {
+        draw_set_color(c_red);
+        draw_rectangle(x + hitbox_left * sign(image_xscale), y + hitbox_top, x + hitbox_right * sign(image_xscale), y + hitbox_bottom, 1);
+    }
     if dead {
         draw_set_color(c_black);
     }
