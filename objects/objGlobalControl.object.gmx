@@ -147,48 +147,48 @@ if global.levelStart {
           <argument>
             <kind>1</kind>
             <string>///Keys
-global.keyLeft = keyboard_check(leftKey) || gamepad_axis_value(global.GP, gp_axislh) &lt; -0.2 || gamepad_button_check(global.GP, gp_padl);
-global.keyRight = keyboard_check(rightKey) || gamepad_axis_value(global.GP, gp_axislh) &gt; 0.2 || gamepad_button_check(global.GP, gp_padr);
-global.keyUp = keyboard_check(upKey) || gamepad_axis_value(global.GP, gp_axislv) &lt; -0.2 || gamepad_button_check(global.GP, gp_padu);
-global.keyDown = keyboard_check(downKey) || gamepad_axis_value(global.GP, gp_axislv) &gt; 0.2 || gamepad_button_check(global.GP, gp_padd);
-global.keyJump = keyboard_check(jumpKey) || gamepad_button_check(global.GP, gp_face1) || gamepad_button_check(global.GP, gp_face3);
-global.keyShoot = keyboard_check(shootKey) || gamepad_button_check(global.GP, gp_face2) || gamepad_button_check(global.GP, gp_face4);
-global.keyPause = keyboard_check(pauseKey) || gamepad_button_check(global.GP, gp_start);
-global.keyWeaponSwitchLeft = keyboard_check(weaponSwitchLeftKey) || gamepad_button_check(global.GP, gp_shoulderl) || gamepad_button_check(global.GP, gp_shoulderlb);
-global.keyWeaponSwitchRight = keyboard_check(weaponSwitchRightKey) || gamepad_button_check(global.GP, gp_shoulderr) || gamepad_button_check(global.GP, gp_shoulderrb);
-global.keySelect = keyboard_check(selectKey) || gamepad_button_check(global.GP, gp_select);
+global.keyLeft = keyboard_check(leftKey) || gamepad_axis_value_any(gp_axislh) &lt; -0.2 || gamepad_button_check_any(gp_padl);
+global.keyRight = keyboard_check(rightKey) || gamepad_axis_value_any(gp_axislh) &gt; 0.2 || gamepad_button_check_any(gp_padr);
+global.keyUp = keyboard_check(upKey) || gamepad_axis_value_any(gp_axislv) &lt; -0.2 || gamepad_button_check_any(gp_padu);
+global.keyDown = keyboard_check(downKey) || gamepad_axis_value_any(gp_axislv) &gt; 0.2 || gamepad_button_check_any(gp_padd);
+global.keyJump = keyboard_check(jumpKey) || gamepad_button_check_any(gp_face1) || gamepad_button_check_any(gp_face3);
+global.keyShoot = keyboard_check(shootKey) || gamepad_button_check_any(gp_face2) || gamepad_button_check_any(gp_face4);
+global.keyPause = keyboard_check(pauseKey) || gamepad_button_check_any(gp_start);
+global.keyWeaponSwitchLeft = keyboard_check(weaponSwitchLeftKey) || gamepad_button_check_any(gp_shoulderl) || gamepad_button_check_any(gp_shoulderlb);
+global.keyWeaponSwitchRight = keyboard_check(weaponSwitchRightKey) || gamepad_button_check_any(gp_shoulderr) || gamepad_button_check_any(gp_shoulderrb);
+global.keySelect = keyboard_check(selectKey) || gamepad_button_check_any(gp_select);
 
-global.keyLeftPressed = keyboard_check_pressed(leftKey) || gamepad_button_check_pressed(global.GP, gp_padl);
-global.keyRightPressed = keyboard_check_pressed(rightKey) || gamepad_button_check_pressed(global.GP, gp_padr);
-global.keyUpPressed = keyboard_check_pressed(upKey) || gamepad_button_check_pressed(global.GP, gp_padu);
-global.keyDownPressed = keyboard_check_pressed(downKey) || gamepad_button_check_pressed(global.GP, gp_padd);
-global.keyJumpPressed = keyboard_check_pressed(jumpKey) || gamepad_button_check_pressed(global.GP, gp_face1) || gamepad_button_check_pressed(global.GP, gp_face3);
-global.keyShootPressed = keyboard_check_pressed(shootKey) || gamepad_button_check_pressed(global.GP, gp_face2) || gamepad_button_check_pressed(global.GP, gp_face4);
-global.keyPausePressed = keyboard_check_pressed(pauseKey) || gamepad_button_check_pressed(global.GP, gp_start);
-global.keyWeaponSwitchLeftPressed = keyboard_check_pressed(weaponSwitchLeftKey) || gamepad_button_check_pressed(global.GP, gp_shoulderl) || gamepad_button_check_pressed(global.GP, gp_shoulderlb);
-global.keyWeaponSwitchRightPressed = keyboard_check_pressed(weaponSwitchRightKey) || gamepad_button_check_pressed(global.GP, gp_shoulderr) || gamepad_button_check_pressed(global.GP, gp_shoulderrb);
-global.keySelectPressed = keyboard_check_pressed(selectKey) || gamepad_button_check_pressed(global.GP, gp_select);
+global.keyLeftPressed = keyboard_check_pressed(leftKey) || gamepad_button_check_pressed_any(gp_padl);
+global.keyRightPressed = keyboard_check_pressed(rightKey) || gamepad_button_check_pressed_any(gp_padr);
+global.keyUpPressed = keyboard_check_pressed(upKey) || gamepad_button_check_pressed_any(gp_padu);
+global.keyDownPressed = keyboard_check_pressed(downKey) || gamepad_button_check_pressed_any(gp_padd);
+global.keyJumpPressed = keyboard_check_pressed(jumpKey) || gamepad_button_check_pressed_any(gp_face1) || gamepad_button_check_pressed_any(gp_face3);
+global.keyShootPressed = keyboard_check_pressed(shootKey) || gamepad_button_check_pressed_any(gp_face2) || gamepad_button_check_pressed_any(gp_face4);
+global.keyPausePressed = keyboard_check_pressed(pauseKey) || gamepad_button_check_pressed_any(gp_start);
+global.keyWeaponSwitchLeftPressed = keyboard_check_pressed(weaponSwitchLeftKey) || gamepad_button_check_pressed_any(gp_shoulderl) || gamepad_button_check_pressed_any(gp_shoulderlb);
+global.keyWeaponSwitchRightPressed = keyboard_check_pressed(weaponSwitchRightKey) || gamepad_button_check_pressed_any(gp_shoulderr) || gamepad_button_check_pressed_any(gp_shoulderrb);
+global.keySelectPressed = keyboard_check_pressed(selectKey) || gamepad_button_check_pressed_any(gp_select);
 
-global.keyLeftReleased = keyboard_check_released(leftKey) || gamepad_button_check_released(global.GP, gp_padl);
-global.keyRightReleased = keyboard_check_released(rightKey || gamepad_button_check_released(global.GP, gp_padr));
-global.keyUpReleased = keyboard_check_released(upKey) || gamepad_button_check_released(global.GP, gp_padu);
-global.keyDownReleased = keyboard_check_released(downKey) || gamepad_button_check_released(global.GP, gp_padd);
-global.keyJumpReleased = keyboard_check_released(jumpKey) || gamepad_button_check_released(global.GP, gp_face1);
-global.keyShootReleased = keyboard_check_released(shootKey) || gamepad_button_check_released(global.GP, gp_face2) || gamepad_button_check_released(global.GP, gp_face3);
-global.keyPauseReleased = keyboard_check_released(pauseKey) || gamepad_button_check_released(global.GP, gp_start) || gamepad_button_check_released(global.GP, gp_face4);
-global.keyWeaponSwitchLeftReleased = keyboard_check_released(weaponSwitchLeftKey) || gamepad_button_check_released(global.GP, gp_shoulderl) || gamepad_button_check_released(global.GP, gp_shoulderlb);
-global.keyWeaponSwitchRightReleased = keyboard_check_released(weaponSwitchRightKey) || gamepad_button_check_released(global.GP, gp_shoulderr) || gamepad_button_check_released(global.GP, gp_shoulderrb);
-global.keySelectReleased = keyboard_check_released(selectKey) || gamepad_button_check_released(global.GP, gp_select);
+global.keyLeftReleased = keyboard_check_released(leftKey) || gamepad_button_check_released_any(gp_padl);
+global.keyRightReleased = keyboard_check_released(rightKey || gamepad_button_check_released_any(gp_padr));
+global.keyUpReleased = keyboard_check_released(upKey) || gamepad_button_check_released_any(gp_padu);
+global.keyDownReleased = keyboard_check_released(downKey) || gamepad_button_check_released_any(gp_padd);
+global.keyJumpReleased = keyboard_check_released(jumpKey) || gamepad_button_check_released_any(gp_face1);
+global.keyShootReleased = keyboard_check_released(shootKey) || gamepad_button_check_released_any(gp_face2) || gamepad_button_check_released_any(gp_face3);
+global.keyPauseReleased = keyboard_check_released(pauseKey) || gamepad_button_check_released_any(gp_start) || gamepad_button_check_released_any(gp_face4);
+global.keyWeaponSwitchLeftReleased = keyboard_check_released(weaponSwitchLeftKey) || gamepad_button_check_released_any(gp_shoulderl) || gamepad_button_check_released_any(gp_shoulderlb);
+global.keyWeaponSwitchRightReleased = keyboard_check_released(weaponSwitchRightKey) || gamepad_button_check_released_any(gp_shoulderr) || gamepad_button_check_released_any(gp_shoulderrb);
+global.keySelectReleased = keyboard_check_released(selectKey) || gamepad_button_check_released_any(gp_select);
 
 // If the slide key is enabled.
 if (global.enableSlideKey) {
-    global.keyShoot = keyboard_check(shootKey) || gamepad_button_check(global.GP, gp_face4);
-    global.keyShootPressed = keyboard_check_pressed(shootKey) || gamepad_button_check_pressed(global.GP, gp_face4);
-    global.keyShootReleased = keyboard_check_released(shootKey) || gamepad_button_check_released(global.GP, gp_face3);
+    global.keyShoot = keyboard_check(shootKey) || gamepad_button_check_any(gp_face4);
+    global.keyShootPressed = keyboard_check_pressed(shootKey) || gamepad_button_check_pressed_any(gp_face4);
+    global.keyShootReleased = keyboard_check_released(shootKey) || gamepad_button_check_released_any(gp_face3);
     
-    global.keySlide = keyboard_check(slideKey) || gamepad_button_check(global.GP, gp_face2);
-    global.keySlidePressed = keyboard_check_pressed(slideKey) || gamepad_button_check_pressed(global.GP, gp_face2);
-    global.keySlideReleased = keyboard_check_released(slideKey) || gamepad_button_check_released(global.GP, gp_face2);
+    global.keySlide = keyboard_check(slideKey) || gamepad_button_check_any(gp_face2);
+    global.keySlidePressed = keyboard_check_pressed(slideKey) || gamepad_button_check_pressed_any(gp_face2);
+    global.keySlideReleased = keyboard_check_released(slideKey) || gamepad_button_check_released_any(gp_face2);
 }
 </string>
           </argument>
@@ -308,12 +308,12 @@ if keyboard_check_pressed(vk_f9) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>show_debug_message("Event = " + async_load[? "event_type"]);        // Debug cocde so you can see which event has been
-show_debug_message("Pad = " + string(async_load[? "pad_index"]));   // triggered and the pad associated with it.
+            <string>print("Event = " + async_load[? "event_type"]);        // Debug cocde so you can see which event has been
+print("Pad = " + string(async_load[? "pad_index"]));   // triggered and the pad associated with it.
 
 if async_load[? "event_type"] == "gamepad discovered" {
     global.GP = async_load[? "pad_index"];
-    show_debug_message("Default gamepad set to " + string(global.GP));
+    print("Default gamepad set to " + string(global.GP), "connected:", gamepad_is_connected(global.GP));
 }
 </string>
           </argument>
