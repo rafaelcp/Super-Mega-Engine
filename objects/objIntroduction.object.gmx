@@ -41,9 +41,9 @@ lineDownY[1] = round(room_height/2)-14;
 createLineDown[0] = true;
 createLineDown[1] = true;
 
-lineSpd = 2;
+lineSpd = 8;
 
-
+lineTimer = 0;
 
 //Handles boss sprites and poses
 //Add more bosses to the list once they are added
@@ -126,9 +126,12 @@ ID.myRoom = global.destinationLevel;
             <string>//Moving the lines
 var i;
 
+lineTimer++;
 for(i = 0; i &lt; totalLinesUp; i += 1)
 {
-    lineUpY[i] -= lineSpd;
+    if lineTimer % 4 == 0 {
+        lineUpY[i] -= lineSpd;
+    }
     
     if lineUpY[i] &lt; -28 &amp;&amp; createLineUp[i] == true
     {
@@ -142,7 +145,9 @@ for(i = 0; i &lt; totalLinesUp; i += 1)
 
 for(i = 0; i &lt; totalLinesDown; i += 1)
 {
-    lineDownY[i] += lineSpd;
+    if lineTimer % 4 == 0 {
+        lineDownY[i] += lineSpd;
+    }
     
     if lineDownY[i] &gt; room_height &amp;&amp; createLineDown[i] == true
     {

@@ -86,12 +86,16 @@ playMusic(sfxWilyUFO);
         image_speed = -0.2;
         if image_index &lt; 2 {
             state = states.BEGIN_LEAVING;
+            timer = 0;
         }
     break;
     case states.BEGIN_LEAVING:
         image_speed = 0;
-        image_xscale += 0.1;
-        image_yscale += 0.1;
+        timer++;
+        if timer % 4 == 0 {
+            image_xscale += 0.4;
+            image_yscale += 0.4;
+        }
         if image_xscale &gt;= 1.5 {
             state = states.LEAVING;
         }
