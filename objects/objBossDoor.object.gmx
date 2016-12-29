@@ -117,6 +117,7 @@ if canOpen {
             opening = true;
             image_speed = openImgSpeed;
             playSFX(sfxDoor);
+            instance_activate_object(mySolid);
             with mySolid instance_destroy();
             
             //Switch sections

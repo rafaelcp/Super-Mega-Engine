@@ -52,7 +52,7 @@ if mySolid >= 0 && global.xspeed != 0 {
 //Ceiling
 mySolid = instance_place(x, y+global.yspeed, objSolid);
 if mySolid >= 0 && global.yspeed < 0 {
-    y = mySolid.y + sprite_height - sprite_get_yoffset(mask_index);
+    y = mySolid.y + mySolid.sprite_height + sprite_get_yoffset(mask_index);
     global.yspeed = 0;
 }
 

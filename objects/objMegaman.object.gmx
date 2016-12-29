@@ -31,6 +31,7 @@ if global.checkpoint {
     y = global.checkpointY;
 }
 
+placeTileObjects();
 placeRoomBorders();
 placeHorizontalBorders();
 mergeBlocks();
@@ -336,6 +337,7 @@ playerDeactivateObjects(); //Do not do this on frame 1, as it can prevent some C
     
     //Quick weapon switching
     playerSwitchWeapons();
+
 }
 else
 {

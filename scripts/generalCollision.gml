@@ -1,23 +1,11 @@
 ///generalCollision()
 //Handles a general object's collision code. The object cannot have a specified mask. If it does, use generalCollisionMask()
 
-
-//Floor
-var mySolid;
-mySolid = instance_place(x, y+yspeed, objSolid);
-if mySolid >= 0 && yspeed > 0
-{
-    y = mySolid.y;
-    while place_meeting(x, y, mySolid)
-        y -= 1;
-    ground = true;
-    yspeed = 0;
-}
-
+var colliding = !place_free(x, y);
 
 //Wall
 mySolid = instance_place(x+xspeed, y, objSolid);
-if mySolid >= 0 && xspeed != 0 {    
+if mySolid >= 0 && xspeed != 0 && !colliding {    
     if xspeed < 0
         x = mySolid.x + mySolid.sprite_width + (x - (bbox_left-1));
     else
@@ -26,11 +14,22 @@ if mySolid >= 0 && xspeed != 0 {
     xspeed = 0;
 }
 
+//Floor
+var mySolid;
+mySolid = instance_place(x, y+yspeed, objSolid);
+if mySolid >= 0 && yspeed > 0 && !colliding {
+    y = mySolid.bbox_top;
+    while place_meeting(x, y, mySolid)
+        y -= 1;
+    ground = true;
+    yspeed = 0;
+}
+
 
 //Ceiling
 mySolid = instance_place(x, y+yspeed, objSolid);
-if mySolid >= 0 && yspeed < 0 {
-    y = mySolid.y + mySolid.sprite_height + (y - (bbox_top-1));
+if mySolid >= 0 && yspeed < 0 && !colliding {
+    y = mySolid.y + mySolid.sprite_height + sprite_yoffset + (y - (bbox_top-1));
     yspeed = 0;
 }
 

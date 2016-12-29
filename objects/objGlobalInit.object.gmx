@@ -145,6 +145,8 @@ if cfgDebug || debug_mode {
     
 instance_create(0, 0, objGlobalControl);
 instance_destroy();
+
+readTileObjects();
 </string>
           </argument>
         </arguments>

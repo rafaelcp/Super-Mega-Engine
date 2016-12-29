@@ -520,6 +520,11 @@
       <script>scripts\gamepad_button_check_pressed_any.gml</script>
       <script>scripts\gamepad_button_check_released_any.gml</script>
     </scripts>
+    <scripts name="Tiles">
+      <script>scripts\readTileObjects.gml</script>
+      <script>scripts\tile_get_type.gml</script>
+      <script>scripts\placeTileObjects.gml</script>
+    </scripts>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shGrayscale.shader</shader>
@@ -541,6 +546,7 @@
       <object>objects\objLadder</object>
       <object>objects\objSpike</object>
       <object>objects\objWater</object>
+      <object>objects\prtCollision</object>
     </objects>
     <objects name="Player">
       <object>objects\objGlobalControl</object>
@@ -685,9 +691,9 @@
           <object>objects\objTeleport</object>
         </objects>
         <objects name="MM2">
+          <object>objects\objTellySpawner</object>
           <object>objects\objMM2Conveyor</object>
           <object>objects\objWind</object>
-          <object>objects\objTellySpawner</object>
         </objects>
         <objects name="MM3">
           <object>objects\objSparkmanPlatform</object>
