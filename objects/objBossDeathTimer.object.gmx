@@ -28,7 +28,7 @@
             <string>//Handles the boss's death
 //Also transforms into the Mega Man that automatically moves to the center of the screen
 
-//If there is a teleporter in the room (boss rush), just destrou the death timer
+//If there is a teleporter in the room (boss rush), just destroy the death timer
 instance_activate_object(objTeleport);
 with objTeleport {
     if insideView() {

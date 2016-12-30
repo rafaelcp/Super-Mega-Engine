@@ -663,6 +663,12 @@
         <object>objects\objYellowDevilBullet</object>
       </objects>
       <object>objects\objBigEyeBoss</object>
+      <objects name="WilyCapsule1">
+        <object>objects\objWilyCapsule1</object>
+        <object>objects\objWilyCapsuleEnergy</object>
+        <object>objects\objWilyCapsuleShot</object>
+        <object>objects\objDrWily</object>
+      </objects>
     </objects>
     <objects name="LevelObjects">
       <objects name="Drops/Tanks">
@@ -728,7 +734,6 @@
       <object>objects\objDisclaimer</object>
       <object>objects\objTitleScreen</object>
       <object>objects\objShop</object>
-      <object>objects\objMapDrawer</object>
       <object>objects\objMainMenu</object>
       <object>objects\objLoadGame</object>
       <object>objects\objSaveGame</object>
@@ -781,6 +786,7 @@
       <object>objects\objFortressRight</object>
       <object>objects\objFortressLeft</object>
       <object>objects\objFortressSpot</object>
+      <object>objects\objMapDrawer</object>
     </objects>
   </objects>
   <rooms name="rooms">

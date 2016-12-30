@@ -27,9 +27,19 @@
             <kind>1</kind>
             <string>event_inherited();
 
-xspeed = image_xscale * 2;
+spd = 2;
 
 contactDamage = 3;
+
+if instance_exists(objMegaman) {
+
+    xspeed = objMegaman.x - x;
+    yspeed = objMegaman.y - y;
+    len = sqrt(power(xspeed,2) + power(yspeed,2));
+    xspeed = xspeed / len * spd;
+    yspeed = yspeed / len * spd;
+
+}
 </string>
           </argument>
         </arguments>

@@ -59,7 +59,11 @@ checkDeath = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_inherited();
+            <string>if object_get_parent(other.object_index) == prtBoss || object_get_parent(other.object_index) == prtMiniBoss {
+    checkDeath = true;
+}
+
+event_inherited();
 
 if !other.dead &amp;&amp; other.healthpoints &lt;= 0 &amp;&amp; object_get_parent(other.object_index) != prtBoss  &amp;&amp; object_get_parent(other.object_index) != prtMiniBoss {
     var windID;
