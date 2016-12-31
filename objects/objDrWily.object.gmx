@@ -70,6 +70,15 @@ if instance_exists(objMegaman) {
         image_xscale = 1;
     }
 }
+
+if instance_exists(objBossDeathTimer) {
+    if objBossDeathTimer.x &gt; x {
+        image_xscale = -1;
+    }
+    else {
+        image_xscale = 1;
+    }
+}
 </string>
           </argument>
         </arguments>
