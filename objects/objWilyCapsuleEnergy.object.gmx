@@ -55,14 +55,16 @@ angle = instance_count * 90;
             <kind>1</kind>
             <string>event_inherited();
 
-x = centerX + cos(degtorad(angle)) * radius;
-y = centerY + sin(degtorad(angle)) * radius;
-
-radius--;
-angle += 20;
-
-if radius == 0 {
-    instance_destroy();
+if !global.frozen {
+    x = centerX + cos(degtorad(angle)) * radius;
+    y = centerY + sin(degtorad(angle)) * radius;
+    
+    radius--;
+    angle += 20;
+    
+    if radius == 0 {
+        instance_destroy();
+    }
 }
 </string>
           </argument>

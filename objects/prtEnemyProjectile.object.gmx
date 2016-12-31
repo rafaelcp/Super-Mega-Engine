@@ -50,8 +50,10 @@ contactDamage = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x += xspeed;
-y += yspeed;
+            <string>if !global.frozen {
+    x += xspeed;
+    y += yspeed;
+}
 </string>
           </argument>
         </arguments>
