@@ -52,7 +52,7 @@
   </views>
   <instances>
     <instance objName="objBossDoor" x="752" y="80" name="inst_6F84029D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objMegaman" x="112" y="192" name="inst_D7699A7C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objMegaman" x="96" y="192" name="inst_D7699A7C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBossControl" x="768" y="0" name="inst_5681696A" locked="0" code="music = bgmWilyBoss1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWeaponEnergyBig" x="400" y="176" name="inst_E0C97C41" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objYellowDevil" x="976" y="96" name="inst_0183E82D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

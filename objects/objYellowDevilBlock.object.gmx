@@ -259,17 +259,21 @@ else {
     if image_xscale == -1 {
         x_ += 16;
     }
+    useShader = false;
+    subimg = 0;
     if instance_exists(objYellowDevil) &amp;&amp; objYellowDevil.alarm[9] &gt; 1 {
-        subimg = 1;
+        shader_set(shBossHit);
+        useShader = true;
     }
     else if alarm[1] &gt; 0 {
-        subimg = 2;
+        shader_set(shBossDefeated);
+        useShader = true;
     }
-    else {
-        subimg = 0;
-    }
+    
     draw_sprite_part_ext(sprYellowDevil, subimg, left, top, width, height, x_, y_, image_xscale, 1, c_white, 1);
-
+    if useShader {
+        shader_reset();
+    }
 }
 else {
     drawSelf();

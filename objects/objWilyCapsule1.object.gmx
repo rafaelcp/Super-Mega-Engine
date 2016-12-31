@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>prtBoss</parentName>
+  <parentName>prtFortressBoss</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -38,6 +38,10 @@ damage[objPharaohShotCharging] = 6;
 damage[objPharaohShotCharged] = 6;
 
 sprite_index = -1;
+
+hitSpark = true;
+hitWhite = false;
+makeShadow = false;
 </string>
           </argument>
         </arguments>
@@ -196,14 +200,12 @@ if !global.frozen &amp;&amp; isFight {
     if dead &amp;&amp; !instance_exists(objDrWily) {
         instance_create(x, y, objDrWily);
         with objMegaman {
-            background_visible[1] = true;
             if other.x &lt; x {
                 image_xscale = -1;
             }
             else {
                 image_xscale = 1;
             }
-            playerLockMovement();
         }
     }
 }

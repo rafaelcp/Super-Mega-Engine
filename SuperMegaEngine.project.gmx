@@ -528,6 +528,8 @@
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shGrayscale.shader</shader>
+    <shader type="GLSLES">shaders\shBossDefeated.shader</shader>
+    <shader type="GLSLES">shaders\shBossHit.shader</shader>
     <shader type="GLSLES">shaders\shBlueish.shader</shader>
     <shader type="GLSLES">shaders\shColorReplace.shader</shader>
     <shader type="GLSLES">shaders\shColorReplace2.shader</shader>
@@ -656,6 +658,8 @@
         <object>objects\prtBoss</object>
         <object>objects\objBossDeathTimer</object>
         <object>objects\objAbsorbEffect</object>
+        <object>objects\prtFortressBoss</object>
+        <object>objects\objBossShadow</object>
       </objects>
       <objects name="YellowDevil">
         <object>objects\objYellowDevil</object>
