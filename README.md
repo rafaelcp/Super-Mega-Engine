@@ -1,6 +1,6 @@
 # Super Mega Engine
 
-[![Join the chat at https://gitter.im/Open-Mega-Engine/Lobby](https://badges.gitter.im/Open-Mega-Engine/Lobby.svg)](https://gitter.im/Open-Mega-Engine/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![alt text]( http://i.imgur.com/tXSoThF.png) Twitter](https://twitter.com/netfighters) [![alt text]( http://i.imgur.com/P3YfQoD.png) Facebook](https://www.facebook.com/Super-Mega-Engine-1864987877046420/)
+[![Join the chat at https://gitter.im/Open-Mega-Engine/Lobby](https://badges.gitter.im/Open-Mega-Engine/Lobby.svg)](https://gitter.im/Open-Mega-Engine/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Twitter]( http://i.imgur.com/tXSoThF.png) Twitter](https://twitter.com/netfighters) [![Facebook]( http://i.imgur.com/P3YfQoD.png) Facebook](https://www.facebook.com/Super-Mega-Engine-1864987877046420/) [![Discord](https://discordapp.com/assets/07dca80a102d4149e9736d4b162cff6f.ico) Discord](https://discord.gg/P2webCE)
 
 
 **Super Mega Engine - Open-source Classic Megaman engine for [Game Maker Studio](https://www.yoyogames.com/get)!**
@@ -40,7 +40,10 @@ This is a fork of [Mega Engine](http://sprites-inc.co.uk/showthread.php?tid=1648
 - Automatically adds boss names to the stage select screen
 - Adds W-Tanks, screws and a fully functional shop (optional) with some built-in items, like the energy balancer, shock guard and guard power up
 - Fully functional shop with many built-in items, with flexibility in adding your own
-- Fortress system
+- Fortress system, including drag & drop placement of paths and dots
+- Automatic collision objects placement according to tiles
+- Mini bosses
+- Enemy weak spots
 - Game saving / loading system
 - Password system
 - Intro stage support
