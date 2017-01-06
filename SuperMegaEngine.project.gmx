@@ -818,7 +818,7 @@
     <room>rooms\rmBossRush</room>
     <room>rooms\rmFinalStage</room>
   </rooms>
-  <constants number="41">
+  <constants number="54">
     <constant name="megabuster">0</constant>
     <constant name="silvertomahawk">1</constant>
     <constant name="windstorm">2</constant>
@@ -849,8 +849,21 @@
     <constant name="cfgEnablePasswords">true</constant>
     <constant name="cfgRushTeleportSpeed">10</constant>
     <constant name="cfgGravity">0.25</constant>
+    <constant name="cfgGravityWater">0.095</constant>
     <constant name="cfgJumpSpeed">5.25</constant>
+    <constant name="cfgJumpSpeedWater">5.35</constant>
     <constant name="cfgMaxFallingSpeed">7</constant>
+    <constant name="cfgWalkSpeed">1.296875</constant>
+    <constant name="cfgHitTime">20</constant>
+    <constant name="cfgStepSpeed">1/7</constant>
+    <constant name="cfgStepFrames">7</constant>
+    <constant name="cfgIceDec">0.025</constant>
+    <constant name="cfgIceDecWalk">0.05</constant>
+    <constant name="cfgSlideSpeed">2.5</constant>
+    <constant name="cfgSlideFrames">26</constant>
+    <constant name="cfgClimbSpeed">1.296875</constant>
+    <constant name="cfgInitChargeTime">20</constant>
+    <constant name="cfgChargeTime">57</constant>
     <constant name="life">0</constant>
     <constant name="etank">1</constant>
     <constant name="wtank">2</constant>

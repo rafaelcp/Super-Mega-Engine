@@ -266,51 +266,33 @@ else if canSpriteChange == true
 
 
 //Blinking animation
-if sprite_index == sprMegamanStand //Don't use spriteStand as this could also be sprMegamanStandShoot!
-{
-    if blinkImage == 0
-    {
-        blinkTimer += 1;
-        if blinkTimer >= blinkTimerMax
-        {
-            blinkImage = 1;
-            blinkTimer = 0;
-        }
-    }
-    else
-    {
-        blinkTimer += 1;
-        if blinkTimer >= blinkDuration
-        {
-            blinkImage = 0;
-            blinkTimer = 0;
-        }
+if sprite_index == sprMegamanStand { //Don't use spriteStand as this could also be sprMegamanStandShoot!
+    blinkTimer++;
+    if blinkTimer >= blinkTimerMax {
+        blinkImage = 1 - blinkImage;
+        blinkTimer = 0;
     }
 }
-else
-{
+else {
     blinkTimer = 0;
     blinkImage = 0;
 }
 
 
 //Sidestepping
-if isStep == true
-{
+if isStep {
     if !place_meeting(x+image_xscale, y, objSolid) && !place_meeting(x+image_xscale, y, prtMovingPlatformSolid)
         global.xspeed = stepSpeed * image_xscale;
-    else if place_meeting(x+image_xscale, y, prtMovingPlatformSolid)
-    {
+    else if place_meeting(x+image_xscale, y, prtMovingPlatformSolid) {
         if instance_place(x+image_xscale, y, prtMovingPlatformSolid).dead == true //Still allow movement when the moving platform is despawned
             global.xspeed = stepSpeed * image_xscale;
     }
     
-    if canSpriteChange == true
+    if canSpriteChange
         sprite_index = spriteStep;
     
-    stepTimer += 1;
-    if stepTimer >= stepFrames
-    {
+    stepTimer++;
+    if stepTimer >= stepFrames {
         isStep = false;
         stepTimer = 0;
     }

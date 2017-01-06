@@ -43,21 +43,21 @@ playerCameraInit();
 
 //Physics variables
 grav = cfgGravity; //The player's gravity
-gravWater = 0.38 * grav; //The player's gravity in water
+gravWater = cfgGravityWater; //The player's gravity in water
 jumpSpeed = cfgJumpSpeed;  //Dunno why grav needs to be multiplied by 2, but MM jumps as high as in MM5 when doing so
-jumpSpeedWater = cfgJumpSpeed + 0.1;
-walkSpeed = 1.296875;
-maxVspeed = 7;
-stepSpeed = 1/7;
-stepFrames = 7;
-iceDec = 0.025; //The deceleration on ice when not holding any buttons
-iceDecWalk = 0.05; //The deceleration on ice when moving in the opposite direction
-slideSpeed = 2.5;
-slideFrames = 26;
-climbSpeed = 1.296875; //Official value of MM3
-initChargeTime = 20; //The amount of frames after which to start charging after the shooting animation is complete
-chargeTime = 57; //Official value of MM6
-hitTime = 20; //The amount of frames you experience knockback after getting hit
+jumpSpeedWater = cfgJumpSpeedWater;
+walkSpeed = cfgWalkSpeed;
+maxVspeed = cfgMaxFallingSpeed;
+stepSpeed = cfgStepSpeed;
+stepFrames = cfgStepFrames;
+iceDec = cfgIceDec; //The deceleration on ice when not holding any buttons
+iceDecWalk = cfgIceDecWalk; //The deceleration on ice when moving in the opposite direction
+slideSpeed = cfgSlideSpeed;
+slideFrames = cfgSlideFrames;
+climbSpeed = cfgClimbSpeed; //Official value of MM3
+initChargeTime = cfgInitChargeTime; //The amount of frames after which to start charging after the shooting animation is complete
+chargeTime = cfgChargeTime; //Official value of MM6
+hitTime = cfgHitTime; //The amount of frames you experience knockback after getting hit
 
 
 //Variables
