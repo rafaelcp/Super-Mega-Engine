@@ -246,6 +246,10 @@ if global.loopEnd &gt; -1 &amp;&amp; global.loopStart &gt; -1 &amp;&amp; global.
           <argument>
             <kind>1</kind>
             <string>///Debug keys
+if !cfgEnableDebugKeys {
+    exit;
+}
+
 if keyboard_check_pressed(vk_f2)
 {
     application_surface_draw_enable(true);

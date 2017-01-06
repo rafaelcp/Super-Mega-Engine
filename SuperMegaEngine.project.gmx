@@ -818,7 +818,7 @@
     <room>rooms\rmBossRush</room>
     <room>rooms\rmFinalStage</room>
   </rooms>
-  <constants number="40">
+  <constants number="41">
     <constant name="megabuster">0</constant>
     <constant name="silvertomahawk">1</constant>
     <constant name="windstorm">2</constant>
@@ -839,6 +839,7 @@
     <constant name="cfgMaxHealth">28</constant>
     <constant name="cfgMaxAmmo">28</constant>
     <constant name="cfgDebug">false</constant>
+    <constant name="cfgEnableDebugKeys">true</constant>
     <constant name="cfgShowLives">false</constant>
     <constant name="cfgShotSplash">false</constant>
     <constant name="cfgInitialStage">-1</constant>
