@@ -268,9 +268,17 @@ else if canSpriteChange == true
 //Blinking animation
 if sprite_index == sprMegamanStand { //Don't use spriteStand as this could also be sprMegamanStandShoot!
     blinkTimer++;
-    if blinkTimer >= blinkTimerMax {
-        blinkImage = 1 - blinkImage;
-        blinkTimer = 0;
+    if blinkImage == 0 {
+        if blinkTimer >= blinkTimerMax {
+            blinkImage = 1;
+            blinkTimer = 0;
+        }
+    }
+    else {
+        if blinkTimer >= blinkDuration {
+            blinkImage = 0;
+            blinkTimer = 0;
+        }
     }
 }
 else {
