@@ -549,6 +549,7 @@
     <tile bgName="tstMM3" x="32" y="224" w="16" h="16" xo="496" yo="180" id="10007906" name="inst_85415C9E" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstMM3" x="16" y="224" w="16" h="16" xo="496" yo="180" id="10007907" name="inst_7533E9C2" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstMM3" x="0" y="224" w="16" h="16" xo="496" yo="180" id="10007908" name="inst_CDD6029A" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM2BossRush" x="96" y="480" w="64" h="64" xo="128" yo="0" id="10008331" name="inst_451422D0" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstMM3" x="16" y="496" w="16" h="16" xo="192" yo="180" id="10004613" name="inst_FE265F8F" depth="-3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstMM3" x="16" y="560" w="16" h="16" xo="192" yo="180" id="10004614" name="inst_809F4B4E" depth="-3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstMM3" x="208" y="496" w="16" h="16" xo="192" yo="180" id="10004615" name="inst_DB8B9578" depth="-3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

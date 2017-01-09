@@ -32,6 +32,7 @@ if global.checkpoint {
 }
 
 placeTileObjects();
+placeTileAnimations();
 placeRoomBorders();
 placeHorizontalBorders();
 mergeBlocks();

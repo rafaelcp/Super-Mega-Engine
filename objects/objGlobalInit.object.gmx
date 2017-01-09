@@ -139,6 +139,11 @@ global.lastSave = 0;
 
 global.GP = -1  //Gamepad
 
+//Initial and final layer for tile animations (decreasing)
+global.ini_layer = 999999;
+global.end_layer = 999920;
+
+
 if cfgDebug || debug_mode {
     show_debug_overlay(true);
 }
@@ -146,7 +151,8 @@ if cfgDebug || debug_mode {
 instance_create(0, 0, objGlobalControl);
 instance_destroy();
 
-readTileObjects();
+readTileObjects(); 
+readTileAnimations();
 </string>
           </argument>
         </arguments>

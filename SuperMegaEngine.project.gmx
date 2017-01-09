@@ -525,8 +525,10 @@
     </scripts>
     <scripts name="Tiles">
       <script>scripts\readTileObjects.gml</script>
+      <script>scripts\readTileAnimations.gml</script>
       <script>scripts\tile_get_type.gml</script>
       <script>scripts\placeTileObjects.gml</script>
+      <script>scripts\placeTileAnimations.gml</script>
     </scripts>
   </scripts>
   <shaders name="shaders">

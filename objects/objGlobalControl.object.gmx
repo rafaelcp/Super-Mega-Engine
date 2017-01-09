@@ -118,6 +118,11 @@ if room == rmInit {
     application_surface_draw_enable(true);
 }
 
+curr_layer = global.ini_layer;
+for (var l = global.ini_layer; l &gt;= global.end_layer; l--) {
+    tile_layer_hide(l);
+}
+
 
 //When the level starts, all pickups should spawn
 if global.levelStart {
@@ -223,6 +228,15 @@ if global.loopEnd &gt; -1 &amp;&amp; global.loopStart &gt; -1 &amp;&amp; global.
         var diff = global.loopEnd - global.loopStart;
         var newPos = currPos - diff;
         audio_sound_set_track_position(global.bgm, newPos);
+    }
+}
+
+tile_layer_show(curr_layer);
+curr_layer--;
+if curr_layer &lt; global.end_layer {
+    curr_layer = global.ini_layer;
+    for (var l = global.ini_layer; l &gt;= global.end_layer; l--) {
+        tile_layer_hide(l);
     }
 }
 </string>
