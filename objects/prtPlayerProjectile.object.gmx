@@ -135,6 +135,7 @@ else {
                 drawDamageNumber(x, y, damage[other.object_index]);
                 healthpoints -= damage[other.object_index];
                 visible = false;
+                event_user(14);
             }
             
             alarm[11] = 2;

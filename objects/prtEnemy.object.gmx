@@ -116,7 +116,8 @@ damage[objCentaurFlash] = 10;
           <argument>
             <kind>1</kind>
             <string>//"Die" (doesn't actually destroy the enemy though)
-if healthpoints &lt;= 0 {   
+if healthpoints &lt;= 0 {
+    event_user(15);
     if canInitDeath {
         beenOutsideView = false;
         visible = false;
@@ -191,6 +192,54 @@ if dead {
         with other playerGetHit(other.contactDamage);
     }
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="25">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Event: onDeath - called when the enemy is killed
+// To be defined in child objects if necessary
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="24">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Event: onHit - called when the enemy is hit
+// To be defined in child objects if necessary
 </string>
           </argument>
         </arguments>

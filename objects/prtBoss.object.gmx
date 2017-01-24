@@ -240,15 +240,16 @@ else if pose == -1 {
         }
         else {
             global.bossHealth = 0;
+            healthpoints = 0;
             dead = true;
             stopAllSFX();
             playSFX(sfxDeath);
             
             var i, explosionID;
                 
-            doExplosion(x, y, 1.5);
+            doExplosion(sprite_get_xcenter(), sprite_get_ycenter(), 1.5);
             
-            doExplosion(x, y, 2.5);
+            doExplosion(sprite_get_xcenter(), sprite_get_ycenter(), 2.5);
             
             instance_activate_object(objTeleport);
             with objTeleport {

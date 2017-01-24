@@ -136,6 +136,7 @@ musicVolume = 0.7;
             stopSFX(sfxEnergyRestore);
             playerFreeMovement();
             myBoss.startFight = true;
+            myBoss.healthpoints = 28;
             fillingHealthBar = false;
         }
     }

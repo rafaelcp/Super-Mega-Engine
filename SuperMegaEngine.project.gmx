@@ -51,6 +51,7 @@
       <sound>sound\sfxAbsorb</sound>
       <sound>sound\sfxYokuBlock</sound>
       <sound>sound\sfxWilyUFO</sound>
+      <sound>sound\sfxExplosion4</sound>
     </sounds>
     <sounds name="Music">
       <sound>sound\bgmIntroduction</sound>
@@ -278,6 +279,7 @@
       <sprite>sprites\sprSlideDust</sprite>
       <sprite>sprites\sprSplash</sprite>
       <sprite>sprites\sprAirBubble</sprite>
+      <sprite>sprites\sprExplosion4</sprite>
     </sprites>
     <sprites name="Menu">
       <sprites name="Pause">
@@ -672,6 +674,12 @@
         <object>objects\objYellowDevilBullet</object>
       </objects>
       <object>objects\objBigEyeBoss</object>
+      <objects name="WilyMachine4">
+        <object>objects\objWilyMachine4</object>
+        <object>objects\objWilyMachine4Shot</object>
+        <object>objects\objWilyMachine4Smoke</object>
+        <object>objects\objWilyPod4</object>
+      </objects>
       <objects name="WilyCapsule1">
         <object>objects\objWilyCapsule1</object>
         <object>objects\objWilyCapsuleEnergy</object>
@@ -732,6 +740,7 @@
       <object>objects\objAirBubble</object>
       <object>objects\objDmgText</object>
       <object>objects\objFlash</object>
+      <object>objects\objExplosion4</object>
     </objects>
     <objects name="Menu">
       <object>objects\objPauseMenu</object>
