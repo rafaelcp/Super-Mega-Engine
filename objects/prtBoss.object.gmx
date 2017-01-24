@@ -229,6 +229,7 @@ else if pose == -1 {
     
     //Hitspark and death
     if healthpoints &lt; prevHealthPoints {
+        event_user(14);
         if healthpoints &gt; 0 {
             canHit = false;
             alarm[9] = 1;
@@ -242,24 +243,27 @@ else if pose == -1 {
             global.bossHealth = 0;
             healthpoints = 0;
             dead = true;
-            stopAllSFX();
-            playSFX(sfxDeath);
-            
-            var i, explosionID;
+            event_user(15);
+            if dead {
+                stopAllSFX();
+                playSFX(sfxDeath);
                 
-            doExplosion(sprite_get_xcenter(), sprite_get_ycenter(), 1.5);
-            
-            doExplosion(sprite_get_xcenter(), sprite_get_ycenter(), 2.5);
-            
-            instance_activate_object(objTeleport);
-            with objTeleport {
-                if boss == global.bossID {
-                    instance_destroy();
+                var i, explosionID;
+                    
+                doExplosion(sprite_get_xcenter(), sprite_get_ycenter(), 1.5);
+                
+                doExplosion(sprite_get_xcenter(), sprite_get_ycenter(), 2.5);
+                
+                instance_activate_object(objTeleport);
+                with objTeleport {
+                    if boss == global.bossID {
+                        instance_destroy();
+                    }
                 }
+    
+                instance_destroy();
+                instance_create(x, y, objBossDeathTimer);
             }
-
-            instance_destroy();
-            instance_create(x, y, objBossDeathTimer);
             
         }
     }

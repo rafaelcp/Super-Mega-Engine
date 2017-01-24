@@ -119,32 +119,7 @@ instance_create(x + 20, y + sprite_height / 2 + 16, objWilyMachine4Shot);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Switching to phase 2
-if sprite_index == sprWilyMachine4a and healthpoints &lt;= 0 {
-    sprite_index = sprWilyMachine4b;
-    control.canFillHealthBar = true;
-    global.bossHealth = 5;
-    healthpoints = 5;
-    dead = false;
-    hitbox_left = 14;
-    hitbox_top = 36;
-    hitbox_bottom = 48;
-    damage[objSilverTomahawk] = 4;
-    damage[objPharaohShot] = 0;
-    damage[objPharaohShotCharging] = 0;
-    damage[objPharaohShotCharged] = 0;
-    damage[objWindStorm] = 7;
-    alarm[0] = -1;
-    playerLockMovement();
-    with objWilyMachine4Shot {
-        instance_destroy();
-    }
-    with prtPlayerProjectile {
-        instance_destroy();
-    }
-}
-
-event_inherited();
+            <string>event_inherited();
 
 //print(startIntro, isIntro, startFight, isFight, y);
 
@@ -215,6 +190,43 @@ else {
     if alarm[0] &gt; 0 {
         alarm[0]++;
     }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="25">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// onDeath
+//Switching to phase 2
+if sprite_index == sprWilyMachine4a {
+    sprite_index = sprWilyMachine4b;
+    hitbox_left = 14;
+    hitbox_top = 36;
+    hitbox_bottom = 48;
+    damage[objSilverTomahawk] = 4;
+    damage[objPharaohShot] = 0;
+    damage[objPharaohShotCharging] = 0;
+    damage[objPharaohShotCharged] = 0;
+    damage[objWindStorm] = 7;
+    alarm[0] = -1;
+    refillHealthBar();
 }
 </string>
           </argument>

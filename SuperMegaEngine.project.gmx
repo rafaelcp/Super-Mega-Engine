@@ -484,6 +484,7 @@
     <scripts name="Enemies">
       <script>scripts\check_enemy_death.gml</script>
       <script>scripts\instance_number_alive.gml</script>
+      <script>scripts\refillHealthBar.gml</script>
     </scripts>
     <scripts name="Misc">
       <script>scripts\drawDamageNumber.gml</script>
