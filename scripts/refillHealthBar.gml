@@ -2,8 +2,8 @@
 
 control = instance_nearest(x, y, objBossControl);
 control.canFillHealthBar = true;
-global.bossHealth = 1;
-healthpoints = 1;
+global.bossHealth = 0;
+healthpoints = 0;
 dead = false;
 canInitDeath = false;
 playerLockMovement();
