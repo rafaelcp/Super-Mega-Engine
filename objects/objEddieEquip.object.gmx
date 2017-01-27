@@ -30,7 +30,7 @@
 name = "Eddie Call";
 description = "Eddie comes and gives you a random item.";
 usable = true;
-maxUnits = 1;
+maxUnits = 3;
 showZero = true;
 buyable = true;
 price = 50;
@@ -59,12 +59,26 @@ price = 50;
             <string>event_inherited();
 if !ok return false; //Must be on the beginning of every child of prtEquip
 
-//ToDo
+with objEddie {
+    if insideView() {
+        playSFX(sfxError);
+        other.count++;
+        return false;
+    }
+}
 
-ok = false;
-count++;
-playSFX(sfxError);
-return false;
+if instance_exists(objMegaman) {
+    show_debug_message("Calling Eddie.");
+    instance_create(objMegaman.x + objMegaman.image_xscale * 32, view_yview[0], objEddie);
+    playSFX(sfxMenuSelect);
+    
+    return true;
+}
+else {
+    playSFX(sfxError);
+    count++;
+    return false;
+}
 </string>
           </argument>
         </arguments>

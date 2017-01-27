@@ -356,6 +356,7 @@
       <sprite>sprites\sprInvisible</sprite>
       <sprite>sprites\sprReady</sprite>
       <sprite>sprites\sprWilyUFO</sprite>
+      <sprite>sprites\sprEddie</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -806,6 +807,9 @@
       <object>objects\objFortressLeft</object>
       <object>objects\objFortressSpot</object>
       <object>objects\objMapDrawer</object>
+    </objects>
+    <objects name="Misc">
+      <object>objects\objEddie</object>
     </objects>
   </objects>
   <rooms name="rooms">
