@@ -148,7 +148,7 @@ while place_meeting(x, y, objSolid) {
             else if image_index &gt; 5 and !delivered {
                 delivered = true;
                 var item = choose(objLifeEnergyBig, objWeaponEnergyBig, objLifeEnergyBig, objWeaponEnergyBig, objLifeEnergyBig, objWeaponEnergyBig, objLifeEnergyBig, objWeaponEnergyBig, objLife, objLife, objETank);
-                var item_instance = instance_create(x + image_xscale * 4, y - 16, item);
+                var item_instance = instance_create(x + image_xscale * 8, y - 24, item);
                 item_instance.xspeed = image_xscale;
                 item_instance.yspeed = -4;
             }
