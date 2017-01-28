@@ -140,6 +140,8 @@ canMove = false;
 canGravity = false;
 canPause = false;
 image_speed = 0;
+
+prevx = noone;
 </string>
           </argument>
         </arguments>
