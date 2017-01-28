@@ -2,7 +2,7 @@
 <object>
   <spriteName>sprCollisionOther</spriteName>
   <solid>0</solid>
-  <visible>0</visible>
+  <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>objSpawner</parentName>
@@ -27,9 +27,10 @@
             <kind>1</kind>
             <string>event_inherited();
 
-obj = objTelly;
-dx = 8;
-dy = 8;
+obj = objJunkBlock;
+maxObjs = 99;
+image_xscale = 2;
+image_yscale = 2;
 </string>
           </argument>
         </arguments>

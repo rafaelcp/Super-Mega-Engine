@@ -192,6 +192,9 @@
         <sprite>sprites\sprSniperJoe</sprite>
         <sprite>sprites\sprMM2Bullet</sprite>
       </sprites>
+      <sprites name="MM3">
+        <sprite>sprites\sprPole</sprite>
+      </sprites>
       <sprites name="MM5">
         <sprite>sprites\sprBBitter</sprite>
         <sprite>sprites\sprMM5Bullet</sprite>
@@ -272,6 +275,11 @@
       </sprites>
       <sprites name="Checkpoint">
         <sprite>sprites\sprCheckpoint</sprite>
+      </sprites>
+      <sprites name="Misc">
+        <sprite>sprites\sprJunkBlock</sprite>
+        <sprite>sprites\sprDustBlock</sprite>
+        <sprite>sprites\sprPoleEgg</sprite>
       </sprites>
     </sprites>
     <sprites name="Effects">
@@ -434,6 +442,7 @@
       <script>scripts\mergeBlocksHorizontal.gml</script>
       <script>scripts\mergeBlocksVertical.gml</script>
       <script>scripts\mergeBlocks.gml</script>
+      <script>scripts\move.gml</script>
     </scripts>
     <scripts name="Views">
       <script>scripts\insideView.gml</script>
@@ -636,6 +645,10 @@
         <object>objects\objSniperJoe</object>
         <object>objects\objMM2Bullet</object>
       </objects>
+      <objects name="MM3">
+        <object>objects\objPoleEgg</object>
+        <object>objects\objPole</object>
+      </objects>
       <objects name="MM5">
         <object>objects\objBBitter</object>
         <object>objects\objOctoper</object>
@@ -707,11 +720,13 @@
       <objects name="Gimmicks">
         <objects name="Parents">
           <object>objects\prtGimmick</object>
+          <object>objects\prtSolidGimmick</object>
           <object>objects\prtMovingPlatformJumpthrough</object>
           <object>objects\prtMovingPlatformSolid</object>
         </objects>
         <objects name="General">
           <object>objects\objYokuBlock</object>
+          <object>objects\objSpawner</object>
           <object>objects\objShake</object>
           <object>objects\objTeleport</object>
         </objects>
@@ -724,6 +739,7 @@
           <object>objects\objSparkmanPlatform</object>
           <object>objects\objSparkmanPlatformStop</object>
           <object>objects\objDropPlatform</object>
+          <object>objects\objJunkBlockSpawner</object>
         </objects>
         <objects name="Test">
           <object>objects\objMovingPlatformTest</object>
@@ -731,6 +747,11 @@
       </objects>
       <objects name="Checkpoint">
         <object>objects\objCheckpoint</object>
+      </objects>
+      <objects name="Misc">
+        <object>objects\objJunkBlock</object>
+        <object>objects\prtDestructibleBlock</object>
+        <object>objects\objDustBlock</object>
       </objects>
     </objects>
     <objects name="Effects">
