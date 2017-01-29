@@ -31,7 +31,7 @@ for (var i = 0; i < num_tiles; i++) {
             continue;
         }
         var tile_id_ = tile_get_type(tid_, tx - tx_, ty - ty_);
-        print(tile_id, tile_id_, tx, tx_, ty, ty_);
+        //print(tile_id, tile_id_, tx, tx_, ty, ty_);
         var anim = ds_map_find_value(global.anims, tile_id_);
         if is_undefined(anim) {
             anim = ds_map_create();
