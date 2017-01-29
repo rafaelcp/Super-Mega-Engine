@@ -141,9 +141,10 @@ while place_meeting(x, y, objSolid) {
         }
         else {  //Throw item
             delivering = true;
-            if image_index &lt; 3 and image_speed != 0 {
+            if image_index &lt; 3 and image_speed != 0 and !delivered {
                 image_speed = anim_spd;
                 image_index = 3;
+                print("abrindo", image_index, image_speed);
             }
             else if image_index &gt; 5 and !delivered {
                 delivered = true;
@@ -152,11 +153,12 @@ while place_meeting(x, y, objSolid) {
                 item_instance.xspeed = image_xscale;
                 item_instance.yspeed = -4;
             }
-            else if image_index &gt; 5.99 {
-                image_index = 5.99;
+            else if image_index &gt; 5.5 and delivered {
+                image_index = 5.5;
                 image_speed = -anim_spd;
+                print("fechando", image_index, image_speed);
             }
-            else if image_speed &lt; 0 and image_index &lt; 4 {
+            else if image_speed &lt; 0 and image_index &lt;= 4.2 and delivered {
                 image_index = 1;
                 image_speed = 0;
                 alarm[0] = room_speed;
