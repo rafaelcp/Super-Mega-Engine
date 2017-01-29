@@ -35,6 +35,7 @@ delivering = false;
 leaving = false;
 delivered = false;
 ground = false;
+called = false;
 </string>
           </argument>
         </arguments>
@@ -98,7 +99,7 @@ while place_meeting(x, y, objSolid) {
                 y = view_yview[0];
                 yspeed = cfgRushTeleportSpeed;
             }
-            if place_meeting(x, y + yspeed, objSolid) and place_free(x, y) {
+            if (!called or abs(objMegaman.y - y) &lt; 64) and place_meeting(x, y + yspeed, objSolid) and place_free(x, y) {
                 image_speed = anim_spd * 2;
                 while !place_meeting(x, y + 1, objSolid) {
                     y++;

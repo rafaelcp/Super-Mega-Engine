@@ -69,7 +69,8 @@ with objEddie {
 
 if instance_exists(objMegaman) {
     show_debug_message("Calling Eddie.");
-    instance_create(objMegaman.x + objMegaman.image_xscale * 32, view_yview[0], objEddie);
+    var eddie = instance_create(objMegaman.x + objMegaman.image_xscale * 32, view_yview[0], objEddie);
+    eddie.called = true;
     playSFX(sfxMenuSelect);
     
     return true;
