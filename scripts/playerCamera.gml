@@ -2,7 +2,7 @@
 //Handles the camera
 //Call it in objMegaman
 
-if prevx != noone and !instance_exists(objSectionSwitcher) and x > sectionLeft + view_wview[0]/2 and x < sectionRight - view_wview[0]/2 {
+if prevx != noone and !instance_exists(objSectionSwitcher) and x > sectionLeft + view_wview[0]/2 - sprite_width and x < sectionRight - view_wview[0]/2 + sprite_width {
     diff = x - prevx;
     view_xview[0] += diff;
 }
