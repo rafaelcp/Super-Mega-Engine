@@ -37,6 +37,8 @@ groundEnabled = true;
 destroyOnHorizontalCollision = true;
 
 checkDeath = false;
+
+if !place_free(x, y) instance_destroy();
 </string>
           </argument>
         </arguments>
