@@ -3,29 +3,40 @@
 
 global.anims = ds_map_create();
 
-for (var tx = 0; tx < room_width; tx += 16) {
-    for (var ty = 0; ty < room_height; ty += 16) {
-        var tid = tile_layer_find(1000000, tx, ty);
-        if tid > -1 {
-            var real_tx = tile_get_x(tid);
-            var real_ty = tile_get_y(tid);
-            var tile_id = tile_get_type(tid, tx - real_tx, ty - real_ty);
-            var anim = ds_map_create();
-            //print(i, tx, ty, tile_id);
-            for (var l = global.ini_layer; l >= global.end_layer; l--) {
-                var tid_ = tile_layer_find(l, tx, ty);
-                //print(l, tx, ty);
-                if tid_ > -1 {
-                    var real_tx_ = tile_get_x(tid_);
-                    var real_ty_ = tile_get_y(tid_);
-                    var tile_id_ = tile_get_type(tid_, tx - real_tx_, ty - real_ty_);
-                    ds_map_add(anim, l, tile_id_);
-                    //print(i, tile_id, l, tile_id_);
-                }
-            }
-            if ds_map_size(anim) > 0 {
-                ds_map_add(global.anims, tile_id, anim);
-            }
+var tiles = tile_get_ids();
+var num_tiles = array_length_1d(tiles);
+
+for (var i = 0; i < num_tiles; i++) {
+    var tid = tiles[i];
+    var tl = tile_get_depth(tid);
+    if tl == 1000000 {
+        continue;
+    }
+    var tx = tile_get_x(tid);
+    var ty = tile_get_y(tid);
+    var tw = tile_get_width(tid);
+    var th = tile_get_height(tid);
+    var tile_id = tile_get_type(tid, 0, 0);
+    for (var j = 0; j < num_tiles; j++) {
+        var tid_ = tiles[j];
+        var tl_ = tile_get_depth(tid_);
+        if tl_ != 1000000 {
+            continue;
+        }        
+        var tx_ = tile_get_x(tid_);
+        var ty_ = tile_get_y(tid_);
+        var tw_ = tile_get_width(tid_);
+        var th_ = tile_get_height(tid_);
+        if tx > tx_ + tw_ or ty > ty_ + th_ or tx < tx_ or ty < ty_ {
+            continue;
         }
+        var tile_id_ = tile_get_type(tid_, tx - tx_, ty - ty_);
+        print(tile_id, tile_id_, tx, tx_, ty, ty_);
+        var anim = ds_map_find_value(global.anims, tile_id_);
+        if is_undefined(anim) {
+            anim = ds_map_create();
+        }
+        ds_map_add(anim, tl, tile_id + "," + string(tw) + "," + string(th));
+        ds_map_add(global.anims, tile_id_, anim);
     }
 }
