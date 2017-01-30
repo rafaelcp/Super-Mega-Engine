@@ -399,6 +399,10 @@ if global.keyLeftPressed || global.keyRightPressed
 oldCol = draw_get_color();
 oldAlp = draw_get_alpha();
 
+var weapons_height = 139;
+var icon_size = 16;
+var spacing = max(0, floor((weapons_height - ceil(global.totalWeapons / 2) * icon_size) / (floor(global.totalWeapons / 2) + 1)));
+var iniY = 17 + spacing;
 
 //Menu
 if (phase &gt;= 1 &amp;&amp; phase &lt;= 3) || phase == 5 || phase == 6
@@ -437,11 +441,11 @@ if (phase &gt;= 1 &amp;&amp; phase &lt;= 3) || phase == 5 || phase == 6
             
     //Weapons
     currX = 32;
-    currY = 24;
+    currY = iniY;
     for(i = 0; i &lt; global.totalWeapons; i++) {
         if i &gt;= global.weapons_per_col &amp;&amp; currX == 32 {
             currX = 144;
-            currY = 24;
+            currY = iniY;
         }
         if global.weapons[i].unlocked == true {
             //Icon
@@ -491,7 +495,7 @@ if (phase &gt;= 1 &amp;&amp; phase &lt;= 3) || phase == 5 || phase == 6
             else
                 draw_text(view_xview[0]+currX+16+10, view_yview[0]+currY+1, global.weapons[ global.weaponSlot[i] ].abbrev);
         }
-        currY += 19
+        currY += icon_size + spacing;
     }
   
     //Life bar
