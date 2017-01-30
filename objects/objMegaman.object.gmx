@@ -371,6 +371,8 @@ else
             <string>/// Change colors depending on the special weapon
 //Primary is the helmet color (dark blue), secondary is the shirt color (cyan)
 
+//TODO: PUT COLORS ON WEAPONS THEMSELVES global.weapons[global.weapon].col1, col2
+
 switch global.weapon
 {
     case megabuster:
@@ -426,6 +428,10 @@ switch global.weapon
         global.secondaryCol = make_color_rgb(248, 248, 248);
     break;
         
+    case drillbomb:
+        global.primaryCol = make_color_rgb(248, 56, 0);
+        global.secondaryCol = make_color_rgb(188, 188, 188);
+    break;
     
 }
 

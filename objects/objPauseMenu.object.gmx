@@ -446,7 +446,7 @@ if (phase &gt;= 1 &amp;&amp; phase &lt;= 3) || phase == 5 || phase == 6
         if global.weapons[i].unlocked == true {
             //Icon
             if option == i {
-                draw_sprite_ext(sprWeaponIcons, global.weaponSlot[i], view_xview[0]+currX, view_yview[0]+currY, 1, 1, 0, c_white, 1);
+                draw_sprite_ext(sprWeaponIconsColor, global.weaponSlot[i], view_xview[0]+currX, view_yview[0]+currY, 1, 1, 0, c_white, 1);
                 /*shader_set(shBlueish);
                 draw_sprite_ext(sprWeaponIconsColor, global.weaponSlot[i], view_xview[0]+currX, view_yview[0]+currY, 1, 1, 0, c_white, 1);
                 shader_reset();*/
@@ -459,7 +459,7 @@ if (phase &gt;= 1 &amp;&amp; phase &lt;= 3) || phase == 5 || phase == 6
                 //draw_sprite_ext(sprWeaponIconsGray, global.weaponSlot[i], view_xview[0]+currX, view_yview[0]+currY, 1, 1, 0, c_white, 1);
                 //EXPERIMENTAL: grayscale in runtime. If everything goes ok, will make this change permanent
                 shader_set(shGrayscale);
-                draw_sprite_ext(sprWeaponIcons, global.weaponSlot[i], view_xview[0]+currX, view_yview[0]+currY, 1, 1, 0, c_white, 1);
+                draw_sprite_ext(sprWeaponIconsColor, global.weaponSlot[i], view_xview[0]+currX, view_yview[0]+currY, 1, 1, 0, c_white, 1);
                 shader_reset();
             }    
             //Ammo bar

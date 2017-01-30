@@ -140,6 +140,7 @@
           <sprite>sprites\sprPharaohShotCharging</sprite>
           <sprite>sprites\sprPharaohShot</sprite>
           <sprite>sprites\sprPharaohShotCharged</sprite>
+          <sprite>sprites\sprDrillBomb</sprite>
         </sprites>
         <sprites name="MM5">
           <sprite>sprites\sprStarCrashInit</sprite>
@@ -293,8 +294,6 @@
       <sprites name="Pause">
         <sprite>sprites\sprPauseMenuBG</sprite>
         <sprite>sprites\sprWeaponIconsColor</sprite>
-        <sprite>sprites\sprWeaponIcons</sprite>
-        <sprite>sprites\sprWeaponIconsGray</sprite>
         <sprite>sprites\sprPauseMenuBar</sprite>
         <sprite>sprites\sprPauseMenuBarGray</sprite>
         <sprite>sprites\sprPauseMenuNew</sprite>
@@ -597,6 +596,9 @@
           <object>objects\objPharaohShot</object>
           <object>objects\objPharaohShotCharged</object>
           <object>objects\objPharaohShotWeapon</object>
+          <object>objects\objDrillBombWeapon</object>
+          <object>objects\objDrillBomb</object>
+          <object>objects\objDrillBombExplosion</object>
         </objects>
         <objects name="MM5">
           <object>objects\objStarCrash</object>
@@ -858,16 +860,17 @@
     <room>rooms\rmBossRush</room>
     <room>rooms\rmFinalStage</room>
   </rooms>
-  <constants number="54">
+  <constants number="55">
     <constant name="megabuster">0</constant>
     <constant name="silvertomahawk">1</constant>
     <constant name="windstorm">2</constant>
     <constant name="pharaohshot">3</constant>
     <constant name="metalblade">4</constant>
-    <constant name="rushcoil">7</constant>
+    <constant name="rushcoil">8</constant>
     <constant name="starcrash">5</constant>
-    <constant name="rushjet">8</constant>
+    <constant name="rushjet">9</constant>
     <constant name="centaurflash">6</constant>
+    <constant name="drillbomb">7</constant>
     <constant name="initialRoom">rmDisclaimer</constant>
     <constant name="cfgEnableSlideKey">false</constant>
     <constant name="cfgEnableDamageNumbers">false</constant>

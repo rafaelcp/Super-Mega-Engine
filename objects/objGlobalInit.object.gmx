@@ -54,6 +54,7 @@ global.weapons[pharaohshot] = instance_create(0,0, objPharaohShotWeapon);
 global.weapons[metalblade] = instance_create(0,0, objMetalBladeWeapon);
 global.weapons[starcrash] = instance_create(0,0, objStarCrashWeapon);
 global.weapons[centaurflash] = instance_create(0,0, objCentaurFlashWeapon);
+global.weapons[drillbomb] = instance_create(0,0, objDrillBombWeapon);
 global.weapons[rushcoil] = instance_create(0,0, objRushCoilWeapon);
 global.weapons[rushjet] = instance_create(0,0, objRushJetWeapon);
 
@@ -63,6 +64,7 @@ global.weapons[windstorm].unlocked = true;
 global.weapons[metalblade].unlocked = true;
 global.weapons[starcrash].unlocked = true;
 global.weapons[centaurflash].unlocked = true;
+global.weapons[drillbomb].unlocked = true;
 global.weapons[rushcoil].unlocked = true;
 global.weapons[rushjet].unlocked = true;
 
@@ -73,8 +75,9 @@ global.weaponSlot[3] = pharaohshot;
 global.weaponSlot[4] = metalblade;
 global.weaponSlot[5] = starcrash;
 global.weaponSlot[6] = centaurflash;
-global.weaponSlot[7] = rushcoil;
-global.weaponSlot[8] = rushjet;
+global.weaponSlot[7] = drillbomb;
+global.weaponSlot[8] = rushcoil;
+global.weaponSlot[9] = rushjet;
 
 global.totalWeapons = array_length_1d(global.weapons);
 global.weapons_per_col = ceil(global.totalWeapons / 2);

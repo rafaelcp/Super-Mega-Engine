@@ -35,6 +35,7 @@ yspeed = 0;
 xaccel = 0;
 yaccel = 0;
 img_speed = 0;
+reflected = false;
 
 gravityEnabled = false;
 collisionEnabled = false;
@@ -43,7 +44,8 @@ destroyOnHorizontalCollision = false;
 destroyOnVerticalCollision = false;
 reflectible = true;
 
-passThrough = false;
+passThrough = false;    //Projectile goes on if enemy is killed
+unstoppable = false;    //Projectile goes on always
 checkDeath = true;
 
 alarm[0] = 1;
@@ -164,7 +166,7 @@ else {
             }
             
             alarm[11] = 2;
-            if !other.passThrough || healthpoints &gt; 0 {
+            if (!other.passThrough || healthpoints &gt; 0) and !other.unstoppable {
                 with other instance_destroy();
             }
             
@@ -177,6 +179,7 @@ else {
         }
     }
     else if !dead {
+        other.reflected = true;
         event_user(0); //Reflect the projectiles
     }
 }

@@ -147,7 +147,7 @@ if !global.frozen {
         else if sprite_get_bottom() &lt; view_yview[0] + view_hview[0] - 64 or yspeed == 0 {
             yspeed = spd;
         }
-        if sprite_index == sprWilyMachine4b and ((yspeed &lt; 0 and sprite_get_bottom() &lt;= view_yview[0] + view_hview[0] - 44) or (yspeed &gt; 0 and sprite_get_bottom() &gt;= view_yview[0] + view_hview[0] - 44)) {
+        if sprite_index == sprWilyMachine4b and ((yspeed &lt; 0 and sprite_get_bottom() &lt;= view_yview[0] + view_hview[0] - 45) or (yspeed &gt; 0 and sprite_get_bottom() &gt;= view_yview[0] + view_hview[0] - 45)) {
             yspeed = 0;
         }
         if sprite_index == sprWilyMachine4b {
@@ -221,6 +221,8 @@ if sprite_index == sprWilyMachine4a {
     hitbox_top = 36;
     hitbox_bottom = 48;
     damage[objSilverTomahawk] = 4;
+    damage[objDrillBomb] = 4;
+    damage[objDrillBombExplosion] = 4;
     damage[objPharaohShot] = 0;
     damage[objPharaohShotCharging] = 0;
     damage[objPharaohShotCharged] = 0;

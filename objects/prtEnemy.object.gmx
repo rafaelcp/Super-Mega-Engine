@@ -68,6 +68,10 @@ damage[objSilverTomahawk] = 1;
 damage[objWindStorm] = 1;
 
 damage[objCentaurFlash] = 10;
+
+damage[objDrillBomb] = 1;
+damage[objDrillBombExplosion] = 2;
+
 </string>
           </argument>
         </arguments>
