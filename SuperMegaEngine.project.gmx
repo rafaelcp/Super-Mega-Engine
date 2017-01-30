@@ -195,6 +195,7 @@
       </sprites>
       <sprites name="MM3">
         <sprite>sprites\sprPole</sprite>
+        <sprite>sprites\sprDestructibleWall</sprite>
       </sprites>
       <sprites name="MM5">
         <sprite>sprites\sprBBitter</sprite>
@@ -650,6 +651,7 @@
       <objects name="MM3">
         <object>objects\objPoleEgg</object>
         <object>objects\objPole</object>
+        <object>objects\objDestructibleWall</object>
       </objects>
       <objects name="MM5">
         <object>objects\objBBitter</object>

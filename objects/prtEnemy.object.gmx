@@ -42,6 +42,7 @@ reflectProjectilesRight = false; //Only reflect projectiles that come from the r
 reflectProjectilesLeft = false; //Only reflect projectiles that come from the left
 
 respawn = true; //Should we respawn after leaving the screen and entering it again?
+neverDespawn = false;
 
 useHitBox = false;
 hitbox_left = bbox_left - x;
@@ -148,7 +149,7 @@ else if dead {
     instance_destroy(); //If we can't respawn, there's no point to still be able to execute any code. Destroying the instance saves memory and processing power
 }
 
-if !insideView() {
+if !insideView() and !neverDespawn {
     beenOutsideView = true;
     
     x = xstart;
