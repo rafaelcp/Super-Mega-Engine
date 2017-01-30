@@ -56,6 +56,7 @@ reflectProjectilesRight = false;
 dead = false;
 
 damage[objCentaurFlash] = 0;
+damage[objDrillBombExplosion] = 1;
 
 pose = -1;
 poseImgSpeed = 3/60;

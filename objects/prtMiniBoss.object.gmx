@@ -27,7 +27,8 @@
             <kind>1</kind>
             <string>event_inherited();
 
-damage[objCentaurFlash] = 1;
+damage[objCentaurFlash] = 0;
+damage[objDrillBombExplosion] = 1;
 </string>
           </argument>
         </arguments>

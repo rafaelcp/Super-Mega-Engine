@@ -70,7 +70,7 @@ damage[objWindStorm] = 1;
 damage[objCentaurFlash] = 10;
 
 damage[objDrillBomb] = 1;
-damage[objDrillBombExplosion] = 2;
+damage[objDrillBombExplosion] = 3;
 
 </string>
           </argument>

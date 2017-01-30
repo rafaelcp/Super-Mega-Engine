@@ -55,7 +55,7 @@ img_speed = 10 / room_speed;
             <kind>1</kind>
             <string>event_inherited();
 
-if global.keyShootPressed {    //Detonate
+if !global.frozen and global.keyShootPressed {    //Detonate
     event_user(0);
 }
 </string>
