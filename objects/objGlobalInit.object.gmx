@@ -118,6 +118,7 @@ global.items[guardpowerup] = instance_create(0,0, objGuardPowerUpEquip);
 global.items[eddiecall] = instance_create(0,0, objEddieEquip);
 global.items[beatcall] = instance_create(0,0, objBeatEquip);
 global.items[shockguard] = instance_create(0,0, objShockGuardEquip);
+global.items[powergenerator] = instance_create(0,0, objPowerGeneratorEquip);
 
 global.damageMultiplier = 1;
 

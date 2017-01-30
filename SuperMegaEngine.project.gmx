@@ -86,10 +86,11 @@
       <sprite>sprites\sprWTankEquip</sprite>
       <sprite>sprites\sprLifeEqup</sprite>
       <sprite>sprites\sprEnergyBalancerEquip</sprite>
-      <sprite>sprites\sprGuardPowerUpEquip</sprite>
-      <sprite>sprites\sprEddieEquip</sprite>
       <sprite>sprites\sprBeatEquip</sprite>
+      <sprite>sprites\sprEddieEquip</sprite>
+      <sprite>sprites\sprGuardPowerUpEquip</sprite>
       <sprite>sprites\sprShockGuardEquip</sprite>
+      <sprite>sprites\sprPowerGeneratorEquip</sprite>
     </sprites>
     <sprites name="Collision">
       <sprite>sprites\sprSolid</sprite>
@@ -813,6 +814,7 @@
       <object>objects\objGuardPowerUpEquip</object>
       <object>objects\objEddieEquip</object>
       <object>objects\objBeatEquip</object>
+      <object>objects\objPowerGeneratorEquip</object>
     </objects>
     <objects name="Cutscenes">
       <object>objects\objText</object>
@@ -862,7 +864,7 @@
     <room>rooms\rmBossRush</room>
     <room>rooms\rmFinalStage</room>
   </rooms>
-  <constants number="55">
+  <constants number="56">
     <constant name="megabuster">0</constant>
     <constant name="silvertomahawk">1</constant>
     <constant name="windstorm">2</constant>
@@ -918,6 +920,7 @@
     <constant name="beatcall">6</constant>
     <constant name="energybalancer">7</constant>
     <constant name="shockguard">8</constant>
+    <constant name="powergenerator">9</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>
