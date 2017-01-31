@@ -31,6 +31,7 @@ name = "DRILL BOMB";
 abbrev = "D.BOMB";
 consumption = 1;
 maxshots = 1;
+sfx = sfxDrillBomb;
 </string>
           </argument>
         </arguments>

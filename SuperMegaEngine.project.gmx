@@ -29,6 +29,7 @@
       <sound>sound\sfxPharaohShotCharged</sound>
       <sound>sound\sfxReflect</sound>
       <sound>sound\sfxCentaurFlash</sound>
+      <sound>sound\sfxDrillBomb</sound>
     </sounds>
     <sounds name="Enemy">
       <sound>sound\sfxEnemyHit</sound>
