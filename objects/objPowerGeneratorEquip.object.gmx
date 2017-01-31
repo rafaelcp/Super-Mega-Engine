@@ -32,7 +32,7 @@ description = "Halves weapon energy consumption.";
 maxUnits = 1;
 showZero = true;
 buyable = true;
-price = 150;
+price = 200;
 </string>
           </argument>
         </arguments>
