@@ -44,6 +44,9 @@ chargeTimer = 0;
 initChargeTimer = 0;
 
 persistent = true;
+
+primaryCol = make_color_rgb(0, 120, 248);
+secondaryCol = make_color_rgb(0, 232, 216);
 </string>
           </argument>
         </arguments>

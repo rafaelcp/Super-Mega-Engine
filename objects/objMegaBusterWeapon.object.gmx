@@ -33,6 +33,9 @@ consumption = 0;
 initChargeTime = 20; //The amount of frames after which to start charging after the shooting animation is complete
 chargeTime = 57; //Official value of MM6
 maxshots = cfgMaxNumberOfBusterShots;
+
+primaryCol = make_color_rgb(0, 120, 248);
+secondaryCol = make_color_rgb(0, 232, 216);
 </string>
           </argument>
         </arguments>
