@@ -60,6 +60,7 @@ megaImg = 0;
           <argument>
             <kind>1</kind>
             <string>var total_items = array_length_1d(global.items);
+var items_per_row = ceil(total_items / 2);
 
 autoImg += 0.1;
 if autoImg &gt;= 2 {
@@ -82,17 +83,17 @@ if cursorCounter == 10 {
 
 if global.keyRightPressed {
     option++;
-    if option == 5 {
+    if option == items_per_row {
         option = 0;
     }
     else if option == total_items {
-        option = 5;
+        option = items_per_row;
     }
     playSFX(sfxMenuMove);
 }
 if global.keyDownPressed {
-    if option &lt; 5 || option == total_items {
-        option += 5;
+    if option &lt; items_per_row || option == total_items {
+        option += items_per_row;
         if option &gt; total_items {
             option = total_items;
         }
@@ -105,18 +106,18 @@ if global.keyDownPressed {
 if global.keyLeftPressed {
     option--;
     if option == -1 {
-        option = 4;
+        option = items_per_row - 1;
     }
-    else if option == 4 {
+    else if option == items_per_row - 1 {
         option = total_items - 1;
     }
     playSFX(sfxMenuMove);
 }
 if global.keyUpPressed {
-    if option &gt;= 5 &amp;&amp; option &lt; total_items {
-        option -= 5;
+    if option &gt;= items_per_row &amp;&amp; option &lt; total_items {
+        option -= items_per_row;
     }
-    else if option &lt; 5 {
+    else if option &lt; items_per_row {
         option = total_items;
     }
     else {
@@ -174,9 +175,17 @@ if global.keyShootPressed || global.keyPausePressed {
           <argument>
             <kind>1</kind>
             <string>//Items
-total_items = array_length_1d(global.items);
-currX = 39;
-currY = 20;
+var total_items = array_length_1d(global.items);
+var items_per_row = ceil(total_items / 2);
+var avail_width = 206;
+var item_size = 24;
+var spacing = ceil((avail_width - (item_size * items_per_row)) / (items_per_row + 1));
+var spacingY = 30;
+var iniX = 25 + spacing;
+var iniY = 20;
+
+currX = iniX;
+currY = iniY;
 total = 0;
 item_index = -1;
 for (var i = 0; i &lt; total_items; i++) {
@@ -187,35 +196,34 @@ for (var i = 0; i &lt; total_items; i++) {
         item_index = total;
     }
     total++;
-    if total == 6 {
-        currX = 39;
-        currY = 50;
+    if total == items_per_row + 1 {
+        currX = iniX;
+        currY = iniY + spacingY;
     }
     if global.screws &gt;= global.items[i].price &amp;&amp; global.items[i].count &lt; global.items[i].maxUnits {
         draw_sprite(global.items[i].sprite_index, 0, currX + 2, currY);
     }
     else {
-        //draw_sprite(global.items[i].sprite_index, 1, currX + 2, currY);
         shader_set(shGrayscale);
         draw_sprite(global.items[i].sprite_index, 0, currX + 2, currY);
         shader_reset();
     }
     draw_text(currX, currY+17, string_replace_all(string_format(global.items[i].price, 3, 0), " ", "0"));
-    currX += 40;
+    currX += spacing + item_size;
 }
 
 //Cursor
 sX = 1;
 sY = 1;
-if option &lt; 5 {
-    currX = option * 40 + 39 - 3;
-    currY = 20 - 1;
+if option &lt; items_per_row { //First Row
+    currX = option * (item_size + spacing) + iniX - 3;
+    currY = iniY - 1;
 }
-else if option &lt; total_items{
-    currX = (option - 5) * 40 + 39 - 3;
-    currY = 50 - 1;
+else if option &lt; total_items {   //Second Row
+    currX = (option - items_per_row) * (item_size + spacing) + iniX - 3;
+    currY = iniY + spacingY - 1;
 }
-else {
+else {  //EXIT
     currX = 176 - 4;
     currY = 96 - 3;
     sX = 1.7;

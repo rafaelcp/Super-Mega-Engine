@@ -28,6 +28,8 @@
             <string>//Handles the boss's death
 //Also transforms into the Mega Man that automatically moves to the center of the screen
 
+bossID = instance_nearest(x, y, prtBoss).bossID;
+
 //If there is a teleporter in the room (boss rush), just destroy the death timer
 instance_activate_object(objTeleport);
 with objTeleport {
@@ -35,7 +37,7 @@ with objTeleport {
         on = true;
         var inst = instance_create(other.x, other.y, objLifeEnergyBig);
         inst.alarm[0] = room_speed * 9999;
-        global.bossRushDefeated[global.bossID] = true;
+        global.bossRushDefeated[other.bossID] = true;
         if numRushBossesDefeated() == 8 {
             instance_activate_object(objBossDoor);
             objBossDoor.canOpen = true;

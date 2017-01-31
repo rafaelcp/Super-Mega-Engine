@@ -44,7 +44,10 @@ canHit = false;
 drawHitSpark = false;
 drawBoss = true; //Should we be visible? (Can't use the 'visible' variable as this prevents the Draw event from executing)
 
-global.weaponID = -1;
+weaponID = -1;
+bossID = -1;
+global.weaponID = weaponID;
+global.bossID = bossID;
 
 alarm[8] = 1;
 
@@ -257,13 +260,13 @@ else if pose == -1 {
                 
                 instance_activate_object(objTeleport);
                 with objTeleport {
-                    if boss == global.bossID {
+                    if !insideView() and boss == other.bossID {
                         instance_destroy();
                     }
                 }
     
-                instance_destroy();
                 instance_create(x, y, objBossDeathTimer);
+                instance_destroy();
             }
             
         }

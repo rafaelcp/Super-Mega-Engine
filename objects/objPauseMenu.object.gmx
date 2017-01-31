@@ -508,7 +508,7 @@ if (phase &gt;= 1 &amp;&amp; phase &lt;= 3) || phase == 5 || phase == 6
     currX = 16;
     currY = 164;
     for (var i = 0; i &lt; array_length_1d(global.items); i++) {
-        if !global.items[i].showPause {
+        if !global.items[i].showPause or (global.items[i].count == 0 and !global.items[i].showZero) {
             continue;
         }
         if !global.items[i].usable &amp;&amp; currY == 164 {
