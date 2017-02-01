@@ -36,6 +36,8 @@ throw = true;
 
 primaryCol = make_color_rgb(136, 112, 0);
 secondaryCol = make_color_rgb(255, 224, 168);
+
+slot = 4;
 </string>
           </argument>
         </arguments>

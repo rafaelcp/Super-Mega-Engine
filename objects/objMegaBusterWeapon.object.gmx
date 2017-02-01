@@ -36,6 +36,8 @@ maxshots = cfgMaxNumberOfBusterShots;
 
 primaryCol = make_color_rgb(0, 120, 248);
 secondaryCol = make_color_rgb(0, 232, 216);
+
+slot = 0;
 </string>
           </argument>
         </arguments>

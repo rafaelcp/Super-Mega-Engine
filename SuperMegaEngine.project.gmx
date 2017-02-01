@@ -875,11 +875,11 @@
     <constant name="windstorm">2</constant>
     <constant name="pharaohshot">3</constant>
     <constant name="metalblade">4</constant>
-    <constant name="rushcoil">8</constant>
     <constant name="starcrash">5</constant>
-    <constant name="rushjet">9</constant>
     <constant name="centaurflash">6</constant>
     <constant name="drillbomb">7</constant>
+    <constant name="rushcoil">8</constant>
+    <constant name="rushjet">9</constant>
     <constant name="initialRoom">rmDisclaimer</constant>
     <constant name="cfgEnableSlideKey">false</constant>
     <constant name="cfgEnableDamageNumbers">false</constant>

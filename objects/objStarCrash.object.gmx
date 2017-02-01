@@ -73,9 +73,9 @@ if !global.frozen {
         }
            
         followPlayer = false;
-        xspeed = spd;
+        xspeed = dir * spd;
         
-        global.weapons[global.currentWeapon].ammo -= global.weapons[global.weaponSlot[global.currentWeapon]].consumption;
+        global.weapons[global.currentWeapon].ammo -= global.weapons[global.currentWeapon].consumption;
         if global.weapons[global.currentWeapon].ammo &lt;= 0
             global.weapons[global.currentWeapon].ammo = 0;
     }

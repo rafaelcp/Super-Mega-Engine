@@ -46,19 +46,18 @@ global.maxNumberOfBusterShots = cfgMaxNumberOfBusterShots;
 global.enableEnergyBalancer = false; // Refill weapon with lowest energy when MEGA BUSTER is equipped or the current weapon ammo is full.
 
 //Weapons
-global.weapons[megabuster] = instance_create(0,0, objMegaBusterWeapon);
-global.weapons[megabuster].unlocked = true; //Mega Buster is always unlocked
-global.weapons[silvertomahawk] = instance_create(0,0, objSilverTomahawkWeapon);
-global.weapons[windstorm] = instance_create(0,0, objWindStormWeapon);
-global.weapons[pharaohshot] = instance_create(0,0, objPharaohShotWeapon);
-global.weapons[metalblade] = instance_create(0,0, objMetalBladeWeapon);
-global.weapons[starcrash] = instance_create(0,0, objStarCrashWeapon);
-global.weapons[centaurflash] = instance_create(0,0, objCentaurFlashWeapon);
-global.weapons[drillbomb] = instance_create(0,0, objDrillBombWeapon);
-global.weapons[rushcoil] = instance_create(0,0, objRushCoilWeapon);
-global.weapons[rushjet] = instance_create(0,0, objRushJetWeapon);
+var weapon_index = 0;
+for (var i = 0; object_exists(i); i++) {
+    if object_get_parent(i) == prtWeapon {
+        var weapon = instance_create(0,0, i);
+        global.weapons[weapon.slot] = weapon;
+        //global.weaponSlot[weapon_index] = weapon_index;
+        weapon_index++;
+    }
+}
 
 //Unlock most weapons for testing
+global.weapons[megabuster].unlocked = true;
 global.weapons[silvertomahawk].unlocked = true;
 global.weapons[windstorm].unlocked = true;
 global.weapons[metalblade].unlocked = true;
@@ -67,17 +66,6 @@ global.weapons[centaurflash].unlocked = true;
 global.weapons[drillbomb].unlocked = true;
 global.weapons[rushcoil].unlocked = true;
 global.weapons[rushjet].unlocked = true;
-
-global.weaponSlot[0] = megabuster;
-global.weaponSlot[1] = silvertomahawk;
-global.weaponSlot[2] = windstorm;
-global.weaponSlot[3] = pharaohshot;
-global.weaponSlot[4] = metalblade;
-global.weaponSlot[5] = starcrash;
-global.weaponSlot[6] = centaurflash;
-global.weaponSlot[7] = drillbomb;
-global.weaponSlot[8] = rushcoil;
-global.weaponSlot[9] = rushjet;
 
 global.totalWeapons = array_length_1d(global.weapons);
 global.weapons_per_col = ceil(global.totalWeapons / 2);

@@ -35,6 +35,8 @@ sfx = sfxCentaurFlash;
 
 primaryCol = make_color_rgb(0, 171, 71);
 secondaryCol = make_color_rgb(248, 248, 248);
+
+slot = 6;
 </string>
           </argument>
         </arguments>

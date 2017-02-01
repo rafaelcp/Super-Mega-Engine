@@ -256,7 +256,7 @@ if global.keyDownPressed
             
         if option &lt; global.totalWeapons
         {
-            global.weapon = global.weaponSlot[option];
+            global.weapon = option;
             with objMegaman event_user(0);
         }
         
@@ -299,7 +299,7 @@ else if global.keyUpPressed
             
         if option &lt; global.totalWeapons
         {
-            global.weapon = global.weaponSlot[option];
+            global.weapon = option;
             with objMegaman event_user(0);
         }
         
@@ -369,7 +369,7 @@ if global.keyLeftPressed || global.keyRightPressed
     
     if option &lt; global.totalWeapons
     {
-        global.weapon = global.weaponSlot[option];
+        global.weapon = option;
         with objMegaman event_user(0);
     }
 }
@@ -450,7 +450,7 @@ if (phase &gt;= 1 &amp;&amp; phase &lt;= 3) || phase == 5 || phase == 6
         if global.weapons[i].unlocked == true {
             //Icon
             if option == i {
-                draw_sprite_ext(sprWeaponIconsColor, global.weaponSlot[i], view_xview[0]+currX, view_yview[0]+currY, 1, 1, 0, c_white, 1);
+                draw_sprite_ext(sprWeaponIconsColor, i, view_xview[0]+currX, view_yview[0]+currY, 1, 1, 0, c_white, 1);
                 /*shader_set(shBlueish);
                 draw_sprite_ext(sprWeaponIconsColor, global.weaponSlot[i], view_xview[0]+currX, view_yview[0]+currY, 1, 1, 0, c_white, 1);
                 shader_reset();*/
@@ -460,10 +460,8 @@ if (phase &gt;= 1 &amp;&amp; phase &lt;= 3) || phase == 5 || phase == 6
                     draw_sprite_ext(sprPassArrow, 0, view_xview[0]+currX-6, view_yview[0]+currY+8, 1, 1, 0, c_white, 1);
             }
             else {
-                //draw_sprite_ext(sprWeaponIconsGray, global.weaponSlot[i], view_xview[0]+currX, view_yview[0]+currY, 1, 1, 0, c_white, 1);
-                //EXPERIMENTAL: grayscale in runtime. If everything goes ok, will make this change permanent
                 shader_set(shGrayscale);
-                draw_sprite_ext(sprWeaponIconsColor, global.weaponSlot[i], view_xview[0]+currX, view_yview[0]+currY, 1, 1, 0, c_white, 1);
+                draw_sprite_ext(sprWeaponIconsColor, i, view_xview[0]+currX, view_yview[0]+currY, 1, 1, 0, c_white, 1);
                 shader_reset();
             }    
             //Ammo bar
@@ -489,11 +487,11 @@ if (phase &gt;= 1 &amp;&amp; phase &lt;= 3) || phase == 5 || phase == 6
             if option == i
             {
                 draw_set_color(make_color_rgb(255, 217, 162)); //Light yellow-ish
-                draw_text(view_xview[0]+currX+16+10, view_yview[0]+currY+1, global.weapons[ global.weaponSlot[i] ].abbrev);
+                draw_text(view_xview[0]+currX+16+10, view_yview[0]+currY+1, global.weapons[i].abbrev);
                 draw_set_color(c_white);
             }
             else
-                draw_text(view_xview[0]+currX+16+10, view_yview[0]+currY+1, global.weapons[ global.weaponSlot[i] ].abbrev);
+                draw_text(view_xview[0]+currX+16+10, view_yview[0]+currY+1, global.weapons[i].abbrev);
         }
         currY += icon_size + spacing;
     }
