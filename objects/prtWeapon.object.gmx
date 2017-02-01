@@ -48,7 +48,7 @@ persistent = true;
 primaryCol = make_color_rgb(0, 120, 248);
 secondaryCol = make_color_rgb(0, 232, 216);
 
-slot = -1;
+ID = -1;
 </string>
           </argument>
         </arguments>

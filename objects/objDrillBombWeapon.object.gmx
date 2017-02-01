@@ -35,8 +35,6 @@ sfx = sfxDrillBomb;
 
 primaryCol = make_color_rgb(248, 56, 0);
 secondaryCol = make_color_rgb(188, 188, 188);
-
-slot = 7;
 </string>
           </argument>
         </arguments>

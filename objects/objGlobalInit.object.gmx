@@ -49,23 +49,16 @@ global.enableEnergyBalancer = false; // Refill weapon with lowest energy when ME
 var weapon_index = 0;
 for (var i = 0; object_exists(i); i++) {
     if object_get_parent(i) == prtWeapon {
-        var weapon = instance_create(0,0, i);
-        global.weapons[weapon.slot] = weapon;
-        //global.weaponSlot[weapon_index] = weapon_index;
+        global.weapons[weapon_index] = instance_create(0,0, i);
+        global.weapons[weapon_index].ID = weapon_index;
+        //Unlock for testing purposes. Remove the following line when distributing your game.
+        global.weapons[weapon_index].unlocked = true;
+        
         weapon_index++;
     }
 }
 
-//Unlock most weapons for testing
-global.weapons[megabuster].unlocked = true;
-global.weapons[silvertomahawk].unlocked = true;
-global.weapons[windstorm].unlocked = true;
-global.weapons[metalblade].unlocked = true;
-global.weapons[starcrash].unlocked = true;
-global.weapons[centaurflash].unlocked = true;
-global.weapons[drillbomb].unlocked = true;
-global.weapons[rushcoil].unlocked = true;
-global.weapons[rushjet].unlocked = true;
+objPharaohShotWeapon.unlocked = false;  //Leave it locked for testing weapon get
 
 global.totalWeapons = array_length_1d(global.weapons);
 global.weapons_per_col = ceil(global.totalWeapons / 2);

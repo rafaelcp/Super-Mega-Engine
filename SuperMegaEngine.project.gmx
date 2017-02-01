@@ -585,13 +585,6 @@
         <object>objects\objBusterShotHalfCharged</object>
         <object>objects\objBusterShotCharged</object>
         <object>objects\objMegaBusterWeapon</object>
-        <objects name="Rush">
-          <object>objects\prtRush</object>
-          <object>objects\objRushCoil</object>
-          <object>objects\objRushCoilWeapon</object>
-          <object>objects\objRushJet</object>
-          <object>objects\objRushJetWeapon</object>
-        </objects>
         <objects name="MM2">
           <object>objects\objMetalBlade</object>
           <object>objects\objMetalBladeWeapon</object>
@@ -616,6 +609,13 @@
           <object>objects\objWindStormWeapon</object>
           <object>objects\objCentaurFlash</object>
           <object>objects\objCentaurFlashWeapon</object>
+        </objects>
+        <objects name="Rush">
+          <object>objects\prtRush</object>
+          <object>objects\objRushCoil</object>
+          <object>objects\objRushCoilWeapon</object>
+          <object>objects\objRushJet</object>
+          <object>objects\objRushJetWeapon</object>
         </objects>
       </objects>
       <objects name="Effects">
