@@ -27,6 +27,8 @@
             <kind>1</kind>
             <string>event_inherited();
 
+name = "";
+
 startIntro = false;
 isIntro = false;
 startFight = false;

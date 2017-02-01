@@ -88,10 +88,10 @@ instance_activate_object(prtWeapon);
 //Charging
 if global.enableCharge {
     if (global.keyShoot || (isSlide and objMegaBusterWeapon.chargeTimer != 0)) and global.weapon == objMegaBusterWeapon.ID {
-        with objMegaBusterWeapon event_user(3);
+        with global.weapons[global.currentWeapon] event_user(3);
     }
     else if !global.keyShoot and global.weapons[global.currentWeapon].chargeTimer != 0 and global.weapon == objMegaBusterWeapon.ID  {      //Release the charge shot
-        with objMegaBusterWeapon event_user(4); 
+        with global.weapons[global.currentWeapon] event_user(4); 
     }
 }
 

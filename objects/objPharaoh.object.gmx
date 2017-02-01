@@ -27,6 +27,8 @@
             <kind>1</kind>
             <string>event_inherited();
 
+name = "PHARAOH MAN";
+
 pose = sprPharaohPose;
 poseImgSpeed = 3/60;
 contactDamage = 4;

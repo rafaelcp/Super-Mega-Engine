@@ -78,16 +78,9 @@ if room == rmInit {
     stopAllSFX();
         
     // Max values for several vitals.
-    global.maxETanks = 9;
-    global.maxWTanks = 9;
-    global.maxMTanks = 1;
     global.maxScrews = 999;
-    global.maxUpgrades = 10;
         
     room_goto(initialRoom); //initialRoom is defined in Macros
-    global.eTanks = 0;
-    global.wTanks = 0;
-    global.mTanks = 0;
     global._lives = 2;
     global.screws = 0;
        
@@ -95,11 +88,6 @@ if room == rmInit {
     for(i = 0; i &lt; 1000; i++) { //If you somehow have over 1000 pickups in one room, increase this number
         global.pickupCollected[i] = false;
     }
-    
-    for(i = 0; i &lt; global.maxUpgrades; i++) { //If you somehow have over 1000 upgrades in the game, increase this number
-        global.upgradeCollected[i] = false;
-    }
-    
     
     global.lastRoom = rmInit;
     global.checkpoint = false;

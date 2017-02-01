@@ -39,13 +39,11 @@ global.enableDamageNumbers = cfgEnableDamageNumbers; //Show damage numbers.
 global.enableCharge = cfgEnableCharge; //Can we charge the buster?
 global.enableSlide = cfgEnableSlide; //Can we slide?
 global.enableScrews = cfgEnableScrews; //Do screws exist in this game?
-global.enableWTanks = cfgEnableWTanks; // Do W-Tanks exist in this game?
 global.maxNumberOfBusterShots = cfgMaxNumberOfBusterShots;
 
-// Extra options.    
-global.enableEnergyBalancer = false; // Refill weapon with lowest energy when MEGA BUSTER is equipped or the current weapon ammo is full.
 
 //Weapons
+with prtWeapon instance_destroy();
 var weapon_index = 0;
 for (var i = 0; object_exists(i); i++) {
     if object_get_parent(i) == prtWeapon {
@@ -90,6 +88,7 @@ global.bossRushDefeated[7] = false; //We have only Pharaoh Man
 
 //Items
 //Add all usable items before non-usable ones for correct placement in the pause menu
+with prtEquip instance_destroy();
 var item_index = 0;
 for (var i = 0; object_exists(i); i++) {
     if object_get_parent(i) == prtEquip {

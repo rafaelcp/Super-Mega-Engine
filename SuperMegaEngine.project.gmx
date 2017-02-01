@@ -869,14 +869,13 @@
     <room>rooms\rmBossRush</room>
     <room>rooms\rmFinalStage</room>
   </rooms>
-  <constants number="36">
+  <constants number="35">
     <constant name="initialRoom">rmDisclaimer</constant>
     <constant name="cfgEnableSlideKey">false</constant>
     <constant name="cfgEnableDamageNumbers">false</constant>
     <constant name="cfgEnableCharge">true</constant>
     <constant name="cfgEnableSlide">true</constant>
     <constant name="cfgEnableScrews">true</constant>
-    <constant name="cfgEnableWTanks">true</constant>
     <constant name="cfgMaxNumberOfBusterShots">3</constant>
     <constant name="cfgMaxHealth">28</constant>
     <constant name="cfgMaxAmmo">28</constant>

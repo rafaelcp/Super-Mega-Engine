@@ -165,7 +165,7 @@ Presented by the Mega Man Fandom
     vspeed = 0;
     if global.keyPausePressed {
         stopAllSFX();
-        room_goto(rmInit);
+        game_restart();
     }
 
     if megamanx &lt; 230 {
