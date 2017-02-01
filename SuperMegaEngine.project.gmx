@@ -869,17 +869,7 @@
     <room>rooms\rmBossRush</room>
     <room>rooms\rmFinalStage</room>
   </rooms>
-  <constants number="58">
-    <constant name="megabuster">0</constant>
-    <constant name="silvertomahawk">1</constant>
-    <constant name="windstorm">2</constant>
-    <constant name="pharaohshot">3</constant>
-    <constant name="metalblade">4</constant>
-    <constant name="starcrash">5</constant>
-    <constant name="centaurflash">6</constant>
-    <constant name="drillbomb">7</constant>
-    <constant name="rushcoil">8</constant>
-    <constant name="rushjet">9</constant>
+  <constants number="36">
     <constant name="initialRoom">rmDisclaimer</constant>
     <constant name="cfgEnableSlideKey">false</constant>
     <constant name="cfgEnableDamageNumbers">false</constant>
@@ -916,18 +906,6 @@
     <constant name="cfgClimbSpeed">1.296875</constant>
     <constant name="cfgInitChargeTime">20</constant>
     <constant name="cfgChargeTime">57</constant>
-    <constant name="life">0</constant>
-    <constant name="etank">1</constant>
-    <constant name="wtank">2</constant>
-    <constant name="mtank">3</constant>
-    <constant name="eddiecall">4</constant>
-    <constant name="guardpowerup">5</constant>
-    <constant name="exitunit">6</constant>
-    <constant name="beatcall">7</constant>
-    <constant name="shockguard">8</constant>
-    <constant name="energybalancer">9</constant>
-    <constant name="powergenerator">10</constant>
-    <constant name="hispeedcharge">11</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

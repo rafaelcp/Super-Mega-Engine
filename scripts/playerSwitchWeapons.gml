@@ -69,7 +69,7 @@ if global.keyWeaponSwitchRightPressed {
 }
 
 //Holding the left and right weapon switch keys at the same time results in the Mega Buster being selected
-if global.keyWeaponSwitchLeft && global.keyWeaponSwitchRight && global.weapon != megabuster {
+if global.keyWeaponSwitchLeft && global.keyWeaponSwitchRight && global.weapon != objMegaBusterWeapon.ID {
     global.weapons[global.currentWeapon].initChargeTimer = 0;
     global.weapons[global.currentWeapon].chargeTimer = 0;
 

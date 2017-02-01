@@ -47,7 +47,7 @@ phase = 0; //0 = nothing; 1 = jumping; 2 = jumping and shooting; 3 = shooting th
 
 
 //For the Weapon Get screen
-global.bossWeapon = pharaohshot;
+global.bossWeapon = objPharaohShotWeapon.ID;
 global.bossWeaponName = "PHARAOH SHOT";
 global.bossWeaponPrimary = make_color_rgb(248, 120, 88); //The primary color for the giant MM in the weapon get screen
 global.bossWeaponPrimaryDark = make_color_rgb(255, 55, 26); //The shading on the primary color

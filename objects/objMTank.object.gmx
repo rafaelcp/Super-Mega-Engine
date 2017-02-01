@@ -84,7 +84,7 @@ else
             <kind>1</kind>
             <string>event_inherited();
 
-add_equip(mtank);
+add_equip(objMTankEquip);
 </string>
           </argument>
         </arguments>

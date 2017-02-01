@@ -31,7 +31,7 @@ draw_set_font(global.MM3font);
 draw_set_colour(c_white);
 option = 0;
 
-global.items[life].count = global._lives;
+objLifeEquip.count = global._lives;
 
 cursorCounter = 0;
 cursorSprite = 0;

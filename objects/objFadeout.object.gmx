@@ -53,15 +53,13 @@ canAlarm = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if type == "restart"
-{
+            <string>if type == "restart" {
     room_restart();
-    global.weapon = megabuster;
+    global.weapon = objMegaBusterWeapon.ID;
 }
-else if type == "room"
-{
+else if type == "room" {
     room_goto(myRoom);
-    global.weapon = megabuster;
+    global.weapon = objMegaBusterWeapon.ID;
 }
 </string>
           </argument>

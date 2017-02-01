@@ -60,12 +60,10 @@ with objMegaman event_user(0);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>switch phase
-{
+            <string>switch phase {
     case 0: //Fading in
-        blackAlphaTimer += 1;
-        if blackAlphaTimer &gt;= blackAlphaTimerMax
-        {
+        blackAlphaTimer++;
+        if blackAlphaTimer &gt;= blackAlphaTimerMax {
             blackAlphaTimer = 0;
             blackAlpha += blackAlphaIncrease;
             if blackAlpha &gt;= 1
@@ -76,9 +74,8 @@ with objMegaman event_user(0);
     case 1: //Fading out
         event_user(0); //Moving the selection
             
-        blackAlphaTimer += 1;
-        if blackAlphaTimer &gt;= blackAlphaTimerMax
-        {
+        blackAlphaTimer++;
+        if blackAlphaTimer &gt;= blackAlphaTimerMax {
             blackAlphaTimer = 0;
             blackAlpha -= blackAlphaIncrease;
             if blackAlpha &lt;= 0
@@ -91,8 +88,7 @@ with objMegaman event_user(0);
             
         
         //Select the weapon/tank
-        if global.keyJumpPressed || global.keyPausePressed || global.keyShootPressed
-        {
+        if global.keyJumpPressed || global.keyPausePressed || global.keyShootPressed {
             if option &lt; global.totalWeapons {   //Selected a weapon             
                 global.currentWeapon = option;
                 with prtPlayerProjectile instance_destroy();
@@ -107,14 +103,12 @@ with objMegaman event_user(0);
                 }
                 
                 // If an item hasn't been primed for use, transition to phase 3.
-                if (primedItemIndex == -1)
-                {
+                if (primedItemIndex == -1) {
                     playSFX(sfxMenuSelect);
                     phase = 3;
                 }
                 // Otherwise, transition to phase 5.
-                else
-                {
+                else {
                     global.items[primedItemIndex].using = true;
                     global.items[primedItemIndex].useOnIndex = option;
                     option = 99;
@@ -125,31 +119,26 @@ with objMegaman event_user(0);
                 item_index = option - global.totalWeapons;
                 
                 // If the item selected was already primed, unprime it.
-                if (item_index == primedItemIndex)
-                {
+                if (item_index == primedItemIndex) {
                     with global.items[item_index] event_user(3);    //Unprime item.
                     primedItemIndex = -1;
                 }
-                else if (primedItemIndex == -1)
-                {                    
+                else if (primedItemIndex == -1) {                    
                     with global.items[item_index] event_user(0);    //Activate item
                     if global.items[item_index].ok {
                         // If this flag is true, it means that this item will need to be used on a weapon/util.
-                        if (global.items[item_index].useOnWeapon)
-                        {
-                            global.currentWeapon = megabuster;
+                        if (global.items[item_index].useOnWeapon) {
+                            global.currentWeapon = objMegaBusterWeapon.ID;
                             primedItemIndex = item_index;
                         }
-                        else
-                        {
+                        else {
                             option = 99;
                             phase = 5;
                             primedItemIndex = -1;
                         }
                     }
                 }
-                else
-                {
+                else {
                     playSFX(sfxError);
                 }
             }
@@ -157,16 +146,13 @@ with objMegaman event_user(0);
     break;
     
     case 3: //Fading out
-        blackAlphaTimer += 1;
-        if blackAlphaTimer &gt;= blackAlphaTimerMax
-        {
+        blackAlphaTimer++;
+        if blackAlphaTimer &gt;= blackAlphaTimerMax {
             blackAlphaTimer = 0;
             blackAlpha += blackAlphaIncrease;
-            if blackAlpha &gt;= 1
-            {
+            if blackAlpha &gt;= 1 {
                 phase = 4;
-                if resetWeapon == true
-                {
+                if resetWeapon {
                     global.weapon = oldWeapon;
                     with objMegaman event_user(0);
                 }
@@ -175,13 +161,11 @@ with objMegaman event_user(0);
     break;
     
     case 4: //Fading in
-        blackAlphaTimer += 1;
-        if blackAlphaTimer &gt;= blackAlphaTimerMax
-        {
+        blackAlphaTimer++;
+        if blackAlphaTimer &gt;= blackAlphaTimerMax {
             blackAlphaTimer = 0;
             blackAlpha -= blackAlphaIncrease;
-            if blackAlpha &lt;= 0
-            {
+            if blackAlpha &lt;= 0 {
                 global.frozen = false;
                 instance_destroy();
             }

@@ -93,7 +93,7 @@ else
             <kind>1</kind>
             <string>instance_destroy();
 
-add_equip(energybalancer);
+add_equip(objEnergyBalancerEquip);
 </string>
           </argument>
         </arguments>

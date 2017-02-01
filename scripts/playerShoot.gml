@@ -23,8 +23,7 @@ switch sprite_index
 if global.keyShootPressed && canShoot == true && (canMove == true || climbing == true || isThrow == true || onRushJet == true)
 && instance_number(objBusterShotCharged) < 1 && global.ammo[global.currentWeapon] > 0
 {   
-    if climbing == true
-    {
+    if climbing {
         image_xscale = climbShootXscale;
         
         if image_xscale == 1
@@ -84,20 +83,20 @@ else if isThrow { //Throwing weapons, like Pharaoh Shot and Metal Blade
     }
 }
 
+instance_activate_object(prtWeapon);
 
 //Charging
 if global.enableCharge {
-    if global.weapon == megabuster && (global.keyShoot || (isSlide && objMegaBusterWeapon.chargeTimer != 0)) {
+    if (global.keyShoot || (isSlide and objMegaBusterWeapon.chargeTimer != 0)) and global.weapon == objMegaBusterWeapon.ID {
         with objMegaBusterWeapon event_user(3);
     }
-    else if global.weapon == megabuster && !global.keyShoot&& global.weapons[global.currentWeapon].chargeTimer != 0 {      //Release the charge shot
+    else if !global.keyShoot and global.weapons[global.currentWeapon].chargeTimer != 0 and global.weapon == objMegaBusterWeapon.ID  {      //Release the charge shot
         with objMegaBusterWeapon event_user(4); 
     }
 }
 
-
 //Charging other weapons
-if global.weapon != megabuster && global.weapons[global.currentWeapon].ammo > 0 {
+if global.weapons[global.currentWeapon].ammo > 0 and global.weapon != objMegaBusterWeapon.ID {
     if global.keyShoot || (isSlide && global.weapons[global.currentWeapon].chargeTimer != 0) {    // Pressing shoot key
         with global.weapons[global.currentWeapon] event_user(3);
     }
