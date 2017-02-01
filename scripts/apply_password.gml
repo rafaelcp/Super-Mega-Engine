@@ -20,5 +20,8 @@ for (var i = 0; i < global.totalWeapons; i++) {
 }
 for (var i = 0; i < array_length_1d(global.items); i++) {
     global.items[i].count = real(base_convert(string_copy(bin_pass, pos, 4), 2, 10));
+    for (var j = 0; j < global.items[i].count; j++) {
+        with global.items[i] event_user(1);
+    }
     pos += 4;
 }

@@ -10,5 +10,8 @@ for (var i = 0; i < global.totalWeapons; i++) {
 }
 for (var i = 0; i < array_length_1d(global.items); i++) {
     global.items[i].count = map[? ("itemCount" + string(i))];
+    for (var j = 0; j < global.items[i].count; j++) {
+        with global.items[i] event_user(1);
+    }
 }
 show_debug_message("Game loaded.");

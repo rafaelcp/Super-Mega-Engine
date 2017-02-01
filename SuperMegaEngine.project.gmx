@@ -808,18 +808,18 @@
     </objects>
     <objects name="Equips">
       <object>objects\prtEquip</object>
-      <object>objects\objETankEquip</object>
-      <object>objects\objShockGuardEquip</object>
       <object>objects\objLifeEquip</object>
-      <object>objects\objEnergyBalancerEquip</object>
+      <object>objects\objETankEquip</object>
       <object>objects\objWTankEquip</object>
       <object>objects\objMTankEquip</object>
-      <object>objects\objGuardPowerUpEquip</object>
       <object>objects\objEddieEquip</object>
+      <object>objects\objGuardPowerUpEquip</object>
+      <object>objects\objExitEquip</object>
+      <object>objects\objShockGuardEquip</object>
       <object>objects\objBeatEquip</object>
+      <object>objects\objEnergyBalancerEquip</object>
       <object>objects\objPowerGeneratorEquip</object>
       <object>objects\objHiSpeedChargeEquip</object>
-      <object>objects\objExitEquip</object>
     </objects>
     <objects name="Cutscenes">
       <object>objects\objText</object>

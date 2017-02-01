@@ -52,7 +52,7 @@ amount = 10;
             <kind>1</kind>
             <string>event_inherited();
 
-if global.items[energybalancer].count &gt; 0 &amp;&amp; (global.currentWeapon == megabuster || global.weapons[global.currentWeapon].ammo &gt;= global.maxAmmo) {
+if objEnergyBalancerEquip.count &gt; 0 &amp;&amp; (global.currentWeapon == megabuster || global.weapons[global.currentWeapon].ammo &gt;= global.maxAmmo) {
     var i = 0;
     var lowestIndex = 0;
     

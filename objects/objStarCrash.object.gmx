@@ -120,7 +120,7 @@ if !global.frozen {
             
             if other.xspeed == 0 //When it is not yet fired
             {
-                global.weapons[global.currentWeapon].ammo -= global.weapons[global.weaponSlot[global.currentWeapon]].consumptionContact;
+                global.weapons[global.currentWeapon].ammo -= global.weapons[global.currentWeapon].consumptionContact;
                 if global.weapons[global.currentWeapon].ammo &lt;= 0
                     global.weapons[global.currentWeapon].ammo = 0;
             }
