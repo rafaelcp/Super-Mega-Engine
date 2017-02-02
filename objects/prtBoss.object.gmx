@@ -27,7 +27,21 @@
             <kind>1</kind>
             <string>event_inherited();
 
+//Boss Info (for stage select and intro)
 name = "";
+level = noone;
+introBGCol = noone;
+introLineCol = noone;
+standSprite = noone;
+pose = -1;
+poseImgSpeed = 3/60;
+weaponID = -1;
+bossID = -1;
+
+
+//Initialization variables, don't change
+global.weaponID = weaponID;
+global.bossID = bossID;
 
 startIntro = false;
 isIntro = false;
@@ -46,13 +60,7 @@ canHit = false;
 drawHitSpark = false;
 drawBoss = true; //Should we be visible? (Can't use the 'visible' variable as this prevents the Draw event from executing)
 
-weaponID = -1;
-bossID = -1;
-global.weaponID = weaponID;
-global.bossID = bossID;
-
 alarm[8] = 1;
-
 
 //Variables to make it work with prtEnemy
 reflectProjectiles = false;
@@ -62,9 +70,6 @@ dead = false;
 
 damage[objCentaurFlash] = 0;
 damage[objDrillBombExplosion] = 1;
-
-pose = -1;
-poseImgSpeed = 3/60;
 </string>
           </argument>
         </arguments>

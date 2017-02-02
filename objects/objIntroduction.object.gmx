@@ -47,15 +47,15 @@ lineTimer = 0;
 
 //Handles boss sprites and poses
 //Add more bosses to the list once they are added
-switch global.introductionBoss
-{
-    case "pharaoh": //Pharaoh Man; currently the only boss
-        standSprite = sprPharaohStand; //The standing sprite
-        pose = sprPharaohPose; //The posing sprite
-        poseImgSpeed = 3/60; //The image speed (animation speed) of the pose
-        name = "PHARAOH MAN";
-    break;
-}
+var boss = instance_create(0, 0, global.introductionBoss);
+standSprite = boss.standSprite;
+pose = boss.pose;
+poseImgSpeed = boss.poseImgSpeed;
+name = boss.name;
+introBGCol = boss.introBGCol;
+introLineCol = boss.introLineCol;
+destinationLevel = boss.level;
+with boss instance_destroy();
 
 startPoseTimer = 0;
 startPoseTimerMax = 65;
@@ -97,10 +97,9 @@ alarm[0] = 450; //Going to the level
           <argument>
             <kind>1</kind>
             <string>/// Go to level
-var ID;
-ID = instance_create(0, 0, objFadeout);
+var ID = instance_create(0, 0, objFadeout);
 ID.type = "room";
-ID.myRoom = global.destinationLevel;
+ID.myRoom = destinationLevel;
 </string>
           </argument>
         </arguments>
@@ -232,18 +231,18 @@ else
           <argument>
             <kind>1</kind>
             <string>//The background
-draw_sprite_ext(sprIntroBG, 0, 0, 0, 1, 1, 0, global.introBGCol, 1);
+draw_sprite_ext(sprIntroBG, 0, 0, 0, 1, 1, 0, introBGCol, 1);
 
 //The moving colored lines
 var i;
 for(i = 0; i &lt; totalLinesUp; i += 1)
 {
-    draw_sprite_ext(sprIntroLines, 0, 0, lineUpY[i], 1, 1, 0, global.introLineCol, 1);
+    draw_sprite_ext(sprIntroLines, 0, 0, lineUpY[i], 1, 1, 0, introLineCol, 1);
 }
 
 for(i = 0; i &lt; totalLinesDown; i += 1)
 {
-    draw_sprite_ext(sprIntroLines, 0, 0, lineDownY[i], 1, 1, 0, global.introLineCol, 1);
+    draw_sprite_ext(sprIntroLines, 0, 0, lineDownY[i], 1, 1, 0, introLineCol, 1);
 }
 
 //The moving white lines

@@ -220,28 +220,23 @@ if phase &gt;= 6 {
 if phase &gt;= 7 {
     //Draw the weapon name
     draw_set_alpha(text2Alpha);
-    draw_text(textX, textY+25, global.bossWeaponName);
+    draw_text(textX, textY+25, global.weapons[global.weaponID].name);
     draw_set_alpha(1);
 }
+
+primaryCol = global.weapons[global.weaponID].primaryCol; //The primary color for the giant MM in the weapon get screen
+primaryColDark = merge_color(primaryCol, c_black, 0.3); //The shading on the primary color
+secondaryCol = global.weapons[global.weaponID].secondaryCol; //The secondary color for the giant MM in the weapon get screen
+
 
 if phase == 8 {
     //Flickering
     if timer mod 2 == 0 {
-        drawSpriteColorSwap(sprMegamanWeaponGet, megaImg, megaX, megaY, src_col1, src_col2, src_col3, global.bossWeaponPrimary, global.bossWeaponPrimaryDark, global.bossWeaponSecondary);
-        /*
-        draw_sprite_ext(sprMegamanWeaponGetPrimary, megaImg, megaX, megaY, 1, 1, 0, global.bossWeaponPrimary, 1);
-        draw_sprite_ext(sprMegamanWeaponGetPrimaryDark, megaImg, megaX, megaY, 1, 1, 0, global.bossWeaponPrimaryDark, 1);
-        draw_sprite_ext(sprMegamanWeaponGetSecondary, megaImg, megaX, megaY, 1, 1, 0, global.bossWeaponSecondary, 1);
-        */
+        drawSpriteColorSwap(sprMegamanWeaponGet, megaImg, megaX, megaY, src_col1, src_col2, src_col3, primaryCol, primaryColDark, secondaryCol);
     }
 }
 else if phase == 9 {
-    drawSpriteColorSwap(sprMegamanWeaponGet, megaImg, megaX, megaY, src_col1, src_col2, src_col3, global.bossWeaponPrimary, global.bossWeaponPrimaryDark, global.bossWeaponSecondary);
-    /*
-    draw_sprite_ext(sprMegamanWeaponGetPrimary, megaImg, megaX, megaY, 1, 1, 0, global.bossWeaponPrimary, 1);
-    draw_sprite_ext(sprMegamanWeaponGetPrimaryDark, megaImg, megaX, megaY, 1, 1, 0, global.bossWeaponPrimaryDark, 1);
-    draw_sprite_ext(sprMegamanWeaponGetSecondary, megaImg, megaX, megaY, 1, 1, 0, global.bossWeaponSecondary, 1);
-    */
+    drawSpriteColorSwap(sprMegamanWeaponGet, megaImg, megaX, megaY, src_col1, src_col2, src_col3, primaryCol, primaryColDark, secondaryCol);
 }
 
 

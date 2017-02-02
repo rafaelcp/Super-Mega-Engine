@@ -150,15 +150,11 @@ if numBossesDefeated() == 8 {
             playSFX(sfxMenuSelect);
         }
         
-        //Add more bosses once they are added
-        switch option {
-            case 7: //Pharaoh Man; currently the only selectable boss
+        if option &lt; 8 {
+            if object_get_parent(global.bosses[option]) == prtBoss {
+                var boss = instance_create(0, 0, global.bosses[option]);
                 selected = true;
-                
-                global.destinationLevel = rmBeta; //The level to go to after the boss introduction
-                global.introductionBoss = "pharaoh";
-                global.introBGCol = make_color_rgb(255, 145, 95); //The background color of the boss introduction screen
-                global.introLineCol = make_color_rgb(255, 204, 174); //The color of the moving lines in the boss introduction screen
+                global.introductionBoss = global.bosses[option];
                 
                 var ID = instance_create(0, 0, objFadeout);
                 ID.type = "room";
@@ -166,14 +162,14 @@ if numBossesDefeated() == 8 {
                 if !global.bossDefeated[option]
                     ID.myRoom = rmIntroduction;
                 else
-                    ID.myRoom = global.destinationLevel;
-            break;
+                    ID.myRoom = boss.level;
+                with boss instance_destroy();
+            }
             
-            case 8:
-                if numBossesDefeated() &lt; 8 {
-                    break;
-                }
-                 selected = true;
+        }
+        else {
+            if numBossesDefeated() &gt;= 8 {
+                selected = true;
                 
                 if global.fortressStarted
                     global.destinationLevel = rmFortress;
@@ -183,7 +179,7 @@ if numBossesDefeated() == 8 {
                 var ID = instance_create(0, 0, objFadeout);
                 ID.type = "room";
                 ID.myRoom = global.destinationLevel;               
-            break
+            }
         }
     }
 }
@@ -245,25 +241,27 @@ draw_set_valign(fa_top);
 var words, word;
 
 //Draw the boss icons and names
-for(i = 0; i &lt;= 7; i++) {
+for(i = 0; i &lt; 8; i++) {
     if !global.bossDefeated[i]
         draw_sprite(sprStageSelectIcons, i, xx[i]+8, yy[i]+8);
 
     //Boss name
-    words = split(global.bossNames[i], " ");
-    word = ds_queue_dequeue(words);
-    if string_length(word) &lt;= 6 {
-        draw_set_halign(fa_left);
-        draw_text(xx[i], yy[i] + 48, word);
-    }
-    else {
-        draw_set_halign(fa_right);        
-        draw_text(xx[i] + 48, yy[i] + 48, word);
-    }
-    if (ds_queue_size(words) &gt; 0) {
-        draw_set_halign(fa_right);
+    if is_string(global.bossNames[i]) and global.bossNames[i] != "" {
+        words = split(global.bossNames[i], " ");
         word = ds_queue_dequeue(words);
-        draw_text(xx[i] + 48, yy[i] + 56, word);
+        if string_length(word) &lt;= 6 {
+            draw_set_halign(fa_left);
+            draw_text(xx[i], yy[i] + 48, word);
+        }
+        else {
+            draw_set_halign(fa_right);        
+            draw_text(xx[i] + 48, yy[i] + 48, word);
+        }
+        if (ds_queue_size(words) &gt; 0) {
+            draw_set_halign(fa_right);
+            word = ds_queue_dequeue(words);
+            draw_text(xx[i] + 48, yy[i] + 56, word);
+        }
     }
 }
 
