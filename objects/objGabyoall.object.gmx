@@ -45,6 +45,8 @@ damage[objSilverTomahawk] = 0;
 
 damage[objWindStorm] = 0;
 
+damage[objHornetChaser] = 0;
+
 //Enemy specific code
 col = 0; //0 = red; 1 = orange; 2 = blue
 frozeTimer = 0;
