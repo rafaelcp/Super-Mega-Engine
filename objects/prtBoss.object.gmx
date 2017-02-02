@@ -68,6 +68,9 @@ reflectProjectilesLeft = false;
 reflectProjectilesRight = false;
 dead = false;
 
+damage[objMetalBlade] = 1;
+damage[objSilverTomahawk] = 1;
+damage[objWindStorm] = 1;
 damage[objCentaurFlash] = 0;
 damage[objDrillBombExplosion] = 1;
 </string>
