@@ -385,7 +385,7 @@ oldAlp = draw_get_alpha();
 
 var weapons_height = 139;
 var icon_size = 16;
-var spacing = max(0, floor((weapons_height - ceil(global.totalWeapons / 2) * icon_size) / (floor(global.totalWeapons / 2) + 1)));
+var spacing = max(0, floor((weapons_height - ceil(global.totalWeapons / 2) * icon_size) / (ceil(global.totalWeapons / 2) + 1)));
 var iniY = 17 + spacing;
 
 //Menu

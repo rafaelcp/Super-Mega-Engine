@@ -154,6 +154,9 @@
           <sprite>sprites\sprSilverTomahawk</sprite>
           <sprite>sprites\sprWindStorm</sprite>
         </sprites>
+        <sprites name="MM9">
+          <sprite>sprites\sprHornetChaser</sprite>
+        </sprites>
       </sprites>
       <sprites name="Other">
         <sprite>sprites\sprHitspark</sprite>
@@ -450,6 +453,7 @@
     </scripts>
     <scripts name="Views">
       <script>scripts\insideView.gml</script>
+      <script>scripts\insideViewObj.gml</script>
       <script>scripts\deactivateUnimportantObjects.gml</script>
     </scripts>
     <scripts name="Sound">
@@ -609,6 +613,10 @@
           <object>objects\objWindStormWeapon</object>
           <object>objects\objCentaurFlash</object>
           <object>objects\objCentaurFlashWeapon</object>
+        </objects>
+        <objects name="MM9">
+          <object>objects\objHornetChaserWeapon</object>
+          <object>objects\objHornetChaser</object>
         </objects>
         <objects name="Rush">
           <object>objects\prtRush</object>

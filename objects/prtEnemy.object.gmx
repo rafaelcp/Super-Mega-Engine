@@ -44,6 +44,8 @@ reflectProjectilesLeft = false; //Only reflect projectiles that come from the le
 respawn = true; //Should we respawn after leaving the screen and entering it again?
 neverDespawn = false;
 
+targetable = true;  //For Hornet Chaser and other homing weapons
+
 useHitBox = false;
 hitbox_left = bbox_left - x;
 hitbox_right = bbox_right - x;
@@ -56,7 +58,7 @@ damage[objBusterShot] = 1;
 damage[objBusterShotHalfCharged] = 1;
 damage[objBusterShotCharged] = 3;
 
-damage[objMetalBlade] = 1;
+damage[objMetalBlade] = 2;
 
 damage[objPharaohShot] = 1;
 damage[objPharaohShotCharging] = 3;
@@ -64,15 +66,16 @@ damage[objPharaohShotCharged] = 3;
 
 damage[objStarCrash] = 1;
 
-damage[objSilverTomahawk] = 1;
+damage[objSilverTomahawk] = 3;
 
-damage[objWindStorm] = 1;
+damage[objWindStorm] = 2;
 
-damage[objCentaurFlash] = 10;
+damage[objCentaurFlash] = 4;
 
 damage[objDrillBomb] = 1;
 damage[objDrillBombExplosion] = 3;
 
+damage[objHornetChaser] = 1;
 </string>
           </argument>
         </arguments>
