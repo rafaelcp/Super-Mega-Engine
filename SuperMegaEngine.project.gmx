@@ -265,6 +265,24 @@
         <sprite>sprites\sprScrewSmall</sprite>
         <sprite>sprites\sprScrewBig</sprite>
         <sprite>sprites\sprEnergyBalancer</sprite>
+        <sprite>sprites\sprWireIcon</sprite>
+        <sprite>sprites\sprYashichi</sprite>
+        <sprites name="Plates">
+          <sprite>sprites\sprPlateA</sprite>
+          <sprite>sprites\sprPlate5</sprite>
+          <sprite>sprites\sprPlate</sprite>
+          <sprite>sprites\sprPlateC</sprite>
+          <sprite>sprites\sprPlateE</sprite>
+          <sprite>sprites\sprPlateG</sprite>
+          <sprite>sprites\sprPlateI</sprite>
+          <sprite>sprites\sprPlateK</sprite>
+          <sprite>sprites\sprPlateM</sprite>
+          <sprite>sprites\sprPlateN</sprite>
+          <sprite>sprites\sprPlateO</sprite>
+          <sprite>sprites\sprPlateR</sprite>
+          <sprite>sprites\sprPlateT</sprite>
+          <sprite>sprites\sprPlateV</sprite>
+        </sprites>
       </sprites>
       <sprites name="Gimmicks">
         <sprites name="General">
@@ -514,6 +532,8 @@
     </scripts>
     <scripts name="Equip">
       <script>scripts\add_equip.gml</script>
+      <script>scripts\platesCollectedCount.gml</script>
+      <script>scripts\platesCount.gml</script>
     </scripts>
     <scripts name="Rooms">
       <script>scripts\makeMap.gml</script>
@@ -732,6 +752,12 @@
         <object>objects\objScrewSmall</object>
         <object>objects\objScrewBig</object>
         <object>objects\objEnergyBalancer</object>
+        <objects name="Plates">
+          <object>objects\objPlateT</object>
+          <object>objects\objPlateI</object>
+          <object>objects\objPlateM</object>
+          <object>objects\objPlateE</object>
+        </objects>
       </objects>
       <objects name="Gimmicks">
         <objects name="Parents">
@@ -828,6 +854,13 @@
       <object>objects\objEnergyBalancerEquip</object>
       <object>objects\objPowerGeneratorEquip</object>
       <object>objects\objHiSpeedChargeEquip</object>
+      <objects name="Plates">
+        <object>objects\prtPlateEquip</object>
+        <object>objects\objPlateTEquip</object>
+        <object>objects\objPlateIEquip</object>
+        <object>objects\objPlateMEquip</object>
+        <object>objects\objPlateEEquip</object>
+      </objects>
     </objects>
     <objects name="Cutscenes">
       <object>objects\objText</object>

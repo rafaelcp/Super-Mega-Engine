@@ -477,6 +477,21 @@ if (phase &gt;= 1 &amp;&amp; phase &lt;= 3) || phase == 5 || phase == 6
             else
                 draw_text(view_xview[0]+currX+16+10, view_yview[0]+currY+1, global.weapons[i].abbrev);
         }
+        else if prtPlateEquip.weapon == global.weapons[i].object_index {
+            var tempX = currX;
+            for (var p = 0; object_exists(p); p++) {
+                if object_get_parent(p) == prtPlateEquip {
+                    if p.count &gt; 0 {
+                        col = c_white;
+                    }
+                    else {
+                        col = c_gray;
+                    }
+                    draw_sprite_ext(p.sprite_index, 0, view_xview[0]+tempX, view_yview[0]+currY, 1, 1, 0, col, 1); 
+                    tempX += p.sprite_width + 1;
+                }
+            }
+        }
         currY += icon_size + spacing;
     }
   

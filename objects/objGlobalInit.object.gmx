@@ -57,6 +57,7 @@ for (var i = 0; object_exists(i); i++) {
 }
 
 objPharaohShotWeapon.unlocked = false;  //Leave it locked for testing weapon get
+objHornetChaserWeapon.unlocked = false;  //Leave it locked for testing plates
 
 global.totalWeapons = array_length_1d(global.weapons);
 global.weapons_per_col = ceil(global.totalWeapons / 2);
@@ -93,7 +94,15 @@ global.bossRushDefeated[7] = false; //We have only Pharaoh Man
 with prtEquip instance_destroy();
 var item_index = 0;
 for (var i = 0; object_exists(i); i++) {
-    if object_get_parent(i) == prtEquip {
+    if object_get_parent(i) == prtEquip and i != prtPlateEquip {
+        global.items[item_index] = instance_create(0,0, i);
+        item_index++;
+    }
+}
+
+//Plates
+for (var i = 0; object_exists(i); i++) {
+    if object_get_parent(i) == prtPlateEquip {
         global.items[item_index] = instance_create(0,0, i);
         item_index++;
     }

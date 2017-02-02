@@ -59,7 +59,13 @@ megaImg = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var total_items = array_length_1d(global.items);
+            <string>var total_items_ = array_length_1d(global.items);
+var total_items = 0;
+for (var i = 0; i &lt; total_items_; i++) {
+    if global.items[i].buyable {
+        total_items++;
+    }
+}
 var items_per_row = ceil(total_items / 2);
 
 autoImg += 0.1;
@@ -175,7 +181,13 @@ if global.keyShootPressed || global.keyPausePressed {
           <argument>
             <kind>1</kind>
             <string>//Items
-var total_items = array_length_1d(global.items);
+var total_items_ = array_length_1d(global.items);
+var total_items = 0;
+for (var i = 0; i &lt; total_items_; i++) {
+    if global.items[i].buyable {
+        total_items++;
+    }
+}
 var items_per_row = ceil(total_items / 2);
 var avail_width = 206;
 var item_size = 24;
