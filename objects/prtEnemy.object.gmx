@@ -55,31 +55,18 @@ hitbox_top = bbox_top - y;
 hitbox_bottom = bbox_bottom - y;
 
 //Default damage
-
-damage[objBusterShot] = 1;
-damage[objBusterShotHalfCharged] = 1;
-damage[objBusterShotCharged] = 3;
-
-damage[objMetalBlade] = 2;
-
-damage[objPharaohShot] = 1;
-damage[objPharaohShotCharging] = 3;
-damage[objPharaohShotCharged] = 3;
-
-damage[objStarCrash] = 1;
-
-damage[objSilverTomahawk] = 3;
-
-damage[objWindStorm] = 2;
-
-damage[objCentaurFlash] = 4;
-
-damage[objDrillBomb] = 1;
-damage[objDrillBombExplosion] = 3;
-
-damage[objHornetChaser] = 1;
-
-damage[objTimeSlow] = 1;
+var oldFrozen = global.frozen;
+for (var i = 0; object_exists(i); i++) {
+    if (object_get_parent(i) == prtPlayerProjectile or object_get_parent(object_get_parent(i)) == prtPlayerProjectile) and i != prtShieldWeapon {
+        global.frozen = true;
+        var proj = instance_create(0, 0, i);
+        //print(i, proj, object_get_name(i), proj.defaultDamage, proj.defaultBossDamage, global.frozen);
+        damage[i] = proj.defaultDamage;
+        with proj instance_destroy();
+        //print("depois", i, global.frozen);
+    }
+}
+global.frozen = oldFrozen;
 </string>
           </argument>
         </arguments>

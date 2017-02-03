@@ -45,6 +45,8 @@ damage[objSilverTomahawk] = 0;
 
 damage[objWindStorm] = 0;
 
+damage[objCentaurFlash] = 0;
+
 damage[objHornetChaser] = 0;
 
 //Enemy specific code

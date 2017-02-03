@@ -33,6 +33,8 @@ yaccel = -0.25;
 img_speed = 0.6;
 
 passThrough = true;
+
+defaultDamage = 3;
 </string>
           </argument>
         </arguments>

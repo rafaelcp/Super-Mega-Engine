@@ -68,12 +68,17 @@ reflectProjectilesLeft = false;
 reflectProjectilesRight = false;
 dead = false;
 
-damage[objMetalBlade] = 1;
-damage[objSilverTomahawk] = 1;
-damage[objWindStorm] = 1;
-damage[objCentaurFlash] = 0;
-damage[objDrillBombExplosion] = 1;
-damage[objTimeSlow] = 0;
+//Default damage
+var oldFrozen = global.frozen;
+for (var i = 0; object_exists(i); i++) {
+    if (object_get_parent(i) == prtPlayerProjectile or object_get_parent(object_get_parent(i)) == prtPlayerProjectile) and i != prtShieldWeapon {
+        global.frozen = true;
+        var proj = instance_create(0, 0, i);
+        damage[i] = proj.defaultBossDamage;
+        with proj instance_destroy();
+    }
+}
+global.frozen = oldFrozen;
 </string>
           </argument>
         </arguments>

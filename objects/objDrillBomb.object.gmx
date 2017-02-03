@@ -172,8 +172,10 @@ event_user(0);
             <kind>1</kind>
             <string>/// Explode
 
-instance_create(x, y, objDrillBombExplosion);
-instance_destroy();
+if !global.frozen {
+    instance_create(x, y, objDrillBombExplosion);
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>

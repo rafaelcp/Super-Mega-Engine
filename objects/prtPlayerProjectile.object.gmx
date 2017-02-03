@@ -45,6 +45,8 @@ destroyOnVerticalCollision = false;
 reflectible = true;
 update_rate = 1;
 
+defaultDamage = 1;
+defaultBossDamage = 1;
 passThrough = false;    //Projectile goes on if enemy is killed
 unstoppable = false;    //Projectile goes on always
 checkDeath = true;

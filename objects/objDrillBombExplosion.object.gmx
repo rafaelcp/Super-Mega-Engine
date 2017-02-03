@@ -27,13 +27,17 @@
             <kind>1</kind>
             <string>event_inherited();
 
-playSFX(sfxExplosion4);
+if !global.frozen {
+    playSFX(sfxExplosion4);
+}
 
 img_speed = 0.5;
 reflectible = false;
 unstoppable = true;
 
 ignore = ds_list_create();
+
+defaultDamage = 4;
 </string>
           </argument>
         </arguments>

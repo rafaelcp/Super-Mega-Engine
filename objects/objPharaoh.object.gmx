@@ -393,10 +393,7 @@ if global.frozen == false
         }
     }
 }
-else
-{
-    xspeed = 0;
-    yspeed = 0;
+else {
     image_speed = 0;
 }
 

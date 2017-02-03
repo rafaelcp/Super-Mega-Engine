@@ -41,6 +41,7 @@ global.enableSlide = cfgEnableSlide; //Can we slide?
 global.enableScrews = cfgEnableScrews; //Do screws exist in this game?
 global.maxNumberOfBusterShots = cfgMaxNumberOfBusterShots;
 
+global.frozen = true;
 
 //Weapons
 with prtWeapon instance_destroy();

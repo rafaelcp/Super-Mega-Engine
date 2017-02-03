@@ -31,6 +31,8 @@
 }
 
 event_inherited();
+
+targetable = false;
 </string>
           </argument>
         </arguments>
