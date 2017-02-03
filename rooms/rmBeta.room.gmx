@@ -484,6 +484,10 @@
     <instance objName="objPoleEgg" x="1552" y="608" name="inst_F65E6704" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1376" y="608" name="inst_7D939372" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objGabyoall" x="1536" y="608" name="inst_D98B7F97" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objPlateT" x="352" y="320" name="inst_94D37265" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objPlateI" x="368" y="80" name="inst_5AA22008" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objPlateM" x="528" y="608" name="inst_51DC8998" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objPlateE" x="864" y="384" name="inst_EF198C1E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tstBeta" x="48" y="400" w="16" h="16" xo="18" yo="1" id="10000712" name="tile_45EB3B49" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

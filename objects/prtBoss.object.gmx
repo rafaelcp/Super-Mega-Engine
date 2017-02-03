@@ -73,6 +73,7 @@ damage[objSilverTomahawk] = 1;
 damage[objWindStorm] = 1;
 damage[objCentaurFlash] = 0;
 damage[objDrillBombExplosion] = 1;
+damage[objTimeSlow] = 0;
 </string>
           </argument>
         </arguments>
@@ -283,10 +284,9 @@ else if pose == -1 {
     }
     
     prevHealthPoints = healthpoints;
-    
-    
-    x += xspeed;
-    y += yspeed;
+ 
+    x += xspeed * update_rate;
+    y += yspeed * update_rate; 
 }
 else {
     if alarm[9] != -1

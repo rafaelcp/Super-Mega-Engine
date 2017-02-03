@@ -50,12 +50,11 @@ contactDamage = 3;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.frozen == false
-{
+            <string>if !global.frozen {
     xspeed = image_xscale * 1.75;
-    
-    x += xspeed;
 }
+
+event_inherited();
 </string>
           </argument>
         </arguments>

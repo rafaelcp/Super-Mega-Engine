@@ -28,6 +28,7 @@
             <string>xspeed = 0;
 yspeed = 0;
 contactDamage = 1;
+update_rate = 1;
 </string>
           </argument>
         </arguments>
@@ -51,8 +52,8 @@ contactDamage = 1;
           <argument>
             <kind>1</kind>
             <string>if !global.frozen {
-    x += xspeed;
-    y += yspeed;
+    x += xspeed * update_rate;
+    y += yspeed * update_rate;
 }
 </string>
           </argument>

@@ -90,7 +90,7 @@ if !global.frozen &amp;&amp; !dead {
     }
     
     if !shooting {
-        shootTimer += 1;
+        shootTimer += update_rate;
         if shootTimer &gt;= 120 {
             shootTimer = 0;
             shooting = true;

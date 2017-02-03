@@ -27,7 +27,6 @@
             <kind>1</kind>
             <string>//Creation code (all optional):
 //col = &lt;number&gt; (0 = red (default); 1 = orange; 2 = blue)
-
 event_inherited();
 
 healthpointsStart = 3;
@@ -114,7 +113,7 @@ switch col
             <kind>1</kind>
             <string>event_inherited();
 
-if global.frozen == false &amp;&amp; dead == false
+if global.frozen == false and dead == false
 {
     if instance_exists(objMegaman)
     {
@@ -122,7 +121,7 @@ if global.frozen == false &amp;&amp; dead == false
         {
             if shooting == false
             {
-                shootTimer += 1;
+                shootTimer += update_rate;
                 if shootTimer == 85
                 {
                     image_index = 1;
@@ -137,7 +136,7 @@ if global.frozen == false &amp;&amp; dead == false
             }
             else
             {
-                shootTimer += 1;
+                shootTimer += update_rate;
                 if shootTimer == 24
                 {
                     if shootAmount == 2
@@ -196,7 +195,7 @@ if global.frozen == false &amp;&amp; dead == false
             
             if animate == true
             {
-                animateTimer += 1;
+                animateTimer += update_rate;
                 if animateTimer &gt;= 4
                 {
                     animateTimer = 0;

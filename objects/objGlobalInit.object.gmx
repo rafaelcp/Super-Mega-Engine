@@ -57,7 +57,7 @@ for (var i = 0; object_exists(i); i++) {
 }
 
 objPharaohShotWeapon.unlocked = false;  //Leave it locked for testing weapon get
-objHornetChaserWeapon.unlocked = false;  //Leave it locked for testing plates
+objTimeSlowWeapon.unlocked = false;  //Leave it locked for testing plates
 
 global.totalWeapons = array_length_1d(global.weapons);
 global.weapons_per_col = ceil(global.totalWeapons / 2);

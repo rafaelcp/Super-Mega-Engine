@@ -76,14 +76,13 @@ alarm[0] = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.frozen == false
-{
-    if canStep == true
-    {
+            <string>if !global.frozen {
+    if canStep {
         xspeed = image_xscale * 5;
-        x += xspeed;
     }
 }
+
+event_inherited();
 </string>
           </argument>
         </arguments>

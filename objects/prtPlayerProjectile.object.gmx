@@ -43,6 +43,7 @@ groundEnabled = false;
 destroyOnHorizontalCollision = false;
 destroyOnVerticalCollision = false;
 reflectible = true;
+update_rate = 1;
 
 passThrough = false;    //Projectile goes on if enemy is killed
 unstoppable = false;    //Projectile goes on always

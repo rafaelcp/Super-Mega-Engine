@@ -101,19 +101,19 @@ if !global.frozen &amp;&amp; !dead {
             yspeed = 0;
         }
         
-        y += yspeed;
-
         if (yspeed == 0) {
             retreating = false;
             image_index = 0;
             image_speed = 0;
             moving = false;
+            xspeed = 0;
             y -= 3;
         }
     }
     else {
         if !moving {
-            moveTimer += 1;
+            moveTimer += update_rate;
+            xspeed = 0;
             if (moveTimer &gt;= 180) {
                 image_speed = 0.1;
             }
@@ -130,8 +130,8 @@ if !global.frozen &amp;&amp; !dead {
                     dirX = sprite_get_xcenter() - sprite_get_xcenter_object(other);
                     dirY = sprite_get_ycenter() - sprite_get_ycenter_object(other);
                     len = sqrt(dirX * dirX + dirY * dirY);
-                    other.x += dirX * other.move_speed / len;
-                    other.y += dirY * other.move_speed / len;
+                    other.xspeed = dirX * other.move_speed / len;
+                    other.yspeed = dirY * other.move_speed / len;
                 }
             }
         }
@@ -139,7 +139,7 @@ if !global.frozen &amp;&amp; !dead {
     
     if moving {
         image_speed = 0;
-        counter += 1;
+        counter += update_rate;
         
         if (counter == 8) {
             if (floor(image_index) == 2) {

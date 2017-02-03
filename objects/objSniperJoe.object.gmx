@@ -75,10 +75,8 @@ image_index = 0;
             <kind>1</kind>
             <string>event_inherited();
 
-if global.frozen == false &amp;&amp; dead == false
-{
-    if instance_exists(objMegaman)
-    {
+if !global.frozen &amp;&amp; !dead {
+    if instance_exists(objMegaman) {
         // Turn right.
         if x &lt; objMegaman.x
             image_xscale = 1;
@@ -87,22 +85,18 @@ if global.frozen == false &amp;&amp; dead == false
             image_xscale = -1;
     }
     
-    if shooting == false
-    {
-        shootTimer += 1;
-        if shootTimer &gt;= 120
-        {
+    if !shooting {
+        shootTimer += update_rate;
+        if shootTimer &gt;= 120 {
             shootTimer = 0;
             shooting = true;
             image_index = 1;
             shootAmountMax = 3;
         }
     }
-    else
-    {
-        shootTimer += 1;
-        if shootTimer == 30
-        {
+    else {
+        shootTimer += update_rate;
+        if shootTimer == 30 {
             image_index = 1;
             var shootID;            
             var delta;
@@ -121,17 +115,14 @@ if global.frozen == false &amp;&amp; dead == false
             
             shootAmount += 1;
         }
-        else if shootTimer == 45
-        {
-            if shootAmount &gt;= shootAmountMax
-            {
+        else if shootTimer == 45 {
+            if shootAmount &gt;= shootAmountMax {
                 image_index = 0;
                 shooting = false;
                 shootAmount = 0;
                 shootTimer = 0;
             }
-            else
-            {
+            else {
                 image_index = 1;
                 shootTimer = 15;
             }
@@ -144,10 +135,8 @@ if global.frozen == false &amp;&amp; dead == false
     else
         reflectProjectiles = false;
 }
-else
-{
-    if dead == true
-    {
+else {
+    if dead {
         shootTimer = 0;
         shooting = false;
         shootAmount = 0;

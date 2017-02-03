@@ -122,24 +122,19 @@ switch col
             <kind>1</kind>
             <string>event_inherited();
 
-if global.frozen == false &amp;&amp; dead == false
-{
+if !global.frozen and !dead {
     checkGround();
     gravityCheckGround();
     generalCollision();
     
-    if ground == true
-    {
-        moveTimer += 1;
-        if moveTimer == 1
-        {
-            if repeatAmount &lt; 2
-            {
+    if ground {
+        moveTimer += update_rate;
+        if moveTimer == 1 {
+            if repeatAmount &lt; 2 {
                 randomize();
                 highJump = choose(true, false); //False means a low jump, true means a high jump
             }
-            else
-            {
+            else {
                 highJump = !repeatIsHigh;
             }
             
@@ -175,23 +170,19 @@ if global.frozen == false &amp;&amp; dead == false
         {
             image_index = 0;
         }
-        else if moveTimer == 6
-        {
-            if highJump == true
+        else if moveTimer == 6 {
+            if highJump
                 image_index = 1;
             else
                 image_index = 0;
         }
-        else if moveTimer == 40
-        {
-            if highJump == true
-            {
+        else if moveTimer == 40 {
+            if highJump {
                 yspeed = -6;
                 xspeed = image_xscale * 1;
                 image_index = 3;
             }
-            else
-            {
+            else {
                 yspeed = -3;
                 xspeed = image_xscale * 1;
                 image_index = 2;
@@ -200,16 +191,11 @@ if global.frozen == false &amp;&amp; dead == false
             moveTimer = 0;
         }
     }
-    
-    x += xspeed;
-    y += yspeed;
-    
+        
     prevGround = ground;
 }
-else
-{
-    if dead == true
-    {
+else {
+    if dead {
         moveTimer = 0;
         image_index = 2;
         repeatAmount = 0;

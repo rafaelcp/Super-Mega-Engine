@@ -29,7 +29,7 @@
 
 showPause = false;
 
-weapon = objHornetChaserWeapon;
+weapon = objTimeSlowWeapon;
 </string>
           </argument>
         </arguments>

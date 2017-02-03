@@ -32,6 +32,8 @@ canHit = true;
 xspeed = 0;
 yspeed = 0;
 
+update_rate = 1;
+
 healthpointsStart = 1;
 healthpoints = healthpointsStart;
 contactDamage = 1;
@@ -76,6 +78,8 @@ damage[objDrillBomb] = 1;
 damage[objDrillBombExplosion] = 3;
 
 damage[objHornetChaser] = 1;
+
+damage[objTimeSlow] = 1;
 </string>
           </argument>
         </arguments>
@@ -170,6 +174,11 @@ if dead {
     xspeed = 0;
     yspeed = 0;
     exit;
+}
+
+if !global.frozen and !dead {
+    x += xspeed * update_rate;
+    y += yspeed * update_rate;
 }
 </string>
           </argument>

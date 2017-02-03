@@ -30,6 +30,7 @@
       <sound>sound\sfxReflect</sound>
       <sound>sound\sfxCentaurFlash</sound>
       <sound>sound\sfxDrillBomb</sound>
+      <sound>sound\sfxHornetChaser</sound>
     </sounds>
     <sounds name="Enemy">
       <sound>sound\sfxEnemyHit</sound>
@@ -644,6 +645,10 @@
           <object>objects\objRushCoilWeapon</object>
           <object>objects\objRushJet</object>
           <object>objects\objRushJetWeapon</object>
+        </objects>
+        <objects name="MMPU">
+          <object>objects\objTimeSlowWeapon</object>
+          <object>objects\objTimeSlow</object>
         </objects>
       </objects>
       <objects name="Effects">

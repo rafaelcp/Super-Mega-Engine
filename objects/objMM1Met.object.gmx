@@ -82,7 +82,7 @@ if global.frozen == false &amp;&amp; dead == false
     
     if canShoot == false
     {
-        cooldownTimer += 1;
+        cooldownTimer += update_rate;
         
         if cooldownTimer == 17
         {

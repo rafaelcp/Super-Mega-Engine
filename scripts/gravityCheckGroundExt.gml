@@ -3,7 +3,7 @@
 //Make sure to specify the variable 'ground' in the object [if necessary, use checkGround()]
 
 if !ground {
-    yspeed += argument0;
+    yspeed += argument0 * update_rate;
     if yspeed > cfgMaxFallingSpeed
         yspeed = cfgMaxFallingSpeed;
 }

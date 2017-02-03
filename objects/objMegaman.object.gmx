@@ -111,6 +111,7 @@ drawWeaponIcon = false; //Whether or not we should draw the weapon icon above ou
 drawWeaponIconTimer = -1;
 onRushJet = false; //Are we on the Rush Jet?
 damageMultiplier = 1;   //Multiplies damage taken
+update_rate = 1;
 
 global.outlineCol = c_black;
 

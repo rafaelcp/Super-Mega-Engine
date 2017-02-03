@@ -83,7 +83,7 @@ if global.frozen == false &amp;&amp; dead == false
 
     if (shooting)
     {
-        shootTimer += 1;
+        shootTimer += update_rate;
         if (shootTimer == 7)
         {
             if x &lt; objMegaman.x

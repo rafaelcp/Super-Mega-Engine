@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>prtPlayerProjectile</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,18 +25,38 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>pickupID = -15;
-
-image_speed = 1/6;
-amount = 0;
-flash = false;
-flashTimer = 0;
-xspeed = 0;
-yspeed = 0;
-
-targetable = true;  //For Hornet Chaser or other weapon grabbing weapons
-
-update_rate = 1;
+            <string>radius = 0;
+activating = true;
+global.frozen = true;
+playSFX(sfxCentaurFlash);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>with prtEnemy {
+    update_rate = 1;
+}
+with prtEnemyProjectile {
+    update_rate = 1;
+}
 </string>
           </argument>
         </arguments>
@@ -65,65 +85,6 @@ update_rate = 1;
         </arguments>
       </action>
     </event>
-    <event eventtype="2" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>flash = true;
-alarm[1] = 60;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="1">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>//Sets the ID of this pickup, so that we can despawn it when the room starts if the pickup has already been collected in the level
-//However, if it's been dropped by an enemy, this can be ignored
-if !(alarm[0] != -1 || alarm[1] != -1)
-{
-    if pickupID == -15
-    {
-        pickupID = global.currentPickupID;
-        global.currentPickupID += 1;
-    }
-    
-    if global.pickupCollected[pickupID] == true
-        instance_destroy();
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -141,66 +102,34 @@ if !(alarm[0] != -1 || alarm[1] != -1)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if !global.frozen {
-    image_speed = 1/6;
-    
-    if flash {
-        flashTimer++;
-        if flashTimer &gt;= 2 {
-            visible = !visible;
-            flashTimer = 0;
-        }
-    }
-    
-    if insideView() {
-        checkGround();
-        gravityCheckGround();
-        generalCollision();
-        
-        y += yspeed;
-        if ground {
-            xspeed = 0;
-        }
-        x += xspeed;
-        if !insideView() {
-            instance_destroy();
-        }
-    }
+            <string>if activating {
+    radius += 8;
+    global.frozen = true;
 }
-else {
-    if alarm[0] != -1
-        alarm[0] += 1;
-    if alarm[1] != -1
-        alarm[1] += 1;
-    image_speed = 0;
+if activating and radius &gt; 128 {
+    activating = false;
+    global.frozen = false;
+    alarm[1] = room_speed * 5;
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="objMegaman">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>instance_destroy();
 
-if pickupID != -15
-{
-    global.pickupCollected[pickupID] = true;
+if instance_exists(objMegaman) {
+    x = sprite_get_xcenter_object(objMegaman);
+    y = sprite_get_ycenter_object(objMegaman);
+}
+
+if alarm[1] &gt; 0 {
+    with prtEnemy {
+        if insideView() and damage[objTimeSlow] &gt; 0
+            update_rate = 0.2;
+    }
+    
+    with prtEnemyProjectile {
+        if insideView()
+            update_rate = 0.2;
+    }
+}
+if global.frozen and alarm[1] &gt; 0 {
+    alarm[1]++;
 }
 </string>
           </argument>
@@ -224,8 +153,7 @@ if pickupID != -15
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if alarm[0] != -1 || alarm[1] != -1  //This means it's dropped by an enemy or is moving
-    instance_destroy();
+            <string>///Just to cancel the parent event
 </string>
           </argument>
         </arguments>
@@ -248,8 +176,7 @@ if pickupID != -15
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if alarm[0] != -1 || alarm[1] != -1 //This means it's dropped by an enemy
-    instance_destroy();
+            <string>///Just to cancel the parent event
 </string>
           </argument>
         </arguments>
@@ -272,14 +199,17 @@ if pickupID != -15
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>drawSelf3Colors(global.primaryCol, global.secondaryCol, global.outlineCol);
+            <string>if activating and instance_exists(objMegaman) {
+    draw_set_color(c_fuchsia);
+    draw_circle(x, y, radius, true);
+    draw_circle(x, y, radius / 2, true);
+    draw_circle(x, y, radius / 4, true);
+}
 
-//drawSelf();
-
-if cfgDebug || debug_mode {
-    draw_set_color(c_white);
-    draw_rectangle(bbox_left,bbox_top,bbox_right,bbox_bottom,1);
-    draw_arrow(sprite_get_xcenter(), sprite_get_ycenter(), sprite_get_xcenter() + xspeed * 10, sprite_get_ycenter() + yspeed * 10, 10);
+if alarm[1] &gt; 0 {
+    draw_set_alpha(0.1);
+    draw_rectangle(view_xview[0], view_yview[0], view_xview[0] + view_wview[0], view_yview[0] + view_hview[0], false); 
+    draw_set_alpha(1);
 }
 </string>
           </argument>

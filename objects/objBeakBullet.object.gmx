@@ -51,14 +51,12 @@ image_speed = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.frozen == false
-{
+            <string>if !global.frozen {
     xspeed = cos(degtorad(dir)) * 3 * xscale;
     yspeed = -sin(degtorad(dir)) * 3;   //The vertical speed was, for some reason, inverted, which is why I used a minus. Don't ask me what actually caused this behaviour
-    
-    x += xspeed;
-    y += yspeed;
 }
+
+event_inherited();
 </string>
           </argument>
         </arguments>

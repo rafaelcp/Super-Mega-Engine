@@ -116,7 +116,7 @@ if global.frozen == false &amp;&amp; dead == false
 {
     if shooting == false
     {
-        shootTimer += 1;
+        shootTimer += update_rate;
         if shootTimer == 60+30
             image_index = 1;
         else if shootTimer == 67+30

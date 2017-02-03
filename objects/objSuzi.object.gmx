@@ -117,11 +117,9 @@ beginStartDir = startDir;
             <kind>1</kind>
             <string>event_inherited();
 
-if global.frozen == false &amp;&amp; dead == false
-{
-    if moving == false
-    {
-        moveTimer += 1;
+if !global.frozen and !dead {
+    if !moving {
+        moveTimer += update_rate;
         if moveTimer == 10
         {
             image_index = 0;    //After touching a wall, we want the eye to close slowly (half-open the first 10 frames)
@@ -135,9 +133,10 @@ if global.frozen == false &amp;&amp; dead == false
             image_index = 2;
             moving = true;
         }
+        xspeed = 0;
+        yspeed = 0;
     }
-    else
-    {
+    else {
         if dir == "hor"
             xspeed = startDir * 3;
         else
@@ -153,14 +152,11 @@ if global.frozen == false &amp;&amp; dead == false
             startDir = -startDir;   //Change the direction
         }
         
-        x += xspeed;
-        y += yspeed;
     }
 }
 else
 {
-    if dead == true
-    {
+    if dead {
         moveTimer = 0;
         startDir = beginStartDir;
         moving = false;

@@ -93,9 +93,6 @@ if !global.frozen &amp;&amp; !dead {
         yspeed *= -1;
     }
     
-    x += xspeed;
-    y += yspeed;
-    
 }
 </string>
           </argument>

@@ -62,8 +62,6 @@ if !global.frozen and instance_exists(objMegaman) {
     }
     xspeed = spd * sign(sprite_get_xcenter_object(objMegaman) - sprite_get_xcenter());
     yspeed = spd * sign(sprite_get_ycenter_object(objMegaman) - sprite_get_ycenter());
-    x += xspeed;
-    y += yspeed;
 }
 </string>
           </argument>

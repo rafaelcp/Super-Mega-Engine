@@ -58,6 +58,8 @@ damage[objSilverTomahawk] = 2;
 damage[objWindStorm] = 5;
 
 damage[objCentaurFlash] = 4;
+
+damage[objTimeSlow] = 1;
 </string>
           </argument>
         </arguments>
@@ -96,7 +98,7 @@ if global.frozen == false
                 sprite_index = sprPharaohStand;
                 image_speed = 0;
                 
-                attackTimer -= 1;
+                attackTimer -= update_rate;
                 if attackTimer &lt;= 0
                 {
                     if attackTimer == -1 //It's -1 when first attacking; the first attack is always a jump 'n shoot
@@ -205,12 +207,12 @@ if global.frozen == false
                 
                 if sprite_index == sprPharaohJump || sprite_index == sprPharaohJumpBack
                 {
-                    jumpTimer += 1;
+                    jumpTimer += update_rate;
                     if jumpTimer &gt;= 10
                     {
                         sprite_index = sprPharaohJumpShoot;
                         image_index = 0;
-                        image_speed = 6/60;
+                        image_speed = 6/60 * update_rate;
                     }
                 }
                 else if sprite_index == sprPharaohJumpShoot || sprite_index == sprPharaohJumpShootBack
@@ -230,7 +232,7 @@ if global.frozen == false
                             instance_create(box, y-8, objPharaohManShot);
                         }
                         
-                        image_speed = 6/60;
+                        image_speed = 6/60 * update_rate;
                     }
                     else if floor(image_index) == image_number-1
                     {
@@ -239,7 +241,7 @@ if global.frozen == false
                     }
                     else
                     {
-                        image_speed = 6/60;
+                        image_speed = 6/60 * update_rate;
                     }
                 }
                 
@@ -326,34 +328,37 @@ if global.frozen == false
                     jumpTimer = 0;
                     
                     sprite_index = sprPharaohCharge;
-                    image_speed = 0.25;
+                    image_speed = 0.25 * update_rate;
                     image_index = 0;
                 }
                 
                 if sprite_index == sprPharaohCharge //This extra code is to make sure the animation resumes after pausing and unpausing
-                    image_speed = 0.25;
+                    image_speed = 0.25 * update_rate;
                 else if sprite_index == sprPharaohCharge2
-                    image_speed = 0.07;
+                    image_speed = 0.07 * update_rate;
                 else if sprite_index = sprPharaohCharge3
-                    image_speed = 1;
+                    image_speed = 1 * update_rate;
                 
-                jumpTimer += 1; //It's not really a timer for jumping, but rather for releasing the shot; however, reusing this variable saves initializing a new one
+                jumpTimer += update_rate; //It's not really a timer for jumping, but rather for releasing the shot; however, reusing this variable saves initializing a new one
                 if jumpTimer &gt;= 40
                 {                    
-                    if jumpTimer == 40
+                    if floor(jumpTimer) == 40
                     {
+                        jumpTimer = 41;
                         sprite_index = sprPharaohCharge2;
                         image_index = 0;
-                        image_speed = 0.07;
+                        image_speed = 0.07 * update_rate;
                     }
-                    else if jumpTimer == 60
+                    else if floor(jumpTimer) == 60
                     {
+                        jumpTimer = 61;
                         sprite_index = sprPharaohCharge3;
                         image_index = 1;
-                        image_speed = 1;
+                        image_speed = 1 * update_rate;
                     }
-                    else if jumpTimer == 70
+                    else if floor(jumpTimer) == 70
                     {
+                        jumpTimer = 71;
                         sprite_index = sprPharaohShoot;
                         
                         var shootID, box;
@@ -365,8 +370,9 @@ if global.frozen == false
                         shootID = instance_create(box, y+2, objPharaohManShotBig);
                             shootID.image_xscale = image_xscale;
                     }
-                    else if jumpTimer == 75
+                    else if floor(jumpTimer) == 75
                     {
+                        jumpTimer = 76;
                         phase = 0;
                         sprite_index = sprPharaohStand;
                         xspeed = 0;
@@ -389,8 +395,11 @@ if global.frozen == false
 }
 else
 {
+    xspeed = 0;
+    yspeed = 0;
     image_speed = 0;
 }
+
 </string>
           </argument>
         </arguments>

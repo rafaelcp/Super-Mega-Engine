@@ -60,8 +60,8 @@ if !global.frozen &amp;&amp; !dead {
         dirX = sprite_get_xcenter() - sprite_get_xcenter_object(other);
         dirY = sprite_get_ycenter() - sprite_get_ycenter_object(other);
         len = sqrt(dirX * dirX + dirY * dirY);
-        other.x += dirX * other.move_speed / len;
-        other.y += dirY * other.move_speed / len;
+        other.xspeed = dirX * other.move_speed / len;
+        other.yspeed = dirY * other.move_speed / len;
     }
 }
 </string>

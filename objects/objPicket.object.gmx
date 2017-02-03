@@ -108,8 +108,7 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.frozen == false
-{
+            <string>if !global.frozen {
     gravityNoGround();
     
     var ddy;
@@ -118,10 +117,9 @@ else
     else
         ddy = dy;
     
-    xspeed = dx / ( (3 + (ddy / 6)) * const );
+    xspeed = dx / ( (3 + (ddy / 6)) * const ) * image_xscale;
     
-    x += xspeed * image_xscale;
-    y += yspeed;
+    event_inherited();
     
     image_speed = 1/6;
 }

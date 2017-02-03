@@ -66,11 +66,7 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.frozen == false
-{
-    x += xspeed;
-    y += yspeed;
-}
+            <string>event_inherited();
 </string>
           </argument>
         </arguments>

@@ -86,7 +86,10 @@ damage[objWindStorm] = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with objMegaman {
+            <string>if !global.frozen and !dead {
+    image_speed = 0.2 * update_rate;
+}
+with objMegaman {
     if x &gt; other.x || other.dead {
         other.wind.xspeed = 0;
     }

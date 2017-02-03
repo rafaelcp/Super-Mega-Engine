@@ -113,10 +113,8 @@ beginStartDir = startDir;
             <kind>1</kind>
             <string>event_inherited();
 
-if global.frozen == false &amp;&amp; dead == false
-{
-    if instance_exists(objMegaman)
-    {
+if !global.frozen and !dead {
+    if instance_exists(objMegaman) {
         if x &lt; objMegaman.x
             image_xscale = 1;
         else
@@ -136,32 +134,26 @@ if global.frozen == false &amp;&amp; dead == false
         
     generalCollision();
     
-    if (frozeTimer == 0)
-    {    
+    if (frozeTimer == 0) {    
         image_speed = 0.2;
     
         if (xspeed == 0 || 
-            !collision_rectangle(x+(startDir*8), y, x+(startDir*8), y+1, objSolid, false, false))
-        {
+            !collision_rectangle(x+(startDir*8), y, x+(startDir*8), y+1, objSolid, false, false)) {
             startDir = -startDir;   //Change the direction
         }
         
-        x += xspeed;
-        y += yspeed;
     }
-    else
-    {
+    else {
         image_speed = 0;
-        frozeTimer--;
+        xspeed = 0;
+        frozeTimer -= update_rate;
     }
 }
-else
-{
+else {
     xspeed = 0;
     yspeed = 0;
 
-    if dead == true
-    {
+    if dead {
         startDir = beginStartDir;
         dashing = false;
         frozeTimer = 0;
