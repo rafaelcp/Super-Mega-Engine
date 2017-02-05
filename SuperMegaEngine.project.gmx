@@ -335,9 +335,6 @@
       <sprites name="WeaponGet">
         <sprite>sprites\sprMegamanWeaponGetTeleport</sprite>
         <sprite>sprites\sprMegamanWeaponGet</sprite>
-        <sprite>sprites\sprMegamanWeaponGetPrimary</sprite>
-        <sprite>sprites\sprMegamanWeaponGetPrimaryDark</sprite>
-        <sprite>sprites\sprMegamanWeaponGetSecondary</sprite>
       </sprites>
       <sprites name="StageSelect">
         <sprite>sprites\sprStageSelectIcons</sprite>
