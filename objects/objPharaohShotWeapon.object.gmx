@@ -43,6 +43,56 @@ secondaryCol = make_color_rgb(240, 208, 176);
         </arguments>
       </action>
     </event>
+    <event eventtype="7" enumb="16">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///onWeaponGetStep
+
+if shots == 3 {
+    with global.weapons[global.currentWeapon] event_user(3);
+}
+if instance_exists(objPharaohShotCharging) and objPharaohShotCharging.sprite_index == sprPharaohShotCharged {
+    objMegaman.canMove = true;
+    event_user(4);
+    objMegaman.canMove = false;
+}
+if timer == 0 {
+    switch shots {
+        case 0: instance_create(186, 0, objTelly); instance_create(82, 223, objTelly); global.keyUp = true; global.keyDown = false; global.keyRight = false; global.keyLeft = false; break;
+        case 2: global.keyUp = false; global.keyDown = true; global.keyRight = false; global.keyLeft = false; break;
+        default: global.keyUp = false; global.keyDown = false; global.keyRight = false; global.keyLeft = false;
+    }
+    with global.weapons[global.currentWeapon] {
+        ammo = 28;
+        if shots &lt; 3 {
+            event_user(1);
+        }
+    }
+    shots++;
+}
+timer++;
+if timer &gt; maxTimer {
+    timer = 0;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="7" enumb="14">
       <action>
         <libid>1</libid>

@@ -54,6 +54,97 @@ ID = -1;
         </arguments>
       </action>
     </event>
+    <event eventtype="7" enumb="17">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///onWeaponGetDraw
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="16">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///onWeaponGetStep
+
+if timer == 0 {
+    switch shots {
+        case 0: global.keyUp = true; global.keyDown = false; global.keyRight = false; global.keyLeft = false; break;
+        case 1: global.keyUp = true; global.keyDown = false; global.keyRight = true; global.keyLeft = false; break;
+        case 3: global.keyUp = false; global.keyDown = true; global.keyRight = true; global.keyLeft = false; break;
+        case 4: global.keyUp = false; global.keyDown = true; global.keyRight = false; global.keyLeft = false; break;
+        default: global.keyUp = false; global.keyDown = false; global.keyRight = false; global.keyLeft = false;
+    }
+    with global.weapons[global.currentWeapon] {
+        ammo = 28;
+        event_user(1);
+    }
+    with objMegaman playerShoot();
+    shots++;
+}
+timer++;
+if timer &gt; maxTimer {
+    timer = 0;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="15">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///onWeaponGetCreate
+
+instance_create(240, 160, objTellySpawner);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="7" enumb="14">
       <action>
         <libid>1</libid>

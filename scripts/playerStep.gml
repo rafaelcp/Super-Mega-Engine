@@ -351,16 +351,14 @@ else if bbox_top > room_height
 
 
 //Jumping
-if (canMove == true || isThrow == true || onRushJet == true) && ground == true && global.keyJumpPressed && !global.keyDown
+if (canMove || (isThrow and room != rmWeaponGet) || onRushJet) && ground && global.keyJumpPressed && !global.keyDown
 {
-    if isThrow == true  //We can jump-cancel the throwing animation (after throwing a Metal Blade, Pharaoh Shot etc)
-    {
+    if isThrow {  //We can jump-cancel the throwing animation (after throwing a Metal Blade, Pharaoh Shot etc)
         canMove = true;
         canSpriteChange = true;
         shootTimer -= 5; //20 frames for freezing was too long so it was changed to 15. However, when not frozen, 20 looks better
     }
-    else if onRushJet == true
-    {
+    else if onRushJet {
         canMove = true;
     }
     
@@ -389,8 +387,8 @@ else
     
 if global.enableSlide == true
 {
-    if ground == true && isSlide == false && ((global.keyJumpPressed && global.keyDown) || (global.enableSlideKey && global.keySlidePressed)) 
-        && (canMove == true || isThrow == true) && !position_meeting(box+image_xscale*5, bbox_bottom-12, objSolid)
+    if ground && !isSlide && ((global.keyJumpPressed && global.keyDown) || (global.enableSlideKey && global.keySlidePressed)) 
+        && (canMove || (isThrow and room != rmWeaponGet)) && !position_meeting(box+image_xscale*5, bbox_bottom-12, objSolid)
     {
         var canSld;
         canSld = false;

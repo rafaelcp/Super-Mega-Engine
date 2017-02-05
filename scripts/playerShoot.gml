@@ -20,7 +20,7 @@ switch sprite_index
 
 
 //Shooting
-if global.keyShootPressed && canShoot == true && (canMove == true || climbing == true || isThrow == true || onRushJet == true)
+if global.keyShootPressed && canShoot && (canMove || climbing || (isThrow and room != rmWeaponGet) || onRushJet)
 && instance_number(objBusterShotCharged) < 1 && global.ammo[global.currentWeapon] > 0
 {   
     if climbing {
@@ -96,7 +96,7 @@ if global.enableCharge {
 }
 
 //Charging other weapons
-if global.weapons[global.currentWeapon].ammo > 0 and global.weapon != objMegaBusterWeapon.ID {
+if global.weapons[global.currentWeapon].ammo > 0 and global.weapon != objMegaBusterWeapon.ID and room != rmWeaponGet {
     if global.keyShoot || (isSlide && global.weapons[global.currentWeapon].chargeTimer != 0) {    // Pressing shoot key
         with global.weapons[global.currentWeapon] event_user(3);
     }

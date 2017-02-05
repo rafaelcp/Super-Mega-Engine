@@ -2,7 +2,7 @@
 //Allows for quick weapon switching
 //If you do not want quick weapon switching in your game, simply remove the script from objMegaman's step event
 
-if global.totalWeapons < 2 {
+if global.totalWeapons < 2 or room == rmWeaponGet {
     return false;
 }
 

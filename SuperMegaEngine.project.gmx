@@ -915,7 +915,7 @@
     <room>rooms\rmBossRush</room>
     <room>rooms\rmFinalStage</room>
   </rooms>
-  <constants number="35">
+  <constants number="36">
     <constant name="initialRoom">rmDisclaimer</constant>
     <constant name="cfgEnableSlideKey">false</constant>
     <constant name="cfgEnableDamageNumbers">false</constant>
@@ -927,6 +927,7 @@
     <constant name="cfgMaxAmmo">28</constant>
     <constant name="cfgDebug">false</constant>
     <constant name="cfgEnableDebugKeys">true</constant>
+    <constant name="cfgWeaponPreview">true</constant>
     <constant name="cfgShowLives">false</constant>
     <constant name="cfgShotSplash">false</constant>
     <constant name="cfgInitialStage">-1</constant>

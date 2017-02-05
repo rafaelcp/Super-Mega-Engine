@@ -36,11 +36,33 @@ text2Alpha = 0;
 
 global.checkpoint = false;
 
-global.weapons[global.weaponID].unlocked = true; //Unlocks the special weapon of the RM
-global.bossDefeated[global.bossID] = true; //For the stage select screen
+if global.weaponID &gt; -1 {
+    global.weapons[global.weaponID].unlocked = true; //Unlocks the special weapon of the RM
+}
+if global.bossID &gt; -1 {
+    global.bossDefeated[global.bossID] = true; //For the stage select screen
+}
 
 phase = 0; //0 = preparing for moving up; 1 = moving up; 2 = de-teleporting; 3 = waiting; 4 = moving right; 5 = waiting for text;
            //6 = show "You got"; 7 = show weapon name; 8 = flicker between normal and weapon colors; 9 = weapon colors and timer for leaving
+
+if cfgWeaponPreview and global.weaponID &gt; -1 {
+    instance_create(16, 160, objMegaman);
+    
+    objMegaman.showReady = false;
+    objMegaman.teleporting = true;
+    
+    playerLockMovement();
+    
+    with objHealthWeaponBar instance_destroy();
+    
+    with global.weapons[global.weaponID] {
+        shots = 0;
+        timer = 0;
+        maxTimer = room_speed;
+        event_user(5);
+    }
+}           
 </string>
           </argument>
         </arguments>
@@ -153,6 +175,7 @@ phase = 0; //0 = preparing for moving up; 1 = moving up; 2 = de-teleporting; 3 =
         if timer &gt;= 40 {
             timer = 0;
             phase = 9;
+            global.currentWeapon = 0;
         }
     break;
     
@@ -160,12 +183,41 @@ phase = 0; //0 = preparing for moving up; 1 = moving up; 2 = de-teleporting; 3 =
         timer++;
         if timer &gt;= 4.5 * 60 {
             timer = 0;
-            var ID;
-            ID = instance_create(x, y, objFadeout);
+            var ID = instance_create(x, y, objFadeout);
             ID.type = "room";
             ID.myRoom = rmPass;
         }
     break;
+}
+
+if cfgWeaponPreview and global.weaponID &gt; -1 {
+    
+    if instance_exists(objMegaman) and objMegaman.canMove {
+        playerLockMovement();
+    }
+    
+    with objMegaman {
+        image_xscale = 1;
+        canHit = false;
+    }
+    
+    with objHealthWeaponBar instance_destroy();
+    
+    with prtPickup instance_destroy();
+    if phase == 8 {   //Flicker
+        global.weapon = global.weaponID - global.weapon;
+        with objMegaman event_user(0); //Colors
+    }
+    else if phase == 9 {   //WEAPON DEMO
+        if global.currentWeapon == 0 {
+            global.currentWeapon = global.weaponID;
+            global.weapon = global.currentWeapon;
+            with objMegaman event_user(0); //Colors
+        }
+        else {
+            with global.weapons[global.weaponID] event_user(6);
+        }
+    }
 }
 </string>
           </argument>
@@ -205,6 +257,9 @@ draw_set_valign(fa_middle);
 var src_col1 = make_colour_rgb(0, 89, 255);
 var src_col2 = make_colour_rgb(0, 0, 187);
 var src_col3 = make_colour_rgb(0, 217, 255);
+var primaryCol = src_col1;
+var primaryColDark = src_col2;
+var secondaryCol  = src_col3;
 
 var textX, textY;
 textX = round(view_xview[0] + (view_wview[0] / 3));
@@ -220,14 +275,17 @@ if phase &gt;= 6 {
 if phase &gt;= 7 {
     //Draw the weapon name
     draw_set_alpha(text2Alpha);
-    draw_text(textX, textY+25, global.weapons[global.weaponID].name);
+    if global.weaponID &gt; -1 {
+        draw_text(textX, textY+25, global.weapons[global.weaponID].name);
+    }
     draw_set_alpha(1);
 }
 
-primaryCol = global.weapons[global.weaponID].primaryCol; //The primary color for the giant MM in the weapon get screen
-primaryColDark = merge_color(primaryCol, c_black, 0.3); //The shading on the primary color
-secondaryCol = global.weapons[global.weaponID].secondaryCol; //The secondary color for the giant MM in the weapon get screen
-
+if global.weaponID &gt; -1 {
+    primaryCol = global.weapons[global.weaponID].primaryCol; //The primary color for the giant MM in the weapon get screen
+    primaryColDark = merge_color(primaryCol, c_black, 0.3); //The shading on the primary color
+    secondaryCol = global.weapons[global.weaponID].secondaryCol; //The secondary color for the giant MM in the weapon get screen
+}
 
 if phase == 8 {
     //Flickering
@@ -245,6 +303,10 @@ draw_set_color(oldAlpha);
 
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);
+
+if cfgWeaponPreview and global.weaponID &gt; -1 {
+    with global.weapons[global.weaponID] event_user(7);
+}
 </string>
           </argument>
         </arguments>
