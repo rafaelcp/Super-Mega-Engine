@@ -754,6 +754,7 @@
         <object>objects\objScrewSmall</object>
         <object>objects\objScrewBig</object>
         <object>objects\objEnergyBalancer</object>
+        <object>objects\objYashichi</object>
         <objects name="Plates">
           <object>objects\objPlateT</object>
           <object>objects\objPlateI</object>
