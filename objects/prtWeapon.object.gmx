@@ -42,6 +42,7 @@ chargeTime = 0;
 initChargeTime = 0;
 chargeTimer = 0;
 initChargeTimer = 0;
+cooldown = 0;
 
 persistent = true;
 
@@ -49,6 +50,54 @@ primaryCol = make_color_rgb(0, 120, 248);
 secondaryCol = make_color_rgb(0, 232, 216);
 
 ID = -1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="11">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>with objMegaman canShoot = true;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if global.frozen and alarm[11] &gt; 0 {
+    alarm[11]++;
+}
 </string>
           </argument>
         </arguments>
@@ -314,6 +363,11 @@ else {
 objMegaman.shootTimer = 0;
 
 print("Shooting " + name);
+
+if (cooldown &gt; 0) {
+    with objMegaman canShoot = false;
+    alarm[11] = cooldown;
+}
 </string>
           </argument>
         </arguments>

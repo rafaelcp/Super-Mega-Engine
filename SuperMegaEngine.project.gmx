@@ -141,6 +141,9 @@
         <sprites name="MM2">
           <sprite>sprites\sprMetalBlade</sprite>
         </sprites>
+        <sprites name="MM3">
+          <sprite>sprites\sprNeedleCannon</sprite>
+        </sprites>
         <sprites name="MM4">
           <sprite>sprites\sprPharaohShotCharging</sprite>
           <sprite>sprites\sprPharaohShot</sprite>
@@ -611,6 +614,10 @@
         <objects name="MM2">
           <object>objects\objMetalBlade</object>
           <object>objects\objMetalBladeWeapon</object>
+        </objects>
+        <objects name="MM3">
+          <object>objects\objNeedleCannon</object>
+          <object>objects\objNeedleCannonWeapon</object>
         </objects>
         <objects name="MM4">
           <object>objects\objPharaohShotCharging</object>

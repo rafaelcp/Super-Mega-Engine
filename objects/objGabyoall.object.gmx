@@ -33,21 +33,11 @@ event_inherited();
 
 contactDamage = 3;
 
-damage[objBusterShot] = 0;
-damage[objBusterShotCharged] = 0;
-damage[objBusterShotHalfCharged] = 0;
-
-damage[objMetalBlade] = 0;
-
-damage[objStarCrash] = 0;
-
-damage[objSilverTomahawk] = 0;
-
-damage[objWindStorm] = 0;
-
-damage[objCentaurFlash] = 0;
-
-damage[objHornetChaser] = 0;
+for (var i = 0; object_exists(i); i++) {
+    if object_get_parent(i) == prtPlayerProjectile or object_get_parent(object_get_parent(i)) == prtPlayerProjectile {
+        damage[i] = 0;
+    }
+}
 
 //Enemy specific code
 col = 0; //0 = red; 1 = orange; 2 = blue
