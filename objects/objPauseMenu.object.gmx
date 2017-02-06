@@ -213,17 +213,15 @@ if global.keyDownPressed
     loops = 0; //How many times the while-loop has been passed through
     //show_debug_message("Going down from " + string(option));
     
-    while (option &lt; global.totalWeapons &amp;&amp; global.weapons[option].unlocked == false) || loops == 0 || (option &gt;= global.totalWeapons &amp;&amp; (!global.items[option-global.totalWeapons].usable || !global.items[option-global.totalWeapons].showPause))
-    {
+    while (option &lt; global.totalWeapons &amp;&amp; !global.weapons[option].unlocked) || loops == 0 || (option &gt;= global.totalWeapons &amp;&amp; (!global.items[option-global.totalWeapons].usable || !global.items[option-global.totalWeapons].showPause || (global.items[option-global.totalWeapons].count == 0 and !global.items[option-global.totalWeapons].showZero))) {
         if option &gt; global.totalWeapons {
             option = 0;
         }
         //The bottom of the left column and the right column;
         //when the bottom of the left column is selected and we press down, we want to select the first item
         //for the right column, we want to select the last item
-        else if option != weapons_per_col-1 &amp;&amp; option != global.totalWeapons - 1
-        {
-            option += 1;
+        else if option != weapons_per_col-1 &amp;&amp; option != global.totalWeapons - 1 {
+            option++;
             if option &lt; 0
                 option = global.totalWeapons - 1;
             else if option &gt; global.totalWeapons+array_length_1d(global.items) - 1
@@ -254,7 +252,7 @@ else if global.keyUpPressed
     var loops;
     loops = 0;
     
-    while (option &lt; global.totalWeapons &amp;&amp; global.weapons[option].unlocked == false) || loops == 0 || (option &gt;= global.totalWeapons &amp;&amp; (!global.items[option-global.totalWeapons].usable || !global.items[option-global.totalWeapons].showPause))
+    while (option &lt; global.totalWeapons &amp;&amp; global.weapons[option].unlocked == false) || loops == 0 || (option &gt;= global.totalWeapons &amp;&amp; (!global.items[option-global.totalWeapons].usable || !global.items[option-global.totalWeapons].showPause || (global.items[option-global.totalWeapons].count == 0 and !global.items[option-global.totalWeapons].showZero)))
     {
         if option == global.totalWeapons+array_length_1d(global.items)-1 //Last item
         {
@@ -328,7 +326,7 @@ if global.keyLeftPressed || global.keyRightPressed
     }
     
     
-    while (option &lt; global.totalWeapons &amp;&amp; global.weapons[option].unlocked == false) || option &gt; global.totalWeapons+array_length_1d(global.items)-1  || (option &gt;= global.totalWeapons &amp;&amp; (!global.items[option-global.totalWeapons].usable || !global.items[option-global.totalWeapons].showPause))
+    while (option &lt; global.totalWeapons &amp;&amp; global.weapons[option].unlocked == false) || option &gt; global.totalWeapons+array_length_1d(global.items)-1  || (option &gt;= global.totalWeapons &amp;&amp; (!global.items[option-global.totalWeapons].usable || !global.items[option-global.totalWeapons].showPause || (global.items[option-global.totalWeapons].count == 0 and !global.items[option-global.totalWeapons].showZero)))
     {
         if option == weapons_per_col
             option = global.totalWeapons-1;

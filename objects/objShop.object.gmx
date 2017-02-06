@@ -200,12 +200,12 @@ currX = iniX;
 currY = iniY;
 total = 0;
 item_index = -1;
-for (var i = 0; i &lt; total_items; i++) {
+for (var i = 0; i &lt; total_items_; i++) {
     if !global.items[i].buyable {
         continue;
     }
     if option == total {
-        item_index = total;
+        item_index = i;
     }
     total++;
     if total == items_per_row + 1 {
