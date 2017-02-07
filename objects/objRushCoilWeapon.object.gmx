@@ -81,44 +81,34 @@ if instance_number(objRushCoil) &lt; 1 {
     &amp;&amp; !(position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)+tpY, objTopSolid) &amp;&amp; tpY &gt; sprite_get_height(objMegaman.mask_index)/2)
     &amp;&amp; !(position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)+tpY, prtMovingPlatformJumpthrough) &amp;&amp; tpY &gt; sprite_get_height(objMegaman.mask_index)/2)
     &amp;&amp; !position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)+tpY, objBossDoor)
-    &amp;&amp; tpY &lt;= 12+52
-    {
-        tpY += 1;
+    &amp;&amp; tpY &lt;= 12+52 {
+        tpY++;
     }
     
     if position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)+tpY, objSolid)
     || position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)+tpY, prtMovingPlatformSolid)
     || position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)+tpY, objTopSolid)
-    || position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)+tpY, prtMovingPlatformJumpthrough)
-    {
-        if position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)+tpY, objSolid)
-        {
-            var solidID;
-            solidID = instance_position(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)+tpY, objSolid);
+    || position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)+tpY, prtMovingPlatformJumpthrough) {
+        if position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)+tpY, objSolid) {
+            var solidID = instance_position(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)+tpY, objSolid);
             attackID = instance_create(objMegaman.x+objMegaman.image_xscale*26, solidID.y-16, objRushCoil);
             attackID.shouldLand = true;
             attackID.image_xscale =objMegaman.image_xscale;
         }
-        else if position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)+tpY, prtMovingPlatformSolid)
-        {
-            var solidID;
-            solidID = instance_position(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)+tpY, prtMovingPlatformSolid);
+        else if position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)+tpY, prtMovingPlatformSolid) {
+            var solidID = instance_position(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)+tpY, prtMovingPlatformSolid);
             attackID = instance_create(objMegaman.x+objMegaman.image_xscale*26, solidID.bbox_top-16, objRushCoil);
             attackID.shouldLand = true;
             attackID.image_xscale =objMegaman.image_xscale;
         }
-        else if position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)+tpY, objTopSolid)
-        {
-            var solidID;
-            solidID = instance_position(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)+tpY, objTopSolid);
+        else if position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)+tpY, objTopSolid) {
+            var solidID = instance_position(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)+tpY, objTopSolid);
             attackID = instance_create(objMegaman.x+objMegaman.image_xscale*26, solidID.y-16, objRushCoil);
             attackID.shouldLand = true;
             attackID.image_xscale =objMegaman.image_xscale;
         }
-        else
-        {
-            var solidID;
-            solidID = instance_position(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)+tpY, prtMovingPlatformJumpthrough);
+        else {
+            var solidID = instance_position(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)+tpY, prtMovingPlatformJumpthrough);
             attackID = instance_create(objMegaman.x+objMegaman.image_xscale*26, solidID.bbox_top-16, objRushCoil);
             attackID.shouldLand = true;
             attackID.image_xscale =objMegaman.image_xscale;
@@ -130,57 +120,41 @@ if instance_number(objRushCoil) &lt; 1 {
     &amp;&amp; !position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)-tpY-1 + airIncrease, prtMovingPlatformJumpthrough)
     &amp;&amp; !position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)-tpY-1 + airIncrease, objBossDoor)
     &amp;&amp; (position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)-tpY + airIncrease, objSolid) || position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)-tpY + airIncrease, prtMovingPlatformSolid)
-    || position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)-tpY + airIncrease, objTopSolid) || position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)-tpY + airIncrease, prtMovingPlatformJumpthrough))
-    {
-        if position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)-tpY + airIncrease, objSolid)
-        {
-            var solidID;
-            solidID = instance_position(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)-tpY + airIncrease, objSolid);
+    || position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)-tpY + airIncrease, objTopSolid) || position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)-tpY + airIncrease, prtMovingPlatformJumpthrough)) {
+        if position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)-tpY + airIncrease, objSolid) {
+            var solidID = instance_position(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)-tpY + airIncrease, objSolid);
             attackID = instance_create(objMegaman.x+objMegaman.image_xscale*26, solidID.y-16, objRushCoil);
             attackID.shouldLand = true;
             attackID.image_xscale = objMegaman.image_xscale;
         }
-        else if position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)-tpY + airIncrease, prtMovingPlatformSolid)
-        {
-            var solidID;
-            solidID = instance_position(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)-tpY + airIncrease, prtMovingPlatformSolid);
+        else if position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)-tpY + airIncrease, prtMovingPlatformSolid) {
+            var solidID = instance_position(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)-tpY + airIncrease, prtMovingPlatformSolid);
             attackID = instance_create(objMegaman.x+objMegaman.image_xscale*26, solidID.bbox_top-16, objRushCoil);
             attackID.shouldLand = true;
             attackID.image_xscale = objMegaman.image_xscale;
         }
-        else if position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)-tpY + airIncrease, objTopSolid)
-        {
-            var solidID;
-            solidID = instance_position(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)-tpY + airIncrease, objTopSolid);
+        else if position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)-tpY + airIncrease, objTopSolid) {
+            var solidID = instance_position(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)-tpY + airIncrease, objTopSolid);
             attackID = instance_create(objMegaman.x+objMegaman.image_xscale*26, solidID.y-16, objRushCoil);
             attackID.shouldLand = true;
             attackID.image_xscale = objMegaman.image_xscale;
         }
-        else
-        {
-            var solidID;
-            solidID = instance_position(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)-tpY + airIncrease, prtMovingPlatformJumpthrough);
+        else {
+            var solidID = instance_position(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)-tpY + airIncrease, prtMovingPlatformJumpthrough);
             attackID = instance_create(objMegaman.x+objMegaman.image_xscale*26, solidID.bbox_top-16, objRushCoil);
             attackID.shouldLand = true;
             attackID.image_xscale = objMegaman.image_xscale;
         }
     }
-    else
-    {
+    else {
         attackID = instance_create(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman), objRushCoil);
-            attackID.shouldLand = false;
-            attackID.image_xscale = objMegaman.image_xscale;
+        attackID.shouldLand = false;
+        attackID.image_xscale = objMegaman.image_xscale;
     }
     objMegaman.isShoot = false;
 }
-else
-{
-    if instance_number(objBusterShot) + instance_number(objBusterShotHalfCharged) + instance_number(objReflectedProjectile) &lt; maxshots {
-        attackID = instance_create(box +objMegaman.image_xscale * 4, yy, objBusterShot);
-        playSFX(sfxBuster);
-        objMegaman.isShoot = true;
-        objMegaman.shootTimer = 0;
-    }
+else {
+    with objMegaBusterWeapon event_user(1);
 }
 </string>
           </argument>
