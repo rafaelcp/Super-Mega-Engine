@@ -35,7 +35,7 @@ megamany = room_height;
 rushx = 0;
 rushy = megamany + 19;
 megamansprite = sprMegamanStand;
-scroll_threshold = -730;
+scroll_threshold = -430;
 
 text = "SUPER MEGA ENGINE (SME)
 
@@ -54,55 +54,15 @@ Ethervil
 WreckingPrograms (Original base engine code)
 
 
-Fonts
-
-Patrick Lauke
-
-
-Custom Sprites
-
-Lamda
-
-
-Sprite Rips
-
-Sprites Inc.
-Ryan914
-mafoosh
-The Spriters Resource
-
-
-Music
+Music and SFX
 
 Capcom
-8BitDanooct1
-The Sounds Resource
-
-
-Sound effects
-
-Capcom
-Blyka
-SnoruntPyro
-J-Sinn
 The Sounds Resource
 
 
 Playtesting
 
-NinjaMan_Z
-Valo / Neo
-Feguelion
-Ay Jay
-Hero
-Corvus
-Smedis2
-DoomMan
-Syaxamaphone
-adrian09_01
-LemonPig
 Methok
-ScoopJohn
 Sayan Anderson Pinto
 Clauvin Erlan
 Carlos 'Goku' Rosa
