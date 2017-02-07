@@ -315,26 +315,8 @@
     <instance objName="objPoleEgg" x="144" y="448" name="inst_DAB38DBE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1344" y="640" name="inst_E2B02E11" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1360" y="640" name="inst_472F0CEA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1344" y="656" name="inst_B265201A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1360" y="656" name="inst_32868DEA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1376" y="656" name="inst_C0C6DDDC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1408" y="656" name="inst_6474FBDA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1392" y="656" name="inst_4ABF0148" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1424" y="656" name="inst_C168322B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1456" y="656" name="inst_FDE6AF86" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1440" y="656" name="inst_CA4A571D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1472" y="656" name="inst_915A5C6D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1488" y="656" name="inst_3B9E3031" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1504" y="656" name="inst_8594ECD3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1520" y="656" name="inst_ED57627E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1536" y="656" name="inst_A3AC2616" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1552" y="656" name="inst_85CF2833" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1568" y="656" name="inst_F69BBA36" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1584" y="656" name="inst_8158EE8E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1584" y="640" name="inst_0D31213A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1568" y="640" name="inst_455B3ACA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1344" y="624" name="inst_0BE9017F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1360" y="624" name="inst_F1498C28" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1360" y="608" name="inst_BB4EC6FA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1344" y="608" name="inst_FB5BF37F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1344" y="592" name="inst_1D54CF5D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -349,8 +331,6 @@
     <instance objName="objPoleEgg" x="1360" y="528" name="inst_C9952794" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1360" y="512" name="inst_6AB67233" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1344" y="512" name="inst_7A169875" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1568" y="624" name="inst_6E143A76" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1584" y="624" name="inst_DC890F4F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1584" y="608" name="inst_ACC4803A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1568" y="608" name="inst_6F314F88" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1568" y="592" name="inst_AA0C8478" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -365,9 +345,7 @@
     <instance objName="objPoleEgg" x="1568" y="528" name="inst_2F533C13" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1568" y="512" name="inst_057945F6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1584" y="512" name="inst_47FA60B4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1328" y="656" name="inst_7A07E6AC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1328" y="640" name="inst_4E390487" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1312" y="656" name="inst_4655B0C3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1312" y="544" name="inst_204E6860" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1328" y="544" name="inst_CAF90AF0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1328" y="560" name="inst_35EA6ED8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -377,31 +355,21 @@
     <instance objName="objPoleEgg" x="1328" y="592" name="inst_AA4D6617" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1312" y="592" name="inst_AB650DFA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1328" y="608" name="inst_D2912819" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1328" y="624" name="inst_3BAD4EDD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1312" y="608" name="inst_B65E9251" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1312" y="624" name="inst_01D791A0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1312" y="640" name="inst_C9AF8A82" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1600" y="656" name="inst_26276B67" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1600" y="640" name="inst_EA6C6AB4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1600" y="544" name="inst_8A58BB97" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1600" y="560" name="inst_C17D0AFD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1600" y="576" name="inst_33BE30C1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1600" y="592" name="inst_8E8AC10D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1600" y="608" name="inst_77B86EBC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1600" y="624" name="inst_1F2F469E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1616" y="576" name="inst_5FE8F91A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1616" y="592" name="inst_9E11DE1D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1616" y="608" name="inst_CFAF3A46" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1616" y="624" name="inst_21A6BA6D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1616" y="640" name="inst_81DAB148" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1616" y="656" name="inst_2E254D25" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1632" y="608" name="inst_DCD30676" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1632" y="624" name="inst_F0727FDC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1632" y="640" name="inst_0B671A58" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1632" y="656" name="inst_136E4D5D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1648" y="640" name="inst_C121B92A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1648" y="656" name="inst_B75B0FE9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1664" y="656" name="inst_25C0121A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1296" y="576" name="inst_DADF4ECB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1280" y="576" name="inst_9518F911" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1280" y="592" name="inst_44FC5928" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -410,34 +378,17 @@
     <instance objName="objPoleEgg" x="1280" y="608" name="inst_50CEA0A2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1264" y="608" name="inst_DE233BD0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1248" y="608" name="inst_20BB2D59" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1248" y="624" name="inst_CC7A066A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1280" y="624" name="inst_E451D243" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1296" y="624" name="inst_0C03FA72" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1264" y="624" name="inst_63F9B8E6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1216" y="640" name="inst_1DD7530F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1232" y="640" name="inst_A7B503E2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1216" y="656" name="inst_C0EC6C9D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1232" y="656" name="inst_9CD4AE5C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1248" y="640" name="inst_51176B78" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1280" y="640" name="inst_0B35B7C8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1296" y="640" name="inst_8BC83107" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1264" y="640" name="inst_CF471922" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1248" y="656" name="inst_B7B17568" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1264" y="656" name="inst_325161BA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1280" y="656" name="inst_432AE646" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1296" y="656" name="inst_50650F7E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1200" y="656" name="inst_B7F624AD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1232" y="624" name="inst_CEA1773E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1264" y="592" name="inst_F7F292F4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1296" y="560" name="inst_F7705060" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1328" y="528" name="inst_6653849D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1184" y="656" name="inst_B794E5AC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1152" y="656" name="inst_85712B2D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1168" y="656" name="inst_D37137D6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1184" y="640" name="inst_4B62A3FF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1200" y="640" name="inst_67D7B075" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1232" y="624" name="inst_542A463E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1216" y="624" name="inst_A505C864" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="160" y="448" name="inst_1C9D883E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="176" y="448" name="inst_77A7CB53" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="192" y="448" name="inst_1CCA6605" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -451,30 +402,18 @@
     <instance objName="objPoleEgg" x="112" y="448" name="inst_384EF598" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objJunkBlockSpawner" x="2528" y="224" name="inst_F91DB91C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objJunkBlockSpawner" x="2560" y="224" name="inst_B0443B1C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1376" y="624" name="inst_CAF910E9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1408" y="624" name="inst_BC631FEC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1376" y="640" name="inst_18BC08FD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1392" y="624" name="inst_F9FB4408" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1392" y="640" name="inst_8C95A596" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1408" y="640" name="inst_282A6EE9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1424" y="624" name="inst_927039CE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1424" y="640" name="inst_285F3BCE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1440" y="640" name="inst_CF74713E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1440" y="624" name="inst_6BB38906" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1456" y="624" name="inst_DCAD7005" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1456" y="640" name="inst_C925D1EC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1472" y="640" name="inst_22F5A7AF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1472" y="624" name="inst_FAD3DE2F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1488" y="624" name="inst_AF73ACC3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1488" y="640" name="inst_C856FB38" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1504" y="640" name="inst_612CA472" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1504" y="624" name="inst_52AFB518" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1520" y="624" name="inst_BE5A6042" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1520" y="640" name="inst_5ED29C01" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1536" y="640" name="inst_BE991ABF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1552" y="640" name="inst_3D56CA60" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1552" y="624" name="inst_68F7CF08" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1536" y="624" name="inst_97E7DC23" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1376" y="496" name="inst_E8DDC685" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1552" y="496" name="inst_B4511977" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1360" y="496" name="inst_888647CC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -2726,6 +2665,66 @@
     <tile bgName="tstMM3" x="432" y="656" w="16" h="16" xo="176" yo="90" id="10008742" name="inst_90BE2017" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstMM3" x="528" y="656" w="16" h="16" xo="176" yo="90" id="10008743" name="inst_71FBBBD2" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstMM3" x="512" y="656" w="16" h="16" xo="160" yo="90" id="10008744" name="inst_403CF5E0" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1152" y="656" w="16" h="16" xo="160" yo="90" id="10008746" name="inst_235308F7" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1200" y="656" w="16" h="16" xo="160" yo="90" id="10008747" name="inst_3C2AFE06" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1248" y="656" w="16" h="16" xo="160" yo="90" id="10008748" name="inst_F2BD03F7" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1296" y="656" w="16" h="16" xo="160" yo="90" id="10008749" name="inst_9A9C84B7" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1344" y="656" w="16" h="16" xo="160" yo="90" id="10008750" name="inst_1C21DB35" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1392" y="656" w="16" h="16" xo="160" yo="90" id="10008751" name="inst_A47A5AA5" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1440" y="656" w="16" h="16" xo="160" yo="90" id="10008752" name="inst_4FE0BC4F" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1488" y="656" w="16" h="16" xo="160" yo="90" id="10008753" name="inst_12871703" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1536" y="656" w="16" h="16" xo="160" yo="90" id="10008754" name="inst_16C8A6B0" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1584" y="656" w="16" h="16" xo="160" yo="90" id="10008755" name="inst_A841FA5E" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1632" y="656" w="16" h="16" xo="160" yo="90" id="10008756" name="inst_A7751729" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1168" y="656" w="16" h="16" xo="176" yo="90" id="10008758" name="inst_31F00F7F" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1216" y="656" w="16" h="16" xo="176" yo="90" id="10008759" name="inst_EDB48737" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1264" y="656" w="16" h="16" xo="176" yo="90" id="10008760" name="inst_7DCE930E" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1312" y="656" w="16" h="16" xo="176" yo="90" id="10008761" name="inst_44EC9618" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1360" y="656" w="16" h="16" xo="176" yo="90" id="10008762" name="inst_73BFC0DF" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1408" y="656" w="16" h="16" xo="176" yo="90" id="10008763" name="inst_CB82E507" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1456" y="656" w="16" h="16" xo="176" yo="90" id="10008764" name="inst_A0B20379" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1504" y="656" w="16" h="16" xo="176" yo="90" id="10008765" name="inst_9B1FFD1C" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1552" y="656" w="16" h="16" xo="176" yo="90" id="10008766" name="inst_C333F8DA" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1600" y="656" w="16" h="16" xo="176" yo="90" id="10008767" name="inst_3C5E27C2" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1648" y="656" w="16" h="16" xo="176" yo="90" id="10008768" name="inst_A6AB6BF3" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1184" y="656" w="16" h="16" xo="224" yo="90" id="10008769" name="inst_A9352CFB" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1232" y="656" w="16" h="16" xo="224" yo="90" id="10008770" name="inst_9C9341A0" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1280" y="656" w="16" h="16" xo="224" yo="90" id="10008771" name="inst_F60BFF89" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1328" y="656" w="16" h="16" xo="224" yo="90" id="10008772" name="inst_89BF3EAA" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1376" y="656" w="16" h="16" xo="224" yo="90" id="10008773" name="inst_9F6CB03E" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1424" y="656" w="16" h="16" xo="224" yo="90" id="10008774" name="inst_C4C4E703" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1472" y="656" w="16" h="16" xo="224" yo="90" id="10008775" name="inst_38FCCF55" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1520" y="656" w="16" h="16" xo="224" yo="90" id="10008776" name="inst_51B8BF85" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1568" y="656" w="16" h="16" xo="224" yo="90" id="10008777" name="inst_E3412E22" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1616" y="656" w="16" h="16" xo="224" yo="90" id="10008778" name="inst_74ADE892" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1664" y="656" w="16" h="16" xo="224" yo="90" id="10008779" name="inst_D0E9D4C9" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1216" y="624" w="16" h="16" xo="160" yo="90" id="10008780" name="inst_72E42180" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1264" y="624" w="16" h="16" xo="160" yo="90" id="10008781" name="inst_A0AFEBD6" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1312" y="624" w="16" h="16" xo="160" yo="90" id="10008782" name="inst_DA97402A" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1360" y="624" w="16" h="16" xo="160" yo="90" id="10008783" name="inst_12D6E935" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1408" y="624" w="16" h="16" xo="160" yo="90" id="10008784" name="inst_88F1B16E" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1456" y="624" w="16" h="16" xo="160" yo="90" id="10008785" name="inst_6118112E" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1504" y="624" w="16" h="16" xo="160" yo="90" id="10008786" name="inst_BAE3468A" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1552" y="624" w="16" h="16" xo="160" yo="90" id="10008787" name="inst_7908AD35" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1600" y="624" w="16" h="16" xo="160" yo="90" id="10008788" name="inst_9E8201E1" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1232" y="624" w="16" h="16" xo="176" yo="90" id="10008789" name="inst_E3E536FC" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1280" y="624" w="16" h="16" xo="176" yo="90" id="10008790" name="inst_1A7DD2B3" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1328" y="624" w="16" h="16" xo="176" yo="90" id="10008791" name="inst_D5321AF2" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1376" y="624" w="16" h="16" xo="176" yo="90" id="10008792" name="inst_BA7C8B5B" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1424" y="624" w="16" h="16" xo="176" yo="90" id="10008793" name="inst_3B30FD69" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1472" y="624" w="16" h="16" xo="176" yo="90" id="10008794" name="inst_6EDB96FC" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1520" y="624" w="16" h="16" xo="176" yo="90" id="10008795" name="inst_5A9215D8" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1568" y="624" w="16" h="16" xo="176" yo="90" id="10008796" name="inst_56A77FA7" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1616" y="624" w="16" h="16" xo="176" yo="90" id="10008797" name="inst_B5E71462" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1248" y="624" w="16" h="16" xo="224" yo="90" id="10008798" name="inst_A53CF393" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1296" y="624" w="16" h="16" xo="224" yo="90" id="10008799" name="inst_A13AB625" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1344" y="624" w="16" h="16" xo="224" yo="90" id="10008800" name="inst_9BC5DD67" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1392" y="624" w="16" h="16" xo="224" yo="90" id="10008801" name="inst_3E355A03" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1440" y="624" w="16" h="16" xo="224" yo="90" id="10008802" name="inst_2A8F2000" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1488" y="624" w="16" h="16" xo="224" yo="90" id="10008803" name="inst_F6130B79" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1536" y="624" w="16" h="16" xo="224" yo="90" id="10008804" name="inst_32128D1B" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1584" y="624" w="16" h="16" xo="224" yo="90" id="10008805" name="inst_C6CCA9AA" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1632" y="624" w="16" h="16" xo="224" yo="90" id="10008806" name="inst_B6FD5C76" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
   </tiles>
   <PhysicsWorld>0</PhysicsWorld>
   <PhysicsWorldTop>0</PhysicsWorldTop>

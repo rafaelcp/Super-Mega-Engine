@@ -52,6 +52,9 @@ unstoppable = false;    //Projectile goes on always
 checkDeath = true;
 
 alarm[0] = 1;
+
+singleHit = false;  //Hits each enemy only once
+ignore = ds_list_create();  //List of enemies to ignore (used for singleHit)
 </string>
           </argument>
         </arguments>
@@ -160,7 +163,8 @@ else {
     &amp;&amp; !(reflectProjectilesLeft &amp;&amp; sprite_get_xcenter_object(other.id) &lt; sprite_get_xcenter())
     &amp;&amp; !(reflectProjectilesRight &amp;&amp; sprite_get_xcenter_object(other.id) &gt; sprite_get_xcenter())
     &amp;&amp; (!useHitBox || collision_rectangle(x + hitbox_left * sign(image_xscale), y + hitbox_top, x + hitbox_right * sign(image_xscale), y + hitbox_bottom, other, false, true)) {
-        if !dead {
+        if !dead &amp;&amp; (!other.singleHit or ds_list_find_index(other.ignore, self) &lt; 0) {
+            if (other.singleHit) ds_list_add(other.ignore, self);    
             if canHit {
                 drawDamageNumber(x, y, damage[other.object_index]);
                 healthpoints -= damage[other.object_index];

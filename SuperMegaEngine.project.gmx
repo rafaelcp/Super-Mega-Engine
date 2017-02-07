@@ -153,6 +153,7 @@
         <sprites name="MM5">
           <sprite>sprites\sprStarCrashInit</sprite>
           <sprite>sprites\sprStarCrash</sprite>
+          <sprite>sprites\sprChargeKick</sprite>
         </sprites>
         <sprites name="MM6">
           <sprite>sprites\sprSilverTomahawk</sprite>
@@ -631,6 +632,8 @@
         <objects name="MM5">
           <object>objects\objStarCrash</object>
           <object>objects\objStarCrashWeapon</object>
+          <object>objects\objChargeKick</object>
+          <object>objects\objChargeKickWeapon</object>
         </objects>
         <objects name="MM6">
           <object>objects\objSilverTomahawk</object>
