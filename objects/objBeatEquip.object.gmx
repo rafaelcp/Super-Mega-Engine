@@ -28,7 +28,7 @@
             <string>event_inherited();
 
 name = "Beat Call";
-description = "Beat will save you from falling into holes.";
+description = "Beat will save you from falling into pits.";
 usable = false;
 maxUnits = 3;
 showZero = true;
