@@ -954,18 +954,6 @@
     <tile bgName="tstMM4Wily4" x="176" y="192" w="16" h="16" xo="48" yo="0" id="10007086" name="inst_E81FD095" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstMM4Wily4" x="224" y="192" w="16" h="16" xo="48" yo="0" id="10007087" name="inst_36BE6187" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstMM4Wily4" x="112" y="512" w="16" h="16" xo="32" yo="32" id="10007401" name="inst_9F59E30F" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMM4Wily4" x="496" y="432" w="16" h="16" xo="32" yo="64" id="10007910" name="inst_1DD97F5B" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMM4Wily4" x="496" y="416" w="16" h="16" xo="32" yo="64" id="10007911" name="inst_268858CE" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMM4Wily4" x="496" y="400" w="16" h="16" xo="32" yo="64" id="10007912" name="inst_278E8C93" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMM4Wily4" x="496" y="384" w="16" h="16" xo="32" yo="64" id="10007913" name="inst_18FF3C04" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMM4Wily4" x="496" y="368" w="16" h="16" xo="32" yo="64" id="10007914" name="inst_DD46CC3F" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMM4Wily4" x="496" y="352" w="16" h="16" xo="32" yo="64" id="10007915" name="inst_3B5AF521" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMM4Wily4" x="496" y="336" w="16" h="16" xo="32" yo="64" id="10007916" name="inst_66016D14" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMM4Wily4" x="496" y="320" w="16" h="16" xo="32" yo="64" id="10007917" name="inst_F5E83520" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMM4Wily4" x="496" y="304" w="16" h="16" xo="32" yo="64" id="10007918" name="inst_BC18D457" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMM4Wily4" x="496" y="288" w="16" h="16" xo="32" yo="64" id="10007919" name="inst_B2F56EED" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMM4Wily4" x="496" y="272" w="16" h="16" xo="32" yo="64" id="10007920" name="inst_B5EF4D5D" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMM4Wily4" x="496" y="256" w="16" h="16" xo="32" yo="64" id="10007921" name="inst_5B4BFA85" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstMM4Wily4" x="112" y="480" w="16" h="16" xo="32" yo="32" id="10007924" name="inst_B8472462" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstMM4Wily4" x="432" y="544" w="16" h="16" xo="48" yo="64" id="10008356" name="inst_9A414F7D" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstMM4Wily4" x="368" y="544" w="16" h="16" xo="48" yo="64" id="10008357" name="inst_13F20EEF" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

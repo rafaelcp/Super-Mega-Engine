@@ -79,7 +79,7 @@
     <instance objName="objSectionArrowDown" x="96" y="432" name="inst_7E1175C7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWilyMachine4" x="384" y="352" name="inst_8FF033F5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDestructibleWall" x="192" y="240" name="inst_73E2CD61" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objYashichi" x="208" y="256" name="inst_B217B933" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objMTank" x="208" y="256" name="inst_5D3D2013" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tstMM3" x="64" y="112" w="16" h="16" xo="352" yo="180" id="10004336" name="inst_6F6743D8" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
