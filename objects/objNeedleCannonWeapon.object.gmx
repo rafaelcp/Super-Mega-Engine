@@ -31,7 +31,8 @@ name = "NEEDLE CANNON";
 abbrev = "N.CANNON";
 consumption = 0.25;
 maxshots = 3;
-cooldown = room_speed / 6;
+cooldown = room_speed / 7;
+xspeed = 6;
 
 primaryCol = make_color_rgb(228, 92, 16);
 secondaryCol = make_color_rgb(248, 248, 248);
@@ -89,13 +90,8 @@ if !global.frozen and instance_exists(objMegaman) and objMegaman.canShoot and !o
 event_inherited();
 if !ok return false;    //This line should be on every weapon
 
-if alarm[0] &lt; 1 and !global.frozen {
-    attackID = instance_create(box + objMegaman.image_xscale * 4, yy + shot * 4 - 2, objNeedleCannon);
-    shot = 1 - shot;
-}
-else {
-    ammo += consumption;
-}
+attackID = instance_create(box + objMegaman.image_xscale * 8, yy + shot * 4 - 2, objNeedleCannon);
+shot = 1 - shot;
 </string>
           </argument>
         </arguments>
