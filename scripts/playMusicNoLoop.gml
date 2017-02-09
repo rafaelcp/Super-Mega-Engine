@@ -2,7 +2,7 @@
 //Plays music without looping it
 //Example: playMusicNoLoop("CutMan.ogg")
 
-audio_stop_all();
+stopAllSFX();
 if is_string(argument0) {   //For retro compatibility
     var parts = split(argument0, ".");
     var name = ds_queue_dequeue(parts);

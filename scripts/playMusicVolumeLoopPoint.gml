@@ -4,7 +4,7 @@
 //Also plays the music at a set volume (volume should be between 0 and 1)
 //Example: playMusic("CutMan.ogg", 0.6, 0.4, 0.8)
 
-audio_stop_all();
+stopAllSFX();
 if is_string(argument0) {   //For retro compatibility
     var parts = split(argument0, ".");
     var name = ds_queue_dequeue(parts);

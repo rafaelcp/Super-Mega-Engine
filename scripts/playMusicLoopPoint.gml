@@ -3,7 +3,7 @@
 //loop start and loop end should be between 0 and 1 (0 being 0:00 and 1 being the end of the music)
 //Example: playMusic("CutMan.ogg", 0.4, 0.8)
 
-audio_stop_all();
+stopAllSFX();
 if is_string(argument0) {   //For retro compatibility
     var parts = split(argument0, ".");
     var name = ds_queue_dequeue(parts);
