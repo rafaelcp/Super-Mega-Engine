@@ -120,16 +120,13 @@ beginStartDir = startDir;
 if !global.frozen and !dead {
     if !moving {
         moveTimer += update_rate;
-        if moveTimer == 10
-        {
+        if floor(moveTimer) == 10 {
             image_index = 0;    //After touching a wall, we want the eye to close slowly (half-open the first 10 frames)
         }
-        if moveTimer == 110
-        {
+        if floor(moveTimer) == 110 {
             image_index = 1;    //Eye half-open
         }
-        else if moveTimer &gt;= 120
-        {
+        else if floor(moveTimer) &gt;= 120 {
             image_index = 2;
             moving = true;
         }
@@ -144,8 +141,7 @@ if !global.frozen and !dead {
             
         generalCollision();
         
-        if (xspeed == 0 &amp;&amp; dir == "hor") || (yspeed = 0 &amp;&amp; dir == "ver")
-        {
+        if (xspeed == 0 &amp;&amp; dir == "hor") || (yspeed = 0 &amp;&amp; dir == "ver") {
             moving = false;
             moveTimer = 0;
             image_index = 1; //Eye half-open
@@ -154,8 +150,7 @@ if !global.frozen and !dead {
         
     }
 }
-else
-{
+else {
     if dead {
         moveTimer = 0;
         startDir = beginStartDir;

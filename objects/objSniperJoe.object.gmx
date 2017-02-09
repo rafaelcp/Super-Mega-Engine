@@ -96,10 +96,10 @@ if !global.frozen &amp;&amp; !dead {
     }
     else {
         shootTimer += update_rate;
-        if shootTimer == 30 {
+        if floor(shootTimer) == 30 {
+            shootTimer = 31;
             image_index = 1;
-            var shootID;            
-            var delta;
+            var shootID, delta;
             
             if (image_xscale &lt; 0)
                 delta = 0;
@@ -113,9 +113,10 @@ if !global.frozen &amp;&amp; !dead {
                 
             playSFX(sfxEnemyShootClassic);
             
-            shootAmount += 1;
+            shootAmount++;
         }
-        else if shootTimer == 45 {
+        else if floor(shootTimer) == 45 {
+            shootTimer = 46;
             if shootAmount &gt;= shootAmountMax {
                 image_index = 0;
                 shooting = false;

@@ -61,57 +61,45 @@ image_index = 0;
             <kind>1</kind>
             <string>event_inherited();
 
-if global.frozen == false &amp;&amp; dead == false
-{
-    if instance_exists(objMegaman)
-    {
+if !global.frozen and !dead {
+    if instance_exists(objMegaman) {
         if x &lt; objMegaman.x
             image_xscale = 1;
         else
             image_xscale = -1;
         
-        if distance_to_object(objMegaman) &lt;= radius
-        {
-            if canShoot == true
-            {
+        if distance_to_object(objMegaman) &lt;= radius {
+            if canShoot {
                 canShoot = false;
                 image_index = 1;
             }
         }
     }
     
-    if canShoot == false
-    {
+    if !canShoot {
         cooldownTimer += update_rate;
         
-        if cooldownTimer == 17
-        {
+        if floor(cooldownTimer) == 17 {
+            cooldownTimer = 18;
             //Shoot
-            var ID;
+            var ID = instance_create(x+image_xscale*8, sprite_get_ycenter(), objMM1MetBullet);
+            ID.dir = 45;
+            ID.xscale = image_xscale;
+
             ID = instance_create(x+image_xscale*8, sprite_get_ycenter(), objMM1MetBullet);
-            {
-                ID.dir = 45;
-                ID.xscale = image_xscale;
-            }
+            ID.dir = 0;
+            ID.xscale = image_xscale;
+
             ID = instance_create(x+image_xscale*8, sprite_get_ycenter(), objMM1MetBullet);
-            {
-                ID.dir = 0;
-                ID.xscale = image_xscale;
-            }
-            ID = instance_create(x+image_xscale*8, sprite_get_ycenter(), objMM1MetBullet);
-            {
-                ID.dir = -45;
-                ID.xscale = image_xscale;
-            }
+            ID.dir = -45;
+            ID.xscale = image_xscale;
             
             playSFX(sfxEnemyShootClassic);
         }
-        else if cooldownTimer == 30
-        {
+        else if floor(cooldownTimer) == 30 {
             image_index = 0;
         }
-        else if cooldownTimer &gt;= 80
-        {
+        else if floor(cooldownTimer) &gt;= 80 {
             canShoot = true;
             cooldownTimer = 0;
         }
@@ -126,10 +114,8 @@ if global.frozen == false &amp;&amp; dead == false
     x += xspeed;
     y += yspeed;
 }
-else
-{
-    if dead == true
-    {
+else {
+    if dead {
         cooldownTimer = 0;
         canShoot = true;
         image_index = 0;

@@ -100,17 +100,17 @@ if !global.frozen &amp;&amp; !dead {
         }
     }
     else {
-        shootTimer += 1;
-        if shootTimer == 15 {
+        shootTimer += update_rate;
+        if floor(shootTimer) == 15 {
+            shootTimer = 16;
             image_index = 2;
             var shootID = instance_create(x+image_xscale*16, sprite_get_ycenter(), objPicket);
             if instance_exists(shootID) {
                 shootID.image_xscale = image_xscale;
             }
-            
-            shootAmount += 1;
+            shootAmount++;
         }
-        else if shootTimer == 30 {
+        else if floor(shootTimer) == 30 {
             if shootAmount &gt;= shootAmountMax {
                 image_index = 0;
                 shooting = false;
