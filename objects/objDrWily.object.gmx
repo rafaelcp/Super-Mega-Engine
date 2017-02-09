@@ -63,7 +63,7 @@ with prtEnemyProjectile {
     }
 }
 
-if vspeed &gt; 0 &amp;&amp; insideView() {
+if vspeed &gt;= 0 &amp;&amp; insideView() {
     background_visible[1] = true;
 }
 

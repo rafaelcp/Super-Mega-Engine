@@ -31,6 +31,7 @@ xspeed = 4;
 
 img_speed = 10 / room_speed;
 
+justCreated = true; //For the HTML5 bug
 </string>
           </argument>
         </arguments>
@@ -55,9 +56,11 @@ img_speed = 10 / room_speed;
             <kind>1</kind>
             <string>event_inherited();
 
-if !global.frozen and global.keyShootPressed {    //Detonate
+if !global.frozen and global.keyShootPressed and !justCreated {    //Detonate
     event_user(0);
 }
+
+justCreated = false;
 </string>
           </argument>
         </arguments>
