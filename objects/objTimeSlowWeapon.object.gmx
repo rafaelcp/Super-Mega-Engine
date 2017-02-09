@@ -59,7 +59,7 @@ secondaryCol = make_color_rgb(234, 142, 208);
             <kind>1</kind>
             <string>/// onShoot
 event_inherited();
-if !ok {
+if instance_exists(objTimeSlow) or ammo &lt;= 0 {
     with objMegaBusterWeapon event_user(1);
     return false;    //This line must be on every weapon
 }
