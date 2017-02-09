@@ -25,13 +25,18 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if !global.frozen {
+            <string>event_inherited();
+
+if !global.frozen {
     radius = 0;
     activating = true;
     global.frozen = true;
     playSFX(sfxCentaurFlash);
 }
 
+destroyOnSwitch = false;
+destroyOnScroll = false;
+doesNotCount = true;
 defaultDamage = 1;  //While Time Slow doesn't inflict damage, only
 defaultBossDamage = 0;  //vulnerable (damage &gt; 0) bosses are affected
 </string>
@@ -111,7 +116,7 @@ with prtEnemyProjectile {
     radius += 8;
     global.frozen = true;
 }
-if activating and radius &gt; 128 {
+if activating and radius &gt; 256 {
     activating = false;
     global.frozen = false;
     alarm[1] = room_speed * 5;
@@ -207,9 +212,22 @@ else if alarm[1] &gt; 0 {
           <argument>
             <kind>1</kind>
             <string>if activating and instance_exists(objMegaman) {
+    draw_set_color(c_purple);
+    draw_circle(x, y, radius - 0.5, true);
+    draw_circle(x, y, radius + 0.5, true);
     draw_set_color(c_fuchsia);
     draw_circle(x, y, radius, true);
+    
+    draw_set_color(c_purple);
+    draw_circle(x, y, radius / 2 - 0.5, true);
+    draw_circle(x, y, radius / 2 + 0.5, true);
+    draw_set_color(c_fuchsia);
     draw_circle(x, y, radius / 2, true);
+    
+    draw_set_color(c_purple);
+    draw_circle(x, y, radius / 4 - 0.5, true);
+    draw_circle(x, y, radius / 4 + 0.5, true);
+    draw_set_color(c_fuchsia);
     draw_circle(x, y, radius / 4, true);
 }
 

@@ -217,8 +217,10 @@ else if pose == -1 {
             <kind>1</kind>
             <string>if !global.frozen {   
     if pose &gt; -1 &amp;&amp; isIntro {
-        if y &lt; ystart
+        if y &lt; ystart {
+            update_rate = 1;
             gravityNoGround();
+        }
         else {
             y = ystart;
             if pose &gt; -1 {

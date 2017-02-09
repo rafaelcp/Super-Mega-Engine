@@ -31,7 +31,7 @@ global.frozen = true;
 global.switchingSections = true;
 
 with prtEnemy beenOutsideView = true;
-with prtPlayerProjectile instance_destroy();
+with prtPlayerProjectile if destroyOnScroll instance_destroy();
 
 with prtRush instance_destroy();
 with objRushJet instance_destroy();

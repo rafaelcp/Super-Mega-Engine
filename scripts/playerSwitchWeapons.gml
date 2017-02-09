@@ -25,7 +25,7 @@ if global.keyWeaponSwitchLeftPressed {
     global.weapon = global.currentWeapon;
     event_user(0); //Colors
     
-    with prtPlayerProjectile instance_destroy();
+    with prtPlayerProjectile if destroyOnSwitch instance_destroy();
     with objReflectedProjectile instance_destroy();
     with prtRush instance_destroy();
     with objRushJet instance_destroy();
@@ -56,7 +56,7 @@ if global.keyWeaponSwitchRightPressed {
     global.weapon = global.currentWeapon;
     event_user(0); //Colors
     
-    with prtPlayerProjectile instance_destroy();
+    with prtPlayerProjectile if destroyOnSwitch instance_destroy();
     with objReflectedProjectile instance_destroy();
     with prtRush instance_destroy();
     with objRushJet instance_destroy();
@@ -84,7 +84,7 @@ if global.keyWeaponSwitchLeft && global.keyWeaponSwitchRight && global.weapon !=
     global.weapon = global.currentWeapon;
     event_user(0); //Colors
     
-    with prtPlayerProjectile instance_destroy();
+    with prtPlayerProjectile if destroyOnSwitch instance_destroy();
     with objReflectedProjectile instance_destroy();
     with prtRush instance_destroy();
     with objRushJet instance_destroy();
@@ -98,7 +98,7 @@ if global.keyWeaponSwitchLeft && global.keyWeaponSwitchRight && global.weapon !=
 
 //Timer
 if drawWeaponIconTimer != -1 {
-    drawWeaponIconTimer -= 1;
+    drawWeaponIconTimer--;
     if drawWeaponIconTimer == 0 {
         drawWeaponIcon = false;
     }

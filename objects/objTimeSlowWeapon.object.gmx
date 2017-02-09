@@ -28,10 +28,10 @@
             <string>event_inherited();
 
 name = "TIME SLOW";
-abbrev = "T.SLOW+";
-consumption = 2;
+abbrev = "T.SLOW";
+consumption = 7;
 maxshots = 1;
-//sfx = sfxDrillBomb;
+sfx = noone;
 
 primaryCol = make_color_rgb(154, 109, 178);
 secondaryCol = make_color_rgb(234, 142, 208);
@@ -60,8 +60,9 @@ secondaryCol = make_color_rgb(234, 142, 208);
             <string>/// onShoot
 event_inherited();
 if instance_exists(objTimeSlow) or ammo &lt;= 0 {
+    if ok ammo += consumption;
     with objMegaBusterWeapon event_user(1);
-    return false;    //This line must be on every weapon
+    return false;
 }
 
 attackID = instance_create(sprite_get_xcenter_object(objMegaman), sprite_get_ycenter_object(objMegaman), objTimeSlow);

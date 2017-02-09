@@ -315,7 +315,7 @@ chargeTimer = 0;
 
 ok = true;
 
-if instance_number(prtPlayerProjectile) + instance_number(objReflectedProjectile) &gt;= maxshots
+if projectileCount() &gt;= maxshots
 || ammo &lt;= 0 || !instance_exists(objMegaman) {
     print("Can't shoot " + name);
     ok = false;
