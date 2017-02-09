@@ -43,6 +43,7 @@ hitbox_bottom = sprite_height - 8;
 contactDamage = 6;
 
 damage[objWindStorm] = 3;
+damage[objTimeSlow] = 1;
 </string>
           </argument>
         </arguments>
@@ -126,7 +127,7 @@ instance_create(x + 20, y + sprite_height / 2 + 16, objWilyMachine4Shot);
 
 if !global.frozen {
 
-    image_speed = 5 / room_speed;
+    image_speed = 5 / room_speed * update_rate;
     if startIntro {
         y = ystart;
         x = xstart;
@@ -168,7 +169,7 @@ if !global.frozen {
             }
         }
         if alarm[0] &lt;= 0 and instance_number(objWilyMachine4Shot) &lt; 3 and !control.canFillHealthBar and !control.fillingHealthBar {
-            alarm[0] = room_speed * 0.7;
+            alarm[0] = room_speed * 0.7 / update_rate;
         }
     }
     else {
