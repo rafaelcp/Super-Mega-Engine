@@ -129,7 +129,8 @@ if !global.frozen and !dead {
     
     if ground {
         moveTimer += update_rate;
-        if moveTimer == 1 {
+        if floor(moveTimer) == 1 {
+            moveTimer = 2;
             if repeatAmount &lt; 2 {
                 randomize();
                 highJump = choose(true, false); //False means a low jump, true means a high jump
@@ -145,18 +146,16 @@ if !global.frozen and !dead {
                 
             //To not make the Big Eye spam one jump height by pure randomness
             //Because if he spams low jumps, it's nearly impossible to pass him
-            if highJump == true &amp;&amp; repeatIsHigh == true
-                repeatAmount += 1;
-            else if highJump == false &amp;&amp; repeatIsHigh == false
-                repeatAmount += 1;
-            else
-            {
+            if highJump  and repeatIsHigh
+                repeatAmount++;
+            else if !highJump and !repeatIsHigh
+                repeatAmount++;
+            else {
                 repeatAmount = 1;
                 repeatIsHigh = highJump;
             }
                 
-            if instance_exists(objMegaman)
-            {
+            if instance_exists(objMegaman) {
                 if x &gt; objMegaman.x
                     image_xscale = -1;
                 else
@@ -166,17 +165,18 @@ if !global.frozen and !dead {
             xspeed = 0;
             yspeed = 0;
         }
-        else if moveTimer == 4
-        {
+        else if floor(moveTimer) == 4 {
+            moveTimer = 5;
             image_index = 0;
         }
-        else if moveTimer == 6 {
+        else if floor(moveTimer) == 6 {
+            moveTimer = 7;
             if highJump
                 image_index = 1;
             else
                 image_index = 0;
         }
-        else if moveTimer == 40 {
+        else if floor(moveTimer) == 40 {
             if highJump {
                 yspeed = -6;
                 xspeed = image_xscale * 1;
