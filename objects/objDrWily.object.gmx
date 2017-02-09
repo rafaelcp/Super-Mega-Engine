@@ -52,7 +52,7 @@ with prtEnemyProjectile {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if place_meeting(x, y, objSolid) {
+            <string>if vspeed &gt; 0 and place_meeting(x, y, objSolid) {
     sprite_index = sprWilySorry;
     vspeed = 0;
     gravity = 0;
