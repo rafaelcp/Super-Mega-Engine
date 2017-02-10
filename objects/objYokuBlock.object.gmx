@@ -66,28 +66,23 @@ mySolid = -12;
             <kind>1</kind>
             <string>event_inherited();
 
-if global.frozen == false &amp;&amp; dead == false
-{
-    switch phase
-    {
+if !global.frozen and !dead {
+    switch phase {
         case 0: //Waiting to appear
             //Timer
-            timer += 1;
-            if timer &gt;= startup
-            {
+            timer += update_rate;
+            if timer &gt;= startup {
                 timer = 0;
                 phase = 1;
                 
                 image_index = 0;
                 
-                while place_meeting(x, y, objMegaman)
-                {
+                while place_meeting(x, y, objMegaman) {
                     with objMegaman y -= 1; //If the Yoku Block spawns "inside" Mega Man, push Mega Man upwards'. This way, it's much more fair
                     with objMegaman ground = true;
                 }
                 
-                if insideView()
-                {
+                if insideView() {
                     playSFX(sfxYokuBlock);
                     visible = true;
                     mySolid = instance_create(x, y, objSolid);
@@ -98,7 +93,7 @@ if global.frozen == false &amp;&amp; dead == false
         case 1: //Active
             //Animation
             if image_index &lt; image_number-1
-                image_speed = 0.25;
+                image_speed = 0.25 * update_rate;
             else
             {
                 image_speed = 0;
@@ -106,9 +101,8 @@ if global.frozen == false &amp;&amp; dead == false
             }
             
             //Timer
-            timer += 1;
-            if timer &gt;= active
-            {
+            timer += update_rate;
+            if timer &gt;= active {
                 timer = 0;
                 phase = 2;
                 visible = false;
@@ -121,9 +115,8 @@ if global.frozen == false &amp;&amp; dead == false
         
         case 2: //Waiting to reappear after disappearing
             //Timer
-            timer += 1;
-            if timer &gt;= wait
-            {
+            timer += update_rate;
+            if timer &gt;= wait {
                 timer = 0;
                 phase = 1;
                     

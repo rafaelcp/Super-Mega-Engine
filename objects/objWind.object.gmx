@@ -62,8 +62,8 @@ if !global.frozen &amp;&amp; insideView() {
     if affectItems {
         with prtPickup {
             if insideView() {
-                x += other.xspeed;
-                y += other.yspeed;
+                x += other.xspeed * other.update_rate;
+                y += other.yspeed * other.update_rate;
                 xspeed += other.xspeed;
                 yspeed += other.yspeed;
                 checkGround();
@@ -77,8 +77,8 @@ if !global.frozen &amp;&amp; insideView() {
     if affectEnemies {
         with prtEnemy {
             if !dead &amp;&amp; insideView() &amp;&amp; object_get_parent(object_index) != prtBoss {
-                x += other.xspeed;
-                y += other.yspeed;
+                x += other.xspeed * other.update_rate;
+                y += other.yspeed * other.update_rate;
                 xspeed += other.xspeed;
                 yspeed += other.yspeed;
                 checkGround();
@@ -92,8 +92,8 @@ if !global.frozen &amp;&amp; insideView() {
     if affectBosses {
         with prtBoss {
             if !dead &amp;&amp; insideView() {
-                x += other.xspeed;
-                y += other.yspeed;
+                x += other.xspeed * other.update_rate;
+                y += other.yspeed * other.update_rate;
                 xspeed += other.xspeed;
                 yspeed += other.yspeed;
                 checkGround();
@@ -107,16 +107,16 @@ if !global.frozen &amp;&amp; insideView() {
     if affectProjectiles {
         with prtEnemyProjectile {
             if insideView() {
-                x += other.xspeed;
-                y += other.yspeed;
+                x += other.xspeed * other.update_rate;
+                y += other.yspeed * other.update_rate;
             }
         }
     }
     if affectPlayer &amp;&amp; instance_exists(objMegaman) &amp;&amp; !objMegaman.climbing {
         with objMegaman {
             if !place_meeting(x + other.xspeed, y + other.yspeed, objSolid) &amp;&amp; !place_meeting(x + other.xspeed, y + other.yspeed, prtMovingPlatformSolid){
-                x += other.xspeed;
-                y += other.yspeed;
+                x += other.xspeed * other.update_rate;
+                y += other.yspeed * other.update_rate;
                 //playerStep();
                 global.xspeed += other.xspeed;
                 global.yspeed += other.yspeed;

@@ -29,6 +29,7 @@
 canInitDeath = true;
 beenOutsideView = false;
 healthpoints = 1;
+update_rate = 1;
 
 xspeed = 0;
 yspeed = 0;

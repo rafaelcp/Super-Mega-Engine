@@ -59,7 +59,7 @@ dy = 0;
             <string>event_inherited();
 
 if !global.frozen and obj != noone and insideView() and !place_meeting(x, y, obj) {
-    counter++;
+    counter += update_rate;
     if counter &gt;= interval {
         counter = 0;
     }

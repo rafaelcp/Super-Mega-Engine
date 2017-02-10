@@ -102,11 +102,10 @@ image_xscale = size;
             <kind>1</kind>
             <string>event_inherited();
 
-if global.frozen == false &amp;&amp; dead == false
-{
+if !global.frozen and !dead {
     xspeed = dir * spd;
     
-    x -= xspeed;
+    x -= xspeed * update_rate;
 }
 </string>
           </argument>

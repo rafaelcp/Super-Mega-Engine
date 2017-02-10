@@ -67,6 +67,9 @@ defaultBossDamage = 0;  //vulnerable (damage &gt; 0) bosses are affected
 with prtEnemyProjectile {
     update_rate = 1;
 }
+with prtGimmick {
+    update_rate = 1;
+}
 </string>
           </argument>
         </arguments>
@@ -135,6 +138,11 @@ if !global.frozen {
         }
         
         with prtEnemyProjectile {
+            if insideView()
+                update_rate = 0.2;
+        }
+        
+        with prtGimmick {
             if insideView()
                 update_rate = 0.2;
         }
