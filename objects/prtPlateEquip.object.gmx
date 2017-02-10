@@ -28,6 +28,7 @@
             <string>event_inherited();
 
 showPause = false;
+showCount = false;
 
 weapon = objTimeSlowWeapon;
 </string>

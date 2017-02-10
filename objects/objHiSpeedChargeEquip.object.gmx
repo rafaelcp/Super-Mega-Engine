@@ -30,7 +30,8 @@
 name = "HI-SPEED CHARGE";
 description = "Halves weapons charge time.";
 maxUnits = 1;
-showZero = true;
+showZero = false;
+showCount = false;
 buyable = true;
 price = 200;
 </string>
