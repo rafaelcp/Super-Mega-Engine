@@ -53,7 +53,9 @@ if map > -1 {
         }
         if count > 0 || i == 0 {
             draw_sprite_ext(global.items[i].sprite_index, 0, x1 + 4 + i * 8, y1 + 28, 0.5, 0.5, 1, c_white, 1);
-            draw_text(x1 + 4 + i * 8, y1 + 38, string(count));
+            if global.items[i].maxUnits > 1 {
+                draw_text(x1 + 4 + i * 8, y1 + 38, string(count));
+            }
         }
     }    
     
