@@ -141,7 +141,8 @@ if !global.frozen &amp;&amp; !dead {
         image_speed = 0;
         counter += update_rate;
         
-        if (counter == 8) {
+        if floor(counter) == 8 {
+            counter = 9;
             if (floor(image_index) == 2) {
                 counter = 0;
                 image_index = 3;

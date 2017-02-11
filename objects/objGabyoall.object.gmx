@@ -42,6 +42,7 @@ damage[objPharaohShot] = 1;
 damage[objPharaohShotCharging] = 1;
 damage[objPharaohShotCharged] = 1;
 damage[objDrillBombExplosion] = 1;
+damage[objTimeSlow] = 1;
 
 //Enemy specific code
 col = 0; //0 = red; 1 = orange; 2 = blue
@@ -130,8 +131,9 @@ if !global.frozen and !dead {
         
     generalCollision();
     
-    if (frozeTimer == 0) {    
-        image_speed = 0.2;
+    if floor(frozeTimer) == 0 {
+        frozeTimer = 0;    
+        image_speed = 0.2 * update_rate;
     
         if (xspeed == 0 || 
             !collision_rectangle(x+(startDir*8), y, x+(startDir*8), y+1, objSolid, false, false)) {
