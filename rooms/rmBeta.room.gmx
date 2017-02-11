@@ -117,13 +117,9 @@
     <instance objName="objBigEye" x="2736" y="416" name="inst_005CBEC1" locked="0" code="col = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBigEye" x="2688" y="416" name="inst_2C49781B" locked="0" code="col = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objEnergyBalancer" x="1904" y="608" name="inst_2E2AFFEE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objMM2Baton" x="976" y="16" name="inst_0DCEA6DB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMM2Baton" x="1024" y="16" name="inst_CC93CA78" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objMM2Baton" x="1072" y="16" name="inst_CB6F2727" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMM2Baton" x="1120" y="16" name="inst_C204F58C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objMM2Baton" x="1168" y="16" name="inst_7D23CBCE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMM2Baton" x="1216" y="16" name="inst_8280D4CE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objMM2Baton" x="1264" y="16" name="inst_DF2FF379" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMM2Baton" x="1312" y="16" name="inst_D5ECDC03" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMM2Baton" x="1392" y="16" name="inst_8139C6D9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFanFiend" x="1392" y="144" name="inst_5A1C89BC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -264,16 +260,10 @@
     <instance objName="objSectionScrollRight" x="1936" y="448" name="inst_81ACE648" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWTank" x="1984" y="624" name="inst_A158A47A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMM2Baton" x="896" y="448" name="inst_0CC35F8A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objMM2Baton" x="992" y="448" name="inst_85EF46A5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMM2Baton" x="1088" y="448" name="inst_D298052A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objMM2Baton" x="1200" y="448" name="inst_3C6A509A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMM2Baton" x="1312" y="448" name="inst_A4957212" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objMM2Baton" x="1424" y="448" name="inst_B24914FE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objMM2Baton" x="800" y="448" name="inst_DC148D83" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMM2Baton" x="1536" y="448" name="inst_DB7B08C0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objMM2Baton" x="1648" y="448" name="inst_9B24E5C7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMM2Baton" x="1760" y="448" name="inst_5C7BD5F9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objMM2Baton" x="1872" y="448" name="inst_5BB6EB44" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSparkmanPlatform" x="624" y="624" name="inst_56093B09" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSparkmanPlatform" x="688" y="624" name="inst_59197595" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSparkmanPlatform" x="752" y="624" name="inst_421EF8EA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -2278,13 +2268,9 @@
     <tile bgName="tstBeta" x="2688" y="448" w="16" h="16" xo="18" yo="18" id="10003525" name="inst_C950D69A" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstBeta" x="1424" y="144" w="16" h="16" xo="1" yo="18" id="10003530" name="inst_B76D91D3" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstBeta" x="176" y="32" w="16" h="16" xo="69" yo="52" id="10003536" name="inst_69F2E3DC" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstBeta" x="2272" y="240" w="16" h="16" xo="69" yo="52" id="10003539" name="inst_CB20DB23" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstBeta" x="2336" y="240" w="16" h="16" xo="69" yo="52" id="10003541" name="inst_EB04F31F" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstBeta" x="2400" y="240" w="16" h="16" xo="69" yo="52" id="10003543" name="inst_DE50EA8C" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstBeta" x="2464" y="240" w="16" h="16" xo="69" yo="52" id="10003545" name="inst_9B347D7B" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstBeta" x="2528" y="240" w="16" h="16" xo="69" yo="52" id="10003547" name="inst_0D564E5E" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstBeta" x="2592" y="240" w="16" h="16" xo="69" yo="52" id="10003549" name="inst_2670F54D" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstBeta" x="2656" y="240" w="16" h="16" xo="69" yo="52" id="10003551" name="inst_6B63D1C2" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstBeta" x="2720" y="240" w="16" h="16" xo="69" yo="52" id="10003553" name="inst_8CBDA5C1" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstBeta" x="1040" y="160" w="16" h="16" xo="35" yo="1" id="10003556" name="inst_E8340B7B" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstBeta" x="1024" y="176" w="16" h="16" xo="18" yo="18" id="10003557" name="inst_0B7D3274" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -2723,6 +2709,7 @@
     <tile bgName="tstMM3" x="1536" y="624" w="16" h="16" xo="224" yo="90" id="10008804" name="inst_32128D1B" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstMM3" x="1584" y="624" w="16" h="16" xo="224" yo="90" id="10008805" name="inst_C6CCA9AA" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstMM3" x="1632" y="624" w="16" h="16" xo="224" yo="90" id="10008806" name="inst_B6FD5C76" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM3" x="1136" y="656" w="16" h="16" xo="224" yo="90" id="10008902" name="inst_2E491F72" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
   </tiles>
   <PhysicsWorld>0</PhysicsWorld>
   <PhysicsWorldTop>0</PhysicsWorldTop>

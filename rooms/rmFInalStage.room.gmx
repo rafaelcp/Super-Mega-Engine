@@ -956,10 +956,10 @@
     <tile bgName="tstMM4Wily4" x="112" y="512" w="16" h="16" xo="32" yo="32" id="10007401" name="inst_9F59E30F" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstMM4Wily4" x="112" y="480" w="16" h="16" xo="32" yo="32" id="10007924" name="inst_B8472462" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstMM4Wily4" x="432" y="544" w="16" h="16" xo="48" yo="64" id="10008356" name="inst_9A414F7D" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMM4Wily4" x="368" y="544" w="16" h="16" xo="48" yo="64" id="10008357" name="inst_13F20EEF" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstMM4Wily4" x="304" y="544" w="16" h="16" xo="48" yo="64" id="10008358" name="inst_385F42EE" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMM4Wily4" x="240" y="544" w="16" h="16" xo="48" yo="64" id="10008359" name="inst_2992833F" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstMM4Wily4" x="176" y="544" w="16" h="16" xo="48" yo="64" id="10008360" name="inst_03DBC275" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM4Wily4" x="240" y="544" w="16" h="16" xo="32" yo="32" id="10008900" name="inst_7F7D0831" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMM4Wily4" x="368" y="544" w="16" h="16" xo="32" yo="32" id="10008901" name="inst_9E5B56D6" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
   </tiles>
   <PhysicsWorld>0</PhysicsWorld>
   <PhysicsWorldTop>0</PhysicsWorldTop>
