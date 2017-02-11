@@ -493,6 +493,8 @@
     <scripts name="Strings">
       <script>scripts\split.gml</script>
       <script>scripts\string_lpad.gml</script>
+      <script>scripts\string_rpad.gml</script>
+      <script>scripts\string_apad.gml</script>
       <script>scripts\string_break.gml</script>
       <script>scripts\string_replace_at.gml</script>
       <script>scripts\concat.gml</script>
