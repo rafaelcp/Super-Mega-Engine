@@ -70,6 +70,9 @@ with prtEnemyProjectile {
 with prtGimmick {
     update_rate = 1;
 }
+with prtSolidGimmick {
+    update_rate = 1;
+}
 </string>
           </argument>
         </arguments>
@@ -136,13 +139,15 @@ if !global.frozen {
             if insideView() and damage[objTimeSlow] &gt; 0
                 update_rate = 0.2;
         }
-        
         with prtEnemyProjectile {
             if insideView()
                 update_rate = 0.2;
         }
-        
         with prtGimmick {
+            if insideView()
+                update_rate = 0.2;
+        }
+        with prtSolidGimmick {
             if insideView()
                 update_rate = 0.2;
         }
