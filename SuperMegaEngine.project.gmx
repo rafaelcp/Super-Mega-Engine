@@ -509,6 +509,7 @@
       <script>scripts\draw_password.gml</script>
       <script>scripts\drawSave.gml</script>
       <script>scripts\debug_password.gml</script>
+      <script>scripts\block_base_convert.gml</script>
     </scripts>
     <scripts name="Numbers">
       <script>scripts\base_convert.gml</script>

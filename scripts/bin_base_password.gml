@@ -4,14 +4,11 @@ bin_pass = "";
 bin_pass += dec_to_bin(global._lives, 4);
 bin_pass += dec_to_bin(global.screws, 10);
 
-for(var i = 0; i < 8; i++) {
-    bin_pass += iif(global.bossDefeated[i], "1", "0");
-}
-for (var i = 0; i < global.totalWeapons; i++) {
+for (var i = 1; i < global.totalWeapons; i++) { //Skip weapon 0 (mega buster)
     bin_pass += iif(global.weapons[i].unlocked, "1", "0");
 }
-for (var i = 0; i < array_length_1d(global.items); i++) {
-    bin_pass += dec_to_bin(global.items[i].count, 4);
+for (var i = 1; i < array_length_1d(global.items); i++) {   //Skip item 0 (lives)
+    bin_pass += dec_to_bin(global.items[i].count, ceil(log2(global.items[i].maxUnits + 1)));
 }
 
 return bin_pass;

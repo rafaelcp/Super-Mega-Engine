@@ -1,7 +1,7 @@
 //check_password(tern_pass)
 var tern_pass = argument0;
 
-var bin_pass = base_convert(tern_pass, 3, 2);
+var bin_pass = block_base_convert(tern_pass, 3, 2, 2, 3);
 
 bin_pass = string_lpad(bin_pass, 96, "0");
 

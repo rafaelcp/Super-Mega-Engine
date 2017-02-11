@@ -25,10 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>pass = make_password();
-show_debug_message(pass);
-
-global.damageMultiplier = 1;
+            <string>global.damageMultiplier = 1;
 
 option = 0;
 selectedOption = false;
@@ -53,10 +50,12 @@ else {
     }
 }
     
-var i;
-for(i = 0; i &lt; global.totalWeapons; i++){
+for(var i = 0; i &lt; global.totalWeapons; i++){
     global.weapons[i].ammo = 28;
 }
+
+pass = make_password();
+print("Password", pass);
 </string>
           </argument>
         </arguments>
