@@ -142,11 +142,15 @@ if global.keyShootPressed || global.keyPausePressed {
     if option &lt; total_items {
         show_debug_message("Trying to buy item #" + string(item_index) + " / " + global.items[item_index].name);
         with global.items[item_index] {
-            event_user(1);
-            if buyok {
+            if count &lt; maxUnits &amp;&amp; global.screws &gt;= price {
+                count++;
+                global.screws -= price;
+                event_user(1);
                 playSFX(sfxMenuSelect);
-            }
+                print("Buying " + name);
+            }            
             else {
+                print("Couldn't buy " + name);
                 playSFX(sfxError);
             }
         }

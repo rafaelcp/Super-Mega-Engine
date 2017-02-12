@@ -163,15 +163,6 @@ return true;
             <kind>1</kind>
             <string>/// OnBuy: to be inherited
 //Called when the item is bought
-
-buyok = false;
-if count &lt; maxUnits &amp;&amp; global.screws &gt;= price {
-    count++;
-    global.screws -= price;
-    buyok = true;
-}
-
-show_debug_message("Buying " + name);
 </string>
           </argument>
         </arguments>
