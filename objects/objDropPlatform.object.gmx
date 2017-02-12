@@ -34,7 +34,7 @@ image_index = 0;
 canDrop = true;
 phase = 0; //0 = idle; 1 = preparing to drop down; 2 = dropping down animation; 3 = dropped down; 4 = rebuilding animation
 timer = 0;
-dropTimerMax = 0;
+dropTimerMax = 1;
 rebuildTimerMax = 10;
 
 topSolidID = instance_create(x-16, y, objTopSolid);
@@ -91,7 +91,7 @@ if !global.frozen and !dead {
         //Dropping down animation
         case 2:
             timer += update_rate;
-            if floor(timer) mod 3 == 1 {
+            if floor(timer) mod 4 == 1 {
                 timer = floor(timer) + 1;
                 image_index++;
                 if image_index == 4 {
