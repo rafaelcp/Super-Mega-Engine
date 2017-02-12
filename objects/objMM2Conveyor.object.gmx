@@ -129,11 +129,8 @@ if !global.frozen and !dead {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if size &gt;= 3
-{
-    var i;
-    for(i = 0; i &lt; size; i += 1)
-    {
+            <string>if size &gt;= 3 {
+    for(var i = 0; i &lt; size; i++) {
         if i == 0
             draw_sprite(sprMM2Conveyor, arrowImg, round(x), round(y));
         else if i == size-1
@@ -142,17 +139,14 @@ if !global.frozen and !dead {
             draw_sprite(sprMM2Conveyor, midImg, round(x)+i*16, round(y));
     }
     
-    if global.frozen == false
-    {
+    if !global.frozen {
         // Animation //
         
         //Arrows
-        arrowTimer += 1;
-        if arrowTimer &gt;= 13
-        {
+        arrowTimer += update_rate;
+        if arrowTimer &gt;= 13 {
             arrowTimer = 0;
-            if arrowImg == 4
-            {
+            if arrowImg == 4 {
                 if dir == 1
                     arrowImg = 3;
                 else
@@ -163,9 +157,8 @@ if !global.frozen and !dead {
         }
         
         //Middle
-        midTimer += 1;
-        if midTimer &gt;= 5
-        {
+        midTimer += update_rate;
+        if midTimer &gt;= 5 {
             midTimer = 0;
             if midImg == 0
                 midImg = 1;
@@ -173,31 +166,24 @@ if !global.frozen and !dead {
                 midImg = 0;
         }
     }
-    else
-    {
-        if instance_exists(objSectionSwitcher)
-        {
+    else {
+        if instance_exists(objSectionSwitcher) {
             arrowImg = 4;
             midImg = 0;
         }
     }
 }
-else
-{
-    var i;
-    for(i = 0; i &lt; size; i += 1)
-    {
+else {
+    for(var i = 0; i &lt; size; i++) {
         draw_sprite(sprMM2Conveyor, midImg, round(x)+i*16, round(y));
     }
     
-    if global.frozen == false
-    {
+    if !global.froze {
         // Animation //
         
         //Middle
-        midTimer += 1;
-        if midTimer &gt;= 5
-        {
+        midTimer += update_rate;
+        if midTimer &gt;= 5 {
             midTimer = 0;
             if midImg == 0
                 midImg = 1;

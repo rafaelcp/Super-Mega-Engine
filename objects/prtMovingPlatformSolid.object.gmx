@@ -82,8 +82,8 @@ if global.frozen == false &amp;&amp; dead == false
                 &amp;&amp; !((place_meeting(x, y + global.yspeed+other.yspeed + sign(global.yspeed+other.yspeed), objSolid) &amp;&amp; global.yspeed+other.yspeed &lt; 0)
                 || (place_meeting(x, y + sign(global.yspeed+other.yspeed), objSolid) &amp;&amp; global.yspeed+other.yspeed &gt; 0)) //For some reason, checking the speed when moving down caused the player to let go of the moving platform one frame earlier than it should. For all other collisions, that system worked fine.
                 {
-                    x += other.xspeed;
-                    y += other.yspeed;
+                    x += other.xspeed * other.update_rate;
+                    y += other.yspeed;// * other.update_rate;
                     ground = true;
                     
                     if climbing == true
@@ -134,7 +134,7 @@ if global.frozen == false &amp;&amp; dead == false
             {
                 if !place_meeting(x + global.xspeed+other.xspeed + sign(global.xspeed+other.xspeed), y, objSolid)
                 {
-                    x += other.xspeed;
+                    x += other.xspeed * other.update_rate;
                     
                     if climbing == true
                     {
@@ -168,7 +168,7 @@ if global.frozen == false &amp;&amp; dead == false
             {
                 if !place_meeting(x + global.xspeed+other.xspeed + sign(global.xspeed+other.xspeed), y, objSolid)
                 {
-                    x += other.xspeed;
+                    x += other.xspeed * other.update_rate;
                     
                     if climbing == true
                     {
@@ -208,8 +208,8 @@ if global.frozen == false &amp;&amp; dead == false
         }
     }
     
-    x += xspeed;
-    y += yspeed;
+    x += xspeed * update_rate;
+    y += yspeed;// * update_rate;
 }
 </string>
           </argument>
