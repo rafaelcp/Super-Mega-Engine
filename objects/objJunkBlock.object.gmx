@@ -30,6 +30,7 @@
 xspeed = 0;
 yspeed = 0;
 update_rate = 1;
+healthpoints = 8;
 </string>
           </argument>
         </arguments>
@@ -59,6 +60,10 @@ if !global.frozen {
     gravityCheckGround();
     generalCollision();
     move(xspeed, yspeed);
+    
+    if yspeed &gt; 0 and instance_exists(objMegaman) and objMegaman.ground and collision_rectangle(bbox_left + 1, bbox_bottom - 1, bbox_right - 1, bbox_bottom, objMegaman, 1, true) {
+        with objMegaman playerGetHit(8);
+    }
 }
 </string>
           </argument>
