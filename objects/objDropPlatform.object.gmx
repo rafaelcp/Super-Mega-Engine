@@ -68,7 +68,7 @@ if !global.frozen and !dead {
         //Idle
         case 0:
             if place_meeting(x, y-1, objMegaman) {
-                if objMegaman.ground == true &amp;&amp; objMegaman.bbox_bottom &lt;= bbox_top+global.yspeed
+                if objMegaman.ground == true &amp;&amp; objMegaman.bbox_bottom &lt;= bbox_top + 1
                 &amp;&amp; !collision_rectangle(objMegaman.bbox_left, objMegaman.bbox_bottom, objMegaman.bbox_right, objMegaman.bbox_bottom+1, prtMovingPlatformSolid, false, true)
                 &amp;&amp; !collision_rectangle(objMegaman.bbox_left, objMegaman.bbox_bottom, objMegaman.bbox_right, objMegaman.bbox_bottom+1, prtMovingPlatformJumpthrough, false, true) {
                     phase = 1;
