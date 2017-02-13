@@ -33,6 +33,7 @@ passThrough = true;
 unstoppable = true;
 reflectible = false;
 singleHit = true;
+destroyOnScroll = false;
 </string>
           </argument>
         </arguments>

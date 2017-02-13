@@ -18,6 +18,7 @@ if global.keyWeaponSwitchLeftPressed {
     
     global.weapons[global.currentWeapon].initChargeTimer = 0;
     global.weapons[global.currentWeapon].chargeTimer = 0;
+    with global.weapons[global.currentWeapon] event_user(0);
 
     drawWeaponIcon = true;
     drawWeaponIconTimer = 30;
@@ -49,7 +50,8 @@ if global.keyWeaponSwitchRightPressed {
     
     global.weapons[global.currentWeapon].initChargeTimer = 0;
     global.weapons[global.currentWeapon].chargeTimer = 0;
-
+    with global.weapons[global.currentWeapon] event_user(0);
+    
     drawWeaponIcon = true;
     drawWeaponIconTimer = 30;
     
@@ -77,7 +79,8 @@ if global.keyWeaponSwitchLeft && global.keyWeaponSwitchRight && global.weapon !=
     
     global.weapons[global.currentWeapon].initChargeTimer = 0;
     global.weapons[global.currentWeapon].chargeTimer = 0;
-
+    with global.weapons[global.currentWeapon] event_user(0);
+    
     drawWeaponIcon = true;
     drawWeaponIconTimer = 30;
     

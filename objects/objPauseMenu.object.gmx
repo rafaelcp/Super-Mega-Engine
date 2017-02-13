@@ -104,6 +104,9 @@ with objMegaman event_user(0);
                 
                 // If an item hasn't been primed for use, transition to phase 3.
                 if (primedItemIndex == -1) {
+                    if global.currentWeapon != oldWeapon {
+                        with global.weapons[global.currentWeapon] event_user(0);
+                    }
                     playSFX(sfxMenuSelect);
                     phase = 3;
                 }
