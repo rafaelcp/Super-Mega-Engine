@@ -559,10 +559,16 @@ if global.enableSlide == true
 var ladder, ladderDown;
 ladder = collision_rectangle(sprite_get_xcenter()-3, bbox_top+4, sprite_get_xcenter()+3, bbox_bottom-1, objLadder, false, false);
 ladderDown = collision_rectangle(sprite_get_xcenter()-1, bbox_bottom+1, sprite_get_xcenter()+1, bbox_bottom+2, objLadder, false, false);
+var solidDown = collision_rectangle(sprite_get_xcenter()-1, bbox_bottom+1, sprite_get_xcenter()+1, bbox_bottom+2, objSolid, false, false);
+var solidAbove = false;
+if (ladderDown >= 0) {
+    with ladderDown {
+        solidAbove = !place_free(x, y - 1);
+    }
+}
 if ((ladder >= 0 && global.keyUp && !global.keyDown)
-|| (ladderDown >= 0 && ground == true && !isSlide && global.keyDown && !global.keyUp && !place_meeting(x, y, objLadder)))
-&& (canMove == true || isSlide == true) && sprite_get_bottom() > sectionTop
-{
+|| (ladderDown >= 0 and solidDown < 0 and !solidAbove and ground and !isSlide and global.keyDown and !global.keyUp and !place_meeting(x, y, objLadder)))
+&& (canMove == true || isSlide == true) && sprite_get_bottom() > sectionTop {
     isSlide = false;
     mask_index = mskMegaman;
     slideTimer = 0;
