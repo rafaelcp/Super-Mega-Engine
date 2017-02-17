@@ -25,12 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if objPlateIEquip.count &gt; 0 {
-    instance_destroy();
-    exit;
-}
-
-event_inherited();
+            <string>event_inherited();
 
 targetable = false;
 </string>
@@ -55,13 +50,16 @@ targetable = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Only to erase parent event
+            <string>if objPlateIEquip.count &gt; 0 {
+    instance_destroy();
+    exit;
+}
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="objMegaman">
+    <event eventtype="4" ename="prtPlayer">
       <action>
         <libid>1</libid>
         <id>603</id>
