@@ -99,13 +99,13 @@ image_yscale = 4;
 do {
     x = random(view_wview - 96) + view_xview + 48;
     y = random(view_hview - 96) + view_yview + 48;
-} until(!place_meeting(x, y, objMegaman));
+} until(!place_meeting(x, y, prtPlayer));
 do {
     centerX = random(view_wview - maxRadius * 2) + view_xview + maxRadius;
     centerY = random(view_hview - maxRadius * 2) + view_yview + maxRadius;
     image_xscale *= 0.9;
     image_yscale *= 0.9;
-} until(!place_meeting(centerX, centerY, objMegaman));
+} until(!place_meeting(centerX, centerY, prtPlayer));
 image_xscale = 1;
 image_yscale = 1;
 
@@ -201,7 +201,7 @@ if !global.frozen &amp;&amp; isFight {
     }
     if dead &amp;&amp; !instance_exists(objDrWily) {
         instance_create(x, y, objDrWily);
-        with objMegaman {
+        with prtPlayer {
             if other.x &lt; x {
                 image_xscale = -1;
             }

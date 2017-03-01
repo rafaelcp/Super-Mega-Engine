@@ -63,8 +63,8 @@ keepOnSwitch = true;
 
 if !global.frozen &amp;&amp; !dead {
 
-    if place_meeting(x, y-1, objMegaman) &amp;&amp; !place_meeting(x-1, y, objMegaman) &amp;&amp; !place_meeting(x+1, y, objMegaman) {
-        if objMegaman.ground &amp;&amp; phase == 0 {
+    if place_meeting(x, y-1, prtPlayer) &amp;&amp; !place_meeting(x-1, y, prtPlayer) &amp;&amp; !place_meeting(x+1, y, prtPlayer) {
+        if prtPlayer.ground &amp;&amp; phase == 0 {
             phase = 1;
         }
     }
@@ -101,8 +101,8 @@ if !global.frozen &amp;&amp; !dead {
                 yy += 1;
             }
             
-            if place_meeting(x, y-yy-1, objMegaman)
-                objMegaman.y = bbox_top-16;
+            if place_meeting(x, y-yy-1, prtPlayer)
+                prtPlayer.y = bbox_top-16;
             
             subYspeed = 0;
             subY = 0;

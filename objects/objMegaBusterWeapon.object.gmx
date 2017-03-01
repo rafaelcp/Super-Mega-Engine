@@ -36,6 +36,15 @@ maxshots = cfgMaxNumberOfBusterShots;
 
 primaryCol = make_color_rgb(0, 120, 248);
 secondaryCol = make_color_rgb(0, 232, 216);
+
+outlineChargeCol1 = make_color_rgb(168, 0, 32);
+outlineChargeCol2 = make_color_rgb(228, 0, 88);
+outlineChargeCol3 = make_color_rgb(248, 88, 152);
+
+chargeCol1 = make_color_rgb(0, 232, 216);
+chargeCol2 = make_color_rgb(0, 120, 248);
+
+character = objMegaman;
 </string>
           </argument>
         </arguments>
@@ -61,17 +70,17 @@ secondaryCol = make_color_rgb(0, 232, 216);
             <string>/// onReleaseCharge
 event_inherited();
 
-if (objMegaman.canMove || objMegaman.climbing) &amp;&amp; chargeTimer != 0 {
+if (prtPlayer.canMove || prtPlayer.climbing) &amp;&amp; chargeTimer != 0 {
   
-    objMegaman.isShoot = true;
-    objMegaman.shootTimer = 0;
+    prtPlayer.isShoot = true;
+    prtPlayer.shootTimer = 0;
 
     if chargeTimer &lt; chargeTime {
-        attackID = instance_create(box + objMegaman.image_xscale * 6, yy, objBusterShotHalfCharged);
+        attackID = instance_create(box + prtPlayer.image_xscale * 6, yy, objBusterShotHalfCharged);
         playSFX(sfxBusterHalfCharged);
     }
     else {
-        attackID = instance_create(box + objMegaman.image_xscale * 14, yy, objBusterShotCharged);
+        attackID = instance_create(box + prtPlayer.image_xscale * 14, yy, objBusterShotCharged);
         playSFX(sfxBusterCharged);
     }
     
@@ -79,7 +88,7 @@ if (objMegaman.canMove || objMegaman.climbing) &amp;&amp; chargeTimer != 0 {
     initChargeTimer = 0;
     stopSFX(sfxCharged);
     stopSFX(sfxCharging);
-    with objMegaman event_user(0); //Reset the colors
+    with prtPlayer event_user(0); //Reset the colors
 }
 </string>
           </argument>
@@ -104,12 +113,14 @@ if (objMegaman.canMove || objMegaman.climbing) &amp;&amp; chargeTimer != 0 {
           <argument>
             <kind>1</kind>
             <string>/// onCharging
+if !cfgEnableCharge exit;
+
 event_inherited();
 
-if (objMegaman.canMove || objMegaman.isSlide || objMegaman.climbing) &amp;&amp; !objMegaman.isShoot {
-    objMegaman.isCharge = true;
+if (prtPlayer.canMove || prtPlayer.isSlide || prtPlayer.climbing) &amp;&amp; !prtPlayer.isShoot {
+    prtPlayer.isCharge = true;
     
-    if !objMegaman.isSlide
+    if !prtPlayer.isSlide or cfgBeginChargeOnSlide
         initChargeTimer += 1;
         
     if initChargeTimer &gt;= initChargeTime {
@@ -122,11 +133,11 @@ if (objMegaman.canMove || objMegaman.isSlide || objMegaman.climbing) &amp;&amp; 
             var chargeTimeDiv, chargeCol;
             chargeTimeDiv = round(chargeTime / 3);
             if chargeTimer &lt; chargeTimeDiv
-                chargeCol = make_color_rgb(168, 0, 32);     //Dark red
+                chargeCol = outlineChargeCol1;     //Dark red
             else if chargeTimer &lt; chargeTimeDiv * 2
-                chargeCol = make_color_rgb(228, 0, 88);     //Red (dark pink)
+                chargeCol = outlineChargeCol2;     //Red (dark pink)
             else
-                chargeCol = make_color_rgb(248, 88, 152);   //Light red (pink)
+                chargeCol = outlineChargeCol3;   //Light red (pink)
                 
             if chargeTimer mod 4 == 0 || chargeTimer mod 4 == 1
                 global.outlineCol = chargeCol;
@@ -141,20 +152,20 @@ if (objMegaman.canMove || objMegaman.isSlide || objMegaman.climbing) &amp;&amp; 
             
             switch (chargeTimer/2 mod 3) {
                 case 0: //Light blue helmet, black shirt, blue outline
-                    global.primaryCol = make_color_rgb(0, 232, 216);
+                    global.primaryCol = chargeCol1
                     global.secondaryCol = c_black;
-                    global.outlineCol = make_color_rgb(0, 120, 248);
+                    global.outlineCol = chargeCol2;
                 break;
                 
                 case 1: //Black helmet, blue shirt, light blue outline
                     global.primaryCol = c_black;
-                    global.secondaryCol = make_color_rgb(0, 120, 248);
-                    global.outlineCol = make_color_rgb(0, 232, 216);
+                    global.secondaryCol = chargeCol2;
+                    global.outlineCol = chargeCol1;
                 break;
                 
                 case 2: //Blue helmet, light blue shirt, blue outline
-                    global.primaryCol = make_color_rgb(0, 120, 248);
-                    global.secondaryCol = make_color_rgb(0, 232, 216);
+                    global.primaryCol = chargeCol2;
+                    global.secondaryCol = chargeCol1;
                     global.outlineCol = c_black;
                 break;
             }
@@ -213,7 +224,7 @@ if !ok return false;    //This line should be on every weapon
 
 if instance_number(objBusterShot) + instance_number(objBusterShotHalfCharged) + instance_number(objReflectedProjectile) &lt; maxshots {
 
-    attackID = instance_create(box + objMegaman.image_xscale * 4, yy, objBusterShot);
+    attackID = instance_create(box + prtPlayer.image_xscale * 4, yy, objBusterShot);
 
 }
 </string>

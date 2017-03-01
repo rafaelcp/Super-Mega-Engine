@@ -29,6 +29,7 @@
 yspeed = 0;
 contactDamage = 1;
 update_rate = 1;
+reflectible = sprite_width &lt; 16 and sprite_height &lt; 16;
 </string>
           </argument>
         </arguments>
@@ -60,6 +61,42 @@ update_rate = 1;
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="prtPlayer">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>with other {
+    if (!reflectProjectiles
+    &amp;&amp; !(reflectProjectilesLeft &amp;&amp; sprite_get_xcenter_object(other.id) &lt; sprite_get_xcenter() &amp;&amp; other.xspeed &gt; 0)
+    &amp;&amp; !(reflectProjectilesRight &amp;&amp; sprite_get_xcenter_object(other.id) &gt; sprite_get_xcenter() &amp;&amp; other.xspeed &lt; 0))
+    or !other.reflectible {
+
+        if canHit {  
+            playerGetHit(other.contactDamage);
+        }
+    }
+    else {
+        event_user(1);  //Reflection
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="prtShieldWeapon">
       <action>
         <libid>1</libid>
@@ -85,38 +122,6 @@ if other.xspeed == 0 //When it is not yet fired
     global.weapons[global.currentWeapon].ammo -= global.weapons[global.currentWeapon].consumptionContact;
     if global.weapons[global.currentWeapon].ammo &lt;= 0
         global.weapons[global.currentWeapon].ammo = 0;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="objMegaman">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if other.canHit == true
-{  
-    //Used to make the player face away from the enemy, but I then found out this wasn't done in the NES games
-    /*if sprite_get_xcenter() &gt; other.x
-        other.image_xscale = 1;
-    else
-        other.image_xscale = -1;*/
-        
-    with other playerGetHit(other.contactDamage);
 }
 </string>
           </argument>

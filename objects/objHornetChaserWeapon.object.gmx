@@ -61,7 +61,7 @@ secondaryCol = make_color_rgb(247, 248, 248);
 event_inherited();
 if !ok return false;    //This line must be on every weapon
 
-attackID = instance_create(box + objMegaman.image_xscale * 4, yy, objHornetChaser);
+attackID = instance_create(box + prtPlayer.image_xscale * 4, yy, objHornetChaser);
 </string>
           </argument>
         </arguments>

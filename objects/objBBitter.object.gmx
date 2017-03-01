@@ -68,14 +68,14 @@ image_index = 0;
 
 if global.frozen == false &amp;&amp; dead == false
 {
-    if (shooting == false &amp;&amp; instance_exists(objMegaman))
+    if (shooting == false &amp;&amp; instance_exists(prtPlayer))
     {
-        if x &lt; objMegaman.x
+        if x &lt; prtPlayer.x
             image_xscale = 1;
         else
             image_xscale = -1;
             
-        if distance_to_object(objMegaman) &lt;= radius
+        if distance_to_object(prtPlayer) &lt;= radius
         {
             shooting = true;
         }
@@ -86,7 +86,7 @@ if global.frozen == false &amp;&amp; dead == false
         shootTimer += update_rate;
         if floor(shootTimer) == 7 {
             shootTimer = 8;
-            if x &lt; objMegaman.x
+            if x &lt; prtPlayer.x
                 image_xscale = 1;
             else
                 image_xscale = -1;

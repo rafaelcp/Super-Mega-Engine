@@ -33,6 +33,7 @@ img_speed = 0.5;
 passThrough = true;
 
 defaultDamage = 3;
+defaultBossDamage = 3;
 </string>
           </argument>
         </arguments>

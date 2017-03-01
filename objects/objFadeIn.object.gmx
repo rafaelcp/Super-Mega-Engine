@@ -65,7 +65,7 @@ reverse = false;    //After finishing the fade, start a new fade in the opposite
             <string>instance_destroy();
 
 if deactivate {
-    instance_activate_object(objMegaman);
+    instance_activate_object(prtPlayer);
     instance_activate_object(objHealthWeaponBar);
     instance_activate_object(objBossDoor);
 }
@@ -92,8 +92,8 @@ if deactivate {
           <argument>
             <kind>1</kind>
             <string>if deactivate {
-    if instance_exists(objMegaman) {
-        with objMegaman playerCamera();
+    if instance_exists(prtPlayer) {
+        with prtPlayer playerCamera();
     }
     
     instance_deactivate_all(true);

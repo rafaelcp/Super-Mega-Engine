@@ -62,7 +62,7 @@ secondaryCol = make_color_rgb(255, 224, 168);
 event_inherited();
 if !ok return false;    //This line should be on every weapon
 
-attackID = instance_create(objMegaman.x + objMegaman.image_xscale * 3, yy, objMetalBlade);
+attackID = instance_create(prtPlayer.x + prtPlayer.image_xscale * 3, yy, objMetalBlade);
     
 if global.keyRight &amp;&amp; !global.keyLeft &amp;&amp; global.keyUp
     attackID.dir = 45;
@@ -78,7 +78,7 @@ else if global.keyDown
     attackID.dir = 270;
 else
 {
-    if objMegaman.image_xscale == -1
+    if prtPlayer.image_xscale == -1
         attackID.dir = 180;
     else
         attackID.dir = 0;

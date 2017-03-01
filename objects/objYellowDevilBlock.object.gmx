@@ -183,7 +183,7 @@ else {
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="objMegaman">
+    <event eventtype="4" ename="prtPlayer">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -201,10 +201,10 @@ else {
           <argument>
             <kind>1</kind>
             <string>if current_state != block_states.IDLE {
-    with objMegaman playerGetHit(4);
+    with other playerGetHit(4);
 }
 else {
-    with objMegaman playerGetHit(8);
+    with other playerGetHit(8);
 }
 </string>
           </argument>

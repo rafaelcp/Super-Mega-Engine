@@ -57,26 +57,21 @@ increaseTimer = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if instance_exists(objMegaman)
-{
-    x = objMegaman.x;
-    y = objMegaman.y;
+            <string>if instance_exists(prtPlayer) {
+    x = prtPlayer.x;
+    y = prtPlayer.y;
 }
 
-if increaseHealth == true
-{
-    if increaseHealthAmount &gt; 0 &amp;&amp; global._health &lt; global._maxHealth
-    {
-        increaseTimer += 1;
-        if increaseTimer &gt;= 3
-        {
+if increaseHealth {
+    if increaseHealthAmount &gt; 0 &amp;&amp; global._health &lt; global._maxHealth {
+        increaseTimer++;
+        if increaseTimer &gt;= 3 {
             global._health += 1;
             increaseHealthAmount -= 1;
             increaseTimer = 0;
         }
     }
-    else
-    {
+    else {
         increaseHealth = false;
         if global._health &gt; global._maxHealth
             global._health = global._maxHealth;
@@ -87,7 +82,7 @@ if increaseHealth == true
 }
 else if increaseAmmo {
     if increaseAmmoAmount &gt; 0 &amp;&amp; global.weapons[global.currentWeapon].ammo &lt; global.maxAmmo {
-        increaseTimer += 1;
+        increaseTimer++;
         if increaseTimer &gt;= 3 {
             global.weapons[global.currentWeapon].ammo += 1;
             increaseAmmoAmount -= 1;
@@ -105,10 +100,10 @@ else if increaseAmmo {
 }
 else if increaseAmmoOffscreen {
     if increaseAmmoAmount &gt; 0 &amp;&amp; global.weapons[weaponToIncreaseIndex].ammo &lt; global.maxAmmo {
-        increaseTimer += 1;
+        increaseTimer++;
         if increaseTimer &gt;= 3 {
-            global.weapons[weaponToIncreaseIndex].ammo += 1;
-            increaseAmmoAmount -= 1;
+            global.weapons[weaponToIncreaseIndex].ammo++;
+            increaseAmmoAmount--;
             increaseTimer = 0;
         }
     }

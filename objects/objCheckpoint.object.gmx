@@ -28,12 +28,14 @@
             <string>//Creation code:
 //xx = &lt;number&gt; (the X position Mega Man should spawn at when using the checkpoint)
 //yy = &lt;number&gt; (the Y position Mega Man should spawn at when using the checkpoint)
+xx = x;
+yy = y;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="objMegaman">
+    <event eventtype="4" ename="prtPlayer">
       <action>
         <libid>1</libid>
         <id>603</id>

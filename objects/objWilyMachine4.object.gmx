@@ -150,6 +150,7 @@ if !global.frozen {
         }
         if sprite_index == sprWilyMachine4b and ((yspeed &lt; 0 and sprite_get_bottom() &lt;= view_yview[0] + view_hview[0] - 45) or (yspeed &gt; 0 and sprite_get_bottom() &gt;= view_yview[0] + view_hview[0] - 45)) {
             yspeed = 0;
+            y = view_yview[0] + view_hview[0] - 45 - sprite_height;
         }
         if sprite_index == sprWilyMachine4b {
             if xspeed == 0 and !control.canFillHealthBar and !control.fillingHealthBar {

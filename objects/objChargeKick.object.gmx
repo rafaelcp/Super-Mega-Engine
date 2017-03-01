@@ -56,7 +56,7 @@ destroyOnScroll = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with objMegaman canHit = true;
+            <string>with prtPlayer canHit = true;
 </string>
           </argument>
         </arguments>
@@ -79,11 +79,11 @@ destroyOnScroll = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if instance_exists(objMegaman) and objMegaman.isSlide {
-    objMegaman.canHit = false;
-    image_xscale = objMegaman.image_xscale;
-    x = objMegaman.x + objMegaman.image_xscale * 5;
-    y = objMegaman.y + objMegaman.sprite_height / 2;
+            <string>if instance_exists(prtPlayer) and prtPlayer.isSlide {
+    prtPlayer.canHit = false;
+    image_xscale = prtPlayer.image_xscale;
+    x = prtPlayer.x + prtPlayer.image_xscale * 5;
+    y = prtPlayer.y + prtPlayer.sprite_height / 2;
 }
 else {
     instance_destroy();

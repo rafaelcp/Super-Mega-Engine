@@ -57,11 +57,11 @@ prevPlayer = false;
 
 if global.frozen == false &amp;&amp; dead == false
 {
-    if collision_rectangle(bbox_left+1, bbox_top-1, bbox_right-1, bbox_top, objMegaman, false, false)
+    if collision_rectangle(bbox_left+1, bbox_top-1, bbox_right-1, bbox_top, prtPlayer, false, false)
     {
-        if objMegaman.bbox_bottom &lt;= bbox_top+abs(yspeed)
+        if prtPlayer.bbox_bottom &lt;= bbox_top+abs(yspeed)
         {
-            with objMegaman
+            with prtPlayer
             {
                 if !place_meeting(x + global.xspeed+other.xspeed + sign(global.xspeed+other.xspeed), y, objSolid)
                 &amp;&amp; !((place_meeting(x, y + global.yspeed+other.yspeed + sign(global.yspeed+other.yspeed), objSolid) &amp;&amp; global.yspeed+other.yspeed &lt; 0)
@@ -92,10 +92,10 @@ if global.frozen == false &amp;&amp; dead == false
     {
         //When walking off the platform on the right when the platform is moving to the right (and the same goes for left),
         //the player spawned on top of the platform, which prevented them from walking off. This code fixes that
-        if (collision_rectangle(bbox_left+xspeed-1, bbox_top-1, bbox_left, bbox_bottom, objMegaman, false, false) &amp;&amp; xspeed &lt; 0)
-        || (collision_rectangle(bbox_right+xspeed+1, bbox_top-1, bbox_right, bbox_bottom, objMegaman, false, false) &amp;&amp; xspeed &gt; 0)
+        if (collision_rectangle(bbox_left+xspeed-1, bbox_top-1, bbox_left, bbox_bottom, prtPlayer, false, false) &amp;&amp; xspeed &lt; 0)
+        || (collision_rectangle(bbox_right+xspeed+1, bbox_top-1, bbox_right, bbox_bottom, prtPlayer, false, false) &amp;&amp; xspeed &gt; 0)
         {
-            with objMegaman y += 1;
+            with prtPlayer y += 1;
         }
         
         prevPlayer = false;

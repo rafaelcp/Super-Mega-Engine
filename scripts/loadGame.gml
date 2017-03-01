@@ -1,5 +1,6 @@
 //loadGame(id)
 var map = ds_map_secure_load("save" + string(argument0) + ".dat");
+setPlayer(map[? "character"]);
 global._lives = map[? "lives"];
 global.screws = map[? "screws"];
 for(i = 0; i < 8; i++) {

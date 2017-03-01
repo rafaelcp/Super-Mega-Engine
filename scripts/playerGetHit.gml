@@ -1,11 +1,11 @@
 ///playerGetHit(health)
-//Call it like this: with objMegaman playerGetHit();
+//Call it like this: with prtPlayer playerGetHit();
 //Makes the player get hit
 assert(argument0 >= 0, "playerGetHit: Damage must be non-negative");
 
 if canHit {
-    drawDamageNumber(objMegaman.x, objMegaman.y, ceil(argument0 * global.damageMultiplier));
-    global._health -= ceil(argument0 * global.damageMultiplier);
+    drawDamageNumber(prtPlayer.x, prtPlayer.y, ceil(argument0 * damageMultiplier * global.damageMultiplier));
+    global._health -= ceil(argument0 * damageMultiplier * global.damageMultiplier);
     
     canHit = false;
     isHit = true;
@@ -17,6 +17,12 @@ if canHit {
     isThrow = false;
     onRushJet = false;
     
+    if cfgLoseChargeOnHit {
+        weapons[global.currentWeapon].chargeTimer = 0;
+        weapons[global.currentWeapon].initChargeTimer = 0;
+        with prtPlayer event_user(0); //Reset the colors
+    }
+    
     //When sliding and there's a solid above us, we should not experience knockback
     //If we did, we would clip inside the ceiling above us
     if !(isSlide && (place_meeting(x, y-3, objSolid) || place_meeting(x, y-3, prtMovingPlatformSolid))) {
@@ -24,7 +30,7 @@ if canHit {
         canSpriteChange = false;
         isSlide = false;
         mask_index = mskMegaman;
-        global.xspeed = image_xscale * -0.5;
+        global.xspeed = image_xscale * -knockbackAmount;
         global.yspeed = 0;
         
         if global._health > 0 {

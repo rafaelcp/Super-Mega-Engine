@@ -59,9 +59,9 @@ defaultDamage = 3;
           <argument>
             <kind>1</kind>
             <string>//Set position to above the player's head
-if instance_exists(objMegaman) {
-    x = objMegaman.x + objMegaman.image_xscale;
-    y = objMegaman.y - 20;
+if instance_exists(prtPlayer) {
+    x = prtPlayer.x + prtPlayer.image_xscale;
+    y = prtPlayer.y - 20;
 }
 else {
     instance_destroy();

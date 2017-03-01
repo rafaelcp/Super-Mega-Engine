@@ -61,7 +61,7 @@ secondaryCol = make_color_rgb(248, 248, 248);
 event_inherited();
 if !ok return false;    //This line should be on every weapon
 
-attackID = instance_create(objMegaman.x, sprite_get_ycenter_object(objMegaman), objCentaurFlash);
+attackID = instance_create(prtPlayer.x, sprite_get_ycenter_object(prtPlayer), objCentaurFlash);
 </string>
           </argument>
         </arguments>

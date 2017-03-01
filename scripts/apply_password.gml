@@ -5,13 +5,16 @@ bin_pass = string_lpad(bin_pass, 96, "0");
 
 var pos = 1;
 
+var charlen = ceil(log2(global.totalCharacters));
+setPlayer(global.characters[real(base_convert(string_copy(bin_pass, pos, charlen), 2, 10))]);
+pos += charlen;
 global._lives = real(base_convert(string_copy(bin_pass, pos, 4), 2, 10));
 pos += 4;
 global.screws = real(base_convert(string_copy(bin_pass, pos, 10), 2, 10));
 pos += 10;
 
 //Weapons
-objMegaBusterWeapon.unlocked = true;
+global.weapons[0].unlocked = true;
 for (var i = 1; i < global.totalWeapons; i++) { //Skip weapon 0 (mega buster)
     global.weapons[i].unlocked = (string_copy(bin_pass, pos, 1) == "1");
     pos++;
@@ -21,7 +24,7 @@ for (var i = 0; object_exists(i); i++) {
     if object_get_parent(i) == prtBoss {
         var boss = instance_create(0, 0, i);
         if boss.bossID > -1 and boss.weaponID > -1 {
-            global.bossDefeated[boss.bossID] = global.weapons[boss.weaponID].unlocked;
+            global.bossDefeated[boss.bossID] = boss.weaponID.unlocked;
         }
         with boss instance_destroy();
     }

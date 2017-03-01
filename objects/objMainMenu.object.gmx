@@ -79,7 +79,9 @@ selected = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.keyUpPressed {
+            <string>if (instance_exists(objFadeout)) exit;
+
+if global.keyUpPressed {
     selected--;
     if selected &lt; 0 {
         selected = num_menu_items - 1;
@@ -99,11 +101,16 @@ else if global.keyPausePressed || global.keyJumpPressed || global.keyShootPresse
     ID.type = "room";
     switch menu[selected] {
         case "NEW GAME":
-            if cfgInitialStage &gt; -1 {
-                ID.myRoom = cfgInitialStage;
+            if global.totalCharacters &gt; 1 {
+                ID.myRoom = rmPlayerSelect;
             }
             else {
-                ID.myRoom = rmStageSelect;
+                if cfgInitialStage &gt; -1 {
+                    ID.myRoom = cfgInitialStage;
+                }
+                else {
+                    ID.myRoom = rmStageSelect;
+                }
             }        
         break;
         case "LOAD GAME":

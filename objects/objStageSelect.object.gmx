@@ -37,6 +37,9 @@ if numBossesDefeated() == 8 {
     instance_create(0, 0, objFlash);
     playSFX(sfxThunder);
 }
+
+idx = 0;
+oldOption = option;
 </string>
           </argument>
         </arguments>
@@ -59,7 +62,9 @@ if numBossesDefeated() == 8 {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if !selected {
+            <string>oldOption = option;
+
+if !selected {
     //Moving the selection
     var soundPlayed;
     soundPlayed = false; //Prevents the menu move sound from playing twice when two buttons are pressed at the same time
@@ -269,7 +274,16 @@ ds_queue_destroy(words);
 
 if numBossesDefeated() &lt; 8 {
     //Draw MM's head in the middle
-    draw_sprite(sprMMStageSelect, option, xx[8]+8, yy[8]+8);
+    if global.stageSelectFollow {
+        idx = option;
+    }
+    else {
+        if oldOption != option or idx &gt; 0 {
+            idx += 0.3;
+            if (idx &gt;= 4) idx = 0;
+        }
+    }
+    draw_sprite(global.spriteStageSelect, idx, xx[8]+8, yy[8]+8);
 }
 else {
     //Draw Dr. Wily's logo

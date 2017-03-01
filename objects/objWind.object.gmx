@@ -112,8 +112,8 @@ if !global.frozen &amp;&amp; insideView() {
             }
         }
     }
-    if affectPlayer &amp;&amp; instance_exists(objMegaman) &amp;&amp; !objMegaman.climbing {
-        with objMegaman {
+    if affectPlayer &amp;&amp; instance_exists(prtPlayer) &amp;&amp; !prtPlayer.climbing {
+        with prtPlayer {
             if !place_meeting(x + other.xspeed, y + other.yspeed, objSolid) &amp;&amp; !place_meeting(x + other.xspeed, y + other.yspeed, prtMovingPlatformSolid){
                 x += other.xspeed * other.update_rate;
                 y += other.yspeed * other.update_rate;

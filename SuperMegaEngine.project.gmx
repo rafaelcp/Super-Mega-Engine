@@ -19,6 +19,7 @@
       <sound>sound\sfxSplash</sound>
       <sound>sound\sfxWeaponSwitch</sound>
       <sound>sound\sfxBoltCollect</sound>
+      <sound>sound\sfxWhistle</sound>
     </sounds>
     <sounds name="Shooting">
       <sound>sound\sfxBuster</sound>
@@ -79,6 +80,8 @@
       <sound>sound\bgmWilyCastle1</sound>
       <sound>sound\bgmMainMenu</sound>
       <sound>sound\bgmBeatFinalBoss</sound>
+      <sound>sound\bgmPlayerSelect</sound>
+      <sound>sound\bgmProtomanShop</sound>
     </sounds>
   </sounds>
   <sprites name="sprites">
@@ -108,7 +111,7 @@
     <sprites name="Player">
       <sprite>sprites\mskMegaman</sprite>
       <sprite>sprites\mskMegamanSlide</sprite>
-      <sprites name="Normal">
+      <sprites name="MegaMan">
         <sprite>sprites\sprMegamanStand</sprite>
         <sprite>sprites\sprMegamanStep</sprite>
         <sprite>sprites\sprMegamanWalk</sprite>
@@ -127,10 +130,30 @@
         <sprite>sprites\sprMegamanHit</sprite>
         <sprite>sprites\sprMegamanTeleport</sprite>
       </sprites>
+      <sprites name="ProtoMan">
+        <sprite>sprites\sprProtomanStand</sprite>
+        <sprite>sprites\sprProtomanStep</sprite>
+        <sprite>sprites\sprProtomanJump</sprite>
+        <sprite>sprites\sprProtomanWalk</sprite>
+        <sprite>sprites\sprProtomanClimb</sprite>
+        <sprite>sprites\sprProtomanClimbGetup</sprite>
+        <sprite>sprites\sprProtomanSlide</sprite>
+        <sprite>sprites\sprProtomanHit</sprite>
+        <sprite>sprites\sprProtomanTeleport</sprite>
+        <sprite>sprites\sprProtomanStandShoot</sprite>
+        <sprite>sprites\sprProtomanJumpShoot</sprite>
+        <sprite>sprites\sprProtomanWalkShoot</sprite>
+        <sprite>sprites\sprProtomanStandThrow</sprite>
+        <sprite>sprites\sprProtomanJumpThrow</sprite>
+        <sprite>sprites\sprProtomanClimbShoot</sprite>
+        <sprite>sprites\sprProtomanClimbThrow</sprite>
+      </sprites>
       <sprites name="Weapons">
         <sprite>sprites\sprBusterShot</sprite>
         <sprite>sprites\sprBusterShotHalfCharged</sprite>
         <sprite>sprites\sprBusterShotCharged</sprite>
+        <sprite>sprites\sprProtoBusterHalfCharged</sprite>
+        <sprite>sprites\sprProtoBusterCharged</sprite>
         <sprites name="Rush">
           <sprite>sprites\sprRushMask</sprite>
           <sprite>sprites\sprRushTeleport</sprite>
@@ -264,6 +287,7 @@
         <sprite>sprites\sprWeaponEnergySmall</sprite>
         <sprite>sprites\sprWeaponEnergyBig</sprite>
         <sprite>sprites\sprLife</sprite>
+        <sprite>sprites\sprProtomanLife</sprite>
         <sprite>sprites\sprETank</sprite>
         <sprite>sprites\sprMTank</sprite>
         <sprite>sprites\sprSTank</sprite>
@@ -339,12 +363,15 @@
       </sprites>
       <sprites name="WeaponGet">
         <sprite>sprites\sprMegamanWeaponGetTeleport</sprite>
+        <sprite>sprites\sprProtomanWeaponGetTeleport</sprite>
         <sprite>sprites\sprMegamanWeaponGet</sprite>
+        <sprite>sprites\sprProtomanWeaponGet</sprite>
       </sprites>
       <sprites name="StageSelect">
         <sprite>sprites\sprStageSelectIcons</sprite>
         <sprite>sprites\sprMMStageSelect</sprite>
         <sprite>sprites\sprStageSelectPanel</sprite>
+        <sprite>sprites\sprPMStageSelect</sprite>
       </sprites>
       <sprites name="Introduction">
         <sprite>sprites\sprIntroPanel</sprite>
@@ -368,6 +395,9 @@
         <sprite>sprites\sprFortressRight</sprite>
         <sprite>sprites\sprFortressLeft</sprite>
         <sprite>sprites\sprFortressDown</sprite>
+      </sprites>
+      <sprites name="PlayerSelect">
+        <sprite>sprites\sprPlayerSelect</sprite>
       </sprites>
     </sprites>
     <sprites name="Sections">
@@ -415,6 +445,8 @@
       <background>background\bgShop</background>
       <background>background\bgFortress</background>
       <background>background\bgMainMenu</background>
+      <background>background\bgPlayerSelect</background>
+      <background>background\bgProtomanShop</background>
     </backgrounds>
     <backgrounds name="Cutscenes">
       <background>background\bgCity</background>
@@ -442,6 +474,7 @@
       <script>scripts\playerFreeMovement.gml</script>
       <script>scripts\drawSelf3Colors.gml</script>
       <script>scripts\projectileCount.gml</script>
+      <script>scripts\setPlayer.gml</script>
     </scripts>
     <scripts name="Drawing">
       <script>scripts\drawSelf.gml</script>
@@ -606,7 +639,9 @@
     <objects name="Player">
       <object>objects\objGlobalControl</object>
       <object>objects\objGlobalInit</object>
+      <object>objects\prtPlayer</object>
       <object>objects\objMegaman</object>
+      <object>objects\objProtoman</object>
       <objects name="Weapons">
         <object>objects\prtWeapon</object>
         <object>objects\prtPlayerProjectile</object>
@@ -616,6 +651,9 @@
         <object>objects\objBusterShotHalfCharged</object>
         <object>objects\objBusterShotCharged</object>
         <object>objects\objMegaBusterWeapon</object>
+        <object>objects\objProtoBusterShotHalfCharged</object>
+        <object>objects\objProtoBusterShotCharged</object>
+        <object>objects\objProtoBusterWeapon</object>
         <objects name="MM2">
           <object>objects\objMetalBlade</object>
           <object>objects\objMetalBladeWeapon</object>
@@ -690,7 +728,6 @@
         </objects>
       </objects>
       <objects name="MM2">
-        <object>objects\objBaton</object>
         <object>objects\objMM2Baton</object>
         <object>objects\objTelly</object>
         <object>objects\objFanFiend</object>
@@ -741,7 +778,6 @@
         <object>objects\objYellowDevilBlock</object>
         <object>objects\objYellowDevilBullet</object>
       </objects>
-      <object>objects\objBigEyeBoss</object>
       <objects name="WilyMachine4">
         <object>objects\objWilyMachine4</object>
         <object>objects\objWilyMachine4Shot</object>
@@ -754,6 +790,7 @@
         <object>objects\objWilyCapsuleShot</object>
         <object>objects\objDrWily</object>
       </objects>
+      <object>objects\objBigEyeBoss</object>
     </objects>
     <objects name="LevelObjects">
       <objects name="Drops/Tanks">
@@ -839,6 +876,7 @@
       <object>objects\objMainMenu</object>
       <object>objects\objLoadGame</object>
       <object>objects\objSaveGame</object>
+      <object>objects\objPlayerSelect</object>
     </objects>
     <objects name="Sections">
       <object>objects\objSectionBorderLeftScreen</object>
@@ -918,6 +956,7 @@
       <room>rooms\rmFortress</room>
       <room>rooms\rmIntroduction</room>
       <room>rooms\rmWeaponGet</room>
+      <room>rooms\rmPlayerSelect</room>
       <room>rooms\rmPass</room>
       <room>rooms\rmPassInput</room>
       <room>rooms\rmMainMenu</room>
@@ -930,7 +969,7 @@
     <room>rooms\rmBossRush</room>
     <room>rooms\rmFinalStage</room>
   </rooms>
-  <constants number="36">
+  <constants number="39">
     <constant name="initialRoom">rmDisclaimer</constant>
     <constant name="cfgEnableSlideKey">false</constant>
     <constant name="cfgEnableDamageNumbers">false</constant>
@@ -950,6 +989,8 @@
     <constant name="cfgEnableKeyConfig">false</constant>
     <constant name="cfgEnableSaving">true</constant>
     <constant name="cfgEnablePasswords">true</constant>
+    <constant name="cfgLoseChargeOnHit">false</constant>
+    <constant name="cfgBeginChargeOnSlide">false</constant>
     <constant name="cfgRushTeleportSpeed">10</constant>
     <constant name="cfgGravity">0.25</constant>
     <constant name="cfgGravityWater">0.095</constant>
@@ -967,6 +1008,7 @@
     <constant name="cfgClimbSpeed">1.296875</constant>
     <constant name="cfgInitChargeTime">20</constant>
     <constant name="cfgChargeTime">57</constant>
+    <constant name="cfgKnockback">0.5</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

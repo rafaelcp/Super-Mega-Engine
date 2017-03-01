@@ -10,12 +10,12 @@ else
     
 switch sprite_index
 {
-    case spriteStand: yy = y+4; break;
-    case spriteStep: yy = y+4; break;
-    case spriteWalk: yy = y+4; break;
-    case spriteJump: yy = y+3; break;
-    case spriteClimb: yy = y+4; break;
-    default: yy = y+4; break;
+    case spriteStand: yy = y+shoot_height; break;
+    case spriteStep: yy = y+shoot_height; break;
+    case spriteWalk: yy = y+shoot_height; break;
+    case spriteJump: yy = y+jump_shoot_height; break;
+    case spriteClimb: yy = y+shoot_height; break;
+    default: yy = y+shoot_height; break;
 }
 
 
@@ -85,18 +85,8 @@ else if isThrow { //Throwing weapons, like Pharaoh Shot and Metal Blade
 
 instance_activate_object(prtWeapon);
 
-//Charging
-if global.enableCharge {
-    if (global.keyShoot || (isSlide and objMegaBusterWeapon.chargeTimer != 0)) and global.weapon == objMegaBusterWeapon.ID {
-        with global.weapons[global.currentWeapon] event_user(3);
-    }
-    else if !global.keyShoot and global.weapons[global.currentWeapon].chargeTimer != 0 and global.weapon == objMegaBusterWeapon.ID  {      //Release the charge shot
-        with global.weapons[global.currentWeapon] event_user(4); 
-    }
-}
-
-//Charging other weapons
-if global.weapons[global.currentWeapon].ammo > 0 and global.weapon != objMegaBusterWeapon.ID and room != rmWeaponGet {
+//Charging weapons
+if global.weapons[global.currentWeapon].ammo > 0 and room != rmWeaponGet {
     if global.keyShoot || (isSlide && global.weapons[global.currentWeapon].chargeTimer != 0) {    // Pressing shoot key
         with global.weapons[global.currentWeapon] event_user(3);
     }

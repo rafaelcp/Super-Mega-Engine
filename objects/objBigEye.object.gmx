@@ -155,8 +155,8 @@ if !global.frozen and !dead {
                 repeatIsHigh = highJump;
             }
                 
-            if instance_exists(objMegaman) {
-                if x &gt; objMegaman.x
+            if instance_exists(prtPlayer) {
+                if x &gt; prtPlayer.x
                     image_xscale = -1;
                 else
                     image_xscale = 1;

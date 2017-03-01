@@ -61,8 +61,8 @@ if !global.frozen {
     generalCollision();
     move(xspeed, yspeed);
     
-    if yspeed &gt; 0 and instance_exists(objMegaman) and objMegaman.ground and collision_rectangle(bbox_left + 1, bbox_bottom - 1, bbox_right - 1, bbox_bottom, objMegaman, 1, true) {
-        with objMegaman playerGetHit(8);
+    if yspeed &gt; 0 and instance_exists(prtPlayer) and prtPlayer.ground and collision_rectangle(bbox_left + 1, bbox_bottom - 1, bbox_right - 1, bbox_bottom, prtPlayer, 1, true) {
+        with prtPlayer playerGetHit(8);
     }
 }
 </string>

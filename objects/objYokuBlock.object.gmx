@@ -42,6 +42,9 @@ timer = 0;
 phase = 0; //0 = waiting to appear; 1 = active; 2 = waiting to reappear after disappearing
 sprite_index = sprYokuBlock;
 mySolid = -12;
+startup = 0;
+active = 150;
+wait = 120;
 </string>
           </argument>
         </arguments>
@@ -77,9 +80,9 @@ if !global.frozen and !dead {
                 
                 image_index = 0;
                 
-                while place_meeting(x, y, objMegaman) {
-                    with objMegaman y -= 1; //If the Yoku Block spawns "inside" Mega Man, push Mega Man upwards'. This way, it's much more fair
-                    with objMegaman ground = true;
+                while place_meeting(x, y, prtPlayer) {
+                    with prtPlayer y -= 1; //If the Yoku Block spawns "inside" Mega Man, push Mega Man upwards'. This way, it's much more fair
+                    with prtPlayer ground = true;
                 }
                 
                 if insideView() {
@@ -122,10 +125,10 @@ if !global.frozen and !dead {
                     
                 image_index = 0;
                 
-                while place_meeting(x, y, objMegaman)
+                while place_meeting(x, y, prtPlayer)
                 {
-                    with objMegaman y -= 1; //If the Yoku Block spawns "inside" Mega Man, push Mega Man upwards'. This way, it's much more fair
-                    with objMegaman ground = true;
+                    with prtPlayer y -= 1; //If the Yoku Block spawns "inside" Mega Man, push Mega Man upwards'. This way, it's much more fair
+                    with prtPlayer ground = true;
                 }
                 
                 if insideView()

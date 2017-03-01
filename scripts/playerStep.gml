@@ -1,7 +1,6 @@
 ///playerStep()
 //Handles general step event code for the player
 
-
 //Check for ground
 if place_meeting(x, y+global.yspeed+1, objSolid) || (place_meeting(x, y+global.yspeed+1, objTopSolid)  && global.yspeed >= 0)
 || (place_meeting(x, y+global.yspeed+1, prtMovingPlatformJumpthrough) && global.yspeed >= 0)
@@ -266,7 +265,7 @@ else if canSpriteChange == true
 
 
 //Blinking animation
-if sprite_index == sprMegamanStand { //Don't use spriteStand as this could also be sprMegamanStandShoot!
+if sprite_index == asset_get_index("spr" + global.sprName + "Stand") { //Don't use spriteStand as this could also be sprMegamanStandShoot!
     blinkTimer++;
     if blinkImage == 0 {
         if blinkTimer >= blinkTimerMax {
@@ -378,20 +377,18 @@ if ground == false && global.yspeed < 0 && !global.keyJump && canMinJump == true
 }
 
 
-//Sliding
 var box;
 if image_xscale == 1
     box = bbox_right;
 else
     box = bbox_left;
     
-if global.enableSlide == true
-{
+//Sliding
+if enableSlide {
     if ground && !isSlide && ((global.keyJumpPressed && global.keyDown) || (global.enableSlideKey && global.keySlidePressed)) 
         && (canMove || (isThrow and room != rmWeaponGet)) && !position_meeting(box+image_xscale*5, bbox_bottom-12, objSolid)
     {
-        var canSld;
-        canSld = false;
+        var canSld = false;
         
         if !position_meeting(box+image_xscale*5, bbox_bottom-12, prtMovingPlatformSolid) {
             canSld = true;
@@ -402,10 +399,8 @@ if global.enableSlide == true
         }
         
         
-        if canSld == true
-        {
-            if isThrow == true
-            {
+        if canSld {
+            if isThrow {
                 isThrow = false;
                 shootTimer -= 5; //20 frames for freezing was too long so it was changed to 15. However, when not frozen, 20 looks better
             }
@@ -432,12 +427,12 @@ if global.enableSlide == true
     
     //While sliding
     if isSlide {
+        image_speed = 1/6;
         isStep = false;
         canInitStep = false;
         slideTimer++;
         
-        var canProceed;
-        canProceed = true;
+        var canProceed = true;
         
         if ((place_meeting(x, y-3, objSolid) and !place_meeting(x, y-3, objSpike)) || place_meeting(x, y-3, prtMovingPlatformSolid)) && (ground == true || place_meeting(x-(slideSpeed-1), y+1, objSolid) || place_meeting(x-(slideSpeed-1), y+1, objTopSolid) || place_meeting(x-(slideSpeed-1), y+1, prtMovingPlatformJumpthrough) || place_meeting(x-(slideSpeed-1), y+1, prtMovingPlatformSolid)
         || place_meeting(x+(slideSpeed-1), y, objSolid) || place_meeting(x+(slideSpeed-1), y, prtMovingPlatformSolid)) //Extra check because if Mega Man falls down while sliding and a wall is on the other side of him and a ceiling is on top of him, when turning around on the right frame he would zip through the solids
@@ -490,8 +485,7 @@ if global.enableSlide == true
             || slideTimer >= slideFrames || (global.keyJumpPressed && !global.keyDown)
             || place_meeting(x+image_xscale*3, y, objSolid) || place_meeting(x+image_xscale*3, y, prtMovingPlatformSolid)
             {
-                var stopSld;
-                stopSld = true;
+                var stopSld = true;
                 
                 if !ground || (global.keyLeft && !global.keyRight && image_xscale == 1)
                 || (global.keyRight && !global.keyLeft && image_xscale == -1)
@@ -525,9 +519,8 @@ if global.enableSlide == true
                                 endLoop = true;
                         }
                         
-                        if endLoop == false
-                        {
-                            y += 1;
+                        if !endLoop {
+                            y++;
                             sprite_index = spriteJump;
                             ground = false;
                         }

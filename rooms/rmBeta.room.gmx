@@ -51,6 +51,7 @@
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
+    <instance objName="prtPlayer" x="96" y="384" name="inst_66A55862" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBossDoor" x="3040" y="576" name="inst_6AD0A169" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBossDoor" x="3296" y="576" name="inst_E839E287" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMM1Met" x="304" y="352" name="inst_2C1A006E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -86,8 +87,8 @@
     <instance objName="objSuzi" x="2096" y="496" name="inst_3F544108" locked="0" code="col = 1;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSuzi" x="2000" y="592" name="inst_092B31F6" locked="0" code="col = 2;&#xA;dir = &quot;ver&quot;;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSuzi" x="2016" y="592" name="inst_3B39957B" locked="0" code="startDir = -1;&#xA;dir = &quot;ver&quot;;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objYokuBlock" x="2944" y="544" name="inst_38328C07" locked="0" code="startup = 70;&#xA;active = 150;&#xA;wait = 120;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objYokuBlock" x="2896" y="544" name="inst_3A052193" locked="0" code="startup = 0;&#xA;active = 150;&#xA;wait = 120;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objYokuBlock" x="2944" y="544" name="inst_38328C07" locked="0" code="startup = 70;&#xA;active = 150;&#xA;wait = 120;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objYokuBlock" x="2896" y="544" name="inst_3A052193" locked="0" code="startup = 0;&#xA;active = 150;&#xA;wait = 120;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objLifeEnergyBig" x="3008" y="528" name="inst_530ECDE8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCheckpoint" x="3072" y="448" name="inst_FA5D266A" locked="0" code="xx = 3184;&#xA;yy = 624;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCheckpoint" x="1712" y="224" name="inst_FFD0769F" locked="0" code="xx = 1744;&#xA;yy = 400;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -97,7 +98,6 @@
     <instance objName="objSolid" x="1936" y="208" name="inst_5DE7C5CB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="3024" y="432" name="inst_3DF35A72" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPharaoh" x="3528" y="624" name="inst_E451B43C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objMTank" x="2704" y="416" name="inst_050F431F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBossControl" x="3312" y="448" name="inst_9B0FD3CC" locked="0" code="music = &quot;Boss.ogg&quot;;&#xA;musicVolume = 0.7;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSparkmanPlatform" x="27" y="384" name="inst_AFDB42E2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objScrewBomber" x="96" y="192" name="inst_6F3047F9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -142,7 +142,6 @@
     <instance objName="objSectionScrollRight" x="1936" y="224" name="inst_F871F558" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSectionScrollRight" x="2192" y="448" name="inst_F150C2BB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSectionScrollRight" x="2784" y="448" name="inst_D28DFDB1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objMegaman" x="96" y="384" name="inst_321CFFA3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="1728" y="208" name="inst_0793FB05" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="1744" y="208" name="inst_4A3C75C4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="1760" y="208" name="inst_1C333752" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -419,6 +418,8 @@
     <instance objName="objPoleEgg" x="1728" y="560" name="inst_A0437BEC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1744" y="528" name="inst_97DE3C07" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1808" y="560" name="inst_78B035E6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSTank" x="2704" y="416" name="inst_1E72A7EB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objCheckpoint" x="1888" y="448" name="inst_24E7F618" locked="0" code="yy = 608;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tstBeta" x="48" y="400" w="16" h="16" xo="18" yo="1" id="10000712" name="tile_45EB3B49" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

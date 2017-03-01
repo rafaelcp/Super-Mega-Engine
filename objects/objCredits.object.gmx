@@ -34,7 +34,7 @@ megamanx = 0;
 megamany = room_height;
 rushx = 0;
 rushy = megamany + 19;
-megamansprite = sprMegamanStand;
+megamansprite = global.spriteStand;
 scroll_threshold = -430;
 
 text = "SUPER MEGA ENGINE (SME)
@@ -133,7 +133,7 @@ Presented by the Mega Man Fandom
         megamany -= 0.45;
     }
     else {
-        megamansprite = sprMegamanJump;
+        megamansprite = global.spriteJump;
     }
     rushx++;
     rushy -= 0.45;

@@ -35,6 +35,8 @@ sfx = noone;
 
 primaryCol = make_color_rgb(216, 40, 0);
 secondaryCol = make_color_rgb(255, 255, 255);
+
+character = objMegaman;
 </string>
           </argument>
         </arguments>
@@ -64,9 +66,9 @@ if !ok return false;    //This line should be on every weapon
 ammo += consumption;    //Return amount decreased by parent
 
 if instance_number(objRushJet) &lt; 1 {
-    attackID = instance_create(objMegaman.x + objMegaman.image_xscale * 26, sprite_get_ycenter_object(objMegaman) - 8, objRushJet);
-    attackID.image_xscale = objMegaman.image_xscale;
-    objMegaman.isShoot = false;
+    attackID = instance_create(prtPlayer.x + prtPlayer.image_xscale * 26, sprite_get_ycenter_object(prtPlayer) - 8, objRushJet);
+    attackID.image_xscale = prtPlayer.image_xscale;
+    prtPlayer.isShoot = false;
 }
 else {
     with objMegaBusterWeapon event_user(1);

@@ -62,13 +62,18 @@ image_index = 0;
             <string>event_inherited();
 
 if !global.frozen and !dead {
-    if instance_exists(objMegaman) {
-        if x &lt; objMegaman.x
+
+    checkGround();
+    gravityCheckGround();
+    generalCollision();
+        
+    if instance_exists(prtPlayer) {
+        if x &lt; prtPlayer.x
             image_xscale = 1;
         else
             image_xscale = -1;
         
-        if distance_to_object(objMegaman) &lt;= radius {
+        if distance_to_object(prtPlayer) &lt;= radius {
             if canShoot {
                 canShoot = false;
                 image_index = 1;
@@ -111,8 +116,8 @@ if !global.frozen and !dead {
     else
         reflectProjectiles = false;
         
-    x += xspeed;
-    y += yspeed;
+    x += xspeed * update_rate;
+    y += yspeed * update_rate;
 }
 else {
     if dead {

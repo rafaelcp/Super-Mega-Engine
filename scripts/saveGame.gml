@@ -1,5 +1,6 @@
 //saveGame(id)
 var map = ds_map_create();
+map[? "character"] = global.character;
 map[? "lives"] = global._lives;
 map[? "screws"] = global.screws;
 for(var i = 0; i < 8; i++) {

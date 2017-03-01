@@ -68,7 +68,7 @@ if !global.frozen {
     
     //Sticking to the player until fired or destroyed in any way
     if followPlayer &amp;&amp; global.keyShootPressed &amp;&amp; endInitTimer &gt;= 8 { //Do not shoot the weapon until the init state is over
-        with objMegaman {
+        with prtPlayer {
             other.dir = sign(image_xscale);
         }
            
@@ -105,8 +105,8 @@ if !global.frozen {
             <string>with other {
     if reflectProjectiles == false &amp;&amp; damage[other.object_index] != 0
     &amp;&amp; !(reflectProjectilesLeft == true &amp;&amp; sprite_get_xcenter_object(other.id) &lt; sprite_get_xcenter())
-    &amp;&amp; !(reflectProjectilesRight == true &amp;&amp; sprite_get_xcenter_object(other.id) &gt; sprite_get_xcenter())
-    {
+    &amp;&amp; !(reflectProjectilesRight &amp;&amp; sprite_get_xcenter_object(other.id) &gt; sprite_get_xcenter())
+    &amp;&amp; (!useHitBox || collision_rectangle(x + hitbox_left * sign(image_xscale), y + hitbox_top, x + hitbox_right * sign(image_xscale), y + hitbox_bottom, other, false, true)) {
         if dead == false
         {
             if canHit == true

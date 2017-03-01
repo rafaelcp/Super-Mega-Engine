@@ -4,7 +4,7 @@
 instance_deactivate_all(true);
 
 //Add more important objects as they are added
-instance_activate_object(objMegaman);
+instance_activate_object(prtPlayer);
 instance_activate_object(objGlobalControl);
 instance_activate_object(objHealthWeaponBar);
 

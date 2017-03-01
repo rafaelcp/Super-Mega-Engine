@@ -43,7 +43,25 @@ global.maxNumberOfBusterShots = cfgMaxNumberOfBusterShots;
 
 global.frozen = true;
 
+global.checkpoint = false;
+
+global.spriteLife = sprLife;
+global.spriteStageSelect = sprMMStageSelect;
+global.stageSelectFollow = true;
+
+//Characters
+var char_index = 0;
+for (var i = 0; object_exists(i); i++) {
+    if object_get_parent(i) == prtPlayer {
+        global.characters[char_index] = i;
+        global.charIndices[i] = char_index;
+        char_index++;
+    }
+}
+global.totalCharacters = array_length_1d(global.characters);
+
 //Weapons
+global.charWeapons = ds_map_create();
 with prtWeapon instance_destroy();
 var weapon_index = 0;
 for (var i = 0; object_exists(i); i++) {
@@ -140,12 +158,16 @@ global.end_layer = 999920;
 if cfgDebug || debug_mode {
     show_debug_overlay(true);
 }
-    
+
+setPlayer(global.characters[0]);
+
 instance_create(0, 0, objGlobalControl);
 instance_destroy();
 
 readTileObjects(); 
 readTileAnimations();
+
+
 </string>
           </argument>
         </arguments>

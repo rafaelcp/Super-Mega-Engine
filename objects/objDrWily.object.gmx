@@ -67,8 +67,8 @@ if vspeed &gt;= 0 &amp;&amp; insideView() {
     background_visible[1] = true;
 }
 
-if instance_exists(objMegaman) {
-    if objMegaman.x &gt; x {
+if instance_exists(prtPlayer) and prtPlayer.visible {
+    if prtPlayer.x &gt; x {
         image_xscale = -1;
     }
     else {

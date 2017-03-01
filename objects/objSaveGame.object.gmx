@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var max_saves = 3;
+            <string>var max_saves = 10;
 
 var map;
 
@@ -59,14 +59,16 @@ selected = global.lastSave;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.keyUpPressed {
+            <string>if (instance_exists(objFadeout)) exit;
+
+if global.keyUpPressed or global.keyLeftPressed {
     selected--;
     if selected &lt; 0 {
         selected = num_saves;
     }
     playSFX(sfxMenuMove);
 }
-else if global.keyDownPressed || global.keySelectPressed {
+else if global.keyDownPressed or global.keyRightPressed or global.keySelectPressed {
     selected++;
     if selected &gt; num_saves {
         selected = 0;
@@ -111,8 +113,28 @@ else if global.keyPausePressed || global.keyJumpPressed || global.keyShootPresse
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>for (var i = 0; i &lt; num_saves; i++) {
-    drawSave(i, saves[i], selected == i);
+            <string>draw_set_valign(fa_top);
+draw_set_font(global.font);
+var margin = 30;
+var top = 30;
+
+for (var i = 0; i &lt; num_saves; i++) {
+    if selected == i {
+        draw_set_colour(c_white);
+        var map = saves[i];
+        var oldchar = global.character;
+        if map &gt; - 1 {
+            setPlayer(map[? "character"]);
+        }
+        drawSave(i, map, selected == i);
+        setPlayer(oldchar);
+        draw_sprite(sprPassCursor, 0, margin + 1 + i * 16, top);
+    }
+    else {
+        draw_set_colour(c_gray);
+    }
+    draw_set_halign(fa_left);
+    draw_text(margin + 3 + i * 16, top + 3, string(i));
 }
 
 if selected == num_saves {
@@ -122,8 +144,11 @@ else {
     draw_set_colour(c_gray);
 }
 
-draw_set_halign(fa_center);
-draw_text(room_width / 2, room_height - 40, "BACK");
+//draw_set_halign(fa_center);
+//draw_text(room_width / 2, room_height - 40, "BACK");
+
+draw_set_halign(fa_right);
+draw_text(room_width - margin, top + 3, "BACK");
 </string>
           </argument>
         </arguments>

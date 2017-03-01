@@ -115,9 +115,9 @@ if target &gt; -1 {    //Chasing
 
 if target &lt; 0 and item &gt; -1 {   //Bringing item
     if instance_exists(item) {
-        if instance_exists(objMegaman) {
-            var dx = sprite_get_xcenter_object(objMegaman) - x;
-            var dy = sprite_get_ycenter_object(objMegaman) - y;
+        if instance_exists(prtPlayer) {
+            var dx = sprite_get_xcenter_object(prtPlayer) - x;
+            var dy = sprite_get_ycenter_object(prtPlayer) - y;
             var len = sqrt(dx*dx + dy*dy);
             xspeed = dx * spd / len;
             yspeed = dy * spd / len;

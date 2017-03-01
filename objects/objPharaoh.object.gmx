@@ -34,7 +34,7 @@ introLineCol = make_color_rgb(255, 204, 174);
 standSprite = sprPharaohStand;
 pose = sprPharaohPose;
 poseImgSpeed = 3/60;
-weaponID = objPharaohShotWeapon.ID; //The weapon ID in the pause screen; can be found in objGlobalControl's Create event
+weaponID = objPharaohShotWeapon;
 bossID = 7; //The ID on the stage select screen. The top-left has an ID of 0, then it goes clockwise (so the left panel's ID is 7)
             //The middle panel's ID is 8
 
@@ -118,13 +118,13 @@ if global.frozen == false
                 {
                     attackTimer = 35;
                     
-                    if instance_exists(objMegaman)
+                    if instance_exists(prtPlayer)
                     {
                         startXScale = image_xscale;
                         
                         //Calculate the time needed to jump to MM's position, and with that, calculate the horizontal speed
                         var dx, initYspeed;
-                        dx = sprite_get_xcenter_object(objMegaman) - sprite_get_xcenter();
+                        dx = sprite_get_xcenter_object(prtPlayer) - sprite_get_xcenter();
                         initYspeed = -6.5;
                         
                         var time, yy, yyspeed; //time: How much time (in frames) it would take to land on Mega Man's location
@@ -132,7 +132,7 @@ if global.frozen == false
                         yyspeed = initYspeed;
                         time = 0;
                         
-                        while yy &lt; objMegaman.bbox_bottom || yyspeed &lt; 0
+                        while yy &lt; prtPlayer.bbox_bottom || yyspeed &lt; 0
                         {
                             yyspeed += 0.25;
                             yy += yyspeed;
@@ -162,18 +162,18 @@ if global.frozen == false
                 
                 
                 //Face the player
-                if instance_exists(objMegaman)
+                if instance_exists(prtPlayer)
                 {
                     if startXScale == -1
                     {
-                        if x &gt; objMegaman.x
+                        if x &gt; prtPlayer.x
                             sprite_index = sprPharaohJump;
                         else
                             sprite_index = sprPharaohJumpBack;
                     }
                     else
                     {
-                        if x &gt; objMegaman.x
+                        if x &gt; prtPlayer.x
                             sprite_index = sprPharaohJumpBack;
                         else
                             sprite_index = sprPharaohJump;
@@ -280,20 +280,20 @@ if global.frozen == false
                     
                     
                 //Face the player
-                if instance_exists(objMegaman)
+                if instance_exists(prtPlayer)
                 {
                     if startXScale == -1
                     {
                         if sprite_index == sprPharaohJump || sprite_index == sprPharaohJumpBack
                         {
-                            if x &gt; objMegaman.x
+                            if x &gt; prtPlayer.x
                                 sprite_index = sprPharaohJump;
                             else
                                 sprite_index = sprPharaohJumpBack;
                         }
                         else if sprite_index == sprPharaohJumpShoot || sprite_index == sprPharaohJumpShootBack
                         {
-                            if x &gt; objMegaman.x
+                            if x &gt; prtPlayer.x
                                 sprite_index = sprPharaohJumpShoot;
                             else
                                 sprite_index = sprPharaohJumpShootBack;
@@ -303,14 +303,14 @@ if global.frozen == false
                     {
                         if sprite_index == sprPharaohJump || sprite_index == sprPharaohJumpBack
                         {
-                            if x &gt; objMegaman.x
+                            if x &gt; prtPlayer.x
                                 sprite_index = sprPharaohJumpBack;
                             else
                                 sprite_index = sprPharaohJump;
                         }
                         else if sprite_index == sprPharaohJumpShoot || sprite_index == sprPharaohJumpShootBack
                         {
-                            if x &gt; objMegaman.x
+                            if x &gt; prtPlayer.x
                                 sprite_index = sprPharaohJumpShootBack;
                             else
                                 sprite_index = sprPharaohJumpShoot;
@@ -384,9 +384,9 @@ if global.frozen == false
         
         
         //Face the player
-        if instance_exists(objMegaman)
+        if instance_exists(prtPlayer)
         {
-            if x &gt; objMegaman.x
+            if x &gt; prtPlayer.x
                 image_xscale = -1;
             else
                 image_xscale = 1;

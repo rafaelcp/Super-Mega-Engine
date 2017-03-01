@@ -49,6 +49,8 @@ persistent = true;
 primaryCol = make_color_rgb(0, 120, 248);
 secondaryCol = make_color_rgb(0, 232, 216);
 
+character = -1;
+
 ID = -1;
 </string>
           </argument>
@@ -72,7 +74,7 @@ ID = -1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with objMegaman canShoot = true;
+            <string>with prtPlayer canShoot = true;
 </string>
           </argument>
         </arguments>
@@ -157,7 +159,7 @@ if timer == 0 {
         ammo = 28;
         event_user(1);
     }
-    with objMegaman playerShoot();
+    with prtPlayer playerShoot();
     shots++;
 }
 timer++;
@@ -213,27 +215,27 @@ instance_create(240, 160, objTellySpawner);
             <kind>1</kind>
             <string>/// onReleaseCharge
 
-if objMegaman.image_xscale == 1
-    box = objMegaman.bbox_right + 6;
+if prtPlayer.image_xscale == 1
+    box = prtPlayer.bbox_right + 6;
 else
-    box = objMegaman.bbox_left - 6;
+    box = prtPlayer.bbox_left - 6;
     
-switch objMegaman.sprite_index {
-    case objMegaman.spriteStand: yy = objMegaman.y+4; break;
-    case objMegaman.spriteStep: yy = objMegaman.y+4; break;
-    case objMegaman.spriteWalk: yy = objMegaman.y+4; break;
-    case objMegaman.spriteJump: yy = objMegaman.y+3; break;
-    case objMegaman.spriteClimb: yy = objMegaman.y+4; break;
-    default: yy = objMegaman.y+4; break;
+switch prtPlayer.sprite_index {
+    case prtPlayer.spriteStand: yy = prtPlayer.y + prtPlayer.shoot_height; break;
+    case prtPlayer.spriteStep: yy = prtPlayer.y + prtPlayer.shoot_height; break;
+    case prtPlayer.spriteWalk: yy = prtPlayer.y + prtPlayer.shoot_height; break;
+    case prtPlayer.spriteJump: yy = prtPlayer.y + prtPlayer.jump_shoot_height; break;
+    case prtPlayer.spriteClimb: yy = prtPlayer.y + prtPlayer.shoot_height; break;
+    default: yy = prtPlayer.y + prtPlayer.shoot_height; break;
 }
 
-if objMegaman.climbing {
-    objMegaman.image_xscale = objMegaman.climbShootXscale;
+if prtPlayer.climbing {
+    prtPlayer.image_xscale = prtPlayer.climbShootXscale;
     
-    if objMegaman.image_xscale == 1
-        box = objMegaman.bbox_right;
+    if prtPlayer.image_xscale == 1
+        box = prtPlayer.bbox_right;
     else
-        box = objMegaman.bbox_left;
+        box = prtPlayer.bbox_left;
 }
 
 //chargeTimer = 0;
@@ -316,33 +318,33 @@ chargeTimer = 0;
 ok = true;
 
 if projectileCount() &gt;= maxshots
-|| ammo &lt;= 0 || !instance_exists(objMegaman) {
+|| ammo &lt;= 0 || !instance_exists(prtPlayer) {
     print("Can't shoot " + name);
     ok = false;
     return false;
 }
 
-if objMegaman.image_xscale == 1
-    box = objMegaman.bbox_right + 6;
+if prtPlayer.image_xscale == 1
+    box = prtPlayer.bbox_right + 6;
 else
-    box = objMegaman.bbox_left - 6;
+    box = prtPlayer.bbox_left - 6;
     
-switch objMegaman.sprite_index {
-    case objMegaman.spriteStand: yy = objMegaman.y+4; break;
-    case objMegaman.spriteStep: yy = objMegaman.y+4; break;
-    case objMegaman.spriteWalk: yy = objMegaman.y+4; break;
-    case objMegaman.spriteJump: yy = objMegaman.y+3; break;
-    case objMegaman.spriteClimb: yy = objMegaman.y+4; break;
-    default: yy = objMegaman.y+4; break;
+switch prtPlayer.sprite_index {
+    case prtPlayer.spriteStand: yy = prtPlayer.y+prtPlayer.shoot_height; break;
+    case prtPlayer.spriteStep: yy = prtPlayer.y+prtPlayer.shoot_height; break;
+    case prtPlayer.spriteWalk: yy = prtPlayer.y+prtPlayer.shoot_height; break;
+    case prtPlayer.spriteJump: yy = prtPlayer.y+prtPlayer.jump_shoot_height; break;
+    case prtPlayer.spriteClimb: yy = prtPlayer.y+prtPlayer.shoot_height; break;
+    default: yy = prtPlayer.y+prtPlayer.shoot_height; break;
 }
 
-if objMegaman.climbing {
-    objMegaman.image_xscale = objMegaman.climbShootXscale;
+if prtPlayer.climbing {
+    prtPlayer.image_xscale = prtPlayer.climbShootXscale;
     
-    if objMegaman.image_xscale == 1
-        box = objMegaman.bbox_right;
+    if prtPlayer.image_xscale == 1
+        box = prtPlayer.bbox_right;
     else
-        box = objMegaman.bbox_left;
+        box = prtPlayer.bbox_left;
 }
 
 if sfx != noone {
@@ -354,18 +356,18 @@ if ammo &lt; 0 {
     ammo = 0;
 }
 if throw {
-    objMegaman.isThrow = true;
+    prtPlayer.isThrow = true;
 }
 else {
-     objMegaman.isShoot = true;
+     prtPlayer.isShoot = true;
 }
 
-objMegaman.shootTimer = 0;
+prtPlayer.shootTimer = 0;
 
 print("Shooting " + name);
 
 if (cooldown &gt; 0) {
-    with objMegaman canShoot = false;
+    with prtPlayer canShoot = false;
     alarm[11] = cooldown;
 }
 </string>

@@ -172,7 +172,7 @@ if !global.frozen and !dead {
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="objMegaman">
+    <event eventtype="4" ename="prtPlayer">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -189,10 +189,8 @@ if !global.frozen and !dead {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if dead == false
-{
-    if other.canHit == true
-    {  
+            <string>if !dead {
+    if other.canHit {  
         with other playerGetHit(other.contactDamage);
     }
 }
@@ -270,8 +268,8 @@ if !global.frozen and !dead {
     with other {
         var ID = instance_create(x, y, objReflectedProjectile);
         ID.sprite_index = sprite_index;
-        ID.image_index = image_index;
-        ID.image_speed = image_speed;
+        ID.image_index = 0;//image_index;
+        ID.image_speed = 0;//image_speed;
         ID.image_xscale = image_xscale;
         ID.dir = sign(xspeed);
             

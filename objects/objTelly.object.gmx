@@ -56,7 +56,7 @@ move_speed = 0.3;
             <string>event_inherited();
 
 if !global.frozen &amp;&amp; !dead {
-    with objMegaman {
+    with prtPlayer {
         dirX = sprite_get_xcenter() - sprite_get_xcenter_object(other);
         dirY = sprite_get_ycenter() - sprite_get_ycenter_object(other);
         len = sqrt(dirX * dirX + dirY * dirY);

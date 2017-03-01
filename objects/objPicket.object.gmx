@@ -32,10 +32,10 @@ image_speed = 1/6;
 
 yspeed = -6;
 
-if instance_exists(objMegaman)
+if instance_exists(prtPlayer)
 {
-    dx = abs(x - objMegaman.x);
-    dy = objMegaman.y - y;
+    dx = abs(x - prtPlayer.x);
+    dy = prtPlayer.y - y;
     
     if dy &gt; -9 || dy &lt; -18
     {

@@ -89,7 +89,7 @@ while place_meeting(x, y, objSolid) {
           <argument>
             <kind>1</kind>
             <string>if !global.frozen {
-    if !instance_exists(objMegaman) and insideView() {
+    if !instance_exists(prtPlayer) and insideView() {
         instance_destroy();
         exit;
     }
@@ -99,7 +99,7 @@ while place_meeting(x, y, objSolid) {
                 y = view_yview[0];
                 yspeed = cfgRushTeleportSpeed;
             }
-            if (!called or abs(objMegaman.y - y) &lt; 64) and place_meeting(x, y + yspeed, objSolid) and place_free(x, y) {
+            if (!called or abs(prtPlayer.y - y) &lt; 64) and place_meeting(x, y + yspeed, objSolid) and place_free(x, y) {
                 image_speed = anim_spd * 2;
                 while !place_meeting(x, y + 1, objSolid) {
                     y++;
@@ -115,7 +115,7 @@ while place_meeting(x, y, objSolid) {
             while !place_meeting(x, y + 1, objSolid) {
                 y++;
             }
-            if objMegaman.x &lt; x {
+            if prtPlayer.x &lt; x {
                 image_xscale = -1;
             }
         }        
@@ -128,7 +128,7 @@ while place_meeting(x, y, objSolid) {
         else {
             yspeed = 0;
         }
-        if !delivering and abs(objMegaman.x - x) &gt; 48 { //Walking towards Mega Man
+        if !delivering and abs(prtPlayer.x - x) &gt; 48 { //Walking towards Mega Man
             xspeed = image_xscale * spd;
             x += xspeed;
             if image_index &gt;= 3 and image_speed &gt; 0 {

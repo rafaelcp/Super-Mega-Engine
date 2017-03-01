@@ -1,6 +1,8 @@
 //bin_base_password()
 bin_pass = "";
 //If you don't want something to be stored in the password, just comment the line
+print("char bits", ceil(log2(global.totalCharacters)), "char", global.charIndices[global.character]);
+bin_pass += dec_to_bin(global.charIndices[global.character], ceil(log2(global.totalCharacters)));
 bin_pass += dec_to_bin(global._lives, 4);
 bin_pass += dec_to_bin(global.screws, 10);
 

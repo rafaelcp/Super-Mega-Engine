@@ -205,9 +205,9 @@ if (global.enableSlideKey) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if instance_exists(objMegaman) {
-    x = objMegaman.x;
-    y = objMegaman.y;
+            <string>if instance_exists(prtPlayer) {
+    x = prtPlayer.x;
+    y = prtPlayer.y;
 }
 
 if global.loopEnd &gt; -1 &amp;&amp; global.loopStart &gt; -1 &amp;&amp; global.bgm &gt; -1 {    //Loop point
@@ -275,7 +275,7 @@ if keyboard_check_pressed(vk_escape)
 if keyboard_check_pressed(vk_f6) debug_password();
 if keyboard_check_pressed(vk_f7) saveGame(0);
 if keyboard_check_pressed(vk_f8) loadGame(0);
-if keyboard_check_pressed(vk_f11) with objMegaman grav *= -1;
+//if keyboard_check_pressed(vk_f11) with prtPlayer grav *= -1;
 
 if keyboard_check(vk_add) global.screws++;
 if keyboard_check(vk_subtract) global.screws--;

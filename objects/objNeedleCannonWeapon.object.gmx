@@ -61,7 +61,7 @@ shot = 0;
           <argument>
             <kind>1</kind>
             <string>///onCharging (used here for rapid fire)
-if !global.frozen and instance_exists(objMegaman) and objMegaman.canShoot and !objMegaman.isSlide and (objMegaman.canMove or objMegaman.climbing) {
+if !global.frozen and instance_exists(prtPlayer) and prtPlayer.canShoot and !prtPlayer.isSlide and (prtPlayer.canMove or prtPlayer.climbing) {
     event_user(1);
 }
 </string>
@@ -90,7 +90,7 @@ if !global.frozen and instance_exists(objMegaman) and objMegaman.canShoot and !o
 event_inherited();
 if !ok return false;    //This line should be on every weapon
 
-attackID = instance_create(box + objMegaman.image_xscale * 8, yy + shot * 4 - 2, objNeedleCannon);
+attackID = instance_create(box + prtPlayer.image_xscale * 8, yy + shot * 4 - 2, objNeedleCannon);
 shot = 1 - shot;
 </string>
           </argument>

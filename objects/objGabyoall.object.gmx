@@ -111,14 +111,14 @@ beginStartDir = startDir;
             <string>event_inherited();
 
 if !global.frozen and !dead {
-    if instance_exists(objMegaman) {
-        if x &lt; objMegaman.x
+    if instance_exists(prtPlayer) {
+        if x &lt; prtPlayer.x
             image_xscale = 1;
         else
             image_xscale = -1;
         
         // If this Gabyoall and Mega Man are on the same height, have the Gabyoall start dashing.
-        if abs(y - (objMegaman.y - objMegaman.sprite_yoffset + objMegaman.sprite_height)) &lt; 4
+        if abs(y - (prtPlayer.y - prtPlayer.sprite_yoffset + prtPlayer.sprite_height)) &lt; 4
             dashing = true;
         else
             dashing = false;

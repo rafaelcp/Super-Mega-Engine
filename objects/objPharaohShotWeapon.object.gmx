@@ -66,9 +66,9 @@ if shots == 3 {
     with global.weapons[global.currentWeapon] event_user(3);
 }
 if instance_exists(objPharaohShotCharging) and objPharaohShotCharging.sprite_index == sprPharaohShotCharged {
-    objMegaman.canMove = true;
+    prtPlayer.canMove = true;
     event_user(4);
-    objMegaman.canMove = false;
+    prtPlayer.canMove = false;
 }
 if timer == 0 {
     switch shots {
@@ -114,14 +114,14 @@ if timer &gt; maxTimer {
 event_inherited();
 
 if instance_exists(objPharaohShotCharging) {
-    if (objMegaman.canMove || objMegaman.climbing) {
+    if (prtPlayer.canMove || prtPlayer.climbing) {
         initChargeTimer = 0;
         chargeTimer = 0;        
         if objPharaohShotCharging.sprite_index == sprPharaohShotCharging { //Small shot
             event_user(1);
         }
         else {  //Big shot
-            attackID = instance_create(box + objMegaman.image_xscale * 10, yy, objPharaohShotCharged);
+            attackID = instance_create(box + prtPlayer.image_xscale * 10, yy, objPharaohShotCharged);
                 
             if global.keyUp &amp;&amp; !global.keyDown
                 attackID.yspeed = -4.5;
@@ -131,8 +131,8 @@ if instance_exists(objPharaohShotCharging) {
                 attackID.yspeed = 0;
                 
             playSFX(sfxPharaohShotCharged);
-            objMegaman.isThrow = true;
-            objMegaman.shootTimer = 0;
+            prtPlayer.isThrow = true;
+            prtPlayer.shootTimer = 0;
             
         }
         
@@ -174,7 +174,7 @@ event_inherited();
 if !instance_exists(objPharaohShotCharging) {
     initChargeTimer++;
     if initChargeTimer &gt;= initChargeTime {
-        instance_create(objMegaman.x + objMegaman.image_xscale, objMegaman.y - 20, objPharaohShotCharging);
+        instance_create(prtPlayer.x + prtPlayer.image_xscale, prtPlayer.y - 20, objPharaohShotCharging);
         initChargeTimer = 0;
         chargeTimer = 1;
     }
@@ -205,7 +205,7 @@ if !instance_exists(objPharaohShotCharging) {
 event_inherited();
 if !ok return false;    //This line must be on every weapon
 
-attackID = instance_create(box + objMegaman.image_xscale * 4, yy, objPharaohShot);
+attackID = instance_create(box + prtPlayer.image_xscale * 4, yy, objPharaohShot);
     
 if global.keyUp &amp;&amp; !global.keyDown
     attackID.yspeed = -4.5;

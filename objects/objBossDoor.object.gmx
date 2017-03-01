@@ -108,11 +108,11 @@ if canOpen {
             mySolid.x = x;
         }
     }
-    if instance_exists(objMegaman) {
+    if instance_exists(prtPlayer) {
         //Colliding with the player. We're checking x+7 because in the NES games, the player needs to be slightly inside the door
         //for it to activate.
-        if (collision_rectangle(x+7, y, x+7, y+sprite_height, objMegaman, false, false) &amp;&amp; dir == -1)
-        || (collision_rectangle(x+sprite_width-7, y, x+sprite_width-7, y+sprite_height, objMegaman, false, false) &amp;&amp; dir == 1) {
+        if (collision_rectangle(x+7, y, x+7, y+sprite_height, prtPlayer, false, false) &amp;&amp; dir == -1)
+        || (collision_rectangle(x+sprite_width-7, y, x+sprite_width-7, y+sprite_height, prtPlayer, false, false) &amp;&amp; dir == 1) {
             canOpen = false;
             opening = true;
             image_speed = openImgSpeed;
@@ -123,7 +123,7 @@ if canOpen {
             //Switch sections
             if dir == -1 //Switch to the right
             {
-                with objMegaman
+                with prtPlayer
                 {
                     instance_activate_object(objSectionBorderLeft);
                     instance_activate_object(objSectionBorderRight);
@@ -140,7 +140,7 @@ if canOpen {
                 }
             }
             else { //Switch to the left
-                with objMegaman {
+                with prtPlayer {
                     instance_activate_object(objSectionBorderLeft);
                     instance_activate_object(objSectionBorderRight);
                     instance_activate_object(objSectionBorderTop);
@@ -188,9 +188,9 @@ if closing {
             
         with objSectionSwitcher {
             global.frozen = false;
-            objMegaman.visible = true;
+            prtPlayer.visible = true;
             instance_destroy();
-            with objMegaman playerDeactivateObjects();
+            with prtPlayer playerDeactivateObjects();
         }
         
         closing = false;

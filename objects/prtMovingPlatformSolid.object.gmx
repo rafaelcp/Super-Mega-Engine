@@ -60,23 +60,24 @@ keepOnSwitch = false;
 
 //If transitioning on top of a moving platform, move the platform at the same speed as Mega Man
 //Different conditions for browser or desktop, at least until this issue is better understood
-if keepOnSwitch &amp;&amp; global.frozen &amp;&amp; !dead &amp;&amp; instance_exists(objSectionSwitcher) &amp;&amp; instance_exists(objMegaman) &amp;&amp; ( (os_browser == browser_not_a_browser &amp;&amp; place_meeting(x, y-1, objMegaman) ) || (os_browser != browser_not_a_browser &amp;&amp; place_meeting(x, bbox_top-1, objMegaman) )) &amp;&amp; objSectionSwitcher.plt == self {
+if keepOnSwitch &amp;&amp; global.frozen &amp;&amp; !dead &amp;&amp; instance_exists(objSectionSwitcher) &amp;&amp; instance_exists(prtPlayer) &amp;&amp; ( (os_browser == browser_not_a_browser &amp;&amp; place_meeting(x, y-1, prtPlayer) ) || (os_browser != browser_not_a_browser &amp;&amp; place_meeting(x, bbox_top-1, prtPlayer) )) &amp;&amp; objSectionSwitcher.plt == self {
     x += objSectionSwitcher.playerSpeedHor * sign(xspeed);
+
     //Small hop workaround
     if os_browser == browser_not_a_browser
         y += objSectionSwitcher.playerSpeedVert * sign(yspeed);
     else
-        y = objMegaman.bbox_bottom + sprite_yoffset + 1 + objSectionSwitcher.playerSpeedVert;
+        y = prtPlayer.bbox_bottom + sprite_yoffset + 1 + objSectionSwitcher.playerSpeedVert;
 }
 
 if global.frozen == false &amp;&amp; dead == false
 {
     //Top
-    if collision_rectangle(bbox_left+1, bbox_top-1, bbox_right-1, bbox_top, objMegaman, false, false)
+    if collision_rectangle(bbox_left+1, bbox_top-1, bbox_right-1, bbox_top, prtPlayer, false, false)
     {
-        if objMegaman.bbox_bottom &lt;= bbox_top+abs(yspeed)
+        if prtPlayer.bbox_bottom &lt;= bbox_top+abs(yspeed)
         {
-            with objMegaman
+            with prtPlayer
             {
                 if !place_meeting(x + global.xspeed+other.xspeed + sign(global.xspeed+other.xspeed), y, objSolid)
                 &amp;&amp; !((place_meeting(x, y + global.yspeed+other.yspeed + sign(global.yspeed+other.yspeed), objSolid) &amp;&amp; global.yspeed+other.yspeed &lt; 0)
@@ -109,16 +110,16 @@ if global.frozen == false &amp;&amp; dead == false
     }
     else if prevPlayer == true
     {
-        if instance_exists(objMegaman)
+        if instance_exists(prtPlayer)
         {
             //When walking off the platform on the right when the platform is moving to the right (and the same goes for left),
             //the player spawned on top of the platform, which prevented them from walking off. This code fixes that
-            if ((collision_rectangle(bbox_left+xspeed-1, bbox_top-1, bbox_left, bbox_bottom, objMegaman, false, false) &amp;&amp; xspeed &lt; 0)
-            || (collision_rectangle(bbox_right+xspeed+1, bbox_top-1, bbox_right, bbox_bottom, objMegaman, false, false) &amp;&amp; xspeed &gt; 0))
-            &amp;&amp; !collision_rectangle(objMegaman.bbox_left, objMegaman.bbox_bottom, objMegaman.bbox_right, objMegaman.bbox_bottom+1, objSolid, false, true)
-            &amp;&amp; !collision_rectangle(objMegaman.bbox_left, objMegaman.bbox_bottom, objMegaman.bbox_right, objMegaman.bbox_bottom+1, objTopSolid, false, true)
+            if ((collision_rectangle(bbox_left+xspeed-1, bbox_top-1, bbox_left, bbox_bottom, prtPlayer, false, false) &amp;&amp; xspeed &lt; 0)
+            || (collision_rectangle(bbox_right+xspeed+1, bbox_top-1, bbox_right, bbox_bottom, prtPlayer, false, false) &amp;&amp; xspeed &gt; 0))
+            &amp;&amp; !collision_rectangle(prtPlayer.bbox_left, prtPlayer.bbox_bottom, prtPlayer.bbox_right, prtPlayer.bbox_bottom+1, objSolid, false, true)
+            &amp;&amp; !collision_rectangle(prtPlayer.bbox_left, prtPlayer.bbox_bottom, prtPlayer.bbox_right, prtPlayer.bbox_bottom+1, objTopSolid, false, true)
             {
-                with objMegaman y += 1;
+                with prtPlayer y += 1;
             }
             
             prevPlayer = false;
@@ -126,11 +127,11 @@ if global.frozen == false &amp;&amp; dead == false
     }
     
     //Right
-    if collision_rectangle(bbox_right-1, bbox_top, bbox_right, bbox_bottom, objMegaman, false, false) &amp;&amp; xspeed &gt; 0
+    if collision_rectangle(bbox_right-1, bbox_top, bbox_right, bbox_bottom, prtPlayer, false, false) &amp;&amp; xspeed &gt; 0
     {
-        if objMegaman.bbox_left &gt;= bbox_right-abs(xspeed)
+        if prtPlayer.bbox_left &gt;= bbox_right-abs(xspeed)
         {
-            with objMegaman
+            with prtPlayer
             {
                 if !place_meeting(x + global.xspeed+other.xspeed + sign(global.xspeed+other.xspeed), y, objSolid)
                 {
@@ -160,11 +161,11 @@ if global.frozen == false &amp;&amp; dead == false
     }
     
     //Left
-    if collision_rectangle(bbox_left+1, bbox_top, bbox_left, bbox_bottom, objMegaman, false, false) &amp;&amp; xspeed &lt; 0
+    if collision_rectangle(bbox_left+1, bbox_top, bbox_left, bbox_bottom, prtPlayer, false, false) &amp;&amp; xspeed &lt; 0
     {
-        if objMegaman.bbox_right &lt;= bbox_left+abs(xspeed)
+        if prtPlayer.bbox_right &lt;= bbox_left+abs(xspeed)
         {
-            with objMegaman
+            with prtPlayer
             {
                 if !place_meeting(x + global.xspeed+other.xspeed + sign(global.xspeed+other.xspeed), y, objSolid)
                 {
@@ -194,11 +195,11 @@ if global.frozen == false &amp;&amp; dead == false
     }
     
     //Bottom
-    if collision_rectangle(bbox_left+2, bbox_bottom+1, bbox_right-2, bbox_bottom, objMegaman, false, false)
+    if collision_rectangle(bbox_left+2, bbox_bottom+1, bbox_right-2, bbox_bottom, prtPlayer, false, false)
     {
-        if objMegaman.bbox_top &gt;= bbox_bottom-abs(yspeed)
+        if prtPlayer.bbox_top &gt;= bbox_bottom-abs(yspeed)
         {
-            with objMegaman
+            with prtPlayer
             {
                 if place_meeting(x, y + global.yspeed+other.yspeed + sign(global.yspeed+other.yspeed), objSolid) &amp;&amp; global.yspeed+other.yspeed &gt; 0
                 {

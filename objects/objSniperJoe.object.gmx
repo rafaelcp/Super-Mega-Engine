@@ -76,9 +76,9 @@ image_index = 0;
             <string>event_inherited();
 
 if !global.frozen &amp;&amp; !dead {
-    if instance_exists(objMegaman) {
+    if instance_exists(prtPlayer) {
         // Turn right.
-        if x &lt; objMegaman.x
+        if x &lt; prtPlayer.x
             image_xscale = 1;
         // Turn left.
         else

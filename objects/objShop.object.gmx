@@ -37,6 +37,15 @@ cursorCounter = 0;
 cursorSprite = 0;
 autoImg = 0;
 megaImg = 0;
+
+var bg = asset_get_index("bg" + global.sprName + "Shop");
+if (bg == -1) bg = bgShop;
+background_index[0] = bg;
+
+var bgm = asset_get_index("bgm" + global.sprName + "Shop");
+if (bgm == -1) bgm = bgmShop;
+stopAllSFX();
+playMusic(bgm);
 </string>
           </argument>
         </arguments>
@@ -59,7 +68,9 @@ megaImg = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var total_items_ = array_length_1d(global.items);
+            <string>if (instance_exists(objFadeout)) exit;
+
+var total_items_ = array_length_1d(global.items);
 var total_items = 0;
 for (var i = 0; i &lt; total_items_; i++) {
     if global.items[i].buyable {
@@ -73,10 +84,10 @@ if autoImg &gt;= 2 {
     autoImg = 0;
 }
 if floor(megaImg) == 0 {
-    megaImg += 0.01;
+    megaImg += 1 / global.blinkTimerMax;
 }
 else {
-    megaImg += 0.1;
+    megaImg += 1 / global.blinkDuration;
 }
 if megaImg &gt;= 2 {
     megaImg = 0;
@@ -249,8 +260,8 @@ draw_sprite_ext(sprShopCursor, cursorSprite, currX, currY, sX, sY, 0, c_white, 1
 
 
 //Screws
-draw_sprite(sprScrewBig, 0, 43, 90);
-draw_text(66, 96, string_replace_all(string_format(global.screws, 3, 0), " ", "0"));
+draw_sprite(sprScrewBig, 0, 33, 99);
+draw_text(56, 105, string_replace_all(string_format(global.screws, 3, 0), " ", "0"));
 
 //Exit
 draw_rectangle(175, 95, 214, 104, c_black);
@@ -261,7 +272,7 @@ draw_set_color(c_white);
 
 //Sprites
 draw_sprite(sprAuto, autoImg, 40, 127);
-draw_sprite_ext(sprMegamanStand, megaImg, 198, 145, -1, 1, 0, c_white, 1);
+draw_sprite_ext(global.spriteStand, megaImg, 198, 145, -1, 1, 0, c_white, 1);
 
 if option &lt; total_items {
     //Item Name

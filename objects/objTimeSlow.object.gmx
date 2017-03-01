@@ -129,9 +129,9 @@ if activating and radius &gt; 256 {
 }
 
 if !global.frozen {
-    if instance_exists(objMegaman) {
-        x = sprite_get_xcenter_object(objMegaman);
-        y = sprite_get_ycenter_object(objMegaman);
+    if instance_exists(prtPlayer) {
+        x = sprite_get_xcenter_object(prtPlayer);
+        y = sprite_get_ycenter_object(prtPlayer);
     }
     
     if alarm[1] &gt; 0 {
@@ -224,7 +224,8 @@ else if alarm[1] &gt; 0 {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if activating and instance_exists(objMegaman) {
+            <string>if activating and instance_exists(prtPlayer) {
+    draw_set_alpha(0.5);
     draw_set_color(c_purple);
     draw_circle(x, y, radius - 0.5, true);
     draw_circle(x, y, radius + 0.5, true);
@@ -242,6 +243,7 @@ else if alarm[1] &gt; 0 {
     draw_circle(x, y, radius / 4 + 0.5, true);
     draw_set_color(c_fuchsia);
     draw_circle(x, y, radius / 4, true);
+    draw_set_alpha(1);
 }
 
 if alarm[1] &gt; 0 {

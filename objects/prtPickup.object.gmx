@@ -157,11 +157,11 @@ if !(alarm[0] != -1 || alarm[1] != -1)
         gravityCheckGround();
         generalCollision();
         
-        y += yspeed;
+        y += yspeed * update_rate;
         if ground {
             xspeed = 0;
         }
-        x += xspeed;
+        x += xspeed * update_rate;
         if !insideView() {
             instance_destroy();
         }
@@ -169,9 +169,9 @@ if !(alarm[0] != -1 || alarm[1] != -1)
 }
 else {
     if alarm[0] != -1
-        alarm[0] += 1;
+        alarm[0]++;
     if alarm[1] != -1
-        alarm[1] += 1;
+        alarm[1]++;
     image_speed = 0;
 }
 </string>
@@ -179,7 +179,7 @@ else {
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="objMegaman">
+    <event eventtype="4" ename="prtPlayer">
       <action>
         <libid>1</libid>
         <id>603</id>

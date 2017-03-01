@@ -36,7 +36,7 @@ with prtPlayerProjectile if destroyOnScroll instance_destroy();
 with prtRush instance_destroy();
 with objRushJet instance_destroy();
 
-with objMegaman {
+with prtPlayer {
     if onRushJet {
         onRushJet = false;
         canMove = true;
@@ -47,15 +47,15 @@ with objMegaman {
 with prtEnemyProjectile instance_destroy();
 deactivateUnimportantObjects();
 
-if instance_exists(objMegaman)
+if instance_exists(prtPlayer)
 {
     //Basically copy the player's appearance, so that the object can return to its original behaviour when done switching sections
-    with objMegaman visible = false;
-    sprite_index = objMegaman.sprite_index;
-    image_index = objMegaman.image_index;
-    imgSpd = objMegaman.image_speed;
+    with prtPlayer visible = false;
+    sprite_index = prtPlayer.sprite_index;
+    image_index = prtPlayer.image_index;
+    imgSpd = prtPlayer.image_speed;
     image_speed = imgSpd;
-    image_xscale = objMegaman.image_xscale;
+    image_xscale = prtPlayer.image_xscale;
     
     alarm[0] = 1;
 }
@@ -131,7 +131,7 @@ canProgressDoor = true;
             <string>if door {
     image_speed = 0;
     alarm[1] = ceil(4 / 0.15)
-    with objMegaman {
+    with prtPlayer {
         if isHit {
             hitTimer = hitTime;
         }
@@ -177,29 +177,29 @@ if canStep == true &amp;&amp; (playerSpeedHorDoor != 0 &amp;&amp; playerSpeedVer
             if door == false
             {
                 x += playerSpeedHor;
-                objMegaman.x += playerSpeedHor;
+                prtPlayer.x += playerSpeedHor;
             }
             else
             {
                 x += playerSpeedHorDoor;
-                objMegaman.x += playerSpeedHorDoor;
+                prtPlayer.x += playerSpeedHorDoor;
             }
             
-            if view_xview[0] &gt;= objMegaman.sectionLeft
+            if view_xview[0] &gt;= prtPlayer.sectionLeft
             {
-                view_xview[0] = objMegaman.sectionLeft;
+                view_xview[0] = prtPlayer.sectionLeft;
                 
                 if door == false
                 {
                     global.frozen = false;
-                    objMegaman.visible = true;
+                    prtPlayer.visible = true;
                     instance_destroy();
-                    with objMegaman playerDeactivateObjects();
+                    with prtPlayer playerDeactivateObjects();
                 }
                 else
                 {
                     var bossdr;
-                    bossdr = instance_place(objMegaman.sectionLeft, y, objBossDoor);
+                    bossdr = instance_place(prtPlayer.sectionLeft, y, objBossDoor);
                     if bossdr &gt;= 0
                     {
                         bossdr.opening = false;
@@ -212,9 +212,9 @@ if canStep == true &amp;&amp; (playerSpeedHorDoor != 0 &amp;&amp; playerSpeedVer
                     else
                     {
                         global.frozen = false;
-                        objMegaman.visible = true;
+                        prtPlayer.visible = true;
                         instance_destroy();
-                        with objMegaman playerDeactivateObjects();
+                        with prtPlayer playerDeactivateObjects();
                     }
                 }
             }
@@ -228,29 +228,29 @@ if canStep == true &amp;&amp; (playerSpeedHorDoor != 0 &amp;&amp; playerSpeedVer
             if door == false
             {
                 x -= playerSpeedHor;
-                objMegaman.x -= playerSpeedHor;
+                prtPlayer.x -= playerSpeedHor;
             }
             else
             {
                 x -= playerSpeedHorDoor;
-                objMegaman.x -= playerSpeedHorDoor;
+                prtPlayer.x -= playerSpeedHorDoor;
             }
             
-            if view_xview[0] &lt;= objMegaman.sectionRight-view_wview[0]
+            if view_xview[0] &lt;= prtPlayer.sectionRight-view_wview[0]
             {
-                view_xview[0] = objMegaman.sectionRight-view_wview[0];
+                view_xview[0] = prtPlayer.sectionRight-view_wview[0];
                 
                 if door == false
                 {
                     global.frozen = false;
-                    objMegaman.visible = true;
+                    prtPlayer.visible = true;
                     instance_destroy();
-                    with objMegaman playerDeactivateObjects();
+                    with prtPlayer playerDeactivateObjects();
                 }
                 else
                 {
                     var bossdr;
-                    bossdr = instance_place(objMegaman.sectionRight, y, objBossDoor);
+                    bossdr = instance_place(prtPlayer.sectionRight, y, objBossDoor);
                     if bossdr &gt;= 0
                     {
                         bossdr.opening = false;
@@ -263,9 +263,9 @@ if canStep == true &amp;&amp; (playerSpeedHorDoor != 0 &amp;&amp; playerSpeedVer
                     else
                     {
                         global.frozen = false;
-                        objMegaman.visible = true;
+                        prtPlayer.visible = true;
                         instance_destroy();
-                        with objMegaman playerDeactivateObjects();
+                        with prtPlayer playerDeactivateObjects();
                     }
                 }
             }
@@ -279,30 +279,30 @@ if canStep == true &amp;&amp; (playerSpeedHorDoor != 0 &amp;&amp; playerSpeedVer
             if door == false
             {
                 y += playerSpeedVert;
-                objMegaman.y += playerSpeedVert;
+                prtPlayer.y += playerSpeedVert;
             }
             else
             {
                 y += playerSpeedVertDoor;
-                objMegaman.y += playerSpeedVertDoor;
+                prtPlayer.y += playerSpeedVertDoor;
             }            
             
-            if view_yview[0] &gt;= objMegaman.sectionTop
+            if view_yview[0] &gt;= prtPlayer.sectionTop
             {
-                view_yview[0] = objMegaman.sectionTop;
+                view_yview[0] = prtPlayer.sectionTop;
                 
                 if door == false
                 {
                     global.frozen = false;
-                    objMegaman.visible = true;
+                    prtPlayer.visible = true;
                     instance_destroy();
-                    with objMegaman playerDeactivateObjects();
+                    with prtPlayer playerDeactivateObjects();
                     instance_activate_object(prtEnemy); //To not make it invisible for 1 frame after re-entering the section
                 }
                 else
                 {
                     var bossdr;
-                    bossdr = instance_place(x, objMegaman.sectionTop, objBossDoorH);
+                    bossdr = instance_place(x, prtPlayer.sectionTop, objBossDoorH);
                     if bossdr &gt;= 0
                     {
                         bossdr.opening = false;
@@ -315,9 +315,9 @@ if canStep == true &amp;&amp; (playerSpeedHorDoor != 0 &amp;&amp; playerSpeedVer
                     else
                     {
                         global.frozen = false;
-                        objMegaman.visible = true;
+                        prtPlayer.visible = true;
                         instance_destroy();
-                        with objMegaman playerDeactivateObjects();
+                        with prtPlayer playerDeactivateObjects();
                     }
                 }                
             }
@@ -333,29 +333,29 @@ if canStep == true &amp;&amp; (playerSpeedHorDoor != 0 &amp;&amp; playerSpeedVer
             if door == false
             {
                 y -= playerSpeedVert;
-                objMegaman.y -= playerSpeedVert;
+                prtPlayer.y -= playerSpeedVert;
             }
             else
             {
                 y -= playerSpeedVertDoor;
-                objMegaman.y -= playerSpeedVertDoor;
+                prtPlayer.y -= playerSpeedVertDoor;
             }            
 
-            if view_yview[0] &lt;= objMegaman.sectionBottom - view_hview[0]
+            if view_yview[0] &lt;= prtPlayer.sectionBottom - view_hview[0]
             {
-                view_yview[0] = objMegaman.sectionBottom - view_hview[0];
+                view_yview[0] = prtPlayer.sectionBottom - view_hview[0];
 
                 if door == false
                 {
                     global.frozen = false;
-                    objMegaman.visible = true;
+                    prtPlayer.visible = true;
                     instance_destroy();
-                    with objMegaman playerDeactivateObjects();
+                    with prtPlayer playerDeactivateObjects();
                 }
                 else
                 {
                     var bossdr;
-                    bossdr = instance_place(x, objMegaman.sectionBottom, objBossDoorH);
+                    bossdr = instance_place(x, prtPlayer.sectionBottom, objBossDoorH);
                     if bossdr &gt;= 0
                     {
                         bossdr.opening = false;
@@ -368,9 +368,9 @@ if canStep == true &amp;&amp; (playerSpeedHorDoor != 0 &amp;&amp; playerSpeedVer
                     else
                     {
                         global.frozen = false;
-                        objMegaman.visible = true;
+                        prtPlayer.visible = true;
                         instance_destroy();
-                        with objMegaman playerDeactivateObjects();
+                        with prtPlayer playerDeactivateObjects();
                     }
                 }                                        
             }
@@ -379,13 +379,13 @@ if canStep == true &amp;&amp; (playerSpeedHorDoor != 0 &amp;&amp; playerSpeedVer
         }
         
         //Climbing animation
-        if sprite_index == sprMegamanClimb
+        if sprite_index == prtPlayer.spriteClimb
         {
             climbTimer += 1;
             if climbTimer &gt;= 8
             {
                 image_xscale = -image_xscale;
-                with objMegaman image_xscale = -image_xscale;
+                with prtPlayer image_xscale = -image_xscale;
                 climbTimer = 0;
             }
         }
@@ -394,7 +394,7 @@ if canStep == true &amp;&amp; (playerSpeedHorDoor != 0 &amp;&amp; playerSpeedVer
 
 
 //Quick weapon switching
-with objMegaman playerSwitchWeapons();
+with prtPlayer playerSwitchWeapons();
 </string>
           </argument>
         </arguments>
@@ -417,17 +417,15 @@ with objMegaman playerSwitchWeapons();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if instance_exists(objMegaman)
-{
+            <string>if instance_exists(prtPlayer) {
     drawPlayer();
     
     //Weapon icon (when using quick weapon switching)
-    if objMegaman.drawWeaponIcon == true
-    {
-        if objMegaman.climbing == false
-            draw_sprite_ext(sprWeaponIconsColor, global.weapon, round(objMegaman.x-8) + objMegaman.image_xscale, round(objMegaman.y-30), 1, 1, 0, c_white, 1);
+    if prtPlayer.drawWeaponIcon {
+        if !prtPlayer.climbing
+            draw_sprite_ext(sprWeaponIconsColor, global.weapons[global.weapon].ID, round(prtPlayer.x-8) + prtPlayer.image_xscale, round(prtPlayer.y-30), 1, 1, 0, c_white, 1);
         else
-            draw_sprite_ext(sprWeaponIconsColor, global.weapon, round(objMegaman.x-8), round(objMegaman.y-30), 1, 1, 0, c_white, 1);
+            draw_sprite_ext(sprWeaponIconsColor, global.weapons[global.weapon].ID, round(prtPlayer.x-8), round(prtPlayer.y-30), 1, 1, 0, c_white, 1);
     }
 }
 </string>

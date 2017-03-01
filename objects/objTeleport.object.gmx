@@ -90,7 +90,7 @@ if boss &gt; -1 &amp;&amp; global.bossRushDefeated[boss] {
             <string>/// Final teleport anim
 
 visible = true;
-sprite_index = sprMegamanTeleport;
+sprite_index = prtPlayer.spriteTeleport;
 out = true;
 </string>
           </argument>
@@ -117,11 +117,11 @@ out = true;
             <string>/// Go to destination
 
 //Move camera to destination
-objMegaman.x = toX;
-objMegaman.y = toY;
-objMegaman.newSectionXOffset = 0;
-objMegaman.newSectionYOffset = 0;
-with objMegaman playerCameraInit();
+prtPlayer.x = toX;
+prtPlayer.y = toY;
+prtPlayer.newSectionXOffset = 0;
+prtPlayer.newSectionYOffset = 0;
+with prtPlayer playerCameraInit();
 
 x = toX;
 y = toY;
@@ -153,7 +153,7 @@ show_debug_message("Teleport to (" + string(toX) + "," + string(toY) + ") now!")
 if timerLED &gt;= 2 {
     timerLED = 0;
 }
-if sprite_index == sprMegamanTeleport {
+if sprite_index == prtPlayer.spriteTeleport {
     if image_index &gt;= 2 {
         if !out {
             visible = false;
@@ -173,10 +173,10 @@ if sprite_index == sprMegamanTeleport {
                     playerFreeMovement()
                 }
             }
-            objMegaman.x = toX;
-            objMegaman.y = toY;
-            objMegaman.visible = true;
-            objMegaman.image_xscale = toDir;
+            prtPlayer.x = toX;
+            prtPlayer.y = toY;
+            prtPlayer.visible = true;
+            prtPlayer.image_xscale = toDir;
             x = origX;
             y = origY;            
             visible = false;
@@ -194,7 +194,7 @@ if sprite_index == sprMegamanTeleport {
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="objMegaman">
+    <event eventtype="4" ename="prtPlayer">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -211,11 +211,11 @@ if sprite_index == sprMegamanTeleport {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if on &amp;&amp; sprite_index != sprMegamanTeleport &amp;&amp; collision_point(x + 8, y + 8, other, false, false) {
+            <string>if on &amp;&amp; sprite_index != prtPlayer.spriteTeleport &amp;&amp; collision_point(x + 8, y + 8, other, false, false) {
     x = other.x;
     y = other.y;
     visible = true;
-    sprite_index = sprMegamanTeleport;
+    sprite_index = prtPlayer.spriteTeleport;
     image_speed = 0.15;
     with other {
         visible = false;
@@ -254,10 +254,10 @@ if sprite_index == sprMegamanTeleport {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if sprite_index == sprMegamanTeleport {
+            <string>if sprite_index == prtPlayer.spriteTeleport {
     drawSelf3Colors(global.primaryCol, global.secondaryCol, global.outlineCol);
 }
-if on &amp;&amp; drawLED &amp;&amp; sprite_index != sprMegamanTeleport &amp;&amp; timerLED &gt; 0.5 {
+if on &amp;&amp; drawLED &amp;&amp; sprite_index != prtPlayer.spriteTeleport &amp;&amp; timerLED &gt; 0.5 {
     draw_rectangle_colour(x + 11, y - 22, x + 20, y - 21, c_red, c_red, c_red, c_red, false);
 }
 </string>

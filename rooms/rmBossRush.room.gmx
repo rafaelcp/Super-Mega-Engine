@@ -51,7 +51,6 @@
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="objMegaman" x="64" y="192" name="inst_98467B97" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCheckpoint" x="16" y="480" name="inst_B26A3F27" locked="0" code="xx = 127;&#xA;yy = 528;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="objWeaponEnergyBig" x="16" y="144" name="inst_792EECE9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWeaponEnergyBig" x="224" y="144" name="inst_05A0D460" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -80,6 +79,7 @@
     <instance objName="objWilyMachine4" x="384" y="352" name="inst_8FF033F5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDestructibleWall" x="192" y="240" name="inst_73E2CD61" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMTank" x="208" y="256" name="inst_5D3D2013" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="prtPlayer" x="64" y="192" name="inst_E9C01F4D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tstMM3" x="64" y="112" w="16" h="16" xo="352" yo="180" id="10004336" name="inst_6F6743D8" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

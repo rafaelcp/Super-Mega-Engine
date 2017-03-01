@@ -34,6 +34,8 @@ maxUnits = 3;
 showZero = true;
 buyable = true;
 price = 50;
+
+ds_list_add(exceptCharacters, objProtoman);
 </string>
           </argument>
         </arguments>

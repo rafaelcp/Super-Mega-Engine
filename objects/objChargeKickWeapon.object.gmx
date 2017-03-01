@@ -56,11 +56,11 @@ secondaryCol = make_color_rgb(252, 252, 252);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if !global.frozen and instance_exists(objMegaman) and global.weapons[global.currentWeapon] == self and ammo &gt; 0 {
-    if objMegaman.isSlide and !instance_exists(objChargeKick) {
+            <string>if !global.frozen and instance_exists(prtPlayer) and global.weapons[global.currentWeapon] == self and ammo &gt; 0 {
+    if prtPlayer.isSlide and !instance_exists(objChargeKick) {
         if instance_exists(objSlideDust) and insideViewObj(objSlideDust) and objSlideDust.image_index == 0 {
-            var kick = instance_create(objMegaman.x + objMegaman.image_xscale * 5, objMegaman.y + objMegaman.sprite_height / 2, objChargeKick);
-            kick.depth = objMegaman.depth - 1;
+            var kick = instance_create(prtPlayer.x + prtPlayer.image_xscale * 5, prtPlayer.y + prtPlayer.sprite_height / 2, objChargeKick);
+            kick.depth = prtPlayer.depth - 1;
             ammo -= consumption;
         }
     }

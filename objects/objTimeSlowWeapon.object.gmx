@@ -62,13 +62,13 @@ event_inherited();
 if instance_exists(objTimeSlow) {
     if ok
         ammo += consumption;
-    with objMegaBusterWeapon event_user(1);
+    with global.character.defaultWeapon event_user(1);
     return false;
 }
 
 if !ok return false;
 
-attackID = instance_create(sprite_get_xcenter_object(objMegaman), sprite_get_ycenter_object(objMegaman), objTimeSlow);
+attackID = instance_create(sprite_get_xcenter_object(prtPlayer), sprite_get_ycenter_object(prtPlayer), objTimeSlow);
 </string>
           </argument>
         </arguments>

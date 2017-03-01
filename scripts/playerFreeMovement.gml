@@ -1,8 +1,7 @@
 ///playerFreeMovement()
 //Frees the player's movement (e.g. after being locked)
 
-with objMegaman
-{
+with prtPlayer {
     canMove = true;
     canSpriteChange = true;
     canPause = true;

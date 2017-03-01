@@ -49,6 +49,8 @@ alarm[0] = 4 * 60;
 dead = true;
 respawn = false;
 neverDespawn = true;
+
+update_rate = 1;
 </string>
           </argument>
         </arguments>
@@ -71,7 +73,7 @@ neverDespawn = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with objMegaman {
+            <string>with prtPlayer {
     if onRushJet &amp;&amp; !canMove {
         onRushJet = false;
         canMove = true;
@@ -107,10 +109,8 @@ dead = true;
 xspeed = 0;
 yspeed = 0;
 
-with objMegaman
-{
-    if onRushJet == true
-    {
+with prtPlayer {
+    if onRushJet {
         onRushJet = false;
         canMove = true;
     }
@@ -146,7 +146,7 @@ if global.frozen == false
         if canJet == true //Waiting for Megaman
         {
         
-            if collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_top-1, objMegaman, false, false) &amp;&amp; collision_rectangle(objMegaman.bbox_left, objMegaman.bbox_bottom-1, objMegaman.bbox_right, objMegaman.bbox_bottom + 1, self, false, false)
+            if collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_top-1, prtPlayer, false, false) &amp;&amp; collision_rectangle(prtPlayer.bbox_left, prtPlayer.bbox_bottom-1, prtPlayer.bbox_right, prtPlayer.bbox_bottom + 1, self, false, false)
             {
                 canJet = false;
                 alarm[0] = -1;
@@ -168,23 +168,23 @@ if global.frozen == false
                 }
             }
             
-            if !dead &amp;&amp; collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_top-1, objMegaman, false, false)
+            if !dead &amp;&amp; collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_top-1, prtPlayer, false, false)
             {               
                 //Set player properties
-                objMegaman.canMove = false;
+                prtPlayer.canMove = false;
                 global.xspeed = 0;
-                objMegaman.onRushJet = true;
+                prtPlayer.onRushJet = true;
                 
                 //Move vertically
-                if global.keyUp &amp;&amp; !place_meeting(objMegaman.x, y-sprite_get_height(mskMegaman)-abs(yspeed)-1, objSolid)
+                if global.keyUp &amp;&amp; !place_meeting(prtPlayer.x, y-sprite_get_height(mskMegaman)-abs(yspeed)-1, objSolid)
                 &amp;&amp; !place_meeting(x, y-abs(yspeed)-1, objSolid)
                 {
-                    if !place_meeting(objMegaman.x, y-sprite_get_height(mskMegaman)-abs(yspeed)-1, prtMovingPlatformSolid)
+                    if !place_meeting(prtPlayer.x, y-sprite_get_height(mskMegaman)-abs(yspeed)-1, prtMovingPlatformSolid)
                     &amp;&amp; !place_meeting(x, y-abs(yspeed)-1, prtMovingPlatformSolid)
                         yspeed = -ySpd;
-                    else if place_meeting(objMegaman.x, y-sprite_get_height(mskMegaman)-abs(yspeed)-1, prtMovingPlatformSolid)
+                    else if place_meeting(prtPlayer.x, y-sprite_get_height(mskMegaman)-abs(yspeed)-1, prtMovingPlatformSolid)
                     {
-                        if instance_place(objMegaman.x, y-sprite_get_height(mskMegaman)-abs(yspeed)-1, prtMovingPlatformSolid).dead == true
+                        if instance_place(prtPlayer.x, y-sprite_get_height(mskMegaman)-abs(yspeed)-1, prtMovingPlatformSolid).dead == true
                             yspeed = -ySpd;
                     }
                     else {
@@ -213,7 +213,7 @@ if global.frozen == false
             }
             else
             {
-                with objMegaman
+                with prtPlayer
                 {
                     if onRushJet == true
                     {
@@ -369,11 +369,11 @@ else if teleporting == true
     {
         //Teleporting downwards
         draw_sprite_ext(sprite_index, image_index, round(x), round(view_yview[0]-32+teleportY), image_xscale, image_yscale, image_angle, c_white, 1);
-        if global.yspeed != 0 &amp;&amp; !place_meeting(x, sprite_get_ycenter_object(objMegaman) + 16, objSolid) {
-            y = sprite_get_ycenter_object(objMegaman) + 24 + global.yspeed;
+        if global.yspeed != 0 &amp;&amp; !place_meeting(x, sprite_get_ycenter_object(prtPlayer) + 16, objSolid) {
+            y = sprite_get_ycenter_object(prtPlayer) + 24 + global.yspeed;
         }
         else {
-            y = sprite_get_ycenter_object(objMegaman) - 8;
+            y = sprite_get_ycenter_object(prtPlayer) - 8;
         }
         if global.frozen == false
             teleportY += cfgRushTeleportSpeed;

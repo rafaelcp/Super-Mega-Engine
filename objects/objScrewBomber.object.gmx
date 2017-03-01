@@ -114,8 +114,8 @@ switch col
             <string>event_inherited();
 
 if !global.frozen and !dead {
-    if instance_exists(objMegaman) {
-        if distance_to_object(objMegaman) &lt;= radius || shooting == true || image_index != 0 {
+    if instance_exists(prtPlayer) {
+        if distance_to_object(prtPlayer) &lt;= radius || shooting == true || image_index != 0 {
             if !shooting {
                 shootTimer += update_rate;
                 if shootTimer == 85 {

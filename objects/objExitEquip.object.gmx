@@ -62,7 +62,7 @@ if !ok return false; //Must be on the beginning of every child of prtEquip
 
 count = 1;
 
-if global.weaponID &gt; -1 and global.weapons[global.weaponID].unlocked {
+if global.weaponID &gt; -1 and global.weaponID.unlocked {
 
     playSFX(sfxMenuSelect);
         

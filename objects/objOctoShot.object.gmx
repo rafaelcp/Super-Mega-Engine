@@ -31,10 +31,10 @@ spd = 2;
 
 contactDamage = 3;
 
-if instance_exists(objMegaman) {
+if instance_exists(prtPlayer) {
 
-    xspeed = objMegaman.x - x;
-    yspeed = objMegaman.y - y;
+    xspeed = prtPlayer.x - x;
+    yspeed = prtPlayer.y - y;
     len = sqrt(power(xspeed,2) + power(yspeed,2));
     xspeed = xspeed / len * spd;
     yspeed = yspeed / len * spd;

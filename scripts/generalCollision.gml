@@ -15,12 +15,13 @@ if mySolid >= 0 && xspeed != 0 && !colliding {
 }
 
 //Floor
-var mySolid;
-mySolid = instance_place(x, y+yspeed, objSolid);
-if mySolid >= 0 && yspeed > 0 && !colliding {
+var mySolid = instance_place(x, y+yspeed, objSolid);
+if mySolid >= 0 and yspeed > 0 and !colliding {
     y = mySolid.bbox_top;
     while place_meeting(x, y, mySolid)
         y -= 1;
+    
+    //y = mySolid.y - (sprite_height - sprite_yoffset);
     ground = true;
     yspeed = 0;
 }

@@ -28,7 +28,8 @@
             <string>timer = 0; //The timer has multiple uses
 megaX = round(view_xview[0]+(view_wview[0]/2));
 megaY = view_yview[0]+view_hview[0] + 40;
-megaSpr = sprMegamanWeaponGetTeleport;
+megaSpr = asset_get_index("spr" + global.sprName + "WeaponGetTeleport");
+megaSpr2 = asset_get_index("spr" + global.sprName + "WeaponGet");
 megaImg = 0;
 
 text1Alpha = 0;
@@ -36,8 +37,10 @@ text2Alpha = 0;
 
 global.checkpoint = false;
 
+//global.weaponID = objPharaohShotWeapon; //For testing
 if global.weaponID &gt; -1 {
-    global.weapons[global.weaponID].unlocked = true; //Unlocks the special weapon of the RM
+    //global.weapons[global.weaponID].unlocked = true; //Unlocks the special weapon of the RM
+    global.weaponID.unlocked = true; //Unlocks the special weapon of the RM
 }
 if global.bossID &gt; -1 {
     global.bossDefeated[global.bossID] = true; //For the stage select screen
@@ -47,16 +50,16 @@ phase = 0; //0 = preparing for moving up; 1 = moving up; 2 = de-teleporting; 3 =
            //6 = show "You got"; 7 = show weapon name; 8 = flicker between normal and weapon colors; 9 = weapon colors and timer for leaving
 
 if cfgWeaponPreview and global.weaponID &gt; -1 {
-    instance_create(16, 160, objMegaman);
+    instance_create(16, 160, global.character);
     
-    objMegaman.showReady = false;
-    objMegaman.teleporting = true;
+    prtPlayer.showReady = false;
+    prtPlayer.teleporting = true;
     
     playerLockMovement();
     
     with objHealthWeaponBar instance_destroy();
     
-    with global.weapons[global.weaponID] {
+    with global.weaponID {
         shots = 0;
         timer = 0;
         maxTimer = room_speed;
@@ -110,7 +113,7 @@ if cfgWeaponPreview and global.weaponID &gt; -1 {
                 megaImg += 1;
             else {
                 megaImg = 0;
-                megaSpr = sprMegamanWeaponGet;
+                megaSpr = megaSpr2;
                 phase = 3;
             }
         }
@@ -192,11 +195,11 @@ if cfgWeaponPreview and global.weaponID &gt; -1 {
 
 if cfgWeaponPreview and global.weaponID &gt; -1 {
     
-    if instance_exists(objMegaman) and objMegaman.canMove {
+    if instance_exists(prtPlayer) and prtPlayer.canMove {
         playerLockMovement();
     }
     
-    with objMegaman {
+    with prtPlayer {
         image_xscale = 1;
         canHit = false;
     }
@@ -205,17 +208,17 @@ if cfgWeaponPreview and global.weaponID &gt; -1 {
     
     with prtPickup instance_destroy();
     if phase == 8 {   //Flicker
-        global.weapon = global.weaponID - global.weapon;
-        with objMegaman event_user(0); //Colors
+        global.weapon = global.weaponID.newID - global.weapon;
+        with prtPlayer event_user(0); //Colors
     }
     else if phase == 9 {   //WEAPON DEMO
         if global.currentWeapon == 0 {
-            global.currentWeapon = global.weaponID;
+            global.currentWeapon = global.weaponID.newID;
             global.weapon = global.currentWeapon;
-            with objMegaman event_user(0); //Colors
+            with prtPlayer event_user(0); //Colors
         }
         else {
-            with global.weapons[global.weaponID] event_user(6);
+            with global.weaponID event_user(6);
         }
     }
 }
@@ -254,9 +257,9 @@ draw_set_alpha(1);
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 
-var src_col1 = make_colour_rgb(0, 89, 255);
-var src_col2 = make_colour_rgb(0, 0, 187);
-var src_col3 = make_colour_rgb(0, 217, 255);
+var src_col1 = global.src_col1;
+var src_col2 = global.src_col2;
+var src_col3 = global.src_col3;
 var primaryCol = src_col1;
 var primaryColDark = src_col2;
 var secondaryCol  = src_col3;
@@ -276,25 +279,25 @@ if phase &gt;= 7 {
     //Draw the weapon name
     draw_set_alpha(text2Alpha);
     if global.weaponID &gt; -1 {
-        draw_text(textX, textY+25, global.weapons[global.weaponID].name);
+        draw_text(textX, textY+25, global.weaponID.name);
     }
     draw_set_alpha(1);
 }
 
 if global.weaponID &gt; -1 {
-    primaryCol = global.weapons[global.weaponID].primaryCol; //The primary color for the giant MM in the weapon get screen
+    primaryCol = global.weaponID.primaryCol; //The primary color for the giant MM in the weapon get screen
     primaryColDark = merge_color(primaryCol, c_black, 0.3); //The shading on the primary color
-    secondaryCol = global.weapons[global.weaponID].secondaryCol; //The secondary color for the giant MM in the weapon get screen
+    secondaryCol = global.weaponID.secondaryCol; //The secondary color for the giant MM in the weapon get screen
 }
 
 if phase == 8 {
     //Flickering
     if timer mod 2 == 0 {
-        drawSpriteColorSwap(sprMegamanWeaponGet, megaImg, megaX, megaY, src_col1, src_col2, src_col3, primaryCol, primaryColDark, secondaryCol);
+        drawSpriteColorSwap(megaSpr, megaImg, megaX, megaY, src_col1, src_col2, src_col3, primaryCol, primaryColDark, secondaryCol);
     }
 }
 else if phase == 9 {
-    drawSpriteColorSwap(sprMegamanWeaponGet, megaImg, megaX, megaY, src_col1, src_col2, src_col3, primaryCol, primaryColDark, secondaryCol);
+    drawSpriteColorSwap(megaSpr, megaImg, megaX, megaY, src_col1, src_col2, src_col3, primaryCol, primaryColDark, secondaryCol);
 }
 
 
@@ -305,7 +308,7 @@ draw_set_halign(fa_left);
 draw_set_valign(fa_top);
 
 if cfgWeaponPreview and global.weaponID &gt; -1 {
-    with global.weapons[global.weaponID] event_user(7);
+    with global.weaponID event_user(7);
 }
 </string>
           </argument>

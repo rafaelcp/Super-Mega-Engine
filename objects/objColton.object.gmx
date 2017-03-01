@@ -50,9 +50,9 @@ bulletID = -10;
 image_speed = 0;
 image_index = 0;
 
-if instance_exists(objMegaman)
+if instance_exists(prtPlayer)
 {
-    if x &gt;= objMegaman.x
+    if x &gt;= prtPlayer.x
         image_xscale = -1;
     else
         image_xscale = 1;
@@ -83,8 +83,8 @@ if instance_exists(objMegaman)
 
 if !global.frozen and !dead {
     if !instance_exists(bulletID) {
-        if instance_exists(objMegaman) {
-            if x &gt;= objMegaman.x
+        if instance_exists(prtPlayer) {
+            if x &gt;= prtPlayer.x
                 image_xscale = -1;
             else
                 image_xscale = 1;

@@ -85,9 +85,9 @@ move_speed = 0.5;
             <string>event_inherited();
 
 if !global.frozen &amp;&amp; !dead {
-    if instance_exists(objMegaman) &amp;&amp; image_index &gt; 1 {
+    if instance_exists(prtPlayer) &amp;&amp; image_index &gt; 1 {
         // Turn right.
-        if x &lt; objMegaman.x
+        if x &lt; prtPlayer.x
             image_xscale = 1;
         // Turn left.
         else
@@ -125,8 +125,8 @@ if !global.frozen &amp;&amp; !dead {
             }
         }
         else {
-            if instance_exists(objMegaman) {
-                with objMegaman {
+            if instance_exists(prtPlayer) {
+                with prtPlayer {
                     dirX = sprite_get_xcenter() - sprite_get_xcenter_object(other);
                     dirY = sprite_get_ycenter() - sprite_get_ycenter_object(other);
                     len = sqrt(dirX * dirX + dirY * dirY);
@@ -185,7 +185,7 @@ else {
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="objMegaman">
+    <event eventtype="4" ename="prtPlayer">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -202,15 +202,12 @@ else {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if dead == false
-{
-    if other.canHit == true
-    {  
+            <string>if !dead {
+    if other.canHit {  
         with other playerGetHit(other.contactDamage);
         moveTimer = 0;
         retreating = true;
         yspeed = -3;
-        
     }
 }
 </string>

@@ -35,6 +35,8 @@ sfx = noone;
 
 primaryCol = make_color_rgb(216, 40, 0);
 secondaryCol = make_color_rgb(255, 255, 255);
+
+character = objMegaman;
 </string>
           </argument>
         </arguments>
@@ -66,92 +68,92 @@ ammo += consumption;    //Return amount decreased by parent
 if instance_number(objRushCoil) &lt; 1 {
     var tpY, airIncrease;
     tpY = 0;
-    if objMegaman.ground
+    if prtPlayer.ground
         airIncrease = 0;
     else
         airIncrease = 20; //When in the air, the upwards range is reduced because Rush could otherwise spawn above ceilings
     
     
-    while !(!position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)-tpY-1 + airIncrease, objSolid) &amp;&amp; !position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)-tpY-1 + airIncrease, prtMovingPlatformSolid)
-    &amp;&amp; !position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)-tpY-1 + airIncrease, objTopSolid) &amp;&amp; !position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)-tpY-1 + airIncrease, prtMovingPlatformJumpthrough)
-    &amp;&amp; (position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)-tpY + airIncrease, objSolid) || position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)-tpY + airIncrease, prtMovingPlatformSolid)
-    || position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)-tpY + airIncrease, objTopSolid) || position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)-tpY + airIncrease, prtMovingPlatformJumpthrough)))
-    &amp;&amp; !(position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)+tpY, objSolid) &amp;&amp; tpY &gt; sprite_get_height(objMegaman.mask_index)/2)
-    &amp;&amp; !(position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)+tpY, prtMovingPlatformSolid) &amp;&amp; tpY &gt; sprite_get_height(objMegaman.mask_index)/2)
-    &amp;&amp; !(position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)+tpY, objTopSolid) &amp;&amp; tpY &gt; sprite_get_height(objMegaman.mask_index)/2)
-    &amp;&amp; !(position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)+tpY, prtMovingPlatformJumpthrough) &amp;&amp; tpY &gt; sprite_get_height(objMegaman.mask_index)/2)
-    &amp;&amp; !position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)+tpY, objBossDoor)
+    while !(!position_meeting(prtPlayer.x+prtPlayer.image_xscale*26, sprite_get_ycenter_object(prtPlayer)-tpY-1 + airIncrease, objSolid) &amp;&amp; !position_meeting(prtPlayer.x+prtPlayer.image_xscale*26, sprite_get_ycenter_object(prtPlayer)-tpY-1 + airIncrease, prtMovingPlatformSolid)
+    &amp;&amp; !position_meeting(prtPlayer.x+prtPlayer.image_xscale*26, sprite_get_ycenter_object(prtPlayer)-tpY-1 + airIncrease, objTopSolid) &amp;&amp; !position_meeting(prtPlayer.x+prtPlayer.image_xscale*26, sprite_get_ycenter_object(prtPlayer)-tpY-1 + airIncrease, prtMovingPlatformJumpthrough)
+    &amp;&amp; (position_meeting(prtPlayer.x+prtPlayer.image_xscale*26, sprite_get_ycenter_object(prtPlayer)-tpY + airIncrease, objSolid) || position_meeting(prtPlayer.x+prtPlayer.image_xscale*26, sprite_get_ycenter_object(prtPlayer)-tpY + airIncrease, prtMovingPlatformSolid)
+    || position_meeting(prtPlayer.x+prtPlayer.image_xscale*26, sprite_get_ycenter_object(prtPlayer)-tpY + airIncrease, objTopSolid) || position_meeting(prtPlayer.x+prtPlayer.image_xscale*26, sprite_get_ycenter_object(prtPlayer)-tpY + airIncrease, prtMovingPlatformJumpthrough)))
+    &amp;&amp; !(position_meeting(prtPlayer.x+prtPlayer.image_xscale*26, sprite_get_ycenter_object(prtPlayer)+tpY, objSolid) &amp;&amp; tpY &gt; sprite_get_height(prtPlayer.mask_index)/2)
+    &amp;&amp; !(position_meeting(prtPlayer.x+prtPlayer.image_xscale*26, sprite_get_ycenter_object(prtPlayer)+tpY, prtMovingPlatformSolid) &amp;&amp; tpY &gt; sprite_get_height(prtPlayer.mask_index)/2)
+    &amp;&amp; !(position_meeting(prtPlayer.x+prtPlayer.image_xscale*26, sprite_get_ycenter_object(prtPlayer)+tpY, objTopSolid) &amp;&amp; tpY &gt; sprite_get_height(prtPlayer.mask_index)/2)
+    &amp;&amp; !(position_meeting(prtPlayer.x+prtPlayer.image_xscale*26, sprite_get_ycenter_object(prtPlayer)+tpY, prtMovingPlatformJumpthrough) &amp;&amp; tpY &gt; sprite_get_height(prtPlayer.mask_index)/2)
+    &amp;&amp; !position_meeting(prtPlayer.x+prtPlayer.image_xscale*26, sprite_get_ycenter_object(prtPlayer)+tpY, objBossDoor)
     &amp;&amp; tpY &lt;= 12+52 {
         tpY++;
     }
     
-    if position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)+tpY, objSolid)
-    || position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)+tpY, prtMovingPlatformSolid)
-    || position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)+tpY, objTopSolid)
-    || position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)+tpY, prtMovingPlatformJumpthrough) {
-        if position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)+tpY, objSolid) {
-            var solidID = instance_position(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)+tpY, objSolid);
-            attackID = instance_create(objMegaman.x+objMegaman.image_xscale*26, solidID.y-16, objRushCoil);
+    if position_meeting(prtPlayer.x+prtPlayer.image_xscale*26, sprite_get_ycenter_object(prtPlayer)+tpY, objSolid)
+    || position_meeting(prtPlayer.x+prtPlayer.image_xscale*26, sprite_get_ycenter_object(prtPlayer)+tpY, prtMovingPlatformSolid)
+    || position_meeting(prtPlayer.x+prtPlayer.image_xscale*26, sprite_get_ycenter_object(prtPlayer)+tpY, objTopSolid)
+    || position_meeting(prtPlayer.x+prtPlayer.image_xscale*26, sprite_get_ycenter_object(prtPlayer)+tpY, prtMovingPlatformJumpthrough) {
+        if position_meeting(prtPlayer.x+prtPlayer.image_xscale*26, sprite_get_ycenter_object(prtPlayer)+tpY, objSolid) {
+            var solidID = instance_position(prtPlayer.x+prtPlayer.image_xscale*26, sprite_get_ycenter_object(prtPlayer)+tpY, objSolid);
+            attackID = instance_create(prtPlayer.x+prtPlayer.image_xscale*26, solidID.y-16, objRushCoil);
             attackID.shouldLand = true;
-            attackID.image_xscale =objMegaman.image_xscale;
+            attackID.image_xscale =prtPlayer.image_xscale;
         }
-        else if position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)+tpY, prtMovingPlatformSolid) {
-            var solidID = instance_position(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)+tpY, prtMovingPlatformSolid);
-            attackID = instance_create(objMegaman.x+objMegaman.image_xscale*26, solidID.bbox_top-16, objRushCoil);
+        else if position_meeting(prtPlayer.x+prtPlayer.image_xscale*26, sprite_get_ycenter_object(prtPlayer)+tpY, prtMovingPlatformSolid) {
+            var solidID = instance_position(prtPlayer.x+prtPlayer.image_xscale*26, sprite_get_ycenter_object(prtPlayer)+tpY, prtMovingPlatformSolid);
+            attackID = instance_create(prtPlayer.x+prtPlayer.image_xscale*26, solidID.bbox_top-16, objRushCoil);
             attackID.shouldLand = true;
-            attackID.image_xscale =objMegaman.image_xscale;
+            attackID.image_xscale =prtPlayer.image_xscale;
         }
-        else if position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)+tpY, objTopSolid) {
-            var solidID = instance_position(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)+tpY, objTopSolid);
-            attackID = instance_create(objMegaman.x+objMegaman.image_xscale*26, solidID.y-16, objRushCoil);
+        else if position_meeting(prtPlayer.x+prtPlayer.image_xscale*26, sprite_get_ycenter_object(prtPlayer)+tpY, objTopSolid) {
+            var solidID = instance_position(prtPlayer.x+prtPlayer.image_xscale*26, sprite_get_ycenter_object(prtPlayer)+tpY, objTopSolid);
+            attackID = instance_create(prtPlayer.x+prtPlayer.image_xscale*26, solidID.y-16, objRushCoil);
             attackID.shouldLand = true;
-            attackID.image_xscale =objMegaman.image_xscale;
+            attackID.image_xscale =prtPlayer.image_xscale;
         }
         else {
-            var solidID = instance_position(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)+tpY, prtMovingPlatformJumpthrough);
-            attackID = instance_create(objMegaman.x+objMegaman.image_xscale*26, solidID.bbox_top-16, objRushCoil);
+            var solidID = instance_position(prtPlayer.x+prtPlayer.image_xscale*26, sprite_get_ycenter_object(prtPlayer)+tpY, prtMovingPlatformJumpthrough);
+            attackID = instance_create(prtPlayer.x+prtPlayer.image_xscale*26, solidID.bbox_top-16, objRushCoil);
             attackID.shouldLand = true;
-            attackID.image_xscale =objMegaman.image_xscale;
+            attackID.image_xscale =prtPlayer.image_xscale;
         }
     }
-    else if !position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)-tpY-1 + airIncrease, objSolid)
-    &amp;&amp; !position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)-tpY-1 + airIncrease, prtMovingPlatformSolid)
-    &amp;&amp; !position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)-tpY-1 + airIncrease, objTopSolid)
-    &amp;&amp; !position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)-tpY-1 + airIncrease, prtMovingPlatformJumpthrough)
-    &amp;&amp; !position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)-tpY-1 + airIncrease, objBossDoor)
-    &amp;&amp; (position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)-tpY + airIncrease, objSolid) || position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)-tpY + airIncrease, prtMovingPlatformSolid)
-    || position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)-tpY + airIncrease, objTopSolid) || position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)-tpY + airIncrease, prtMovingPlatformJumpthrough)) {
-        if position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)-tpY + airIncrease, objSolid) {
-            var solidID = instance_position(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)-tpY + airIncrease, objSolid);
-            attackID = instance_create(objMegaman.x+objMegaman.image_xscale*26, solidID.y-16, objRushCoil);
+    else if !position_meeting(prtPlayer.x+prtPlayer.image_xscale*26, sprite_get_ycenter_object(prtPlayer)-tpY-1 + airIncrease, objSolid)
+    &amp;&amp; !position_meeting(prtPlayer.x+prtPlayer.image_xscale*26, sprite_get_ycenter_object(prtPlayer)-tpY-1 + airIncrease, prtMovingPlatformSolid)
+    &amp;&amp; !position_meeting(prtPlayer.x+prtPlayer.image_xscale*26, sprite_get_ycenter_object(prtPlayer)-tpY-1 + airIncrease, objTopSolid)
+    &amp;&amp; !position_meeting(prtPlayer.x+prtPlayer.image_xscale*26, sprite_get_ycenter_object(prtPlayer)-tpY-1 + airIncrease, prtMovingPlatformJumpthrough)
+    &amp;&amp; !position_meeting(prtPlayer.x+prtPlayer.image_xscale*26, sprite_get_ycenter_object(prtPlayer)-tpY-1 + airIncrease, objBossDoor)
+    &amp;&amp; (position_meeting(prtPlayer.x+prtPlayer.image_xscale*26, sprite_get_ycenter_object(prtPlayer)-tpY + airIncrease, objSolid) || position_meeting(prtPlayer.x+prtPlayer.image_xscale*26, sprite_get_ycenter_object(prtPlayer)-tpY + airIncrease, prtMovingPlatformSolid)
+    || position_meeting(prtPlayer.x+prtPlayer.image_xscale*26, sprite_get_ycenter_object(prtPlayer)-tpY + airIncrease, objTopSolid) || position_meeting(prtPlayer.x+prtPlayer.image_xscale*26, sprite_get_ycenter_object(prtPlayer)-tpY + airIncrease, prtMovingPlatformJumpthrough)) {
+        if position_meeting(prtPlayer.x+prtPlayer.image_xscale*26, sprite_get_ycenter_object(prtPlayer)-tpY + airIncrease, objSolid) {
+            var solidID = instance_position(prtPlayer.x+prtPlayer.image_xscale*26, sprite_get_ycenter_object(prtPlayer)-tpY + airIncrease, objSolid);
+            attackID = instance_create(prtPlayer.x+prtPlayer.image_xscale*26, solidID.y-16, objRushCoil);
             attackID.shouldLand = true;
-            attackID.image_xscale = objMegaman.image_xscale;
+            attackID.image_xscale = prtPlayer.image_xscale;
         }
-        else if position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)-tpY + airIncrease, prtMovingPlatformSolid) {
-            var solidID = instance_position(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)-tpY + airIncrease, prtMovingPlatformSolid);
-            attackID = instance_create(objMegaman.x+objMegaman.image_xscale*26, solidID.bbox_top-16, objRushCoil);
+        else if position_meeting(prtPlayer.x+prtPlayer.image_xscale*26, sprite_get_ycenter_object(prtPlayer)-tpY + airIncrease, prtMovingPlatformSolid) {
+            var solidID = instance_position(prtPlayer.x+prtPlayer.image_xscale*26, sprite_get_ycenter_object(prtPlayer)-tpY + airIncrease, prtMovingPlatformSolid);
+            attackID = instance_create(prtPlayer.x+prtPlayer.image_xscale*26, solidID.bbox_top-16, objRushCoil);
             attackID.shouldLand = true;
-            attackID.image_xscale = objMegaman.image_xscale;
+            attackID.image_xscale = prtPlayer.image_xscale;
         }
-        else if position_meeting(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)-tpY + airIncrease, objTopSolid) {
-            var solidID = instance_position(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)-tpY + airIncrease, objTopSolid);
-            attackID = instance_create(objMegaman.x+objMegaman.image_xscale*26, solidID.y-16, objRushCoil);
+        else if position_meeting(prtPlayer.x+prtPlayer.image_xscale*26, sprite_get_ycenter_object(prtPlayer)-tpY + airIncrease, objTopSolid) {
+            var solidID = instance_position(prtPlayer.x+prtPlayer.image_xscale*26, sprite_get_ycenter_object(prtPlayer)-tpY + airIncrease, objTopSolid);
+            attackID = instance_create(prtPlayer.x+prtPlayer.image_xscale*26, solidID.y-16, objRushCoil);
             attackID.shouldLand = true;
-            attackID.image_xscale = objMegaman.image_xscale;
+            attackID.image_xscale = prtPlayer.image_xscale;
         }
         else {
-            var solidID = instance_position(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman)-tpY + airIncrease, prtMovingPlatformJumpthrough);
-            attackID = instance_create(objMegaman.x+objMegaman.image_xscale*26, solidID.bbox_top-16, objRushCoil);
+            var solidID = instance_position(prtPlayer.x+prtPlayer.image_xscale*26, sprite_get_ycenter_object(prtPlayer)-tpY + airIncrease, prtMovingPlatformJumpthrough);
+            attackID = instance_create(prtPlayer.x+prtPlayer.image_xscale*26, solidID.bbox_top-16, objRushCoil);
             attackID.shouldLand = true;
-            attackID.image_xscale = objMegaman.image_xscale;
+            attackID.image_xscale = prtPlayer.image_xscale;
         }
     }
     else {
-        attackID = instance_create(objMegaman.x+objMegaman.image_xscale*26, sprite_get_ycenter_object(objMegaman), objRushCoil);
+        attackID = instance_create(prtPlayer.x+prtPlayer.image_xscale*26, sprite_get_ycenter_object(prtPlayer), objRushCoil);
         attackID.shouldLand = false;
-        attackID.image_xscale = objMegaman.image_xscale;
+        attackID.image_xscale = prtPlayer.image_xscale;
     }
-    objMegaman.isShoot = false;
+    prtPlayer.isShoot = false;
 }
 else {
     with objMegaBusterWeapon event_user(1);

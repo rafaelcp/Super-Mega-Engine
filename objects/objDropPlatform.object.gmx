@@ -67,10 +67,10 @@ if !global.frozen and !dead {
     switch phase {
         //Idle
         case 0:
-            if place_meeting(x, y-1, objMegaman) {
-                if objMegaman.ground == true &amp;&amp; objMegaman.bbox_bottom &lt;= bbox_top + 1
-                &amp;&amp; !collision_rectangle(objMegaman.bbox_left, objMegaman.bbox_bottom, objMegaman.bbox_right, objMegaman.bbox_bottom+1, prtMovingPlatformSolid, false, true)
-                &amp;&amp; !collision_rectangle(objMegaman.bbox_left, objMegaman.bbox_bottom, objMegaman.bbox_right, objMegaman.bbox_bottom+1, prtMovingPlatformJumpthrough, false, true) {
+            if place_meeting(x, y-1, prtPlayer) {
+                if prtPlayer.ground == true &amp;&amp; prtPlayer.bbox_bottom &lt;= bbox_top + 1
+                &amp;&amp; !collision_rectangle(prtPlayer.bbox_left, prtPlayer.bbox_bottom, prtPlayer.bbox_right, prtPlayer.bbox_bottom+1, prtMovingPlatformSolid, false, true)
+                &amp;&amp; !collision_rectangle(prtPlayer.bbox_left, prtPlayer.bbox_bottom, prtPlayer.bbox_right, prtPlayer.bbox_bottom+1, prtMovingPlatformJumpthrough, false, true) {
                     phase = 1;
                     timer = 0;
                 }

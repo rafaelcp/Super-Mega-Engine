@@ -1,8 +1,7 @@
 ///playerLockMovement()
 //Locks the player's movement
 
-with objMegaman
-{
+with prtPlayer {
     isStep = false;
     climbing = false;
     canGravity = true;
