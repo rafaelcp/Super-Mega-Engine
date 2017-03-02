@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>dead = false;
+            <string>event_inherited();
+
+dead = false;
 canInitDeath = true;
 beenOutsideView = false;
 healthpoints = 1;

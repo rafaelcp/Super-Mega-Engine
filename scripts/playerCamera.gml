@@ -1,11 +1,10 @@
 ///playerCamera()
 //Handles the camera
-//Call it in objMegaman
+//Call it in prtPlayer
 
 //Follow the player
-view_xview[0] = round(x - view_wview[0]/2);
-view_yview[0] = round(y - view_hview[0]/2);
-
+view_xview[0] = round(x - view_wview[0] / 2);
+view_yview[0] = round(y - view_hview[0] / 2);
 
 //Stop at section borders
 if view_xview[0] > sectionRight-view_wview[0]

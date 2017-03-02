@@ -509,6 +509,7 @@
     <scripts name="Views">
       <script>scripts\insideView.gml</script>
       <script>scripts\insideViewObj.gml</script>
+      <script>scripts\insideViewAny.gml</script>
       <script>scripts\deactivateUnimportantObjects.gml</script>
     </scripts>
     <scripts name="Sound">
@@ -850,6 +851,7 @@
         <object>objects\objJunkBlock</object>
         <object>objects\prtDestructibleBlock</object>
         <object>objects\objDustBlock</object>
+        <object>objects\objAutoScroll</object>
       </objects>
     </objects>
     <objects name="Effects">
