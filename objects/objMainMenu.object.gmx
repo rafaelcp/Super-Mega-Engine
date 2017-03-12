@@ -50,6 +50,10 @@ if cfgEnablePasswords {
 if cfgEnableKeyConfig {
     menu[current_item] = "KEY CONFIG";
     current_item++;
+    if global.GP &gt; -1 {
+        menu[current_item] = "GAMEPAD CONFIG";
+        current_item++;
+    }
 }
 
 menu[current_item] = "BACK";
@@ -118,6 +122,12 @@ else if global.keyPausePressed || global.keyJumpPressed || global.keyShootPresse
         break;
         case "PASSWORD":
             ID.myRoom = rmPassInput;
+        break;
+        case "KEY CONFIG":
+            ID.myRoom = rmKeyConfig;
+        break;
+        case "GAMEPAD CONFIG":
+            ID.myRoom = rmJoyConfig;
         break;
         case "BACK":
             ID.myRoom = rmDisclaimer;

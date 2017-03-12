@@ -532,6 +532,8 @@
       <script>scripts\string_break.gml</script>
       <script>scripts\string_replace_at.gml</script>
       <script>scripts\concat.gml</script>
+      <script>scripts\key_to_string.gml</script>
+      <script>scripts\button_to_string.gml</script>
     </scripts>
     <scripts name="Saving">
       <script>scripts\saveGame.gml</script>
@@ -546,6 +548,8 @@
       <script>scripts\drawSave.gml</script>
       <script>scripts\debug_password.gml</script>
       <script>scripts\block_base_convert.gml</script>
+      <script>scripts\save_configs.gml</script>
+      <script>scripts\load_configs.gml</script>
     </scripts>
     <scripts name="Numbers">
       <script>scripts\base_convert.gml</script>
@@ -604,6 +608,11 @@
       <script>scripts\gamepad_button_check_any.gml</script>
       <script>scripts\gamepad_button_check_pressed_any.gml</script>
       <script>scripts\gamepad_button_check_released_any.gml</script>
+      <script>scripts\gamepad_button_check_all.gml</script>
+      <script>scripts\gamepad_button_check_pressed_all.gml</script>
+      <script>scripts\reset_controls.gml</script>
+      <script>scripts\reset_buttons.gml</script>
+      <script>scripts\reset_keys.gml</script>
     </scripts>
     <scripts name="Tiles">
       <script>scripts\readTileObjects.gml</script>
@@ -876,6 +885,8 @@
       <object>objects\objTitleScreen</object>
       <object>objects\objShop</object>
       <object>objects\objMainMenu</object>
+      <object>objects\objKeyConfig</object>
+      <object>objects\objJoyConfig</object>
       <object>objects\objLoadGame</object>
       <object>objects\objSaveGame</object>
       <object>objects\objPlayerSelect</object>
@@ -962,6 +973,8 @@
       <room>rooms\rmPass</room>
       <room>rooms\rmPassInput</room>
       <room>rooms\rmMainMenu</room>
+      <room>rooms\rmKeyConfig</room>
+      <room>rooms\rmJoyConfig</room>
       <room>rooms\rmLoadGame</room>
       <room>rooms\rmSaveGame</room>
       <room>rooms\rmShop</room>
@@ -988,7 +1001,7 @@
     <constant name="cfgShotSplash">false</constant>
     <constant name="cfgInitialStage">-1</constant>
     <constant name="cfgShader">noone</constant>
-    <constant name="cfgEnableKeyConfig">false</constant>
+    <constant name="cfgEnableKeyConfig">true</constant>
     <constant name="cfgEnableSaving">true</constant>
     <constant name="cfgEnablePasswords">true</constant>
     <constant name="cfgLoseChargeOnHit">false</constant>

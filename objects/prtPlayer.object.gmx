@@ -640,9 +640,9 @@ if debug_mode || cfgDebug {
     draw_arrow(sprite_get_xcenter(), sprite_get_ycenter(), sprite_get_xcenter() + global.xspeed * 10, sprite_get_ycenter() + global.yspeed * 10, 10);
 }
 
-if keyboard_check(ord('M')) {
+/*if keyboard_check(ord('M')) {
     draw_surface(map_surf, view_xview[0], view_yview[0]);
-}
+}*/
 </string>
           </argument>
         </arguments>

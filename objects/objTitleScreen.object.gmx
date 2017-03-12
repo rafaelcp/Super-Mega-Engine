@@ -146,7 +146,14 @@ draw_set_halign(fa_center);
 draw_text(round(room_width/2), room_height-30, "OPEN SOURCE SOFTWARE#MAINTAINED BY THE MEGA MAN FANDOM");
 
 if drawText {
-    draw_text(round(room_width/2), 125, "PRESS START");
+    var text = "PRESS ";
+    if global.GP &gt; -1 {
+        text += string_upper(button_to_string(global.pauseButton));
+    }
+    else {
+        text += string_upper(key_to_string(global.pauseKey));
+    }
+    draw_text(round(room_width/2), 125, text);
 }
 
 

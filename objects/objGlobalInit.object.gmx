@@ -150,6 +150,10 @@ global.lastSave = 0;
 
 global.GP = -1  //Gamepad
 
+reset_controls();
+
+load_configs();
+
 //Initial and final layer for tile animations (decreasing)
 global.ini_layer = 999999;
 global.end_layer = 999920;

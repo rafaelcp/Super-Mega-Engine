@@ -61,6 +61,37 @@ reflectible = sprite_width &lt; 16 and sprite_height &lt; 16;
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="prtShieldWeapon">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>with other instance_destroy();
+instance_destroy();
+
+if other.xspeed == 0 //When it is not yet fired
+{
+    global.weapons[global.currentWeapon].ammo -= global.weapons[global.currentWeapon].consumptionContact;
+    if global.weapons[global.currentWeapon].ammo &lt;= 0
+        global.weapons[global.currentWeapon].ammo = 0;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="prtPlayer">
       <action>
         <libid>1</libid>
@@ -91,37 +122,6 @@ reflectible = sprite_width &lt; 16 and sprite_height &lt; 16;
     else {
         event_user(1);  //Reflection
     }
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="prtShieldWeapon">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>with other instance_destroy();
-instance_destroy();
-
-if other.xspeed == 0 //When it is not yet fired
-{
-    global.weapons[global.currentWeapon].ammo -= global.weapons[global.currentWeapon].consumptionContact;
-    if global.weapons[global.currentWeapon].ammo &lt;= 0
-        global.weapons[global.currentWeapon].ammo = 0;
 }
 </string>
           </argument>
