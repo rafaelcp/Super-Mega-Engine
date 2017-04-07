@@ -90,7 +90,7 @@ selected = 0;
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
-        <whoName>self</whoName>
+        <whoName>other</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
@@ -140,6 +140,7 @@ if !waiting {
             default:
                 playSFX(sfxMenuSelect3);
                 waiting = true;
+                keyboard_lastkey = -1;
         }
     }
 }
@@ -158,6 +159,7 @@ else {  //Set key
             case 9: global.selectKey = keyboard_lastkey; break;
             case 10: global.slideKey = keyboard_lastkey; break;
         }
+        print("PRESSED", keyboard_lastkey);
         waiting = false;
         save_configs();
     }

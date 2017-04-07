@@ -44,3 +44,4 @@ for (var i = 0; i < count; i++) {
 }
 instance_activate_object(prtEquip);
 instance_activate_object(prtWeapon);
+instance_activate_object(prtAchievement);

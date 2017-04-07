@@ -61,6 +61,7 @@ with prtEnemyProjectile {
     while place_meeting(x, y, objSolid) {
         y--;
     }
+    add_achievement(objJusticeAchievement);
 }
 
 if vspeed &gt;= 0 &amp;&amp; insideView() {

@@ -232,6 +232,9 @@ if sprite_index == sprWilyMachine4a {
     alarm[0] = -1;
     refillHealthBar();
 }
+else {
+    add_achievement(objLudditeAchievement);
+}
 </string>
           </argument>
         </arguments>

@@ -25,47 +25,22 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_color(c_white);
-draw_set_font(global.MM3font);
-draw_set_valign(fa_top);
-draw_set_halign(fa_center);
-
-if !audio_is_playing(bgmMainMenu) {
-    playMusicVolume(bgmMainMenu, 0.7);
-}
-
-menu[0] = "NEW GAME";
-var current_item = 1;
-
-if cfgEnableSaving {
-    menu[current_item] = "LOAD GAME";
-    current_item++;
-}
-
-if cfgEnablePasswords {
-    menu[current_item] = "PASSWORD";
-    current_item++;
-}
-
-if instance_number(prtAchievement) &gt; 0 {
-    menu[current_item] = "CHALLENGES";
-    current_item++;
-}
-
-if cfgEnableKeyConfig and os_browser == browser_not_a_browser {
-    menu[current_item] = "KEY CONFIG";
-    current_item++;
-    if global.GP &gt; -1 {
-        menu[current_item] = "GAMEPAD CONFIG";
-        current_item++;
+            <string>topItem = 0;
+selected = 0;
+num_menu_items = instance_number(prtAchievement);
+maxItems = min(8, num_menu_items);
+timer = 0;
+completed = 0;
+for (var i = 0; i &lt; num_menu_items; i++) {
+    var achievement = instance_find(prtAchievement, i);
+    if achievement.completed {
+        completed++;
     }
 }
 
-menu[current_item] = "BACK";
-
-num_menu_items = array_length_1d(menu);
-
-selected = 0;
+draw_set_font(global.MM3font);
+draw_set_color(c_white);
+draw_set_halign(fa_left);
 </string>
           </argument>
         </arguments>
@@ -88,8 +63,7 @@ selected = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (instance_exists(objFadeout)) exit;
-
+            <string>timer++;
 if global.keyUpPressed {
     selected--;
     if selected &lt; 0 {
@@ -105,45 +79,12 @@ else if global.keyDownPressed || global.keySelectPressed {
     playSFX(sfxMenuMove);
 }
 else if global.keyPausePressed || global.keyJumpPressed || global.keyShootPressed {
-    playSFX(sfxMenuSelect);            
     var ID = instance_create(0, 0, objFadeout);
-    ID.type = "room";
-    switch menu[selected] {
-        case "NEW GAME":
-            if global.totalCharacters &gt; 1 {
-                ID.myRoom = rmPlayerSelect;
-            }
-            else {
-                if cfgInitialStage &gt; -1 {
-                    ID.myRoom = cfgInitialStage;
-                }
-                else {
-                    ID.myRoom = rmStageSelect;
-                }
-            }        
-        break;
-        case "LOAD GAME":
-            ID.myRoom = rmLoadGame;
-        break;
-        case "PASSWORD":
-            ID.myRoom = rmPassInput;
-        break;
-        case "CHALLENGES":
-            ID.myRoom = rmAchievements;
-        break;
-        case "KEY CONFIG":
-            ID.myRoom = rmKeyConfig;
-        break;
-        case "GAMEPAD CONFIG":
-            ID.myRoom = rmJoyConfig;
-        break;
-        case "BACK":
-            ID.myRoom = rmDisclaimer;
-        break;
-        default:
-            ID.myRoom = room;
-    }
+    ID.type = "room";    
+    ID.myRoom = rmMainMenu;
 }
+
+topItem = max(0, selected - maxItems + 1);
 </string>
           </argument>
         </arguments>
@@ -166,21 +107,22 @@ else if global.keyPausePressed || global.keyJumpPressed || global.keyShootPresse
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_halign(fa_center);
-
-draw_text(room_width / 2, 30, "GAME MENU");
-
-var initial_y = 60;
-var vspace = 16;
-var left = room_width / 3;
-
-draw_set_halign(fa_left);
-
-for (var i = 0; i &lt; num_menu_items; i++) {
-    draw_text(left, i * vspace + initial_y, menu[i]);
+            <string>draw_set_halign(fa_left);
+for (var i = topItem; i &lt; topItem + maxItems; i++) {
+    var height = i - topItem;
+    var achievement = instance_find(prtAchievement, i);
+    draw_text(40, 32 + height * 16, string_lpad(string(i + 1), 2, "0"));
+    if achievement.completed {
+        draw_sprite(sprCrown, 0, 56, 32 + height * 16);
+    }
+    draw_text(68, 32 + height * 16, achievement.name);
+    if i == selected {
+        draw_sprite(sprPassArrow, (timer div 4) % 2, 32, 34 + height * 16);
+        draw_text(32, view_hview[0] - 48, string_break(achievement.description, 25));
+    }
 }
-
-draw_sprite(sprPassArrow, 0, left - 10, selected * vspace + initial_y + 3);
+draw_set_halign(fa_right);
+draw_text(view_wview[0] - 32, 32, string(floor(completed / num_menu_items * 100)) + "%");
 </string>
           </argument>
         </arguments>

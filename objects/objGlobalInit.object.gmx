@@ -127,6 +127,16 @@ for (var i = 0; object_exists(i); i++) {
     }
 }
 
+//Achievements
+with prtAchievement instance_destroy();
+for (var i = 0; object_exists(i); i++) {
+    if object_get_parent(i) == prtAchievement {
+        instance_create(0,0, i);
+    }
+}
+
+load_achievements();
+
 global.damageMultiplier = 1;
 
 global.fortressStarted = false;

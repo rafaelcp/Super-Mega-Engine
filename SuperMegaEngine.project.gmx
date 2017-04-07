@@ -55,6 +55,7 @@
       <sound>sound\sfxYokuBlock</sound>
       <sound>sound\sfxWilyUFO</sound>
       <sound>sound\sfxExplosion4</sound>
+      <sound>sound\sfxAchievement</sound>
     </sounds>
     <sounds name="Music">
       <sound>sound\bgmIntroduction</sound>
@@ -423,6 +424,8 @@
       <sprite>sprites\sprReady</sprite>
       <sprite>sprites\sprWilyUFO</sprite>
       <sprite>sprites\sprEddie</sprite>
+      <sprite>sprites\sprBorderBlock</sprite>
+      <sprite>sprites\sprCrown</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -620,6 +623,11 @@
       <script>scripts\tile_get_type.gml</script>
       <script>scripts\placeTileObjects.gml</script>
       <script>scripts\placeTileAnimations.gml</script>
+    </scripts>
+    <scripts name="Achievements">
+      <script>scripts\load_achievements.gml</script>
+      <script>scripts\add_achievement.gml</script>
+      <script>scripts\save_achievements.gml</script>
     </scripts>
   </scripts>
   <shaders name="shaders">
@@ -890,6 +898,7 @@
       <object>objects\objLoadGame</object>
       <object>objects\objSaveGame</object>
       <object>objects\objPlayerSelect</object>
+      <object>objects\objAchievements</object>
     </objects>
     <objects name="Sections">
       <object>objects\objSectionBorderLeftScreen</object>
@@ -955,6 +964,17 @@
     <objects name="Misc">
       <object>objects\objEddie</object>
     </objects>
+    <objects name="Achievements">
+      <object>objects\objAchievementBox</object>
+      <object>objects\prtAchievement</object>
+      <object>objects\objTimeLordAchievement</object>
+      <object>objects\objPentawerAchievement</object>
+      <object>objects\objEnergyBalancerAchievement</object>
+      <object>objects\objPowerGeneratorAchievement</object>
+      <object>objects\objDevilSlayerAchievement</object>
+      <object>objects\objLudditeAchievement</object>
+      <object>objects\objJusticeAchievement</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rmInit</room>
@@ -974,6 +994,7 @@
       <room>rooms\rmPassInput</room>
       <room>rooms\rmMainMenu</room>
       <room>rooms\rmKeyConfig</room>
+      <room>rooms\rmAchievements</room>
       <room>rooms\rmJoyConfig</room>
       <room>rooms\rmLoadGame</room>
       <room>rooms\rmSaveGame</room>

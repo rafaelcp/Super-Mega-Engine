@@ -6,8 +6,11 @@ stopAllSFX();
 if is_string(argument0) {   //For retro compatibility
     var parts = split(argument0, ".");
     var name = ds_queue_dequeue(parts);
-    audio_play_sound(asset_get_index("bgm" + name), 1, true);
+    var sound = asset_get_index("bgm" + name);
+    if !audio_is_playing(sound) {
+        audio_play_sound(sound, 1, true);
+    }
 }
-else {
+else if !audio_is_playing(argument0) {
     audio_play_sound(argument0, 1, true);
 }
