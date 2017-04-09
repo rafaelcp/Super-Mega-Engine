@@ -209,7 +209,11 @@ alarm[1] = 270;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if isMM == true &amp;&amp; teleporting == false
+            <string>chargeTimer = 0;
+initChargeTimer = 0;
+with prtPlayerProjectile instance_destroy();
+
+if isMM == true &amp;&amp; teleporting == false
 {
     if absorbing == false
     {
