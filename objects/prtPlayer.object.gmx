@@ -608,6 +608,7 @@ else if teleporting == true
     else
     {
         //Teleporting downwards
+        image_index = 0;
         drawSpriteColorSwap(spriteTeleport, image_index, round(x), round(view_yview[0]-32+teleportY), primary_color, secondary_color, make_colour_rgb(1.0, 1.0, 1.0),global.primaryCol,global.secondaryCol, global.outlineCol);
         teleportY += 7;
     }
@@ -632,6 +633,8 @@ else if showReady == true
         teleportY = 0;
         teleportTimer = 0;
         sprite_index = spriteTeleport;
+        image_speed = 0;
+        image_index = 0;
     }
 }
 
