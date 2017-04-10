@@ -4,9 +4,9 @@
 
 var box, yy, attackID;
 if image_xscale == 1
-    box = bbox_right+6;
+    box = bbox_right + shoot_shift;
 else
-    box = bbox_left-6;
+    box = bbox_left - shoot_shift;
     
 switch sprite_index
 {

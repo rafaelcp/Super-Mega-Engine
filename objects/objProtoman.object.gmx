@@ -49,6 +49,7 @@ blinkTimerMax = 6;
 blinkDuration = 6;
 
 shoot_height = 7;
+shoot_shift = 0;
 jump_shoot_height = 6;
 
 primary_color = make_colour_rgb(222, 41, 0);
@@ -82,7 +83,7 @@ defaultWeapon = objProtoBusterWeapon;
             <kind>1</kind>
             <string>event_inherited();
 
-if !ground {
+if !ground and !isShoot {
     reflectProjectilesLeft = image_xscale &lt; 0;
     reflectProjectilesRight = image_xscale &gt; 0;
 }

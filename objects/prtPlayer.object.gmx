@@ -135,6 +135,7 @@ reflectProjectilesLeft = false; //Only reflect projectiles that come from the le
 
 
 shoot_height = 4;
+shoot_shift = 6;
 jump_shoot_height = 3;
 
 

@@ -216,9 +216,9 @@ instance_create(240, 160, objTellySpawner);
             <string>/// onReleaseCharge
 
 if prtPlayer.image_xscale == 1
-    box = prtPlayer.bbox_right + 6;
+    box = prtPlayer.bbox_right + prtPlayer.shoot_shift;
 else
-    box = prtPlayer.bbox_left - 6;
+    box = prtPlayer.bbox_left - prtPlayer.shoot_shift;
     
 switch prtPlayer.sprite_index {
     case prtPlayer.spriteStand: yy = prtPlayer.y + prtPlayer.shoot_height; break;
@@ -325,9 +325,9 @@ if projectileCount() &gt;= maxshots
 }
 
 if prtPlayer.image_xscale == 1
-    box = prtPlayer.bbox_right + 6;
+    box = prtPlayer.bbox_right + prtPlayer.shoot_shift;
 else
-    box = prtPlayer.bbox_left - 6;
+    box = prtPlayer.bbox_left - prtPlayer.shoot_shift;
     
 switch prtPlayer.sprite_index {
     case prtPlayer.spriteStand: yy = prtPlayer.y+prtPlayer.shoot_height; break;
