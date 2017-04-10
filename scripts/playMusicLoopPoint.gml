@@ -4,16 +4,21 @@
 //Example: playMusic("CutMan.ogg", 0.4, 0.8)
 
 stopAllSFX();
+var snd = noone;
 if is_string(argument0) {   //For retro compatibility
     var parts = split(argument0, ".");
     var name = ds_queue_dequeue(parts);
-    var snd = audio_play_sound(asset_get_index("bgm" + name), 1, true);
+    var sound = asset_get_index("bgm" + name);
+    if !audio_is_playing(sound) {
+        snd = audio_play_sound(sound, 1, true);
+    }
 }
-else {
-    var snd = audio_play_sound(argument0, 1, true);
+else if !audio_is_playing(argument0) {
+    snd = audio_play_sound(argument0, 1, true);
 }
-var len = audio_sound_length(snd);
-global.loopStart = argument1 * len;
-global.loopEnd = argument2 * len;
-global.bgm = snd;
-
+if snd != noone {
+    var len = audio_sound_length(snd);
+    global.loopStart = argument1 * len;
+    global.loopEnd = argument2 * len;
+    global.bgm = snd;
+}

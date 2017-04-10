@@ -181,6 +181,7 @@ instance_destroy();
 readTileObjects(); 
 readTileAnimations();
 
+print("Using ", iif(audio_system() == audio_old_system, "Old Audio System", "New Audio System")); 
 
 </string>
           </argument>

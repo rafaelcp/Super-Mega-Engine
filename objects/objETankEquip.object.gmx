@@ -136,9 +136,9 @@ if !ok return false; //Must be on the beginning of every child of prtEquip
 if global._health &lt; global._maxHealth {
     show_debug_message("Can use. Starting restoring.");
     timer = 0;
-    loopSFX(sfxEnergyRestore);
     using = true;
     ok = true;
+    loopSFX(sfxEnergyRestore);
 }
 else {
     ok = false;
