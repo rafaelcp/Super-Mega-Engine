@@ -522,7 +522,7 @@ if (phase &gt;= 1 &amp;&amp; phase &lt;= 3) || phase == 5 || phase == 6
         if (global.items[i].showCount) {
             draw_text(view_xview[0]+currX, view_yview[0]+currY+17, "0" + string(global.items[i].count));
         }
-        currX += 24;
+        currX += 21;
     }
     
 }
