@@ -1,6 +1,9 @@
 ///setPlayer(player): set the current player character
 
 var player = argument0;
+if !object_exists(player) {
+    return false;
+}
 global.character = player;
 
 var char = instance_create(0, 0, player);

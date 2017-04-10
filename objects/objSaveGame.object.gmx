@@ -123,7 +123,7 @@ for (var i = 0; i &lt; num_saves; i++) {
         draw_set_colour(c_white);
         var map = saves[i];
         var oldchar = global.character;
-        if map &gt; - 1 {
+        if map &gt; - 1 and ds_map_exists(map, "character") {
             setPlayer(map[? "character"]);
         }
         drawSave(i, map, selected == i);
