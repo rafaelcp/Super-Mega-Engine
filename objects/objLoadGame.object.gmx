@@ -30,7 +30,7 @@
 var map;
 
 for (var i = 0; i &lt; max_saves; i++) {
-    map  = ds_map_secure_load("save" + string(i) + ".dat");
+    map = ds_map_secure_load("save" + string(i) + ".dat");
     saves[i] = map;
 }
 
@@ -39,7 +39,9 @@ num_saves = array_length_1d(saves);
 selected = 0;
 
 map = saves[selected];
-setPlayer(map[? "character"]);
+if map &gt; -1 {
+    setPlayer(map[? "character"]);
+}
 
 </string>
           </argument>
