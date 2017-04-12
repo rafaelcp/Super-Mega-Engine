@@ -45,6 +45,7 @@ destroyOnVerticalCollision = false;
 reflectible = true;     //Can it be reflected?
 destroyOnSwitch = true; //Should this projectile be destroyed when switching weapons?
 destroyOnScroll = true; //Should this projectile be destroyed when switching sections?
+destroyOnPause = true;  //Should this projectile be destroyed when pausing?
 doesNotCount = false;   //Should this projectile be ignored when counting projectiles on screen?
 update_rate = 1;
 

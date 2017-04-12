@@ -34,6 +34,7 @@ unstoppable = true;
 reflectible = false;
 singleHit = true;
 destroyOnScroll = false;
+destroyOnPause = false;
 </string>
           </argument>
         </arguments>

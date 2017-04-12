@@ -37,6 +37,7 @@ oldWeapon = global.weapon;
 resetWeapon = false; //Should we, after exiting the menu, reset our weapon to the weapon that was used before the pause menu was opened? 
 
 primedItemIndex = -1;
+
 with prtPlayer event_user(0);
 </string>
           </argument>
@@ -91,7 +92,7 @@ with prtPlayer event_user(0);
         if global.keyJumpPressed || global.keyPausePressed || global.keyShootPressed {
             if option &lt; global.totalWeapons {   //Selected a weapon             
                 global.currentWeapon = option;
-                with prtPlayerProjectile if destroyOnSwitch instance_destroy();
+                with prtPlayerProjectile if ((destroyOnSwitch and other.oldWeapon != other.option) or destroyOnPause) instance_destroy();
                 with objReflectedProjectile instance_destroy();
                 with prtRush instance_destroy();
                 with objRushJet instance_destroy(); //Could not be parented to prtRush since it's parented to prtMovingPlatformSolid
