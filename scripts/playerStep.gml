@@ -507,12 +507,15 @@ if enableSlide {
                     mask_index = mskMegaman;
                     slideTimer = 0;
                     
-                    var endLoop;
-                    endLoop = false;
+                    var endLoop = false;
                     
                     //Pushing down until not inside a ceiling anymore
                     while (place_meeting(x, y, objSolid) || place_meeting(x, y, prtMovingPlatformSolid)) && endLoop == false      //If your slide cancels right under a ceiling, move MM down
                     {
+                        if place_meeting(x, y, objSpike) {
+                            playerCollision();
+                            break;
+                        }
                         if !place_meeting(x, y, objSolid) && place_meeting(x, y, prtMovingPlatformSolid)
                         {
                             if instance_place(x, y, prtMovingPlatformSolid).dead == true
