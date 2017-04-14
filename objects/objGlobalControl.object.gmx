@@ -251,8 +251,8 @@ if keyboard_check_pressed(vk_f7) saveGame(0);
 if keyboard_check_pressed(vk_f8) loadGame(0);
 //if keyboard_check_pressed(vk_f11) with prtPlayer grav *= -1;
 
-if keyboard_check(vk_add) global.screws++;
-if keyboard_check(vk_subtract) global.screws--;
+if keyboard_check(vk_add) global.screws = min(global.maxScrews, global.screws + 2);
+if keyboard_check(vk_subtract) global.screws = max(0, global.screws - 2);
 
 if keyboard_check_pressed(vk_f9) {
     global.current_screen_shader++;
