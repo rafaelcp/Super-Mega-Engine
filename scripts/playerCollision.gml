@@ -6,10 +6,12 @@ var mySolid, mySpikeFloor, mySpikeWall, mySpikeCeiling;
 
 //Spikes
 mySolid = instance_place(x, y+global.yspeed+1, objSolid);
+mySolidLeft = instance_place(bbox_left + 4, y+global.yspeed+1, objSolid);
+mySolidRight = instance_place(bbox_right - 4, y+global.yspeed+1, objSolid);
 mySpikeFloor = instance_place(x, y+global.yspeed+1, objSpike);
 mySpikeWall = instance_place(x+global.xspeed, y, objSpike);
 mySpikeCeiling = instance_place(x, y+global.yspeed-1, objSpike);
-if ((mySpikeFloor >= 0 and mySolid.object_index == objSpike) || mySpikeWall >= 0 || mySpikeCeiling >= 0) && canHit {
+if ((mySpikeFloor >= 0 and mySolid > -1 and mySolid.object_index == objSpike and (mySolidLeft == -1 or mySolidLeft.object_index == objSpike) and (mySolidRight == -1 or mySolidRight.object_index == objSpike)) || mySpikeWall >= 0 || mySpikeCeiling >= 0) && canHit {
     if objShockGuardEquip.count < 1 {
         global._health = 0;
         exit;
