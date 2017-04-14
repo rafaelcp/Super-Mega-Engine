@@ -87,9 +87,7 @@ sprite_index = global.spriteLife;
             <kind>1</kind>
             <string>event_inherited();
 
-if buyok {
-    global._lives++;
-}
+global._lives++;
 </string>
           </argument>
         </arguments>
