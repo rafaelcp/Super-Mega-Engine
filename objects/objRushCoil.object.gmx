@@ -89,8 +89,7 @@ canCoil = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.frozen == false
-{
+            <string>if !global.frozen {
     if sprite_index == sprRush || sprite_index == sprRushCoil
     {
         checkGround();
@@ -106,6 +105,7 @@ canCoil = false;
         image_speed = 7/60;
     
     if canCoil 
+    &amp;&amp; instance_exists(prtPlayer)
     &amp;&amp; collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_top, prtPlayer, false, false) 
     &amp;&amp; global.yspeed &gt; 1 
     &amp;&amp; !prtPlayer.climbing 

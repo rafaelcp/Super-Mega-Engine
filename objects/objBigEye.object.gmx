@@ -193,6 +193,8 @@ if !global.frozen and !dead {
     }
         
     prevGround = ground;
+    
+    escapeWall();
 }
 else {
     if dead {

@@ -31,6 +31,9 @@ blackAlphaTimer = 0;
 blackAlphaTimerMax = 3;
 
 canAlarm = true;
+
+global.frozen = true;
+playerLockMovement();
 </string>
           </argument>
         </arguments>
@@ -55,12 +58,11 @@ canAlarm = true;
             <kind>1</kind>
             <string>if type == "restart" {
     room_restart();
-    global.weapon = objMegaBusterWeapon.ID;
 }
 else if type == "room" {
     room_goto(myRoom);
-    global.weapon = objMegaBusterWeapon.ID;
 }
+global.weapon = global.defaultWeapon.newID;
 </string>
           </argument>
         </arguments>

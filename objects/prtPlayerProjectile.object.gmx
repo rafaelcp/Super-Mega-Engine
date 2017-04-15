@@ -163,7 +163,7 @@ else {
           <argument>
             <kind>1</kind>
             <string>with other {
-    if !reflectProjectiles &amp;&amp; damage[other.object_index] != 0
+    if sprite_index &gt; -1 and !reflectProjectiles &amp;&amp; damage[other.object_index] != 0
     &amp;&amp; !(reflectProjectilesLeft &amp;&amp; sprite_get_xcenter_object(other.id) &lt; sprite_get_xcenter())
     &amp;&amp; !(reflectProjectilesRight &amp;&amp; sprite_get_xcenter_object(other.id) &gt; sprite_get_xcenter())
     &amp;&amp; (!useHitBox || collision_rectangle(x + hitbox_left * sign(image_xscale), y + hitbox_top, x + hitbox_right * sign(image_xscale), y + hitbox_bottom, other, false, true)) {
@@ -189,7 +189,7 @@ else {
             }
         }
     }
-    else if !dead {
+    else if sprite_index &gt; -1 and !dead {
         other.reflected = true;
         event_user(0); //Reflect the projectiles
     }

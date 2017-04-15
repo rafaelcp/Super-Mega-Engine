@@ -35,6 +35,8 @@ sfx = noone;
 
 primaryCol = make_color_rgb(154, 109, 178);
 secondaryCol = make_color_rgb(234, 142, 208);
+
+
 </string>
           </argument>
         </arguments>
@@ -62,7 +64,7 @@ event_inherited();
 if instance_exists(objTimeSlow) {
     if ok
         ammo += consumption;
-    with global.character.defaultWeapon event_user(1);
+    with global.defaultWeapon event_user(1);
     return false;
 }
 

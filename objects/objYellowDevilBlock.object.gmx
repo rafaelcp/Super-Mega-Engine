@@ -200,11 +200,13 @@ else {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if current_state != block_states.IDLE {
-    with other playerGetHit(4);
-}
-else {
-    with other playerGetHit(8);
+            <string>if alarm[1] == -1 {
+    if current_state != block_states.IDLE {
+        with other playerGetHit(4);
+    }
+    else {
+        with other playerGetHit(8);
+    }
 }
 </string>
           </argument>

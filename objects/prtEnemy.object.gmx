@@ -264,7 +264,7 @@ if !global.frozen and !dead {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if !dead &amp;&amp; other.reflectible {
+            <string>if sprite_index &gt; -1 and !dead and other.reflectible {
     with other {
         var ID = instance_create(x, y, objReflectedProjectile);
         ID.sprite_index = sprite_index;

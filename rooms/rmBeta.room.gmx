@@ -365,7 +365,6 @@
     <instance objName="objPoleEgg" x="1280" y="608" name="inst_50CEA0A2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1264" y="608" name="inst_DE233BD0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1248" y="608" name="inst_20BB2D59" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1216" y="640" name="inst_1DD7530F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1232" y="640" name="inst_A7B503E2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1248" y="640" name="inst_51176B78" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1280" y="640" name="inst_0B35B7C8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -374,8 +373,6 @@
     <instance objName="objPoleEgg" x="1264" y="592" name="inst_F7F292F4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1296" y="560" name="inst_F7705060" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="1328" y="528" name="inst_6653849D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1184" y="640" name="inst_4B62A3FF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPoleEgg" x="1200" y="640" name="inst_67D7B075" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="160" y="448" name="inst_1C9D883E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="176" y="448" name="inst_77A7CB53" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoleEgg" x="192" y="448" name="inst_1CCA6605" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

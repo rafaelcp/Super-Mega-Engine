@@ -272,7 +272,7 @@ if pickupID != -15
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>drawSelf3Colors(global.primaryCol, global.secondaryCol, global.outlineCol);
+            <string>drawSelf3ColorsFixed(global.primaryCol, global.secondaryCol, global.outlineCol);
 
 //drawSelf();
 

@@ -35,10 +35,12 @@ if !global.frozen {
 }
 
 destroyOnSwitch = false;
+destroyOnPause = false;
 destroyOnScroll = false;
 doesNotCount = true;
 defaultDamage = 1;  //While Time Slow doesn't inflict damage, only
 defaultBossDamage = 0;  //vulnerable (damage &gt; 0) bosses are affected
+reflectible = false;
 </string>
           </argument>
         </arguments>
@@ -120,12 +122,13 @@ with prtSolidGimmick {
             <kind>1</kind>
             <string>if activating {
     radius += 8;
-    global.frozen = true;
+    global.frozen = true;    
 }
 if activating and radius &gt; 256 {
     activating = false;
     global.frozen = false;
     alarm[1] = room_speed * 5;
+    
 }
 
 if !global.frozen {

@@ -476,6 +476,7 @@
       <script>scripts\playerLockMovement.gml</script>
       <script>scripts\playerFreeMovement.gml</script>
       <script>scripts\drawSelf3Colors.gml</script>
+      <script>scripts\drawSelf3ColorsFixed.gml</script>
       <script>scripts\projectileCount.gml</script>
       <script>scripts\setPlayer.gml</script>
     </scripts>
