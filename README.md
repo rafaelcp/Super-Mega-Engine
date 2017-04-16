@@ -39,7 +39,6 @@ This is a fork of [Mega Engine](http://sprites-inc.co.uk/showthread.php?tid=1648
 - Vertical boss doors
 - Automatically adds boss names to the stage select screen
 - Adds W-Tanks, screws and a fully functional shop (optional) with some built-in items, like the energy balancer, shock guard and guard power up
-- Fully functional shop with many built-in items, with flexibility in adding your own
 - Modular and event-driven weapons and projectiles system
 - Fortress system, including drag & drop placement of paths and dots
 - Automatic collision objects placement according to tiles
@@ -53,10 +52,9 @@ This is a fork of [Mega Engine](http://sprites-inc.co.uk/showthread.php?tid=1648
 - Dialog text system
 - HTML5 support (if you have the GM exporter, you can generate a browser version of your game, like the HTML5 demo available here)
 - Gamepad support (desktop only)
-- Friendly to multiple keyboard layouts (multiple keys assigned to shoot and jump)
 - No FMOD (sound library) dependency
 - More bug fixes, even in relation to the latest versions of the original project
-- Maintained by the community (more updates, more people searching for bugs, etc...)
+- Maintained by the community
 - Cons: GM Studio only.
 
 <a href="https://www.youtube.com/watch?v=cGZtF46oGJ8" target="_blank">Open Mega Engine playthrough video<br><img src="https://img.youtube.com/vi/cGZtF46oGJ8/0.jpg" 
