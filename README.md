@@ -40,10 +40,13 @@ This is a fork of [Mega Engine](http://sprites-inc.co.uk/showthread.php?tid=1648
 - Automatically adds boss names to the stage select screen
 - Adds W-Tanks, screws and a fully functional shop (optional) with some built-in items, like the energy balancer, shock guard and guard power up
 - Fully functional shop with many built-in items, with flexibility in adding your own
+- Modular and event-driven weapons and projectiles system
 - Fortress system, including drag & drop placement of paths and dots
 - Automatic collision objects placement according to tiles
 - Mini bosses
 - Enemy weak spots
+- Multiple characters system (Proto Man built-in)
+- Keyboard / Gamepad config (desktop only)
 - Game saving / loading system
 - Password system
 - Intro stage support
