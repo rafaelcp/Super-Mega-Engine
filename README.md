@@ -7,7 +7,7 @@
 
 Run the [HTML5 DEMO](https://rawgit.com/rafaelcp/Open-Mega-Engine/master/demo/index.html) inside your browser!
 
-Download the [Windows DEMO (EXE)](https://www.dropbox.com/s/kxaypg7ex8lloi9/OpenMegaEngine.zip?dl=0). (very old version)
+Download the [Windows DEMO (EXE)](https://github.com/rafaelcp/Super-Mega-Engine/releases/download/v1.5/Windows.Binary.Demo.exe.zip).
 
 Download [GameMaker Studio 1.4](https://www.yoyogames.com/get). 
 
