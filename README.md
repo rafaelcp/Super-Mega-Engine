@@ -55,7 +55,7 @@ This is a fork of [Mega Engine](http://sprites-inc.co.uk/showthread.php?tid=1648
 - No FMOD (sound library) dependency
 - More bug fixes, even in relation to the latest versions of the original project
 - Maintained by the community
-- Cons: GM Studio only.
+- Cons: GM Studio 1.4.1760 only.
 
 <a href="https://www.youtube.com/watch?v=cGZtF46oGJ8" target="_blank">Open Mega Engine playthrough video<br><img src="https://img.youtube.com/vi/cGZtF46oGJ8/0.jpg" 
 alt="Open Mega Engine playthrough video" title="Open Mega Engine playthrough video" width="240" height="180" border="10" /></a>
