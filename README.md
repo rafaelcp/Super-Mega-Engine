@@ -1,6 +1,6 @@
 # Super Mega Engine
 
-[![Join the chat at https://gitter.im/Open-Mega-Engine/Lobby](https://badges.gitter.im/Open-Mega-Engine/Lobby.svg)](https://gitter.im/Open-Mega-Engine/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Twitter]( http://i.imgur.com/tXSoThF.png) Twitter](https://twitter.com/netfighters) [![Facebook]( http://i.imgur.com/P3YfQoD.png) Facebook](https://www.facebook.com/Super-Mega-Engine-1864987877046420/) [![Discord](https://discordapp.com/assets/07dca80a102d4149e9736d4b162cff6f.ico) Discord](https://discord.gg/P2webCE)
+[![Join the chat at https://gitter.im/Open-Mega-Engine/Lobby](https://badges.gitter.im/Open-Mega-Engine/Lobby.svg)](https://gitter.im/Open-Mega-Engine/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Twitter]( http://i.imgur.com/tXSoThF.png) Twitter](https://twitter.com/netfighters) [![Facebook]( http://i.imgur.com/P3YfQoD.png) Facebook](https://www.facebook.com/Super-Mega-Engine-1864987877046420/) [![Discord](https://discordapp.com/assets/07dca80a102d4149e9736d4b162cff6f.ico) Discord](https://discord.gg/DGgBU8F)
 
 
 **Super Mega Engine - Open-source Classic Megaman engine for [Game Maker Studio](https://www.yoyogames.com/get)!**
